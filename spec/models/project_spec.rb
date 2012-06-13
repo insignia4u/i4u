@@ -30,20 +30,26 @@ describe Project do
 
       context "uniqueness" do
         before :each do
-          @site      = FactoryGirl.create(:site)
-          @project_2 = FactoryGirl.create(:project, :site => @site)
+          @site    = FactoryGirl.create(:site)
+          @project = FactoryGirl.build(:project)
+
+          @site.projects << @project
         end
 
-        it "require name on site scope" do
-          @project.name = @project_2.name
-          @project.site = @site
-          @project.should_not be_valid
-          @project.should have_at_least(1).errors_on(:site_id)
+        it "requires name to be unique within site scope" do
+          Project.count.should == 1
+          lambda {
+            @site.projects << @project
+          }.should_not change(Project, :count).from(1).to(2)
+
+          lambda {
+            @site.projects << FactoryGirl.build(:project)
+          }.should change(Project, :count).from(1).to(2)
         end
       end
 
       context "format" do
-        it "require a valid url to be valid" do
+        it "requires a valid url to be valid" do
           @project.url = "foo_url"
           @project.should_not be_valid
           @project.should have_at_least(1).errors_on(:url)
@@ -78,11 +84,11 @@ describe Project do
   end
 
   describe "Images" do
-    context "Paperclip behavior" do
-      before(:each) do
-        @project = Project.new
-      end
+    before(:each) do
+      @project = Project.new
+    end
 
+    context "Paperclip behavior" do
       it "respond to image attachment" do
         @project.should respond_to(:image)
       end
@@ -98,6 +104,24 @@ describe Project do
       it "have a paperclip filed named Featured Image" do
         @project.featured_image.should be_an_instance_of(Paperclip::Attachment)
       end
+    end
+
+    context "validations" do
+      it { should have_attached_file(:image) }
+      it { should validate_attachment_presence(:image) }
+      it { should validate_attachment_content_type(:image).
+            allowing('image/png', 'image/jpeg').
+            rejecting('text/plain', 'text/xml')
+      }
+      it { should validate_attachment_size(:image).less_than(2.megabytes) }
+
+      it { should have_attached_file(:featured_image) }
+      it { should validate_attachment_presence(:featured_image) }
+      it { should validate_attachment_content_type(:featured_image).
+            allowing('image/png', 'image/jpeg').
+            rejecting('text/plain', 'text/xml')
+      }
+      it { should validate_attachment_size(:featured_image).less_than(2.megabytes) }
     end
   end
 end

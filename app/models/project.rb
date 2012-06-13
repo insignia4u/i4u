@@ -3,9 +3,10 @@ require 'valid_formats'
 class Project < ActiveRecord::Base
   belongs_to :site
 
-  attr_accessible :site, :description, :ended_at, :extended_description, :name,
+  attr_accessible :site_id, :description, :ended_at, :extended_description, :name,
     :started_at, :summary, :url
 
+  validates :site,                 presence: true
   validates :summary,              presence: true
   validates :description,          presence: true
   validates :extended_description, presence: true
@@ -18,10 +19,12 @@ class Project < ActiveRecord::Base
   has_attached_file :featured_image
 
   validates_attachment :image, presence: true,
-    content_type: { content_type: ['image/jpeg', 'image/png'] }
+    content_type: { content_type: ['image/jpeg', 'image/png'] },
+    size: { :in => 0..2.megabytes }
 
   validates_attachment :featured_image, presence: true,
-    content_type: { content_type: ['image/jpeg', 'image/png'] }
+    content_type: { content_type: ['image/jpeg', 'image/png'] },
+    size: { :in => 0..2.megabytes }
 
   def highlight!
     update_attribute(:highlighted, true)

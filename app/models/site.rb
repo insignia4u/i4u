@@ -5,6 +5,7 @@ class Site < ActiveRecord::Base
   validates :abbreviation, presence: true, uniqueness: true
 
   has_many :site_sections
+  has_many :projects
 
   scope :live,   where( live: true )
   scope :hidden, where( live: false )
