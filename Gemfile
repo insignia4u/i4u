@@ -2,7 +2,13 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.5'
 
-gem 'mysql2', :group => [:development, :test]
+group :development, :test do
+  gem 'mysql2'
+  gem "rspec-rails"
+  gem "capybara"
+  gem "factory_girl_rails", '3.4.0'
+  gem "faker",              '1.0.1'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -17,5 +23,3 @@ end
 gem 'jquery-rails'
 
 gem "activeadmin"
-gem "rspec-rails", :group => [:development, :test]
-gem "capybara",    :group => [:development, :test]
