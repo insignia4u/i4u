@@ -4,7 +4,7 @@ class Project < ActiveRecord::Base
   belongs_to :site
 
   attr_accessible :site_id, :description, :ended_at, :extended_description, :name,
-    :started_at, :summary, :url
+    :started_at, :summary, :url, :image, :featured_image
 
   validates :site,                 presence: true
   validates :summary,              presence: true
@@ -32,5 +32,9 @@ class Project < ActiveRecord::Base
 
   def unhighlight!
     update_attribute(:highlighted, false)
+  end
+
+  def highlight_state
+    highlighted? ? "Yes" : "No"
   end
 end

@@ -68,6 +68,11 @@ describe Project do
           project.highlight!
         }.should change(project, :highlighted?).from(false).to(true)
       end
+
+      it "should return 'Yes' as current project state" do
+        project.highlight!
+        project.highlight_state.should == "Yes"
+      end
     end
 
     context "when unhighlighted a project" do
@@ -79,6 +84,11 @@ describe Project do
         lambda {
           project.unhighlight!
         }.should change(project, :highlighted).from(true).to(false)
+      end
+
+      it "should return 'No' as current project state" do
+        project.unhighlight!
+        project.highlight_state.should == "No"
       end
     end
   end
