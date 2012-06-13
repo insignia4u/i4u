@@ -1,1 +1,1 @@
-rvm use --create 1.9.3@i4u
+rvm use --create 1.9.3-p0@i4u
