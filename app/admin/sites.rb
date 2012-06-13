@@ -19,11 +19,11 @@ ActiveAdmin.register Site do
     redirect_to admin_site_path(site), notice: "This site is not available anymore!"
   end
 
-  action_item :only => :show do
+  action_item only: :show do
     link_to('Publish Live', live_admin_site_path(site), method: :put) unless site.available?
   end
 
-  action_item :only => :show do
+  action_item only: :show do
     link_to('Hide this Site', hide_admin_site_path(site), method: :put) if site.available?
   end
 
@@ -32,6 +32,9 @@ ActiveAdmin.register Site do
     column :abbreviation
     column ("Publication State")  {|site| status_tag(site.publication_state) }
     default_actions
+    column :actions do |site|
+      link_to "Manage Sections", [:admin, site, :site_sections]
+    end
   end
 
   show do |site|
