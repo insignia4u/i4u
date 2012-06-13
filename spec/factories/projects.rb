@@ -11,5 +11,13 @@ FactoryGirl.define do
     started_at "2012-06-13"
     ended_at "2012-06-13"
     highlighted false
+    image_file_name    "pic.jpg"
+    image_content_type "image/jpeg"
+    image_file_size    "81386"
+    image_updated_at   Time.now
+    featured_image_file_name    "pic.jpg"
+    featured_image_content_type "image/jpeg"
+    featured_image_file_size    "81386"
+    featured_image_updated_at   Time.now
   end
 end

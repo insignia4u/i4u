@@ -20,6 +20,8 @@ describe Project do
     it { should validate_presence_of(:url) }
     it { should validate_presence_of(:started_at) }
     it { should validate_presence_of(:ended_at) }
+    it { should validate_presence_of(:image) }
+    it { should validate_presence_of(:featured_image) }
 
     describe "specific" do
       before :each do
@@ -71,6 +73,30 @@ describe Project do
         lambda {
           project.unhighlight!
         }.should change(project, :highlighted).from(true).to(false)
+      end
+    end
+  end
+
+  describe "Images" do
+    context "Paperclip behavior" do
+      before(:each) do
+        @project = Project.new
+      end
+
+      it "respond to image attachment" do
+        @project.should respond_to(:image)
+      end
+
+      it "respond to featured image attachment" do
+        @project.should respond_to(:featured_image)
+      end
+
+      it "have a paperclip filed named Image" do
+        @project.image.should be_an_instance_of(Paperclip::Attachment)
+      end
+
+      it "have a paperclip filed named Featured Image" do
+        @project.featured_image.should be_an_instance_of(Paperclip::Attachment)
       end
     end
   end

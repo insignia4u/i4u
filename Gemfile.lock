@@ -54,6 +54,7 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.3.2)
       ffi (~> 1.0.6)
+    cocaine (0.2.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -113,6 +114,12 @@ GEM
     mysql2 (0.3.11)
     nokogiri (1.5.4)
     orm_adapter (0.0.7)
+    paperclip (3.0.4)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (>= 0.0.2)
+      mime-types
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -198,6 +205,7 @@ DEPENDENCIES
   friendly_id (= 4.0.7)
   jquery-rails
   mysql2
+  paperclip (~> 3.0)
   rails (= 3.2.6)
   rspec-rails
   sass-rails (~> 3.2.3)

@@ -24,3 +24,4 @@ gem 'jquery-rails'
 
 gem "activeadmin"
 gem "friendly_id", '4.0.7'
+gem "paperclip",   '~> 3.0'
