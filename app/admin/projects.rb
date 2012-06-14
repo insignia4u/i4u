@@ -1,6 +1,29 @@
 ActiveAdmin.register Project do
   menu parent: "Portfolio"
 
+  filter :site
+  filter :name
+
+  member_action :highlight, method: :put do
+    project = Project.find(params[:id])
+    project.highlight!
+    redirect_to admin_project_path(project), notice: "This project is highlight!"
+  end
+
+  member_action :unhighlight, method: :put do
+    project = project.find(params[:id])
+    project.unhighlight!
+    redirect_to admin_project_path(project), notice: "This project is not highlight anymore!"
+  end
+
+  action_item only: :show do
+    link_to('Highlight this Project', highlight_admin_project_path(project), method: :put) unless project.highlighted?
+  end
+
+  action_item only: :show do
+    link_to('Unhighlight this Project', unhighlight_admin_project_path(project), method: :put) if project.highlighted?
+  end
+
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs "Basic Information" do
       f.input :site_id, :label => "Site",
@@ -52,6 +75,10 @@ ActiveAdmin.register Project do
 
       row "Tools" do
         project.tools.map(&:name).join(",")
+      end
+
+      row "Highlighted" do
+        project.highlighted ? 'Yes' : 'No'
       end
     end
   end
