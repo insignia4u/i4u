@@ -3,15 +3,15 @@ require 'valid_formats'
 class Project < ActiveRecord::Base
   belongs_to :site
 
+  has_many :project_technologies
+  has_many :technologies, :through => :project_technologies
+
   attr_accessible :site_id, :description, :ended_at, :extended_description, :name,
     :started_at, :summary, :url, :image, :featured_image
 
   validates :site,                 presence: true
   validates :summary,              presence: true
   validates :description,          presence: true
-  validates :extended_description, presence: true
-  validates :started_at,           presence: true
-  validates :ended_at,             presence: true
   validates :name,                 presence: true, uniqueness: { scope: :site_id }
   validates :url,                  presence: true, format: { with: ValidFormats::URL }
 
@@ -22,7 +22,7 @@ class Project < ActiveRecord::Base
     content_type: { content_type: ['image/jpeg', 'image/png'] },
     size: { :in => 0..2.megabytes }
 
-  validates_attachment :featured_image, presence: true,
+  validates_attachment :featured_image,
     content_type: { content_type: ['image/jpeg', 'image/png'] },
     size: { :in => 0..2.megabytes }
 

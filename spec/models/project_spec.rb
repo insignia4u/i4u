@@ -13,15 +13,12 @@ describe Project do
   end
 
   describe "Validations" do
+    it { should validate_presence_of(:site) }
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:summary) }
     it { should validate_presence_of(:description) }
-    it { should validate_presence_of(:extended_description) }
     it { should validate_presence_of(:url) }
-    it { should validate_presence_of(:started_at) }
-    it { should validate_presence_of(:ended_at) }
     it { should validate_presence_of(:image) }
-    it { should validate_presence_of(:featured_image) }
 
     describe "specific" do
       before :each do
@@ -126,7 +123,6 @@ describe Project do
       it { should validate_attachment_size(:image).less_than(2.megabytes) }
 
       it { should have_attached_file(:featured_image) }
-      it { should validate_attachment_presence(:featured_image) }
       it { should validate_attachment_content_type(:featured_image).
             allowing('image/png', 'image/jpeg').
             rejecting('text/plain', 'text/xml')

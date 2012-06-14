@@ -2,18 +2,23 @@ ActiveAdmin.register Project do
   menu parent: "Portfolio"
 
   form :html => { :enctype => "multipart/form-data" } do |f|
-    f.inputs "", :multipart => true do
+    f.inputs "Basic Information" do
       f.input :site_id, :label => "Site",
               :as => :select, :collection => Hash[Site.all.map{|s| [s.name, s.id]}]
       f.input :name
       f.input :url
       f.input :summary
       f.input :description
+      f.input :image, :as => :file
+    end
+    f.inputs "Detailed Information" do
       f.input :extended_description
       f.input :started_at
       f.input :ended_at
-      f.input :image, :as => :file
       f.input :featured_image, :as => :file
+    end
+    f.inputs "Tags" do
+      f.input :technologies, :as => :check_boxes
     end
 
     f.buttons
