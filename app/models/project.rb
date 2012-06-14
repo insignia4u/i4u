@@ -23,11 +23,12 @@ class Project < ActiveRecord::Base
 
   validates_attachment :image, presence: true,
     content_type: { content_type: ['image/jpeg', 'image/png'] },
-    size: { :in => 0..2.megabytes }
-
+    size: { :in => 0..2.megabytes },
+    style: { big: "267x220", thumb: "234x230"}
   validates_attachment :featured_image,
     content_type: { content_type: ['image/jpeg', 'image/png'] },
-    size: { :in => 0..2.megabytes }
+    size: { :in => 0..2.megabytes },
+    style: { big: "936×553" }
 
   def highlight!
     update_attribute(:highlighted, true)

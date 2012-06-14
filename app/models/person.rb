@@ -14,5 +14,6 @@ class Person < ActiveRecord::Base
 
   validates_attachment :photo, presence: true,
     content_type: { content_type: ['image/jpeg', 'image/png'] },
-    size: { :in => 0..2.megabytes }
+    size: { :in => 0..2.megabytes },
+    styles: { thumb: "73x70" }
 end
