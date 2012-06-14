@@ -6,8 +6,11 @@ class Project < ActiveRecord::Base
   has_many :project_technologies
   has_many :technologies, :through => :project_technologies
 
+  has_many :project_tools
+  has_many :tools, :through => :project_tools
+
   attr_accessible :site_id, :description, :ended_at, :extended_description, :name,
-    :started_at, :summary, :url, :image, :featured_image
+    :started_at, :summary, :url, :image, :featured_image, :technology_ids, :tool_ids
 
   validates :site,                 presence: true
   validates :summary,              presence: true

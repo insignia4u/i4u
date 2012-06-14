@@ -10,6 +10,9 @@ describe Project do
     it { should     have_accessible(:started_at) }
     it { should     have_accessible(:ended_at) }
     it { should_not have_accessible(:highlighted) }
+    it { should_not have_accessible(:technology_ids) }
+    it { should_not have_accessible(:tool_ids) }
+    it { should_not have_accessible(:highlighted) }
   end
 
   describe "Validations" do

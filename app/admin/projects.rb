@@ -19,12 +19,13 @@ ActiveAdmin.register Project do
     end
     f.inputs "Tags" do
       f.input :technologies, :as => :check_boxes
+      f.input :tools, :as => :check_boxes
     end
 
     f.buttons
   end
 
-  show do |offer_image|
+  show do
     attributes_table do
       row "Site" do
         project.site.name
@@ -44,6 +45,14 @@ ActiveAdmin.register Project do
       row :featured_image do
         image_tag(project.featured_image.url)
       end
+
+      row "Technologies" do
+        project.technologies.map(&:name).join(",")
+      end
+
+      row "Tools" do
+        project.tools.map(&:name).join(",")
+      end
     end
   end
 
@@ -52,9 +61,21 @@ ActiveAdmin.register Project do
     column :name
     column :url
     column ("Summary")   { |project| truncate(project.summary.gsub(/<.*?>/,''), :length => 84) }
-    column ("Highlight") { |project| status_tag(project.highlight_state) }
+    column ("Highlight") { |project| status_tag(project.highlight_state, :class => 'red') }
     column :started_at
     column :ended_at
+
+    column "Technologies" do |project|
+      project.technologies.each do |technology|
+        status_tag(technology.name, :class => 'green')
+      end
+    end
+
+    column "Tools" do |project|
+      project.tools.each do |tool|
+        status_tag(tool.name, :class => 'orange')
+      end
+    end
 
     default_actions
   end

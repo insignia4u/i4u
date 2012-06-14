@@ -30,7 +30,7 @@ ActiveAdmin.register Site do
   index do
     column :name
     column :abbreviation
-    column ("Publication State")  {|site| status_tag(site.publication_state) }
+    column ("Publication State")  {|site| status_tag(site.publication_state, :class => 'red') }
     default_actions
     column :actions do |site|
       link_to "Manage Sections", [:admin, site, :site_sections]

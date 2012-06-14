@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120614133931) do
+ActiveRecord::Schema.define(:version => 20120614150255) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -55,6 +55,16 @@ ActiveRecord::Schema.define(:version => 20120614133931) do
 
   add_index "project_technologies", ["project_id"], :name => "index_project_technologies_on_project_id"
   add_index "project_technologies", ["technology_id"], :name => "index_project_technologies_on_technology_id"
+
+  create_table "project_tools", :force => true do |t|
+    t.integer  "project_id"
+    t.integer  "tool_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "project_tools", ["project_id"], :name => "index_project_tools_on_project_id"
+  add_index "project_tools", ["tool_id"], :name => "index_project_tools_on_tool_id"
 
   create_table "projects", :force => true do |t|
     t.integer  "site_id"
