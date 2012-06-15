@@ -10,6 +10,10 @@ class Site < ActiveRecord::Base
   scope :live,   where( live: true )
   scope :hidden, where( live: false )
 
+  def home_projects
+    projects.limit(3)
+  end
+
   def live!
     self.live = true
     save!

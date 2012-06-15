@@ -25,7 +25,7 @@ head
   = javascript_include_tag "libs/modernizr-2.5.3.min.js"
   = csrf_meta_tags
 
-body.page_classes
+body.index
   /[if lt IE 7]
     p.chromeframe
       | Your browser is
@@ -35,16 +35,16 @@ body.page_classes
       =link_to "install Google Chrome Frame", "http://www.google.com/chromeframe/?redirect=true"
       | to experience this site.
 
-  div.content
-    div.container
+  .content
+    .container
       = render "shared/header"
-      div#main role="main"
+      #main role="main"
         = yield
 
-    div.footer
-      div.foot
-        div.container
-          = render "shared/footer"
+  .footer
+    .foot
+      .container
+        = render "shared/footer"
 
   script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
 
