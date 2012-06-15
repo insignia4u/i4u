@@ -54,7 +54,6 @@ describe Person do
             allowing('image/png', 'image/jpeg').
             rejecting('text/plain', 'text/xml')
       }
-      it { should validate_attachment_size(:photo).less_than(2.megabytes) }
     end
   end
 end

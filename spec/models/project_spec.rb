@@ -123,14 +123,12 @@ describe Project do
             allowing('image/png', 'image/jpeg').
             rejecting('text/plain', 'text/xml')
       }
-      it { should validate_attachment_size(:image).less_than(2.megabytes) }
 
       it { should have_attached_file(:featured_image) }
       it { should validate_attachment_content_type(:featured_image).
             allowing('image/png', 'image/jpeg').
             rejecting('text/plain', 'text/xml')
       }
-      it { should validate_attachment_size(:featured_image).less_than(2.megabytes) }
     end
   end
 end

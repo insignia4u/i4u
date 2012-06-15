@@ -29,7 +29,7 @@ ActiveAdmin.register Person do
       row :bio
 
       row :photo do
-        image_tag(project.photo.url)
+        image_tag(person.photo.url)
       end
     end
   end
