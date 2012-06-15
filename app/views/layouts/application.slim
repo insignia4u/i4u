@@ -37,14 +37,14 @@ body.page_classes
 
   div.content
     div.container
-      /= partial "header"
+      = render "shared/header"
       div#main role="main"
-        /= yield
+        = yield
 
     div.footer
       div.foot
         div.container
-          /= partial "footer"
+          = render "shared/footer"
 
   script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
 
