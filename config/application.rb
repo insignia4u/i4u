@@ -64,5 +64,7 @@ module I4u
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    Slim::Engine.set_default_options :pretty => true
   end
 end

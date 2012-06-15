@@ -175,10 +175,19 @@ GEM
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
+    slim (1.2.1)
+      temple (~> 0.4.0)
+      tilt (~> 1.3.3)
+    slim-rails (1.0.3)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      railties (~> 3.0)
+      slim (~> 1.0)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    temple (0.4.0)
     thor (0.15.2)
     tilt (1.3.3)
     treetop (1.4.10)
@@ -209,4 +218,6 @@ DEPENDENCIES
   rails (= 3.2.6)
   rspec-rails
   sass-rails (~> 3.2.3)
+  slim
+  slim-rails
   uglifier (>= 1.0.3)

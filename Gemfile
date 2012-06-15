@@ -28,3 +28,6 @@ gem "paperclip",   '~> 3.0'
 
 #Populator
 gem "faker", '1.0.1'
+
+gem 'slim'
+gem 'slim-rails'
