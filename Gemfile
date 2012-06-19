@@ -8,6 +8,7 @@ group :development, :test do
   gem "capybara"
   gem "factory_girl_rails", '3.4.0'
   gem "faker",              '1.0.1'
+  gem "simplecov"
 end
 
 group :assets do

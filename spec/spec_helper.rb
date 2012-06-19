@@ -1,3 +1,9 @@
+# Generate report 
+require 'simplecov'
+SimpleCov.start 'rails'# do
+#   add_filter "/support/"
+# end
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
