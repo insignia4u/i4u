@@ -11,7 +11,7 @@ ActiveAdmin.register Project do
   end
 
   member_action :unhighlight, method: :put do
-    project = project.find(params[:id])
+    project = Project.find(params[:id])
     project.unhighlight!
     redirect_to admin_project_path(project), notice: "This project is not highlight anymore!"
   end
