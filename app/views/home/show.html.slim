@@ -7,27 +7,25 @@
     = link_to "next", "#", :class => "next"
 
   .description
-    p
-    |En <strong>Insignia</strong> desarrollamos <strong>aplicaciones web altamente interactivas</strong> utilizando <strong>metodolog&iacute;as &aacute;giles y tecnolog&iacute;as avanzadas</strong>. Nos especializamos en <strong>backend development</strong> utilizando <strong>Ruby on Rails</strong> y otras tecnolog&iacute;as web aunque, a trav&eacute;s de alianzas estrat&eacute;gicas, tenemos la capacidad para abordar<br /> <strong>trabajos de manera integral</strong> incluyendo consultor&iacute;a, frontend development y dise&ntilde;o.
-
+    p= raw "En <strong>Insignia</strong> desarrollamos <strong>aplicaciones web altamente interactivas</strong> utilizando <strong>metodolog&iacute;as &aacute;giles y tecnolog&iacute;as avanzadas</strong>. Nos especializamos en <strong>backend development</strong> utilizando <strong>Ruby on Rails</strong> y otras tecnolog&iacute;as web aunque, a trav&eacute;s de alianzas estrat&eacute;gicas, tenemos la capacidad para abordar<br /> <strong>trabajos de manera integral</strong> incluyendo consultor&iacute;a, frontend development y dise&ntilde;o."
 
 .cases
   h2.title2 CASOS DE &Eacute;XITO
   ul
-    - @site.home_projects.each do |project|
-      li class='#{ first_project(@site.home_projects, project) }'
+    - @current_site.home_projects.each do |p|
+      li class='#{ first_project(@current_site.home_projects, p) }'
         .img
-          = link_to image_tag(project.image.url(:big)), "#"
+          = link_to image_tag(p.image.url(:big)), project_path(p)
           span
 
         .info
-          h3.title3= project.name
-          = link_to project.url, project.url
-          p= project.summary
+          h3.title3= p.name
+          = link_to p.url, p.url
+          p= p.summary
 
 ul.boxesinf
   li.first
-    h.title2 NOVEDADES
+    h2.title2 NOVEDADES
     div.date 16/11/2011
     div.subtitle DEL FREELANCING A LA EMPRESA
     h3.title3 La historia de INSIGNIA

@@ -20,16 +20,15 @@ class Project < ActiveRecord::Base
   validates :url,                  presence: true, format: { with: ValidFormats::URL }
 
   has_attached_file :image, styles: {big: "267x220#", thumb: "234x230#"}
-
   has_attached_file :featured_image, styles: {big: "936x553#"}
-
-
 
   validates_attachment :image, presence: true,
     content_type: { content_type: ['image/jpeg', 'image/png'] }
 
   validates_attachment :featured_image,
     content_type: { content_type: ['image/jpeg', 'image/png'] }
+
+  scope :featured, where(highlighted: true)
 
   def highlight!
     update_attribute(:highlighted, true)

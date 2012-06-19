@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def load_site
-    @site = Site.first
+    @current_site = Site.first
   end
 end
