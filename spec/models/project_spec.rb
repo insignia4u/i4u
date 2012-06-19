@@ -9,9 +9,9 @@ describe Project do
     it { should     have_accessible(:url) }
     it { should     have_accessible(:started_at) }
     it { should     have_accessible(:ended_at) }
+    it { should     have_accessible(:technology_ids) }
+    it { should     have_accessible(:tool_ids) }
     it { should_not have_accessible(:highlighted) }
-    it { should_not have_accessible(:technology_ids) }
-    it { should_not have_accessible(:tool_ids) }
     it { should_not have_accessible(:highlighted) }
   end
 
@@ -37,14 +37,13 @@ describe Project do
         end
 
         it "requires name to be unique within site scope" do
-          Project.count.should == 1
           lambda {
             @site.projects << @project
-          }.should_not change(Project, :count).from(1).to(2)
+          }.should_not change(Project, :count).from(Project.count).to(Project.count + 1)
 
           lambda {
             @site.projects << FactoryGirl.build(:project)
-          }.should change(Project, :count).from(1).to(2)
+          }.should change(Project, :count).from(Project.count).to(Project.count + 1)
         end
       end
 

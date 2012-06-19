@@ -57,4 +57,28 @@ describe Site do
       end
     end
   end
+
+  describe "Finders" do
+    describe "Listing Projects" do
+      before :each do
+        @site      = FactoryGirl.create(:site)
+        @project_1 = FactoryGirl.create(:project, :site => @site)
+        @project_2 = FactoryGirl.create(:project, :site => @site)
+        @project_3 = FactoryGirl.create(:project, :site => @site)
+        @project_4 = FactoryGirl.create(:project, :site => @site)
+      end
+
+      it "list should have three projects" do
+        projects = @site.home_projects
+        projects.size.should == 3
+      end
+
+      it "list Projects for Home Page" do
+        projects = @site.home_projects
+        projects.first.should  == @project_1
+        projects.second.should == @project_2
+        projects.last.should   == @project_3
+      end
+    end
+  end
 end
