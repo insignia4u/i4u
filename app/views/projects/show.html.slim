@@ -1,0 +1,29 @@
+.page
+  .contentleft
+    h2.title2
+      = resource.name.upcase
+      span= resource.url.gsub!(/^(http|https):\/\//, "").upcase
+
+    p.plus1
+      strong= resource.name.titleize
+      = " " + resource.description
+
+    p= resource.extended_description
+
+  .sidebar
+    h3.title3 M&Aacute;S INFORMACI&Oacute;N
+    .sidebox
+      .sideportfolio
+        = image_tag resource.image.url(:thumb)
+        h4 Fecha de desarrollo:
+        p= resource.ended_at
+
+        h4 Lenguajes de programaci&oacute;n
+        ul
+          - resource.technologies.each do |t|
+            li > #{ t.name }
+
+        h4 Otras herramientas:
+        ul
+          - resource.tools.each do |t|
+            li > #{ t.name }

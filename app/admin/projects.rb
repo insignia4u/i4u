@@ -63,10 +63,10 @@ ActiveAdmin.register Project do
       row :ended_at
 
       row :image do
-        image_tag(project.image.url)
+        image_tag(project.image.url(:cms_thumb))
       end
       row :featured_image do
-        image_tag(project.featured_image.url)
+        image_tag(project.featured_image.url(:cms_thumb))
       end
 
       row "Technologies" do
