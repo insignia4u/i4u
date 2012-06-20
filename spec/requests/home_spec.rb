@@ -1,12 +1,40 @@
 require 'spec_helper'
 
 describe 'visiting the homepage' do
-  before do
-    visit '/'
-  end
+  describe "GET /" do
+    before :each do
+      @site    = FactoryGirl.create(:site)
+      @project = FactoryGirl.create(:project, :site => @site)
+    end
 
-  it 'should have a body'
-  #  do
-  #   page.should have_css('body')    
-  # end
+    context "Listing proejcts" do
+      it "Displays projects list" do
+        visit root_path
+        page.should have_content(@project.name)
+        page.should have_content(@project.summary)
+      end
+    end
+
+    context "Listing Technologies" do
+      before :each do
+        @technology = FactoryGirl.create(:technology)
+      end
+
+      it "Displays technologies list" do
+        visit root_path
+        page.should have_content(@technology.name)
+      end
+    end
+
+    context "Listing Tools" do
+      before :each do
+        @tool = FactoryGirl.create(:tool)
+      end
+
+      it "Displays tool list" do
+        visit root_path
+        page.should have_content(@tool.name)
+      end
+    end
+  end
 end
