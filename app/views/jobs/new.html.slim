@@ -1,0 +1,34 @@
+.page
+  .contentleft
+    h2.title2 EMPLEO
+    p En INSIGNIA estamos continuamente en la búsqueda de profesionales con ansias de participar en grandes proyectos relacionado con el Desarrollo de Aplicaciones Web, con ganas de participar en el desarrollo de una empresa en crecimiento donde grandes retos se presentan día a día.
+
+    p Como miembro de nuestro equipo, tendrás la posibilidad de trabajar con la tecnología y la prácticas más avanzadas del desarrollo web: Ruby on Rails, Ruby, Behavior Driven Development, HTML, CSS, Javascript, Git, Pair programming, Metodologías Agiles, entre otras.
+
+    p.plus1 Si te gustaría trabajar en un lugar donde tu creatividad, proactividad y ganas de innovar sean enormemente valoradas, ¡entonces te necesitamos! Es exactamente lo que buscamos en los integrantes de nuestro equipo.
+
+    = form_for @message, :url => job_path do |f|
+      = f.label(:name){ 'Nombre<sup>*</sup>'.html_safe }
+      = f.text_field :name, :class => "ctext"
+
+      = f.label(:email){ 'Email<sup>*</sup>'.html_safe }
+      = f.text_field :email, :class => "ctext"
+
+      = f.label(:body){ 'Comentarios<sup>*</sup>'.html_safe }
+      = f.text_area :body
+
+      .formmessage * Campos obligatorios
+
+      .adj
+        | Adjuntar archivo * >>
+        br
+        = f.file_field :file
+
+      =f.submit "ENVIAR", :class => "fsubmit"
+
+  .sidebar
+    h3.title3 EL CAMINO
+    .sidebox
+      p Como primer paso envianos tu CV usando el formulario de esta página. No olvides incluir muestras de código y el detalle de proyectos que hayas realizado.
+      p Hay dos caminos principales, si ya tenés experiencia en desarrollo web, podrías pensar en incorporarte a nuestro staff, para ellos realizaríamos tres entrevistas donde evaluaremos tus diferentes capacidades.
+      p Si todavía no tenés la experiencia necesaria y luego de una entrevista inicial creemos que estás alineado con los perfiles que estamos buscando, podemos invitarte a participar en nuestros programas de incubación para convertirte en un excelente desarrollador de aplicaciones web como todos los demás integrantes de nuestro equipo.
