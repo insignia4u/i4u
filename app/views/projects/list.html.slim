@@ -1,0 +1,25 @@
+.page
+  .contentleft
+    h2.title2 TODOS NUESTROS TRABAJOS
+    ul.listportfolio
+      - @projects.each do |p|
+        li class='#{ first_project(@projects, p) }'
+          h3.title3= p.name
+          = link_to p.url, p.url, class: "link"
+          p
+            = p.summary
+            em Desarrollado para Area 17
+          = link_to "> Leer caso de &eacute;xito", project_path(p), class: "read"
+
+    = link_to "Volver al Portfolio", projects_path, class: "pback"
+
+  .sidebar
+    h3.title3 PORTFOLIO EN PDF
+    .sidebox
+      .sidepdf
+        p
+          strong Descargá
+          | un portfolio con nuestros trabajos destacados en formato 
+          strong PDF 
+          | haciendo #{ link_to "click aquí", "#" }
+        .pdf

@@ -3,7 +3,9 @@ I4u::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  resources :projects, :path => :portfolio, :only => [:index, :show]
+  resources :projects, :path => :portfolio, :only => [:index, :show] do
+    collection{ get :list }
+  end
 
   root :to => 'home#show'
 end

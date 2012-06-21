@@ -19,4 +19,16 @@ describe ProjectsController do
       response.should be_success
     end
   end
+
+  describe "Listing Projects" do
+    before :each do
+      controller.stub!(:index!)
+    end
+
+    it "lists projects" do
+      controller.should_receive(:index!)
+      get :list
+      response.should be_success
+    end
+  end
 end
