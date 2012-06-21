@@ -1,0 +1,39 @@
+.page
+  .contentleft
+    h2.title2 CONTACTO
+    p Gracias por contactarte con nosotros. Utilizá este formulario para hacernos llegar tu mensaje. Nos comprometemos a responderte lo antes posible.
+    = form_for @message, :url => messages_path do |f|
+      = f.label(:name){ 'Nombre<sup>*</sup>'.html_safe }
+      = f.text_field :name, :class => "ctext"
+
+      = f.label(:email){ 'Email<sup>*</sup>'.html_safe }
+      = f.text_field :email, :class => "ctext"
+
+      = f.label(:body){ 'Comentarios<sup>*</sup>'.html_safe }
+      = f.text_area :body
+
+      .formmessage * Campos obligatorios
+
+      .adj
+        | Adjuntar archivo * >>
+        br
+        = f.file_field :file
+
+      =f.submit "ENVIAR", :class => "fsubmit"
+
+  .sidebar
+    h3.title3 UBICACI&Oacute;N
+    .sidemap= image_tag asset_path("map.jpg")
+
+    h3.title3 DATOS DE CONTACTO
+    .sidebox
+      p
+        | Lamadrid 318, Piso 4 Depto A
+        br
+        | San Miguel de Tucumán, 4000
+        br
+        | Tucumán, Argentina
+        br
+        | T: +54 (381) 420-7387
+        br
+        | M: contacto@insignia4u.com

@@ -9,5 +9,7 @@ I4u::Application.routes.draw do
 
   resources :people, :only => :index
 
+  resources :messages, :path => :contact, :only => [:new, :create]
+
   root :to => 'home#show'
 end
