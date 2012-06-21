@@ -16,7 +16,7 @@
       li class='#{ first_resource(@current_site.home_projects, p) }'
         .img
           = link_to image_tag(p.image.url(:big)), project_path(p)
-          span
+          span= link_to "", project_path(p)
 
         .info
           h3.title3= p.name
