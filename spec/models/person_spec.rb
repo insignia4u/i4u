@@ -56,4 +56,14 @@ describe Person do
       }
     end
   end
+
+  describe "Person Full Name" do
+    before :each do
+      @person = FactoryGirl.create(:person)
+    end
+
+    it "returns First Name with Last Name" do
+      @person.full_name.should == "#{@person.first_name} #{@person.last_name}"
+    end
+  end
 end

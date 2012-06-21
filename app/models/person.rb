@@ -15,4 +15,8 @@ class Person < ActiveRecord::Base
 
   validates_attachment :photo, presence: true,
     content_type: { content_type: ['image/jpeg', 'image/png'] }
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

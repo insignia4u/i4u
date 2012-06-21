@@ -1,0 +1,66 @@
+.page
+  .contentleft
+    h2.title2 QUIENES SOMOS
+
+    =image_tag asset_path("grupo.jpg")
+    .ep Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+
+    p Desde hace 4 años nuestro equipo se ha ido forjando a través del desarrollo de proyectos con un alto volumen de tráfico, adquiriendo experiencia a través de la resolución de los desafíos que allí se generan. Trabajamos con la integración de plataformas de terceros a través de APIs (Google Maps, Facebook, Twitter, etc) y también con gateways de pago como PayPal y servicios de hosting en la nube (Amazon Cloud). Nuestro portfolio habla por nosotros.
+
+    p Con clientes dispersos por el mundo (USA, Francia, España, Paraguay, entre otros) hemos desarrollado capacidades especiales para satisfacer sus necesidades con excelencia. Además de contar con un equipo bilingüe que puede trabajar en español o en inglés indistintamente, utilizamos herramientas especializadas para gestionar los requerimientos en los proyectos (Unfuddle y/o Basecamp). Nuestra ubicación geográfica favorece la coordinación del trabajo al estar en una zona favorable para USA y España. Nuestra experiencia con Area 17, una agencia líder con oficinas en New York y París, es nuestro mejor antecedente.
+
+    p Buscamos nuevos desafíos y estamos preparados para encararlos. Queremos conocer sus proyectos y ser parte de ellos. Lo esperamos.
+
+    h3 Nuestra Política de Calidad
+
+    p
+      | Tenemos el firme compromiso de satisfacer plenamente los requerimientos y expectativas de nuestros clientes en la solución web que están solicitando.
+      br
+      | Nos regimos bajo una estrategia siguiendo el ciclo de la mejora continua cuyos pilares son la planificación, ejecución, verificación y actuar según los resultados, en todos los procesos hasta culminar el desarrollo de la aplicación.
+    p Somos un equipo de trabajo cuyas acciones las ejecutamos con elevada vocación, basando las mismas en los siguientes principios:
+
+    ul
+      li > Creatividad e innovación, como parte de nuestro reto diario para el mejoramiento continuo.
+      li > Consciencia y responsabilidad, en la práctica de un trabajo libre de errores y una aplicación segura.
+      li > Amabilidad en el servicio y agilidad en los procesos.
+      li > Labor cooperativa y desarrollo integral de nuestros colaboradores.
+      li > Compromiso para con el cliente, garantizando en el trabajo diario la eficacia del sistema de gestión.
+      li > Compromiso para con nuestros empleados, facilitando los recursos para el logro eficáz de los objetivos planeados.
+
+
+    ul.gallery
+      li= image_tag asset_path("pic01.jpg")
+      li= image_tag asset_path("pic02.jpg")
+      li= image_tag asset_path("pic03.jpg")
+      li= image_tag asset_path("pic04.jpg")
+      li= image_tag asset_path("pic05.jpg")
+      li= image_tag asset_path("pic06.jpg")
+
+    h3 Nuestra Misión
+
+    p Proveer a nuestros clientes soluciones informáticas basadas en Internet de calidad, que les permitan situarse en la vanguardia y les proporcione una ventaja competitiva determinante en el mercado.
+
+    h3 Nuestra Visión
+
+    p Llegar a ser un referente nacional e internacional, con un portafolio de proyectos exitosos que ratifiquen nuestro posicionamiento como empresa confiable y responsable en el desarrollo de aplicaciones web.
+
+    h3 Nuestros Valores
+
+    ul
+      li > Crecimiento e innovación: Hacemos de nuestro trabajo un estilo de vida, buscando siempre perfeccionarnos en las últimas tendencias, incentivando la investigación y la creatividad.
+      li > Excelencia: Brindamos a nuestros clientes siempre la mejor solución posible, utilizando las tecnologías más avanzadas disponibles. Cuidamos y mantenemos optimizadas todas las fases del proceso de desarrollo.
+      li > Calidad: Disponemos de un efectivo mecanismo de trabajo y sobre todo disfrutamos de lo que hacemos, lo que creemos que es el motor productor de la mejor calidad.
+      li > Compromiso: Establecemos una sólida relación de negocios con nuestros clientes, manteniendo los compromisos y responsabilidades que asumimos.
+      li > Valor humano: El bienestar de nuestro personal caracteriza la marca INSIGNIA como referentes de buenos empleadores.
+
+  .sidebar
+    h3.title3 STAFF
+    .sidebox
+      ul.list
+        - @people.each do |p|
+          li
+            .profile
+              h4= p.full_name
+              .pro= p.title.name
+              p= p.bio
+            = image_tag p.photo.url(:thumb)

@@ -7,5 +7,7 @@ I4u::Application.routes.draw do
     collection{ get :list }
   end
 
+  resources :people, :only => :index
+
   root :to => 'home#show'
 end

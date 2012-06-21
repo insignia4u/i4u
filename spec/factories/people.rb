@@ -7,5 +7,9 @@ FactoryGirl.define do
     first_name "Foo First Name"
     last_name  "Foo Last Name"
     bio "Foo Bio"
+    photo_file_name      "file.png"
+    photo_content_type   "image/png"
+    photo_file_size      "11386"
+    photo_updated_at     Time.now
   end
 end
