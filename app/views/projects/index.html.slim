@@ -29,7 +29,7 @@ h2.title2p PROYECTOS DESTACADOS
   h2.title2 ULTIMOS TRABAJOS
   ul
     - @projects.limit(3).each do |p|
-      li class='#{ first_project(@current_site.home_projects, p) }'
+      li class='#{ first_resource(@current_site.home_projects, p) }'
         .img
           = link_to image_tag(p.image.url(:big)), project_path(p)
           span

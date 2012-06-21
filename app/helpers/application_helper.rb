@@ -1,5 +1,9 @@
 module ApplicationHelper
-  def first_project(collection, resource)
+  def first_resource(collection, resource)
     resource == collection.first ? 'first' : ''
+  end
+
+  def last_resource(collection, resource)
+    resource == collection.last ? 'last' : ''
   end
 end

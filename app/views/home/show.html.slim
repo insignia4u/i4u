@@ -13,7 +13,7 @@
   h2.title2 CASOS DE &Eacute;XITO
   ul
     - @current_site.home_projects.each do |p|
-      li class='#{ first_project(@current_site.home_projects, p) }'
+      li class='#{ first_resource(@current_site.home_projects, p) }'
         .img
           = link_to image_tag(p.image.url(:big)), project_path(p)
           span

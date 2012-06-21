@@ -58,7 +58,7 @@
     .sidebox
       ul.list
         - @people.each do |p|
-          li
+          li class='#{ last_resource(@people, p) }'
             .profile
               h4= p.full_name
               .pro= p.title.name

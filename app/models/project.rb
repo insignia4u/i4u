@@ -16,8 +16,8 @@ class Project < ActiveRecord::Base
     :site, :technologies, :tools
 
   validates :site,                 presence: true
-  validates :summary,              presence: true
-  validates :description,          presence: true
+  validates :summary,              presence: true, length: {maximum: 120}
+  validates :description,          presence: true, length: {maximum: 380}
   validates :name,                 presence: true, uniqueness: { scope: :site_id }
   validates :url,                  presence: true, format: { with: ValidFormats::URL }
 
