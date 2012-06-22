@@ -32,3 +32,6 @@ gem "faker", '1.0.1'
 
 gem 'slim'
 gem 'slim-rails'
+
+# To Markdown of pages
+gem 'RedCloth'
