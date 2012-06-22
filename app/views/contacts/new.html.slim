@@ -1,7 +1,8 @@
 .page
   .contentleft
-    h2.title2 CONTACTO
-    p Gracias por contactarte con nosotros. Utilizá este formulario para hacernos llegar tu mensaje. Nos comprometemos a responderte lo antes posible.
+    h2.title2= @main_text.title
+    p= raw textilize(@main_text.body)
+
     = form_for @message, :url => contact_path do |f|
       = f.label(:name){ 'Nombre<sup>*</sup>'.html_safe }
       = f.text_field :name, :class => "ctext"

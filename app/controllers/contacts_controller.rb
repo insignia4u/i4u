@@ -2,6 +2,7 @@ class ContactsController < ApplicationController
 
   def new
     @message = Message.new
+    @main_text = TextSnippet.find('contact')
   end
 
   def create

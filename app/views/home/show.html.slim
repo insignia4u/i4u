@@ -3,11 +3,8 @@
     ul
       li= link_to image_tag asset_path("pc.png")
 
-    /= link_to "back", "#", :class => "back disable"
-    /= link_to "next", "#", :class => "next"
-
   .description
-    p= raw "En <strong>Insignia</strong> desarrollamos <strong>aplicaciones web altamente interactivas</strong> utilizando <strong>metodolog&iacute;as &aacute;giles y tecnolog&iacute;as avanzadas</strong>. Nos especializamos en <strong>backend development</strong> utilizando <strong>Ruby on Rails</strong> y otras tecnolog&iacute;as web aunque, a trav&eacute;s de alianzas estrat&eacute;gicas, tenemos la capacidad para abordar<br /> <strong>trabajos de manera integral</strong> incluyendo consultor&iacute;a, frontend development y dise&ntilde;o."
+    p= raw textilize(TextSnippet.find('home-welcome').body)
 
 .cases
   h2.title2 CASOS DE &Eacute;XITO

@@ -1,11 +1,7 @@
 .page
   .contentleft
-    h2.title2 EMPLEO
-    p En INSIGNIA estamos continuamente en la búsqueda de profesionales con ansias de participar en grandes proyectos relacionado con el Desarrollo de Aplicaciones Web, con ganas de participar en el desarrollo de una empresa en crecimiento donde grandes retos se presentan día a día.
-
-    p Como miembro de nuestro equipo, tendrás la posibilidad de trabajar con la tecnología y la prácticas más avanzadas del desarrollo web: Ruby on Rails, Ruby, Behavior Driven Development, HTML, CSS, Javascript, Git, Pair programming, Metodologías Agiles, entre otras.
-
-    p.plus1 Si te gustaría trabajar en un lugar donde tu creatividad, proactividad y ganas de innovar sean enormemente valoradas, ¡entonces te necesitamos! Es exactamente lo que buscamos en los integrantes de nuestro equipo.
+    h2.title2= @main_text.title
+    = raw textilize(@main_text.body)
 
     = form_for @message, :url => job_path do |f|
       = f.label(:name){ 'Nombre<sup>*</sup>'.html_safe }
