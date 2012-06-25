@@ -1,7 +1,8 @@
 .page
   .contentleft
-    h2.title2= @main_text.title
-    = raw textilize(@main_text.body)
+    - @main_text.each do |t|
+      h2.title2= t.title.upcase
+      = raw textilize(t.body)
 
     = form_for @message, :url => job_path do |f|
       = f.label(:name){ 'Nombre<sup>*</sup>'.html_safe }
@@ -23,8 +24,6 @@
       =f.submit "ENVIAR", :class => "fsubmit"
 
   .sidebar
-    h3.title3 EL CAMINO
-    .sidebox
-      p Como primer paso envianos tu CV usando el formulario de esta página. No olvides incluir muestras de código y el detalle de proyectos que hayas realizado.
-      p Hay dos caminos principales, si ya tenés experiencia en desarrollo web, podrías pensar en incorporarte a nuestro staff, para ellos realizaríamos tres entrevistas donde evaluaremos tus diferentes capacidades.
-      p Si todavía no tenés la experiencia necesaria y luego de una entrevista inicial creemos que estás alineado con los perfiles que estamos buscando, podemos invitarte a participar en nuestros programas de incubación para convertirte en un excelente desarrollador de aplicaciones web como todos los demás integrantes de nuestro equipo.
+    - @side_text.each do |t|
+      h3.title3= t.title.upcase
+      .sidebox= raw textilize(t.body)

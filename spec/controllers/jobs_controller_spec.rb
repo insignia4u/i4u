@@ -7,7 +7,8 @@ describe JobsController do
       @text_snippet = mock_model(TextSnippet)
 
       Message.stub!(:new).and_return(@message)
-      TextSnippet.stub!(:find).and_return(@text_snippet)
+      controller.stub!(:load_texts).and_return(@text_snippet)
+      TextSnippet.stub!(:find)
     end
 
     it "generates an instance" do
@@ -17,7 +18,7 @@ describe JobsController do
     end
 
     it "finds texts" do
-      TextSnippet.should_receive(:find).with('job').and_return(@text_snippet)
+      controller.should_receive(:load_texts).with(['job']).and_return(@text_snippet)
       get :new
       assigns[:main_text].should == @text_snippet
     end
