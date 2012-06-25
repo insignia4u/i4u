@@ -1,20 +1,20 @@
 require 'spec_helper'
 
-describe PeopleController do
+describe ServicesController do
   describe "Inherited Resources" do
     before :each do
-      @people       = mock_model(Person)
+      @services     = mock_model(Service)
       @current_site = mock_model(Site)
 
       Site.stub!(:first).and_return(@current_site)
-      @current_site.stub!(:people).and_return(@people)
-      @people.stub!(:all).and_return(@people)
+      @current_site.stub!(:services).and_return(@services)
+      @services.stub!(:all).and_return(@services)
     end
 
     it "Begin Association" do
       Site.should_receive(:first).and_return(@current_site)
-      @current_site.should_receive(:people).and_return(@people)
-      @people.should_receive(:all).and_return(@people)
+      @current_site.should_receive(:services).and_return(@services)
+      @services.should_receive(:all).and_return(@services)
       get :index
       response.should be_success
     end

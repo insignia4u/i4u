@@ -7,7 +7,8 @@ I4u::Application.routes.draw do
     collection{ get :list }
   end
 
-  resources :people, :only => :index
+  resources :people,   :only => :index
+  resources :services, :only => :index
 
   match 'contact' => 'contacts#new',    :as => :new_contact, :via => :get
   match 'contact' => 'contacts#create', :as => :contact,     :via => :post

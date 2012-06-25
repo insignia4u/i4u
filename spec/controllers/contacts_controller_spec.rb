@@ -4,14 +4,23 @@ describe ContactsController do
   describe "Generate new instance" do
     before :each do
       @message = mock_model(Message)
+      @text_snippet = mock_model(TextSnippet)
 
       Message.stub!(:new).and_return(@message)
+      TextSnippet.stub!(:find).and_return(@text_snippet)
     end
 
     it "generates an instance" do
       Message.should_receive(:new).and_return(@message)
+      TextSnippet.should_receive(:find).with('contact').and_return(@text_snippet)
       get :new
       response.should be_success
+    end
+
+    it "finds texts" do
+      TextSnippet.should_receive(:find).with('contact').and_return(@text_snippet)
+      get :new
+      assigns[:main_text].should == @text_snippet
     end
   end
 

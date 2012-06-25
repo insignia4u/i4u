@@ -1,0 +1,57 @@
+.page
+  .contentleft
+    h2.title2 NUESTROS SERVICIOS
+    h3.titlenomargin Desarrollo de Sitios Altamente Interactivos
+
+    p
+      strong.strongtitle Desarrollo Backend:
+      | Disponemos de los recursos y la experiencia necesarios para tomar su idea, darle forma, y potenciarla a fin de producir un sitio web profesional basado en las tecnologías más avanzadas.
+
+    p Nos especializamos en desarrollo ágil de sitios altamente interactivos construidos sobre Ruby on Rails, debidamente testeados con Cucumber y Rspec, y soportados con las tecnologías más avanzadas.
+
+    p
+      strong.strongtitle Desarrollo Mobile:
+      | nos especializamos en el desarrollo de aplicaciones de productividad construídas sobre la tecnología más avanzada web para mobiles (HTML5, CSS3, JavaScript Frameworks, etc).
+
+    p
+      strong.strongtitle Desarrollo Frontend:
+      | nos encargamos de la implementación de un diseño visual en código HTML. Siempre enfocados en la calidad del código, ofrecemos un producto validado, de acuerdo a los estándares, capaz de ser visualizado en los navegadores y dispositivos más utilizados.
+
+    p
+      strong.strongtitle Programas de Retainer para Aplicaciones basadas en Ruby on Rails:
+      | Mantenemos su sitio en vivo corriendo de manera estable y actualizada. Podemos brindar respuesta rápida a cualquier falla crítica que impida el correcto funcionamiento de la aplicación.
+
+    p Según las necesidades surgidas, también podemos encarar pequeños proyectos para añadir nuevas funcionalidades y mejoras que su sitio pudiera necesitar.
+
+    p
+      strong.strongtitle Revisiones de Código:
+      | El código fuente siempre se puede mejorar. Evaluamos el código fuente de su aplicación para asegurar que el mismo sigue los standards y las best practices más utilizadas. Nuestro objetivo es mantener la aplicación corriendo con un código fuente más claro, legible y escalable.
+
+    p
+      strong.strongtitle Escalabilidad de Sitios de Alto Tráfico:
+      | Escalar un sitio de alto tráfico puede ser una tarea monumental cuando no se tiene claro el camino que se debe seguir. Nos especializamos en asesorar y administrar estas transiciones de una manera simple y cómoda. Nos ocupamos de la totalidad del proceso, desde las optimizaciones necesarias hasta la migración completa del mismo.
+
+    h2.title2 NUESTRO PROCESO
+    p Nuestro proceso productivo está orientado a proveer a nuestros clientes soluciones de gran calidad, logradas con las tecnologías más modernas disponibles y debidamente testeadas para garantizar su correcto funcionamiento.
+
+    p Esto se logra con la implementación de las siguientes etapas:
+    ul.services
+      - @services.each_with_index do |s, index|
+        li
+          div= image_tag s.image.url(:thumb)
+          div.detail
+            h3.title3= "#{index + 1}. #{s.title}"
+            p= s.summary
+
+  .sidebar
+    h3.title3 &iquest;C&Oacute;MO LO HACEMOS?
+    div.sidebox
+      p Sin complicaciones, sin burocracia. Generamos código de gran calidad. La mantenibilidad y testeabilidad del mismo son nuestros objetivos principales en todo proyecto de software. Utilizamos Behaviour Driven Development para entregar resultados 100% testeados.
+
+      p Creemos en todas las bondades que las metodologías ágiles pueden aportarle a un proyecto de software, es por esto que tratamos de implementar sus prácticas y postulados en todos y cada uno de nuestros proyectos.
+
+      p Tenemos experiencia en la integración con APIs de terceros para crear aplicaciones web 2.0, y en el desarrollo de aplicaciones Facebook.
+
+    h3.title3 NUESTRAS CAPACIDADES
+    .sidebox
+      p Nuestra oferta de servicios está fundada sobre la solidez y profesionalismo de un equipo interdisciplinario compuesto por apasionados desarrolladores web. Nos enorgullece decir que nuestra firma dispone de un equipo de desarrollo de clase mundial el cual es capaz de enfrentar cualquier desafío que su negocio pudiese necesitar, desde encarar tanto proyectos nuevos como mantener existentes hasta escalar sitios de alta tráfico a sistema de hosting en nube.

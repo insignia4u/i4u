@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120622180817) do
+ActiveRecord::Schema.define(:version => 20120625152951) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -118,6 +118,20 @@ ActiveRecord::Schema.define(:version => 20120622180817) do
   end
 
   add_index "projects", ["slug"], :name => "index_projects_on_slug", :unique => true
+
+  create_table "services", :force => true do |t|
+    t.integer  "site_id"
+    t.string   "title"
+    t.text     "summary"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "services", ["site_id"], :name => "index_services_on_site_id"
 
   create_table "site_sections", :force => true do |t|
     t.integer  "site_id"

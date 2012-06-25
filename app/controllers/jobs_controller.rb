@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 
   def new
-    @message = Message.new
+    @message   = Message.new
     @main_text = TextSnippet.find('job')
   end
 

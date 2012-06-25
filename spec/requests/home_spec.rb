@@ -5,6 +5,7 @@ describe 'visiting the homepage' do
     before :each do
       @site    = FactoryGirl.create(:site)
       @project = FactoryGirl.create(:project, :site => @site)
+      @text    = FactoryGirl.create(:text_snippet, :name => 'Home Welcome')
     end
 
     context "Listing proejcts" do
@@ -12,6 +13,13 @@ describe 'visiting the homepage' do
         visit root_path
         page.should have_content(@project.name)
         page.should have_content(@project.summary)
+      end
+    end
+
+    context "Listing texts" do
+      it "Displays texts" do
+        visit root_path
+        page.should have_content(@text.body)
       end
     end
 
