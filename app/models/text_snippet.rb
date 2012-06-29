@@ -6,7 +6,6 @@ class TextSnippet < ActiveRecord::Base
   attr_accessible :body, :name, :title, :site_id
 
   validates :name, presence: true
-  validates :body, presence: true
 
   friendly_id :name, use: [:slugged, :history]
 end

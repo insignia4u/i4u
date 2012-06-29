@@ -52,7 +52,7 @@ module Insignia
         project = Project.create(
           site:           sites.sample,
           name:           Faker::Name.name,
-          summary:        Faker::Lorem.sentences(5),
+          summary:        Faker::Lorem.sentences(5).join("\n"),
           description:    Faker::Lorem.sentences.join("\n"),
           url:            "http://www.#{Faker::Internet.domain_name}",
           image:          image_1,

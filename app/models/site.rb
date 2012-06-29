@@ -8,6 +8,7 @@ class Site < ActiveRecord::Base
   has_many :projects
   has_many :people
   has_many :services
+  has_many :text_snippets
 
   scope :live,   where( live: true )
   scope :hidden, where( live: false )

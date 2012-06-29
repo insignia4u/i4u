@@ -27,9 +27,9 @@ puts "Done."
 puts "Creating Text Snippet..."
 
 Site.all.each do |site|
-  ['Home Welcome', 'Contact', 'Job', 'How we do it', 'Our Capabilities', 'Our Services'
+  ['Home Welcome', 'Contact', 'Job', 'How we do it', 'Our Capabilities', 'Our Services',
     'Our Process', 'The Road', 'Who we are', 'Company'].each do |ts|
-    TextSnippet.create!(name: st, body: "")
+    site.text_snippets.create!(name: ts, body: "")
   end
 end
 
