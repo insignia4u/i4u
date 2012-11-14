@@ -1,0 +1,120 @@
+/* settings */
+$firstColor: #FDFDFD;
+$secondColor: #E2017C;
+$thirdColor: #929292;
+/* -------- */
+
+@media only screen and (max-width: 767px) {
+	article{
+		img{
+			height: auto!important;
+		}
+		p{ text-align: justify; }
+	}
+	.img-grid{
+		img{
+			display: block!important;
+			margin: auto!important;
+		}
+	}
+	.four.columns.last{ right: auto!important; }
+}
+/* Landscape Orientation */
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+	img.twelve.columns{ width: 100%!important; height: auto!important; }
+	.img-grid{
+		height: auto;
+		width: 90%;
+		overflow: hidden;
+		margin: auto;
+		img{
+			float: left;
+			height: auto!important;
+			margin: auto!important;
+		}
+	}
+	article.box{
+		width: 100%!important;
+		li{ border-bottom: 2px dotted $thirdColor; }
+		.description{
+			float: left;
+			width: auto!important;
+		}
+	}
+}
+
+article{
+	margin-bottom: 30px;
+	margin-right: 34px;
+	border:0px;
+	height: auto;
+	background: none;
+	img{
+		width: 610px;
+		height: 404px;
+	}
+	p.img-desc{
+		background: #E5E5E5;
+		padding: 5px;
+		padding-left: 10px;
+		margin-bottom: 15px;
+	}
+}
+.box{
+	margin-bottom: 15px;
+	min-height: 160px;
+	.description{
+		top:0px;
+	}
+}
+.img-grid{
+	margin-left: -20px;
+	margin-bottom: 30px;
+	img{
+		display: inline-block;
+		width: 195px;
+		height: 180px;
+		margin: 20px 0px 0px 20px;
+		border: 1px solid  #E5E5E5;  
+	}
+}
+.info-staff{
+	padding: 15px;
+	background: white;
+	border: 1px solid  #E5E5E5;
+	list-style: none;
+	p{
+		margin-bottom: 10px;
+	}
+	p.name{	
+		font-weight: bold;
+		margin-bottom: -5px;
+	}
+	p.name, p.work{	color:#19375B; }
+	img{
+		height: 73px;
+		width: 70px;
+		float:left;
+		margin-right: 15px;
+		border: 1px solid  #E5E5E5;
+	}
+	.description{
+		float: right;
+		width: 150px;
+		top:0px;
+		padding: 0px;
+		margin-bottom: 0px;	
+		display: none;
+	}
+	li{	
+		border-bottom: 3px dotted $thirdColor;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		overflow: auto;
+	}
+	li.last{
+			border-bottom: 0px;
+			margin-bottom: 0px;
+	}
+}
+li:hover .description{ display: block; }

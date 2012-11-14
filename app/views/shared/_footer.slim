@@ -1,40 +1,24 @@
-ul
-  li.first
-    h2.title2 CONTACTO
-    p
-      | Lamadrid 318, Piso 4 - Depto. A
-      br/
-      | San Miguel de Tucum&aacute;n
-      br/
-      | Tucum&aacute;n, Argentina
-
-    p
-      | T: +54 (381) 420-7387
-      br/
-      | M: contacto@insignia4u.com
-
-  li.col
-    h2.title2 NEWSLETTER
-    p
-      | Suscribite a nuestro newsletter
-      br/
-      | y recib&iacute; informaci&oacute;n sobre nuestra
-      br/
-      | empresa peri&oacute;dicamente en tu e-mail.>
-    form
-      input class="ctext" type="text"
-      input class="btn" type="submit" value="ENVIAR"
-
-
-  li.col
-    h2.title2 M&Aacute;S SOBRE INSIGNIA
-
-    ul.social
-      li.tw= link_to "twitter", "https://twitter.com/insignia4u", :target => "_blank"
-      li.fb= link_to "facebook", "https://www.facebook.com/insignia4u", :target => "_blank"
-
-    ul.lang
-      li.es= link_to "Espa&ntilde;ol", "#"
-      li.en= link_to "English", "#"
-
-= link_to "ABRA", "#", :class => "by"
+footer.back-gradient
+	span.foot-deco
+	.row
+		.three.columns
+			h4 contacto
+			p Lamadrid 318, Piso 4 - Depto. A
+			p San Miguel de Tucumán
+			p Tucumán, Argentina
+			br
+			p T: +54... 
+			p M: mail... 
+		.three.columns
+			h4 newsletter
+			p texto
+			form
+				input type="email"
+				input.button.tiny type="submit" value="Enviar"
+		.three.columns.last
+			h4 mas sobre insignia
+			.twelve.columns
+				a.twitter.icon href="#" Twitter
+				a.facebook.icon href="#" Facebook
+				a.spa.icon href="#" spa
+				a.eng.icon href="#" eng

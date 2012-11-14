@@ -1,49 +1,60 @@
-.contslider
-  .slider
-    ul
-      li= link_to image_tag asset_path("pc.png")
+- content_for :stylesheets do
+  = stylesheet_link_tag "slider"
 
-  .description
-    p= raw textilize(TextSnippet.find('home-welcome').body)
+.row
+  = render "shared/slider"
+.row
+  h4 casos de éxito 
+  a href="/"
+    article
+      = image_tag "client/burda.png", alt: "burda"
+      span
+      .description
+        b HOMER
+        p
+          | Homero Simpson fue un caso de exito de la empresa!
+  a href="/"
+    article
+      = image_tag "slider/demo2.jpg", alt: "caso"
+      
+      span
+      .description
+        p El contenido del elemento que es un ejemplo de otro caso de exito.
 
-.cases
-  h2.title2 CASOS DE &Eacute;XITO
-  ul
-    - @current_site.home_projects.each do |p|
-      li class='#{ first_resource(@current_site.home_projects, p) }'
-        .img
-          = link_to image_tag(p.image.url(:big)), project_path(p)
-          span= link_to "", project_path(p)
+  a href="/"
+    article.last
+      = image_tag "client/crafoxes.png", alt: "crafoxes"
+      
+      span
+      .description
+        p Un caso mas por si no te convences...
 
-        .info
-          h3.title3= p.name
-          = link_to p.url, p.url
-          p= p.summary
-
-ul.boxesinf
-  li.first
-    h2.title2 NOVEDADES
-    div.date 16/11/2011
-    div.subtitle DEL FREELANCING A LA EMPRESA
-    h3.title3 La historia de INSIGNIA
-    p
-      |El d&iacute;a 15 de noviembre participamos de la jornada de cierre anual del Tucum&aacute;n Valley con una presentaci&oacute;n en el marco de la serie de charlas denominadas "Como vender servicios tecnol&oacute;gicos al mundo (y no morir en el intento)" .
-      = link_to "> Ver m&aacute;s", "#", :class => "more"
-
-  li.submenu
-    h2.title2 TECNOLOGIAS
-    ul
-      - Technology.limit(4).each do |t|
-        li
-          = link_to("#") do
-            = t.name
-            span
-
-  li.submenu
-    h2.title2 METODOLOGIAS
-    ul
-      - Tool.limit(4).each do |t|
-        li
-          = link_to("#") do
-            = t.name
-            span
+.row.bottom
+  article.box.news
+    h3 novedades
+    .news-item
+      .published-at
+        | 16/11/2012
+      .title
+        | Del Freelancing a la Empresa
+      .highlighted
+        | La historia de Insignia
+      .description
+        p
+          | bla bla bla bla
+          a.more href="/pages/novedades.html" 
+            | > Ver mas...
+  article.box
+    h4 tecnologias
+    ul.technologies.info-list
+      li.highlighted
+        | > Ruby on Rails 
+      li
+        | Kohana (PHP)
+      li
+        | Desarrollo Blablabla
+  article.box.last
+    h4 metodologias
+    ul.methodologies.info-list
+      li Git
+      li Etc

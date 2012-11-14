@@ -1,0 +1,61 @@
+/* Small screens */
+@media only screen and (max-width: 767px) {
+	.columns.last{ width: 100%!important; right: auto; }
+}
+/* Landscape Orientation */
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+	.box{ width: 100%!important; }
+}
+
+/* settings */
+$firstColor: #FDFDFD;
+$secondColor: #E2017C;
+$thirdColor: #929292;
+/* -------- */
+
+h3{	
+	color:$secondColor;
+	font-weight: bold;
+	clear: both;
+	text-transform: uppercase;
+	}
+h4.second{ text-transform: none;	}
+ul.list{
+	list-style: none;
+	margin-bottom: 25px;
+	li{	border-bottom: 3px dotted $thirdColor; }
+	li.last{	border-bottom: 0px; }
+	.second{	margin-bottom: 0px;	}
+	p{ margin: 0px;	}
+	.client{	font-style: italic;	}
+	a{	
+		display: block;
+		color: $secondColor;
+		margin: 25px 0px;
+	}
+}
+li:hover{
+	h4.second{	color: #19375B;	}
+	p{	color: black;	}
+	p.client{	color: $thirdColor;	}
+}
+.button.large{	
+	float: left;
+	text-transform: none;
+	padding: 3px 12px;
+	width: auto!important;
+	font-weight: normal;    
+	font-size: 1.1em !important;
+}
+.box{
+	img{    
+		float: right;
+    height: 60px;
+    position: relative;
+    right: 10px;
+    top: -55px;
+    width: 80px;
+	}
+	p{	margin: 15px;	}
+	a{	color: $secondColor;	}
+}

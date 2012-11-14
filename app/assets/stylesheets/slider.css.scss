@@ -1,0 +1,49 @@
+@media only screen and (max-width: 767px) {
+	.orbit-wrapper{	display: none!important;	}
+}	 
+/* settings */
+$firstColor: #FDFDFD;
+/* -------- */
+
+.orbit-wrapper{    
+	margin-bottom: 20px;
+	height:405px!important;
+}
+
+span.right {
+	right: 335px!important;
+	height: 55px!important;
+	width: 17px!important;
+	background: url(asset-path("insignia-sprites.png",image)) -204px -59px!important;
+	background-size: auto!important;
+}
+
+span.left {
+	height: 57px!important;
+	width: 17px!important;
+	background: url(asset-path("insignia-sprites.png",image)) -179px 56px!important;
+	background-size: auto!important;
+}
+span.right:hover{	background-position: -204px 0px!important;	}
+span.left:hover{	background-position: -179px 0px!important;	}
+#featured-content{
+	visibility: hidden;
+	img{
+		background: #fdfdfd;
+		height: 405px;
+		width: 410px;
+		margin-left: 90px;
+	}
+	.data{
+		background: $firstColor;
+		float: right;
+		min-height: 380px;
+		height: auto;
+		width: 290px;
+		font-weight: 300;
+		font-size: 23px;
+		line-height: 27px;
+		padding-left: 14px;
+		b{ font-weight: 600; } 
+	}
+}

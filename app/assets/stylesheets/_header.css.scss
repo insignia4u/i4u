@@ -1,0 +1,108 @@
+@media only screen and (max-width: 767px) {
+	header{
+		padding-bottom: 0px;
+		padding-top: 0px;
+		height: 150px;
+		overflow: hidden;  
+		.icon{	display: none;	}
+		.logo{
+			background-position: center!important;
+		  text-align: center;
+		  position: relative;
+		  top: -20px;
+		}
+		ul{
+			position: fixed!important;
+			height: 15%!important;
+			background: white;
+			box-shadow: 0px 0px 10px black;
+			z-index: 999;
+			padding-bottom: 0px;
+		}
+		.block-grid.three-up > li {
+			width: 33.33%!important;
+			border: 1px solid #EFEFEF;
+			height: 50%;
+			padding-bottom: 5%;
+	  	padding-top: 10px!important;
+	  	text-align: center;
+		}
+		.row .four {
+			width: 30.333%;
+		}
+	}
+}
+
+/* Landscape Orientation */
+@media screen and (max-width: 767px) and (orientation: landscape) { 
+	header{
+		ul.block-grid.three-up {
+			height: 15%!important;
+			width: 100%!important;
+			top:85%!important;
+		}
+		.block-grid.three-up > li {
+			height: 100%!important;
+			width: 16.66%!important;
+		}
+	}
+}
+header{
+	background: url(asset-path("top-deco.png",image)) 0px -10px no-repeat;
+	min-height: 100px;
+	padding-top: 90px;
+	padding-bottom: 50px;
+	.block-grid.three-up {
+		margin: 1px -25px;
+	}
+	.logo{
+		display: block;
+		margin-top: -10px;
+		margin-bottom: 20px;
+		background: url(asset-path("logo-insignia.png", image)) no-repeat;
+		height: 50px;
+	  h1{  
+	 		overflow: hidden; 		
+			a{
+				position: relative;
+		 		top: -47px;
+		 		padding-bottom: 40px;
+		 		padding-right: 140px;
+			}
+		}
+		a:hover{	color: transparent;	}
+	}
+	ul{	
+		padding-left: 5px!important;
+		line-height: 1;
+		top: -6px;
+	 }
+	 .block-grid.three-up > li {
+	 		width: 27.33%;
+			padding: 0 12px 8px;
+		}
+	a, a:visited{	color: #ccb2b3;	text-transform: uppercase;	font-weight: 500; font-size: 15px; }
+	a:hover, .actual{ color: #a3a3a3; }
+
+}
+.icon{
+	float:right;
+	margin-left: 2px;
+	width: 38px;
+	height: 37px;
+	overflow: hidden;
+	font-size: 0px;
+}
+.twitter{
+	background: url(asset-path("insignia-sprites.png",image)) -43px -37px no-repeat;
+}
+.facebook{
+	background: url(asset-path("insignia-sprites.png",image)) 0px -36px no-repeat;
+}
+a:hover.twitter{
+	background-position: -43px -74px;
+}
+a:hover.facebook{
+	background-position: 0px -73px;
+}
+
