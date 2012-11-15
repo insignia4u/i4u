@@ -1,40 +1,44 @@
-.page
-  .contentleft
-    h2.title2= @main_text.title.upcase
-    p= raw textilize(@main_text.body)
+- content_for :stylesheets do
+  = stylesheet_link_tag "pages/contacto"
 
-    = form_for @message, :url => contact_path do |f|
-      = f.label(:name){ 'Nombre<sup>*</sup>'.html_safe }
-      = f.text_field :name, :class => "ctext"
+.row
+  .eight.columns
 
-      = f.label(:email){ 'Email<sup>*</sup>'.html_safe }
-      = f.text_field :email, :class => "ctext"
+    h3 Contacto
+    p
+      | "What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun.
 
-      = f.label(:body){ 'Comentarios<sup>*</sup>'.html_safe }
-      = f.text_area :body
+    form
+      label Nombre*
+      input type="text"
+      label Email*
+      input type="email"
+      label Asunto*
+      input type="text"
+      label Mensaje*
+      textarea cols="50" rows="6"
+      p * campos obligatorios
+      .files
+        ul
+          li
+            = image_tag "other/clip.png"
+            p  
+              b nombre del archivo
+              a.more href="#" eliminar
+        a href="#" Adjuntar archivos >>
+      input.button type="submit" value="Enviar"
 
-      .formmessage * Campos obligatorios
-
-      .adj
-        | Adjuntar archivo * >>
+  .four.columns.last
+    article.box
+      h4 Ubicacion
+      .methodologies
+        = image_tag "other/google-maps.png"
+    article.box.last
+      h4 Datos de contacto
+      .methodologies
+        p Lamadrid 318, Piso 4 - Depto. A
+        p San Miguel de Tucumán
+        p Tucumán, Argentina
         br
-        = f.file_field :file
-
-      =f.submit "ENVIAR", :class => "fsubmit"
-
-  .sidebar
-    h3.title3 UBICACI&Oacute;N
-    .sidemap= image_tag asset_path("map.jpg")
-
-    h3.title3 DATOS DE CONTACTO
-    .sidebox
-      p
-        | Lamadrid 318, Piso 4 Depto A
-        br
-        | San Miguel de Tucumán, 4000
-        br
-        | Tucumán, Argentina
-        br
-        | T: +54 (381) 420-7387
-        br
-        | M: contacto@insignia4u.com
+        p T: +54... 
+        p M: mail...
