@@ -1,39 +1,50 @@
-h2.title2p PROYECTOS DESTACADOS
-.contslider.portfolio
-  .slider
-    ul
-      - @projects.each do |fp|
-        li
-          = image_tag fp.featured_image.url(:big)
-          .description
-            h3= fp.name
-            p.link= fp.url.gsub!(/^(http|https):\/\//, "")
-            p= fp.description
+- content_for :stylesheets do
+  = stylesheet_link_tag "slider"
+  = stylesheet_link_tag "slider-portfolio" 
+  = stylesheet_link_tag "pages/portfolio" 
+.row 
+  h3.title Proyectos Destacados
+  #featured-content
+    div
+      = image_tag "slider/caso.png"
+      .data
+        | Ejemplo 1
+    div
+      = image_tag "slider/slide.png"
+      .data
+        | Ejemplo 2
+    div
+      = image_tag "slider/demo2.jpg"
+      .data
+        | Ejemplo 3
+.row
+  h4.title Otros trabajos
+  h4.title.title-mobile Nuestros trabajos
+  = image_tag "other/pdf.png", class: 'one columns pdf'
+  p.seven.columns 
+    | Indeed, a jolly little clown came walking toward them, and Dorothy could see that in spite of his pretty clothes of red and yellow and green he was completely
+  a.button.large href="portfolio-listado.html" Listado completo de trabajos
+.row
+  h4.title Ultimos trabajos 
+  h4.title.title-mobile Ultimos trabajos  
+  a href="/"
+    article
+      = image_tag "client/burda.png"
+      span
+      .description
+        b HOMER
+        p 
+          | Homero Simpson fue un caso de exito de la empresa!
+  a href="/"
+    article
+      = image_tag "slider/demo2.jpg"
+      span
+      .description
+        p El contenido del elemento que es un ejemplo de otro caso de exito.
 
-            p.small USA | Red social | Backend | Ruby on Rails | Integración con Paypal | Integración con Facebook
-
-.other
-  h2.title2 OTROS TRABAJOS
-  =link_to "LISTADO COMPLETO DE TRABAJOS", list_projects_path, :class => "listall"
-  .pdf
-    p
-      strong Descargá
-      | un portfolio con nuestros trabajos destacados en formato 
-      strong PDF 
-      | haciendo #{ link_to "click aquí", "#" }
-
-.cases.lastcases
-  h2.title2 ULTIMOS TRABAJOS
-  ul
-    - @projects.limit(3).each do |p|
-      li class='#{ first_resource(@current_site.home_projects, p) }'
-        .img
-          = link_to image_tag(p.image.url(:big)), project_path(p)
-          span= link_to "", project_path(p)
-
-        .info
-          h3.title3= p.name
-          = link_to p.url, p.url
-          p
-            = p.summary
-            em Desarrollado para Area 17
+  a href="/"
+    article.last
+      = image_tag "client/crafoxes.png"
+      span
+      .description
+        p Un caso mas por si no te convences...
