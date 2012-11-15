@@ -1,18 +1,80 @@
-.page
-  .contentleft
-    - @main_text.each do |t|
-      h2.title2= t.title.upcase
-      = raw textilize(t.body)
+- content_for :stylesheets do
+  = stylesheet_link_tag "pages/servicios"
 
-    ul.services
-      - @services.each_with_index do |s, index|
-        li
-          div= image_tag s.image.url(:thumb)
-          div.detail
-            h3.title3= "#{index + 1}. #{s.title}"
-            p= s.summary
+.row
+  .eight.columns
 
-  .sidebar
-    - @side_text.each do |t|
-      h3.title3= t.title.upcase
-      .sidebox= raw textilize(t.body)
+    h3 Nuestros servicios
+    h4.second Desarrollo de Sitios Altamente Interactivos
+    article.twelve.columns.box.news
+      .news-item
+        .highlighted
+          p La historia de Insignia
+        .description
+          p
+            | "What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the |sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun.
+    
+    article.twelve.columns.box.news
+      .news-item
+        .highlighted
+          p La historia de Insignia
+        .description
+          p
+            | The first day's journey was through the green fields and bright flowers that stretched about the Emerald City on every side.  They slept that night on the grass, with nothing but the stars over them; and they rested very well indeed.
+
+          p
+            |In the morning they traveled on until they came to a thick wood.  There was no way of going around it, for it seemed to extend to the right and left as far as they could see; and, besides, they did not dare change the direction of their journey for fear of getting lost.  So they looked for the place where it would be easiest to get into the forest.
+
+    article.twelve.columns.box.news
+      .news-item
+        .highlighted
+          p La historia de Insignia
+        .description
+          p
+            | "Look here, Hare-Lip, you believe in lots of things you can't see." Hare-Lip shook his head. "You believe in dead men walking about. You never seen one dead man walk  about." "I tell you I seen 'em, last winter, when I was wolf-hunting with dad." "Well, you always spit when you cross running water," Edwin challenged. "That's to keep off bad luck," was Hare-Lip's defence. "You believe in bad luck?" "Sure." "An' you ain't never seen bad luck," Edwin concluded triumphantly.  "You're just as bad as Granser and his germs. You believe in what you  don't see. Go on,
+
+    h3 Nuestro Proceso
+    article
+      = image_tag "other/planificacion.png"
+      span
+      .description
+        b HOMER
+        p 
+          | Homero Simpson fue un caso de exito de la empresa!
+    article
+      = image_tag "other/codificacion.png"
+      span
+      .description
+        p El contenido del elemento que es un ejemplo de otro caso de exito.
+
+    article
+      = image_tag "other/planificacion.png"
+      span
+      .description
+        p Un caso mas por si no te convences...
+
+  .four.columns.last
+    article.box
+      h4 ¿Cómo lo hacemos?
+      .methodologies
+        p
+          |"What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound |came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun.
+
+        p
+          |The fighting was beginning.  Almost immediately unseen batteries across the river to our right, unseen because of |the trees, took up the chorus, firing heavily one after the other.  A woman screamed. Everyone stood arrested by |the sudden stir of battle, near us and yet invisible to us.  Nothing was to be seen save flat meadows, cows |feeding unconcernedly for the most part, and silvery pollard willows motionless in the warm sunlight.
+
+        p
+          |"The sojers'll stop 'em," said a woman beside  me, doubtfully.  A haziness rose over the treetops.
+    
+    article.box
+      h4 nuestras capacidades
+      .methodologies
+        p
+          |"What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound |came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun.
+
+        p
+          |The fighting was beginning.  Almost immediately unseen batteries across the river to our right, unseen because of |the trees, took up the chorus, firing heavily one after the other.  A woman screamed. Everyone stood arrested by |the sudden stir of battle, near us and yet invisible to us.  Nothing was to be seen save flat meadows, cows |feeding unconcernedly for the most part, and silvery pollard willows motionless in the warm sunlight.
+
+        p
+          |"The sojers'll stop 'em," said a woman beside me, doubtfully.  A haziness rose over the treetops.
+    
