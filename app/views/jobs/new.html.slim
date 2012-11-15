@@ -1,29 +1,42 @@
-.page
-  .contentleft
-    - @main_text.each do |t|
-      h2.title2= t.title.upcase
-      = raw textilize(t.body)
+- content_for :stylesheets do
+  = stylesheet_link_tag "pages/contacto"
+  = stylesheet_link_tag "pages/empleo"
 
-    = form_for @message, :url => job_path do |f|
-      = f.label(:name){ 'Nombre<sup>*</sup>'.html_safe }
-      = f.text_field :name, :class => "ctext"
+.row
+  .eight.columns
 
-      = f.label(:email){ 'Email<sup>*</sup>'.html_safe }
-      = f.text_field :email, :class => "ctext"
+    h3 Empleo
+    p
+      | "What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun.
+    p
+      | "Quitting the pump at last, with the rest of his band, the Lakeman went forward all panting, and sat himself down on the windlass; his face fiery red, his eyes bloodshot, and wiping the profuse sweat from his brow. Now what cozening fiend it was, gentlemen, that possessed Radney to meddle with such a man in that corporeally exasperated state, I know not; but so it happened. Intolerably striding along the deck, the mate commanded him to get a broom and sweep down the planks, and also a shovel, and remove some offensive matters consequent upon allowing a pig to run at large.
+    p.principal
+      | Fix, who had followed Mr. Fogg to the station, and saw that he was really going to leave Bombay, was there, upon the platform.  He had resolved to follow the supposed robber to Calcutta, and farther, if necessary.  Passepartout did not observe the detective, who stood in an obscure corner; but Fix heard him relate his adventures in a few words to Mr. Fogg.
+    form
+      label Nombre*
+      input type="text"
+      label Email*
+      input type="email"
+      label Comentarios
+      textarea cols="50" rows="6"
+      p * campos obligatorios
+      .files
+        ul
+          li
+            = image_tag "other/clip.png"
+            p  
+              b nombre del archivo
+              a.more href="#" eliminar
+        a href="#" Adjuntar CV* >>
+      input.button type="submit" value="Enviar"
 
-      = f.label(:body){ 'Comentarios<sup>*</sup>'.html_safe }
-      = f.text_area :body
-
-      .formmessage * Campos obligatorios
-
-      .adj
-        | Adjuntar archivo * >>
-        br
-        = f.file_field :file
-
-      =f.submit "ENVIAR", :class => "fsubmit"
-
-  .sidebar
-    - @side_text.each do |t|
-      h3.title3= t.title.upcase
-      .sidebox= raw textilize(t.body)
+  .four.columns.last
+    article.box
+      h4 El camino
+      .methodologies
+        p
+          | "What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun.
+        p 
+          | "Quitting the pump at last, with the rest of his band, the Lakeman went forward all panting, and sat himself down on the windlass; his face fiery red, his eyes bloodshot, and wiping the profuse sweat from his brow. Now what cozening fiend it was, gentlemen, that possessed Radney to meddle with such a man in that corporeally exasperated state, I know not; but so it happened. Intolerably striding along the deck, the mate commanded him to get a broom and sweep down the planks, and also a shovel, and remove some offensive matters consequent upon allowing a pig to run at large.
+        p
+          | Fix, who had followed Mr. Fogg to the station, and saw that he was really going to leave Bombay, was there, upon the platform.  He had resolved to follow the supposed robber to Calcutta, and farther, if necessary.  Passepartout did not observe the detective, who stood in an obscure corner; but Fix heard him relate his adventures in a few words to Mr. Fogg.
