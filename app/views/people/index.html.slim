@@ -1,20 +1,99 @@
-.page
-  .contentleft
-    - @main_text.each do |t|
-      h2.title2= t.title.upcase
-      = raw textilize(t.body)
+- content_for :stylesheets do
+  = stylesheet_link_tag "pages/nosotros"
 
-    / =image_tag asset_path("grupo.jpg")
-    / .ep Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+.row
+  .eight.columns
 
-  .sidebar
-    h3.title3 STAFF
-    .sidebox
-      ul.list
-        - @people.each do |p|
-          li class='#{ last_resource(@people, p) }'
-            .profile
-              h4= p.full_name
-              .pro= p.title.name
-              p= p.bio
-            = image_tag p.photo.url(:thumb)
+    h4.title Quienes somos
+    article.twelve.columns
+      .news-item
+        = image_tag "staff/nosotros.jpg", class: "twelve columns"
+        p.img-desc
+          | "But you are so beautiful," she continued, "that I am sure I could love you dearly. 
+        .description
+          p
+            | The players all played at once without waiting for turns, quarrelling  all the while, and fighting for the hedgehogs; and in a very short  time the Queen was in a furious passion, and went stamping about, and  shouting 'Off with his head!' or 'Off with her head!' about once in a  minute.
+
+          p 
+            | Alice began to feel very uneasy: to be sure, she had not as yet had any  dispute with the Queen, but she knew that it might happen any minute,  'and then,' thought she, 'what would become of me? They're dreadfully  fond of beheading people here; the great wonder is, that there's any one  left alive!'
+
+          p 
+            |She was looking about for some way of escape, and wondering whether she  could get away without being seen, when she noticed a curious appearance  in the air: it puzzled her very much at first, but, after watching it  a minute or two, she made it out to be a grin, and she said to herself  'It's the Cheshire Cat: now I shall have somebody to talk to.'
+
+    h4.second Nuestra politica de calidad
+    article.twelve.columns
+      .news-item
+        .description
+          p
+            | Indeed, a jolly little clown came walking toward them, and Dorothy could see that in spite of his pretty clothes of red and yellow and green he was completely covered with cracks, running every which way and showing plainly that he had been mended in many places. The Clown put his hands in his pockets, and after puffing out his cheeks and nodding his head at them saucily, he said:  "Be quiet, sir!" said the Princess.  "Can't you see these are strangers, and should be treated with respect?" "Well, that's respect, I expect," declared the Clown, and immediately stood upon his head. "Don't mind Mr. Joker," said the Princess to Dorothy.  "He is considerably cracked in his head, and that makes him foolish." "Oh, I don't mind him a bit," said Dorothy.  "But you are so beautiful," she continued, "that I am sure I could love you dearly. Won't you let me carry you back to Kansas, and stand you on Aunt Em's mantel?  I could carry you in my basket." "That would make me very unhappy," answered the china Princess.
+        .img-grid
+          = image_tag "other/quienes_somos.jpg"
+          = image_tag "slider/demo2.jpg"
+          = image_tag "slider/demo3.jpeg"
+          = image_tag "slider/homero_simpson.jpg"
+          = image_tag "slider/demo2.jpg"
+          = image_tag "slider/demo3.jpeg"
+
+    h4.second Nuestra mision
+    article.twelve.columns
+      .news-item
+        .description
+          p
+            | The players all played at once without waiting for turns, quarrelling  all the while, and fighting for the hedgehogs; and in a very short  time the Queen was in a furious passion, and went stamping about, and  shouting 'Off with his head!' or 'Off with her head!' about once in a  minute.
+
+    h4.second Nuestra vision
+    article.twelve.columns
+      .news-item
+        .description
+          p
+            | The players all played at once without waiting for turns, quarrelling  all the while, and fighting for the hedgehogs; and in a very short  time the Queen was in a furious passion, and went stamping about, and  shouting 'Off with his head!' or 'Off with her head!' about once in a  minute.
+
+    h4.second Nuestros valores
+    article.twelve.columns
+      .news-item
+        .description
+          p
+            | The players all played at once without waiting for turns, quarrelling  all the while, and fighting for the hedgehogs; and in a very short  time the Queen was in a furious passion, and went stamping about, and  shouting 'Off with his head!' or 'Off with her head!' about once in a  minute.
+
+  .four.columns.last
+    article.box
+      h4 staff
+      ul.info-staff
+        li
+          = image_tag "staff/carlos.jpg"
+          p.name
+            | Carlos
+          p.work
+            | Partner
+          p.description
+            | Un verdadero lider...
+
+        li
+          = image_tag "slider/homero_simpson.jpg"
+          p.name
+            | Carlos
+          p.work
+            | Partner
+          p.description
+            | Un verdadero lider...
+            | Un verdadero lider...
+            | Un verdadero lider...
+            | Un verdadero lider...
+
+        li
+          = image_tag "slider/homero_simpson.jpg"
+          p.name
+            | Carlos
+          p.work
+            | Partner
+          p.description
+            | Un verdadero lider...
+          
+        li.last
+          = image_tag "slider/homero_simpson.jpg"
+          p.name
+            | Carlos
+          p.work
+            | Partner
+          p.description
+            | Un verdadero lider...
