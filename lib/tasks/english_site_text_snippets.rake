@@ -13,7 +13,7 @@ namespace(:sites) do
       site.text_snippets.create!(name: "job",      title: "Join us")
       puts "*** > Complete!"
 
-      puts "*** > Footer Titles"
+      puts "\n*** > Footer Titles"
       site.text_snippets.create!(name: "subscribe",       title: "Newsletter")
       site.text_snippets.create!(name: "subscribe-text",
         title: "Subscribe to our Newsletter")
@@ -21,7 +21,7 @@ namespace(:sites) do
       site.text_snippets.create!(name: "more about us",   title: "More About Insignia")
       puts "*** > Complete!"
 
-      puts "*** > Homepage Modules Titles"
+      puts "\n*** > Homepage Modules Titles"
       site.text_snippets.create!(
         name: "successful projects", title: "Successful Projects"
       )
@@ -35,14 +35,18 @@ namespace(:sites) do
       site.text_snippets.create!(name: "latest news", title: "From the Blog")
       puts "*** > Complete!"
 
-      puts "*** > Site Snippets"
+      puts "\n*** > Site Snippets"
       site.text_snippets.create!(
         name: "contact-module", title: "Contact Us",
         body: "Complete this info!"
       )
       puts "*** > Complete!"
 
-      puts "Done!"
+      puts "\n*** > Project item Snippets"
+      site.text_snippets.create!(name: "more-info", title: "More info")
+      puts "*** > Complete!"
+
+      puts "\n\nDone!"
     end
   end
 end
