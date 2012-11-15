@@ -21,8 +21,11 @@ class Project < ActiveRecord::Base
   validates :name,                 presence: true, uniqueness: { scope: :site_id }
   validates :url,                  presence: true, format: { with: ValidFormats::URL }
 
-  has_attached_file :image, styles: {big: "267x220#", thumb: "234x230#", cms_thumb: "100x100#"}
-  has_attached_file :featured_image, styles: {big: "936x553#", cms_thumb: "100x100#"}
+  has_attached_file :image,
+    styles: { big: "277x250#", thumb: "234x230#", cms_thumb: "100x100#" }
+
+  has_attached_file :featured_image,
+    styles: { big: "936x553#", cms_thumb: "100x100#" }
 
   validates_attachment :image, presence: true,
     content_type: { content_type: ['image/jpeg', 'image/png'] }

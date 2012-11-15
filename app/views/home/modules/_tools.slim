@@ -1,0 +1,6 @@
+article.box.last
+  h4= title_for('tools')
+  ul.methodologies.info-list
+    - @tools.each do |tool|
+      li class=(highlight_if_first(@tools, tool))
+        = tool.name

@@ -3,35 +3,12 @@
 
 .row
   = render "shared/slider"
-.row
-  h4 casos de éxito 
-  a href="/"
-    article
-      = image_tag "client/burda.png", alt: "burda"
-      span
-      .description
-        b HOMER
-        p
-          | Homero Simpson fue un caso de exito de la empresa!
-  a href="/"
-    article
-      = image_tag "slider/demo2.jpg", alt: "caso"
-      
-      span
-      .description
-        p El contenido del elemento que es un ejemplo de otro caso de exito.
 
-  a href="/"
-    article.last
-      = image_tag "client/crafoxes.png", alt: "crafoxes"
-      
-      span
-      .description
-        p Un caso mas por si no te convences...
+= render "home/modules/featured_projects"
 
 .row.bottom
   article.box.news
-    h3 novedades
+    h3= title_for("latest-news")
     .news-item
       .published-at
         | 16/11/2012
@@ -44,17 +21,5 @@
           | bla bla bla bla
           a.more href="http://www.insignia4u-blog.com/" target="_blank"
             | > Ver mas...
-  article.box
-    h4 tecnologias
-    ul.technologies.info-list
-      li.highlighted
-        | > Ruby on Rails 
-      li
-        | Kohana (PHP)
-      li
-        | Desarrollo Blablabla
-  article.box.last
-    h4 metodologias
-    ul.methodologies.info-list
-      li Git
-      li Etc
+  = render "home/modules/technologies"
+  = render "home/modules/tools"
