@@ -2,7 +2,6 @@ class PeopleController < InheritedResources::Base
   actions :index
 
   def index
-    @main_text = load_texts(['who-we-are', 'company'])
     index!
   end
 

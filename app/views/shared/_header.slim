@@ -4,17 +4,18 @@ header.row
       a href="/" Insignia
   ul.four.columns.block-grid.three-up
     li
-      = link_to "nosotros", people_path
+      = link_to title_for("us"), people_path
     li
-      = link_to "servicios", services_path
+      = link_to title_for("services"), services_path
     li
-      = link_to "portfolio", projects_path
+      = link_to title_for("projects"), projects_path
     li
-      = link_to "contacto", new_contact_path
+      = link_to title_for("contact"), new_contact_path
     li
-      = link_to "empleo", new_job_path
+      = link_to title_for("job"), new_job_path
     li
-      a href="http://www.insignia4u-blog.com/" target="_blank" blog
+      a href="http://www.insignia4u-blog.com/" target="_blank"
+        = title_for("blog")
   .two.columns
-    a.facebook.icon href="#" Facebook
-    a.twitter.icon href="#" Twitter
+    = link_to_social_network('facebook')
+    = link_to_social_network('twitter')

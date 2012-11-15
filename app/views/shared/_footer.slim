@@ -1,24 +1,19 @@
 footer.back-gradient
-	span.foot-deco
-	.row
-		.three.columns
-			h4 contacto
-			p Lamadrid 318, Piso 4 - Depto. A
-			p San Miguel de Tucumán
-			p Tucumán, Argentina
-			br
-			p T: +54... 
-			p M: mail... 
-		.three.columns
-			h4 newsletter
-			p texto
-			form
-				input type="email"
-				input.button.tiny type="submit" value="Enviar"
-		.three.columns.last
-			h4 mas sobre insignia
-			.twelve.columns
-				a.twitter.icon href="#" Twitter
-				a.facebook.icon href="#" Facebook
-				a.spa.icon href="#" spa
-				a.eng.icon href="#" eng
+  span.foot-deco
+  .row
+    .three.columns
+      h4= snippet('contact-module').title
+      == textilize( snippet('contact-module').body )
+    .three.columns
+      h4= title_for('subscribe')
+      p= title_for('subscribe-text')
+      form
+        input type="email"
+        input.button.tiny type="submit" value=(title_for('subscribe-send'))
+    .three.columns.last
+      h4= title_for('more-about-us')
+      .twelve.columns
+        = link_to_social_network('facebook')
+        = link_to_social_network('twitter')
+        a.spa.icon href="#" spa
+        a.eng.icon href="#" eng

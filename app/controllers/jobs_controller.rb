@@ -2,8 +2,6 @@ class JobsController < ApplicationController
 
   def new
     @message   = Message.new
-    @main_text = load_texts(['job'])
-    @side_text = load_texts(['the-road'])
   end
 
   def create
