@@ -1,25 +1,38 @@
-.page
-  .contentleft
-    h2.title2 TODOS NUESTROS TRABAJOS
-    ul.listportfolio
-      - @projects.each do |p|
-        li class='#{ first_resource(@projects, p) }'
-          h3.title3= p.name
-          = link_to p.url, p.url, class: "link"
-          p
-            = p.summary
-            em Desarrollado para Area 17
-          = link_to "> Leer caso de &eacute;xito", project_path(p), class: "read"
-
-    = link_to "Volver al Portfolio", projects_path, class: "pback"
-
-  .sidebar
-    h3.title3 PORTFOLIO EN PDF
-    .sidebox
-      .sidepdf
+- content_for :stylesheets do
+  = stylesheet_link_tag "pages/portfolio"
+  = stylesheet_link_tag "pages/listado"
+.row
+  .eight.columns
+    h3 Todos nuestros trabajos
+    ul.list.nine.columns
+      li
+        h4.second Nombre
+        p direccion web
         p
-          strong Descargá
-          | un portfolio con nuestros trabajos destacados en formato 
-          strong PDF 
-          | haciendo #{ link_to "click aquí", "#" }
-        .pdf
+          |"What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun. 
+        p.client cliente
+        a href="#" >Leer caso de éxito
+      li
+        h4.second Nombre
+        p direccion web
+        p
+          |"What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun. 
+        p.client cliente
+        a href="#" >Leer caso de éxito
+      li.last
+        h4.second Nombre
+        p direccion web
+        p
+          |"What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun. 
+        p.client cliente
+        a href="#" >Leer caso de éxito
+        = link_to "< Volver al Portfolio", projects_path, class:'button large'
+
+  .four.columns.last
+    article.box
+      h4 Portfolio en PDF
+      = image_tag "other/pdf.png"
+      .methodologies
+        p
+          | "What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun. 
+          a href="#" click aquí

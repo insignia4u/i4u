@@ -4,7 +4,9 @@ I4u::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :projects, :path => :portfolio, :only => [:index, :show] do
-    collection{ get :list }
+    collection do
+      get :list
+    end
   end
 
   resources :people,   :only => :index
