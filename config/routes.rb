@@ -9,6 +9,9 @@ I4u::Application.routes.draw do
     end
   end
 
+  #FIXED IT: Hardcode root
+  match 'example_case' => 'projects#caso', via: 'get'
+
   resources :people,   :only => :index
   resources :services, :only => :index
 

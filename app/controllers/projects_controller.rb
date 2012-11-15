@@ -4,6 +4,10 @@ class ProjectsController < InheritedResources::Base
     index!
   end
 
+  def caso
+    render :show
+  end
+
   protected
 
   def begin_of_association_chain
