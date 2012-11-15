@@ -21,7 +21,11 @@ module ApplicationHelper
   end
 
   def link_to_social_network(rs)
-  content_tag(:a, rs.capitalize, href: "http://#{rs}.com/insignia4u",
+    content_tag(:a, rs.capitalize, href: "http://#{rs}.com/insignia4u",
       class: "#{rs} icon", target: "_blank")
+  end
+
+  def remove_protocol_from(url)
+    url.gsub(/(http|https):\/\//, "")
   end
 end

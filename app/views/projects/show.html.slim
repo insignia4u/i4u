@@ -5,29 +5,23 @@
 .row
   .eight.columns
   
-    h3 nombre
-    h4.second direccion
-    p
-      | Farther on towards Weybridge, just over the bridge, there were a number of men in white fatigue jackets throwing up a long rampart, and more guns behind.
+    h3= resource.name
+    h4.second= remove_protocol_from(resource.url)
+    p= resource.description
 
-    p
-      | "It's bows and arrows against the lightning, anyhow," said the artilleryman.  "They 'aven't seen that fire-beam yet."
-
-    p
-      | The officers who were not actively engaged stood and stared over the treetops southwestward, and the men digging would stop every now and again to stare in the same direction.
-
-    p
-      | Byfleet was in a tumult; people packing, and a score of hussars, some of them dismounted, some on horseback, were hunting them about. Three or four black government waggons, with crosses in white circles, and an old omnibus, among other vehicles, were being loaded in the village street.  There were scores of people, most of them sufficiently sabbatical to have assumed their best clothes.  The soldiers were having the greatest difficulty in making them realise the gravity of their position.  We saw one shrivelled old fellow with a huge box and a score or more of flower pots containing orchids, angrily expostulating with the corporal who would leave them behind. I stopped and gripped his arm.
+    == textilize( resource.extended_description )
 
   .four.columns.last
     article.box
       h4 Más información
       .methodologies
-        = image_tag "client/caso-exito.png"
+        = image_tag resource.image.url(:thumb)
+        - if false #Fix this later
+          ul
+            li
+              p.title Fecha de desarrollo
+              div.dates Noviembre 2011 - Mayo 2011
         ul
-          li
-            p.title Fecha de desarrollo
-            p Noviembre 2011 mayo 2011
           li
             p.title Lenguajes de programacion:
             ul
