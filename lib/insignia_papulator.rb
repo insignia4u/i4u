@@ -49,10 +49,10 @@ module Insignia
         image_1 = File.open(File.join(Rails.root, 'public', 'populate_images',("1".."20").to_a.sample + ".JPG"))
         image_2 = File.open(File.join(Rails.root, 'public', 'populate_images',("1".."20").to_a.sample + ".JPG"))
 
-        project = Project.create(
+        project = Project.create!(
           site:           sites.sample,
           name:           Faker::Name.name,
-          summary:        Faker::Lorem.sentences(5).join("\n"),
+          summary:        "A short summary of 120 characters",
           description:    Faker::Lorem.sentences.join("\n"),
           url:            "http://www.#{Faker::Internet.domain_name}",
           image:          image_1,
