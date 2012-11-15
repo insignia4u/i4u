@@ -43,6 +43,7 @@ h4.second{
 		margin-left: 22px;
 	}
 	p{	margin: 15px;	}
+
 	ul{
 		p{
 			margin-bottom: 0px;
@@ -50,6 +51,9 @@ h4.second{
 		li{
 			margin-top: 0px;
 			margin-left: 15px;
+			ul li {
+				margin-left: -5px;
+			}
 		}
 	}
 }

@@ -1,29 +1,36 @@
-.page
-  .contentleft
-    h2.title2
-      = resource.name.upcase
-      span= resource.url.gsub!(/^(http|https):\/\//, "").upcase
+- content_for :stylesheets do
+  = stylesheet_link_tag "pages/portfolio"
+  = stylesheet_link_tag "pages/caso"
 
-    p.plus1
-      strong= resource.name.titleize
-      = " " + resource.description
+.row
+  .eight.columns
+  
+    h3 nombre
+    h4.second direccion
+    p
+      | Farther on towards Weybridge, just over the bridge, there were a number of men in white fatigue jackets throwing up a long rampart, and more guns behind.
 
-    p= resource.extended_description
+    p
+      | "It's bows and arrows against the lightning, anyhow," said the artilleryman.  "They 'aven't seen that fire-beam yet."
 
-  .sidebar
-    h3.title3 M&Aacute;S INFORMACI&Oacute;N
-    .sidebox
-      .sideportfolio
-        = image_tag resource.image.url(:thumb)
-        h4 Fecha de desarrollo:
-        p= resource.ended_at
+    p
+      | The officers who were not actively engaged stood and stared over the treetops southwestward, and the men digging would stop every now and again to stare in the same direction.
 
-        h4 Lenguajes de programaci&oacute;n
+    p
+      | Byfleet was in a tumult; people packing, and a score of hussars, some of them dismounted, some on horseback, were hunting them about. Three or four black government waggons, with crosses in white circles, and an old omnibus, among other vehicles, were being loaded in the village street.  There were scores of people, most of them sufficiently sabbatical to have assumed their best clothes.  The soldiers were having the greatest difficulty in making them realise the gravity of their position.  We saw one shrivelled old fellow with a huge box and a score or more of flower pots containing orchids, angrily expostulating with the corporal who would leave them behind. I stopped and gripped his arm.
+
+  .four.columns.last
+    article.box
+      h4 Más información
+      .methodologies
+        = image_tag "client/caso-exito.png"
         ul
-          - resource.technologies.each do |t|
-            li > #{ t.name }
-
-        h4 Otras herramientas:
-        ul
-          - resource.tools.each do |t|
-            li > #{ t.name }
+          li
+            p.title Fecha de desarrollo
+            p Noviembre 2011 mayo 2011
+          li
+            p.title Lenguajes de programacion:
+            ul
+              li >Rails 3
+              li >HTML
+              li >CSS
