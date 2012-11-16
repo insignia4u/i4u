@@ -40,10 +40,12 @@ span.left:hover{	background-position: -179px 0px!important;	}
 		min-height: 380px;
 		height: auto;
 		width: 290px;
-		font-weight: 300;
-		font-size: 23px;
-		line-height: 27px;
 		padding-left: 14px;
-		b{ font-weight: 600; } 
+		p{
+			font-weight: 300;
+			font-size: 23px;
+			line-height: 27px;
+			b{ font-weight: 600; }
+		} 
 	}
 }

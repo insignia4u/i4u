@@ -56,7 +56,8 @@ module Insignia
           description:    Faker::Lorem.sentences.join("\n"),
           url:            "http://www.#{Faker::Internet.domain_name}",
           image:          image_1,
-          featured_image: image_2
+          featured_image: image_2,
+          highlighted: [true, false].sample
         )
 
         project.technologies << [technologies.sample]
@@ -64,6 +65,24 @@ module Insignia
 
         image_1.close
         image_2.close
+      end
+    end
+
+    def self.featured_content
+      FeaturedContent.delete_all
+
+      sites        = Site.all
+
+      @q.times do
+        image_1 = File.open(File.join(Rails.root, 'public', 'populate_images',("1".."20").to_a.sample + ".JPG"))
+
+        featured_content  = FeaturedContent.create!(
+          site:           sites.sample,
+          name:           Faker::Name.name,
+          body:    Faker::Lorem.sentences.join("\n"),
+          image:          image_1
+        )
+        image_1.close
       end
     end
 

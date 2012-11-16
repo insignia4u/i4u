@@ -13,7 +13,7 @@ class Project < ActiveRecord::Base
 
   attr_accessible :site_id, :description, :ended_at, :extended_description, :name,
     :started_at, :summary, :url, :image, :featured_image, :technology_ids, :tool_ids,
-    :site, :technologies, :tools
+    :site, :technologies, :tools, :highlighted
 
   validates :site,                 presence: true
   validates :summary,              presence: true, length: {maximum: 120}
