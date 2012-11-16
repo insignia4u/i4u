@@ -71,18 +71,18 @@ module Insignia
     def self.featured_content
       FeaturedContent.delete_all
 
-      sites        = Site.all
+      Site.all.each do |site|
+        @q.times do
+          image_1 = File.open(File.join(Rails.root, 'public', 'populate_images',("1".."20").to_a.sample + ".JPG"))
 
-      @q.times do
-        image_1 = File.open(File.join(Rails.root, 'public', 'populate_images',("1".."20").to_a.sample + ".JPG"))
-
-        featured_content  = FeaturedContent.create!(
-          site:           sites.sample,
-          name:           Faker::Name.name,
-          body:    Faker::Lorem.sentences.join("\n"),
-          image:          image_1
-        )
-        image_1.close
+          featured_content  = FeaturedContent.create!(
+            site:           site,
+            name:           Faker::Name.name,
+            body:    Faker::Lorem.sentences.join("\n"),
+            image:          image_1
+          )
+          image_1.close
+        end
       end
     end
 
