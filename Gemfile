@@ -26,7 +26,7 @@ end
 
 gem "activeadmin"
 gem "friendly_id",          '4.0.7'
-gem "paperclip",            '~> 3.0'
+gem "paperclip",            '3.3.1'
 gem "faker",                '1.0.1'
 gem 'slim'
 gem 'slim-rails'
