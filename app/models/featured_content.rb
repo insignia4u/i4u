@@ -3,7 +3,7 @@ class FeaturedContent < ActiveRecord::Base
 
   belongs_to :site
 
-  attr_accessible :name, :body, :image, :site
+  attr_accessible :name, :body, :image, :site, :site_id
 
   validates :site, :name, :body, presence: true
 
@@ -11,4 +11,6 @@ class FeaturedContent < ActiveRecord::Base
 
   has_attached_file :image,
     styles: { listing: "410x405#", cms_thumb: "100x100#" }
+
+  friendly_id :name, use: [:slugged, :history]
 end

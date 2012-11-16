@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121116135452) do
+ActiveRecord::Schema.define(:version => 20121116202246) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -56,7 +56,10 @@ ActiveRecord::Schema.define(:version => 20121116135452) do
     t.integer  "site_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.string   "slug"
   end
+
+  add_index "featured_contents", ["slug"], :name => "index_featured_contents_on_slug", :unique => true
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false
