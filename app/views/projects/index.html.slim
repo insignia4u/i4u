@@ -17,26 +17,7 @@
       = snippet('more-works').body 
   = link_to title_for('full-list-of-works'), list_projects_path, class: 'button large'
 .row
-  h4.title = title_for('last_jobs')
-  h4.title.title-mobile = title_for('last_jobs')
-  a href="/"
-    article
-      = image_tag "client/burda.png"
-      span
-      .description
-        b HOMER
-        p 
-          | Homero Simpson fue un caso de exito de la empresa!
-  a href="/"
-    article
-      = image_tag "slider/demo2.jpg"
-      span
-      .description
-        p El contenido del elemento que es un ejemplo de otro caso de exito.
-
-  a href="/"
-    article.last
-      = image_tag "client/crafoxes.png"
-      span
-      .description
-        p Un caso mas por si no te convences...
+  h4.title = title_for('recent-jobs')
+  h4.title.title-mobile = title_for('recent-jobs')
+  
+  = render('projects/modules/last_jobs', recent_jobs: @recent_jobs)

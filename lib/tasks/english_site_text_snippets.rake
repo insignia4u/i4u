@@ -51,7 +51,7 @@ namespace(:sites) do
       site.text_snippets.create!(name: "more-works", title: "More works", 
         body: '| Indeed, a jolly little clown came walking toward them, and Dorothy could see that in spite of his pretty clothes of red and yellow and green he was completely')
       site.text_snippets.create!(name: "full-list-of-works", title: "Full list of works")
-      site.text_snippets.create!(name: "last_jobs", title: "Last jobs")
+      site.text_snippets.create!(name: "recent-jobs", title: "Recent jobs")
       site.text_snippets.create!(name: "more-info", title: "More info")
       site.text_snippets.create!(name: "more-info", title: "More info")
       puts "*** > Complete!"
