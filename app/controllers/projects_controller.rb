@@ -5,8 +5,8 @@ class ProjectsController < InheritedResources::Base
   end
 
   def index
-    @highlighted_projects = Project.featured
-    
+    @highlighted_projects  = Project.featured
+    @recent_jobs           = Project.recent_jobs
   end
 
   def caso

@@ -35,7 +35,7 @@ class Project < ActiveRecord::Base
 
   friendly_id :name, use: [:slugged, :history]
 
-  scope :featured, where(highlighted: true)
+  scope :featured,    where(highlighted: true)
 
   def highlight!
     update_attribute(:highlighted, true)
@@ -47,5 +47,9 @@ class Project < ActiveRecord::Base
 
   def highlight_state
     highlighted? ? "Yes" : "No"
+  end
+
+  def self.recent_jobs(n=3)
+    Project.order("created_at DESC").limit(n)
   end
 end

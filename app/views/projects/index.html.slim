@@ -3,37 +3,21 @@
   = stylesheet_link_tag "slider-portfolio" 
   = stylesheet_link_tag "pages/portfolio" 
 .row 
-  h3.title Proyectos Destacados
+  h3.title = title_for('highlighted-projects')
   = render "shared/slider", featured_content: @highlighted_projects, \
       version: :big, info: :description
 .row
-  h4.title Otros trabajos
-  h4.title.title-mobile Nuestros trabajos
+  h4.title 
+    = title_for("more-works")
+  h4.title.title-mobile 
+    = title_for("more-works")
   = image_tag "other/pdf.png", class: 'one columns pdf'
   p.seven.columns 
-    | Indeed, a jolly little clown came walking toward them, and Dorothy could see that in spite of his pretty clothes of red and yellow and green he was completely
-  = link_to "Listado completo de trabajos", list_projects_path, class: 'button large'
+    - unless snippet('more-works').nil?
+      = snippet('more-works').body 
+  = link_to title_for('full-list-of-works'), list_projects_path, class: 'button large'
 .row
-  h4.title Ultimos trabajos 
-  h4.title.title-mobile Ultimos trabajos  
-  a href="/"
-    article
-      = image_tag "client/burda.png"
-      span
-      .description
-        b HOMER
-        p 
-          | Homero Simpson fue un caso de exito de la empresa!
-  a href="/"
-    article
-      = image_tag "slider/demo2.jpg"
-      span
-      .description
-        p El contenido del elemento que es un ejemplo de otro caso de exito.
-
-  a href="/"
-    article.last
-      = image_tag "client/crafoxes.png"
-      span
-      .description
-        p Un caso mas por si no te convences...
+  h4.title = title_for('recent-jobs')
+  h4.title.title-mobile = title_for('recent-jobs')
+  
+  = render('projects/modules/last_jobs', recent_jobs: @recent_jobs)
