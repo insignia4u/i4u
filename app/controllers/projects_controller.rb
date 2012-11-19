@@ -4,6 +4,11 @@ class ProjectsController < InheritedResources::Base
     index!
   end
 
+  def index
+    @highlighted_projects = Project.featured
+    
+  end
+
   def caso
     render :show
   end

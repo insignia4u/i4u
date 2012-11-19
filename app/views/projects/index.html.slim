@@ -4,19 +4,8 @@
   = stylesheet_link_tag "pages/portfolio" 
 .row 
   h3.title Proyectos Destacados
-  #featured-content
-    div
-      = image_tag "slider/caso.png"
-      .data
-        | Ejemplo 1
-    div
-      = image_tag "slider/slide.png"
-      .data
-        | Ejemplo 2
-    div
-      = image_tag "slider/demo2.jpg"
-      .data
-        | Ejemplo 3
+  = render "shared/slider", featured_content: @highlighted_projects, \
+      version: :big, info: :description
 .row
   h4.title Otros trabajos
   h4.title.title-mobile Nuestros trabajos
