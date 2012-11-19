@@ -7,6 +7,7 @@ class ProjectsController < InheritedResources::Base
   def index
     @highlighted_projects  = Project.featured
     @recent_jobs           = Project.recent_jobs
+    @projects              = Project.order("created_at DESC")
   end
 
   def caso

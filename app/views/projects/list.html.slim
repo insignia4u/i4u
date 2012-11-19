@@ -3,36 +3,14 @@
   = stylesheet_link_tag "pages/listado"
 .row
   .eight.columns
-    h3 Todos nuestros trabajos
-    ul.list.nine.columns
-      li
-        h4.second Nombre
-        p direccion web
-        p
-          |"What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun. 
-        p.client cliente
-        a href="#" >Leer caso de éxito
-      li
-        h4.second Nombre
-        p direccion web
-        p
-          |"What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun. 
-        p.client cliente
-        a href="#" >Leer caso de éxito
-      li.last
-        h4.second Nombre
-        p direccion web
-        p
-          |"What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun. 
-        p.client cliente
-        a href="#" >Leer caso de éxito
-        = link_to "< Volver al Portfolio", projects_path, class:'button large'
+    h3 = title_for('full-list-of-works')
+    = render 'projects/modules/list_of_works', projects: @projects
 
   .four.columns.last
     article.box
-      h4 Portfolio en PDF
+      h4 = title_for('pdf-portfolio')
       = image_tag "other/pdf.png"
       .methodologies
         p
           | "What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun. 
-          a href="#" click aquí
+          a href="#" = title_for('click-here')

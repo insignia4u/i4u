@@ -1,0 +1,12 @@
+ul.list.nine.columns
+  - projects.each do |project|
+    li class=last_resource(projects, project)
+      h4.second = project.name
+      p = remove_protocol_from(project.url)
+      p
+        |
+        = project.summary
+      p.client cliente???
+      = link_to('> ' + title_for('show-successful-case'), project)
+      = link_to('< ' + title_for('back-to-portfolio'), projects_path, \
+          class:'button large') if last_resource(projects, project) == 'last'
