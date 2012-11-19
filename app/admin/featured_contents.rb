@@ -1,4 +1,8 @@
 ActiveAdmin.register FeaturedContent do
+  filter :site
+  filter :name
+
+
   form do |f|
     f.inputs "Edit Featured Content" do
       f.input :site_id, :label => "Site",
@@ -24,5 +28,18 @@ ActiveAdmin.register FeaturedContent do
         image_tag(featured_content.image.url(:cms_thumb))
       end
     end
+  end
+
+  index do
+    column ("Image") { |featured_content| image_tag(featured_content.image.url(:cms_thumb)) }
+    column ("Site") { |featured_content| featured_content.site.name}
+    column ("Name"), sortable: :name do |featured_content|
+      featured_content.name 
+    end
+    column ("Updated At"), sortable: :updated_at do |featured_content|
+      featured_content.updated_at
+    end
+
+    default_actions
   end
 end
