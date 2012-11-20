@@ -34,4 +34,13 @@ I4u::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :user_name => "insignia-site",
+    :password => "b2776d02fd87b463",
+    :address => "mailtrap.io",
+    :port => 2525,
+    :authentication => :plain,
+  }
 end

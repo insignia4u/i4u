@@ -75,3 +75,11 @@ input.button[type="submit"] {
 		text-transform: uppercase;
 		}
 }
+div.field_with_errors {
+	input {
+		border: 1px solid #E2017C;
+	}
+	textarea{
+		border: 1px solid #E2017C;	
+	}
+}

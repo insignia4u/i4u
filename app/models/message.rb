@@ -5,18 +5,20 @@ class Message
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :name, :email, :body, :file
+  attr_accessor :name, :email, :body, :file, :subject
 
-  validates :name, :email, :body, :presence => true
+  validates :name, :email, :body, :subject, :presence => true
   validates :email, :format => { :with => ValidFormats::EMAIL }, :allow_blank => true
 
   def initialize(attributes = {})
-    attributes.each do |name, value|
-      send("#{name}=", value)
-    end
+    attributes.each { |name, value| send("#{name}=", value) }
   end
 
   def persisted?
     false
+  end
+
+  def new_record?
+    true
   end
 end

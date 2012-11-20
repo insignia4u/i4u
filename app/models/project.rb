@@ -25,7 +25,7 @@ class Project < ActiveRecord::Base
     styles: { big: "277x250#", thumb: "234x230#", cms_thumb: "100x100#" }
 
   has_attached_file :featured_image,
-    styles: { big: "936x553#", cms_thumb: "100x100#" }
+    styles: { big: "940x555#", cms_thumb: "100x100#" }
 
   validates_attachment :image, presence: true,
     content_type: { content_type: ['image/jpeg', 'image/png'] }
