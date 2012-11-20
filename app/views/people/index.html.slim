@@ -34,66 +34,13 @@
           = image_tag "slider/demo2.jpg"
           = image_tag "slider/demo3.jpeg"
 
-    h4.second Nuestra mision
-    article.twelve.columns
-      .news-item
-        .description
-          p
-            | The players all played at once without waiting for turns, quarrelling  all the while, and fighting for the hedgehogs; and in a very short  time the Queen was in a furious passion, and went stamping about, and  shouting 'Off with his head!' or 'Off with her head!' about once in a  minute.
+    - ['our-mission', 'our-vision', 'our-values'].each do |name|
+      h4.second = title_for(name)
+      article.twelve.columns
+        .news-item
+          .description
+            p
+              |
+              = textilize(snippet(name).body) unless snippet(name).nil?
 
-    h4.second Nuestra vision
-    article.twelve.columns
-      .news-item
-        .description
-          p
-            | The players all played at once without waiting for turns, quarrelling  all the while, and fighting for the hedgehogs; and in a very short  time the Queen was in a furious passion, and went stamping about, and  shouting 'Off with his head!' or 'Off with her head!' about once in a  minute.
-
-    h4.second Nuestros valores
-    article.twelve.columns
-      .news-item
-        .description
-          p
-            | The players all played at once without waiting for turns, quarrelling  all the while, and fighting for the hedgehogs; and in a very short  time the Queen was in a furious passion, and went stamping about, and  shouting 'Off with his head!' or 'Off with her head!' about once in a  minute.
-
-  .four.columns.last
-    article.box
-      h4 staff
-      ul.info-staff
-        li
-          = image_tag "staff/carlos.jpg"
-          p.name
-            | Carlos
-          p.work
-            | Partner
-          p.description
-            | Un verdadero lider...
-
-        li
-          = image_tag "slider/homero_simpson.jpg"
-          p.name
-            | Carlos
-          p.work
-            | Partner
-          p.description
-            | Un verdadero lider...
-            | Un verdadero lider...
-            | Un verdadero lider...
-            | Un verdadero lider...
-
-        li
-          = image_tag "slider/homero_simpson.jpg"
-          p.name
-            | Carlos
-          p.work
-            | Partner
-          p.description
-            | Un verdadero lider...
-          
-        li.last
-          = image_tag "slider/homero_simpson.jpg"
-          p.name
-            | Carlos
-          p.work
-            | Partner
-          p.description
-            | Un verdadero lider...
+  = render 'people/modules/people_list', staff: @staff
