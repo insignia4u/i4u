@@ -118,6 +118,9 @@ GEM
       activesupport (~> 3.1)
       polyamorous (~> 0.5.0)
     mime-types (1.19)
+    mobile-fu (1.1.1)
+      rack-mobile-detect
+      rails
     modular-scale (1.0.2)
       compass (>= 0.11.5)
       sassy-math (>= 1.2)
@@ -138,6 +141,8 @@ GEM
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
+    rack-mobile-detect (0.4.0)
+      rack
     rack-ssl (1.3.2)
       rack
     rack-test (0.6.2)
@@ -239,6 +244,7 @@ DEPENDENCIES
   faker (= 1.0.1)
   friendly_id (= 4.0.7)
   jquery-rails
+  mobile-fu (= 1.1.1)
   paperclip (= 3.3.1)
   puma (= 1.6.3)
   rails (= 3.2.8)
