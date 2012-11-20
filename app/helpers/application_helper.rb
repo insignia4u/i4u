@@ -30,10 +30,11 @@ module ApplicationHelper
   end
 
   def get_version(name)
-    if is_mobile_device?
-      name + '-mobile-version'
-    else
-     name + '-pc-version'
-   end
+    name << (is_mobile_device? ? '-mobile-version' : '-pc-version')
   end
+
+  def errors_for(object)
+    object.errors.blank? ? "" : ErrorsDecorator.new(object).to_html
+  end
+
 end

@@ -1,32 +1,41 @@
 - content_for :stylesheets do
   = stylesheet_link_tag "pages/contacto"
-
 .row
   .eight.columns
 
-    h3 Contacto
+    h3 = title_for('contact-form')
     p
-      | "What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun.
+      | 
+      = snippet('contact-form').body unless snippet('contact-form').nil?
 
-    form
-      label Nombre*
-      input type="text"
-      label Email*
-      input type="email"
-      label Asunto*
-      input type="text"
-      label Mensaje*
-      textarea cols="50" rows="6"
-      p * campos obligatorios
+    = render "shared/flash_message_box"
+
+    = form_for @message, url: contact_path, html: { multipart: true } do |f|
+      
+      = errors_for(@message).html_safe
+
+      = f.label(:name){ title_for('name-form-contact').html_safe }
+      = f.text_field :name, :class => "ctext"
+
+      = f.label(:email){ title_for('email-form-contact').html_safe }
+      = f.text_field :email, :class => "ctext"
+
+      = f.label(:subject){ title_for('subject-form-contact').html_safe }
+      = f.text_field :subject, :class => "ctext"
+
+      = f.label(:body){ title_for('message-form-contact').html_safe }
+      = f.text_area :body, cols: '50', rows: '6'
+
+      p
+        = title_for('required-fields').html_safe
+
       .files
-        ul
-          li
-            = image_tag "other/clip.png"
-            p  
-              b nombre del archivo
-              a.more href="#" eliminar
-        a href="#" Adjuntar archivos >>
-      input.button type="submit" value="Enviar"
+        ul id="attachment-files"
+        a href="#"  id='attach-new-file' = title_for('attach-new-file')
+
+      = f.file_field :file, id:'attach-file', style: "display: none"
+
+      =f.submit title_for('btn-send-contact-form'), :class => "button"
 
   .four.columns.last
     article.box
@@ -42,3 +51,6 @@
         br
         p T: +54... 
         p M: mail...
+
+- content_for :javascripts do
+  = javascript_include_tag "update_file"

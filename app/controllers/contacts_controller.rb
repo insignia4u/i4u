@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
 
     if @message.valid?
       Notifier.contact_message(@message).deliver
-      redirect_to root_path
+      redirect_to new_contact_path, notice: "Your message was successfully sent."
     else
       render :new
     end

@@ -84,6 +84,20 @@ namespace(:sites) do
         " about once in a  minute.")
       puts "*** > Complete!"
 
+      puts "\n*** > Contact form Snippets"
+      site.text_snippets.create!(name: 'name-form-contact', title: 'Name<sup>*</sup>') 
+      site.text_snippets.create!(name: 'email-form-contact', title: 'Email<sup>*</sup>')
+      site.text_snippets.create!(name: 'message-form-contact', title: 'Coments<sup>*</sup>')
+      site.text_snippets.create!(name: 'required-fields', title: '<sup>*</sup> Required fields')
+      site.text_snippets.create!(name: 'subject-form-contact', title: 'Subject<sup>*</sup>')
+      site.text_snippets.create!(name: 'attach-new-file', title: 'Attach file >>')
+      site.text_snippets.create!(name: 'contact-form', title: 'Contact', 
+        body: '"What\'s that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog. Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun.')
+      
+      site.text_snippets.create!(name: 'btn-send-contact-form', title: 'Contact us')
+
+      puts "*** > Complete!"
+      
       puts "\n\nDone!"
     end
   end
