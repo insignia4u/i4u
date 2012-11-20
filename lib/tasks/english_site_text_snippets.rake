@@ -48,10 +48,13 @@ namespace(:sites) do
 
       puts "\n*** > Portfolio Snippets"
       site.text_snippets.create!(name: "highlighted-projects", title: "Highlighted projects")
-      site.text_snippets.create!(name: "more-works", title: "More works", 
+      site.text_snippets.create!(name: "more-works-pc-version", title: "More works", 
         body: '| Indeed, a jolly little clown came walking toward them, and Dorothy could see that in spite of his pretty clothes of red and yellow and green he was completely')
+      site.text_snippets.create!(name: "more-works-mobile-version", title: "More works", 
+        body: '| Version mobile...')
       site.text_snippets.create!(name: "full-list-of-works", title: "Full list of works")
-      site.text_snippets.create!(name: "recent-jobs", title: "Recent jobs")
+      site.text_snippets.create!(name: "recent-jobs-pc-version", title: "Recent jobs")
+      site.text_snippets.create!(name: "recent-jobs-mobile-version", title: "Recent jobs mobile")
       site.text_snippets.create!(name: "show-successful-case", title: "Show successful case")
       site.text_snippets.create!(name: "back-to-portfolio", title: "back to portfolio")
       site.text_snippets.create!(name: "pdf-portfolio", title: "PDF portfolio")

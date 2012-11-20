@@ -28,4 +28,12 @@ module ApplicationHelper
   def remove_protocol_from(url)
     url.gsub(/(http|https):\/\//, "")
   end
+
+  def get_version(name)
+    if is_mobile_device?
+      name + '-mobile-version'
+    else
+     name + '-pc-version'
+   end
+  end
 end

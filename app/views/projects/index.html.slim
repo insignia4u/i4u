@@ -7,17 +7,14 @@
   = render "shared/slider", featured_content: @highlighted_projects, \
       version: :big, info: :description
 .row
-  h4.title 
-    = title_for("more-works")
-  h4.title.title-mobile 
-    = title_for("more-works")
+
+  h4.title
+    = title_for( get_version('more-works'))
   = image_tag "other/pdf.png", class: 'one columns pdf'
   p.seven.columns 
-    - unless snippet('more-works').nil?
-      = snippet('more-works').body 
+      = snippet(get_version('more-works')).body unless snippet(get_version('more-works')).nil?
   = link_to title_for('full-list-of-works'), list_projects_path, class: 'button large'
 .row
-  h4.title = title_for('recent-jobs')
-  h4.title.title-mobile = title_for('recent-jobs')
+  h4.title = title_for( get_version('recent-jobs'))
   
   = render('projects/modules/last_jobs', recent_jobs: @recent_jobs)
