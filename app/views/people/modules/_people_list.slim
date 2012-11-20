@@ -1,0 +1,16 @@
+.four.columns.last
+    article.box
+      h4 = title_for('staff')
+      ul.info-staff
+        - staff.each do |person|
+          li class=last_resource(staff, person)
+            = image_tag person.photo(:thumb)
+            p.name
+              |
+              = person.full_name
+            p.work
+              |
+              = person.title.name
+            p.description
+              |
+              = person.bio

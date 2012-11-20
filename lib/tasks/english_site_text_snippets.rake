@@ -58,6 +58,29 @@ namespace(:sites) do
       site.text_snippets.create!(name: "click-here", title: "click here")
       puts "*** > Complete!"
 
+
+      puts "\n*** > People Snippets"
+      site.text_snippets.create!(name: "staff", title: "staff")
+      site.text_snippets.create!(name: "our-mission", title: "Our mission", 
+        body: "The players all played at once without waiting for turns, quarrelling" +
+        " all the while, and fighting for the hedgehogs; and in a very short" +
+        " time the Queen was in a furious passion, and went stamping about, and" +
+        " shouting 'Off with his head!' or 'Off with her head!'" +
+        " about once in a  minute.")
+      site.text_snippets.create!(name: "our-vision", title: "Our vision", 
+        body: "The players all played at once without waiting for turns, quarrelling" +
+        " all the while, and fighting for the hedgehogs; and in a very short" +
+        " time the Queen was in a furious passion, and went stamping about, and" +
+        " shouting 'Off with his head!' or 'Off with her head!'" +
+        " about once in a  minute.")
+      site.text_snippets.create!(name: "our-values", title: "Our values", 
+        body: "The players all played at once without waiting for turns, quarrelling" +
+        " all the while, and fighting for the hedgehogs; and in a very short" +
+        " time the Queen was in a furious passion, and went stamping about, and" +
+        " shouting 'Off with his head!' or 'Off with her head!'" +
+        " about once in a  minute.")
+      puts "*** > Complete!"
+
       puts "\n\nDone!"
     end
   end
