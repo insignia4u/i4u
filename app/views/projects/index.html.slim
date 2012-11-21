@@ -9,12 +9,11 @@
 .row
 
   h4.title
-    = title_for( get_version('more-works'))
+    = title_discriminated_for('more-works')
   = image_tag "other/pdf.png", class: 'one columns pdf'
-  p.seven.columns 
-      = snippet(get_version('more-works')).body unless snippet(get_version('more-works')).nil?
+  == body_discriminated_for('more-works',true, 'seven.columns')
   = link_to title_for('full-list-of-works'), list_projects_path, class: 'button large'
 .row
-  h4.title = title_for( get_version('recent-jobs'))
+  h4.title = title_discriminated_for('recent-jobs')
   
   = render('projects/modules/last_jobs', recent_jobs: @recent_jobs)

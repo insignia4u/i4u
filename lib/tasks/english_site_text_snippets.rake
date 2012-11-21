@@ -49,7 +49,7 @@ namespace(:sites) do
       puts "\n*** > Portfolio Snippets"
       site.text_snippets.create!(name: "highlighted-projects", title: "Highlighted projects")
       site.text_snippets.create!(name: "more-works-pc-version", title: "More works", 
-        body: '| Indeed, a jolly little clown came walking toward them, and Dorothy could see that in spite of his pretty clothes of red and yellow and green he was completely')
+        body: '<p>| Indeed, a jolly little clown came walking toward them, and Dorothy could see that in spite of his pretty clothes of red and yellow and green he was completely</p>')
       site.text_snippets.create!(name: "more-works-mobile-version", title: "More works", 
         body: '| Version mobile...')
       site.text_snippets.create!(name: "full-list-of-works", title: "Full list of works")
@@ -82,6 +82,41 @@ namespace(:sites) do
         " time the Queen was in a furious passion, and went stamping about, and" +
         " shouting 'Off with his head!' or 'Off with her head!'" +
         " about once in a  minute.")
+
+      site.text_snippets.create!(name:'who-we-are', title: 'Who we are',
+        body: "<p>The players all played at once without waiting for turns," +
+        "quarrelling all the while, and fighting for the hedgehogs; and in " +
+        "a very short time the Queen was in a furious passion, " + 
+        "and went stamping about, and shouting 'Off with his head!' or " +
+        "'Off with her head!' about once in a minute.<br\\></p>" + 
+        
+        "<p>Alice began to feel very uneasy: to be sure, she " + 
+        "had not as yet had any dispute with the Queen, but she knew that " +
+        "it might happen any minute, 'and then,' thought she, 'what would " +
+        "become of me? They're dreadfully fond of beheading people here; " +
+        "the great wonder is, that there's any one left alive!'<br\\></p>" +
+
+        "<p>She was looking about for some way of escape, and wondering " +
+        "whether she could get away without being seen, when she noticed " +
+        "a curious appearance in the air: it puzzled her very much at first, " +
+        "but, after watching it a minute or two, she made it out to be a " +
+        "grin, and she said to herself 'It's the Cheshire Cat: now I shall " +
+        "have somebody to talk to.'</p>",
+        image: File.open(File.join(Rails.root, 'app/assets/images/staff', 'nosotros.JPG')))
+
+
+        site.text_snippets.create!(name:'our-quality-policy', title: 'Our quality policy',
+        body: "The players all played at once without waiting for turns," +
+        "quarrelling all the while, and fighting for the hedgehogs; and in " +
+        "a very short time the Queen was in a furious passion, " + 
+        "and went stamping about, and shouting 'Off with his head!' or " +
+        "'Off with her head!' about once in a minute.<br\\>" + 
+        
+        "Alice began to feel very uneasy: to be sure, she " + 
+        "had not as yet had any dispute with the Queen, but she knew that " +
+        "it might happen any minute, 'and then,' thought she, 'what would " +
+        "become of me?")
+
       puts "*** > Complete!"
 
       puts "\n*** > Contact form Snippets"
