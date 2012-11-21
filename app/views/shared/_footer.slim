@@ -3,7 +3,7 @@ footer.back-gradient
   .row
     .three.columns
       h4= title_for('contact-module')
-      == textilize( snippet('contact-module').body )
+      == body_for('contact-module', true)
     .three.columns
       h4= title_for('subscribe')
       p= title_for('subscribe-text')

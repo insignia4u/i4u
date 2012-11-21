@@ -9,7 +9,7 @@ module Insignia
       titles = Title.all
 
       @q.times do
-        photo = File.open(File.join(Rails.root, 'public', 'populate_images',("1".."20").to_a.sample + ".JPG"))
+        photo = File.open(File.join(Rails.root, 'public', 'populate_images', 'faces',("1".."5").to_a.sample + ".JPG"))
 
         Person.create!(
           site:       sites.sample,

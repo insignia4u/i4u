@@ -5,8 +5,8 @@
 
     h3 = title_for('contact-form')
     p
-      | 
-      = snippet('contact-form').body unless snippet('contact-form').nil?
+      |
+      == body_for('contact-form', true)
 
     = render "shared/flash_message_box"
 

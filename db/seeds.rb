@@ -22,15 +22,3 @@ puts "Creating Sites..."
 end
 
 puts "Done."
-
-#Sedd Default Text Snippet
-puts "Creating Text Snippet..."
-
-Site.all.each do |site|
-  ['Home Welcome', 'Contact', 'Job', 'How we do it', 'Our Capabilities', 'Our Services',
-    'Our Process', 'The Road', 'Who we are', 'Company'].each do |ts|
-    site.text_snippets.create!(name: ts, body: "")
-  end
-end
-
-puts "Done."
