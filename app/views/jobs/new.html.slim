@@ -7,13 +7,13 @@
 
     h3 = title_for( 'job-form-content')
 
-    = errors_for(@message).html_safe
-
     == body_for('job-form-content', true)
     == body_for('job-form-main-content', true, 'principal')
 
 
     = form_for @message, url: job_path, html: { multipart: true } do |f| 
+
+      = errors_for(@message).html_safe
 
       = f.label(:name){ title_for('name-job-form').html_safe }
       = f.text_field :name, :class => "ctext"
