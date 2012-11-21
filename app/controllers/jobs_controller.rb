@@ -5,11 +5,14 @@ class JobsController < ApplicationController
   end
 
   def create
+    params[:message][:subject] = "CV to #{params[:message][:name]}"
     @message = Message.new(params[:message])
 
+    @message.with_file = true
+    
     if @message.valid?
       Notifier.contact_message(@message).deliver
-      redirect_to root_path
+      redirect_to new_contact_path, notice: "Your cv was successfully sent."
     else
       render :new
     end

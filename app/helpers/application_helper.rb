@@ -33,13 +33,11 @@ module ApplicationHelper
   def body_for(text_snippet, use_textilize, css_class='')
     rtn = nil
     if ts = snippet(text_snippet)
-      rtn = use_textilize ? textilize(ts.body) : ts.body
-      puts "="*50
-      puts rtn
-      puts "="*50
+      rtn = ts.body.gsub("<p>","<p class =#{css_class}>")
+      rtn = textilize(rtn) unless use_textilize
     end
 
-    rtn.gsub('<p>',"<p class =#{css_class}>")
+    rtn
   end
 
   def body_discriminated_for(text_snippet, use_textilize, css_class='')
