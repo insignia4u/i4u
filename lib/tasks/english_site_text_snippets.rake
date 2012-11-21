@@ -132,6 +132,45 @@ namespace(:sites) do
       site.text_snippets.create!(name: 'btn-send-contact-form', title: 'Contact us')
 
       puts "*** > Complete!"
+
+
+      puts "\n*** > Job form Snippets"
+      site.text_snippets.create!(name: 'name-job-form', title: 'Name<sup>*</sup>') 
+      site.text_snippets.create!(name: 'email-job-form', title: 'Email<sup>*</sup>')
+      site.text_snippets.create!(name: 'message-job-form', title: 'Coments<sup>*</sup>')
+      site.text_snippets.create!(name: 'attach-cv', title: 'Attach CV >>')
+      site.text_snippets.create!(name: 'job-form-content', title: 'Job', 
+        body: '<p>"What\'s that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog. Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun.<br/>' +
+        "Alice began to feel very uneasy: to be sure, she " + 
+        "had not as yet had any dispute with the Queen, but she knew that " +
+        "it might happen any minute, 'and then,' thought she, 'what would " +
+        'become of me?</p>')
+      site.text_snippets.create!(name: 'job-form-main-content', title: 'job', 
+        body: '<p>"MAIN MAIN MAINWhat\'s that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog. Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun.</p>')
+      site.text_snippets.create!(name: 'btn-send-job-form', title: 'Join us')
+      site.text_snippets.create!(name: 'the-road', title: 'The Road', 
+        body: "<p>\"What's that?\" cried a boatman, and \"Shut up, you fool!\" " +
+        "said a man near me to a yelping dog.  Then the sound came again, " +
+        "this time from the direction of Chertsey, a muffled thud--the sound of a gun.</p>" +
+
+        "<p>\"Quitting the pump at last, with the rest of his band, " +
+        "the Lakeman went forward all panting, and sat himself down on the windlass; " +
+        "his face fiery red, his eyes bloodshot, and wiping the profuse sweat from his brow. " +
+        "Now what cozening fiend it was, gentlemen, that possessed Radney to " +
+        "meddle with such a man in that corporeally exasperated state, " +
+        "I know not; but so it happened. Intolerably striding along the deck, " +
+        "the mate commanded him to get a broom and sweep down the planks, and " +
+        "also a shovel, and remove some offensive matters consequent upon " +
+        "allowing a pig to run at large.</p>" +
+        
+        "<p>Fix, who had followed Mr. Fogg to the station, and saw that he " +
+        "was really going to leave Bombay, was there, upon the platform.  " +
+        "He had resolved to follow the supposed robber to Calcutta, and farther, " +
+        "if necessary.  Passepartout did not observe the detective, who stood in an " +
+        "obscure corner; but Fix heard him relate his adventures in a few words to Mr. Fogg.</p>"
+)
+
+      puts "*** > Complete!"
       
       puts "\n\nDone!"
     end

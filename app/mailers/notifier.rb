@@ -8,6 +8,6 @@ class Notifier < ActionMailer::Base
       attachments['uploaded'] = {content: message.file.read }
     end
 
-    mail(from: message.email, subject: "New Contact Message")
+    mail(from: message.email, subject: "Contact from website: #{message.subject}")
   end
 end

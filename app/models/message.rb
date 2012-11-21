@@ -5,10 +5,11 @@ class Message
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :name, :email, :body, :file, :subject
+  attr_accessor :name, :email, :body, :file, :subject, :with_file
 
   validates :name, :email, :body, :subject, :presence => true
   validates :email, :format => { :with => ValidFormats::EMAIL }, :allow_blank => true
+  validates :file, :presence => true, :if => :with_file
 
   def initialize(attributes = {})
     attributes.each { |name, value| send("#{name}=", value) }
