@@ -70,7 +70,7 @@ module I4u
     Slim::Engine.set_default_options :pretty => true
 
     config.assets.precompile += %w{pages/caso.css pages/contacto.css pages/empleo.css
-        pages/listado.css pages/nosotros.css pages/novedades.css pages/portolio.css
+        pages/listado.css pages/nosotros.css pages/novedades.css pages/portfolio.css
         pages/servicios.css active_admin.css ie.css slider-portfolio.css slider.css}
 
   end
