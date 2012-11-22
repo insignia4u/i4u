@@ -98,5 +98,7 @@ module I4u
         slider-portfolio
         slider}.map { |s| s+".css" }
 
+    config.assets.precompile += %w{active_admin.js}
+
   end
 end
