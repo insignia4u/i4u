@@ -69,21 +69,5 @@ module I4u
 
     Slim::Engine.set_default_options :pretty => true
 
-    # config.assets.precompile += %w{
-    #     pages/caso
-    #     pages/contacto
-    #     pages/empleo
-    #     pages/listado
-    #     pages/nosotros
-    #     pages/novedades
-    #     pages/portfolio
-    #     pages/servicios
-    #     active_admin
-    #     ie
-    #     slider-portfolio
-    #     slider}.map { |s| s+".css" }
-
-    # config.assets.precompile += %w{active_admin.js}
-
   end
 end

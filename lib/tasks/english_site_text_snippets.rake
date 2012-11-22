@@ -170,8 +170,49 @@ namespace(:sites) do
         "obscure corner; but Fix heard him relate his adventures in a few words to Mr. Fogg.</p>"
 )
 
-      puts "*** > Complete!"
       
+
+      puts "\n Services page Snippets"
+      
+      site.text_snippets.create!(name: 'our-services-title', title: 'Our services')
+      site.text_snippets.create!(name: 'our-process', title: 'Our process')
+      site.text_snippets.create!(name: 'main-content-service-title', title: 'Highly Interactive Website Development')
+      site.text_snippets.create!(name: 'first-side-bar-content-services-page', title: 'How do we do?',
+        body: "<p> \"What's that?\" cried a boatman, and \"Shut up, you fool!\" " +
+        "said a man near me to a yelping dog.  Then the sound came again, " +
+        "this time from the direction of Chertsey, a muffled thud--the sound of a gun.</p><br/>" +
+
+        "<p>The fighting was beginning.  Almost immediately unseen batteries " +
+        "across the river to our right, unseen because of |the trees, took up "+
+        "the chorus, firing heavily one after the other.  A woman screamed." +
+        " Everyone stood arrested by |the sudden stir of battle, near us and " +
+        "yet invisible to us.  Nothing was to be seen save flat meadows, " +
+        "cows |feeding unconcernedly for the most part, and silvery pollard " +
+        "willows motionless in the warm sunlight.</p><br/>" +
+
+        "<p>\"The sojers'll stop 'em,\" said a woman beside  me, doubtfully. " +
+        "A haziness rose over the treetops.</p>")
+
+      site.text_snippets.create!(name: 'second-side-bar-content-services-page', title: 'Our capabilities',
+        body: "<p>\"What's that?\" cried a boatman, and \"Shut up, you fool!\" " +
+        "said a man near me to a yelping dog.  Then the sound came again, " +
+        "this time from the direction of Chertsey, a muffled thud--the sound of a gun.</p><br/>" +
+
+        "<p>The fighting was beginning.  Almost immediately unseen batteries " +
+        "across the river to our right, unseen because of the trees, took up " +
+        "the chorus, firing heavily one after the other.  A woman screamed. " +
+        "Everyone stood arrested by the sudden stir of battle, near us and " +
+        "yet invisible to us.  Nothing was to be seen save flat meadows, cows " +
+        "feeding unconcernedly for the most part, and silvery pollard willows " +
+        "motionless in the warm sunlight.</p><br/>" +
+
+        "<p>\"The sojers'll stop 'em, said a woman beside me, doubtfully. " +
+        "A haziness rose over the treetops.</p>")
+      
+      # site.text_snippets.create!(name: '', title: '')
+      
+      puts "*** > Complete!"
+
       puts "\n\nDone!"
     end
   end

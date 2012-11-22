@@ -4,8 +4,8 @@
 .row
   .eight.columns
 
-    h3 Nuestros servicios
-    h4.second Desarrollo de Sitios Altamente Interactivos
+    h3 = title_for('our-services-title')
+    h4.second = title_for('main-content-service-title')
     article.twelve.columns.box.news
       .news-item
         .highlighted
@@ -33,7 +33,7 @@
           p
             | "Look here, Hare-Lip, you believe in lots of things you can't see." Hare-Lip shook his head. "You believe in dead men walking about. You never seen one dead man walk  about." "I tell you I seen 'em, last winter, when I was wolf-hunting with dad." "Well, you always spit when you cross running water," Edwin challenged. "That's to keep off bad luck," was Hare-Lip's defence. "You believe in bad luck?" "Sure." "An' you ain't never seen bad luck," Edwin concluded triumphantly.  "You're just as bad as Granser and his germs. You believe in what you  don't see. Go on,
 
-    h3 Nuestro Proceso
+    h3 = title_for('our-process')
     article
       = image_tag "other/planificacion.png"
       span
@@ -55,26 +55,12 @@
 
   .four.columns.last
     article.box
-      h4 ¿Cómo lo hacemos?
+      h4 = title_for('first-side-bar-content-services-page')
       .methodologies
-        p
-          |"What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound |came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun.
-
-        p
-          |The fighting was beginning.  Almost immediately unseen batteries across the river to our right, unseen because of |the trees, took up the chorus, firing heavily one after the other.  A woman screamed. Everyone stood arrested by |the sudden stir of battle, near us and yet invisible to us.  Nothing was to be seen save flat meadows, cows |feeding unconcernedly for the most part, and silvery pollard willows motionless in the warm sunlight.
-
-        p
-          |"The sojers'll stop 'em," said a woman beside  me, doubtfully.  A haziness rose over the treetops.
+        == body_for('first-side-bar-content-services-page', true)
     
     article.box
-      h4 nuestras capacidades
+      h4 = title_for('second-side-bar-content-services-page')
       .methodologies
-        p
-          |"What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the sound |came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun.
-
-        p
-          |The fighting was beginning.  Almost immediately unseen batteries across the river to our right, unseen because of |the trees, took up the chorus, firing heavily one after the other.  A woman screamed. Everyone stood arrested by |the sudden stir of battle, near us and yet invisible to us.  Nothing was to be seen save flat meadows, cows |feeding unconcernedly for the most part, and silvery pollard willows motionless in the warm sunlight.
-
-        p
-          |"The sojers'll stop 'em," said a woman beside me, doubtfully.  A haziness rose over the treetops.
+        == body_for('second-side-bar-content-services-page', true)
     
