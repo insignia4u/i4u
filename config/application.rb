@@ -69,9 +69,34 @@ module I4u
 
     Slim::Engine.set_default_options :pretty => true
 
-    config.assets.precompile += %w{pages/caso.css pages/contacto.css pages/empleo.css
-        pages/listado.css pages/nosotros.css pages/novedades.css pages/portfolio.css
-        pages/servicios.css active_admin.css ie.css slider-portfolio.css slider.css}
+    # stylesheets_path = File.join(Rails.root, 'app/assets/stylesheets')
+    # page_path        = File.join(stylesheets_path, 'pages')
+
+    # files_to_exclude = %w{foundation_and_overrides.scss application.css.scss}
+
+    # files = Dir["#{stylesheets_path}/*.scss"].map{|file| File.basename(file)}
+
+    # files <<= Dir["#{page_path}/*.scss"].map{|file| "pages/#{File.basename(file)}"}
+    
+    # # puts files
+    # files_to_compile =  files.delete_if do |file| 
+    #     files_to_exclude.include?(file) || file[/^_/]
+    # end
+
+    # puts files_to_compile
+    config.assets.precompile += %w{
+        pages/caso
+        pages/contacto
+        pages/empleo
+        pages/listado
+        pages/nosotros
+        pages/novedades
+        pages/portfolio
+        pages/servicios
+        active_admin
+        ie
+        slider-portfolio
+        slider}.map { |s| s+".css" }
 
   end
 end
