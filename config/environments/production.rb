@@ -17,6 +17,23 @@ I4u::Application.configure do
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
 
+
+  config.assets.precompile += %w{
+        pages/caso
+        pages/contacto
+        pages/empleo
+        pages/listado
+        pages/nosotros
+        pages/novedades
+        pages/portfolio
+        pages/servicios
+        active_admin
+        ie
+        slider-portfolio
+        slider}.map { |s| s+".css" }
+
+    config.assets.precompile += %w{active_admin.js}
+
   # Generate digests for assets URLs
   config.assets.digest = true
 
