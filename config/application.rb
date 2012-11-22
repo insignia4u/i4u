@@ -1,4 +1,4 @@
-require File.expand_path('../boot', __FILE__)
+çrequire File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
 require "active_record/railtie"
@@ -68,5 +68,7 @@ module I4u
     config.assets.version = '1.0'
 
     Slim::Engine.set_default_options :pretty => true
+
+    config.assets.precompile += ["slider.css"]
   end
 end
