@@ -1,20 +1,32 @@
 ActiveAdmin.register TextSnippet do
   menu parent: "Support"
 
+  filter :site
   filter :name
 
   index do
-    column :name
-    column :title
+    column(:site) {|text_snippet| text_snippet.site.abbreviation}
+    column :name, sortable: :name
+    column :title, sortable: :title
+    column :body, sortable: false
+    column(:image) do |text_snippet|
+      image_tag(text_snippet.image.url(:thumb)) if text_snippet.image?
+    end
 
     default_actions
   end
 
   show do |text_snippet|
     attributes_table do
+      row "Site" do
+        text_snippet.site.name
+      end
       row :name
       row :title
       row("body"){ raw RedCloth.new(text_snippet.body).to_html }
+      row :image do
+        image_tag(text_snippet.image.url(:thumb)) if text_snippet.image?
+      end
     end
   end
 
@@ -25,7 +37,9 @@ ActiveAdmin.register TextSnippet do
       f.input :name
       f.input :title
       f.input :body
+      f.input :image, :as => :file
     end
     f.buttons
   end
+
 end

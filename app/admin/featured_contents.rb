@@ -3,16 +3,17 @@ ActiveAdmin.register FeaturedContent do
   filter :name
 
 
-  form do |f|
-    f.inputs "Edit Featured Content" do
-      f.input :site_id, :label => "Site",
-              :as => :select, :collection => Hash[Site.all.map{|s| [s.name, s.id]}]
-      f.input :name
-      f.input :body, label: 'Description'
-      f.input :image, :as => :file
+  index do
+    column ("Image") { |featured_content| image_tag(featured_content.image.url(:cms_thumb)) }
+    column ("Site") { |featured_content| featured_content.site.name}
+    column ("Name"), sortable: :name do |featured_content|
+      featured_content.name 
+    end
+    column ("Updated At"), sortable: :updated_at do |featured_content|
+      featured_content.updated_at
     end
 
-    f.buttons
+    default_actions
   end
 
   show do
@@ -30,16 +31,15 @@ ActiveAdmin.register FeaturedContent do
     end
   end
 
-  index do
-    column ("Image") { |featured_content| image_tag(featured_content.image.url(:cms_thumb)) }
-    column ("Site") { |featured_content| featured_content.site.name}
-    column ("Name"), sortable: :name do |featured_content|
-      featured_content.name 
-    end
-    column ("Updated At"), sortable: :updated_at do |featured_content|
-      featured_content.updated_at
+  form do |f|
+    f.inputs "Edit Featured Content" do
+      f.input :site_id, :label => "Site",
+              :as => :select, :collection => Hash[Site.all.map{|s| [s.name, s.id]}]
+      f.input :name
+      f.input :body, label: 'Description'
+      f.input :image, :as => :file
     end
 
-    default_actions
+    f.buttons
   end
 end
