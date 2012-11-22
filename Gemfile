@@ -13,6 +13,11 @@ group :development, :test do
   gem "simplecov"
 end
 
+group :production do
+  gem 'pg'
+  gem 'thin'
+end
+
 group :assets do
   gem 'sass',               '3.2.0'
   gem 'sass-rails',         '3.2.3'
