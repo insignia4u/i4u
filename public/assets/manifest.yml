@@ -33,6 +33,7 @@ staff/nosotros.jpg: staff/nosotros-407806c21366e381d7c09525587bcada.jpg
 top-deco.png: top-deco-c1e4a26cb7445ed4a7be724511f8fb0b.png
 application.js: application-93308b979e5edbe9748d4fa4b68c9340.js
 application.css: application-5b8403cf14ebe76cfbff853ddac32608.css
+slider.css: slider-3aaa30abf96e30ed016685dc2a153980.css
 active_admin/admin_notes_icon.png: active_admin/admin_notes_icon-04bd616ed9d1ff51d7a53422d4caf510.png
 active_admin/datepicker/datepicker-header-bg.png: active_admin/datepicker/datepicker-header-bg-5f452fde9ca93c1fe7e9d47f0a3ece6a.png
 active_admin/datepicker/datepicker-input-icon.png: active_admin/datepicker/datepicker-input-icon-876ae70b38bc880f91ce2315ed552260.png
