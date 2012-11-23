@@ -7,7 +7,7 @@
     h3 = title_for('our-services-title')
     h4.second = title_for('main-content-service')
     article.twelve.columns.box.news
-      = body_for('main-content-service', true).html_safe
+      == body_for('main-content-service', true)
 
     h3 = title_for('our-process')
     article
