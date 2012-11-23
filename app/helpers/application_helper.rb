@@ -33,8 +33,9 @@ module ApplicationHelper
   def body_for(text_snippet, use_textilize, css_class='')
     rtn = nil
     if ts = snippet(text_snippet)
-      rtn = ts.body.gsub("<p>","<p class =#{css_class}>")
-      rtn = textilize(rtn) unless use_textilize
+      ts.body ||= ''
+      rtn = textilize(ts.body) if use_textilize
+      rtn = rtn.gsub("<p>","<p class ='#{css_class}'>")
     end
 
     rtn

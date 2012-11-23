@@ -105,18 +105,20 @@ article{
 		width: 150px;
 		top:0px;
 		padding: 0px;
-		margin-bottom: 0px;	
-		display: none;
+		margin-bottom: 0px;
+		visibility: hidden;
 	}
-	li{	
+	li{
 		border-bottom: 3px dotted $thirdColor;
 		padding-bottom: 20px;
 		margin-bottom: 20px;
-		overflow: auto;
+		height: 95px;
+		-webkit-transition: all 0.8s ease;
 	}
 	li.last{
 			border-bottom: 0px;
 			margin-bottom: 0px;
 	}
 }
-li:hover .description{ display: block; }
+li:hover{ height: auto; }
+li:hover .description{ visibility: visible; }

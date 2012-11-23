@@ -9,4 +9,8 @@ class TextSnippet < ActiveRecord::Base
   validates :name, presence: true
 
   friendly_id :name, use: [:slugged, :history]
+
+  def summary
+    (body || '')[0..140]
+  end
 end

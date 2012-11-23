@@ -8,7 +8,7 @@ ActiveAdmin.register TextSnippet do
     column(:site) {|text_snippet| text_snippet.site.abbreviation}
     column :name, sortable: :name
     column :title, sortable: :title
-    column :body, sortable: false
+    column(:summary, sortable: false) #{|text_snippet| textilize(text_snippet.summary)}
     column(:image) do |text_snippet|
       image_tag(text_snippet.image.url(:thumb)) if text_snippet.image?
     end

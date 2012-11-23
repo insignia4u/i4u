@@ -5,33 +5,9 @@
   .eight.columns
 
     h3 = title_for('our-services-title')
-    h4.second = title_for('main-content-service-title')
+    h4.second = title_for('main-content-service')
     article.twelve.columns.box.news
-      .news-item
-        .highlighted
-          p La historia de Insignia
-        .description
-          p
-            | "What's that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog.  Then the |sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun.
-    
-    article.twelve.columns.box.news
-      .news-item
-        .highlighted
-          p La historia de Insignia
-        .description
-          p
-            | The first day's journey was through the green fields and bright flowers that stretched about the Emerald City on every side.  They slept that night on the grass, with nothing but the stars over them; and they rested very well indeed.
-
-          p
-            |In the morning they traveled on until they came to a thick wood.  There was no way of going around it, for it seemed to extend to the right and left as far as they could see; and, besides, they did not dare change the direction of their journey for fear of getting lost.  So they looked for the place where it would be easiest to get into the forest.
-
-    article.twelve.columns.box.news
-      .news-item
-        .highlighted
-          p La historia de Insignia
-        .description
-          p
-            | "Look here, Hare-Lip, you believe in lots of things you can't see." Hare-Lip shook his head. "You believe in dead men walking about. You never seen one dead man walk  about." "I tell you I seen 'em, last winter, when I was wolf-hunting with dad." "Well, you always spit when you cross running water," Edwin challenged. "That's to keep off bad luck," was Hare-Lip's defence. "You believe in bad luck?" "Sure." "An' you ain't never seen bad luck," Edwin concluded triumphantly.  "You're just as bad as Granser and his germs. You believe in what you  don't see. Go on,
+      = body_for('main-content-service', true).html_safe
 
     h3 = title_for('our-process')
     article
@@ -40,7 +16,8 @@
       .description
         b HOMER
         p 
-          | Homero Simpson fue un caso de exito de la empresa!
+          | Homero Simpson fue un caso de exito de la empresa! Homero Simpson fue un caso de exito de la empresa! Homero Simpson fue un caso de exito de la empresa! Homero Simpson fue un caso de exito de la empresa! Homero Simpson fue un caso de exito de la empresa!Homero Simpson fue un caso de exito de la empresa!Homero Simpson fue un caso de exito de la empresa!Homero Simpson fue un caso de exito de la empresa!Homero Simpson fue un caso de exito de la empresa!Homero Simpson fue un caso de exito de la empresa!
+
     article
       = image_tag "other/codificacion.png"
       span

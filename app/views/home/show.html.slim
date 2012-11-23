@@ -1,9 +1,9 @@
 - content_for :stylesheets do
   = stylesheet_link_tag "slider"
 
-- unless @featured_content.empty?
+- unless @featured_contents.empty?
   .row
-    = render "shared/slider", featured_content: @featured_content, \
+    = render "shared/slider", featured_content: @featured_contents, \
       version: :listing, info: :body
 
 = render "home/modules/featured_projects"
