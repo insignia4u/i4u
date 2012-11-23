@@ -10,25 +10,13 @@
       == body_for('main-content-service', true)
 
     h3 = title_for('our-process')
-    article
-      = image_tag "other/planificacion.png"
-      span
-      .description
-        b HOMER
-        p 
-          | Homero Simpson fue un caso de exito de la empresa! Homero Simpson fue un caso de exito de la empresa! Homero Simpson fue un caso de exito de la empresa! Homero Simpson fue un caso de exito de la empresa! Homero Simpson fue un caso de exito de la empresa!Homero Simpson fue un caso de exito de la empresa!Homero Simpson fue un caso de exito de la empresa!Homero Simpson fue un caso de exito de la empresa!Homero Simpson fue un caso de exito de la empresa!Homero Simpson fue un caso de exito de la empresa!
-
-    article
-      = image_tag "other/codificacion.png"
-      span
-      .description
-        p El contenido del elemento que es un ejemplo de otro caso de exito.
-
-    article
-      = image_tag "other/planificacion.png"
-      span
-      .description
-        p Un caso mas por si no te convences...
+    - %w{ planificacion codificacion revision control produccion mantenimiento}.each do |name|
+      article
+        = image_tag "other/#{name}.png"
+        span
+        .description
+          b = title_for("#{name}-text-snippet")
+          == body_for("#{name}-text-snippet",true)
 
   .four.columns.last
     article.box
