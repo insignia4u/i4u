@@ -13,7 +13,7 @@ if paperclip_cfg = YAML.load_file(Rails.root.join('config', 'paperclip.yml'))[Ra
   if paperclip_cfg[:storage] == 's3'
     Paperclip::Attachment.default_options.merge!(
       :s3_credentials => {
-        :bucket => ENV['AWS_BUCKET'],
+        :bucket => ENV['AWS_BUCKET_I4U_SITE_2012'],
         :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
         :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
       }
