@@ -10,7 +10,7 @@ if paperclip_cfg = YAML.load_file(Rails.root.join('config', 'paperclip.yml'))[Ra
   Paperclip::Attachment.default_options.merge!(
     :s3_headers => { 'Expires' => 5.years.from_now.httpdate }
   )
-  if paperclip_cfg[:storage] == 's3'
+  if paperclip_cfg[:storage] == :s3
     Paperclip::Attachment.default_options.merge!(
       :s3_credentials => {
         :bucket => ENV['AWS_BUCKET_I4U_SITE_2012'],
