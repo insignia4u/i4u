@@ -1,0 +1,19 @@
+common: &local_settings
+  storage: :filesystem
+  url: "/system/:class/:attachment/:id_partition/:normalized_basename_:style.:extension"
+
+s3_amazon: &s3_settings
+  <<: *local_settings
+  storage: :s3
+  path: ":class/:attachment/:id_partition/:normalized_basename_:style.:extension"
+  url: ":s3_domain_url"
+
+# cloudfront: &cloud_settings
+#   <<: *s3_settings
+#   url: ":s3_alias_url"
+
+development:
+  <<: *local_settings
+
+production:
+  <<: *s3_settings
