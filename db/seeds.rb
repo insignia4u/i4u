@@ -1,8 +1,8 @@
 # Seed Default Admin User
 AdminUser.create!(
   email:                 "admin@insignia4u.com",
-  password:              "123456",
-  password_confirmation: "123456"
+  password:              "siempre981",
+  password_confirmation: "siempre981"
 )
 
 # Seed Default Titles
