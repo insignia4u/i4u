@@ -96,10 +96,14 @@ footer{
 		opacity: 0.4;
 	}
 	.icon{	float:left;	}
-	.spa{	background: url(asset-path("insignia-sprites.png",image)) -86px -38px no-repeat;	margin-left: 10px; }
-	.eng{	background: url(asset-path("insignia-sprites.png",image)) -131px -38px no-repeat;	}
-	a:hover.spa{	background-position: -86px 0px;	}
-	a:hover.eng{	background-position: -131px 0px;	}
-	a:hover.twitter{	background-position: -43px 1px;	}
-	a:hover.facebook{	background-position: 0px 1px;	}
+	.twitter{	background-position:  -43px -40px;	}
+	.facebook{	background-position:  0px -39px;	}
+	.github{	background-position:  0px -153px;}
+	.spa{	background: url(../images/insignia-sprites.png) -86px -40px no-repeat;	margin-left: 10px; }
+	.eng{	background: url(../images/insignia-sprites.png) -131px -40px no-repeat;	}
+	a:hover.spa{	background-position: -86px -2px;	}
+	a:hover.eng{	background-position: -131px -2px;	}
+	a:hover.twitter{	background-position: -43px -2px;	}
+	a:hover.facebook{	background-position: 0px -2px;	}
+	a:hover.github{	background-position: 0px -115px;	}
 }
