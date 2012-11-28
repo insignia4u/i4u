@@ -14,18 +14,18 @@ span.right {
 	right: 335px!important;
 	height: 55px!important;
 	width: 17px!important;
-	background: url(asset-path("insignia-sprites.png",image)) -204px -59px!important;
+	background: url(asset-path("insignia-sprites.png",image)) -204px -61px!important;
 	background-size: auto!important;
 }
 
 span.left {
 	height: 57px!important;
 	width: 17px!important;
-	background: url(asset-path("insignia-sprites.png",image)) -179px 56px!important;
+	background: url(asset-path("insignia-sprites.png",image)) -179px -61px!important;
 	background-size: auto!important;
 }
-span.right:hover{	background-position: -204px 0px!important;	}
-span.left:hover{	background-position: -179px 0px!important;	}
+span.right:hover{	background-position: -204px -2px!important;	}
+span.left:hover{	background-position: -179px -3px!important;	}
 #featured-content{
 	visibility: hidden;
 	img{
