@@ -1,5 +1,5 @@
 class Technology < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :position
 
   validates :name, presence: true
 end
