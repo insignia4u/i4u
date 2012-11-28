@@ -15,6 +15,11 @@ ActiveAdmin.register Technology do
     end
   end
 
+  form do |f|
+    f.inputs("Edit Technology") {f.input :name}
+    f.buttons
+  end
+
   action_item :only => :index do
     link_to('Reorder', "#", data: { sort_url: sort_admin_technologies_url }, 
       id: "button-reorder-technologies", class: "hide") unless Technology.all.empty?

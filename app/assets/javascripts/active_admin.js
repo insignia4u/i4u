@@ -3,10 +3,15 @@
 //= require active_admin/base
 
 $(document).ready(function(){
-  var $reorder = $("#button-reorder-technologies");
+  makeTableSortable("#button-reorder-technologies", '#technologies');
+  makeTableSortable("#button-reorder-tools", '#tools');
+})
+
+function makeTableSortable(dataSortUrlElementId, tableId ){
+  var $reorder = $(dataSortUrlElementId);
   $reorder.css('display', 'none');
 
-  var $table = $('#technologies tbody');
+  var $table = $(tableId + ' tbody');
 
   $table.find('tr').find('td:first').css('cursor', 'move');
 
@@ -33,4 +38,4 @@ $(document).ready(function(){
       });
     }
   }).disableSelection();
-})
+}
