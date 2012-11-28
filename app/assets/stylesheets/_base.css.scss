@@ -150,7 +150,7 @@ a:hover article{
 		margin-top: 10px;
 		margin-left: 20px;
 	}
-	.highlighted{
+	li:hover{
 		background: url(asset-path("deco-title.png",image)) 1px 1px no-repeat;
 		width: 271px;
 		height: 30px;
