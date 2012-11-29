@@ -3,6 +3,13 @@ class ApplicationController < ActionController::Base
   has_mobile_fu false
 
   before_filter :load_site
+  def slider_hash(image, name, text)
+    {
+      image: image,
+      name:  name,
+      text:  text
+    }
+  end
 
 protected
 

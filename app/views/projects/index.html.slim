@@ -4,8 +4,8 @@
   = stylesheet_link_tag "pages/portfolio" 
 .row 
   h3.title = title_for('highlighted-projects')
-  = render "shared/slider", featured_content: @highlighted_projects, \
-      version: :big, info: :description
+  = render "shared/slider", featured_content: @highlighted_projects
+      / version: :big, info: :description
 .row
 
   h4.title

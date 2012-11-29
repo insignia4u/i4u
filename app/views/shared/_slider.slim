@@ -1,7 +1,7 @@
 #featured-content
   - featured_content.each do |item|
       div
-        = image_tag( item.image.url(version) )
+        = image_tag( item[:image] )
         .data
-          h3 = item.name
-          == textilize(item.send(info))
+          h3= item[:name]
+          == textilize(item[:text])

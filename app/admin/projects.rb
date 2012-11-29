@@ -6,8 +6,9 @@ ActiveAdmin.register Project do
 
   member_action :highlight, method: :put do
     project = Project.find(params[:id])
-    project.highlight!
-    redirect_to admin_project_path(project), notice: "This project is highlight!"
+    message = project.highlight!? {notice: "This project is highlight!"} :
+      {alert: project.errors.full_messages}
+    redirect_to admin_project_path(project), message
   end
 
   member_action :unhighlight, method: :put do
