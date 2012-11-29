@@ -58,15 +58,19 @@ h4.second{
 				margin-left: 25px;
 				li {  margin-left: -5px;  }
 				li:hover{
-					background: url(asset-path("deco-title.png",image)) 1px 1px no-repeat !important;
+					background: url(asset-path("deco-title.png",image)) -4px 1px no-repeat !important;
 					background-size: 261px 100%;
 					height: auto;
-					color:white;
+					color:white!important;
 					padding-left: 10px;
 					font-weight: bold;
 					margin-left: -15px;
 				}
 			}
+		}
+		li:hover{
+			margin-left: 5px;
+			padding-left: 0px;	
 		}
 	}
 }
