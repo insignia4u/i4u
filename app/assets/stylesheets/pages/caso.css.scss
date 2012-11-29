@@ -49,18 +49,16 @@ h4.second{
 			margin-bottom: 0px;
 			}
 		li{
-			background: none!important;
+			background: white!important;
 			margin-top: 0px;
 			margin-left: 15px;
 			ul {
 				li {  margin-left: -5px;  }
 				li:hover{
-					background: url(asset-path("deco-title.png",image)) 1px 1px no-repeat;
+					background: url(asset-path("deco-title.png",image)) 1px 1px no-repeat !important;
 					background-size: 271px 100%;
-					width: 271px;
 					height: auto;
 					color:white;
-					margin-left: 10px;
 					padding-left: 10px;
 					font-weight: bold;
 				}
