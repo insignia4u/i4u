@@ -20,29 +20,30 @@ class Project < ActiveRecord::Base
   validates :description,          presence: true, length: {maximum: 380}
   validates :name,                 presence: true, uniqueness: { scope: :site_id }
   validates :url,                  presence: true, format: { with: ValidFormats::URL }
+  validates :featured_image, :attachment_presence => true, :if => :highlighted
 
   has_attached_file :image,
     styles: { big: "277x250#", thumb: "234x230#", cms_thumb: "100x100#" }
-
   has_attached_file :featured_image,
     styles: { big: "940x555#", cms_thumb: "100x100#" }
 
+
   validates_attachment :image, presence: true,
     content_type: { content_type: ['image/jpeg', 'image/png'] }
-
   validates_attachment :featured_image,
     content_type: { content_type: ['image/jpeg', 'image/png'] }
+
 
   friendly_id :name, use: [:slugged, :history]
 
   scope :featured,    where(highlighted: true)
 
   def highlight!
-    update_attribute(:highlighted, true)
+    update_attributes(highlighted: true)
   end
 
   def unhighlight!
-    update_attribute(:highlighted, false)
+    update_attributes(highlighted: false)
   end
 
   def highlight_state
@@ -52,4 +53,5 @@ class Project < ActiveRecord::Base
   def self.recent_jobs(n=3)
     Project.order("created_at DESC").limit(n)
   end
+
 end

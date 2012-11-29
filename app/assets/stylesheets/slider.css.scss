@@ -1,5 +1,18 @@
 @media only screen and (max-width: 767px) {
-	.orbit-wrapper{	display: none!important;	}
+	.orbit-wrapper{  height: auto !important; height: 1px; }
+	#featured-content{
+		.orbit-slide{ height: auto !important; }
+		img {
+		    height: auto!important;
+		    width: 50%!important;
+		    float: right!important;
+		}
+		.data {
+			width: auto!important;
+		    height: auto !important;
+		    float: none !important;
+		}
+	}
 }	 
 /* settings */
 $firstColor: #FDFDFD;
