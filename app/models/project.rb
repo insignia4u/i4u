@@ -36,7 +36,8 @@ class Project < ActiveRecord::Base
 
   friendly_id :name, use: [:slugged, :history]
 
-  scope :featured,    where(highlighted: true)
+  scope :featured,         where(highlighted: true)
+  scope :by_created_date, order("created_at DESC")
 
   def highlight!
     update_attributes(highlighted: true)

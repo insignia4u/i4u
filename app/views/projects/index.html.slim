@@ -2,10 +2,12 @@
   = stylesheet_link_tag "slider"
   = stylesheet_link_tag "slider-portfolio" 
   = stylesheet_link_tag "pages/portfolio" 
-.row 
-  h3.title = title_for('highlighted-projects')
-  = render "shared/slider", featured_content: @highlighted_projects
-      / version: :big, info: :description
+
+- unless @highlighted_projects.empty?
+  .row 
+    h3.title = title_for('highlighted-projects')
+    = render "shared/slider", featured_content: @highlighted_projects
+
 .row
 
   h4.title

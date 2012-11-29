@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   has_mobile_fu false
 
-  before_filter :load_site
+  helper_method :current_site
   def slider_hash(image, name, text)
     {
       image: image,
@@ -14,13 +14,8 @@ class ApplicationController < ActionController::Base
 protected
 
   def current_site
-    @current_site ||= Site.first
-  end
-
-  helper_method :current_site
-
-  def load_site
-    @current_site = Site.first
+    language = session[:language] || "en"
+    @current_site ||= Site.with_language(language.upcase).first
   end
 
 end
