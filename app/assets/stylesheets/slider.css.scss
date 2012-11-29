@@ -3,13 +3,14 @@
 	#featured-content{
 		.orbit-slide{ height: auto !important; }
 		img {
-		    height: auto;
-		    width: 50%;
-		    float: right;
+		    height: auto!important;
+		    width: 50%!important;
+		    float: right!important;
 		}
 		.data {
+			width: auto!important;
 		    height: auto !important;
-		    float: none;
+		    float: none !important;
 		}
 	}
 }	 
