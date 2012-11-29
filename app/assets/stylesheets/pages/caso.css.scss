@@ -50,19 +50,21 @@ h4.second{
 			}
 		li{
 			color: inherit !important;
+			font-weight: normal;
 			background: white!important;
 			margin-top: 0px;
-			margin-left: -5px;
+			margin-left: 5px;
 			ul {
+				margin-left: 25px;
 				li {  margin-left: -5px;  }
 				li:hover{
 					background: url(asset-path("deco-title.png",image)) 1px 1px no-repeat !important;
-					background-size: 271px 100%;
+					background-size: 261px 100%;
 					height: auto;
 					color:white;
 					padding-left: 10px;
 					font-weight: bold;
-					margin-left: -20px;
+					margin-left: -15px;
 				}
 			}
 		}
