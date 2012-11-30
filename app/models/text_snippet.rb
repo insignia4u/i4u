@@ -7,6 +7,7 @@ class TextSnippet < ActiveRecord::Base
   has_attached_file :image, :styles => { :big => "627x404#", :thumb => "100x100#" }
 
   validates :name, presence: true
+  validates :site_id, presence: true
 
   friendly_id :name, use: [:slugged, :history]
 
