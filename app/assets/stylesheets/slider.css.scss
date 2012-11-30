@@ -1,8 +1,14 @@
 @media only screen and (max-width: 767px) {
-	.orbit-wrapper{  height: auto !important; height: 1px; }
+	.orbit-wrapper{  
+		height: auto !important;
+		height: 1px;
+	}
 	#featured-content{
 		height: auto !important;
-		.orbit-slide{ height: auto !important; }
+		.orbit-slide{ 
+			height: auto !important;
+			position: static;
+		}
 		img {
 			height: auto!important;
 			width: 80%!important;
