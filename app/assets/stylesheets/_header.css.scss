@@ -2,18 +2,16 @@
 	header{
 		padding-bottom: 0px;
 		padding-top: 0px;
-		height: 150px;
-		overflow: hidden;  
+		height: auto;  
 		.icon{	display: none;	}
 		.logo{
-			background-position: center!important;
-		  text-align: center;
-		  position: relative;
-		  top: -20px;
+		  	background-position: center!important;
+		  	text-align: center;
+		  	position: relative;
+		  	top: -20px;
 		}
 		ul{
 			background: white;
-			z-index: 999;
 			padding-bottom: 0px;
 		}
 		.block-grid.three-up > li {
