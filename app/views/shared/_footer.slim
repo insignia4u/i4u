@@ -4,12 +4,17 @@ footer.back-gradient
     .three.columns
       h4= title_for('contact-module')
       == body_for('contact-module', true)
-    / .three.columns
-    /   h4= title_for('subscribe')
-    /   p= title_for('subscribe-text')
-    /   form
-        input type="email"
-        input.button.tiny type="submit" value=(title_for('subscribe-send'))
+
+    .three.columns
+      h4= title_for('subscribe')
+      p= title_for('subscribe-text')
+
+      = form_for 'newsletter_subscriber', url: newsletter_subscriber_index_path, remote: true do |f|
+
+        = f.email_field :email
+        #message
+        = f.submit 'Subscribe me', :class => "button tiny"
+
     .three.columns.last
       h4= title_for('more-about-us')
       .twelve.columns

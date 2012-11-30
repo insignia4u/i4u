@@ -10,4 +10,10 @@ class Notifier < ActionMailer::Base
 
     mail(from: message.email, subject: "Contact from website: #{message.subject}")
   end
+
+  def successfull_subscription(subscriber)
+    @subscriber = subscriber
+    mail(to: subscriber, subject: "Successfull subscription")
+  end
+
 end
