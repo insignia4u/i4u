@@ -39,15 +39,10 @@
 
   .four.columns.last
     article.box
-      h4 Ubicacion
+      h4= title_for('location')
       .methodologies
         = image_tag "other/google-maps.png"
     article.box.last
-      h4 Datos de contacto
+      h4= title_for('contact-details')
       .methodologies
-        p Lamadrid 318, Piso 4 - Depto. A
-        p San Miguel de Tucumán
-        p Tucumán, Argentina
-        br
-        p T: +54... 
-        p M: mail...
+        == body_for('contact-details', true)
