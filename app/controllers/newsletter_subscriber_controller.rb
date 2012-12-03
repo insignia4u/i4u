@@ -5,13 +5,13 @@ class NewsletterSubscriberController < ApplicationController
 
     if @newsletter.save
       Notifier.successfull_subscription(@newsletter.email).deliver
-      @message = '<p>Successfull subscription!!!</p>'
+      message = '<p>Successfull subscription!!!</p>'
+      errors  = false
     else
-      @message = '<ul>' + 
-        @newsletter.errors.reduce('') { |html, error| html + "<li> #{error[1]}<\/li>" } +
-        '</ul>'
+      message =  @newsletter.errors.first[1]
+      errors  = true
     end
 
-    render 'create', layout: false
+    render 'create', layout: false, locals: { errors: errors , message: message }
   end
 end
