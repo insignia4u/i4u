@@ -43,12 +43,10 @@ $thirdColor: #929292;
 body{
 	/* gradient */
 	background: rgb(253,253,253);
-	background: -moz-radial-gradient(top, ellipse cover,  rgba(253,253,253,1) 50%, rgba(234,234,234,1) 76%, rgba(188,188,188,1) 87%, rgba(159,159,159,1) 100%);
-	background: -webkit-gradient(radial, top center, 0px, center center, 100%, color-stop(50%,rgba(253,253,253,1)), color-stop(76%,rgba(234,234,234,1)), color-stop(87%,rgba(188,188,188,1)), color-stop(100%,rgba(159,159,159,1)));
-	background: -webkit-radial-gradient(top, ellipse cover,  rgba(253,253,253,1) 50%,rgba(234,234,234,1) 76%,rgba(188,188,188,1) 87%,rgba(159,159,159,1) 100%);
-	background: -o-radial-gradient(top, ellipse cover,  rgba(253,253,253,1) 50%,rgba(234,234,234,1) 76%,rgba(188,188,188,1) 87%,rgba(159,159,159,1) 100%);
-	background: -ms-radial-gradient(top, ellipse cover,  rgba(253,253,253,1) 50%,rgba(234,234,234,1) 76%,rgba(188,188,188,1) 87%,rgba(159,159,159,1) 100%);
-	background: radial-gradient(ellipse at top,  rgba(253,253,253,1) 50%,rgba(234,234,234,1) 76%,rgba(188,188,188,1) 87%,rgba(159,159,159,1) 100%);
+	background: -moz-radial-gradient(top, ellipse cover, #FDFDFD 10%, #F1EFF0 68%, #BCBCBC 87%, #9F9F9F 100%);
+	background: -webkit-radial-gradient(top, ellipse cover, #FDFDFD 10%, #F1EFF0 68%, #BCBCBC 87%, #9F9F9F 100%);
+	background: -o-radial-gradient(top, ellipse cover, #FDFDFD 10%, #F1EFF0 68%, #BCBCBC 87%, #9F9F9F 100%);
+	background: radial-gradient(top, ellipse cover, #FDFDFD 10%, #F1EFF0 68%, #BCBCBC 87%, #9F9F9F 100%);
 	/* gradient */
 	font-family: Dosis;
 	font-size: 14px;
