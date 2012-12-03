@@ -3,7 +3,7 @@ class Person < ActiveRecord::Base
   belongs_to :title
 
   attr_accessible :site_id, :title_id, :bio, :first_name, :last_name, :photo,
-    :site, :title
+    :site, :title, :position
 
   validates :site,       presence: true
   validates :title,      presence: true
@@ -16,6 +16,11 @@ class Person < ActiveRecord::Base
   validates_attachment :photo, presence: true,
     content_type: { content_type: ['image/jpeg', 'image/png'] }
 
+  after_create { self.update_column(:position, (Person.maximum(:position) || 0) + 1) }
+
+  scope :by_position,   order(:position)
+  scope :last_position, order('position DESC')
+  
   def full_name
     "#{first_name} #{last_name}"
   end
