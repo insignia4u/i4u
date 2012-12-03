@@ -9,11 +9,12 @@ I4u::Application.routes.draw do
     end
   end
 
-  resources :people,   :only => :index
-  resources :services, :only => :index
+  resources :people,                only: :index
+  resources :services,              only: :index
+  resources :newsletter_subscriber, only: :create
 
-  match 'contact' => 'contacts#new',    :as => :new_contact, :via => :get
-  match 'contact' => 'contacts#create', :as => :contact,     :via => :post
+  match 'contact' => 'contacts#new',    as: :new_contact, via: :get
+  match 'contact' => 'contacts#create', as: :contact,     via: :post
 
   match 'job' => 'jobs#new',    :as => :new_job, :via => :get
   match 'job' => 'jobs#create', :as => :job,     :via => :post
