@@ -100,25 +100,34 @@ article{
 		margin-right: 15px;
 		border: 1px solid  #E5E5E5;
 	}
-	.description{
+	.description {
 		float: right;
 		width: 150px;
-		top:0px;
+		top: 0px;
 		padding: 0px;
 		margin-bottom: 0px;
 		display: none;
+		color: black;
+		margin-left: 83px;
 	}
 	li{
-		border-bottom: 3px dotted $thirdColor;
+		border-bottom: 2.5px dotted $thirdColor;
 		padding-bottom: 20px;
-		margin-bottom: 20px;
+		margin-bottom: 20px!important;
 		min-height: 95px;
 		height: auto;
+		p{ color: $thirdColor; }
 	}
 	li.last{
 			border-bottom: 0px;
 			margin-bottom: 0px;
 	}
 }
-li:hover{ height: auto; }
-li:hover .description{ display: block; }
+li:hover{ 
+	height: auto;
+	p{ color: #19375B; }
+	.description{ 
+		display: block;
+		color: black;
+	}
+}
