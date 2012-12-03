@@ -8,7 +8,7 @@ class NewsletterSubscriberController < ApplicationController
       @message = '<p>Successfull subscription!!!</p>'
     else
       @message = '<ul>' + 
-        @newsletter.errors.full_messages.reduce('') { |html, error| html + "<li> #{error}<\/li>" } +
+        @newsletter.errors.reduce('') { |html, error| html + "<li> #{error[1]}<\/li>" } +
         '</ul>'
     end
 

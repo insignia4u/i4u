@@ -9,11 +9,11 @@ footer.back-gradient
       h4= title_for('subscribe')
       p= title_for('subscribe-text')
 
-      = form_for 'newsletter_subscriber', url: newsletter_subscriber_index_path, remote: true do |f|
+      = form_for 'newsletter_subscriber', url: newsletter_subscriber_index_path, remote: true, html: { :id => "subscription-form" } do |f|
 
         = f.email_field :email
         #message
-        = f.submit 'Subscribe me', :class => "button tiny"
+        = f.submit 'Subscribe me', class: "button tiny"
 
     .three.columns.last
       h4= title_for('more-about-us')

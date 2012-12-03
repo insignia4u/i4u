@@ -1,2 +1,9 @@
-var cssClass =  "<%=  @newsletter.errors.any?? 'failed-subscription' : 'succesfull-subscription'%>";
+var cssClass = '';
+<% if @newsletter.errors.any? %>
+  var cssClass = 'failed-subscription';
+<%else%>
+  var cssClass =  'succesfull-subscription';
+  $('#newsletter_subscriber_email').val('');
+<%end%>
+
 $('#message').html("<%= @message.html_safe %>").removeClass().addClass(cssClass);
