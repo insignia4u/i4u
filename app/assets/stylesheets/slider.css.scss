@@ -1,7 +1,6 @@
 @media only screen and (max-width: 767px) {
-	.orbit-wrapper{  
-		height: auto !important;
-		height: 1px;
+	.orbit-wrapper {
+		height: auto!important;
 	}
 	#featured-content{
 		height: auto !important;
@@ -27,6 +26,7 @@
 			position: static;
 		}
 	}
+	span.right, span.right { display: none; }
 }	 
 /* settings */
 $firstColor: #FDFDFD;
@@ -34,7 +34,7 @@ $firstColor: #FDFDFD;
 
 .orbit-wrapper{    
 	margin-bottom: 20px;
-	height:405px!important;
+	height:405px;
 }
 
 span.right {
