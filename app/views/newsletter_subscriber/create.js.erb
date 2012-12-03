@@ -1,9 +1,12 @@
 var cssClass = '';
-<% if @newsletter.errors.any? %>
+
+<% if errors %>
   var cssClass = 'failed-subscription';
 <%else%>
-  var cssClass =  'succesfull-subscription';
   $('#newsletter_subscriber_email').val('');
+  var cssClass = 'succesfull-subscription';
 <%end%>
 
-$('#message').html("<%= @message.html_safe %>").removeClass().addClass(cssClass);
+$('#message').html("<%= content_tag( :ul, content_tag(:li, message.html_safe)) %>")
+  .removeClass()
+  .addClass(cssClass);
