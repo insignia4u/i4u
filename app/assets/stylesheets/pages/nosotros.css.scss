@@ -92,7 +92,6 @@ article{
 		font-weight: bold;
 		margin-bottom: -5px;
 	}
-	p.name, p.work{	color:#19375B; }
 	img{
 		height: 73px;
 		width: 70px;
@@ -101,7 +100,6 @@ article{
 		border: 1px solid  #E5E5E5;
 	}
 	.description {
-		float: right;
 		width: 150px;
 		top: 0px;
 		padding: 0px;
@@ -116,7 +114,7 @@ article{
 		margin-bottom: 20px!important;
 		min-height: 95px;
 		height: auto;
-		p{ color: $thirdColor; }
+		p{ color: #929292; }
 	}
 	li.last{
 			border-bottom: 0px;
