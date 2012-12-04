@@ -106,6 +106,7 @@ footer{
 	a:hover.twitter{	background-position: -43px -2px;	}
 	a:hover.facebook{	background-position: 0px -2px;	}
 	a:hover.github{	background-position: 0px -115px;	}
+	#message li{	list-style: none;  }
 	#message.failed-subscription {
 		background: rgba(0, 0, 0, 0.3);
 		border-radius: 4px;
