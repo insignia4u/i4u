@@ -22,6 +22,9 @@ class Project < ActiveRecord::Base
   validates :url,                  presence: true, format: { with: ValidFormats::URL }
   validates :featured_image, :attachment_presence => true, :if => :highlighted
 
+  validate  :validate_started_at_date_before_today
+  validate  :validate_ended_at_date_after_started_at
+
   has_attached_file :image,
     styles: { big: "277x250#", thumb: "234x230#", cms_thumb: "100x100#" }
   has_attached_file :featured_image,
@@ -53,6 +56,18 @@ class Project < ActiveRecord::Base
 
   def self.recent_jobs(n=3)
     Project.order("created_at DESC").limit(n)
+  end
+
+  def validate_started_at_date_before_today
+    if started_at
+      errors.add(:started_at, "Invalid date!") if started_at >= (DateTime.now - 1)
+    end
+  end
+
+  def validate_ended_at_date_after_started_at
+    if ended_at
+      errors.add(:ended_at, "Invalid date!") if started_at >= ended_at
+    end
   end
 
 end

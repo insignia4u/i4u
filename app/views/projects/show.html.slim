@@ -17,6 +17,10 @@
       .methodologies
         = image_tag resource.image.url(:thumb)
         ul
+          - if resource.started_at
+            li
+              p.title = title_for('duration-project-header')
+              p = get_project_duration(resource)
           - if @technologies.any?
             li
               p.title = title_for('technology-list-header')

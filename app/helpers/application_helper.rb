@@ -70,4 +70,15 @@ module ApplicationHelper
     object.errors.blank? ? "" : ErrorsDecorator.new(object).to_html
   end
 
+  def get_project_duration(project)
+    ts_separator = title_for('to-separator-project-duration')
+
+    rtn = l project.started_at, format: :long
+
+    if project.ended_at
+      rtn << " #{ts_separator} #{l project.ended_at, format: :long}"
+    end
+
+    rtn
+  end
 end
