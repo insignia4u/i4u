@@ -16,15 +16,17 @@
       h4 =title_for('more-info')
       .methodologies
         = image_tag resource.image.url(:thumb)
-        - if false #Fix this later
-          ul
-            li
-              p.title Fecha de desarrollo
-              div.dates Noviembre 2011 - Mayo 2011
         ul
-          li
-            p.title Lenguajes de programacion:
-            ul
-              li >Rails 3
-              li >HTML
-              li >CSS
+          - if @technologies.any?
+            li
+              p.title = title_for('technology-list-header')
+              ul
+                - @technologies.each do |technology|
+                  li = "> #{technology.name}"
+
+          - if @tools.any?
+            li
+              p.title = title_for('tool-list-header')
+              ul
+                - @tools.each do |tool|
+                  li = "> #{tool.name}"

@@ -12,8 +12,9 @@ class ProjectsController < InheritedResources::Base
     end
   end
 
-  def caso
-    render :show
+  def show
+    @technologies = resource.technologies.sort_by{|technology| technology.position}
+    @tools        = resource.tools.sort_by{|tool| tool.position}
   end
 
   protected

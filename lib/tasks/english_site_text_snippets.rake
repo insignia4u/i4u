@@ -62,6 +62,9 @@ namespace(:sites) do
       site.text_snippets.create!(name: "back-to-portfolio", title: "back to portfolio")
       site.text_snippets.create!(name: "pdf-portfolio", title: "PDF portfolio")
       site.text_snippets.create!(name: "click-here", title: "click here")
+      site.text_snippets.create!(name: "technology-list-header", title: "Technologies")
+      site.text_snippets.create!(name: "tool-list-header", title: "Tools")
+      
       puts "*** > Complete!"
 
 
