@@ -81,17 +81,19 @@ article{
 	}
 }
 .info-staff{
-	padding: 15px;
-	background: white;
-	border: 1px solid  #E5E5E5;
-	list-style: none;
-	p{
-		margin-bottom: 10px;
-	}
-	p.name{	
+		padding: 15px;
+		background: white;
+		border: 1px solid  #E5E5E5;
+		list-style: none;
+	p{	margin-bottom: 10px;  }
+	p.name {
 		font-weight: bold;
-		margin-bottom: -5px;
+		margin-bottom: 0px;
+		font-size: 1.2em;
+		width: 223px;
+		line-height: 18px;
 	}
+	p.work{  margin-bottom: 7px;  }
 	img{
 		height: 73px;
 		width: 70px;
@@ -107,6 +109,8 @@ article{
 		display: none;
 		color: black;
 		margin-left: 83px;
+		font-size: 13px;
+		line-height: 14px;
 	}
 	li{
 		border-bottom: 2.5px dotted $thirdColor;
