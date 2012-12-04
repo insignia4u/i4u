@@ -29,7 +29,7 @@ h2{ font-size: 23px; }
 
 h3{	
 	color:$secondColor;
-	font-weight: bold;
+	font-weight: 800;
 	clear: both;
 	text-transform: uppercase;
 	margin: 0px;
@@ -38,14 +38,43 @@ h4.second{
 	color:$secondColor;
 	margin-top: 0px;
 	margin-bottom: 30px;
+	font-weight: 700;
 }
+p {
+	font-family: "Dosis";
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 21px;
+	margin-bottom: 17px;
+	color: #929292;
+}
+p.description, ul.description li {
+	font-size: 23px;
+	line-height: 25px;
+	letter-spacing: 0px;
+	color: #929292;
+	margin-bottom: 25px;
+}
+ul.description li {	line-height: 15px!important;  }
+
 .box{
-	height: auto;
+		height: auto;
+		margin-top: -10px!important;
 	img{    
-    height: 230px;
-    width: 234px;
-    margin: 15px;
+	    height: 230px;
+	    width: 234px;
+	    margin: 15px;
 		margin-left: 22px;
+		margin-bottom: 0px;
+	}
+	h4 {
+		font-size: 21px;
+		line-height: 28px;
+		background: #19375B;
+		color: white;
+		padding-left: 10px;
+		margin-bottom: 10px;
+		font-weight: 700;
 	}
 	p{	margin: 15px;	}
 
@@ -61,15 +90,23 @@ h4.second{
 			margin-left: 5px;
 			ul {
 				margin-left: 25px;
-				li {  margin-left: -5px;  }
+				margin-top: 10px;
+				li {
+					font-size: 16px;
+					margin-left: -10px;
+					line-height: 18px;
+					color: #929292!important;
+				}
 				li:hover{
-					background: url(asset-path("deco-title.png",image)) -4px 1px no-repeat !important;
-					background-size: 261px 100%;
+					background: url(asset-path("deco-title.png",image)) 5px -2px no-repeat !important;
+					background-size: 267px 100% !important;
 					height: auto;
-					color:white!important;
+					color: white!important;
 					padding-left: 10px;
 					font-weight: bold;
-					margin-left: -15px;
+					margin-left: -20px;
+					line-height: 18px;
+					font-size: 16px;
 				}
 			}
 		}
