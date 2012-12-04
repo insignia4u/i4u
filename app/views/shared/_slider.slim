@@ -3,5 +3,6 @@
       div
         = image_tag( item[:image] )
         .data
-          h3= item[:name]
+          - unless hidden_title
+            h3= item[:name]
           == textilize(item[:text])

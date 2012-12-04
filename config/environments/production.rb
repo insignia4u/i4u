@@ -8,6 +8,9 @@ I4u::Application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  #setting expires
+  config.static_cache_control = "public, max-age=604800"
+
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
 
@@ -32,7 +35,7 @@ I4u::Application.configure do
         slider-portfolio
         slider}.map { |s| s+".css" }
 
-    config.assets.precompile += %w{active_admin.js}
+  config.assets.precompile += %w{active_admin.js}
 
   # Generate digests for assets URLs
   config.assets.digest = true
