@@ -29,6 +29,18 @@ initFeaturedContentSlider = () ->
   $('#featured-content').orbit  timer: false , fluid: '16x9', animation: 'fade'
   $('#featured').orbit timer: false, fluid: '16x9', animation: 'fade'
 
+checkEmailOnSubscription = () ->
+  $('#subscription-form :submit').click () ->
+    $('#message').empty()
+    if $('#newsletter_subscriber_email').val() is ''
+      $('#message').html("<ul><li>" + 'The email is required!' + "</li></ul>")
+        .removeClass()
+        .addClass('failed-subscription')
+      return false
+
+    return true
+
 $(window).load () ->
   initFeaturedContentSlider()
   attachNewFileButtonBehaviors()
+  checkEmailOnSubscription()

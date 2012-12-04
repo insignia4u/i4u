@@ -1,0 +1,2 @@
+module NewsletterSubscriberHelper
+end

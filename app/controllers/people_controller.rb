@@ -2,7 +2,7 @@ class PeopleController < InheritedResources::Base
   actions :index
 
   def index
-    @staff = Person.order('last_name')
+    @staff = Person.by_position
     index!
   end
 

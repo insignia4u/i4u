@@ -1,4 +1,6 @@
 ActiveAdmin.register Person do
+
+  config.sort_order = 'position_asc'
   filter :site
 
   form :html => { :enctype => "multipart/form-data" } do |f|
@@ -14,6 +16,11 @@ ActiveAdmin.register Person do
     end
 
     f.buttons
+  end
+
+  action_item :only => :index do
+    link_to('Reorder', "#", data: { sort_url: sort_admin_people_url }, 
+      id: "button-reorder-people", class: "hide") unless Person.all.empty?
   end
 
   show do
@@ -44,4 +51,11 @@ ActiveAdmin.register Person do
     default_actions
   end
 
+  collection_action :sort, :method => :post do
+    params[:person].each_with_index do |id, index|
+      person = Person.find(id)
+      person.update_attribute(:position, index.to_i+1)
+    end
+    head 200
+  end
 end
