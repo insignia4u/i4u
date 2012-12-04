@@ -7,9 +7,9 @@
   
     h3= resource.name
     h4.second= remove_protocol_from(resource.url)
-    p= resource.description
+    == textilize(resource.description)
 
-    == textilize( resource.extended_description )
+    == textilize(resource.extended_description)
 
   .four.columns.last
     article.box

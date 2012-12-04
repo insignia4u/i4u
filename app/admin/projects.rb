@@ -58,8 +58,8 @@ ActiveAdmin.register Project do
       row :name
       row :url
       row :summary
-      row :description
-      row :extended_description
+      row(:description) {|project| textilize(project.description)}
+      row(:extended_description) {|project| textilize(project.extended_description)}
       row :started_at
       row :ended_at
 
