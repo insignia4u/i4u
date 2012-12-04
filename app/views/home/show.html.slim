@@ -3,7 +3,7 @@
 
 - unless @featured_contents.empty?
   .row
-    = render "shared/slider", featured_content: @featured_contents
+    = render "shared/slider", featured_content: @featured_contents, hidden_title: true
 
 = render "home/modules/featured_projects"
 
