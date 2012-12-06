@@ -14,6 +14,6 @@ class Notifier < ActionMailer::Base
 
   def successfull_subscription(subscriber)
     @subscriber = subscriber
-    mail(from: 'admin@insigia4u', to: subscriber, subject: "Successfull subscription")
+    mail(from: 'admin@insigia4u.com', to: subscriber, subject: "Welcome to the Insignia Newsletter")
   end
 end
