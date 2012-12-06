@@ -7,7 +7,7 @@
   
     h3= resource.name
     h4.second= remove_protocol_from(resource.url)
-    == textilize(resource.description)
+    == textilize("p(description). #{resource.description}")
 
     == textilize(resource.extended_description)
 
