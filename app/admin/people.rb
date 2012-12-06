@@ -36,7 +36,7 @@ ActiveAdmin.register Person do
       row :bio
 
       row :photo do
-        image_tag(person.photo.url)
+        image_tag(person.photo.url(:thumb))
       end
     end
   end
