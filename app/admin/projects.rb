@@ -33,13 +33,25 @@ ActiveAdmin.register Project do
       f.input :url
       f.input :summary
       f.input :description
-      f.input :image, :as => :file
+      f.input :image , input_html:
+      {
+        'url-data'  => (project.image? ?  project.image.url(:cms_thumb) : ''),
+        'size-data' => "130x118",
+        accept:              "image/*"
+      }
+
     end
+
     f.inputs "Detailed Information" do
       f.input :extended_description
       f.input :started_at
       f.input :ended_at
-      f.input :featured_image, :as => :file
+      f.input :featured_image , input_html:
+      {
+        'url-data'  => (project.featured_image? ?  project.featured_image.url(:cms_thumb) : ''),
+        'size-data' => "169x100",
+        accept:              "image/*"
+      }
     end
     f.inputs "Tags" do
       f.input :technologies, :as => :check_boxes

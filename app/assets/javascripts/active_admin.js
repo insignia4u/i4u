@@ -6,13 +6,14 @@ $(document).ready(function(){
   makeTableSortable("#button-reorder-technologies", '#technologies');
   makeTableSortable("#button-reorder-tools",        '#tools');
   makeTableSortable("#button-reorder-people",       '#people');
+  makeProyectImagePreviewed();
 })
 
 function makeTableSortable(dataSortUrlElementId, tableId ){
   if ( '#' + $('table').attr('id') !== tableId) {
     return;
   }
-  
+
   var $reorder = $(dataSortUrlElementId);
   $reorder.css('display', 'none');
 
@@ -49,4 +50,58 @@ function makeTableSortable(dataSortUrlElementId, tableId ){
       });
     }
   }).disableSelection();
+}
+
+function makeProyectImagePreviewed(){
+  if ($('form[id=edit_project]').lenght == 0 ||
+      $('form[id=new_project]').lenght == 0){
+    return;
+  }
+
+  var mode = ($('form[id=edit_project]').length == 0) ? 'new' : 'edit';
+
+  associatePreview('image', mode);
+  associatePreview('featured image', mode);
+}
+
+function associatePreview(field, mode){
+  field              = field.replace(/\s+/g, ' ');
+
+  var fieldId        = field.replace(/\s/g,  '-');  // my-field
+  var fieldName      = field.replace(/\s/g,  '_'); // my_field
+  var previewAddedId = "preview-" + fieldId + "-added";
+
+  var $fileInput  = $('li[id=project_' + fieldName + "_input] :file").first();
+  var $fileParent = $fileInput.parents('ol');
+
+  var existingUrl = $fileInput.attr('url-data');
+  var size        = $fileInput.attr('size-data').split('x');
+
+  if(mode === 'edit' && existingUrl !== ''){
+    //Load preview existing image.
+    $fileParent.append(getLIToAppend(existingUrl, size[0], size[1], previewAddedId));
+  }
+
+  $fileInput.change(function(){
+    var upload = $fileInput[0];
+
+    $('#' + previewAddedId).remove();
+
+    if (upload.files && upload.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function(e){
+        $fileParent.append(getLIToAppend(e.target.result, size[0], size[1], previewAddedId));
+      }
+      reader.readAsDataURL(upload.files[0]);
+    }
+  });
+}
+
+function getLIToAppend(url, width, heigh, id){
+  var size = "style = 'width: " + width + "px; height: " + heigh + "px'";
+  return "<li id='" + id + "'> \
+    <label class=' label'> Preview Image</label> \
+    <img src='" + url + "'" + size +" /> \
+  </li>";
 }

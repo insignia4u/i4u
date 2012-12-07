@@ -26,9 +26,9 @@ class Project < ActiveRecord::Base
   validate  :validate_ended_at_date_after_started_at
 
   has_attached_file :image,
-    styles: { big: "277x250#", thumb: "234x230#", cms_thumb: "100x100#" }
+    styles: { big: "277x250#", thumb: "234x230#", cms_thumb: "110x100#" }
   has_attached_file :featured_image,
-    styles: { big: "940x555#", cms_thumb: "100x100#" }
+    styles: { big: "940x555#", cms_thumb: "169x100#" }
 
 
   validates_attachment :image, presence: true,
