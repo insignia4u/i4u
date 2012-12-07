@@ -61,6 +61,7 @@ footer{
 	min-height: 245px;
 	margin-top: 75px;
 	overflow: hidden;
+	a, a:active, a:visited{ color:white!important; text-decoration: underline!important; }
 	.row{
 		color: white;
 		margin-top: 5px;
@@ -78,7 +79,6 @@ footer{
 		margin: 0px;
 		font-size: 13.5px;
 		line-height: 18px;
-		a:active, a:visited{ color:white!important; text-decoration: underline!important; }
 	}
 	input{
 		border: 0px !important;
