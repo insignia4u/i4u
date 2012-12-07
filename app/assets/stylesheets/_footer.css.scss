@@ -65,8 +65,8 @@ footer{
 		color: white;
 		margin-top: 5px;
 	}
-	.row .three {	width: 28.333%;	}
-	.columns{	margin-right: 69px; }
+	.row .three {	width: 28.333%;	 }
+	.columns{	margin-right: 69px;  }
 	.last{	margin-right: 3px; }
 	h4{ 
 		text-transform:uppercase;
@@ -78,12 +78,14 @@ footer{
 		margin: 0px;
 		font-size: 13.5px;
 		line-height: 18px;
+		a:active, a:visited{ color:white!important; text-decoration: underline!important; }
 	}
 	input{
 		border: 0px !important;
 		height: 25px!important;
 		width: 100%!important;
 		line-height: 25px;
+		margin:0px!important;
 		margin-top: 6px!important;
 		border-radius: 1px!important;
 	}
@@ -97,6 +99,7 @@ footer{
 		padding-top: 7px!important;
 		height: auto!important;
 		line-height: 8px!important;
+		width:auto!important;
 	}
 	.foot-deco{
 		display: block;
@@ -106,7 +109,6 @@ footer{
 		background-position: center -67px;
 		opacity: 0.4;
 	}
-	a:active, a:visited{ color:white; text-decoration: underline; }
 	.icon{	float:left;	}
 	.twitter{	background-position:  -43px -40px;	}
 	.facebook{	background-position:  0px -39px;	}
