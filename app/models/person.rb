@@ -1,7 +1,8 @@
 class Person < ActiveRecord::Base
   belongs_to :site
+  belongs_to :title
 
-  attr_accessible :site_id, :bio, :first_name, :last_name, :photo,
+  attr_accessible :site_id, :title_id, :bio, :first_name, :last_name, :photo,
     :site, :title, :position
 
   validates :site,       presence: true
