@@ -7,8 +7,9 @@ ActiveAdmin.register Person do
     f.inputs "Basic Information" do
       f.input :site_id, :label => "Site",
               :as => :select, :collection => Hash[Site.all.map{|s| [s.name, s.id]}]
+      f.input :title_id, :label => "Title",
+              :as => :select, :collection => Hash[Title.all.map{|s| [s.name, s.id]}]
       f.input :first_name
-      f.input :title
       f.input :last_name
       f.input :bio
       f.input :photo, :as => :file
@@ -27,7 +28,9 @@ ActiveAdmin.register Person do
       row "Site" do
         person.site.name
       end
-      row :title
+      row "Title" do
+        person.title.name
+      end
       row :first_name
       row :last_name
       row :bio
@@ -40,7 +43,7 @@ ActiveAdmin.register Person do
 
   index do
     column ("Site") { |person| person.site.name }
-    column :title
+    column ("Title"){ |person| person.title.name }
     column :first_name
     column :last_name
     column ("Bio")   { |person| truncate(person.bio.gsub(/<.*?>/,''), :length => 84) }
