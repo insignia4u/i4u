@@ -68,24 +68,35 @@ footer{
 	.row .three {	width: 28.333%;	}
 	.columns{	margin-right: 69px; }
 	.last{	margin-right: 3px; }
-	h4{ text-transform:uppercase; font-weight: 700; }
+	h4{ 
+		text-transform:uppercase;
+		font-weight: 700;
+		font-size: 17.5px;
+		line-height: 18px;
+	}
 	p{
 		margin: 0px;
-		font-size: 12px;
+		font-size: 13.5px;
+		line-height: 18px;
 	}
 	input{
 		border: 0px !important;
-		height: 25px;
-		width: 100%;
+		height: 25px!important;
+		width: 100%!important;
 		line-height: 25px;
-		margin: 0px;
+		margin-top: 6px!important;
+		border-radius: 1px!important;
 	}
 	.button{
 		background: #e3007a!important;
-		margin-top: 5px;
-		height: 20px;
-		font-weight: 700;
 		font-size: 11px;
+		font-weight: 800!important;
+		text-transform: uppercase;
+		margin-top: 6px!important;
+		padding: 4px 7px!important;
+		padding-top: 7px!important;
+		height: auto!important;
+		line-height: 8px!important;
 	}
 	.foot-deco{
 		display: block;
@@ -95,6 +106,7 @@ footer{
 		background-position: center -67px;
 		opacity: 0.4;
 	}
+	a:active, a:visited{ color:white; text-decoration: underline; }
 	.icon{	float:left;	}
 	.twitter{	background-position:  -43px -40px;	}
 	.facebook{	background-position:  0px -39px;	}
