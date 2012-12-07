@@ -10,7 +10,7 @@ class FeaturedContent < ActiveRecord::Base
   validates_attachment_presence :image
 
   has_attached_file :image,
-    styles: { listing: "410x405#", cms_thumb: "100x100#" }
+    styles: { listing: "410x405#", cms_thumb: "140x138#" }
 
   friendly_id :name, use: [:slugged, :history]
 end

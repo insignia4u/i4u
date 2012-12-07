@@ -5,7 +5,7 @@ ActiveAdmin.register FeaturedContent do
 
   index do
     column ("Image") { |featured_content| image_tag(featured_content.image.url(:cms_thumb)) }
-    column ("Site") { |featured_content| featured_content.site.name}
+    column ("Site")  { |featured_content| featured_content.site.name}
     column ("Name"), sortable: :name do |featured_content|
       featured_content.name 
     end
@@ -37,7 +37,12 @@ ActiveAdmin.register FeaturedContent do
               :as => :select, :collection => Hash[Site.all.map{|s| [s.name, s.id]}]
       f.input :name
       f.input :body, label: 'Description'
-      f.input :image, :as => :file
+      f.input :image , input_html:
+      {
+        'url-data'  => (featured_content.image? ?  featured_content.image.url(:cms_thumb) : ''),
+        'size-data' => "130x118",
+        accept:              "image/*"
+      }
     end
 
     f.buttons

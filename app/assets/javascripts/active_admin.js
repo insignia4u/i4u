@@ -6,7 +6,9 @@ $(document).ready(function(){
   makeTableSortable("#button-reorder-technologies", '#technologies');
   makeTableSortable("#button-reorder-tools",        '#tools');
   makeTableSortable("#button-reorder-people",       '#people');
-  makeProyectImagePreviewed();
+
+  makeResourceImagePreviewed('project', ['image', 'featured image']);
+  makeResourceImagePreviewed('featured_content', ['image']);
 })
 
 function makeTableSortable(dataSortUrlElementId, tableId ){
@@ -52,26 +54,27 @@ function makeTableSortable(dataSortUrlElementId, tableId ){
   }).disableSelection();
 }
 
-function makeProyectImagePreviewed(){
-  if ($('form[id=edit_project]').lenght == 0 ||
-      $('form[id=new_project]').lenght == 0){
-    return;
-  }
+function makeResourceImagePreviewed(resource, fields){
+  var formsId = $("form[id]").attr("id");
+  var mode    = '';
 
-  var mode = ($('form[id=edit_project]').length == 0) ? 'new' : 'edit';
+  if (formsId === 'new_' + resource) mode = 'new';
+  if (formsId === 'edit_'+ resource) mode = 'edit';
+  if (mode === '') return;
 
-  associatePreview('image', mode);
-  associatePreview('featured image', mode);
+  fields.forEach(function(field){
+    associatePreview(resource, field, mode);
+  });
 }
 
-function associatePreview(field, mode){
+function associatePreview(resource, field, mode){
   field              = field.replace(/\s+/g, ' ');
 
   var fieldId        = field.replace(/\s/g,  '-');  // my-field
   var fieldName      = field.replace(/\s/g,  '_'); // my_field
   var previewAddedId = "preview-" + fieldId + "-added";
 
-  var $fileInput  = $('li[id=project_' + fieldName + "_input] :file").first();
+  var $fileInput  = $('li[id=' + resource +'_' + fieldName + "_input] :file").first();
   var $fileParent = $fileInput.parents('ol');
 
   var existingUrl = $fileInput.attr('url-data');
