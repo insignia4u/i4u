@@ -13,6 +13,8 @@ group :development, :test do
   gem "factory_girl_rails", '3.4.0'
   gem "faker",              '1.0.1'
   gem "simplecov"
+  gem 'better_errors',       '0.0.8'
+  gem 'binding_of_caller',   '0.6.8'
 end
 
 group :production do
