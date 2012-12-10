@@ -146,6 +146,7 @@ GEM
       sassy-math (>= 1.2)
     multi_json (1.3.7)
     multi_xml (0.5.1)
+    newrelic_rpm (3.5.3.25)
     nokogiri (1.5.4)
     orm_adapter (0.0.7)
     paperclip (3.3.1)
@@ -278,6 +279,7 @@ DEPENDENCIES
   friendly_id (= 4.0.7)
   jquery-rails
   mobile-fu (= 1.1.1)
+  newrelic_rpm (= 3.5.3.25)
   paperclip (= 3.3.1)
   pg
   puma (= 1.6.3)
