@@ -6,7 +6,7 @@ module Insignia
       Person.delete_all
 
       sites  = Site.all
-      titles = Title.all
+      titles = ['Partner', 'Developer', 'Operation Manager', 'Project Manager']
 
       @q.times do
         photo = File.open(File.join(Rails.root, 'public', 'populate_images', 'faces',("1".."5").to_a.sample + ".JPG"))
