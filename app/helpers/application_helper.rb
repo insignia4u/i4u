@@ -46,11 +46,11 @@ module ApplicationHelper
     body_for(text_snippet, true, css_class)
   end
 
-  def img_snippet_for(text_snippet, version)
+  def img_snippet_for(text_snippet, version, css_class='')
     rtn = nil
     if ts = snippet(text_snippet) 
-      if img = ts.image
-        rtn = tag(:img, src: img.url(version), class: "twelve columns")
+      if ts.image?
+        rtn = tag(:img, src: ts.image.url(version), class: css_class)
       end
     end
 
