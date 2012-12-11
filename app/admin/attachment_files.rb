@@ -12,9 +12,8 @@ ActiveAdmin.register AttachmentFile do
     end
 
     column 'Url' do |attachment_file|
-      link_to attachment_file.file_i4u.url
+      link_to attachment_file.name, attachment_file.file_i4u.url, target: '_blank'
     end
-
     default_actions
   end
 
@@ -34,7 +33,7 @@ ActiveAdmin.register AttachmentFile do
       row :summary
       row :created_at
       row 'Url' do |attachment_file|
-        link_to attachment_file.file_i4u.url
+        link_to attachment_file.name, attachment_file.file_i4u.url, target: '_blank'
       end
 
       row 'Copy to clipboard' do |attachment_file|
