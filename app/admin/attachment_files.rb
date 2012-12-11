@@ -11,6 +11,10 @@ ActiveAdmin.register AttachmentFile do
       clippy(attachment_file.file_i4u).html_safe
     end
 
+    column 'Url' do |attachment_file|
+      link_to attachment_file.file_i4u.url
+    end
+
     default_actions
   end
 
@@ -29,6 +33,13 @@ ActiveAdmin.register AttachmentFile do
       row :name
       row :summary
       row :created_at
+      row 'Url' do |attachment_file|
+        link_to attachment_file.file_i4u.url
+      end
+
+      row 'Copy to clipboard' do |attachment_file|
+        clippy(attachment_file.file_i4u).html_safe
+      end
     end
   end
 
