@@ -57,10 +57,14 @@ p.description, .eight ul li {
 	letter-spacing: 0px;
 	color: #929292;
 	margin-bottom: 21px;
+	a{  color:$secondColor;  }
 }
 .eight ul {  margin-bottom: 17px;  }
 .eight ul li {  line-height: 7px;  }
-
+ul.extends-description li {
+	font-size: 17px;
+	margin-bottom: 16px;
+}
 .box{
 		height: auto;
 		margin-top: -10px!important;
