@@ -6,7 +6,7 @@
   .eight.columns
   
     h3= resource.name
-    h4.second= remove_protocol_from(resource.url)
+    a.url href="= remove_protocol_from(resource.url)" = remove_protocol_from(resource.url)
     == textilize("p(description). #{resource.description}")
 
     == textilize(resource.extended_description)
