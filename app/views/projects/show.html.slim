@@ -7,9 +7,12 @@
   
     h3= resource.name
     = link_to remove_protocol_from(resource.url), resource.url, class: 'url'
-    == textilize("p(description). #{resource.description}")
+    
+    .text-description
+      == textilize("p(description). #{resource.description}")
 
-    == textilize(resource.extended_description)
+    .extended_description
+      == textilize(resource.extended_description)
 
   .four.columns.last
     article.box
