@@ -51,7 +51,7 @@ p {
 	margin-bottom: 22px;
 	color: #929292;
 }
-p.description, .eight ul li {
+p.description, .text-description ul li {
 	font-size: 23px;
 	line-height: 25px;
 	letter-spacing: 0px;
@@ -59,9 +59,9 @@ p.description, .eight ul li {
 	margin-bottom: 21px;
 	a{  color:$secondColor;  }
 }
-.eight ul {  margin-bottom: 17px;  }
-.eight ul li {  line-height: 7px;  }
-.eight ul.extended_description li {
+.text-description ul {  margin-bottom: 17px;  }
+.text-description ul li {  line-height: 7px;  }
+.extended_description ul li {
 	font-size: 17px;
 	margin-bottom: 16px;
 }
