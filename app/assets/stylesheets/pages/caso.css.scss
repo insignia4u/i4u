@@ -14,7 +14,7 @@
 		float: left!important; 
 		p{ padding-right: 5px; }
 	}
-	.four.columns.last{ padding-top: 40px!important; }	
+	.four.columns.last{ padding-top: 40px!important; }
 }
 
 /* settings */
@@ -48,22 +48,22 @@ p {
 	margin-bottom: 17px;
 	color: #929292;
 }
-p.description, ul.description li {
+p.description, ul {
 	font-size: 23px;
 	line-height: 25px;
 	letter-spacing: 0px;
 	color: #929292;
 	margin-bottom: 25px;
 }
-ul.description li {	line-height: 15px!important;  }
+ul li {  line-height: 7px;  }
 
 .box{
 		height: auto;
 		margin-top: -10px!important;
-	img{    
-	    height: 230px;
-	    width: 234px;
-	    margin: 15px;
+	img{
+		height: 230px;
+		width: 234px;
+		margin: 15px;
 		margin-left: 22px;
 		margin-bottom: 0px;
 	}
@@ -76,18 +76,16 @@ ul.description li {	line-height: 15px!important;  }
 		margin-bottom: 10px;
 		font-weight: 700;
 	}
-	p{	margin: 15px;	}
-	p.title{	font-size: 17px;	}
+	p{  margin: 15px;  }
+	p.title{  font-size: 17px;  }
 	ul{
-		p{
-			margin-bottom: 0px;
-			}
+		p{  margin-bottom: 0px;  }
 		li{
 			color: inherit !important;
 			font-weight: normal;
 			background: white!important;
 			margin-top: 0px;
-			margin-left: 5px;  
+			margin-left: 5px;
 			ul {
 				margin-left: 25px;
 				margin-top: 10px;
@@ -112,7 +110,7 @@ ul.description li {	line-height: 15px!important;  }
 		}
 		li:hover{
 			margin-left: 5px;
-			padding-left: 0px;	
+			padding-left: 0px;
 		}
 	}
 }
