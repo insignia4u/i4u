@@ -37,16 +37,18 @@ h3{
 a.url{ 
 	color:$secondColor;
 	margin-top: 0px;
-	margin-bottom: 30px;
+	margin-bottom: 35px;
 	font-weight: 700;
-	font-size: 21px;
+	font-size: 23px;
+	text-transform: uppercase;
+	display: inline-block;
 }
 p {
 	font-family: "Dosis";
 	font-weight: normal;
-	font-size: 18px;
+	font-size: 17px;
 	line-height: 21px;
-	margin-bottom: 17px;
+	margin-bottom: 22px;
 	color: #929292;
 }
 p.description, .eight ul li {
@@ -54,7 +56,7 @@ p.description, .eight ul li {
 	line-height: 25px;
 	letter-spacing: 0px;
 	color: #929292;
-	margin-bottom: 25px;
+	margin-bottom: 21px;
 }
 .eight ul li {  line-height: 7px;  }
 
