@@ -121,21 +121,15 @@ footer{
 	a:hover.twitter{	background-position: -43px -2px;	}
 	a:hover.facebook{	background-position: 0px -2px;	}
 	a:hover.github{	background-position: 0px -115px;	}
-	#message li{	list-style: none;  }
-	#message.failed-subscription {
+	#message{
 		background: rgba(0, 0, 0, 0.3);
 		border-radius: 4px;
-		box-shadow: 0px 0px 7px red;
 		border: 1px solid #DB0606;
 		text-align: center;
 		height: 27px;
+		margin-top: 6px;
 	}
-	#message.succesfull-subscription {
-		background: rgba(0, 0, 0, 0.3);
-		border-radius: 4px;
-		box-shadow: 0px 0px 7px #5DFF2A;
-		border: 1px solid #42DB06;
-		text-align: center;
-		height: 27px;
-	}
+	#message li{	list-style: none;  }
+	#message.failed-subscription {  box-shadow: 0px 0px 7px red;  }
+	#message.succesfull-subscription {  box-shadow: 0px 0px 7px #5DFF2A;  }
 }
