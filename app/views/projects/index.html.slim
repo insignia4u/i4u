@@ -1,4 +1,5 @@
 - content_for :stylesheets do
+  = stylesheet_link_tag "base" 
   = stylesheet_link_tag "slider"
   = stylesheet_link_tag "slider-portfolio" 
   = stylesheet_link_tag "pages/portfolio" 
@@ -7,14 +8,6 @@
   .row 
     h3.title = title_for('highlighted-projects')
     = render "shared/slider", featured_content: @highlighted_projects, hidden_title: false
-
-/ .row
-
-/   h4.title
-/     = title_discriminated_for('more-works')
-/   = image_tag "other/pdf.png", class: 'one columns pdf'
-/   == body_discriminated_for('more-works',true, 'seven columns')
-/   = link_to title_for('full-list-of-works'), list_projects_path, class: 'button large'
 
 .row
   h4.title = title_discriminated_for('recent-jobs')
