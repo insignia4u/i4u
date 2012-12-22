@@ -1,8 +1,7 @@
 - content_for :stylesheets do
-  = stylesheet_link_tag "base" 
   = stylesheet_link_tag "slider"
-  = stylesheet_link_tag "slider-portfolio" 
-  = stylesheet_link_tag "pages/portfolio" 
+  = stylesheet_link_tag "slider-portfolio"
+  = stylesheet_link_tag "pages/portfolio"
 
 - unless @highlighted_projects.empty?
   .row 
