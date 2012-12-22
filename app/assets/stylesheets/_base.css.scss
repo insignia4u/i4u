@@ -60,7 +60,12 @@ h4{
 	text-transform: uppercase;
 	font-weight: 800;
 }
-h4.title{	color:$secondColor;	}
+h4.title{
+	color:$secondColor;
+	font-size: 19px;
+	margin-top: 48px;
+	margin-bottom: 18px;
+}
 article{
 	float:left;
 	background: white;
@@ -70,7 +75,7 @@ article{
 	overflow: hidden;
 	margin-right: 50px;
 	img{
-		height: 250px;
+		height: 226px;
 		width: 290px;
 	}
 	span{
@@ -89,14 +94,14 @@ article{
 		line-height: 1.25;
 		position: relative;
 		top:-240px;
-		padding: 20px;
-		padding-top: 17px;
+		padding: 25px;
+		padding-top: 22px;
 		color: #a3a3a3;
 		p{  line-height: 16px;  }
 		b{
 			font-weight: 800;
 			font-size: 19px;
-			line-height: 25px;
+			line-height: 26px;
 		}
 	}
 }
