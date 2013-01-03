@@ -40,7 +40,13 @@ checkEmailOnSubscription = () ->
 
     return true
 
+
 $(window).load () ->
   initFeaturedContentSlider()
   attachNewFileButtonBehaviors()
   checkEmailOnSubscription()
+
+  if Modernizr.svg
+    $('header .logo a').html('<img src="/assets/logo-insignia.svg" width="190" height="49" alt="Insignia"/>')
+  else
+    $('header .logo a').html('<img src="/assets/logo-insignia.png" width="190" height="49" alt="Insignia"/>')

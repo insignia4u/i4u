@@ -1,66 +1,39 @@
-@media only screen and (max-width: 767px) {
-	header{
-		padding-bottom: 0px;
-		padding-top: 0px;
-		height: auto;  
-		.icon{	display: none;	}
-		.logo{
-		  	background-position: center!important;
-		  	text-align: center;
-		  	position: relative;
-		  	top: -20px;
-		}
-		ul{
-			background: white;
-			padding-bottom: 0px;
-		}
-		.block-grid.three-up > li {
-			width: 33.33%!important;
-			height: 50%;
-			padding-bottom: 5%;
-	  		padding-top: 10px!important;
-	  		text-align: center;
-		}
-		.row .four {
-			width: 30.333%;
-		}
-	}
-}
-
 header{
 	background: url(asset-path("top-deco.png",image)) 0px -10px no-repeat;
 	min-height: 100px;
 	padding-top: 95px;
 	padding-bottom: 32px;
-	.block-grid.three-up {
-		margin: 1px -25px;
-	}
+
 	.logo{
 		display: block;
 		margin-top: -10px;
 		margin-bottom: 20px;
-		background: url(asset-path("logo-insignia.png", image)) no-repeat;
 		height: 50px;
-	  h1{  
-	 		overflow: hidden; 		
-			a{
-				position: relative;
-		 		top: -47px;
-		 		padding-bottom: 40px;
-		 		padding-right: 140px;
+		width:235px !important;
+
+		h1{
+			margin:0;	
+		}
+
+		a{
+			img{
+				border:none;
 			}
 		}
+
 		a:hover{	color: transparent;	}
 	}
+
 	ul{	
 		padding-left: 5px!important;
 		line-height: 1;
 		top: -6px;
-	 }
+	}
+
 	 .block-grid.three-up > li {
-	 		width: 27.33%;
-			padding: 0 12px 8px;
-		}
+		padding: 0 12px 8px;
+	}
+
 	a, a:visited{	color: #ccb2b3;	text-transform: uppercase;	font-weight: 500; font-size: 15px; }
 	a:hover, .actual{ color: #a3a3a3; }
 
@@ -92,3 +65,53 @@ a:hover.github{
 	background-position: 0px -190px;
 }
 
+@media only screen and (max-width: 767px) {
+	.columns.logo{
+		float:left;
+	}
+
+	header{
+		.logo{
+
+		}
+    	.socials-icons{
+    		position:absolute;
+    		right: 10px;
+    		top: 31px;
+    	}
+    }
+}
+
+@media only screen and (max-width: 599px) {
+	header{
+		height: auto;
+
+		.icon{
+			display: none;
+		}
+
+		.logo{
+		  	position: relative;
+		  	top: -20px;
+		  	width:190px!important;
+		  	margin:0 auto;
+		  	float:none !important;
+		}
+
+		ul{
+			padding-bottom: 0px;
+		}
+
+		.block-grid.three-up > li {
+			width: 33.33%!important;
+			height: 50%;
+			padding-bottom: 5%;
+	  		padding-top: 10px!important;
+	  		text-align: center;
+		}
+		
+		.row .four {
+			width: 30.333%;
+		}
+	}
+}

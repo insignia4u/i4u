@@ -1,60 +1,3 @@
-/* Small screens */
-@media only screen and (max-width: 767px) {
-	footer{
-		margin-top: 10px!important;
-		padding-bottom: 20%!important;
-		text-align: center;
-		font-size: 1.2em!important;
-		.button{ height: 25px!important; }
-		.columns{  
-			width:100%!important; 
-			margin: auto!important;
-			a.icon{  color:transparent;  }
-	  }
-		.columns.last{
-			position: relative;
-			top:0px;
-			left: 0px;  
-			float:none;
-			width: 205px!important;
-			margin-left: -20px;
-			padding-bottom: 30px;
-			overflow: hidden;
-			.icon {
-		    display: inline-block;
-		    float: none !important;
-		    font-size: 0;
-		    height: 37px;
-		    margin-left: 0 !important;
-		    margin-right: 15px;
-		    overflow: hidden;
-		    width: 38px;
-			}
-			.eng{ margin-right: 0px; }
-		}
-	}
-}
-/* Landscape Orientation */
-@media only screen and (max-width: 767px) and (orientation: landscape) { 
-	footer{
-		padding-bottom: 10%!important;
-		.columns{  
-			float:left; 
-			width: 50%!important; 
-			margin: auto; 
-		}
-		.columns.last{
-			position: relative;
-			top:0px;
-			left: -5px;
-			width: auto!important;
-			margin:auto;
-			clear:both;
-			.icon{ margin-left: 23px;}
-		}
-	}  
-}
-
 /*  default  */
 footer{
 	background: rgb(145,145,145);
@@ -66,9 +9,21 @@ footer{
 		color: white;
 		margin-top: 5px;
 	}
-	.row .three {	width: 28.333%;	 }
-	.columns{	margin-right: 69px;  }
-	.last{	margin-right: 3px; }
+
+	.row .three {	
+		width: 28.333%;
+	}
+
+	.columns{
+		margin-right: 5%;
+	}
+
+	.last{
+		margin-right: 3px;
+		right:auto;
+		width: 210px!important;
+	}
+
 	h4{ 
 		text-transform:uppercase;
 		font-weight: 700;
@@ -137,4 +92,80 @@ footer{
 		box-shadow: 0px 0px 7px #5DFF2A;
 		border: 1px solid #42DB06;
 	}
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+
+
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) { }
+
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+}
+/* Small screens */
+@media only screen and (max-width: 767px) {
+	footer{
+		margin-top: 10px!important;
+		padding-bottom: 20%!important;
+		text-align: center;
+		font-size: 1.2em!important;
+		.button{ height: 25px!important; }
+		.columns{  
+			width:100%!important; 
+			margin: auto!important;
+			a.icon{  color:transparent;  }
+	  }
+		.columns.last{
+			position: relative;
+			top:0px;
+			left: 0px;
+			right:auto;
+			float:none;
+			width: 205px!important;
+			margin-left: -20px;
+			padding-bottom: 30px;
+			overflow: hidden;
+			.icon {
+		    display: inline-block;
+		    float: none !important;
+		    font-size: 0;
+		    height: 37px;
+		    margin-left: 0 !important;
+		    margin-right: 15px;
+		    overflow: hidden;
+		    width: 38px;
+			}
+			.eng{ margin-right: 0px; }
+		}
+	}
+}
+
+/* Landscape Orientation */
+@media only screen and (max-width: 767px) and (orientation: landscape) { 
+	footer{
+		padding-bottom: 10%!important;
+		text-align: center;
+		.columns{  
+			float:left; 
+			width: 50%!important; 
+			margin: auto; 
+		}
+		.columns.last{
+			position: relative;
+			top:0px;
+			left: -5px;
+			width: auto!important;
+			margin:auto;
+			clear:both;
+			.icon{ margin-left: 23px;}
+		}
+	}  
 }

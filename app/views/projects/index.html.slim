@@ -4,7 +4,7 @@
   = stylesheet_link_tag "pages/portfolio"
 
 - unless @highlighted_projects.empty?
-  .row 
+  .row.slider-portfolio
     h3.title = title_for('highlighted-projects')
     = render "shared/slider", featured_content: @highlighted_projects, hidden_title: false
 

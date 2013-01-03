@@ -1,40 +1,3 @@
-/* Small screens */
-@media only screen and (max-width: 767px) {
-	*{
-		font-size: 1.2em; 
-	}
-	body{ background: #FDFDFD!important; }
-	.row{  
-	  margin: auto;
-		padding-left: 10px;
-		padding-right: 10px;
-		overflow: hidden;  
-	}
-	.row article{
-		float: none;
-		margin: auto;
-	}
-	article.box{  height: auto;  }
-}
-
-/* Landscape Orientation */
-@media screen and (max-width: 767px) and (orientation: landscape) { 
-	.row{  padding-left:25px;  }
-	article{
-    float: left !important;
-    margin-bottom: 10px !important;
-    margin-right: 2% !important;
-		.technologies .highlighted{
-			width: 100%!important;
-			background-size: 100% 30px;
-			position: relative;
-			left: -5px;
-		}
-	}
-	.box{ width: 49%; }
-	.last{ margin-right: 0px!important; }
-	article.box.news{ width: 100%!important; }
-}
 /* settings */
 $firstColor: #FDFDFD;
 $secondColor: #E2017C;
@@ -107,7 +70,8 @@ article{
 }
 
 .last{	right:-30px;	margin-right:0px;	}
-a:hover article{
+.four.columns.last{right:0;}
+.no-touch a:hover article{
 		background: #19375B;
 		color: white!important;
 		span{ visibility: visible;}
@@ -145,11 +109,18 @@ a:hover article{
 	line-height: 25px;
 	.description{
 		margin-top: 10px;
-		padding: 0px;
+		padding: 0px 30px 0 0;
 		top:0px;
 		a{ color: $secondColor; font-style: italic;	font-weight: 300; }
 	}
 }
+
+.eight.columns{
+	article.news{
+		padding:0 30px 0 0;
+	}
+}
+
 .technologies, .methodologies{
 	background: white;
 	border: 1px solid  #E5E5E5;
@@ -188,4 +159,93 @@ span.caps{
 	width: auto;
 	height: auto;
 	background: none;
+}
+
+
+@media screen and (max-width: 768px) {
+	.row{
+		padding-left: 10px;
+		padding-right: 10px;
+
+		a{
+			margin:10px 0;
+			display:block;
+		}
+	}
+	.row, .row.successful-projects{
+		article{
+			margin-right: 5px;
+    		overflow: hidden;
+    		width: 242px;
+    	}
+   	}
+   	.technologies, .methodologies{
+   		li:hover{
+   			width:auto;
+   			margin-right:10px;
+   		}
+   	}
+   	p.description, .text-description ul li{
+   		font-size:17px!important;
+   	}
+   	.text-description, .extended_description{
+   		padding:0 30px 0 0;
+   	}
+}
+
+/* Landscape Orientation */
+@media screen and (max-width: 768px) and (orientation: landscape) { 
+	.row{  padding-left:25px;  }
+	article{
+    float: left !important;
+    margin-bottom: 10px !important;
+    margin-right: 2% !important;
+
+		.technologies .highlighted{
+			width: 100%!important;
+			background-size: 100% 30px;
+			position: relative;
+			left: -5px;
+		}
+	}
+
+	.box{ width: 49%; }
+	.last{ margin-right: 0px!important; }
+	article.box.news{ width: 100%!important; }
+}
+
+@media only screen and (max-width: 939px) {
+
+}
+
+/* Small screens */
+@media only screen and (max-width: 767px) {
+	*{
+		font-size: 1.2em; 
+	}
+	body{ background: #FDFDFD!important; }
+	.row{  
+	  margin: auto;
+		padding-left: 10px;
+		padding-right: 10px;
+		overflow: hidden;  
+	}
+	.row.successful-projects{
+		a{
+			display:block;
+			width:281px;
+			height:409px;
+			margin:10px auto;
+			position:relative;
+		}
+	}
+
+	.row article{
+		float: none;
+		margin: auto;
+	}
+
+	article.box{ 
+		height: auto;
+	}
 }
