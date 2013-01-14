@@ -40,21 +40,11 @@ checkEmailOnSubscription = () ->
 
     return true
 
-addToolsTipToProject = () ->
-  $('li#project_image_input label')
-    .wrap("<span class='has-tip tip-top' data-width='730' title='Esta imagen será 
-      visualizada cuando el projecto figure en la sección de últimos trabajos. (Tamaño requerido = \"277px x 250px\") '/>")
-
-  $('li#project_featured_image_input label')
-    .wrap("<span class='has-tip tip-top' data-width='790' title='Esta imagen será 
-      visualizada cuando el projecto figure en la sección de trabajos resaltados. (Tamaño requerido = \"940px x 555px\") '/>")
-
 
 $(window).load () ->
   initFeaturedContentSlider()
   attachNewFileButtonBehaviors()
   checkEmailOnSubscription()
-  addToolsTipToProject()
 
   if Modernizr.svg
     $('header .logo a').html('<img src="/assets/logo-insignia.svg" width="190" height="49" alt="Insignia"/>')
