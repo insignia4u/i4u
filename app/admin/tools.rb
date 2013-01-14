@@ -1,5 +1,5 @@
 ActiveAdmin.register Tool do
-  menu parent: "Support"
+  menu parent: "Portfolio"
 
   config.sort_order = 'position_asc'
   filter :name
