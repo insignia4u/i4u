@@ -10,13 +10,14 @@
       == body_for('main-content-service', true)
 
     h3 = title_for('our-process')
-    - %w{ planificacion codificacion revision control produccion mantenimiento}.each do |name|
-      article
-        = image_tag "other/#{name}.png"
-        span
-        .description
-          b = title_for("#{name}-text-snippet")
-          == body_for("#{name}-text-snippet",true)
+    .list-services
+      - %w{ planificacion codificacion revision control produccion mantenimiento}.each do |name|
+        article
+          = image_tag "other/#{name}.png"
+          span
+          .description
+            b = title_for("#{name}-text-snippet")
+            == body_for("#{name}-text-snippet",true)
 
   .four.columns.last
     article.box
