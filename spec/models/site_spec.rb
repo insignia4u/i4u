@@ -62,22 +62,36 @@ describe Site do
     describe "Listing Projects" do
       before :each do
         @site      = FactoryGirl.create(:site)
-        @project_1 = FactoryGirl.create(:project, :site => @site)
-        @project_2 = FactoryGirl.create(:project, :site => @site)
-        @project_3 = FactoryGirl.create(:project, :site => @site)
-        @project_4 = FactoryGirl.create(:project, :site => @site)
+        @highlighted_projects  = []
+
+        5.times{|i| @highlighted_projects << FactoryGirl.create(:project, :site => @site, highlighted: true) }
+        4.times{ FactoryGirl.create(:project, :site => @site, highlighted: false) }
       end
 
-      it "list should have three projects" do
-        projects = @site.home_projects
-        projects.size.should == 3
+      it "list highlighted three projects for Home Page" do
+        @site.home_projects.count.should eq 3
       end
 
-      it "list Projects for Home Page" do
-        projects = @site.home_projects
-        projects.first.should  == @project_1
-        projects.second.should == @project_2
-        projects.last.should   == @project_3
+      it "list three featured content for Home Page" do
+        featured_contents = []
+
+        3.times{ featured_contents << FactoryGirl.create(:featured_content, :site_id => @site.id) }
+        FactoryGirl.create(:featured_content, :site => @site)
+
+        @site.home_content.should eq featured_contents
+      end
+
+      it "list the featured projects" do
+        @site.featured_projects.should eq @highlighted_projects
+      end
+      
+      it "list the projects order by creation date in descending order" do
+        site      = create(:site)
+        yesterday = create(:project, :site => site, created_at: DateTime.yesterday)
+        today     = create(:project, :site => site, created_at: DateTime.now)
+        tomorrow  = create(:project, :site => site, created_at: DateTime.tomorrow)
+
+        site.projects_by_created_date.should eq [tomorrow, today, yesterday]
       end
     end
   end
