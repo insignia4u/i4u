@@ -1,11 +1,11 @@
 .row.successful-projects
   h4= title_for('successful-projects')
-
-  - @featured_projects.each do |project|
-    = link_to project do
-      article class=(last_resource(@featured_projects, project))
-        = image_tag( project.image.url(:big) )
-        span
-        .description
-          b= project.name
-          p= project.summary
+  .list-projects
+	  - @featured_projects.each do |project|
+	    = link_to project do
+	      article class=(last_resource(@featured_projects, project))
+	        = image_tag( project.image.url(:big) )
+	        span
+	        .description
+	          b= project.name
+	          p= project.summary

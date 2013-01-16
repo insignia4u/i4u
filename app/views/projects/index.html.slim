@@ -11,4 +11,5 @@
 .row
   h4.title = title_discriminated_for('recent-jobs')
   
-  = render('projects/modules/last_jobs', recent_jobs: @recent_jobs)
+  .lastestjob-section
+  	= render('projects/modules/last_jobs', recent_jobs: @recent_jobs)

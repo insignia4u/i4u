@@ -1,21 +1,10 @@
 @media only screen and (max-width: 767px) {
-	.row{
-		p{ text-align: justify; }
-	}
 	.eight.columns{
 		h3{ display: block!important; }
 	}
 	.four.columns.last{ right: auto!important; }
 }
-/* Landscape Orientation */
-@media only screen and (max-width: 767px) and (orientation: landscape) {
-	.eight.columns{ 
-		width: 50%!important; 
-		float: left!important; 
-		p{ padding-right: 5px; }
-	}
-	.four.columns.last{ padding-top: 40px!important; }
-}
+
 
 /* settings */
 $firstColor: #FDFDFD;
@@ -60,7 +49,6 @@ p.description, .text-description ul li {
 	a{  color:$secondColor;  }
 }
 .text-description ul {  margin-bottom: 17px;  }
-.text-description ul li {  line-height: 7px;  }
 .extended_description ul li {
 	font-size: 17px;
 	margin-bottom: 0px;
@@ -103,18 +91,22 @@ p.description, .text-description ul li {
 					margin-left: -10px;
 					line-height: 18px;
 					color: #929292!important;
-					width: 242px;
+					width: auto;
+					padding-bottom: 15px;
+    				padding-top: 2px;
+    				padding-right:10px;
+    				margin-right:5px;
 				}
 				li:hover{
 					background: url(asset-path("deco-title.png",image)) 5px -2px no-repeat !important;
-					background-size: 267px 100% !important;
-					height: auto;
 					color: white!important;
-					padding-left: 10px;
-					font-weight: bold;
 					margin-left: -20px;
-					line-height: 18px;
-					font-size: 16px;
+					background-size: 267px 100% !important;
+					padding-left: 10px;
+					font-weight: normal;
+					margin-right:0;
+					/*height: auto;
+					line-height: 18px;*/
 				}
 			}
 		}

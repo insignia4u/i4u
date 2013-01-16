@@ -1,6 +1,6 @@
 - recent_jobs.each do |recent_job|
     = link_to recent_job do
-      article class=(last_resource(recent_jobs, recent_job))
+      article class=(last_resource(recent_jobs, recent_job) + ' lastestjob') 
         = image_tag( recent_job.image.url(:big) )
         span
         .description
