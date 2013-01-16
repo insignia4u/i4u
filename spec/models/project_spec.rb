@@ -11,8 +11,7 @@ describe Project do
     it { should     have_accessible(:ended_at) }
     it { should     have_accessible(:technology_ids) }
     it { should     have_accessible(:tool_ids) }
-    it { should_not have_accessible(:highlighted) }
-    it { should_not have_accessible(:highlighted) }
+    it { should     have_accessible(:highlighted) }
   end
 
   describe "Validations" do
@@ -128,6 +127,33 @@ describe Project do
             allowing('image/png', 'image/jpeg').
             rejecting('text/plain', 'text/xml')
       }
+
+      it "should invalid without started_at and a ended_at" do
+        project = build(:project, started_at: nil, ended_at: DateTime.yesterday)
+        project.should_not be_valid 
+      end
+    end
+  end
+
+  describe "class methods" do
+    before :each do
+      @yesterday = create(:project, created_at: DateTime.yesterday)
+      @today     = create(:project, created_at: DateTime.now)
+      @tomorrow  = create(:project, created_at: DateTime.tomorrow)
+    end
+
+    describe "list recent jobs" do
+      context "with n" do
+        it "list the n projects order by creation date in descending order" do
+          Project.recent_jobs(2).should eq [@tomorrow, @today]
+        end
+      end
+
+      context "without n" do
+        it "list the 3 projects order by creation date in descending order" do
+          Project.recent_jobs.should eq [@tomorrow, @today, @yesterday]
+        end
+      end
     end
   end
 end

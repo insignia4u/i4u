@@ -3,7 +3,6 @@ require 'spec_helper'
 describe Person do
     describe "Attributes accessibility" do
     it { should have_accessible(:site_id) }
-    it { should have_accessible(:title_id) }
     it { should have_accessible(:first_name) }
     it { should have_accessible(:last_name) }
     it { should have_accessible(:bio) }
@@ -58,12 +57,11 @@ describe Person do
   end
 
   describe "Person Full Name" do
-    before :each do
-      @person = FactoryGirl.create(:person)
-    end
+    it "returns full name" do
+      person = FactoryGirl.create(:person, first_name: 'Augusto',
+          last_name: 'Pedraza')
 
-    it "returns First Name with Last Name" do
-      @person.full_name.should == "#{@person.first_name} #{@person.last_name}"
+      person.full_name.should eq "Augusto Pedraza"
     end
   end
 end
