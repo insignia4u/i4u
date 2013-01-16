@@ -10,5 +10,12 @@ describe TextSnippet do
 
   describe "Validations" do
     it { should validate_presence_of(:name) }
+
+  end
+
+  describe "instance methods" do
+    it "gets a summary of body" do
+      create(:text_snippet).summary.length.should <= 140
+    end
   end
 end
