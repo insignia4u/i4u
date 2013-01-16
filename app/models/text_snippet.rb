@@ -12,6 +12,6 @@ class TextSnippet < ActiveRecord::Base
   friendly_id :name, use: [:slugged, :history]
 
   def summary
-    (body || '')[0..140]
+    (body || '')[0...140]
   end
 end
