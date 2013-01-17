@@ -14,8 +14,11 @@ describe TextSnippet do
   end
 
   describe "instance methods" do
+    let(:text_snippet) { FactoryGirl.create(:text_snippet) }
+    subject { text_snippet }
+
     it "gets a summary of body" do
-      create(:text_snippet).summary.length.should <= 140
+      subject.summary.length.should <= 140
     end
   end
 end

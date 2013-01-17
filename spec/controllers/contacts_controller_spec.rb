@@ -2,25 +2,17 @@ require 'spec_helper'
 
 describe ContactsController do
   describe "Generate new instance" do
-    before :each do
-      @message = mock_model(Message)
-      @text_snippet = mock_model(TextSnippet)
+    describe "GET #new" do
+      it "assigns a new Message to @message" do
+        get :new
 
-      Message.stub!(:new).and_return(@message)
-      TextSnippet.stub!(:find).and_return(@text_snippet)
-    end
+        assigns(:message).should be_a_new(Message)
+      end
 
-    it "generates an instance" do
-      Message.should_receive(:new).and_return(@message)
-      TextSnippet.should_receive(:find).with('contact').and_return(@text_snippet)
-      get :new
-      response.should be_success
-    end
-
-    it "finds texts" do
-      TextSnippet.should_receive(:find).with('contact').and_return(@text_snippet)
-      get :new
-      assigns[:main_text].should == @text_snippet
+      it "renders the :new template" do
+        get :new
+        response.should render_template :new
+      end
     end
   end
 
