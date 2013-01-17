@@ -228,10 +228,6 @@ span.caps{
 			}
 		}
 	}
-	.eight form{
-		margin-right:7%;
-	}
-
 }
 
 /* Landscape Orientation 
@@ -263,6 +259,11 @@ span.caps{
 	article{
 		margin: 15px 25px;
 	}
+	.eight{
+		article.twelve{
+			margin-left:0;
+		}
+	}
 	.row .four article.box p{
 		text-align:left;
  	}
@@ -278,6 +279,9 @@ span.caps{
 		article{
 			width:279px!important;
 		}
+	}
+	.eight form{
+		margin-right:7%;
 	}
 }
 
@@ -333,6 +337,13 @@ span.caps{
 		width:281px!important;
 		float:none;
 		margin:0 auto;
+	}
+
+	.news-item{
+		
+		.description{
+			padding:0;
+		}
 	}
 }
 
