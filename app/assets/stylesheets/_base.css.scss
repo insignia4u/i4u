@@ -39,7 +39,6 @@ article{
 	margin-right: 50px;
 
 	img{
-		height: 226px;
 		width: 290px;
 	}
 	span{
@@ -145,7 +144,8 @@ article{
 		list-style: none;
 		margin-left: 20px;
 		padding-bottom: 8px;
-		line-height: 30px;
+		line-height: 16px;
+		padding-top:3px;
 	}
 	
 	li:hover{
@@ -156,7 +156,6 @@ article{
 		color:white;
 		margin-left: 10px;
 		padding-left: 10px;
-		font-weight: bold;
 	}
 }
 
@@ -199,6 +198,15 @@ span.caps{
 		    margin-right:10px;
 	    }
 	}
+	.sidebar{
+		width:100%;
+
+		.technologies, .methodologies{
+		}
+		img{
+			width:100%!important;
+		}
+	}
 
 	p.description, .text-description ul li{
 		font-size:17px!important;
@@ -210,13 +218,18 @@ span.caps{
 	.text-description, .extended_description{
 	    padding:0 30px 0 0;
 	}
-	.lastestjob-section{
-		width:658px;
-		margin: 0 auto;
 
-		article{
-			margin:15px 25px;
+	.four.columns.last{
+		article.box{
+			width:100%;
+
+			img{
+				margin:0;
+			}
 		}
+	}
+	.eight form{
+		margin-right:7%;
 	}
 
 }
@@ -247,9 +260,25 @@ span.caps{
 }*/
 
 @media only screen and (max-width: 939px) {
+	article{
+		margin: 15px 25px;
+	}
 	.row .four article.box p{
 		text-align:left;
  	}
+ 	.lastestjob-section, .list-projects, .home-bottom{
+		width:658px;
+		margin: 0 auto;
+		
+		a{
+			margin:0 auto;
+			width:329px;
+		}
+
+		article{
+			width:279px!important;
+		}
+	}
 }
 
 /* Small screens */
@@ -281,5 +310,42 @@ span.caps{
 
 	article.box{
 		height: auto;
+	}
+	.eight form{
+		margin-right:0;
+	}
+
+	.lastestjob-section, .list-projects, .home-bottom{
+		width:auto;
+
+		a{
+			display:block;
+			margin:15px auto;
+			width:329px;
+
+			article{
+
+			}
+		}
+	}
+
+	.four article.sidebar{
+		width:281px!important;
+		float:none;
+		margin:0 auto;
+	}
+}
+
+@media only screen and (max-width: 328px) {
+	.lastestjob-section, .list-projects, .home-bottom{
+		width:100%;
+		
+		a{
+			width:auto;
+			
+			article{
+				margin:15 auto;
+			}
+		}
 	}
 }

@@ -29,8 +29,12 @@
 		img{
 			background: none;
 			height: 405px;
-			width: 410px;
 			margin-left: 90px;
+		}
+		.orbit-slide{
+			img{
+				float:left;
+			}
 		}
 		.data{
 			background: none;
@@ -49,6 +53,16 @@
 					font-weight: 600;
 				}
 			} 
+		}
+	}
+
+	@media only screen and (max-width: 810px) {
+		#featured-content{
+			.orbit-slide{
+				img{
+					height: 335px;
+				}
+			}
 		}
 	}
 
