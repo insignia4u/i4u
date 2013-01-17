@@ -5,9 +5,9 @@ class Message
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  attr_accessor :name, :email, :body, :file, :subject, :with_file
+  attr_accessor :body, :email, :file, :name, :subject, :with_file
 
-  validates :name, :email, :body, :subject, :presence => true
+  validates :body, :name, :email, :subject, :presence => true
   validates :email, :format => { :with => ValidFormats::EMAIL }, :allow_blank => true
   validates :file, :presence => true, :if => :with_file
 
@@ -19,6 +19,7 @@ class Message
     false
   end
 
+  #Used to be compatible with ErrorDecorator
   def new_record?
     true
   end
