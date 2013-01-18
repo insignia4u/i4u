@@ -1,55 +1,81 @@
 require 'spec_helper'
 
 describe JobsController do
-  describe "Generate new instance" do
-    before :each do
-      @message = mock_model(Message)
-      @text_snippet = mock_model(TextSnippet)
 
-      Message.stub!(:new).and_return(@message)
-      controller.stub!(:load_texts).and_return(@text_snippet)
-      TextSnippet.stub!(:find)
+  describe "GET #new" do
+    it "assigns a new Message to @message" do
+      get :new
+
+      assigns(:message).should be_a_new(Message)
     end
 
-    it "generates an instance" do
-      Message.should_receive(:new).and_return(@message)
+    it "renders the :new template" do
       get :new
-      response.should be_success
-    end
-
-    it "finds texts" do
-      controller.should_receive(:load_texts).with(['job']).and_return(@text_snippet)
-      get :new
-      assigns[:main_text].should == @text_snippet
+      response.should render_template :new
     end
   end
 
-  describe "Build a message" do
+  describe "POST #create" do
     before :each do
-      @message = mock_model(Message)
-      @mailer  = mock(Notifier)
+      @message = mock_model(Message, :with_file= => nil, :valid? => true)
 
       Message.stub!(:new).and_return(@message)
-      @message.stub!(:valid?)
-
-      Notifier.stub!(:contact_message).and_return(@mailer)
-      @mailer.stub!(:deliver)
+      @notifier = mock('notifier', :deliver => nil)
+      Notifier.stub!(:contact_message).and_return(@notifier)
     end
 
-    it "responds with redirect with valid message" do
-      Message.should_receive(:new).and_return(@message)
-      @message.should_receive(:valid?).and_return(true)
-      Notifier.should_receive(:contact_message).with(@message).and_return(@mailer)
-      @mailer.should_receive(:deliver)
-      post :create
-      response.should be_redirect
+    context "with valid attributes" do
+      it "creates a new message" do
+        Message.should_receive(:new).and_return(@message)
+        post :create, message: valid_attributes
+      end
+
+      it "assign the use of file" do
+        @message.should_receive(:with_file=).with(true).and_return(true)
+        post :create, message: valid_attributes
+      end
+
+      it "assigns message variable" do
+        post :create, message: valid_attributes
+        assigns(:message).should eq @message
+      end
+
+      it "redirects to the new contact" do
+        post :create, message: valid_attributes
+
+        response.should redirect_to new_contact_path
+      end
     end
 
-    it "responds with templete with invalid message" do
-      Message.should_receive(:new).and_return(@message)
-      @message.should_receive(:valid?).and_return(false)
-      post :create
-      response.should render_template("new")
+    context "with invalid attributes" do
+      before :each do
+        @message = mock_model(Message, :with_file= => nil, :valid? => false)
+        Message.stub!(:new).and_return(@message)
+      end
+
+      it "re-renders the new template" do
+        post :create, message: invalid_attributes
+        response.should render_template :new
+      end
     end
   end
+end
+
+def valid_attributes
+  @file ||= FactoryGirl::AttachmentHelper.uploaded_file
+  {
+    "body"  =>      "Some body name",
+    "email" =>     "augusto@insignia4u.com",
+    "file"  =>      @file,
+    "name"  =>      "Augusto Pedraza"
+  }
+end
+
+def invalid_attributes
+  {
+    "body"  =>      "",
+    "email" =>     "invalid email...",
+    "file"  =>      nil,
+    "name"  =>      ""
+  }
 end

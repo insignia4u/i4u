@@ -13,6 +13,8 @@ class Message
 
   def initialize(attributes = {})
     attributes.each { |name, value| send("#{name}=", value) }
+
+    @subject = "CV to #{@name}" unless @subject
   end
 
   def persisted?
@@ -23,4 +25,5 @@ class Message
   def new_record?
     true
   end
+
 end
