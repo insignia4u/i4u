@@ -54,6 +54,14 @@ class Project < ActiveRecord::Base
     highlighted? ? "Yes" : "No"
   end
 
+  def technologies_by_position
+    technologies.by_position
+  end
+
+  def tools_by_position
+    tools.by_position
+  end
+
   def self.recent_jobs(n=3)
     Project.order("created_at DESC").limit(n)
   end
