@@ -3,16 +3,16 @@ require "spec_helper"
 describe Notifier do
   describe "Contact Email" do
     before :each do
-      @message  = FactoryGirl.build(:message)
+      @message  = FactoryGirl.build(:message, subject: "SUBJECT")
       @expected = Notifier.contact_message(@message)
     end
 
     it "renders the subject" do
-      @expected.subject.should == "New Contact Message"
+      @expected.subject.should eq "Contact from website: SUBJECT"
     end
 
-     it 'renders the sender email' do
-      @expected.from.should == [@message.email]
+    it 'renders the sender email' do
+      @expected.from.should eq [@message.email]
     end
 
     it "renders the receiver email" do

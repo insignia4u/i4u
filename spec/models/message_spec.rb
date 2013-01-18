@@ -36,7 +36,6 @@ describe Message do
       it { should validate_presence_of(:name) }
       it { should validate_presence_of(:email) }
       it { should validate_presence_of(:body) }
-      it { should validate_presence_of(:subject) }
 
       describe "Require attachmente file" do  
         context "when with_file is true" do

@@ -83,6 +83,12 @@ module ApplicationHelper
     rtn
   end
 
+  def get_slider_to_highlighted_projects(projects)
+    projects.map do |p|
+      slider_hash(p.featured_image.url(:big), p.name, p.description)
+    end
+  end
+
   def clippy(text, bgcolor='#FFFFFF')
     html = <<-EOF
       <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
