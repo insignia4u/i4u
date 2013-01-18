@@ -5,9 +5,7 @@ class JobsController < ApplicationController
   end
 
   def create
-    params[:message][:subject] = "CV to #{params[:message][:name]}"
     @message = Message.new(params[:message])
-
     @message.with_file = true
     
     if @message.valid?
