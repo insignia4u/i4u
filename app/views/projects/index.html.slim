@@ -6,7 +6,7 @@
 - unless @highlighted_projects.empty?
   .row.slider-portfolio
     h3.title = title_for('highlighted-projects')
-    = render "shared/slider", featured_content: @highlighted_projects, hidden_title: false
+    = render "shared/slider", featured_content: get_slider_to_highlighted_projects(@highlighted_projects), hidden_title: false
 
 .row
   h4.title = title_discriminated_for('recent-jobs')

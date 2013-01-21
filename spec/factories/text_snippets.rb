@@ -5,6 +5,6 @@ FactoryGirl.define do
     site
     sequence(:name) { |n| "Foo name #{n}" }
     title           "Foo title"
-    body            "Foo text"
+    body            { Faker::Lorem.sentence(200)}
   end
 end

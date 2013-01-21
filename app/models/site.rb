@@ -17,23 +17,21 @@ class Site < ActiveRecord::Base
   scope :with_language, ->(abbreviation) { where(abbreviation: abbreviation) }
 
 
- def home_projects
-   projects.limit(3)
-   projects.featured.limit(3)
- end
+  def home_projects
+    projects.featured.limit(3)
+  end
 
- def home_content
+  def home_content
    featured_contents.limit(3)
- end
+  end
 
- def projects_by_created_date
-   projects.by_created_date
- end
- 
- def featured_projects
-   projects.featured
- end
+  def projects_by_created_date
+    projects.by_created_date
+  end
 
+  def featured_projects
+    projects.featured
+  end
 
   def live!
     self.live = true
