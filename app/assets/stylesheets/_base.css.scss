@@ -255,33 +255,12 @@ span.caps{
 	article.box.news{ width: 100%!important; }
 }*/
 
-@media only screen and (max-width: 939px) {
-	article{
-		margin: 15px 25px;
-	}
-	.eight{
-		article.twelve{
-			margin-left:0;
-		}
-	}
-	.row .four article.box p{
-		text-align:left;
- 	}
- 	.lastestjob-section, .list-projects, .home-bottom{
-		width:658px;
-		margin: 0 auto;
-		
-		a{
-			margin:0 auto;
-			width:329px;
-		}
-
+@media only screen and (min-width:768px) and (max-width: 939px) {
+	.lastestjob-section, .list-projects, .home-bottom{
 		article{
-			width:279px!important;
+			width:32%;
+			margin-right:1%;
 		}
-	}
-	.eight form{
-		margin-right:7%;
 	}
 }
 
