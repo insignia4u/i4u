@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   has_mobile_fu false
 
   helper_method :current_site
+  helper_method :slider_hash
   def slider_hash(image, name, text)
     {
       image: image,

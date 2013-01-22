@@ -2,9 +2,19 @@
 
 FactoryGirl.define do
   factory :message do
-    sequence(:name)  { |n| "Name #{n}" }
-    sequence(:email) { |n| "foo_email_#{n}@insignia4u.com" }
-    body             "FOO BODY"
-    file             File.open(Rails.root.join('spec', 'support', 'example.jpg'), 'rb')
+    name    { Faker::Name.name }
+    email   { Faker::Internet.email(name) }
+    body    { Faker::Lorem.paragraph(rand(5..10)) }
+    subject { Faker::Lorem.sentence(rand(3..7)) }
+    
+    factory :message_with_file  do
+      is_to_job true
+      file { FactoryGirl::AttachmentHelper.uploaded_file }
+    end
+
+    factory :message_without_file  do
+      is_to_job false
+      file nil
+    end
   end
 end

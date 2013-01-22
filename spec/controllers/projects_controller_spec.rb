@@ -3,32 +3,95 @@ require 'spec_helper'
 describe ProjectsController do
   describe "Inherited Resources" do
     before :each do
-      @projects     = mock_model(Project)
       @current_site = mock_model(Site)
-
-      Site.stub!(:first).and_return(@current_site)
-      @current_site.stub!(:projects).and_return(@projects)
-      @projects.stub!(:all).and_return(@projects)
+      Site.stub!(:with_language).and_return([@current_site])
+      @projects = []
+      5.times { @projects << mock_model(Person, site: @current_site) }
+      @recent_jobs = @projects[-3, 3]
+      project = mock("project", :all => @projects,:recent_jobs => @recent_jobs)
+      @current_site.stub!(:projects).and_return(project)
     end
 
-    it "Begin Association" do
-      Site.should_receive(:first).and_return(@current_site)
-      @current_site.should_receive(:projects).and_return(@projects)
-      @projects.should_receive(:all).and_return(@projects)
-      get :index
-      response.should be_success
-    end
-  end
+    describe  "GET#list" do
+      it "assigns the current site's projects to @projects" do
+        get :list
+        assigns(:projects).should eq @projects
+      end
 
-  describe "Listing Projects" do
-    before :each do
-      controller.stub!(:index!)
+      it "renders the list template" do
+        get :list
+        response.should render_template :list
+      end
     end
 
-    it "lists projects" do
-      controller.should_receive(:index!)
-      get :list
-      response.should be_success
+    describe  "GET#index" do
+      before :each do
+        @current_site.stub!(:projects_by_created_date => sorted_projects)
+        @current_site.stub!(:featured_projects => highlighted_projects)
+      end
+
+      let(:sorted_projects)      { @projects.sample(3) }
+      let(:highlighted_projects) { @projects[1,2] }
+
+      it "assigns the current site's recent jobs to @recent_jobs" do
+        @current_site.should_receive(:projects)
+        @current_site.projects.should_receive(:recent_jobs)
+        get :index
+        assigns(:recent_jobs).should eq @recent_jobs
+      end
+
+      it "assigns @projects with the projects of current site sorted descendingly by creation date " do
+        @current_site.should_receive(:projects_by_created_date)
+        get :index
+        assigns(:projects).should eq sorted_projects
+      end
+
+      it "assigns the current site's highlighted projects to @highlighted_projects" do
+        @current_site.should_receive(:featured_projects)
+        get :index
+        assigns(:highlighted_projects).should eq highlighted_projects
+      end
+
+      it "renders the index template" do
+        get :index
+        response.should render_template :index
+      end
+    end
+
+    describe "GET#show" do
+      before :each do
+        @technologies = []
+        @tools = []
+        3.times { @technologies << mock_model(Technology) }
+        3.times { @tools << mock_model(Tool) }
+
+        @project = mock_model(Project, :technologies_by_position => @technologies,
+          :tools_by_position => @tools)
+
+        @current_site.stub!(:projects)
+          .and_return(mock("project", :find => @project))
+      end
+
+      it "assigns the project's technologies to @technologies" do
+        @project.should_receive(:technologies_by_position)
+
+        get :show, id: @project
+
+        assigns(:technologies).should eq @technologies
+      end
+
+      it "assigns the project's tools to @tools" do
+        @project.should_receive(:tools_by_position)
+
+        get :show, id: @project
+
+        assigns(:tools).should eq @tools
+      end
+
+      it "renders the index template" do
+        get :show, id: @project
+        response.should render_template :show
+      end
     end
   end
 end

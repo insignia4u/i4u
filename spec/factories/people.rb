@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :person do
     site
-    title
+    title { "Some title"}
     first_name "Foo First Name"
     last_name  "Foo Last Name"
     bio "Foo Bio"

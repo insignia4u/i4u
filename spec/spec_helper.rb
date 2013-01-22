@@ -25,7 +25,7 @@ RSpec.configure do |config|
   # config.mock_with :rr
   config.include Paperclip::Shoulda::Matchers
   config.include Devise::TestHelpers, :type => :controller
-  config.extend ControllerMacros, :type => :controller
+  config.extend ControllerMacros,     :type => :controller
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -39,4 +39,7 @@ RSpec.configure do |config|
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
+
+  #Include Factory Girl sintax to simplify calls to factories
+  config.include FactoryGirl::Syntax::Methods
 end

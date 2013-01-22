@@ -7,13 +7,13 @@ class Notifier < ActionMailer::Base
 
     mail({
       from:     message.email,
-      to:      'contacto@insigia4u',
+      to:      'contacto@insignia4u.com',
       subject: "Contact from website: #{message.subject}"
       })
   end
 
   def successfull_subscription(subscriber)
     @subscriber = subscriber
-    mail(from: 'admin@insigia4u.com', to: subscriber, subject: "Welcome to the Insignia Newsletter")
+    mail(from: 'admin@insignia4u.com', to: subscriber, subject: "Welcome to the Insignia Newsletter")
   end
 end

@@ -2,8 +2,9 @@
 
 FactoryGirl.define do
   factory :featured_content do
+    site
     name "MyString"
-    image "MyString"
+    image { FactoryGirl::AttachmentHelper.uploaded_image }
     body "MyText"
   end
 end

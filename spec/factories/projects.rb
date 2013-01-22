@@ -8,8 +8,8 @@ FactoryGirl.define do
     description "Foo Description"
     extended_description "Foo Extended Description"
     url "http://www.insignia4u.com"
-    started_at "2012-06-13"
-    ended_at "2012-06-13"
+    started_at { "2000-06-13" }
+    ended_at   { "2001-06-14" }
     highlighted false
     image_file_name    "pic.jpg"
     image_content_type "image/jpeg"
