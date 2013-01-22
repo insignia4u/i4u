@@ -7,6 +7,7 @@ describe JobsController do
       get :new
 
       assigns(:message).should be_a_new(Message)
+      assigns(:message).is_to_job.should be_true
     end
 
     it "renders the :new template" do
@@ -27,11 +28,6 @@ describe JobsController do
     context "with valid attributes" do
       it "creates a new message" do
         Message.should_receive(:new).and_return(@message)
-        post :create, message: valid_attributes
-      end
-
-      it "assign the use of file" do
-        @message.should_receive(:with_file=).with(true).and_return(true)
         post :create, message: valid_attributes
       end
 

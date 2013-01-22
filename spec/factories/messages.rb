@@ -8,12 +8,12 @@ FactoryGirl.define do
     subject { Faker::Lorem.sentence(rand(3..7)) }
     
     factory :message_with_file  do
-      with_file true
+      is_to_job true
       file { FactoryGirl::AttachmentHelper.uploaded_file }
     end
 
     factory :message_without_file  do
-      with_file false
+      is_to_job false
       file nil
     end
   end

@@ -15,6 +15,7 @@
 
       = errors_for(@message).html_safe
 
+      = f.hidden_field :is_to_job
       = f.label(:name){ title_for('name-job-form').html_safe }
       = f.text_field :name, :class => "ctext"
 
