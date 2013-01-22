@@ -6,7 +6,16 @@
 - unless @highlighted_projects.empty?
   .row.slider-portfolio
     h3.title = title_for('highlighted-projects')
-    = render "shared/slider", featured_content: get_slider_to_highlighted_projects(@highlighted_projects), hidden_title: false
+    #featured-content
+      - @highlighted_projects.each do |p|
+          div
+            = link_to project_path(p) do
+              = image_tag(p.featured_image.url(:big) )
+            .data
+              h3
+                = link_to p.name, project_path(p)
+              == textilize(p.description)
+
 
 .row
   h4.title = title_discriminated_for('recent-jobs')
