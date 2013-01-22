@@ -12,14 +12,14 @@ ActiveAdmin.register AttachmentFile do
     end
 
     column 'Url' do |attachment_file|
-      link_to attachment_file.name, attachment_file.file_i4u.url, target: '_blank'
+      attachment_file.file_i4u.url
     end
     default_actions
   end
 
   form do |f|
     f.inputs "Uploading file" do
-      f.input :file_i4u, label: 'File to upload', as: :file
+      f.input :file_i4u, label: 'File to upload', hint: (f.object.new_record? ? "" : f.object.file_i4u.url), as: :file
       f.input :name
       f.input :summary
     end
@@ -33,7 +33,7 @@ ActiveAdmin.register AttachmentFile do
       row :summary
       row :created_at
       row 'Url' do |attachment_file|
-        link_to attachment_file.name, attachment_file.file_i4u.url, target: '_blank'
+        attachment_file.file_i4u.url
       end
 
       row 'Copy to clipboard' do |attachment_file|
