@@ -39,11 +39,11 @@
       =f.submit title_for('btn-send-contact-form'), :class => "button"
 
   .four.columns.last
-    article.box
+    article.box.sidebar
       h4= title_for('location')
       .methodologies
         = image_tag "other/google-maps.png"
-    article.box.last
+    article.box.last.sidebar
       h4= title_for('contact-details')
       .methodologies
         == body_for('contact-details', true)
