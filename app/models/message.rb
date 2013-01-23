@@ -36,13 +36,4 @@ class Message
     true
   end
 
-  def to_s
-    "Body: #{body} \
-     Name: #{name} \
-    Email: #{email} \
-    File: #{!file.nil?} \
-    Is to job: #{is_to_job} \
-    Subject: #{subject}"
-  end
-
 end
