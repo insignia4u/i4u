@@ -31,6 +31,7 @@ I4u::Application.configure do
         pages/portfolio
         pages/servicios
         active_admin
+        active_admin/print
         ie
         slider-portfolio
         slider}.map { |s| s+".css" }
