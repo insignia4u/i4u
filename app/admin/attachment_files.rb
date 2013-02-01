@@ -1,4 +1,4 @@
-ActiveAdmin.register AttachmentFile do
+ActiveAdmin.register AttachmentFile, :as => "Assets" do
   filter :name
   menu parent: 'Support'
 
