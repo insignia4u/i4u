@@ -3,6 +3,8 @@ ActiveAdmin.register TextSnippet do
 
   filter :site
   filter :name
+  filter :title
+  filter :body
 
   index do
     column(:site) {|text_snippet| text_snippet.site.abbreviation}
