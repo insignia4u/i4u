@@ -66,6 +66,9 @@ ActiveAdmin.register Project do
       end
 
       row :name
+      row "Show on site" do |project|
+        link_to(project.name, project_path(project), target: "_blank")
+      end
       row :url
       row :summary
       row(:description) {|project| textilize(project.description)}
@@ -113,6 +116,10 @@ ActiveAdmin.register Project do
       project.tools.each do |tool|
         status_tag(tool.name, :class => 'orange')
       end
+    end
+
+    column "Show on site" do |project|
+      link_to project.name, project_path(project), target: "_blank"
     end
 
     default_actions
