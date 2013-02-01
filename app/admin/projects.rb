@@ -1,5 +1,4 @@
 ActiveAdmin.register Project do
-  menu parent: "Portfolio"
 
   filter :site
   filter :name
