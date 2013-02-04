@@ -10,7 +10,6 @@ class Message
   validates :body, :name, :email, presence: true
   validates :subject, presence: true, unless: :is_to_job
   validates :email, format: { with: ValidFormats::EMAIL }, allow_blank: true
-  validates :file, presence: true, if: :is_to_job
 
   def initialize(attributes = {})
     @body      = attributes[:body]
@@ -35,5 +34,4 @@ class Message
   def new_record?
     true
   end
-
 end
