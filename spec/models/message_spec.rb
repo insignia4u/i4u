@@ -53,34 +53,6 @@ describe Message do
       it { should validate_presence_of(:email) }
       it { should validate_presence_of(:body) }
 
-      describe "Require attachmente file" do  
-        context "when is to job" do
-          let(:message_to_job_without_file){ FactoryGirl.build(:message_without_file, is_to_job: true) }
-          let(:message_to_job_with_file){ FactoryGirl.build(:message_with_file, is_to_job: true) }
-
-          it "is valid with attachment file" do
-            message_to_job_with_file.should be_valid
-          end
-
-          it "is invalid without attachment file" do
-            message_to_job_without_file.should be_invalid
-          end
-        end
-
-        context "when with_file is false" do
-          let(:message_not_job_without_file){ FactoryGirl.build(:message_without_file, is_to_job: false) }
-          let(:message_not_job_with_file){ FactoryGirl.build(:message_with_file, is_to_job: false) }
-
-          it "is valid without attachment file" do
-            message_not_job_without_file.should be_valid
-          end
-
-          it "is valid with attachment file" do
-            message_not_job_with_file.should be_valid
-          end
-        end
-      end
-
       describe "Require subject field" do 
         context "to one message to job" do
           let (:message) do
