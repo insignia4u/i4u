@@ -113,6 +113,9 @@ GEM
       actionpack (~> 3.0)
     friendly_id (4.0.7)
     fssm (0.2.9)
+    gibbon (0.4.2)
+      httparty
+      json
     girl_friday (0.11.1)
       connection_pool (~> 0.9.0)
       rubinius-actor
@@ -292,6 +295,7 @@ DEPENDENCIES
   factory_girl_rails (= 3.4.0)
   faker (= 1.0.1)
   friendly_id (= 4.0.7)
+  gibbon (= 0.4.2)
   jquery-rails
   mobile-fu (= 1.1.1)
   newrelic_rpm (= 3.5.3.25)

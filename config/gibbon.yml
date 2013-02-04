@@ -1,0 +1,15 @@
+development:
+  api_key: 784dfe36d778db056b990a4e5aff0eec-us5
+  list_name: i4u newsletters
+
+test:
+  api_key: 784dfe36d778db056b990a4e5aff0eec-us5
+  list_name: i4u newsletters
+
+staging:
+  api_key: 784dfe36d778db056b990a4e5aff0eec-us5
+  list_name: i4u newsletters
+
+production:
+  api_key: 784dfe36d778db056b990a4e5aff0eec-us5
+  list_name: i4u newsletters

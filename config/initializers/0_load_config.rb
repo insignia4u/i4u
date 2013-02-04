@@ -1,0 +1,1 @@
+MAIL_CHIMP = YAML.load_file("#{Rails.root}/config/gibbon.yml")[Rails.env].symbolize_keys!
