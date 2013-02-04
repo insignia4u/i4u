@@ -9,7 +9,7 @@ class JobsController < ApplicationController
 
     if @message.valid?
       Notifier.contact_message(@message).deliver
-      redirect_to new_contact_path, notice: "Your cv was successfully sent."
+      redirect_to new_job_path, notice: "Your cv was successfully sent."
     else
       render :new
     end

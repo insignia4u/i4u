@@ -3,7 +3,7 @@ class Notifier < ActionMailer::Base
   def contact_message(message)
     @message = message
 
-    attachments['uploaded'] = {content: message.file.read } if message.file
+    attachments[@message.file.original_filename] = {content: message.file.read } if message.file
 
     mail({
       from:     message.email,
