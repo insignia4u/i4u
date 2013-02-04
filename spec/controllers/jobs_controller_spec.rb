@@ -36,10 +36,10 @@ describe JobsController do
         assigns(:message).should eq @message
       end
 
-      it "redirects to the new contact" do
+      it "redirects to the new jobs" do
         post :create, message: valid_attributes
 
-        response.should redirect_to new_contact_path
+        response.should redirect_to new_job_path
       end
     end
 

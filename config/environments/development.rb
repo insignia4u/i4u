@@ -35,4 +35,18 @@ I4u::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  config.action_mailer.smtp_settings = {
+    :address => 'mailtrap.io',
+    :port => 2525,
+    :user_name => 'insignia-site',
+    :password => 'b2776d02fd87b463'
+  }
+
+  #Para ver el funcionamiento de los emails, loguearse:
+#   page: http://mailtrap.io/auth/sessions/new
+#   email: augusto@insignia4u.com
+#   password: ISI3k12009
+
+  config.action_mailer.delivery_method = :smtp
+
 end
