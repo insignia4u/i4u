@@ -1,15 +1,19 @@
 development:
   api_key: 784dfe36d778db056b990a4e5aff0eec-us5
   list_name: i4u newsletters
+  list_id: bdbfed7b12
 
 test:
   api_key: 784dfe36d778db056b990a4e5aff0eec-us5
   list_name: i4u newsletters
+  list_id: bdbfed7b12
 
 staging:
   api_key: 784dfe36d778db056b990a4e5aff0eec-us5
   list_name: i4u newsletters
+  list_id: bdbfed7b12
 
 production:
   api_key: 784dfe36d778db056b990a4e5aff0eec-us5
   list_name: i4u newsletters
+  list_id: bdbfed7b12
