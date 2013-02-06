@@ -25,10 +25,6 @@ describe NewsletterSubscriber do
   end
 
   describe "validations" do
-      before :each do
-        NewsletterSubscriber.create( email: "augusto@insignia4u.com")
-      end
-
       it {pending; should validate_presence_of(:email) }
       it {pending; should validate_uniqueness_of(:email) }
   end
