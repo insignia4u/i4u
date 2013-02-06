@@ -311,7 +311,7 @@ DEPENDENCIES
   pg
   puma (= 1.6.3)
   rails (= 3.2.8)
-  rspec-rails
+  rspec-rails (= 2.10.1)
   sass (= 3.2.5)
   sass-rails (= 3.2.6)
   shoulda-matchers (= 1.4.2)

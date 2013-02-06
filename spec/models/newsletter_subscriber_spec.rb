@@ -93,4 +93,19 @@ describe NewsletterSubscriber do
       end
     end
   end
+
+  describe "retry_mail_chimp_subscription" do
+    before :each do
+      @email  = Faker::Internet.email
+      @newsletter_subscriber = FactoryGirl.build(:newsletter_subscriber, email: @email)
+      @newsletter_subscriber.stub(:add_mail_to_mail_chimp_list).with(@email).and_return(true)
+    end
+
+    it "should invoke to add_mail_to_mail_chimp_list" do
+      @newsletter_subscriber.should_receive(:add_mail_to_mail_chimp_list)
+        .with(@newsletter_subscriber.email).and_return(true)
+
+      @newsletter_subscriber.retry_mail_chimp_subscription
+    end
+  end
 end
