@@ -4,7 +4,6 @@ class NewsletterSubscriberController < ApplicationController
     @newsletter = NewsletterSubscriber.new(params[:newsletter_subscriber])
 
     if @newsletter.save
-      Notifier.successfull_subscription(@newsletter.email).deliver
       message = '<p>Successfully subscribed!</p>'
       errors  = false
     else
