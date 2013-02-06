@@ -10,11 +10,11 @@ $(document).ready(function(){
   makeResourceImagePreviewed('project', ['image', 'featured image']);
   makeResourceImagePreviewed('featured_content', ['image']);
 
-  $('head').append("<link href='assets/insignia_logo_small.ico' rel='shortcut icon' />");
-  $('head').append("<link href='assets/iconos/insignia_ico_57.ico' rel='apple-touch-icon-precomposed' sizes='57x57' />");
-  $('head').append("<link href='assets/iconos/insignia_ico_114.ico' rel='apple-touch-icon-precomposed' sizes='114x114' />");
-  $('head').append("<link href='assets/iconos/insignia_ico_72.ico' rel='apple-touch-icon-precomposed' sizes='72x72' />");
-  $('head').append("<link href='assets/iconos/insignia_ico_144.ico' rel='apple-touch-icon-precomposed' sizes='144x144' />");
+  $('head').append("<link href='../assets/insignia_logo_small.ico' rel='shortcut icon' />");
+  $('head').append("<link href='../assets/iconos/insignia_ico_57.ico' rel='apple-touch-icon-precomposed' sizes='57x57' />");
+  $('head').append("<link href='../assets/iconos/insignia_ico_114.ico' rel='apple-touch-icon-precomposed' sizes='114x114' />");
+  $('head').append("<link href='../assets/iconos/insignia_ico_72.ico' rel='apple-touch-icon-precomposed' sizes='72x72' />");
+  $('head').append("<link href='../assets/iconos/insignia_ico_144.ico' rel='apple-touch-icon-precomposed' sizes='144x144' />");
 })
 
 function makeTableSortable(dataSortUrlElementId, tableId ){
