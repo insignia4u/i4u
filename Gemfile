@@ -13,11 +13,15 @@ end
 group :development, :test do
   gem 'puma',               '1.6.3'
   gem 'sqlite3'
-  gem "rspec-rails"
+  gem "rspec-rails",         '2.10.1'
   gem "capybara"
   gem "factory_girl_rails", '3.4.0'
   gem "faker",              '1.0.1'
   gem "simplecov"
+end
+
+group :test do
+  gem 'shoulda-matchers',    '1.4.2'
 end
 
 group :production do
@@ -49,3 +53,4 @@ gem 'aws-sdk',              '1.7.1'
 gem 'airbrake',             '3.1.6'
 gem 'newrelic_rpm',         '3.5.3.25'
 gem 'dalli',                '2.6.0'
+gem 'gibbon',               '0.4.2'
