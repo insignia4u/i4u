@@ -1,7 +1,11 @@
+require "populator/photos"
+
 module Populator
   class People
     def initialize
       Person.delete_all
+
+      @photos = Populator::Photos.new
     end
 
     def create!(q=1)
@@ -12,7 +16,7 @@ module Populator
           first_name: Faker::Name.first_name,
           last_name:  Faker::Name.last_name,
           bio:        Faker::Lorem.sentence(10),
-          photo:      photo
+          photo:      @photos.sample
         )
       end
     end
@@ -25,10 +29,6 @@ module Populator
 
     def titles
       ['Partner', 'Developer', 'Operation Manager', 'Project Manager']
-    end
-
-    def photo
-      File.open(File.join(Rails.root, 'public', 'populate_images', 'faces',("1".."5").to_a.sample + ".JPG"))
     end
   end
 end
