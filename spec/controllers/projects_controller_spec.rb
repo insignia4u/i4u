@@ -60,32 +60,32 @@ describe ProjectsController do
 
     describe "GET#show" do
       before :each do
-        @technologies = []
-        @tools = []
-        3.times { @technologies << mock_model(Technology) }
-        3.times { @tools << mock_model(Tool) }
+        @technologies = mock('Technology association',
+          by_position: [mock_model(Technology)])
+        @tools        = mock('Technology association',
+          by_position: [mock_model(Tool)])
 
-        @project = mock_model(Project, :technologies_by_position => @technologies,
-          :tools_by_position => @tools)
+        @project = mock_model(Project, technologies: @technologies,
+          tools: @tools)
 
         @current_site.stub!(:projects)
-          .and_return(mock("project", :find => @project))
+          .and_return(mock("project", find: @project))
       end
 
       it "assigns the project's technologies to @technologies" do
-        @project.should_receive(:technologies_by_position)
+        @technologies.should_receive(:by_position)
 
         get :show, id: @project
 
-        assigns(:technologies).should eq @technologies
+        assigns(:technologies).should eq @technologies.by_position
       end
 
       it "assigns the project's tools to @tools" do
-        @project.should_receive(:tools_by_position)
+        @tools.should_receive(:by_position)
 
         get :show, id: @project
 
-        assigns(:tools).should eq @tools
+        assigns(:tools).should eq @tools.by_position
       end
 
       it "renders the index template" do
