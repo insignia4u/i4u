@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/insignia4u/i4u.png)](https://codeclimate.com/github/insignia4u/i4u)
+
 == Insignia Site i4u  
 
 
