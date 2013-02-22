@@ -11,8 +11,8 @@ class ProjectsController < InheritedResources::Base
   end
 
   def show
-    @technologies = resource.technologies_by_position
-    @tools        = resource.tools_by_position
+    @technologies = resource.technologies.by_position
+    @tools        = resource.tools.by_position
   end
 
   protected
