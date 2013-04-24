@@ -1,7 +1,28 @@
-@import "foundation_and_overrides";
-@import "foundation";
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+@import url(http://fonts.googleapis.com/css?family=Enriqueta:400,700);
 
-@import "base";
-@import "header";
+@import "base/normalize";
+@import "bourbon";
+@import "base/grid-settings";
+@import "neat";
+@import "base/font";
+
+@import "base/global";
+@import "base/global-tablet";
+@import "base/global-mobile";
+
+@import "base/ui.totop";
+@import "base/carousel";
+@import "base/form";
+@import "base/button";
+
+@import "header/header";
+@import "header/header-tablet";
+@import "header/header-mobile";
+
+@import "home/home";
+@import "home/home-tablet";
+@import "home/home-mobile";
+
 @import "footer";
 @import "extra";

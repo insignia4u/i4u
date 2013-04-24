@@ -1,0 +1,433 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* ----------------------------
+:: Variable
+---------------------------- */
+$font-primary: 'Enriqueta', cursive;
+$font-secondary: 'Amatic SC',cursive;
+
+$color-one: #373435; /* dark gray - text */
+$color-two: #F10993; /* pink */
+$color-three: #316baf; /* blue */
+$color-four: #383435; /* dark gray - background nav*/
+
+
+/* ----------------------------
+:: Mixins
+---------------------------- */
+@mixin titlesize($tsize){
+  font-size: em($tsize);
+  line-height: ($tsize+2)px;
+}
+
+@mixin ico($ico){
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: $ico;
+}
+
+/* ----------------------------
+:: Base
+---------------------------- */
+a{
+  text-decoration: none;
+}
+
+ul{
+  margin-top:0;
+  margin-bottom:0;
+  padding:0;
+
+  li{
+    list-style:none;
+    position:relative;
+  }
+}
+
+img{
+  max-width: 100%;
+}
+
+h2, h3, h4{
+  margin: 0;
+}
+
+body{
+  font-family: $font-primary;
+  background: url(asset-path("background-pattern.gif", image)) repeat 0 0;
+  font-weight: bold;
+  color: $color-one;
+}
+
+section{
+  font-size:15px;
+  margin-bottom:70px;
+}
+
+.content{
+  li, p{
+    font-size: 14px;
+    line-height:20px;
+    color: #373435;
+  }
+
+  p{
+    margin: 0 0 20px;
+  }
+
+  a{
+    color:#316baf;
+    text-decoration:underline;
+  }
+}
+
+/* ----------------------------
+:: global
+---------------------------- */
+.container,
+.container-contact,
+nav ul, .content{
+  @include outer-container;
+}
+
+.bullets-blue{
+  li{
+    padding-left:27px;
+    margin: 6px 0;
+    color:#373435;
+  }
+
+  li:before{
+    @include ico("\f061");
+    color: #316BAF;
+    font-size: em(25);
+    float: left;
+    margin-left: -27px;
+  }
+}
+
+.img-circle{
+  @include border-radius(40px);
+  padding: 5px;
+  background: #fff;
+  border: #333 dashed 1px;
+  width: 80px;
+  height: 80px;
+}
+
+.container-title, .box{
+  h2, h3, h4{
+    font-family: $font-secondary;
+  }
+}
+
+.box{
+  @include border-radius(10px);
+  background: rgba(0,0,0,.03);
+  margin-bottom: 30px;
+  padding: 15px;
+
+  h2{
+    @include titlesize(44);
+    color: #373435;
+    text-align: center;
+    margin: 0 0 25px;
+  }
+
+  h3{
+    color: #f10791;
+    @include titlesize(54);
+    margin: 15px 0;
+  }
+
+  h4{
+    @include titlesize(34);
+    color: #f21a9a;
+    margin: 5px 0;
+    line-height: 28px;
+  }
+}
+
+.list-with-photos{
+  overflow: hidden;
+  margin: 15px 0 0;
+
+  li{
+    float: left;
+    position: relative;
+    padding: 0 0 0 90px;
+    margin: 5px 15px;
+    width: 273px;
+    min-height: 160px;
+  }
+
+  .img-circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  p{
+    font-weight: normal;
+  }
+}
+
+.aside{
+  .box{
+    padding:20px;
+  }
+}
+
+.box-dashed{
+  margin-left: -20px;
+  overflow:hidden;
+
+  li{
+    @include border-radius(10px);
+    background: repeat 0 0 rgba(255, 255, 255, 0.4);
+    border: #817f7f dashed 1px;
+    float: left;
+    margin:12px 0 12px 20px;
+  }
+}
+
+.box-dashed.two{
+  li{
+    width: 460px;
+  }
+}
+
+.box-dashed.three{
+  margin-left: -35px;
+  padding-left: 7%;
+
+  li{
+  width: 248px;
+  margin-left: 35px;
+  }
+}
+
+.box-dashed.four{
+  li{
+    width: 218px;
+  }
+}
+
+.circle{
+  @include border-radius(39px);
+  background:#f20892;
+  border:#a60563 solid 5px;
+  height:78px;
+  width:78px;
+  margin:19px auto 10px;
+  margin-bottom: 7px;
+
+  i{
+    color: white;
+    font-size: 3em;
+    line-height: 1.6em;
+    background: none;
+    display: block;
+  }
+
+  .icon-diamond{
+    font-size: em(43);
+    line-height: 2em;
+  }
+
+  .ico-php{
+    height: 22px;
+    margin: auto;
+    width: 48px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.6em;
+    line-height: 3em;
+  }
+
+  .icon-tech, .icon-mobile{
+    line-height: 1.7em;
+  }
+
+  .icon-undo{
+    font-size: em(40);
+    line-height: 2em;
+  }
+
+  .icon-site-map{
+    font-size: 55px;
+    line-height: 1.3em;
+  }
+
+  .icon-cursor{
+    font-size: em(40);
+    line-height: 2em;
+  }
+
+  .icon-users{
+    line-height: 2.3em;
+    font-size: em(35);
+  }
+
+  .icon-smiley{
+    line-height: 1.8em;
+    font-size: 26px;
+  }
+
+}
+
+.circle.blue{
+  background:#316baf;
+  border:#224a79 solid 5px;
+}
+
+.container-title{
+  border-top: 2px dashed #B8B8B8;
+  margin-top: 90px;
+  width: 100%;
+  text-align: center;
+  clear: both;
+
+  h2{
+    background: url(asset-path("background-pattern.gif", image));
+    position: relative;
+    top: -36px;
+    color: #343233;
+    font-size: em(60);
+    line-height: 60px;
+    margin: auto;
+    display: inline-block;
+    font-family: $font-secondary;
+
+    span{
+      font-weight: 400;
+    }
+  }
+
+}
+
+.container-title.big{
+  h2{
+    font-size: em(92);
+    line-height: 92px;
+  }
+}
+
+.twocols{
+  overflow: hidden;
+  margin-bottom: 30px;
+
+  section{
+    float: left;
+    margin-top: 30px;
+    padding-bottom: 40px;
+    margin-bottom: 0;
+
+    .container-title{
+      border: medium none;
+      margin-top: 0;
+      margin-bottom: 30px;
+
+      h3{
+        background: url(asset-path("background-pattern.gif", image));
+        color: #343233;
+        font-size: 54px;
+        line-height: 54px;
+        margin: auto;
+        display: inline-block;
+        font-family: $font-secondary;
+
+        span{
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .firstcol{
+    border-right: 2px dashed #B8B8B8;
+    width: 49%;
+    padding-right: 20px;
+  }
+
+  .secondcol{
+    width: 50%;
+    padding-left: 30px;
+  }
+
+}
+
+.container-title{
+  h2:before, h3:before, h2:after, h3:after{
+    display: inline-block;
+    width: 30px;
+    font-size: em(8);
+    color: $color-two;
+  }
+
+  h2:before, h3:before{
+    @include ico("\e009");
+  }
+
+  h2:after, h3:after{
+    @include ico("\e008");
+  }
+
+  h2.blue:after, h2.blue:before, h3.blue:after, h3.blue:before{
+    color: $color-three;
+  }
+}
+
+a.more{
+  background:#E50892;
+  border: 2px solid #A60563;
+  border-radius: 5px 5px 5px 5px;
+  bottom: -21px;
+  color: #fff;
+  font-family: $font-secondary;
+  font-size: 34px;
+  font-weight: bold;
+  height: 47px;
+  left: 42%;
+  line-height: 40px;
+  padding: 0 20px 2px 17px;
+  position: absolute;
+  width: 130px;
+  display: block;
+  text-decoration: none;
+}
+
+a.bottom-link{
+  color: #f20892;
+  text-decoration: none;
+  line-height: 15px;
+  display: block;
+
+  span{
+    font-size: 22px;
+    font-family: arial;
+    position: relative;
+    right: -4px;
+    top: 4px;
+  }
+}
+
+aside{
+  float: right;
+}
+
+.column{
+  float: left;
+  width: 637px;
+  padding-bottom: 50px;
+}
+
+#toTop{
+  z-index:9999;
+}

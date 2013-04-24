@@ -1,4 +1,9 @@
 class HomeController < ApplicationController
+
+  def index
+    
+  end
+  
   def show
     @featured_projects = current_site.home_projects
     @technologies      = [

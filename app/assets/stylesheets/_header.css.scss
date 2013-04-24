@@ -1,125 +1,125 @@
-header{
-	background: url(asset-path("top-deco.png",image)) 0px -10px no-repeat;
-	min-height: 100px;
-	padding-top: 95px;
-	padding-bottom: 32px;
+// header{
+// 	background: url(asset-path("top-deco.png",image)) 0px -10px no-repeat;
+// 	min-height: 100px;
+// 	padding-top: 95px;
+// 	padding-bottom: 32px;
 
-	.logo{
-		display: block;
-		margin-top: -10px;
-		margin-bottom: 20px;
-		height: 50px;
-		width:235px !important;
+// 	.logo{
+// 		display: block;
+// 		margin-top: -10px;
+// 		margin-bottom: 20px;
+// 		height: 50px;
+// 		width:235px !important;
 
-		h1{
-			margin:0;	
-		}
+// 		h1{
+// 			margin:0;	
+// 		}
 
-		a{
-			img{
-				border:none;
-			}
-		}
+// 		a{
+// 			img{
+// 				border:none;
+// 			}
+// 		}
 
-		a:hover{	color: transparent;	}
-	}
+// 		a:hover{	color: transparent;	}
+// 	}
 
-	ul{	
-		padding-left: 5px!important;
-		line-height: 1;
-		top: -6px;
-	}
+// 	ul{	
+// 		padding-left: 5px!important;
+// 		line-height: 1;
+// 		top: -6px;
+// 	}
 
-	 .block-grid.three-up > li {
-		padding: 0 12px 8px;
-	}
+// 	 .block-grid.three-up > li {
+// 		padding: 0 12px 8px;
+// 	}
 
-	a, a:visited{	color: #ccb2b3;	text-transform: uppercase;	font-weight: 500; font-size: 15px; }
-	a:hover, .actual{ color: #a3a3a3; }
+// 	a, a:visited{	color: #ccb2b3;	text-transform: uppercase;	font-weight: 500; font-size: 15px; }
+// 	a:hover, .actual{ color: #a3a3a3; }
 
-}
-.icon{
-	float:right;
-	margin-left: 2px;
-	width: 38px;
-	height: 37px;
-	overflow: hidden;
-	font-size: 0px;
-}
-.twitter{
-	background: url(asset-path("insignia-sprites.png",image)) -43px -40px no-repeat;
-}
-.facebook{
-	background: url(asset-path("insignia-sprites.png",image)) 0px -39px no-repeat;
-}
-.github{
-	background: url(asset-path("insignia-sprites.png",image)) 0px -153px no-repeat;
-}
-a:hover.twitter{
-	background-position: -43px -77px;
-}
-a:hover.facebook{
-	background-position: 0px -76px;
-}
-a:hover.github{
-	background-position: 0px -190px;
-}
+// }
+// .icon{
+// 	float:right;
+// 	margin-left: 2px;
+// 	width: 38px;
+// 	height: 37px;
+// 	overflow: hidden;
+// 	font-size: 0px;
+// }
+// .twitter{
+// 	background: url(asset-path("insignia-sprites.png",image)) -43px -40px no-repeat;
+// }
+// .facebook{
+// 	background: url(asset-path("insignia-sprites.png",image)) 0px -39px no-repeat;
+// }
+// .github{
+// 	background: url(asset-path("insignia-sprites.png",image)) 0px -153px no-repeat;
+// }
+// a:hover.twitter{
+// 	background-position: -43px -77px;
+// }
+// a:hover.facebook{
+// 	background-position: 0px -76px;
+// }
+// a:hover.github{
+// 	background-position: 0px -190px;
+// }
 
-@media only screen and (max-width: 767px) {
-	.columns.logo{
-		float:left;
-	}
+// @media only screen and (max-width: 767px) {
+// 	.columns.logo{
+// 		float:left;
+// 	}
 
-	header{
-		.logo{
+// 	header{
+// 		.logo{
 
-		}
-    	.socials-icons{
-    		position:absolute;
-    		right: 10px;
-    		top: 31px;
-    	}
-    }
-}
+// 		}
+//     	.socials-icons{
+//     		position:absolute;
+//     		right: 10px;
+//     		top: 31px;
+//     	}
+//     }
+// }
 
-@media only screen and (max-width: 599px) {
-	header{
-		height: auto;
+// @media only screen and (max-width: 599px) {
+// 	header{
+// 		height: auto;
 
-		.icon{
-			display: none;
-		}
+// 		.icon{
+// 			display: none;
+// 		}
 
-		.logo{
-		  	position: relative;
-		  	top: -20px;
-		  	width:190px!important;
-		  	margin:0 auto;
-		  	float:none !important;
-		}
+// 		.logo{
+// 		  	position: relative;
+// 		  	top: -20px;
+// 		  	width:190px!important;
+// 		  	margin:0 auto;
+// 		  	float:none !important;
+// 		}
 
-		ul{
-			padding-bottom: 0px;
-		}
+// 		ul{
+// 			padding-bottom: 0px;
+// 		}
 
-		.block-grid.three-up > li {
-			width: 33.33%!important;
-			height: 50%;
-			padding-bottom: 5%;
-	  		padding-top: 10px!important;
-	  		text-align: center;
-		}
+// 		.block-grid.three-up > li {
+// 			width: 33.33%!important;
+// 			height: 50%;
+// 			padding-bottom: 5%;
+// 	  		padding-top: 10px!important;
+// 	  		text-align: center;
+// 		}
 		
-		.row .four {
-			width: 30.333%;
-		}
-	}
-}
+// 		.row .four {
+// 			width: 30.333%;
+// 		}
+// 	}
+// }
 
-@media only screen and (min-width: 600px) {
-	header{
-		.four{
-			width:45%;
-		}	
-	}
-}
+// @media only screen and (min-width: 600px) {
+// 	header{
+// 		.four{
+// 			width:45%;
+// 		}	
+// 	}
+// }
