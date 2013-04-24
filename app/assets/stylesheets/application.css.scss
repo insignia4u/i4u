@@ -1,5 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
-@import url(http://fonts.googleapis.com/css?family=Enriqueta:400,700);
+@import url('http://fonts.googleapis.com/css?family=Amatic+SC:400,700');
+@import url('http://fonts.googleapis.com/css?family=Enriqueta:400,700');
 
 @import "base/normalize";
 @import "bourbon";
@@ -19,6 +19,10 @@
 @import "header/header";
 @import "header/header-tablet";
 @import "header/header-mobile";
+
+@import "footer/footer";
+@import "footer/footer-tablet";
+@import "footer/footer-mobile";
 
 @import "home/home";
 @import "home/home-tablet";

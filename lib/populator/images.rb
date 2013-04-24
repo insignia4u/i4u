@@ -2,7 +2,7 @@ module Populator
   class Images
     def initialize
       @path = File.join(
-        Rails.root, 'public', 'populate_images',("1".."20").to_a.sample + ".JPG"
+        Rails.root, 'public', 'populate_images',("1".."10").to_a.sample + ".jpg"
       )
     end
 

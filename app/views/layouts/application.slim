@@ -20,10 +20,10 @@ html
     = csrf_meta_tags
 
   body onload="window.scrollTo(0,1);"
-    #wrapper
-      = render "shared/header"
+    = render "shared/header"
+    .content
       = yield
-      = render "shared/footer"
+    = render "shared/footer"
 
     javascript:
       var _gaq=[['_setAccount','UA-1828552-1'],['_trackPageview']];
