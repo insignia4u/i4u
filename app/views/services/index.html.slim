@@ -2,62 +2,25 @@ section.services
   .container-title
     h2 Our Services
   ul.box-dashed.two
-    - %w{ planificacion codificacion revision control produccion mantenimiento}.each do |name|
+    - @services_snippet.each do |service|
       li.equal
-        h3 = title_for("#{name}-text-snippet")
-        p == body_for("#{name}-text-snippet",true)
+        h3 = title_for("#{service[:snippet]}-text-snippet")
+        p == body_for("#{service[:snippet]}-text-snippet",true)
 section.process
   .container-title
     h2 Our Process
 
   ul
-    li
-      i.icon-list-ol
-      h3
-        span 1)
-        |  PLANNING
+    - @services_snippet.each_with_index do |name,i|
+      li
+        i class="icon-#{name[:icon_type]}"
 
-      p Using agile methodologies and our team’s experience, we help our clientes creating concrete and feasible projects. In this stage we produce the necessary documentation to work as a base for the budgeting of the projects as well as its implementation.
+        h3
+          span = "#{i+1})"
+          = title_for("#{name[:snippet]}-process-snippet")
 
-    li
-      i.icon-tech
-      h3
-        span 2)
-        |  CODING
+        = body_for("#{name[:snippet]}-process-snippet",true)
 
-      p Considering all the best practices in software development and using the most advanced technologies available, we implement project features with maintainability, scalability and performance in mind. All the code we write is subject to automated tests to validate its behavior.
-
-    li
-      i.icon-eye-open
-      h3
-        span 3)
-        |  CODE REVIEW
-
-      p Considering all the best practices in software development and using the most advanced technologies available, we implement project features with maintainability, scalability and performance in mind. All the code we write is subject to automated tests to validate its behavior.
-
-    li
-      i.icon-qa
-      h3
-        span 4)
-        |  QUALITY ASSURANCE
-
-      p On this stage we make sure the product the client gets works as expected and error free. This process is repeated until we deliver a stable solution.
-
-    li
-      i.icon-deploy
-      h3
-        span 5)
-        |  DEPLOYMENT
-
-      p We have the know-how to set up a production environment that best fits the needs of the projects. Our team has a lot of experience deploying high traffic application in dedicated servers as well as cloud servers.
-
-    li.last
-      i.icon-wrench
-      h3
-        span 6)
-        |  MAINTENANCE
-
-      p In order to ensure the progress of projects we take part, we offer the service of maintenance to help with the evolution and improvement of project already in production.
 
 section.howdowedoit
   .container-title
@@ -85,36 +48,3 @@ section.our-offering
     | Our interdisciplinary team allows us to cover a wide range of projects due to our variety of skills that complement each other. For more information about this you can take a look at 
     a href="" our Staff
     | .
-
-
-/ - content_for :stylesheets do
-/   = stylesheet_link_tag "pages/servicios"
-
-/ .row
-/   .eight.columns
-
-/     h3 = title_for('our-services-title')
-/     h4.second = title_for('main-content-service')
-/     article.twelve.columns.box.news
-/       == body_for('main-content-service', true)
-
-/     h3 = title_for('our-process')
-/     .list-services
-/       - %w{ planificacion codificacion revision control produccion mantenimiento}.each do |name|
-/         article
-/           = image_tag "other/#{name}.png"
-/           span
-/           .description
-/             b = title_for("#{name}-text-snippet")
-/             == body_for("#{name}-text-snippet",true)
-
-/   .four.columns.last
-/     article.box.sidebar
-/       h4 = title_for('first-side-bar-content-services-page')
-/       .methodologies
-/         == body_for('first-side-bar-content-services-page', true)
-    
-/     article.box.sidebar
-/       h4 = title_for('second-side-bar-content-services-page')
-/       .methodologies
-/         == body_for('second-side-bar-content-services-page', true)

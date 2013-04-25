@@ -1,5 +1,5 @@
 - featured_contents.each do |item|
-  .item class="#{@active}"
+  .item class=make_active_if_first(featured_contents,item)
     figure title="" data-media600=item[:image] data-media440=item[:image] data-media=item[:image]
       = image_tag( item[:image] )
 
@@ -7,6 +7,6 @@
         img src=item[:image] alt=""
 
     .carousel-caption
-      p = textilize(item[:text])
+      = textilize(item[:text])
 
   - @active = ''

@@ -2,33 +2,7 @@ section.projects-page
   .container-title
     h2 = title_for('highlighted-projects')
 
-  #projects-page.carousel.slide.carousel-fade
-      .carousel-inner
-
-        - @highlighted_projects.each do |p|
-
-          .active.item
-            .macbook
-               figure title="" data-media600=p.featured_image.url(:medium) data-media440=p.featured_image.url(:medium) data-media=p.featured_image.url(:medium)
-                = image_tag p.featured_image.url(:medium)
-
-                noscript
-                  = image_tag p.featured_image.url(:medium)
-
-            .carousel-caption.equal4
-              h4
-                = link_to p.name, project_path(p)
-              p
-                = p.description
-
-            a.more href="http://www.craftfoxes.com" Visit Site
-
-
-      /! Carousel nav
-      a.carousel-control.left data-slide="prev" href="#projects-page"
-        i.icon-titleleft
-      a.carousel-control.right data-slide="next" href="#projects-page"
-        i.icon-titleright
+  = render 'projects/modules/highlighted_projects', highlighted_projects: @highlighted_projects
 
 section.more-projects
   .container-title
