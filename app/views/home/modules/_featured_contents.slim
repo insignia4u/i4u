@@ -1,0 +1,12 @@
+- featured_contents.each do |item|
+  .item class="#{@active}"
+    figure title="" data-media600=item[:image] data-media440=item[:image] data-media=item[:image]
+      = image_tag( item[:image] )
+
+      noscript
+        img src=item[:image] alt=""
+
+    .carousel-caption
+      p = textilize(item[:text])
+
+  - @active = ''

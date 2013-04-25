@@ -55,7 +55,29 @@ $(document).ready ->
   $('#cases, #intro, .carousel').carousel()
 
   biggestHeight = 0
+
   $(".equal").each ->
     biggestHeight = $(this).height()  if $(this).height() > biggestHeight
 
   $(".equal").height biggestHeight
+
+  biggestHeight = 0
+
+  $(".equal2").each ->
+    biggestHeight = $(this).height()  if $(this).height() > biggestHeight
+
+  $(".equal2").height biggestHeight
+
+  biggestHeight = 0
+
+  $(".equal3").each ->
+    biggestHeight = $(this).height()  if $(this).height() > biggestHeight
+
+  $(".equal3").height biggestHeight
+
+  biggestHeight = 0
+
+  $(".equal4").each ->
+    biggestHeight = $(this).height()  if $(this).height() > biggestHeight
+
+  $(".equal4").height biggestHeight

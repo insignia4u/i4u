@@ -1,32 +1,4 @@
 section.tools
   .container-title
     h2.blue Tools
-
-  ul.box-dashed.four
-    li
-      .circle.blue
-        i.icon-undo
-
-      h3
-        | Agile Methodologies
-
-    li
-      .circle.blue
-        i.icon-site-map
-
-      h3
-        | Version control system: GIT, SVN and Others.
-
-    li
-      .circle.blue
-        i.icon-cursor
-
-      h3
-        | Behaviour Driven Development
-
-    li
-      .circle.blue
-        i.icon-users
-
-      h3
-        | Pair Programming
+  = render 'home/modules/tools', tools: @tools

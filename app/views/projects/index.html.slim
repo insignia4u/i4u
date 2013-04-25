@@ -1,24 +1,37 @@
-- content_for :stylesheets do
-  = stylesheet_link_tag "slider"
-  = stylesheet_link_tag "slider-portfolio"
-  = stylesheet_link_tag "pages/portfolio"
+section.projects-page
+  .container-title
+    h2 = title_for('highlighted-projects')
 
-- unless @highlighted_projects.empty?
-  .row.slider-portfolio
-    h3.title = title_for('highlighted-projects')
-    #featured-content
-      - @highlighted_projects.each do |p|
-          div
-            = link_to project_path(p) do
-              = image_tag(p.featured_image.url(:big) )
-            .data
-              h3
+  #projects-page.carousel.slide.carousel-fade
+      .carousel-inner
+
+        - @highlighted_projects.each do |p|
+
+          .active.item
+            .macbook
+               figure title="" data-media600=p.featured_image.url(:medium) data-media440=p.featured_image.url(:medium) data-media=p.featured_image.url(:medium)
+                = image_tag p.featured_image.url(:medium)
+
+                noscript
+                  = image_tag p.featured_image.url(:medium)
+
+            .carousel-caption.equal4
+              h4
                 = link_to p.name, project_path(p)
-              == textilize(p.description)
+              p
+                = p.description
+
+            a.more href="http://www.craftfoxes.com" Visit Site
 
 
-.row
-  h4.title = title_discriminated_for('recent-jobs')
-  
-  .lastestjob-section
-  	= render('projects/modules/last_jobs', recent_jobs: @recent_jobs)
+      /! Carousel nav
+      a.carousel-control.left data-slide="prev" href="#projects-page"
+        i.icon-titleleft
+      a.carousel-control.right data-slide="next" href="#projects-page"
+        i.icon-titleright
+
+section.more-projects
+  .container-title
+    h2 = title_for('more-projects')
+
+  = render('projects/modules/last_jobs', recent_jobs: @recent_jobs)

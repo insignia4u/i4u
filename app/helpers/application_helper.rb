@@ -117,4 +117,12 @@ module ApplicationHelper
       </object>
     EOF
   end
+
+  def make_active_if_first(collection,item)
+    if collection.first == item
+      'active'
+    else
+      ''
+    end
+  end
 end

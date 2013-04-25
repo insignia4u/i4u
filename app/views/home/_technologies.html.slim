@@ -1,31 +1,4 @@
 section.technologies
   .container-title
-    h2 TECHNOLOGIES
-
-  ul.box-dashed.four
-    li
-      .circle
-        i.icon-diamond
-
-      h3 Ruby on rails
-
-    li
-      .circle
-        i.ico-php PHP
-
-      h3 Kohana (PHP)
-
-    li
-      .circle
-        i.icon-tech
-
-      h3
-        | Front-end development:
-        br
-        | HTML. CSS and Javascript
-
-    li
-      .circle
-        i.icon-mobile
-      h3
-        | Mobile applications development for IOS and Android plataforms
+    h2 = title_for('technologies')
+  = render 'home/modules/technologies', technologies: @technologies
