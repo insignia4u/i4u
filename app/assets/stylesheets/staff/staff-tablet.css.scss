@@ -1,0 +1,32 @@
+@media (max-width: 767px){
+  .staff{
+    .container-title{
+      margin-top: 0;
+      border: none;
+      
+      h2{
+        margin-top: 35px;
+      }
+    }
+  }
+
+  .mission-vision{
+    .box {
+      padding: 15px 20px;
+    }
+  }
+
+  .meet-staff{
+    .container-title{
+      h2{
+        font-size: 50px;
+      }
+    }
+
+    .box{
+      background: none;
+      padding: 0;
+    }
+  }
+
+}
