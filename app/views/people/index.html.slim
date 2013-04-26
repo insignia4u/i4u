@@ -12,15 +12,16 @@ section.staff.twocols
   section.quality-policy.secondcol
     .container-title
       h3.blue = title_for('our-quality-policy')
-    p = body_for('our-quality-policy', true)
+    = body_for('our-quality-policy', true)
 
-    ul.bullets-blue
-      li Creativity and innovation, as a part of our daily challenge to continuous improvement.
-      li Awareness and responsibility, practicing an error free job and security in the applications.
-      li Friendliness in out service and agility in the processes.
-      li Cooperative work and integral development of our collaborators.
-      li Commitment with the client, ensuring efficiency in the management system.
-      li Commitment with our collaborators, providing resources for the effective achievement of the objectives.
+    = body_for('our-quality-policy-list',true)
+    / ul.bullets-blue
+    /   li Creativity and innovation, as a part of our daily challenge to continuous improvement.
+    /   li Awareness and responsibility, practicing an error free job and security in the applications.
+    /   li Friendliness in out service and agility in the processes.
+    /   li Cooperative work and integral development of our collaborators.
+    /   li Commitment with the client, ensuring efficiency in the management system.
+    /   li Commitment with our collaborators, providing resources for the effective achievement of the objectives.
 
 section.mission-vision
   .box.first
@@ -33,7 +34,7 @@ section.mission-vision
 
 section.meet-staff
   .container-title
-    h2.blue meet our staff
+    h2.blue = title_for('meet-our-staff')
 
   .box
     ul.list-with-photos
