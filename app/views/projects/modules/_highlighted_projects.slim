@@ -3,13 +3,13 @@
 
     - highlighted_projects.each do |p|
 
-      .item class=make_active_if_first(highlighted_projects,p)
+      .item class=active_if_first(highlighted_projects,p)
         .macbook
-           figure title="" data-media600=p.featured_image.url(:medium) data-media440=p.featured_image.url(:medium) data-media=p.featured_image.url(:medium)
-            = image_tag p.featured_image.url(:medium)
+           figure title="" data-media600=p.featured_image.url(:big) data-media440=p.featured_image.url(:big) data-media=p.featured_image.url(:big)
+            = image_tag p.featured_image.url(:big)
 
             noscript
-              = image_tag p.featured_image.url(:medium)
+              = image_tag p.featured_image.url(:big)
 
         .carousel-caption.equal4
           h4

@@ -8,7 +8,7 @@ class Project
     end
 
     module ClassMethods
-      def recent_jobs(n=3)
+      def recent_jobs(n=4)
         order("created_at DESC").limit(n)
       end
     end

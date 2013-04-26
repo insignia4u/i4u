@@ -118,11 +118,19 @@ module ApplicationHelper
     EOF
   end
 
-  def make_active_if_first(collection,item)
+  def active_if_first(collection,item)
     if collection.first == item
       'active'
     else
       ''
+    end
+  end
+
+  def add_class_number(collection,item)
+    if collection.index(item) < 2
+      'equals'
+    else
+      'equals2'
     end
   end
 end

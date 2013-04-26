@@ -19,6 +19,6 @@ I4u::Application.routes.draw do
   match 'job' => 'jobs#new',    :as => :new_job, :via => :get
   match 'job' => 'jobs#create', :as => :job,     :via => :post
 
-  root :to => 'home#index'
+  root :to => 'home#show'
   match '/show'   => 'home#show'
 end
