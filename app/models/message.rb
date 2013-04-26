@@ -11,7 +11,7 @@ class Message
   validates :body, :name, :email, presence: true
   validates :email, format: { with: ValidFormats::EMAIL }, allow_blank: true
   validates :file, presence: true, if: :is_to_job
-  validates :phone, presence: true
+  validates :phone, presence: true, format: { with: ValidFormats::PHONE }
 
   def initialize(attributes = {})
     @body      = attributes[:body]
