@@ -1,6 +1,8 @@
-article.box.last
-  h4= title_for('tools')
-  ul.methodologies.info-list
-    - @tools.each do |tool|
-      li class=(highlight_if_first(@tools, tool))
-        = tool
+ul.box-dashed.four
+  - tools.each do |tool|
+    li
+      .circle.blue
+        i class="icon-#{tool[:icon_type]}"
+      h3
+        | 
+        = tool[:title]

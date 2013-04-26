@@ -30,7 +30,7 @@ initFeaturedContentSlider = () ->
   $('#featured').orbit timer: false, fluid: '16x9', animation: 'fade'
 
 checkEmailOnSubscription = () ->
-  $('#subscription-form :submit').click () ->
+  $('.footer-subscribe :submit').click () ->
     $('#message').empty()
     if $('#newsletter_subscriber_email').val() is ''
       $('#message').html("<ul><li>" + 'The email is required!' + "</li></ul>")
@@ -50,3 +50,34 @@ $(window).load () ->
     $('header .logo a').html('<img src="/assets/logo-insignia.svg" width="190" height="49" alt="Insignia"/>')
   else
     $('header .logo a').html('<img src="/assets/logo-insignia.png" width="190" height="49" alt="Insignia"/>')
+
+$(document).ready ->
+  $('#cases, #intro, .carousel').carousel()
+
+  biggestHeight = 0
+
+  $(".equal").each ->
+    biggestHeight = $(this).height()  if $(this).height() > biggestHeight
+
+  $(".equal").height biggestHeight
+
+  biggestHeight = 0
+
+  $(".equal2").each ->
+    biggestHeight = $(this).height()  if $(this).height() > biggestHeight
+
+  $(".equal2").height biggestHeight
+
+  biggestHeight = 0
+
+  $(".equal3").each ->
+    biggestHeight = $(this).height()  if $(this).height() > biggestHeight
+
+  $(".equal3").height biggestHeight
+
+  biggestHeight = 0
+
+  $(".equal4").each ->
+    biggestHeight = $(this).height()  if $(this).height() > biggestHeight
+
+  $(".equal4").height biggestHeight

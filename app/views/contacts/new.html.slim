@@ -1,51 +1,87 @@
-- content_for :stylesheets do
-  = stylesheet_link_tag "pages/contacto"
+section.contact
+  .container-title
+    h2 = title_for('contact')
+
+  = form_for @message, url: contact_path, html: { multipart: true } do |f|
+    - if @message.errors.any?
+      ul
+        - @message.errors.full_messages.each do |message|
+          li = message
+
+    .box-first
+      .f-text
+        = f.text_field :name, placeholder: 'Name'
+        i.icon-user
+
+      .f-text
+        = f.text_field :email, placeholder: 'Email'
+        i.icon-envelope-alt
+
+      .f-text
+        = f.telephone_field :phone, placeholder: 'Phone'
+        i.icon-user
+    .box-second
+      .f-text
+        = f.text_area :body, placeholder: 'Comments', class: 'comment'
+        i.icon-pencil
+    .box-thirst
+      = f.submit 'Contact Us', class: 'btn'
+
+section.contact-info
+  .container-title
+    h2 = title_for('contact info')
+
+  ul.list-contact
+      li.contact-street
+        i.icon-map-marker
+        | Lamadrid 318, Piso 4 Depto A 
+        br
+        | San Miguel de Tucumán, Tucumán, Argentina
+
+      li.contact-phone
+        i.icon-phone
+        | +54 (0381) 420-7387
+
+      li.contact-email
+        i.icon-envelope-alt
+        a href="mailto:info@insignia4u.com" info@insignia4u.com
+
+  .map
+    figure title="" data-media600=asset_path("map.png") data-media440=asset_path("map.png") data-media=asset_path("map-mobile.png")
+
+      img alt="" src=asset_path("map-mobile.png")
+
+      noscript
+        img src=asset_path("map.png") alt=""
 
 
-.row
-  .eight.columns
 
-    h3 = title_for('contact-form')
-    p
-      |
-      == body_for('contact-form', true)
+/     = render "shared/flash_message_box"
 
-    = render "shared/flash_message_box"
-
-    = form_for @message, url: contact_path, html: { multipart: true } do |f|
+/     = form_for @message, url: contact_path, html: { multipart: true } do |f|
       
-      = errors_for(@message).html_safe
+/       = errors_for(@message).html_safe
 
-      = f.hidden_field :is_to_job
-      = f.label(:name){ title_for('name-form-contact').html_safe }
-      = f.text_field :name, :class => "ctext"
+/       = f.hidden_field :is_to_job
+/       = f.label(:name){ title_for('name-form-contact').html_safe }
+/       = f.text_field :name, :class => "ctext"
 
-      = f.label(:email){ title_for('email-form-contact').html_safe }
-      = f.text_field :email, :class => "ctext"
+/       = f.label(:email){ title_for('email-form-contact').html_safe }
+/       = f.text_field :email, :class => "ctext"
 
-      = f.label(:subject){ title_for('subject-form-contact').html_safe }
-      = f.text_field :subject, :class => "ctext"
+/       = f.label(:subject){ title_for('subject-form-contact').html_safe }
+/       = f.text_field :subject, :class => "ctext"
 
-      = f.label(:body){ title_for('message-form-contact').html_safe }
-      = f.text_area :body, cols: '50', rows: '6'
+/       = f.label(:body){ title_for('message-form-contact').html_safe }
+/       = f.text_area :body, cols: '50', rows: '6'
 
-      p
-        = title_for('required-fields').html_safe
 
-      .files
-        ul id="attachment-files"
-        a href="#"  id='attach-new-file' = title_for('attach-new-file')
-
-      = f.file_field :file, id:'attach-file', style: "display: none"
-
-      =f.submit title_for('btn-send-contact-form'), :class => "button"
-
-  .four.columns.last
-    article.box.sidebar
-      h4= title_for('location')
-      .methodologies
-        = image_tag "other/google-maps.png"
-    article.box.last.sidebar
-      h4= title_for('contact-details')
-      .methodologies
-        == body_for('contact-details', true)
+/   .four.columns.last
+/     article.box.sidebar
+/       h4= title_for('location')
+/       .methodologies
+/         = image_tag "other/google-maps.png"
+/     article.box.last.sidebar
+/       h4= title_for('contact-details')
+/       .methodologies
+/         == body_for('contact-details', true)

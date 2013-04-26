@@ -108,13 +108,13 @@ ActiveAdmin.register Project do
 
     column "Technologies" do |project|
       project.technologies.each do |technology|
-        status_tag(technology.name, :class => 'green')
+        status_tag(technology.title, :class => 'green')
       end
     end
 
     column "Tools" do |project|
       project.tools.each do |tool|
-        status_tag(tool.name, :class => 'orange')
+        status_tag(tool.title, :class => 'orange')
       end
     end
 

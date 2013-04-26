@@ -1,38 +1,35 @@
-- content_for :stylesheets do
-  = stylesheet_link_tag "pages/nosotros"
+section.staff.twocols
+  .container-title
+    h2 = title_for('our-staff')
 
-.row
-  .eight.columns
+  section.whoweare.firstcol
+    .container-title
+      h3.blue
+        = title_for('who-we-are')
+    = body_for('who-we-are',true)
 
-    h4.title
-      = title_for('who-we-are')
-    article.twelve.columns
-      .news-item
-        == img_snippet_for('who-we-are',:big, "twelve columns")
-        / p.img-desc
-        /   | "But you are so beautiful," she continued, "that I am sure I could love you dearly. 
-        .description
-          == body_for('who-we-are', true)
 
-    h4.second = title_for('our-quality-policy')
-    article.twelve.columns
-      .news-item
-        .description
-          == body_for('our-quality-policy', true)
-        / .img-grid
-        /   = image_tag "other/quienes_somos.jpg"
-        /   = image_tag "slider/demo2.jpg"
-        /   = image_tag "slider/demo3.jpeg"
-        /   = image_tag "slider/homero_simpson.jpg"
-        /   = image_tag "slider/demo2.jpg"
-        /   = image_tag "slider/demo3.jpeg"
+  section.quality-policy.secondcol
+    .container-title
+      h3.blue = title_for('our-quality-policy')
+    = body_for('our-quality-policy', true)
 
-    - ['our-mission', 'our-vision', 'our-values'].each do |name|
-      h4.second = title_for(name)
-      article.twelve.columns
-        .news-item
-          .description
-            p
-              |
-              == body_for(name, true)
-  = render 'people/modules/people_list', staff: collection
+    = body_for('our-quality-policy-list',true)
+
+
+section.mission-vision
+  .box.first
+    h3 = title_for('our-mission')
+    = body_for('our-mission',true)
+
+  .box.second
+    h3 = title_for('our-vision')
+    = body_for('our-vision', true)
+
+section.meet-staff
+  .container-title
+    h2.blue = title_for('meet-our-staff')
+
+  .box
+    ul.list-with-photos
+      = render 'people/modules/people_list', staff: collection

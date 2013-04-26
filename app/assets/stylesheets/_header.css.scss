@@ -1,125 +1,81 @@
-// header{
-// 	background: url(asset-path("top-deco.png",image)) 0px -10px no-repeat;
-// 	min-height: 100px;
-// 	padding-top: 95px;
-// 	padding-bottom: 32px;
+header{
+  background:#fff;
+  text-align:center;
 
-// 	.logo{
-// 		display: block;
-// 		margin-top: -10px;
-// 		margin-bottom: 20px;
-// 		height: 50px;
-// 		width:235px !important;
+  .container {
+    height: 120px;
+    position: relative;
+  }
 
-// 		h1{
-// 			margin:0;	
-// 		}
+  h1{
+    margin:37px auto 0;
+    width:242px;
 
-// 		a{
-// 			img{
-// 				border:none;
-// 			}
-// 		}
+    a{
+      display:block;
+      height:58px;
+      width:242px;
+    }
+  }
 
-// 		a:hover{	color: transparent;	}
-// 	}
+  .lang {
+    float: right;
+    right: 5%;
+    top: -40px;
+    position: relative;
+    color: #F10993;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-size: em(14);
+  }
+}
 
-// 	ul{	
-// 		padding-left: 5px!important;
-// 		line-height: 1;
-// 		top: -6px;
-// 	}
+/* ----------------------------
+:: MENU
+---------------------------- */
+nav{
+  background: #383435;
+  position: relative;
 
-// 	 .block-grid.three-up > li {
-// 		padding: 0 12px 8px;
-// 	}
+  ul{
+    display: block;
 
-// 	a, a:visited{	color: #ccb2b3;	text-transform: uppercase;	font-weight: 500; font-size: 15px; }
-// 	a:hover, .actual{ color: #a3a3a3; }
+    li{
+      margin: auto;
+      display: inline-block;
+      padding: 0 6px;
+    }
+  }
 
-// }
-// .icon{
-// 	float:right;
-// 	margin-left: 2px;
-// 	width: 38px;
-// 	height: 37px;
-// 	overflow: hidden;
-// 	font-size: 0px;
-// }
-// .twitter{
-// 	background: url(asset-path("insignia-sprites.png",image)) -43px -40px no-repeat;
-// }
-// .facebook{
-// 	background: url(asset-path("insignia-sprites.png",image)) 0px -39px no-repeat;
-// }
-// .github{
-// 	background: url(asset-path("insignia-sprites.png",image)) 0px -153px no-repeat;
-// }
-// a:hover.twitter{
-// 	background-position: -43px -77px;
-// }
-// a:hover.facebook{
-// 	background-position: 0px -76px;
-// }
-// a:hover.github{
-// 	background-position: 0px -190px;
-// }
+  a{
+    color:#fff;
+    height:55px;
+    text-transform:uppercase;
+    line-height: 55px;
+    padding: 0 16px;
+    vertical-align: middle;
+    font-size: em(16);
+  }
 
-// @media only screen and (max-width: 767px) {
-// 	.columns.logo{
-// 		float:left;
-// 	}
+  a:hover:after, a.active:after, a:hover:before, a.active:before{
+    vertical-align: middle;
+    display: inline-block;
+    width: 22px;
+    position: absolute;
+    top: 38%;
+    color: $color-two;
+  }
 
-// 	header{
-// 		.logo{
+  a:hover:after, a.active:after{
+    @include ico("\e008");
+  }
 
-// 		}
-//     	.socials-icons{
-//     		position:absolute;
-//     		right: 10px;
-//     		top: 31px;
-//     	}
-//     }
-// }
+  a:hover:before, a.active:before{
+    @include ico("\e009");
+    left:0;
+  }
 
-// @media only screen and (max-width: 599px) {
-// 	header{
-// 		height: auto;
-
-// 		.icon{
-// 			display: none;
-// 		}
-
-// 		.logo{
-// 		  	position: relative;
-// 		  	top: -20px;
-// 		  	width:190px!important;
-// 		  	margin:0 auto;
-// 		  	float:none !important;
-// 		}
-
-// 		ul{
-// 			padding-bottom: 0px;
-// 		}
-
-// 		.block-grid.three-up > li {
-// 			width: 33.33%!important;
-// 			height: 50%;
-// 			padding-bottom: 5%;
-// 	  		padding-top: 10px!important;
-// 	  		text-align: center;
-// 		}
-		
-// 		.row .four {
-// 			width: 30.333%;
-// 		}
-// 	}
-// }
-
-// @media only screen and (min-width: 600px) {
-// 	header{
-// 		.four{
-// 			width:45%;
-// 		}	
-// 	}
-// }
+  span, i{
+    display: none;
+  }
+}

@@ -1,0 +1,99 @@
+// Place all the styles related to the contact controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.contact{
+  .container-title{
+    h2{
+      font-size: 92px;
+    }
+  }
+
+  form{
+    margin-top: 0;
+    overflow: hidden;
+    padding: 0 5px;
+  }
+
+  .box-first{
+    float: left;
+    width: 35%;
+  }
+
+  .box-second{
+    float: right;
+    width: 60%;
+  }
+
+  .box-thirst{
+    width: 100%;
+    clear: both;
+
+    .btn{
+      float: right;
+    }
+  }
+
+}
+
+.contact-info{
+  .container-title{
+    h2{
+      font-size: 68px;
+    }
+  }
+
+  .list-contact{
+    width: 715px;
+    margin: 0 auto 30px;
+    overflow: hidden;
+
+    li{
+      display: block;
+      float: left;
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0 12px;
+      text-align: center;
+      width: auto;
+      background: url(asset-path("contact.png", image)) no-repeat 0 0;
+      vertical-align: top;
+      color: #373435;
+      height: 191px;
+
+      i{
+        display: block;
+        margin: auto;
+        width: 20px;
+        font-size: 26px;
+        color: #316baf;
+      }
+    }
+
+    .contact-street{
+      width: 255px;
+      padding: 32px 15px 0 15px;
+    }
+
+    .contact-phone{
+      width: 194px;
+      background-position: -258px 0;
+      padding: 58px 0 0;
+      height: 191px;
+    }
+
+    .contact-email{
+      width: 194px;
+      background-position: -457px 0;
+      padding: 62px 0 0;
+
+      .icon-envelope-alt{
+        font-size: 19px;
+      }
+    }
+  }
+
+  .map{
+    text-align: center;
+  }
+}
