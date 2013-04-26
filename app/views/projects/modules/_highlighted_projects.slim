@@ -17,7 +17,7 @@
           p
             = p.description
 
-        a.more href="http://www.craftfoxes.com" Visit Site
+        = link_to "Visit Site", p.url, class: 'more'
 
   /! Carousel nav
   a.carousel-control.left data-slide="prev" href="#projects-page"
