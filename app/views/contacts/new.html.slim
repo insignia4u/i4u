@@ -53,35 +53,3 @@ section.contact-info
 
       noscript
         img src=asset_path("map.png") alt=""
-
-
-
-/     = render "shared/flash_message_box"
-
-/     = form_for @message, url: contact_path, html: { multipart: true } do |f|
-      
-/       = errors_for(@message).html_safe
-
-/       = f.hidden_field :is_to_job
-/       = f.label(:name){ title_for('name-form-contact').html_safe }
-/       = f.text_field :name, :class => "ctext"
-
-/       = f.label(:email){ title_for('email-form-contact').html_safe }
-/       = f.text_field :email, :class => "ctext"
-
-/       = f.label(:subject){ title_for('subject-form-contact').html_safe }
-/       = f.text_field :subject, :class => "ctext"
-
-/       = f.label(:body){ title_for('message-form-contact').html_safe }
-/       = f.text_area :body, cols: '50', rows: '6'
-
-
-/   .four.columns.last
-/     article.box.sidebar
-/       h4= title_for('location')
-/       .methodologies
-/         = image_tag "other/google-maps.png"
-/     article.box.last.sidebar
-/       h4= title_for('contact-details')
-/       .methodologies
-/         == body_for('contact-details', true)

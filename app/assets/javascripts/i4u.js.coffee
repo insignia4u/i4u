@@ -81,3 +81,5 @@ $(document).ready ->
     biggestHeight = $(this).height()  if $(this).height() > biggestHeight
 
   $(".equal4").height biggestHeight
+
+  $().UItoTop easingType: "easeOutQuart"
