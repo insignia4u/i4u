@@ -1,39 +1,107 @@
-- content_for :stylesheets do
-  = stylesheet_link_tag "pages/portfolio"
-  = stylesheet_link_tag "pages/caso"
+section.project-page
+  .container-title
+    h2 = resource.name
 
-.row
-  .eight.columns
+  #project-page.carousel.slide.carousel-fade
+      .carousel-inner
+        .active.item
+          .macbook
+            figure title="" data-media600=resource.image.url(:thumb) data-media440=resource.image.url(:thumb) data-media=resource.image.url(:original)
+              img alt="" src=resource.image.url(:original)
+
+              noscript
+                img src=resource.image.url(:original)
+
+      /! Carousel nav
+      a.carousel-control.left data-slide="prev" href="#project-page"
+        i.icon-titleleft
+      a.carousel-control.right data-slide="next" href="#project-page"
+        i.icon-titleright
+
+  .carousel-caption
+    = textilize(resource.description)
+
+  = link_to 'Visit Site', resource.url, class: 'more'
+
+section.more-info
+  .container-title
+    h2.blue = title_for('more-info')
+
+  ul.box-dashed.three
+
+    - if resource.started_at and resource.ended_at
+      li.equal4
+        .circle.blue
+          i.icon-calendar
+
+        h3 = title_for('duration-project-header')
+        p
+          = resource.started_at.strftime('%B %d, %Y')
+          br
+          = resource.ended_at.strftime('%B %d, %Y')
+
+    - if @technologies.any?
+      li.equal4
+        .circle.blue
+          i.icon-tech
+
+        h3 = title_for('tech-list-header')
+        p
+          - @technologies.each do |technology|
+            = technology.title
+            br
+            = textilize(technology.description)
+
+    - if @tools.any?
+      li.equal4
+        .circle.blue
+          i.icon-wrench
+
+        h3 = title_for('tool-list-header')
+
+        p
+          - @tools.each do |tool|
+            = tool.title
+            br
+            = textilize(tool.description)
+
+
+
+
+
+
+/ .row
+/   .eight.columns
   
-    h3= resource.name
-    = link_to remove_protocol_from(resource.url), resource.url, class: 'url'
+/     h3= resource.name
+/     = link_to remove_protocol_from(resource.url), resource.url, class: 'url'
     
-    .text-description
-      == textilize("p(description). #{resource.description}")
+/     .text-description
+/       == textilize("p(description). #{resource.description}")
 
-    .extended_description
-      == textilize(resource.extended_description)
+/     .extended_description
+/       == textilize(resource.extended_description)
 
-  .four.columns.last
-    article.box.sidebar
-      h4 =title_for('more-info')
-      .methodologies
-        = image_tag resource.image.url(:thumb)
-        ul
-          - if resource.started_at
-            li
-              p.title = title_for('duration-project-header')
-              p = get_project_duration(resource)
-          - if @technologies.any?
-            li
-              p.title = title_for('technology-list-header')
-              ul
-                - @technologies.each do |technology|
-                  li = "> #{technology.name}"
+/   .four.columns.last
+/     article.box.sidebar
+/       h4 =title_for('more-info')
+/       .methodologies
+/         = image_tag resource.image.url(:thumb)
+/         ul
+/           - if resource.started_at
+/             li
+/               p.title = title_for('duration-project-header')
+/               p = get_project_duration(resource)
+/           - if @technologies.any?
+/             li
+/               p.title = title_for('technology-list-header')
+/               ul
+/                 - @technologies.each do |technology|
+/                   li = "> #{technology.name}"
 
-          - if @tools.any?
-            li
-              p.title = title_for('tool-list-header')
-              ul
-                - @tools.each do |tool|
-                  li = "> #{tool.name}"
+/           - if @tools.any?
+/             li
+/               p.title = title_for('tool-list-header')
+/               ul
+/                 - @tools.each do |tool|
+/                   li = "> #{tool.name}"

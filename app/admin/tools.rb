@@ -2,21 +2,28 @@ ActiveAdmin.register Tool do
   menu parent: "Portfolio"
 
   config.sort_order = 'position_asc'
-  filter :name
+
+  filter :title
+  filter :description
 
   index do
-    column :name
+    column :title
+    column :description
     default_actions
   end
 
   show do |site|
     attributes_table do
-      row :name
+      row :title
+      row :description
     end
   end
 
   form do |f|
-    f.inputs("Edit Tool") {f.input :name}
+    f.inputs("Edit Tool") do
+      f.input :title
+      f.input :description
+    end
     f.buttons
   end
 

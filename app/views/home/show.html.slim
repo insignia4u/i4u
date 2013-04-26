@@ -1,11 +1,6 @@
-- content_for :stylesheets do
-  = stylesheet_link_tag "slider"
-
-- unless @featured_contents.empty?
-  .row.slider-home
-    = render "shared/slider", featured_content: @featured_contents, hidden_title: true
-
-= render "home/modules/featured_projects"
-
-= render "home/modules/technologies"
-= render "home/modules/tools"
+= render partial: 'introduction'
+= render partial: 'projects'
+= render partial: 'technologies'
+= render partial: 'tools'
+= render partial: 'news'
+= render partial: 'certify'

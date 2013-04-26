@@ -28,6 +28,8 @@ module Populator
         url:            "http://www.#{Faker::Internet.domain_name}",
         image:          @images.sample,
         featured_image: @images.sample,
+        started_at:     Date.new(rand(10)+1,rand(11)+1,rand(30)+1),
+        ended_at:       Date.new(rand(10)+10,rand(11)+1,rand(30)+1),
         highlighted: [true, false].sample
       )
     end
