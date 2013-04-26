@@ -5,20 +5,23 @@ class Message
   include ActiveModel::Conversion
   extend  ActiveModel::Naming
 
-  attr_accessor :body, :email, :file, :name, :subject, :is_to_job
+  attr_accessor :body, :email, :file, :name, :phone, :is_to_job
+  attr_reader :subject
 
   validates :body, :name, :email, presence: true
-  validates :subject, presence: true, unless: :is_to_job
   validates :email, format: { with: ValidFormats::EMAIL }, allow_blank: true
   validates :file, presence: true, if: :is_to_job
+  validates :phone, presence: true
 
   def initialize(attributes = {})
     @body      = attributes[:body]
     @name      = attributes[:name]
     @email     = attributes[:email]
+    @phone     = sanitize_phone(attributes[:phone]) if attributes[:phone]
     @file      = attributes[:file]
     @is_to_job = (attributes[:is_to_job] == true || attributes[:is_to_job] == "true")
     @subject   = attributes[:subject]
+    @subject   = 'Insignia website'
 
     if @is_to_job
       @subject = "CV to #{@name}"
@@ -34,6 +37,12 @@ class Message
   #Used to be compatible with ErrorDecorator
   def new_record?
     true
+  end
+
+private
+
+  def sanitize_phone(string)
+    string.gsub(ValidFormats::PHONE) { "#{$1}#{$3}#{$4}" }
   end
 
 end

@@ -3,6 +3,11 @@ section.contact
     h2 = title_for('contact')
 
   = form_for @message, url: contact_path, html: { multipart: true } do |f|
+    - if @message.errors.any?
+      ul
+        - @message.errors.full_messages.each do |message|
+          li = message
+
     .box-first
       .f-text
         = f.text_field :name, placeholder: 'Name'
@@ -13,7 +18,7 @@ section.contact
         i.icon-envelope-alt
 
       .f-text
-        = f.text_field :name, placeholder: 'Phone'
+        = f.telephone_field :phone, placeholder: 'Phone'
         i.icon-user
     .box-second
       .f-text
