@@ -260,8 +260,6 @@ namespace(:sites) do
       " For more information about this you can take a look at " \
       " <a href=\"/people\">our Staff</a>.")
 
-      # site.text_snippets.create!(name: '', title: '')
-      
       puts "*** > Complete!"
 
       puts "\n\nDone!"
