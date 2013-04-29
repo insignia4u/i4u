@@ -2,21 +2,7 @@ section.project-page
   .container-title
     h2 = resource.name
 
-  #project-page.carousel.slide.carousel-fade
-      .carousel-inner
-        .active.item
-          .macbook
-            figure title="" data-media600=resource.image.url(:thumb) data-media440=resource.image.url(:thumb) data-media=resource.image.url(:original)
-              img alt="" src=resource.image.url(:original)
-
-              noscript
-                img src=resource.image.url(:original)
-
-      /! Carousel nav
-      a.carousel-control.left data-slide="prev" href="#project-page"
-        i.icon-titleleft
-      a.carousel-control.right data-slide="next" href="#project-page"
-        i.icon-titleright
+    = render 'projects/modules/carousel', resource: resource
 
   .carousel-caption
     = textilize(resource.description)
@@ -27,40 +13,6 @@ section.more-info
   .container-title
     h2.blue = title_for('more-info')
 
-  ul.box-dashed.three
-
-    - if resource.started_at and resource.ended_at
-      li.equal4
-        .circle.blue
-          i.icon-calendar
-
-        h3 = title_for('duration-project-header')
-        p
-          = resource.started_at.strftime('%B %d, %Y')
-          br
-          = resource.ended_at.strftime('%B %d, %Y')
-
-    - if @technologies.any?
-      li.equal4
-        .circle.blue
-          i.icon-tech
-
-        h3 = title_for('tech-project-header')
-        p
-          - @technologies.each do |technology|
-            = technology.title
-            br
-            = textilize(technology.description)
-
-    - if @tools.any?
-      li.equal4
-        .circle.blue
-          i.icon-wrench
-
-        h3 = title_for('tool-project-header')
-
-        p
-          - @tools.each do |tool|
-            = tool.title
-            br
-            = textilize(tool.description)
+  = render 'projects/modules/boxes', resource: resource,
+                                     technologies: @technologies,
+                                     tools: @tools
