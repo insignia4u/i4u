@@ -45,7 +45,7 @@ section.more-info
         .circle.blue
           i.icon-tech
 
-        h3 = title_for('tech-list-header')
+        h3 = title_for('tech-project-header')
         p
           - @technologies.each do |technology|
             = technology.title
@@ -57,7 +57,7 @@ section.more-info
         .circle.blue
           i.icon-wrench
 
-        h3 = title_for('tool-list-header')
+        h3 = title_for('tool-project-header')
 
         p
           - @tools.each do |tool|
