@@ -51,6 +51,16 @@ ActiveAdmin.register Project do
         accept:              "image/*"
       }
     end
+
+    f.inputs "Slider Images" do
+      f.semantic_fields_for :project_images do |image_project|
+        image_project.input :image, hint: "Mostrada en el slider. (Tamanio requerido 940px x 555px)", as: :file ,input_html:
+      {
+        'url-data'  => project.project_images,
+        accept:              "image/*"
+      }
+      end
+    end
     f.inputs "Tags" do
       f.input :technologies, :as => :check_boxes
       f.input :tools, :as => :check_boxes
@@ -84,11 +94,11 @@ ActiveAdmin.register Project do
       end
 
       row "Technologies" do
-        project.technologies.map(&:name).join(",")
+        project.technologies.map(&:title).join(",")
       end
 
       row "Tools" do
-        project.tools.map(&:name).join(",")
+        project.tools.map(&:title).join(",")
       end
 
       row "Highlighted" do
@@ -105,6 +115,10 @@ ActiveAdmin.register Project do
     column ("Highlight") { |project| status_tag(project.highlight_state, :class => 'red') }
     column :started_at
     column :ended_at
+
+    column :actions do |project|
+      link_to "Manage Images", [:admin, project, :project_images]
+    end
 
     column "Technologies" do |project|
       project.technologies.each do |technology|
