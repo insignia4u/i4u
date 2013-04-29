@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Person do
-    describe "Attributes accessibility" do
+  describe "Attributes accessibility" do
     it { should have_accessible(:site_id) }
     it { should have_accessible(:first_name) }
     it { should have_accessible(:last_name) }
