@@ -12,18 +12,6 @@ describe ProjectsController do
       @current_site.stub!(:projects).and_return(project)
     end
 
-    describe  "GET#list" do
-      it "assigns the current site's projects to @projects" do
-        get :list
-        assigns(:projects).should eq @projects
-      end
-
-      it "renders the list template" do
-        get :list
-        response.should render_template :list
-      end
-    end
-
     describe  "GET#index" do
       before :each do
         @current_site.stub!(:projects_by_created_date => sorted_projects)
