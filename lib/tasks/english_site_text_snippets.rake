@@ -71,10 +71,10 @@ namespace(:sites) do
       site.text_snippets.create!(name: "back-to-portfolio", title: "back to portfolio")
       site.text_snippets.create!(name: "pdf-portfolio", title: "PDF portfolio")
       site.text_snippets.create!(name: "click-here", title: "click here")
-      site.text_snippets.create!(name: "technology-list-header", title: "Technologies")
-      site.text_snippets.create!(name: "tool-list-header", title: "Tools")
       site.text_snippets.create!(name: "to-separator-project-duration", title: "to")
-      site.text_snippets.create!(name: "duration-project-header", title: "Development date")
+      site.text_snippets.create!(name: "duration-project-header", title: "Duration")
+      site.text_snippets.create!(name: "technology-project-header", title: "Technologies")
+      site.text_snippets.create!(name: "tool-project-header", title: "Tools")
 
       puts "*** > Complete!"
 
