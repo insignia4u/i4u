@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require foundation
 //= require easing
 //= require jquery-picture.min
 //= require modernizer.min
