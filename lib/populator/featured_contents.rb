@@ -27,7 +27,7 @@ module Populator
     def image
       @image ||= File.open(
         File.join(
-          Rails.root, 'public', 'populate_images',("1".."20").to_a.sample + ".JPG"
+          Rails.root, 'public', 'populate_images',("1".."5").to_a.sample + ".jpg"
         )
       )
     end
