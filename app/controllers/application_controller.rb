@@ -2,13 +2,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   has_mobile_fu false
 
+[]
   helper_method :current_site
   helper_method :slider_hash
-  def slider_hash(image, name, text)
+
+  def slider_hash(project)
     {
-      image: image,
-      name:  name,
-      text:  text
+      image: { 
+              normal:  project.image.url(:normal),
+              medium:  project.image.url(:medium),
+              small:   project.image.url(:small)
+             },
+      name:  project.name,
+      text:  project.body
     }
   end
 

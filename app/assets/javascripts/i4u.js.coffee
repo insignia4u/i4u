@@ -26,11 +26,6 @@ attachNewFileButtonBehaviors = () ->
   $('#attach-file').change () ->
     fileToUploadChanged $(this).val()
 
-initFeaturedContentSlider = () ->
-  $('#featured-content').css visibility:'visible'
-  $('#featured-content').orbit  timer: false , fluid: '16x9', animation: 'fade'
-  $('#featured').orbit timer: false, fluid: '16x9', animation: 'fade'
-
 checkEmailOnSubscription = () ->
   $('.footer-subscribe :submit').click () ->
     $('#message').empty()
@@ -74,7 +69,6 @@ check_client_width = () ->
       $("nav").insertAfter "#logo"
 
 $(window).load () ->
-  initFeaturedContentSlider()
   attachNewFileButtonBehaviors()
   checkEmailOnSubscription()
 
