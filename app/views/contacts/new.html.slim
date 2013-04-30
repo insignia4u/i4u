@@ -1,51 +1,55 @@
-- content_for :stylesheets do
-  = stylesheet_link_tag "pages/contacto"
+section.contact
+  .container-title
+    h2 = title_for('contact')
 
+  = form_for @message, url: contact_path, html: { multipart: true } do |f|
+    - if @message.errors.any?
+      ul
+        - @message.errors.full_messages.each do |message|
+          li = message
 
-.row
-  .eight.columns
+    .box-first
+      .f-text
+        = f.text_field :name, placeholder: 'Name'
+        i.icon-user
 
-    h3 = title_for('contact-form')
-    p
-      |
-      == body_for('contact-form', true)
+      .f-text
+        = f.text_field :email, placeholder: 'Email'
+        i.icon-envelope-alt
 
-    = render "shared/flash_message_box"
+      .f-text
+        = f.telephone_field :phone, placeholder: 'Phone'
+        i.icon-user
+    .box-second
+      .f-textarea
+        = f.text_area :body, placeholder: 'Comments', class: 'comment'
+        i.icon-pencil
+    .box-thirst
+      = f.submit 'Contact Us', class: 'btn'
 
-    = form_for @message, url: contact_path, html: { multipart: true } do |f|
-      
-      = errors_for(@message).html_safe
+section.contact-info
+  .container-title
+    h2 = title_for('contact info')
 
-      = f.hidden_field :is_to_job
-      = f.label(:name){ title_for('name-form-contact').html_safe }
-      = f.text_field :name, :class => "ctext"
+  ul.list-contact
+      li.contact-street
+        i.icon-map-marker
+        | Lamadrid 318, Piso 4 Depto A 
+        br
+        | San Miguel de Tucumán, Tucumán, Argentina
 
-      = f.label(:email){ title_for('email-form-contact').html_safe }
-      = f.text_field :email, :class => "ctext"
+      li.contact-phone
+        i.icon-phone
+        | +54 (0381) 420-7387
 
-      = f.label(:subject){ title_for('subject-form-contact').html_safe }
-      = f.text_field :subject, :class => "ctext"
+      li.contact-email
+        i.icon-envelope-alt
+        a href="mailto:info@insignia4u.com" info@insignia4u.com
 
-      = f.label(:body){ title_for('message-form-contact').html_safe }
-      = f.text_area :body, cols: '50', rows: '6'
+  .map
+    figure title="" data-media600=asset_path("map.png") data-media440=asset_path("map.png") data-media=asset_path("map-mobile.png")
 
-      p
-        = title_for('required-fields').html_safe
+      img alt="" src=asset_path("map-mobile.png")
 
-      .files
-        ul id="attachment-files"
-        a href="#"  id='attach-new-file' = title_for('attach-new-file')
-
-      = f.file_field :file, id:'attach-file', style: "display: none"
-
-      =f.submit title_for('btn-send-contact-form'), :class => "button"
-
-  .four.columns.last
-    article.box.sidebar
-      h4= title_for('location')
-      .methodologies
-        = image_tag "other/google-maps.png"
-    article.box.last.sidebar
-      h4= title_for('contact-details')
-      .methodologies
-        == body_for('contact-details', true)
+      noscript
+        img src=asset_path("map.png") alt=""

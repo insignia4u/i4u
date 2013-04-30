@@ -39,6 +39,9 @@ group :assets do
   gem 'zurb-foundation',    '3.0.9'
 
   gem 'uglifier',           '>= 1.0.3'
+
+  gem 'bourbon', '2.1.2'
+  gem 'neat', '1.0.2'
 end
 
 gem "activeadmin"

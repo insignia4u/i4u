@@ -1,9 +1,5 @@
 class ProjectsController < InheritedResources::Base
 
-  def list
-    index!
-  end
-
   def index
     @recent_jobs          = current_site.projects.recent_jobs
     @projects             = current_site.projects_by_created_date

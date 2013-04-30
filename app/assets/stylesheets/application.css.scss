@@ -1,7 +1,47 @@
-@import "foundation_and_overrides";
-@import "foundation";
+@import url('http://fonts.googleapis.com/css?family=Amatic+SC:400,700');
+@import url('http://fonts.googleapis.com/css?family=Enriqueta:400,700');
 
-@import "base";
-@import "header";
-@import "footer";
+@import "base/normalize";
+@import "bourbon";
+@import "base/grid-settings";
+@import "neat";
+@import "base/font";
+
+@import "base/global";
+@import "base/global-tablet";
+@import "base/global-mobile";
+
+@import "base/ui.totop";
+@import "base/carousel";
+@import "base/form";
+@import "base/button";
+
+@import "header/header";
+@import "header/header-tablet";
+@import "header/header-mobile";
+
+@import "footer/footer";
+@import "footer/footer-tablet";
+@import "footer/footer-mobile";
+
+@import "home/home";
+@import "home/home-tablet";
+@import "home/home-mobile";
+
 @import "extra";
+
+@import "contact/contact";
+@import "contact/contact-tablet";
+@import "contact/contact-mobile";
+
+@import "staff/staff";
+@import "staff/staff-tablet";
+@import "staff/staff-mobile";
+
+@import "services/services";
+@import "services/services-tablet";
+@import "services/services-mobile";
+
+@import "projects/projects";
+@import "projects/projects-tablet";
+@import "projects/projects-mobile";

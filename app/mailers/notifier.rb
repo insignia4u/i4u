@@ -8,7 +8,7 @@ class Notifier < ActionMailer::Base
     mail({
       from:     message.email,
       to:      'contacto@insignia4u.com',
-      subject: "Contact from website: #{message.subject}"
+      subject: "Contact from: #{message.subject}"
       })
   end
 end

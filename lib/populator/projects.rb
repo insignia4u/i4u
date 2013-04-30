@@ -1,17 +1,10 @@
-<<<<<<< HEAD
 require "populator/images"
 
-=======
->>>>>>> 16b5094... [Refactoring] Reorganizing Populator
 module Populator
   class Projects
     def initialize
       Project.delete_all
-<<<<<<< HEAD
-
       @images = Populator::Images.new
-=======
->>>>>>> 16b5094... [Refactoring] Reorganizing Populator
     end
 
     def create!(q=1)
@@ -32,13 +25,10 @@ module Populator
         summary:        "A short summary of 120 characters",
         description:    Faker::Lorem.sentences.join("\n"),
         url:            "http://www.#{Faker::Internet.domain_name}",
-<<<<<<< HEAD
-        image:          @images.sample,
-        featured_image: @images.sample,
-=======
         image:          image,
         featured_image: featured_image,
->>>>>>> 16b5094... [Refactoring] Reorganizing Populator
+        started_at:     Date.new(rand(10)+1,rand(11)+1,rand(30)+1),
+        ended_at:       Date.new(rand(10)+10,rand(11)+1,rand(30)+1),
         highlighted: [true, false].sample
       )
     end
@@ -54,8 +44,6 @@ module Populator
     def tools
       Tool.all
     end
-<<<<<<< HEAD
-=======
 
     def image
       @image ||= File.open(
@@ -72,6 +60,5 @@ module Populator
         )
       )
     end
->>>>>>> 16b5094... [Refactoring] Reorganizing Populator
   end
 end

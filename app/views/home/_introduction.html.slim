@@ -1,0 +1,7 @@
+section.introduction
+  h2
+    = title_for('introduction-header').html_safe
+
+  #intro.carousel.slide
+    .carousel-inner
+      = render 'home/modules/featured_contents', featured_contents: @featured_contents

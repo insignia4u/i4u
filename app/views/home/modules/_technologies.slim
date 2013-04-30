@@ -1,6 +1,6 @@
-article.box
-  h4= title_for('technologies')
-  ul.technologies.info-list
-    - @technologies.each do |technology|
-      li class=(highlight_if_first(@technologies, technology))
-        = technology
+ul.box-dashed.four
+  - @technologies.each do |technology|
+    li
+      .circle
+        i class="icon-#{technology[:icon_type]}" = technology[:icon_text]
+      h3 = technology[:title]

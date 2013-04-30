@@ -1,4 +1,5 @@
 class ProjectTool < ActiveRecord::Base
+
   belongs_to :project
   belongs_to :tool
 

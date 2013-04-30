@@ -1,7 +1,8 @@
 class Technology < ActiveRecord::Base
-  attr_accessible :name, :position
 
-  validates :name, presence: true
+  attr_accessible :title, :description, :position
+
+  validates :title, :description, presence: true
 
   scope :top, ->(l) { limit(l) }
   scope :by_position, order(:position)

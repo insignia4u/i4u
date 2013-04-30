@@ -6,7 +6,8 @@ module Populator
 
     def create!(q=1)
       q.times do
-        Tool.create( name: Faker::Name.name )
+        Tool.create(title: Faker::Name.name,
+                    description: Faker::Lorem.sentence(3) )
       end
     end
   end

@@ -51,6 +51,7 @@ ActiveAdmin.register Project do
         accept:              "image/*"
       }
     end
+
     f.inputs "Tags" do
       f.input :technologies, :as => :check_boxes
       f.input :tools, :as => :check_boxes
@@ -84,11 +85,11 @@ ActiveAdmin.register Project do
       end
 
       row "Technologies" do
-        project.technologies.map(&:name).join(",")
+        project.technologies.map(&:title).join(",")
       end
 
       row "Tools" do
-        project.tools.map(&:name).join(",")
+        project.tools.map(&:title).join(",")
       end
 
       row "Highlighted" do
@@ -106,15 +107,19 @@ ActiveAdmin.register Project do
     column :started_at
     column :ended_at
 
+    column :actions do |project|
+      link_to "Manage Images", [:admin, project, :project_images]
+    end
+
     column "Technologies" do |project|
       project.technologies.each do |technology|
-        status_tag(technology.name, :class => 'green')
+        status_tag(technology.title, :class => 'green')
       end
     end
 
     column "Tools" do |project|
       project.tools.each do |tool|
-        status_tag(tool.name, :class => 'orange')
+        status_tag(tool.title, :class => 'orange')
       end
     end
 

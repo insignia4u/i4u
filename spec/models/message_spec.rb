@@ -4,6 +4,7 @@ describe Message do
   let(:message_with_file)    { FactoryGirl.build(:message_with_file) }
   let(:message_without_file) { FactoryGirl.build(:message_without_file) }
   let(:message) { build(:message) }
+
   describe "valid factories" do
     context "with file" do
       it "has a valid factory" do
@@ -20,10 +21,10 @@ describe Message do
 
   describe "Contact message initialization" do
     context "the message is to contact" do
-      it "the subject is null" do
+      it "the subject is default" do
         @contact_message = Message.new(is_to_job: false)
 
-        @contact_message.subject.should be_nil
+        @contact_message.subject.should eql('Insignia website')
       end
     end
 
@@ -52,18 +53,61 @@ describe Message do
       it { should validate_presence_of(:name) }
       it { should validate_presence_of(:email) }
       it { should validate_presence_of(:body) }
+      it { should validate_presence_of(:phone) }
 
-      describe "Require subject field" do 
+      describe "Require attachmente file" do  
+        context "when is to job" do
+          let(:message_to_job_without_file){ FactoryGirl.build(:message_without_file, is_to_job: true) }
+          let(:message_to_job_with_file){ FactoryGirl.build(:message_with_file, is_to_job: true) }
+
+          it "is valid with attachment file" do
+            message_to_job_with_file.should be_valid
+          end
+
+          it "is invalid without attachment file" do
+            message_to_job_without_file.should be_invalid
+          end
+        end
+
+        context "when with_file is false" do
+          let(:message_not_job_without_file){ FactoryGirl.build(:message_without_file, is_to_job: false) }
+          let(:message_not_job_with_file){ FactoryGirl.build(:message_with_file, is_to_job: false) }
+
+          it "is valid without attachment file" do
+            message_not_job_without_file.should be_valid
+          end
+
+          it "is valid with attachment file" do
+            message_not_job_with_file.should be_valid
+          end
+        end
+      end
+
+
+
+      describe "Require phone field" do 
         context "to one message to job" do
           let (:message) do
-            Message.new(name: "Augusto", body: Faker::Lorem.sentences(5),
+            Message.new(name: "Augusto", body: Faker::Lorem.sentence,
               email: "augusto@insignia4u.com", is_to_job: true,
-              file: FactoryGirl::AttachmentHelper.uploaded_file)
+              file: FactoryGirl::AttachmentHelper.uploaded_file,
+              phone: '123456789')
           end
 
-          it "is valid without specifiy subject" do
-            message.should be_valid
+          it "changes the default subject" do
+            message.subject.should eql('CV to Augusto')
           end
+        end
+
+        context 'format the phone number' do
+          let(:message) do
+            Message.new(name: "Augusto", body: Faker::Lorem.sentence,
+                email: "augusto@insignia4u.com", is_to_job: true,
+                file: FactoryGirl::AttachmentHelper.uploaded_file,
+                phone: '123-456-789012')
+          end
+
+          it { message.phone.should eql('123456789012') }
         end
 
         context "to one message to contact" do

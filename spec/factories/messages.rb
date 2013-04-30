@@ -5,7 +5,7 @@ FactoryGirl.define do
     name    { Faker::Name.name }
     email   { Faker::Internet.email(name) }
     body    { Faker::Lorem.paragraph(rand(5..10)) }
-    subject { Faker::Lorem.sentence(rand(3..7)) }
+    phone   8421158323
     
     factory :message_with_file  do
       is_to_job true
