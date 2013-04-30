@@ -39,7 +39,6 @@ class Message
   def new_record?
     true
   end
-end
 
 private
 
