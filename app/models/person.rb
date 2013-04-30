@@ -8,7 +8,7 @@ class Person < ActiveRecord::Base
 
   validates :site,       presence: true
   validates :title,      presence: true
-  validates :bio,        presence: true, length: { maximum: 300 }
+  validates :bio,        presence: true, length: { maximum: 55 }
   validates :first_name, presence: true
   validates :last_name,  presence: true
   validates_attachment :photo, presence: true,

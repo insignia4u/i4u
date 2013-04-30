@@ -14,7 +14,7 @@ module Populator
           title:      titles.sample,
           first_name: Faker::Name.first_name,
           last_name:  Faker::Name.last_name,
-          bio:        Faker::Lorem.sentence(10),
+          bio:        Faker::Lorem.sentence(2),
           photo:      photo
         )
       end
@@ -31,7 +31,7 @@ module Populator
     end
 
     def photo
-      File.open(File.join(Rails.root, 'public', 'populate_images', 'faces',("1".."5").to_a.sample + ".JPG"))
+      File.open(File.join(Rails.root, 'public', 'populate_images', 'faces',("1".."5").to_a.sample + ".jpg"))
     end
   end
 end
