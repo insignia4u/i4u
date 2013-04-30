@@ -1,12 +1,12 @@
 ul
   - recent_jobs.each do |recent_job|
     li
-      figure title="" data-media600=recent_job.image.url(:medium) data-media440=recent_job.image.url(:small) data-media=recent_job.image.url(:normal)
+      figure title="" data-media600=recent_job.image.url(:small) data-media440=recent_job.image.url(:small) data-media=recent_job.image.url(:small)
 
-        = image_tag( recent_job.image.url(:normal) )
+        = image_tag( recent_job.image.url(:small) )
 
         noscript
-          = image_tag( recent_job.image.url(:normal) )
+          = image_tag( recent_job.image.url(:small) )
 
       .project-info class=add_class_number(recent_jobs,recent_job)
         h3 = link_to recent_job.name, recent_job
