@@ -15,7 +15,7 @@ class HomeController < ApplicationController
       {title: 'Pair programming', icon_type: 'users'}
     ]
     @featured_contents = current_site.home_content.map do |content|
-      slider_hash(content.image.url(:listing), content.name, content.body)
+      slider_hash(content)
     end
   end
 
