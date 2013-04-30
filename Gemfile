@@ -44,7 +44,7 @@ group :assets do
   gem 'neat', '1.0.2'
 end
 
-gem "activeadmin"
+gem "activeadmin",          '0.4.4'
 gem "friendly_id",          '4.0.7'
 gem "paperclip",            '3.3.1'
 gem "faker",                '1.0.1'
