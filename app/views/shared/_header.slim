@@ -10,17 +10,15 @@ header
     i#menu-btn.icon-list
     ul
       li
-        a class="#{(controller_name == "home")? 'active': ''}" href="/" Home
+        a class=active_if_equals(controller_name,'home') href="/" Home
       li
-        a class="#{(controller_name == "people")? 'active': ''}" href="/staff" Staff
+        a class=active_if_equals(controller_name,'people') href="/staff" Staff
       li
-        a class="#{(controller_name == "services")? 'active': ''}" href="/services"Services
+        a class=active_if_equals(controller_name, 'services') href="/services"Services
       li
-        a class="#{(controller_name == "projects")? 'active': ''}" href="/projects"Projects
+        a class=active_if_equals(controller_name,'projects') href="/projects"Projects
       li
-        a class="#{(controller_name == "contacts")? 'active': ''}" href="/contact" Contact
-      / li
-      /   a class="#{(controller_name == "job")? 'active': ''}" href="" Job
+        a class=active_if_equals(controller_name,'contacts') href="/contact" Contact
       li
-        a class="#{(controller_name == "blog")? 'active': ''}" href="http://www.insignia4u-blog.com/" Blog
+        a class=active_if_equals(controller_name,'blog') href="http://www.insignia4u-blog.com/" Blog
     span x
