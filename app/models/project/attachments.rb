@@ -7,9 +7,9 @@ class Project
         styles: {
                   big:          "277x250#", 
                   thumb:        "234x230#", 
-                  normal:       "818x403",
-                  medium:       "650x320",
-                  small:        "480x236",
+                  normal:       "818x403#",
+                  medium:       "650x320#",
+                  small:        "480x236#",
                   cms_thumb:    "110x100#"
                 }
       has_attached_file :featured_image,
