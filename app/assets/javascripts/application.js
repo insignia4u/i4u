@@ -5,5 +5,6 @@
 //= require modernizer.min
 //= require carousel
 //= require totop
+//= require noty
 //= require i4u
 
