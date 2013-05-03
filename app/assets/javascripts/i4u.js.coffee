@@ -111,7 +111,6 @@ $(document).ready ->
   errors = $('.field_with_errors')
 
   if errors.length > 1
-    console.log($('.field_with_errors'))
     nt = noty
       text: "Error. Please fill the form."
       type: "error"
