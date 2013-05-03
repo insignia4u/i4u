@@ -327,8 +327,8 @@ DEPENDENCIES
   sass-rails (= 3.2.6)
   shoulda-matchers (= 1.4.2)
   simplecov
-  slim
-  slim-rails
+  slim (= 1.2.1)
+  slim-rails (= 1.0.3)
   sqlite3
   textilize
   therubyracer
