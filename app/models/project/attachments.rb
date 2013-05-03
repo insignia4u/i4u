@@ -10,7 +10,6 @@ class Project
                   normal:       "818x403",
                   medium:       "650x320",
                   small:        "480x236",
-                  highlighted:  "397x213",
                   cms_thumb:    "110x100#"
                 }
       has_attached_file :featured_image,
