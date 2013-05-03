@@ -120,6 +120,10 @@ module ApplicationHelper
     end
   end
 
+  def active_if_equals(controller,name)
+    'active' if controller == name
+  end
+
   def add_class_number(collection,item)
     if collection.index(item) < 2
       'equals'
