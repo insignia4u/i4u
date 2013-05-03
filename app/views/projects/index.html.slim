@@ -1,11 +1,11 @@
 section.projects-page
   .container-title
-    h2 = title_for('highlighted-projects')
+    h2 = title_for('highlighted-projects').strip
 
   = render 'projects/modules/highlighted_projects', highlighted_projects: @highlighted_projects
 
 section.more-projects
   .container-title
-    h2 = title_for('more-projects')
+    h2 = title_for('more-projects').strip
 
   = render('projects/modules/last_jobs', recent_jobs: @recent_jobs)
