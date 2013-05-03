@@ -20,7 +20,7 @@ module ApplicationHelper
   def title_for(text_snippet)
     rtn = text_snippet
     if ts = snippet(text_snippet)
-      rtn = ts.title.strip
+      rtn = ts.title
     end
 
     rtn
