@@ -107,3 +107,24 @@ $(document).ready ->
 
   $("input, textarea").on "focus blur", ->
     $(this).next().toggleClass "focus"
+
+  errors = $('.field_with_errors')
+
+  if errors.length > 1
+    nt = noty
+      text: "Error. Please fill the form."
+      type: "error"
+      dismissQueue: true
+      layout: 'top'
+      theme: "defaultTheme"
+
+  success = $('#notice_div')
+
+  if success.length == 1
+    nt = noty
+      text: "Your message was successfully sent."
+      type: "success"
+      dismissQueue: true
+      layout: 'top'
+      theme: "defaultTheme"
+

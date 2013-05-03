@@ -3,11 +3,6 @@ section.contact
     h2 = title_for('contact')
 
   = form_for @message, url: contact_path, html: { multipart: true } do |f|
-    - if @message.errors.any?
-      ul
-        - @message.errors.full_messages.each do |message|
-          li = message
-
     .box-first
       .f-text
         = f.text_field :name, placeholder: 'Name'
@@ -53,3 +48,6 @@ section.contact-info
 
       noscript
         img src=asset_path("map.png") alt=""
+
+- if flash[:notice]
+  #notice_div
