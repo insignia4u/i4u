@@ -4,8 +4,8 @@ section.contact
 
   - if @message.errors.any?
       ul.hiden_errors
-        - @message.errors.full_messages.each do |msg|
-          li = msg
+        - @message.errors.full_messages.each do |message|
+          li = message
 
   = form_for @message, url: contact_path, html: { multipart: true } do |f|
     .box-first
