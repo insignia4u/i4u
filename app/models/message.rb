@@ -12,7 +12,9 @@ class Message
   validates :email, format: { with: ValidFormats::EMAIL }, allow_blank: true
 
   validates :file, presence: true, if: :is_to_job
-  validates :phone, presence: true, format: { with: ValidFormats::PHONE }
+  validates :phone, presence: true, format: { with: ValidFormats::PHONE,
+    message: "has an invalid format,
+              please try something like this: 123456789"  }
 
   def initialize(attributes = {})
     @body      = attributes[:body]
