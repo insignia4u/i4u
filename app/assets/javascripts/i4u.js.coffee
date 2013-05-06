@@ -48,7 +48,11 @@ all_equals = () ->
     $('.equal' + numbers[i]).each ->
       biggestHeight = $(this).height()  if $(this).height() > biggestHeight
 
-    $(".equal" + numbers[i]).height biggestHeight
+    if numbers[i] != "4"
+      $(".equal" + numbers[i]).height biggestHeight
+    else
+      $('.equal4').css("min-height", biggestHeight)
+
     i++
 
 check_modernizer = () ->
