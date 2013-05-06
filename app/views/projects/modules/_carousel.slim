@@ -2,20 +2,20 @@
   .carousel-inner
     .active.item
       .macbook
-        figure title="" data-media600=resource.image.url(:small) data-media440=resource.image.url(:small) data-media=resource.image.url(:small)
-          img alt="" src=resource.image.url(:small)
+        figure title="" data-media600=resource.image.url(:normal) data-media440=resource.image.url(:small) data-media=resource.image.url(:normal)
+          img alt="" src=resource.image.url(:normal)
 
           noscript
-            img src=resource.image.url(:small)
+            img src=resource.image.url(:normal)
   
     - resource.project_images.each do |project_image|
      .item
       .macbook
-        figure title="" data-media600=project_image.image.url(:small) data-media440=project_image.image.url(:small) data-media=project_image.image.url(:small)
-          img alt="" src=project_image.image.url(:small)
+        figure title="" data-media600=project_image.image.url(:normal) data-media440=project_image.image.url(:small) data-media=project_image.image.url(:normal)
+          img alt="" src=project_image.image.url(:normal)
 
           noscript
-            img src=project_image.image.url(:small)
+            img src=project_image.image.url(:normal)
 
   /! Carousel nav
   a.carousel-control.left data-slide="prev" href="#project-page"
