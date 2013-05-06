@@ -76,11 +76,6 @@ $(window).load () ->
   attachNewFileButtonBehaviors()
   checkEmailOnSubscription()
 
-  if Modernizr.svg
-    $('header .logo a').html('<img src="/assets/logo-insignia.svg" width="190" height="49" alt="Insignia"/>')
-  else
-    $('header .logo a').html('<img src="/assets/logo-insignia.png" width="190" height="49" alt="Insignia"/>')
-
 $(document).ready ->
   all_equals()
   check_modernizer()
@@ -121,11 +116,6 @@ $(document).ready ->
       dismissQueue: true
       layout: 'top'
       theme: "defaultTheme"
-
-  if Modernizr.svg
-    $("header h1 a").html "<img src=\"/assets/insignia.svg\" alt=\"Insignia\"/>"
-  else
-    $("header h1 a").html "<img src=\"/assets/insignia.jpg\" alt=\"Insignia\"/>"
 
   success = $('#notice_div')
 
