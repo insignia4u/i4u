@@ -1,3 +1,4 @@
+
 require 'spec_helper'
 
 describe Message do
@@ -53,7 +54,6 @@ describe Message do
       it { should validate_presence_of(:name) }
       it { should validate_presence_of(:email) }
       it { should validate_presence_of(:body) }
-      it { should validate_presence_of(:phone) }
 
       describe "Require attachmente file" do  
         context "when is to job" do
@@ -85,7 +85,7 @@ describe Message do
 
 
 
-      describe "Require phone field" do 
+      describe "Change's the subject when is a job" do 
         context "to one message to job" do
           let (:message) do
             Message.new(name: "Augusto", body: Faker::Lorem.sentence,
@@ -96,28 +96,6 @@ describe Message do
 
           it "changes the default subject" do
             message.subject.should eql('CV to Augusto')
-          end
-        end
-
-        context 'format the phone number' do
-          let(:message) do
-            Message.new(name: "Augusto", body: Faker::Lorem.sentence,
-                email: "augusto@insignia4u.com", is_to_job: true,
-                file: FactoryGirl::AttachmentHelper.uploaded_file,
-                phone: '123-456-789012')
-          end
-
-          it { message.phone.should eql('123456789012') }
-        end
-
-        context "to one message to contact" do
-          let (:message) do
-            Message.new(name: "Augusto", body: Faker::Lorem.sentences(5),
-              email: "augusto@insignia4u.com", is_to_job: false)
-          end
-
-          it "is invalid without specifiy subject" do
-            message.should_not be_valid
           end
         end
       end
