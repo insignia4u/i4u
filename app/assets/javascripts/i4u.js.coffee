@@ -77,10 +77,14 @@ $(window).load () ->
   else
     $('header .logo a').html('<img src="/assets/logo-insignia.png" width="190" height="49" alt="Insignia"/>')
 
+hide_errors_if_any = ->
+  $('.hiden_errors').hide()
+
 $(document).ready ->
   all_equals()
   check_modernizer()
   check_client_width()
+  hide_errors_if_any()
 
   $().UItoTop easingType: "easeOutQuart"
 
@@ -110,13 +114,15 @@ $(document).ready ->
 
   errors = $('.field_with_errors')
 
-  if errors.length > 1
-    nt = noty
-      text: "Error. Please fill the form."
-      type: "error"
-      dismissQueue: true
-      layout: 'top'
-      theme: "defaultTheme"
+  if errors.length > 0
+    $('.hiden_errors li').each (index,node) ->
+      error = $(node).text()
+      nt = noty
+        text: error
+        type: "error"
+        dismissQueue: true
+        layout: 'top'
+        theme: "defaultTheme"
 
   success = $('#notice_div')
 
