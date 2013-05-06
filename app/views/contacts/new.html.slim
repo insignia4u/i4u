@@ -2,6 +2,11 @@ section.contact
   .container-title
     h2 = title_for('contact')
 
+  - if @message.errors.any?
+      ul.hiden_errors
+        - @message.errors.full_messages.each do |msg|
+          li = msg
+
   = form_for @message, url: contact_path, html: { multipart: true } do |f|
     .box-first
       .f-text
