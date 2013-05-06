@@ -128,6 +128,11 @@ $(document).ready ->
         layout: 'top'
         theme: "defaultTheme"
 
+  if Modernizr.svg
+    $("header h1 a").html "<img src=\"/assets/insignia.svg\" alt=\"Insignia\"/>"
+  else
+    $("header h1 a").html "<img src=\"/assets/insignia.jpg\" alt=\"Insignia\"/>"
+
   success = $('#notice_div')
 
   if success.length == 1
