@@ -14,8 +14,7 @@
         .carousel-caption.equal4
           h4
             = link_to p.name, project_path(p)
-          p
-            = textilize(p.description)
+          = textilize(p.description)
 
         = link_to "Visit Site", p.url, class: 'more'
 
