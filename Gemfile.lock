@@ -265,6 +265,10 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.7)
     sqlite3 (1.3.7-x86-mingw32)
+    strong_parameters (0.2.0)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
+      railties (~> 3.0)
     temple (0.4.0)
     textilize (0.0.4)
     therubyracer (0.11.3)
@@ -330,6 +334,7 @@ DEPENDENCIES
   slim (= 1.2.1)
   slim-rails (= 1.0.3)
   sqlite3
+  strong_parameters (= 0.2.0)
   textilize
   therubyracer
   thin
