@@ -1,7 +1,5 @@
 class Tool < ActiveRecord::Base
 
-  attr_accessible :title, :description, :position
-
   validates :title, :presence => true
   validates :description, presence: true
 

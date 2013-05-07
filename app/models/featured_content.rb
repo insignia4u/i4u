@@ -3,7 +3,6 @@ class FeaturedContent < ActiveRecord::Base
 
   belongs_to :site
 
-  attr_accessible :name, :body, :image, :site, :site_id
   has_attached_file :image,
     styles: { listing:   "410x405#",
               normal:    "532x300",

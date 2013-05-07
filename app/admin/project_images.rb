@@ -41,4 +41,12 @@ ActiveAdmin.register ProjectImage do
 
     f.buttons
   end
+
+  controller do
+    def resource_params
+      return [] if request.get?
+      [ params.require(:project_image)
+        .permit(:image, :description) ]
+    end
+  end
 end

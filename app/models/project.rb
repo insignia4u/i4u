@@ -17,9 +17,5 @@ class Project < ActiveRecord::Base
 
   has_many :project_images
 
-  attr_accessible :site_id, :description, :ended_at, :extended_description,
-    :name, :started_at, :summary, :url, :image, :featured_image,
-    :technology_ids, :tool_ids, :site, :technologies, :tools, :highlighted
-
   friendly_id :name, use: [:slugged, :history]
 end
