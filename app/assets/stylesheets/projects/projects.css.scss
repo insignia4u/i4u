@@ -203,7 +203,6 @@
   .carousel-inner{
     background:url(asset_path("macbook.png", image)) no-repeat 0 10px;
     height:auto;
-    width:85%;
     margin:0 auto;
     background-position:center 10px;
 
@@ -231,11 +230,11 @@
   }
 
   .carousel-control.left{
-    left: 1%;
+    left: 22%;
   }
 
   .carousel-control.right{
-    right: 1%;
+    right: 21.5%;
   }
 }
 //end slider
