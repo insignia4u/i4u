@@ -35,6 +35,19 @@ $color-four: #383435; /* dark gray - background nav*/
 /* ----------------------------
 :: Base
 ---------------------------- */
+p, a{
+  -ms-word-break: break-all;
+ -moz-word-break: break-all;
+      word-break: break-all;
+
+  -moz-word-break: break-word;
+       word-break: break-word;
+
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
+}
+
 a{
   text-decoration: none;
 }
@@ -241,7 +254,7 @@ nav ul, .content{
     line-height: 2em;
   }
 
-  .icon-php{
+  .ico-php{
     height: 22px;
     margin: auto;
     width: 48px;

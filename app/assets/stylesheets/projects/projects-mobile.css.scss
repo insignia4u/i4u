@@ -1,3 +1,111 @@
+@media (max-width: 320px){
+  #projects-page.carousel,
+  #project-page.carousel{
+    left: -24px;
+    width: 118%;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 599px){
+  .projects-page{
+    .container-title{
+      h2{
+        font-size: 38px;
+      }
+    }
+  }
+
+  .more-projects{
+    ul{
+      li{
+        width: 100%;
+      }
+    }
+  }
+
+  #projects-page.carousel,
+  #project-page.carousel{
+    .item{
+      .macbook{
+        height: auto;
+        display: block;
+        margin: auto;
+        margin-top: 35px;
+        margin-bottom: 14%;
+        width: 202px;
+        padding: 0 0 0 1px;
+      }
+    }
+  }
+
+  #projects-page.carousel{
+    .carousel-inner{
+      background:url(asset_path("macbook-mobile.png", image)) no-repeat center 10px;
+      position: relative;
+      border-bottom: 0;
+      width: 100%;
+      min-height: 100px;
+      height: auto;
+      z-index: 999;
+    }
+  }
+
+  #project-page.carousel{
+    .carousel-inner{
+      background:url(asset_path("macbook-mobile.png", image)) no-repeat center 10px;
+      position: relative;
+      border-bottom: 0;
+      width: 100%;
+      min-height: 100px;
+      height: auto;
+      z-index: 999;
+
+      .item .macbook{
+
+      }
+    }
+
+    .carousel-control{
+      z-index: 0;
+      bottom: auto;
+      top: 85px;
+      height: 35px;
+      width: 35px;
+      
+      i{
+        font-size: 19px;
+        top: -14px;
+      }
+    }
+
+    .carousel-control.left{
+      left: 11%;
+    }
+
+    .carousel-control.right{
+      right: 11%;
+    }
+
+  }
+
+  .project-page{
+    .carousel-caption{
+      margin: auto;
+
+      h4{
+        padding: 0;
+      }
+
+      p, ul{
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+}
+
 @media (max-width: 767px){
 
 /* ----------------------------
@@ -7,19 +115,14 @@
     .container-title{
       margin-top: 0px;
       border-top: 0;
-
-      h2{
-        font-size: 40px;
-        margin: 45px 0 30px;
-      }
     }
   }
-
   .more-projects .container-title h2{
     font-size: 50px;
   }
 
   #projects-page.carousel{
+
     .carousel-inner{
       position: static;
       border-bottom: 0;
@@ -92,9 +195,11 @@
     }
   }
 
-  #project-page.carousel{
-    .carousel-inner{
-      min-height: auto;
+  .project-page{
+    #project-page.carousel{
+      .carousel-inner{
+        min-height: auto;
+      }
     }
   }
 
@@ -124,9 +229,9 @@
     height: auto;
   }
 
-/* ----------------------------
-:: PROJECTS SHOW
----------------------------- */
+  /* ----------------------------
+  :: PROJECT SHOW
+  ---------------------------- */
   .project-page{
     .container-title{
       border-top: 0;
@@ -134,22 +239,9 @@
       h2{
         font-size: 40px;
       }
-
-      h2:after{
-        font-size: 12px;
-        position: static;
-      }
     }
 
     #project-page.carousel{
-      .carousel-control.right{
-        right: 2%;
-      }
-
-      .carousel-control.left{
-        left: 2%;
-      }
-
       .carousel-caption{
         margin: auto;
         width: 90%;
@@ -166,6 +258,16 @@
           line-height: 1.5em;
           margin: 2% 2% 7%;
         }
+      }
+
+      .carousel-control.left{
+        left: 2%;
+        z-index: 999;
+      }
+
+      .carousel-control.right{
+        right: 2%;
+        z-index: 999;
       }
     }
 
@@ -223,83 +325,3 @@
 
 }
 
-@media (max-width: 599px){
-  .projects-page{
-    .container-title{
-      h2{
-        font-size: 38px;
-      }
-    }
-  }
-
-  .more-projects{
-    ul{
-      li{
-        width: 100%;
-      }
-    }
-  }
-
-  #projects-page.carousel{
-    width: 118%;
-    overflow: visible;
-    left: -24px;
-
-    .carousel-inner{
-      background:url(asset_path("macbook-mobile.png", image)) no-repeat 0 10px;
-      position: relative;
-      border-bottom: 0;
-      width: 100%;
-      min-height: 100px;
-      height: auto;
-      z-index: 999;
-    }
-
-    .item .macbook{
-        height: auto;
-        display: block;
-        margin: auto;
-        margin-top: 35px;
-        margin-bottom: 17%;
-        width: 202px;
-        padding: 0 0 0 1px;
-      }
-  }
-
-  #project-page.carousel{
-    .carousel-inner{
-      background:url(asset_path("macbook-mobile.png", image)) no-repeat 0 10px;
-      position: relative;
-      border-bottom: 0;
-      width: 100%;
-      min-height: 100px;
-      height: auto;
-      z-index: 999;
-
-      .item .macbook{
-        height: auto;
-        display: block;
-        margin: auto;
-        margin-top: 35px;
-        margin-bottom: 17%;
-        width: 202px;
-        padding: 0 0 0 1px;
-      }
-    }
-
-    .carousel-control{
-      z-index: 0;
-      bottom: auto;
-      top: 85px;
-      height: 35px;
-      width: 35px;
-      
-      i{
-        font-size: 19px;
-        top: -14px;
-      }
-    }
-
-  }
-
-}
