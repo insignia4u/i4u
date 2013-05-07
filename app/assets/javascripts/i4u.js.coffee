@@ -72,6 +72,11 @@ check_client_width = () ->
     else
       $("nav").insertAfter "#logo"
 
+alert_div_if_errors = () ->
+  if $(".field_with_errors").length > 0
+    $(".field_with_errors").siblings()
+    .css("color", "red").css "border-right", "red 1px solid"
+
 $(window).load () ->
   attachNewFileButtonBehaviors()
   checkEmailOnSubscription()
@@ -80,6 +85,7 @@ $(document).ready ->
   all_equals()
   check_modernizer()
   check_client_width()
+  alert_div_if_errors()
 
   $().UItoTop easingType: "easeOutQuart"
 

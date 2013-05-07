@@ -52,8 +52,8 @@ form{
   }
 
   i.focus{
-    border-right: 1px solid #f20892;
-    color: #f20892;
+    border-right: 1px solid #df339b;
+    color: #df339b;
   }
 
   .focus ::-webkit-input-placeholder{ /* WebKit browsers */
@@ -67,6 +67,12 @@ form{
   }
   .focus :-ms-input-placeholder { /* Internet Explorer 10+ */
       color:    #df339b;
+  }
+
+  .field_with_errors{
+    input, textarea{
+      border-color: red;
+    }
   }
 
   textarea{
