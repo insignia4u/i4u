@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.13'
 gem 'jquery-rails'
 
 group :development do
@@ -45,7 +45,7 @@ group :assets do
 end
 
 gem "activeadmin",          '0.4.4'
-gem "friendly_id",          '4.0.7'
+gem "friendly_id",          '4.0.9'
 gem "paperclip",            '3.3.1'
 gem "faker",                '1.0.1'
 gem 'slim',                 '1.2.1'
