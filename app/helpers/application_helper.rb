@@ -36,7 +36,7 @@ module ApplicationHelper
     if ts = snippet(text_snippet)
       ts.body ||= ''
       rtn = textilize(ts.body) if use_textilize
-      rtn = rtn.gsub("<p>","<p class ='#{css_class}'>")
+      rtn = rtn.gsub("<p>","<p class ='#{css_class}'>") unless css_class.blank?
     end
 
     rtn
@@ -59,8 +59,10 @@ module ApplicationHelper
   end
 
   def link_to_social_network(rs)
-    content_tag(:a, rs.capitalize, href: "http://#{rs}.com/insignia4u",
-      class: "#{rs} icon", target: "_blank")
+    content_tag(:a, rs.capitalize, href: "http://#{rs}.com/insignia4u", 
+      class: "social-link", target: "_blank") do
+        content_tag(:i,nil,class: "icon-#{rs}")
+      end
   end
 
   def remove_protocol_from(url)
@@ -81,12 +83,6 @@ module ApplicationHelper
     end
 
     rtn
-  end
-
-  def get_slider_to_highlighted_projects(projects)
-    projects.map do |p|
-      slider_hash(p.featured_image.url(:big), p.name, p.description)
-    end
   end
 
   def clippy(text, bgcolor='#FFFFFF')
@@ -115,4 +111,25 @@ module ApplicationHelper
       </object>
     EOF
   end
+
+  def active_if_first(collection,item)
+    if collection.first == item
+      'active'
+    else
+      ''
+    end
+  end
+
+  def active_if_equals(controller,name)
+    'active' if controller == name
+  end
+
+  def add_class_number(collection,item)
+    if collection.index(item) < 2
+      'equals'
+    else
+      'equals2'
+    end
+  end
+
 end

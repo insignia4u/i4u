@@ -5,6 +5,4 @@ class AdminUser < ActiveRecord::Base
 
   validates :password_confirmation, presence: true
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-
 end

@@ -15,20 +15,25 @@ describe HomeController do
     describe "GET#show" do
       let(:technologies) { 
         [
-          'Ruby on Rails',
-          'Front-end development: HTML, CSS and Javascript',
-          'Javascript Front-end Frameworks',
-          'PHP MVC Frameworks',
-          'Mobile applications development for iOS and Android platforms'
-        ]}
+      {"title" => 'Ruby on Rails', "icon_type" => 'diamond'},
+      {"title" => 'Front-end development: HTML, CSS and Javascript',
+        "icon_type" => 'tech'},
+      {"title" => 'Kohana (PHP)', "icon_type" => 'php', 
+        "icon_text" => 'php'},
+      {"title" => 
+        'Mobile applications development for iOS and Android platforms', 
+        "icon_type" => 'mobile'}
+        ]
+      }
 
       let(:tools) { 
         [
-          'Behaviour Driven Development',
-          'Agile methodologies',
-          'Version control system: GIT, SVN and others',
-          'Pair programming'
-        ]}
+      {"title" => 'Behaviour Driven Development', "icon_type" => 'cursor'},
+      {"title" => 'Agile methodologies', "icon_type" => 'undo'},
+      {"title" => 'Version control system: GIT, SVN and others', 
+        "icon_type" => 'site-map'},
+      {"title" => 'Pair programming', "icon_type" => 'users'}
+    ]}
 
       it "load featured projects" do
         get :show

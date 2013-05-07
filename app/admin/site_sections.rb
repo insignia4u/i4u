@@ -25,4 +25,12 @@ ActiveAdmin.register SiteSection do
     end
     f.buttons
   end
+
+  controller do
+    def resource_params
+      return [] if request.get?
+      [ params.require(:site_section)
+        .permit(:name, :url) ]
+    end
+  end
 end

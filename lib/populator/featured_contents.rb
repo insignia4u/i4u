@@ -4,7 +4,6 @@ module Populator
   class FeaturedContents
     def initialize
       FeaturedContent.delete_all
-
       @images = Populator::Images.new
     end
 
@@ -14,7 +13,7 @@ module Populator
           site:  sites.sample,
           name:  Faker::Name.name,
           body:  Faker::Lorem.sentences.join("\n"),
-          image: @images.sample
+          image: image
         )
       end
     end
@@ -23,6 +22,14 @@ module Populator
 
     def sites
       Site.all
+    end
+
+    def image
+      @image ||= File.open(
+        File.join(
+          Rails.root, 'public', 'populate_images',("1".."5").to_a.sample + ".jpg"
+        )
+      )
     end
   end
 end

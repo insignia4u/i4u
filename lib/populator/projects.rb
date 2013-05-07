@@ -4,7 +4,6 @@ module Populator
   class Projects
     def initialize
       Project.delete_all
-
       @images = Populator::Images.new
     end
 
@@ -26,8 +25,10 @@ module Populator
         summary:        "A short summary of 120 characters",
         description:    Faker::Lorem.sentences.join("\n"),
         url:            "http://www.#{Faker::Internet.domain_name}",
-        image:          @images.sample,
-        featured_image: @images.sample,
+        image:          image,
+        featured_image: featured_image,
+        started_at:     Date.new(rand(10)+1,rand(11)+1,rand(30)+1),
+        ended_at:       Date.new(rand(10)+10,rand(11)+1,rand(30)+1),
         highlighted: [true, false].sample
       )
     end
@@ -42,6 +43,22 @@ module Populator
 
     def tools
       Tool.all
+    end
+
+    def image
+      @image ||= File.open(
+        File.join(
+          Rails.root, 'public', 'populate_images',("1".."6").to_a.sample + ".jpg"
+        )
+      )
+    end
+
+    def featured_image
+      @featured_image ||= File.open(
+        File.join(
+          Rails.root, 'public', 'populate_images',("1".."6").to_a.sample + ".jpg"
+        )
+      )
     end
   end
 end

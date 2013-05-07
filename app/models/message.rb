@@ -1,24 +1,28 @@
 require 'valid_formats'
 
 class Message
+  include ActiveModel::ForbiddenAttributesProtection
   include ActiveModel::Validations
   include ActiveModel::Conversion
   extend  ActiveModel::Naming
 
-  attr_accessor :body, :email, :file, :name, :subject, :is_to_job
+  attr_accessor  :file, :is_to_job ,:body, :email, :name, :phone
+  attr_reader :subject
 
   validates :body, :name, :email, presence: true
-  validates :subject, presence: true, unless: :is_to_job
   validates :email, format: { with: ValidFormats::EMAIL }, allow_blank: true
+
   validates :file, presence: true, if: :is_to_job
 
   def initialize(attributes = {})
     @body      = attributes[:body]
     @name      = attributes[:name]
     @email     = attributes[:email]
+    @phone     = attributes[:phone]
     @file      = attributes[:file]
     @is_to_job = (attributes[:is_to_job] == true || attributes[:is_to_job] == "true")
     @subject   = attributes[:subject]
+    @subject   = 'Insignia website'
 
     if @is_to_job
       @subject = "CV to #{@name}"

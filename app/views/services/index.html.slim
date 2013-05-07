@@ -1,32 +1,37 @@
-- content_for :stylesheets do
-  = stylesheet_link_tag "pages/servicios"
+section.services
+  .container-title
+    h2 = title_for('our-services-title').strip
+  ul.box-dashed.two
+    - @services_snippet.each do |service|
+      li.equal
+        h3 = title_for("#{service[:snippet]}-text-snippet")
+        p == body_for("#{service[:snippet]}-text-snippet",true)
+section.process
+  .container-title
+    h2 = title_for('our-process').strip
 
-.row
-  .eight.columns
+  ul
+    - @services_snippet.each_with_index do |name,i|
+      li
+        i class="icon-#{name[:icon_type]}"
 
-    h3 = title_for('our-services-title')
-    h4.second = title_for('main-content-service')
-    article.twelve.columns.box.news
-      == body_for('main-content-service', true)
+        h3
+          span = "#{i+1})"
+          = title_for("#{name[:snippet]}-process-snippet")
 
-    h3 = title_for('our-process')
-    .list-services
-      - %w{ planificacion codificacion revision control produccion mantenimiento}.each do |name|
-        article
-          = image_tag "other/#{name}.png"
-          span
-          .description
-            b = title_for("#{name}-text-snippet")
-            == body_for("#{name}-text-snippet",true)
+        = body_for("#{name[:snippet]}-process-snippet",true)
 
-  .four.columns.last
-    article.box.sidebar
-      h4 = title_for('first-side-bar-content-services-page')
-      .methodologies
-        == body_for('first-side-bar-content-services-page', true)
-    
-    article.box.sidebar
-      h4 = title_for('second-side-bar-content-services-page')
-      .methodologies
-        == body_for('second-side-bar-content-services-page', true)
-    
+
+section.howdowedoit
+  .container-title
+    h2 
+      = title_for('how-do-we-do-it').strip
+      span ?
+
+  = raw body_for('how-do-we-do-it',true)
+
+section.our-offering
+  .container-title
+    h2 = title_for('our-offering').strip
+
+  = body_for('our-offering',true)

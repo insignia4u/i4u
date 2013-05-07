@@ -39,6 +39,8 @@ namespace(:db) do
       featured_contents.create!(10)
       puts "> *** Done!"
 
+      system 'rake sites:en:load_text_snippets'
+
      puts "> Database Population process complete!"
     end
   end

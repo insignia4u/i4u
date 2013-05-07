@@ -6,7 +6,8 @@ module Populator
 
     def create!(q=1)
       q.times do
-        Technology.create( name: Faker::Name.name )
+        Technology.create(title: Faker::Name.name,
+                          description: Faker::Lorem.sentence(3) )
       end
     end
   end

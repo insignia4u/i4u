@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Site do
   describe "attributes accessibility" do
-    it { should     have_accessible(:name) }
-    it { should     have_accessible(:abbreviation) }
+    it { should     respond_to(:name) }
+    it { should     respond_to(:abbreviation) }
     it { should_not have_accessible(:live) }
   end
 

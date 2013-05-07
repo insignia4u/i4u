@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe Service do
   describe "Attributes accessibility" do
-    it { should have_accessible(:site_id) }
-    it { should have_accessible(:title) }
-    it { should have_accessible(:summary) }
-    it { should have_accessible(:image) }
+    it { should respond_to(:site_id) }
+    it { should respond_to(:title) }
+    it { should respond_to(:summary) }
+    it { should respond_to(:image) }
   end
 
   describe "Validations" do
