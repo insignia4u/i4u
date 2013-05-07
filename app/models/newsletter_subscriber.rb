@@ -1,7 +1,5 @@
 class NewsletterSubscriber < ActiveRecord::Base
 
-  attr_accessible :email
-
   validates :email, presence: true, :email => true
   validates :email, uniqueness: { message: "You're already subscribed." }
 

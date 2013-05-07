@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe ProjectImage do
   describe "Attributes accessibility" do
-    it { should have_accessible(:image) }
-    it { should have_accessible(:description) }
+    it { should respond_to(:image) }
+    it { should respond_to(:description) }
   end
 
   describe "Validations" do

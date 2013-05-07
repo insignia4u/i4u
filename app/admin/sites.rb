@@ -52,4 +52,12 @@ ActiveAdmin.register Site do
     end
     f.buttons
   end
+
+  controller do
+    def resource_params
+      return [] if request.get?
+      [ params.require(:site)
+        .permit(:name, :abbreviation) ]
+    end
+  end
 end

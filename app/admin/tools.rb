@@ -39,4 +39,12 @@ ActiveAdmin.register Tool do
     end
     head 200
   end
+
+  controller do
+    def resource_params
+      return [] if request.get?
+      [ params.require(:tool)
+        .permit(:title, :description, :position) ]
+    end
+  end
 end

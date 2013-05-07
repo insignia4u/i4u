@@ -32,11 +32,19 @@ ActiveAdmin.register Technology do
       id: "button-reorder-technologies", class: "hide") unless Technology.all.empty?
   end
 
-collection_action :sort, :method => :post do
+  collection_action :sort, :method => :post do
     params[:technology].each_with_index do |id, index|
       technology = Technology.find(id)
       technology.update_attribute(:position, index.to_i+1)
     end
     head 200
+  end
+
+  controller do
+    def resource_params
+      return [] if request.get?
+      [ params.require(:technology)
+        .permit(:title, :description, :position) ]
+    end
   end
 end

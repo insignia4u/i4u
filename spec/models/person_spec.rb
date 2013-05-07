@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe Person do
   describe "Attributes accessibility" do
-    it { should have_accessible(:site_id) }
-    it { should have_accessible(:first_name) }
-    it { should have_accessible(:last_name) }
-    it { should have_accessible(:bio) }
+    it { should respond_to(:site_id) }
+    it { should respond_to(:first_name) }
+    it { should respond_to(:last_name) }
+    it { should respond_to(:bio) }
   end
 
   describe "Validations" do
