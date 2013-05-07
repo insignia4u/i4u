@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @message = Message.new(params[:message])
+    @message = Message.new(message_params)
 
     if @message.valid?
       Notifier.contact_message(@message).deliver
@@ -13,5 +13,11 @@ class ContactsController < ApplicationController
     else
       render :new
     end
+  end
+
+private
+  
+  def message_params
+    params.require(:message).permit(:name,:body,:email,:phone)
   end
 end

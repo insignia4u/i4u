@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Technology do
   describe "Attributes accessibility" do
-    it { should have_accessible(:title) }
-    it { should have_accessible(:description) }
+    it { should respond_to(:title) }
+    it { should respond_to(:description) }
   end
 
   describe "Validations" do

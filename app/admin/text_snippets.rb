@@ -44,4 +44,12 @@ ActiveAdmin.register TextSnippet do
     f.buttons
   end
 
+  controller do
+    def resource_params
+      return [] if request.get?
+      [ params.require(:text_snippet)
+        .permit(:body, :name, :title, :site_id, :image) ]
+    end
+  end
+
 end

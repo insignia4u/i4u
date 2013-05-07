@@ -130,4 +130,15 @@ ActiveAdmin.register Project do
     default_actions
   end
 
+  controller do
+    def resource_params
+      return [] if request.get?
+      [ params.require(:project)
+        .permit(:site_id, :description, :ended_at, :extended_description,
+        :name, :started_at, :summary, :url, :image, :featured_image,
+        :technology_ids, :tool_ids, :site, :technologies, :tools,
+        :highlighted) ]
+    end
+  end
+
 end

@@ -56,4 +56,13 @@ ActiveAdmin.register Person do
     end
     head 200
   end
+
+  controller do
+    def resource_params
+      return [] if request.get?
+      [ params.require(:person)
+        .permit(:site_id, :bio, :first_name, :last_name, :photo,
+        :site, :title, :position) ]
+    end
+  end
 end
