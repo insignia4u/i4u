@@ -3,8 +3,6 @@ class SiteSection < ActiveRecord::Base
 
   belongs_to :site
 
-  attr_accessible :name, :url
-
   validates       :site, presence: true
 
   friendly_id     :name, use: :slugged

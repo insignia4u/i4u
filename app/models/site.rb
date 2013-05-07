@@ -7,8 +7,6 @@ class Site < ActiveRecord::Base
   has_many :text_snippets
   has_many :featured_contents
 
-  attr_accessible :name, :abbreviation
-
   validates :name,         presence: true
   validates :abbreviation, presence: true, uniqueness: true
 

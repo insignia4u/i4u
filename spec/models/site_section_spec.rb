@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe SiteSection do
   describe "attributes accessibility" do
-    it { should     have_accessible(:name) }
-    it { should     have_accessible(:url) }
+    it { should     respond_to(:name) }
+    it { should     respond_to(:url) }
   end
 
   describe "validations" do

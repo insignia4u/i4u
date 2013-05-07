@@ -30,4 +30,12 @@ ActiveAdmin.register Service do
 
     f.buttons
   end
+
+  controller do
+    def resource_params
+      return [] if request.get?
+      [ params.require(:service)
+        .permit(:site_id, :summary, :title, :image) ]
+    end
+  end
 end
