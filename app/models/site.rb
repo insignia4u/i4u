@@ -1,8 +1,4 @@
 class Site < ActiveRecord::Base
-  attr_accessible :name, :abbreviation
-
-  validates :name,         presence: true
-  validates :abbreviation, presence: true, uniqueness: true
 
   has_many :site_sections
   has_many :projects
@@ -10,6 +6,9 @@ class Site < ActiveRecord::Base
   has_many :services
   has_many :text_snippets
   has_many :featured_contents
+
+  validates :name,         presence: true
+  validates :abbreviation, presence: true, uniqueness: true
 
   scope :live,   where( live: true )
   scope :hidden, where( live: false )

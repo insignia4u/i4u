@@ -1,24 +1,11 @@
-- content_for :stylesheets do
-  = stylesheet_link_tag "slider"
-  = stylesheet_link_tag "slider-portfolio"
-  = stylesheet_link_tag "pages/portfolio"
+section.projects-page
+  .container-title
+    h2 = title_for('highlighted-projects').strip
 
-- unless @highlighted_projects.empty?
-  .row.slider-portfolio
-    h3.title = title_for('highlighted-projects')
-    #featured-content
-      - @highlighted_projects.each do |p|
-          div
-            = link_to project_path(p) do
-              = image_tag(p.featured_image.url(:big) )
-            .data
-              h3
-                = link_to p.name, project_path(p)
-              == textilize(p.description)
+  = render 'projects/modules/highlighted_projects', highlighted_projects: @highlighted_projects
 
+section.more-projects
+  .container-title
+    h2 = title_for('more-projects').strip
 
-.row
-  h4.title = title_discriminated_for('recent-jobs')
-  
-  .lastestjob-section
-  	= render('projects/modules/last_jobs', recent_jobs: @recent_jobs)
+  = render('projects/modules/last_jobs', recent_jobs: @recent_jobs)

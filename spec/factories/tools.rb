@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :tool do
-    name "Foo Name"
+    title "Foo Name"
+    description 'Bar Description'
   end
 end

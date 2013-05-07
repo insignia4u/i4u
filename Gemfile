@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.13'
 gem 'jquery-rails'
 
 group :development do
@@ -39,14 +39,17 @@ group :assets do
   gem 'zurb-foundation',    '3.0.9'
 
   gem 'uglifier',           '>= 1.0.3'
+
+  gem 'bourbon', '2.1.2'
+  gem 'neat', '1.0.2'
 end
 
-gem "activeadmin"
-gem "friendly_id",          '4.0.7'
+gem "activeadmin",          '0.4.4'
+gem "friendly_id",          '4.0.9'
 gem "paperclip",            '3.3.1'
 gem "faker",                '1.0.1'
-gem 'slim'
-gem 'slim-rails'
+gem 'slim',                 '1.2.1'
+gem 'slim-rails',           '1.0.3'
 gem 'textilize'
 gem 'mobile-fu',            '1.1.1'
 gem 'draper',               '0.18.0'
@@ -55,3 +58,4 @@ gem 'airbrake',             '3.1.6'
 gem 'newrelic_rpm',         '3.5.3.25'
 gem 'dalli',                '2.6.0'
 gem 'gibbon',               '0.4.2'
+gem 'strong_parameters',    '0.2.0'

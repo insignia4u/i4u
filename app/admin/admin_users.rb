@@ -29,4 +29,13 @@ ActiveAdmin.register AdminUser do
     end
     f.buttons
   end
+
+  controller do
+
+    def resource_params
+      return [] if request.get?
+      [ params.require(:admin_user)
+        .permit(:email, :password, :password_confirmation, :remember_me) ]
+    end
+  end
 end

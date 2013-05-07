@@ -1,22 +1,24 @@
-header.row
-  .logo.three.columns
+header
+  .container#logo
     h1
       a href="/"
-  ul.four.columns.block-grid.three-up
-    li
-      = link_to title_for("us"), people_path
-    li
-      = link_to title_for("services"), services_path
-    li
-      = link_to title_for("projects"), projects_path
-    li
-      = link_to title_for("contact"), new_contact_path
-    li
-      = link_to title_for("job"), new_job_path
-    li
-      a href="http://www.insignia4u-blog.com/" target="_blank"
-        = title_for("blog")
-  .three.columns.socials-icons
-    = link_to_social_network('github')
-    = link_to_social_network('twitter')
-    = link_to_social_network('facebook')
+        = image_tag(asset_path("insignia.svg"))
+
+    /a.lang href="" English Please
+
+  nav
+    i#menu-btn.icon-list
+    ul
+      li
+        a class=active_if_equals(controller_name,'home') href="/" Home
+      li
+        a class=active_if_equals(controller_name,'people') href="/staff" Staff
+      li
+        a class=active_if_equals(controller_name, 'services') href="/services"Services
+      li
+        a class=active_if_equals(controller_name,'projects') href="/projects"Projects
+      li
+        a class=active_if_equals(controller_name,'contacts') href="/contact" Contact
+      li
+        a class=active_if_equals(controller_name,'blog') href="http://www.insignia4u-blog.com/" Blog
+    span x

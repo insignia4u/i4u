@@ -47,4 +47,13 @@ ActiveAdmin.register FeaturedContent do
 
     f.buttons
   end
+
+  controller do
+    def resource_params
+      return [] if request.get?
+      [ params.require(:featured_content)
+        .permit(:name, :body, :image, :site, :site_id) ]
+    end
+  end
+
 end

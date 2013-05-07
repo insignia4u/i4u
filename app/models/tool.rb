@@ -1,7 +1,7 @@
 class Tool < ActiveRecord::Base
-  attr_accessible :name, :position
 
-  validates :name, :presence => true
+  validates :title, :presence => true
+  validates :description, presence: true
 
   scope :top, ->(l) { limit(l) }
   scope :by_position, order(:position)

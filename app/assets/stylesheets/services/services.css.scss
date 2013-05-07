@@ -1,0 +1,99 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.services{
+  ul.box-dashed{
+    li{
+      @include border-radius(5px);
+      margin-top:0;
+      margin-bottom:24px;
+
+      h3, p{
+        margin:15px 30px 22px;
+      }
+
+      h3{
+        font-family: $font-primary;
+        color:#316baf;
+        font-size:16px;
+        text-transform:uppercase;
+        margin-top:34px;
+      }
+
+      p{
+        font-size:13px;
+        line-height:23px;
+      }
+    }
+  }
+}
+
+.process{
+  line-height:23px;
+
+  ul{
+    li{
+      border-bottom:#b3c4d9 solid 1px;
+      padding:0 0 15px;
+      margin:0 0 30px;
+
+      h3{
+        font-family: $font-primary;
+        font-size:20px;
+        margin-top:0;
+        font-weight:300;
+
+        span{
+          font-size:35px;
+          color:#316baf;
+        }
+      }
+
+      p{
+        width:73%;
+      }
+
+      i{
+        float:right;
+        margin:40px 8% 0 0;
+        font-size: 4em;
+        color: #F10993;
+      }
+    }
+
+    li.last{
+      border-bottom: none;
+    }
+  }
+}
+
+.howdowedoit, .our-offering{
+  float: left;
+
+  .container-title{
+    border:none;
+    margin-top:40px;
+  }
+}
+
+.howdowedoit{
+  border-right: 2px dashed #B8B8B8;
+  float: left;
+  width: 50%;
+
+  .bullets-blue{
+    padding:0 40px 0 30px;
+  }
+}
+
+.our-offering{
+  width:49%;
+
+  p{
+    line-height:27px;
+    margin: 0 0 10px;
+    padding: 9px 10px 10px 25px;
+    font-size: 15px;
+  }
+}

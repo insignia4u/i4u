@@ -1,39 +1,18 @@
-- content_for :stylesheets do
-  = stylesheet_link_tag "pages/portfolio"
-  = stylesheet_link_tag "pages/caso"
+section.project-page
+  .container-title
+    h2 = resource.name
 
-.row
-  .eight.columns
-  
-    h3= resource.name
-    = link_to remove_protocol_from(resource.url), resource.url, class: 'url'
-    
-    .text-description
-      == textilize("p(description). #{resource.description}")
+    = render 'projects/modules/carousel', resource: resource
 
-    .extended_description
-      == textilize(resource.extended_description)
+  .carousel-caption
+    = textilize(resource.description)
 
-  .four.columns.last
-    article.box.sidebar
-      h4 =title_for('more-info')
-      .methodologies
-        = image_tag resource.image.url(:thumb)
-        ul
-          - if resource.started_at
-            li
-              p.title = title_for('duration-project-header')
-              p = get_project_duration(resource)
-          - if @technologies.any?
-            li
-              p.title = title_for('technology-list-header')
-              ul
-                - @technologies.each do |technology|
-                  li = "> #{technology.name}"
+  = link_to 'Visit Site', resource.url, class: 'more'
 
-          - if @tools.any?
-            li
-              p.title = title_for('tool-list-header')
-              ul
-                - @tools.each do |tool|
-                  li = "> #{tool.name}"
+section.more-info
+  .container-title
+    h2.blue = title_for('more-info')
+
+  = render 'projects/modules/boxes', resource: resource,
+                                     technologies: @technologies,
+                                     tools: @tools

@@ -1,0 +1,99 @@
+@media (max-width: 939px){
+
+/* ----------------------------
+:: PROJECT
+---------------------------- */
+  #projects-page.carousel{
+    .carousel-inner{
+      width: 100%;
+      height: auto;
+      background-position: 50% 0%;
+      padding: 0 0 23px;
+
+      .item{
+        margin: 0;
+        width: 100%;
+      }
+
+      .macbook{
+        height: 263px;
+        margin: 40px auto 0;
+        padding: 0 0 0 7px;
+        width: 346px;
+      }
+
+      .carousel-caption{
+        width: 80%;
+        position: relative;
+        top: 0;
+        left: 0;
+        margin: 10px auto auto;
+        background: white;
+        border: black solid 1px;
+        padding: 3%;
+      }
+
+      .more{
+        left: 0;
+        bottom: -4%;
+        right: 0;
+        margin: auto;
+      }
+    }
+
+    .carousel-control{
+      bottom: 2px;
+      top: auto;
+    }
+
+    .carousel-control.left{
+      left: 11%;
+    }
+
+    .carousel-control.right{
+      right: 11%;
+    }
+  }
+
+  #project-page.carousel{
+    .carousel-control.left{
+      left: 13%;
+    }
+
+    .carousel-control.right{
+      right: 12%;
+    }
+  }
+
+  .more-projects{
+    ul{
+      width: 95%;
+
+      li{
+        width: 47%;
+        
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .more-info{
+    .container-title{
+      margin-top: 77px;
+    }
+
+    ul.box-dashed.three{
+      margin: 0 auto;
+      padding: 0;
+      width: 745px;
+
+      li{
+        margin: 0 9px 18px;
+        width: 230px;
+      }
+    }
+  }
+
+}

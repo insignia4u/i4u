@@ -1,24 +1,39 @@
-footer.back-gradient
-  span.foot-deco
-  .row
-    .three.columns.footer-contact
-      h4= title_for('contact-module')
-      == body_for('contact-module', true)
+footer
+  .container-contact
+    ul.footer-contact
+      li.footer-contact-street
+        i.icon-map-marker 
+        | Lamadrid 318, Piso 4 - Depto. A San Miguel de Tucumán, Tucumán, Argentina
 
-    .three.columns
-      h4= title_for('subscribe')
-      p= title_for('subscribe-text')
+      li.footer-contact-phone
+        i.icon-phone 
+        | +54 (381) 420-7387
 
-      = form_for 'newsletter_subscriber', url: newsletter_subscriber_index_path, remote: true, html: { :id => "subscription-form" } do |f|
+      li.footer-contact-email
+        i.icon-envelope-alt 
+        a href="mailto:contacto@insignia4u.com" contacto@insignia4u.com
 
-        = f.email_field :email
-        #message
-        = f.submit 'Subscribe me', class: "button tiny"
+  = form_for 'newsletter_subscriber', url: newsletter_subscriber_index_path, remote: true, html: { :class => "footer-subscribe" } do |f|
+    label Newsletter
+    p Subscribe to our Newsletter and frequent updates about our company in your inbox.
+    = f.email_field :email, placeholder: 'type in your email', class: 'email'
+    = f.submit 'Subscribe', class: "btn btn-subscribe"
+    
 
-    .three.columns.last
-      h4= title_for('more-about-us')
-      .twelve.columns
-        = link_to_social_network('facebook')
-        = link_to_social_network('twitter')
-        = link_to_social_network('github')
+  .social
+    .container
+      ul
+        li.social-list
+          | Follow Us 
+          = link_to_social_network('slideshare')
+
+        li.social-list
+          = link_to_social_network('github')
+
+        li.social-list
+          = link_to_social_network('twitter')
+
+        li.social-list
+          = link_to_social_network('facebook')
+          | Connect
 

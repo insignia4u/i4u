@@ -1,16 +1,6 @@
-.four.columns.last
-    article.box.sidebar
-      h4 = title_for('staff')
-      ul.info-staff
-        - staff.each do |person|
-          li class=last_resource(staff, person)
-            = image_tag person.photo(:thumb)
-            p.name
-              |
-              = person.full_name
-            p.work
-              |
-              = person.title
-            p.description
-              |
-              = person.bio
+- staff.each do |person|
+  li
+    = image_tag person.photo(:thumb), class: 'img-circle'
+    h4 = person.full_name
+    strong = person.title
+    p = person.bio

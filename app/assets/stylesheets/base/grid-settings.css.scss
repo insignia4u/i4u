@@ -1,0 +1,25 @@
+@import "neat-helpers";
+@media (max-width : 300px){
+	$max-width: px(480);
+}
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* Styles */
+  $max-width: em(1024);
+}
+ 
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+  $max-width: em(768);
+}
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+  $max-width: em(940);
+}
