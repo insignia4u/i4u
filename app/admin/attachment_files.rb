@@ -42,4 +42,12 @@ ActiveAdmin.register AttachmentFile, :as => "Assets" do
     end
   end
 
+  controller do
+    def resource_params
+      return [] if request.get?
+      [ params.require(:attachment_file)
+        .permit(:file_i4u, :summary, :name) ]
+    end
+  end
+
 end
