@@ -2,8 +2,6 @@ class ProjectImage < ActiveRecord::Base
 
   belongs_to :project
 
-  attr_accessible :image, :description
-
   has_attached_file :image,
         styles: {
                   big:          "277x250#", 

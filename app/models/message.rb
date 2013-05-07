@@ -1,11 +1,12 @@
 require 'valid_formats'
 
 class Message
+  include ActiveModel::ForbiddenAttributesProtection
   include ActiveModel::Validations
   include ActiveModel::Conversion
   extend  ActiveModel::Naming
 
-  attr_accessor :body, :email, :file, :name, :phone, :is_to_job
+  attr_accessor  :file, :is_to_job ,:body, :email, :name, :phone
   attr_reader :subject
 
   validates :body, :name, :email, presence: true

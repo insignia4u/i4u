@@ -2,16 +2,16 @@ require 'spec_helper'
 
 describe Project do
   describe "Attributes accessibility" do
-    it { should     have_accessible(:name) }
-    it { should     have_accessible(:summary) }
-    it { should     have_accessible(:description) }
-    it { should     have_accessible(:extended_description) }
-    it { should     have_accessible(:url) }
-    it { should     have_accessible(:started_at) }
-    it { should     have_accessible(:ended_at) }
-    it { should     have_accessible(:technology_ids) }
-    it { should     have_accessible(:tool_ids) }
-    it { should     have_accessible(:highlighted) }
+    it { should     respond_to(:name) }
+    it { should     respond_to(:summary) }
+    it { should     respond_to(:description) }
+    it { should     respond_to(:extended_description) }
+    it { should     respond_to(:url) }
+    it { should     respond_to(:started_at) }
+    it { should     respond_to(:ended_at) }
+    it { should     respond_to(:technology_ids) }
+    it { should     respond_to(:tool_ids) }
+    it { should     respond_to(:highlighted) }
   end
 
   describe "Validations" do

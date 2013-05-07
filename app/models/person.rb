@@ -2,8 +2,6 @@ class Person < ActiveRecord::Base
 
   belongs_to :site
 
-  attr_accessible :site_id, :bio, :first_name, :last_name, :photo,
-    :site, :title, :position
   has_attached_file :photo, styles: {thumb: "73x70"}
 
   validates :site,       presence: true
