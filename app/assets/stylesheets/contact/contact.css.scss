@@ -7,6 +7,10 @@
     h2{
       font-size: 92px;
     }
+
+    h2:before, h3:before, h2:after, h3:after {
+      width: 50px;
+    }
   }
 
   form{
@@ -95,5 +99,15 @@
 
   .map{
     text-align: center;
+  }
+}
+
+@media (min-width: 940px){
+  #noty_top_layout_container{
+    li{
+      width: 940px;
+      margin-left:auto;
+      margin-right:auto;
+    }
   }
 }
