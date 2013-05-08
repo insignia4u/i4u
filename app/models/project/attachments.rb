@@ -9,7 +9,7 @@ class Project
                   thumb:        "234x230#", 
                   normal:       "818x403#",
                   medium:       "650x320#",
-                  small:        "480x236#",
+                  small:        "268x151#",
                   cms_thumb:    "110x100#"
                 }
       has_attached_file :featured_image,
