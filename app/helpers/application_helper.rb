@@ -126,9 +126,9 @@ module ApplicationHelper
 
   def add_class_number(collection,item)
     if collection.index(item) < 2
-      'equals'
+      'equal'
     else
-      'equals2'
+      'equal2'
     end
   end
 
