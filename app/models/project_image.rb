@@ -8,7 +8,7 @@ class ProjectImage < ActiveRecord::Base
                   thumb:        "234x230#", 
                   normal:       "818x403#",
                   medium:       "650x320#",
-                  small:        "480x236#",
+                  small:        "268x151#",
                   cms_thumb:    "169x100#"
                 }
   validates_attachment :image, presence: true,

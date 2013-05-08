@@ -16,8 +16,6 @@ html
 
     = stylesheet_link_tag "application", :media => "all"
     = yield :stylesheets
-    = javascript_include_tag "application"
-    = csrf_meta_tags
 
   body onload="window.scrollTo(0,1);"
     = render "shared/header"
@@ -30,3 +28,6 @@ html
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
+
+    = javascript_include_tag "application"
+    = csrf_meta_tags
