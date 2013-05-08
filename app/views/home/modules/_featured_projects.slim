@@ -2,9 +2,9 @@
   .carousel-inner
     - featured_projects.each do |project|
       .item class=active_if_first(@featured_projects,project)
-        figure title="" data-media600=project.image.url(:medium) data-media440=project.image.url(:small) data-media=project.image.url(:normal)
+        figure title="" data-media600=project.image.url(:normal) data-media440=project.image.url(:medium) data-media=project.image.url(:small)
 
-          = image_tag project.image.url(:normal)
+          = image_tag project.image.url(:small)
 
           noscript
             = image_tag project.image.url(:normal)
