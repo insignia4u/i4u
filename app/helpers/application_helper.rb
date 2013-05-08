@@ -12,9 +12,9 @@ module ApplicationHelper
   end
 
   def snippet(text_snippet)
-    Rails.cache.fetch([current_site.id , text_snippet, "v3"], expires_in: 60.minutes) do
+    #Rails.cache.fetch([current_site.id , text_snippet, "v3"], expires_in: 60.minutes) do
       current_site.text_snippets.find_by_slug(text_snippet)
-    end
+    #end
   end
 
   def title_for(text_snippet)
