@@ -4,8 +4,8 @@ class FeaturedContent < ActiveRecord::Base
   belongs_to :site
 
   has_attached_file :image,
-  styles: {
-                  listing:   "410x405#",
+       styles: {
+                  listing:      "410x405#",
                   normal:       "818x403#",
                   medium:       "650x320#",
                   small:        "268x151#",
