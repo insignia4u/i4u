@@ -10,6 +10,7 @@
     }
 
     #intro.carousel{
+      height: 480px;
       .carousel.slide, .carousel-inner > .item > img, .carousel-inner{
         float: none;
         position: static;
