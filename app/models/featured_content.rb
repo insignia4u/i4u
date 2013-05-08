@@ -4,11 +4,13 @@ class FeaturedContent < ActiveRecord::Base
   belongs_to :site
 
   has_attached_file :image,
-    styles: { listing:   "410x405#",
-              normal:    "532x300",
-              medium:    "532x300",
-              small:     "480x236",
-              cms_thumb: "140x138#" }
+  styles: {
+                  listing:   "410x405#",
+                  normal:       "818x403#",
+                  medium:       "650x320#",
+                  small:        "268x151#",
+                  cms_thumb:    "140x138#"
+                }
 
   validates :site, :name, :body, presence: true
 
