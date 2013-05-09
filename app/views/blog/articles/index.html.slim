@@ -17,10 +17,11 @@ section.blog
           i.icon-comment
 
         .author = article.author
-        picture alt=""
-          source src=article.image.url(:small)
-          source src=article.image.url(:medium) media="(min-width:440px)"
-          source src=article.image.url(:medium) media="(min-width:600px)"
+        - if article.image.url != '/images/original/missing.png'
+          picture alt=""
+            source src=article.image.url(:small)
+            source src=article.image.url(:medium) media="(min-width:440px)"
+            source src=article.image.url(:medium) media="(min-width:600px)"
 
           noscript
             img src=article.image.url(:small) alt=""
