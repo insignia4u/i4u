@@ -6,6 +6,7 @@ class Site < ActiveRecord::Base
   has_many :services
   has_many :text_snippets
   has_many :featured_contents
+  has_many :articles
 
   validates :name,         presence: true
   validates :abbreviation, presence: true, uniqueness: true
