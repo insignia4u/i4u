@@ -1,0 +1,40 @@
+= render 'blog/articles/modules/head'
+
+section.blog
+
+  = render 'blog/articles/modules/blog_categories'
+
+  .container-title
+    h2 Our Blog
+
+  = render 'blog/articles/modules/aside'
+
+  .column
+    - @articles.each do |article|
+      article
+        .comment
+          | 23
+          i.icon-comment
+
+        .author Carlos Kozuszko
+        picture alt=""
+          source src=asset_path("blog-photo01.jpg")
+          source src=asset_path("blog-photo01.jpg") media="(min-width:440px)"
+          source src=asset_path("blog-photo01.jpg") media="(min-width:600px)"
+
+          noscript
+            img src=asset_path("blog-photo.jpg") alt=""
+
+        h3
+          a href="" = article.title
+
+        = textilize(article.summary)
+
+        a.bottom-link href=""
+          | Seguir leyendo
+          span +
+
+        .tags
+          a href="" anuncios
+          a href="" desarrollos
+          a href="" rubi on rails
