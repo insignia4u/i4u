@@ -13,7 +13,7 @@ class Article < ActiveRecord::Base
                   cms_thumb:    "169x100#"
                 }
 
-  validates :title, :subtitle, :content, :summary, :publication_date,
+  validates :author, :title, :subtitle, :content, :summary, :publication_date,
   :description, :site, presence: true
 
   friendly_id :title, use: [:slugged, :history]
