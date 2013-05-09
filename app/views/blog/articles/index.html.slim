@@ -17,7 +17,7 @@ section.blog
           i.icon-comment
 
         .author = article.author
-        - if article.image.url != '/images/original/missing.png'
+        - if article.image.present?
           picture alt=""
             source src=article.image.url(:small)
             source src=article.image.url(:medium) media="(min-width:440px)"
