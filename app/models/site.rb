@@ -16,7 +16,6 @@ class Site < ActiveRecord::Base
 
   scope :with_language, ->(abbreviation) { where(abbreviation: abbreviation) }
 
-
   def home_projects
     projects.featured.limit(3)
   end

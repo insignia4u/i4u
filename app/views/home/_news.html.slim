@@ -3,20 +3,21 @@ section.news
     h2 News
 
   ul
-    li.news-item.equal
-      .published-at
-        i.icon-calendar
-        | 14 de Diciembre 2012
-      .title
-        | La Historia de Insignia, la historia de Insignia
-      h3
-        | Los Tanfaun entre los ganadores en BA Apps
-      .description
-        p
-          | Con la aplicación Los Tanfaun salimos ganadores de la categoría Urbanismo en el concurso de Buenos Aires Apps. Nuestros amigos de Indicius con quién realizamos este proyecto en conjunto recibien el premio en Buenos Aires en representación...
+    - @articles_most_recents.each do |article|
+      li.news-item.equal
+        .published-at
+          i.icon-calendar
+          | new. = "14 de Diciembre 2012"
+        .title
+          | La Historia de Insignia, la historia de Insignia
+        h3
+          | Los Tanfaun entre los ganadores en BA Apps
+        .description
+          p
+            | Con la aplicación Los Tanfaun salimos ganadores de la categoría Urbanismo en el concurso de Buenos Aires Apps. Nuestros amigos de Indicius con quién realizamos este proyecto en conjunto recibien el premio en Buenos Aires en representación...
 
-      a.more href="http://www.insignia4u-blog.com/" target="_blank"
-        | Read more
+        a.more href="http://www.insignia4u-blog.com/" target="_blank"
+          | Read more
 
     li.news-item.equal
       .published-at

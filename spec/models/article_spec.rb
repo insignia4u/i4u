@@ -46,5 +46,24 @@ describe Article do
       end
     end
   end
+
+  describe "#most_recents" do
+    before(:each) do
+      @article  = create(:article)
+      @most_recents = create_list(:article,3)
+    end
+
+    context "Returns the most recents articles" do
+      it "returns 3 articles " do
+        Article.most_recents.count.should eql(3)
+      end
+      it "returns the most recents" do
+        Article.most_recents.to_a.should eql(@most_recents.reverse)
+      end
+      it "doens't includes old articles" do
+        Article.most_recents.should_not include(@article)
+      end
+    end
+  end
 end
 

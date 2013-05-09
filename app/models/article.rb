@@ -18,4 +18,8 @@ class Article < ActiveRecord::Base
 
   friendly_id :title, use: [:slugged, :history]
 
+  def self.most_recents
+    order('created_at DESC').limit(3)
+  end
+
 end
