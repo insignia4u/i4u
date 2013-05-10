@@ -4,14 +4,14 @@ section.news
 
   ul
     - @articles_most_recents.each do |article|
-      li.news-item.equal
+      li.news-item.equal5
         .published-at
           i.icon-calendar
           = article.created_at.to_date.to_formatted_s(:long_ordinal)
         .title
-          = article.title
-        h3
           = article.subtitle
+        h3
+          = article.title
         .description
           = textilize(article.description)
 

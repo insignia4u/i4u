@@ -1,2 +1,34 @@
-h1 Blog::Articles#show
-p Find me in app/views/blog/articles/show.html.slim
+= render 'blog/articles/modules/head'
+
+section.blog
+
+  = render 'blog/articles/modules/blog_tags'
+
+  .container-title
+    h2 Our Blog
+
+  = render 'blog/articles/modules/aside'
+
+  .column
+    article
+      .comment
+        | 23
+        i.icon-comment
+
+      .author = @article.author
+      - if @article.image.present?
+        picture alt=""
+          source src=@article.image.url(:small)
+          source src=@article.image.url(:medium) media="(min-width:440px)"
+          source src=@article.image.url(:medium) media="(min-width:600px)"
+
+        noscript
+          img src=@article.image.url(:small) alt=""
+
+      h3 = link_to @article.title, blog_article_path(@article)
+
+      = textilize(@article.content)
+
+      .tags
+        - @article.tag_list.each do |tag|
+          = link_to tag, tag_blog_articles_path(tag)

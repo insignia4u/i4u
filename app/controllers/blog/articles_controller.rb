@@ -1,19 +1,20 @@
 class Blog::ArticlesController < ApplicationController
-  before_filter :all_tags
+  before_filter :shared_variables
 
   def index
     @articles   = tag ? Article.tagged_with(tag) : Article.most_recents
-    @rails_tip  = Tip.rails_tip
-    @today_tip  = Tip.today_tip
   end
 
   def show
+    @article = Article.find(params[:id])
   end
 
 private
 
-  def all_tags
-    @tags = Article.tag_counts
+  def shared_variables
+    @tags       = Article.tag_counts
+    @rails_tip  = Tip.rails_tip
+    @today_tip  = Tip.today_tip
   end
 
   def tag
