@@ -26,10 +26,7 @@ section.blog
           noscript
             img src=article.image.url(:small) alt=""
 
-        h3
-          = link_to article.title, blog_article_path(article)
-
-        = textilize(article.subtitle)
+        h3 = link_to article.title, blog_article_path(article)
 
         = textilize(article.summary)
 

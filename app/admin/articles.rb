@@ -13,11 +13,15 @@ ActiveAdmin.register Article do
     column ("Subtitle"), sortable: :subtitle do |article|
       article.subtitle
     end
-    column 'Url' do |article|
-      image_tag article.image, size: '50x50'
+    column 'Image' do |article|
+      if article.image.present?
+        image_tag article.image, size: '50x50'
+      else 
+        'No Image'
+      end
     end
     column ("Summary"), sortable: :summary do |article|
-      article.summary
+      truncate article.summary, length: 100
     end
     column ("Publication State"), sortable: :publication_state do |article|
       article.publication_state
