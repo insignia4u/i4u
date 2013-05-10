@@ -2,7 +2,9 @@ class Blog::ArticlesController < ApplicationController
   before_filter :all_tags
 
   def index
-    @articles = tag ? Article.tagged_with(tag) : Article.most_recents
+    @articles   = tag ? Article.tagged_with(tag) : Article.most_recents
+    @rails_tip  = Tip.rails_tip
+    @today_tip  = Tip.today_tip
   end
 
   def show

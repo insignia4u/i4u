@@ -24,7 +24,7 @@ ActiveAdmin.register Article do
       truncate article.summary, length: 100
     end
     column ("Publication State"), sortable: :publication_state do |article|
-      article.publication_state
+      check_state(article.publication_state)
     end
     column ("Tag List") do |article|
       article.tag_list
@@ -55,7 +55,9 @@ ActiveAdmin.register Article do
       row :content do |article|
         textilize(article.content)
       end
-      row :publication_state
+      row :publication_state do |article|
+        check_state(article.publication_state)
+      end
       row :publication_date
       row :tag_list
     end
@@ -74,7 +76,7 @@ ActiveAdmin.register Article do
       f.input :content
       f.input :summary, hint: "summary its show in blog"
       f.input :publication_state, label: 'Publication state', as: :select,
-        collection: [['Draft',false],['Published',true]]
+        collection: [['Draft',0],['Published',1]]
       f.input :publication_date
       f.input :tag_list
     end
@@ -86,7 +88,7 @@ ActiveAdmin.register Article do
     def resource_params
       return [] if request.get?
       [ params.require(:article)
-        .permit(:site_id,:author, :title, :content,:subtitle, :content,
+        .permit(:site_id,:author, :title, :content,:subtitle,
          :summary, :publication_date, :publication_state,
          :image,:description, :tag_list) ]
     end

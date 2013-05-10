@@ -21,5 +21,10 @@ FactoryGirl.define do
     factory :article_with_tags do
       tag_list              "Tag1, Tag2, Tag3"
     end
+
+    factory :published_article do
+      publication_state       1
+      publication_date        Date.today
+    end
   end
 end

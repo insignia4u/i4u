@@ -132,4 +132,21 @@ module ApplicationHelper
     end
   end
 
+  def check_state(int)
+    case int
+    when 0
+      'Draft'
+    when 1
+      'Published'
+    end
+  end
+
+  def tip_type(tip)
+    case tip.tip_type
+    when 0
+      'Rails Tip'
+    when 1
+      'Today Tip'
+    end
+  end
 end
