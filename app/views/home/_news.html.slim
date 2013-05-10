@@ -13,7 +13,7 @@ section.news
         h3
           = article.subtitle
         .description
-          p = article.description
+          = textilize(article.description)
 
         a.more href="#{blog_article_path(article)}" target="_blank"
           | Read more

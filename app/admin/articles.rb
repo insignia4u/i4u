@@ -17,7 +17,7 @@ ActiveAdmin.register Article do
       if article.image.present?
         image_tag article.image, size: '50x50'
       else 
-        'No Image'
+        ''
       end
     end
     column ("Summary"), sortable: :summary do |article|
@@ -41,9 +41,15 @@ ActiveAdmin.register Article do
       row :author
       row :title
       row :subtitle
-      row :description
+      row :description do |article|
+        textilize(article.description)
+      end
       row :image do |article|
-        image_tag(article.image)
+        if article.image.present?
+          image_tag article.image.url(:small)
+        else 
+          ''
+        end
       end
       row :summary
       row :content do |article|
