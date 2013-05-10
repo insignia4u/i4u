@@ -132,4 +132,12 @@ module ApplicationHelper
     end
   end
 
+  def check_state(int)
+    case int
+    when 0
+      'Draft'
+    when 1
+      'Published'
+    end
+  end
 end

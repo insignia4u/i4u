@@ -52,7 +52,7 @@ describe Article do
   describe "#most_recents" do
     before(:each) do
       @article  = create(:article)
-      @most_recents = create_list(:article,3)
+      @most_recents = create_list(:published_article,3)
     end
 
     context "Returns the most recents articles" do

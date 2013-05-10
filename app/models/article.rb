@@ -21,7 +21,8 @@ class Article < ActiveRecord::Base
   acts_as_taggable
 
   def self.most_recents
-    order('created_at DESC').limit(3)
+    where('publication_state = ? AND publication_date <= ?',1, Date.today)
+    .order('created_at DESC')
+    .limit(3)
   end
-
 end
