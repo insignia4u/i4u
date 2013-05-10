@@ -2,11 +2,7 @@ class Blog::ArticlesController < ApplicationController
   before_filter :all_tags
 
   def index
-    if tag
-      @articles = Article.tagged_with(tag)
-    else
-      @articles = Article.order('created_at DESC').limit(3)
-    end
+    @articles = tag ? Article.tagged_with(tag) : Article.most_recents
   end
 
   def show

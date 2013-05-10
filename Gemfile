@@ -13,7 +13,7 @@ end
 group :development, :test do
   gem 'puma',               '1.6.3'
   gem 'sqlite3'
-  gem "rspec-rails",         '2.10.1'
+  gem "rspec-rails",        '2.10.1'
   gem "capybara"
   gem "factory_girl_rails", '3.4.0'
   gem "faker",              '1.0.1'
