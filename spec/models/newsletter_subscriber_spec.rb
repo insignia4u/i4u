@@ -25,8 +25,8 @@ describe NewsletterSubscriber do
   end
 
   describe "validations" do
-      it {pending; should validate_presence_of(:email) }
-      it {pending; should validate_uniqueness_of(:email) }
+      it { should validate_presence_of(:email) }
+      it { should validate_uniqueness_of(:email) }
   end
 
   describe "add_to_mail_chimp_list callback" do
