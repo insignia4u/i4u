@@ -12,7 +12,7 @@ module ApplicationHelper
   end
 
   def snippet(text_snippet)
-    Rails.cache.fetch([current_site.id , text_snippet, "v3"], expires_in: 60.minutes) do
+    Rails.cache.fetch([current_site.id , text_snippet, "v1"], expires_in: 60.minutes) do
       current_site.text_snippets.find_by_slug(text_snippet)
     end
   end
@@ -132,4 +132,21 @@ module ApplicationHelper
     end
   end
 
+  def check_state(int)
+    case int
+    when 0
+      'Draft'
+    when 1
+      'Published'
+    end
+  end
+
+  def tip_type(tip)
+    case tip.tip_type
+    when 0
+      'Rails Tip'
+    when 1
+      'Today Tip'
+    end
+  end
 end

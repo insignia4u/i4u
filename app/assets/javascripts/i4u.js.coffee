@@ -132,4 +132,3 @@ $(document).ready ->
       dismissQueue: true
       layout: 'top'
       theme: "defaultTheme"
-
