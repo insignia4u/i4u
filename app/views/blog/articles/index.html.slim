@@ -2,7 +2,7 @@
 
 section.blog
 
-  = render 'blog/articles/modules/blog_categories'
+  = render 'blog/articles/modules/blog_tags'
 
   .container-title
     h2 Our Blog
@@ -35,6 +35,5 @@ section.blog
           span +
 
         .tags
-          a href="" anuncios
-          a href="" desarrollos
-          a href="" rubi on rails
+          - article.tag_list.each do |tag|
+            = link_to tag, tag_blog_articles_path(tag)

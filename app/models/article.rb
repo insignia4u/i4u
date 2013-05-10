@@ -14,9 +14,11 @@ class Article < ActiveRecord::Base
                 }
 
   validates :author, :title, :subtitle, :content, :summary, :publication_date,
-  :description, :site, presence: true
+  :description, :site, :tag_list,presence: true
 
   friendly_id :title, use: [:slugged, :history]
+
+  acts_as_taggable
 
   def self.most_recents
     order('created_at DESC').limit(3)
