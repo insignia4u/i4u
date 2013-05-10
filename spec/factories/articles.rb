@@ -16,5 +16,10 @@ FactoryGirl.define do
     image_content_type      "image/jpeg"
     image_file_size         "81386"
     image_updated_at         Time.now
+    tag_list                "Example Tag List"
+
+    factory :article_with_tags do
+      tag_list              "Tag1, Tag2, Tag3"
+    end
   end
 end

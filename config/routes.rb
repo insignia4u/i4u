@@ -15,7 +15,9 @@ I4u::Application.routes.draw do
   resources :newsletter_subscriber,   only: :create
 
   namespace :blog do
-    resources :articles, only: [:index,:show]
+    resources :articles, only: [:index,:show] do
+      get '/tag/:tag', to: "articles#index", on: :collection, as: 'tag'
+    end
   end
 
   match 'contact' => 'contacts#new',    as: :new_contact, via: :get

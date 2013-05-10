@@ -26,8 +26,8 @@ ActiveAdmin.register Article do
     column ("Publication State"), sortable: :publication_state do |article|
       article.publication_state
     end
-    column ("Updated At"), sortable: :updated_at do |article|
-      article.updated_at
+    column ("Tag List") do |article|
+      article.tag_list
     end
 
     default_actions
@@ -51,6 +51,7 @@ ActiveAdmin.register Article do
       end
       row :publication_state
       row :publication_date
+      row :tag_list
     end
   end
 
@@ -69,6 +70,7 @@ ActiveAdmin.register Article do
       f.input :publication_state, label: 'Publication state', as: :select,
         collection: [['Draft',false],['Published',true]]
       f.input :publication_date
+      f.input :tag_list
     end
 
     f.buttons
@@ -80,7 +82,7 @@ ActiveAdmin.register Article do
       [ params.require(:article)
         .permit(:site_id,:author, :title, :content,:subtitle, :content,
          :summary, :publication_date, :publication_state,
-         :image,:description) ]
+         :image,:description, :tag_list) ]
     end
   end
 
