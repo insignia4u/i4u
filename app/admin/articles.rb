@@ -88,7 +88,7 @@ ActiveAdmin.register Article do
     def resource_params
       return [] if request.get?
       [ params.require(:article)
-        .permit(:site_id,:author, :title, :content,:subtitle, :content,
+        .permit(:site_id,:author, :title, :content,:subtitle,
          :summary, :publication_date, :publication_state,
          :image,:description, :tag_list) ]
     end

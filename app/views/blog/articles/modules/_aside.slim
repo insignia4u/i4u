@@ -11,9 +11,7 @@ aside
 
         | tip del día
 
-      p
-        a href="" Viewport Resizer
-        |  es una herramienta muy útil durante el desarrollo de sitios web usando Responsive Web Design, para cambiar el tamaño del viewport rápidamente desde el mismo browser.
+      = textilize(@today_tip.description) if @today_tip
 
       a.bottom-link href=""
         | Ver últimos tips
@@ -25,10 +23,8 @@ aside
           i.icon-diamond
 
         | rails tips
-      p
-        a href="" Viewport Resizer
-        |  es una herramienta muy útil durante el desarrollo de sitios web usando Responsive Web Design, para cambiar el tamaño del viewport rápidamente desde el mismo browser.
-
+      = textilize(@rails_tip.description) if @rails_tip
+      
       a.bottom-link href=""
         | Ver últimos tips
         span +

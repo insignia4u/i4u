@@ -2,11 +2,12 @@ class CreateTips < ActiveRecord::Migration
   def change
     create_table :tips do |t|
       t.string      :title
-      t.integer     :type
+      t.integer     :tip_type
       t.text        :description
       t.text        :content
       t.attachment  :image
       t.string      :slug
+      t.belongs_to  :site
 
       t.timestamps
     end

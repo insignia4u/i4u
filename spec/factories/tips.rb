@@ -2,7 +2,9 @@
 
 FactoryGirl.define do
   factory :tip do
-    type                  1
+    site
+
+    tip_type                 1
     sequence(:title)     { |n| "Some Title-#{n}"}
     description          "Some Description"
     content              "Some Content"

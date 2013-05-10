@@ -140,4 +140,13 @@ module ApplicationHelper
       'Published'
     end
   end
+
+  def tip_type(tip)
+    case tip.tip_type
+    when 0
+      'Rails Tip'
+    when 1
+      'Today Tip'
+    end
+  end
 end
