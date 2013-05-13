@@ -22,7 +22,7 @@ class Article < ActiveRecord::Base
 
   def self.most_recents
     where('publication_state = ? AND publication_date <= ?',1, Date.today)
-    .order('created_at ASC')
+    .order('created_at DESC')
     .limit(3)
   end
 end

@@ -13,7 +13,8 @@ section.blog
     - @articles.each do |article|
       article
         .comment
-          | 23
+          = link_to '0', blog_article_url(article), class: 'fb-comments-count',
+          data: { href: blog_article_url(article) }
           i.icon-comment
 
         .author = article.author
@@ -30,7 +31,7 @@ section.blog
 
         = textilize(article.summary)
 
-        a.bottom-link href="#{blog_article_path(article)}"
+        a.bottom-link href=blog_article_path(article)
           | Seguir leyendo
           span +
 
@@ -39,3 +40,4 @@ section.blog
             = link_to tag, tag_blog_articles_path(tag)
 
     a.btn href="" OLDER ENTRIES
+

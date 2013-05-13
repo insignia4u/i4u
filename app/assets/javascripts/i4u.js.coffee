@@ -135,3 +135,10 @@ $(document).ready ->
       dismissQueue: true
       layout: 'top'
       theme: "defaultTheme"
+
+  biggestHeight = 0
+
+  $(".equal5").each ->
+    biggestHeight = $(this).height() if $(this).height() > biggestHeight
+
+  $(".equal5").css('height', biggestHeight + 50)
