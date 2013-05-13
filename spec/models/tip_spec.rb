@@ -51,12 +51,14 @@ describe Tip do
       it "should return a rails tip" do
         Tip.rails_tip.should eql(@rails_tip)
       end
+
     end
 
     context "#today_tip" do
       it "should return a today tip" do
         Tip.today_tip.should eql(@today_tip)
       end
+
     end
   end
 
