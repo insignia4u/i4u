@@ -41,4 +41,23 @@ describe Tip do
     end
   end
 
+  describe "Finders" do
+    before(:each) do
+      @rails_tip = create(:rails_tip)
+      @today_tip = create(:today_tip)
+    end
+
+    context "#rails_tip" do
+      it "should return a rails tip" do
+        Tip.rails_tip.should eql(@rails_tip)
+      end
+    end
+
+    context "#today_tip" do
+      it "should return a today tip" do
+        Tip.today_tip.should eql(@today_tip)
+      end
+    end
+  end
+
 end
