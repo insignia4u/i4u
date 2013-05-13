@@ -12,5 +12,13 @@ FactoryGirl.define do
     image_content_type   "image/jpeg"
     image_file_size      "81386"
     image_updated_at     Time.now
+
+    factory :rails_tip do
+      tip_type            0
+    end
+
+    factory :today_tip do
+      tip_type            1
+    end
   end
 end
