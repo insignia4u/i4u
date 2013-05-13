@@ -13,7 +13,7 @@ end
 group :development, :test do
   gem 'puma',               '1.6.3'
   gem 'sqlite3'
-  gem "rspec-rails",         '2.10.1'
+  gem "rspec-rails",        '2.10.1'
   gem "capybara"
   gem "factory_girl_rails", '3.4.0'
   gem "faker",              '1.0.1'
@@ -59,3 +59,5 @@ gem 'newrelic_rpm',         '3.5.3.25'
 gem 'dalli',                '2.6.0'
 gem 'gibbon',               '0.4.2'
 gem 'strong_parameters',    '0.2.0'
+gem 'acts-as-taggable-on',  '2.4.1'
+

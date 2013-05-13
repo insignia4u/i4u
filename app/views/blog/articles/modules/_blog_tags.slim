@@ -1,0 +1,9 @@
+.nav-blog-categories
+    ul
+      - @tags.each do |tag|
+        li
+          = link_to tag.name, tag_blog_articles_path(tag.name)
+
+    a.close href="javascript:void(0)"
+      | CERRAR
+      span x

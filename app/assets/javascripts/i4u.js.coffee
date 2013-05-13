@@ -46,10 +46,13 @@ all_equals = () ->
     biggestHeight = 0
 
     $('.equal' + numbers[i]).each ->
-      biggestHeight = $(this).height()  if $(this).height() > biggestHeight
+      console.log($(this).height())
+      biggestHeight = $(this).height() if $(this).height() > biggestHeight
+#     console.log($(this))
+
 
     if numbers[i] != "4"
-      $(".equal" + numbers[i]).height biggestHeight
+  #    $(".equal" + numbers[i]).height biggestHeight
     else
       $('.equal4').css("min-height", biggestHeight)
 
@@ -80,9 +83,9 @@ alert_div_if_errors = () ->
 $(window).load () ->
   attachNewFileButtonBehaviors()
   checkEmailOnSubscription()
+  all_equals()
 
 $(document).ready ->
-  all_equals()
   check_modernizer()
   check_client_width()
   alert_div_if_errors()
@@ -133,3 +136,9 @@ $(document).ready ->
       layout: 'top'
       theme: "defaultTheme"
 
+  biggestHeight = 0
+
+  $(".equal5").each ->
+    biggestHeight = $(this).height() if $(this).height() > biggestHeight
+
+  $(".equal5").css('height', biggestHeight + 50)

@@ -1,0 +1,23 @@
+- content_for :head do
+  .nav-blog
+    ul
+      li
+        a.subscribe href=""
+          | SUBSCRIBE
+          i.icon-rss
+
+      li
+        a.nav-categories href="javascript:void(0)"
+          | CATEGORIES
+          i.icon-chevron-down
+
+        .arrow
+
+      li
+        a.btn-search href="javascript:void(0)"
+          | SEARCH
+          i.icon-search
+
+        form
+          i.icon-search
+          input.search type="search" placeholder="Search..."

@@ -3,48 +3,17 @@ section.news
     h2 News
 
   ul
-    li.news-item.equal
-      .published-at
-        i.icon-calendar
-        | 14 de Diciembre 2012
-      .title
-        | La Historia de Insignia, la historia de Insignia
-      h3
-        | Los Tanfaun entre los ganadores en BA Apps
-      .description
-        p
-          | Con la aplicación Los Tanfaun salimos ganadores de la categoría Urbanismo en el concurso de Buenos Aires Apps. Nuestros amigos de Indicius con quién realizamos este proyecto en conjunto recibien el premio en Buenos Aires en representación...
+    - @articles_most_recents.each do |article|
+      li.news-item.equal5
+        .published-at
+          i.icon-calendar
+          = article.created_at.to_date.to_formatted_s(:long_ordinal)
+        .title
+          = article.subtitle
+        h3
+          = article.title
+        .description
+          = textilize(article.description)
 
-      a.more href="http://www.insignia4u-blog.com/" target="_blank"
-        | Read more
-
-    li.news-item.equal
-      .published-at
-        i.icon-calendar
-        | 17 de Noviembre 2012
-      .title
-        | La Historia de Insignia
-      h3
-        | Los Tanfaun: Nuestra participación en B.A. Apps
-      .description
-        p
-          | Los Tanfaun es una aplicación del tipo “Lost & Found”, y sirve para conectar a las personas que encontraron y perdieron cosas en la ciudad.
-        p
-          | En nuestro primer emprendimiento en conjunto con el estudio de diseño...
-
-      a.more href="http://www.insignia4u-blog.com/" target="_blank"
-        | Read more
-
-    li.news-item.equal
-      .published-at
-        i.icon-calendar
-        | 23 de Marzo 2012
-      .title
-        | Del Freelancing a la Empresa
-      h3
-        | La Historia de Insignia
-      .description
-        p
-          | El día 15 de noviembre participamos de la jornada de cierre anual del Tucumán Valley con una presentación en el marco de la serie de charlas denominadas "Como vender servicios tecnológicos al mundo (y no morir en el intento)".
-      a.more href="http://www.insignia4u-blog.com/" target="_blank"
-        | Read more
+        a.more href="#{blog_article_path(article)}" target="_blank"
+          | Read more

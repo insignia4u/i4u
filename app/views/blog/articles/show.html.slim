@@ -1,0 +1,38 @@
+= render 'blog/articles/modules/head'
+
+section.blog
+
+  = render 'blog/articles/modules/blog_tags'
+
+  .container-title
+    h2 Our Blog
+
+  = render 'blog/articles/modules/aside'
+
+  .column
+    article
+      .comment
+          = link_to '0', blog_article_url(@article), class: 'fb-comments-count',
+          data: { href: blog_article_url(@article) }
+          i.icon-comment
+
+      .author = @article.author
+      - if @article.image.present?
+        picture alt=""
+          source src=@article.image.url(:small)
+          source src=@article.image.url(:medium) media="(min-width:440px)"
+          source src=@article.image.url(:medium) media="(min-width:600px)"
+
+        noscript
+          img src=@article.image.url(:small) alt=""
+
+      h3 = link_to @article.title, blog_article_path(@article)
+
+      = textilize(@article.content)
+
+      .tags
+        - @article.tag_list.each do |tag|
+          = link_to tag, tag_blog_articles_path(tag)
+
+      .fb-like data-href=blog_article_url(@article) data-send="true" data-width="450" data-show-faces="true">
+      .fb-comments data-href=blog_article_url(@article) data-width="470" data-num-posts="10"

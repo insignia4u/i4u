@@ -6,6 +6,8 @@ class Site < ActiveRecord::Base
   has_many :services
   has_many :text_snippets
   has_many :featured_contents
+  has_many :articles
+  has_many :tips
 
   validates :name,         presence: true
   validates :abbreviation, presence: true, uniqueness: true
@@ -14,7 +16,6 @@ class Site < ActiveRecord::Base
   scope :hidden, where( live: false )
 
   scope :with_language, ->(abbreviation) { where(abbreviation: abbreviation) }
-
 
   def home_projects
     projects.featured.limit(3)

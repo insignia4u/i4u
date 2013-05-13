@@ -1,0 +1,36 @@
+aside
+
+    a.subscribe-link href=""
+      | Subscribe to our RSS
+      i.icon-rss
+
+    .box.tip-day
+      h2
+        span.circle
+          i.icon-smiley
+
+        | tip del día
+
+      = textilize(@today_tip.description) if @today_tip
+
+      a.bottom-link href=""
+        | Ver últimos tips
+        span +
+
+    .box.rails-tip
+      h2
+        span.circle
+          i.icon-diamond
+
+        | rails tips
+      = textilize(@rails_tip.description) if @rails_tip
+      
+      a.bottom-link href=""
+        | Ver últimos tips
+        span +
+
+    .box.categories
+      ul.list-categories
+        - @tags.each do |tag|
+          li
+            = link_to tag.name, tag_blog_articles_path(tag.name)

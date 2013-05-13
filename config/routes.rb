@@ -1,4 +1,5 @@
 I4u::Application.routes.draw do
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -13,11 +14,19 @@ I4u::Application.routes.draw do
   resources :services,                only: :index
   resources :newsletter_subscriber,   only: :create
 
+  namespace :blog do
+    resources :articles, only: [:index,:show] do
+      get '/tag/:tag', to: "articles#index", on: :collection, as: 'tag'
+    end
+  end
+
   match 'contact' => 'contacts#new',    as: :new_contact, via: :get
   match 'contact' => 'contacts#create', as: :contact,     via: :post
 
   match 'job' => 'jobs#new',    :as => :new_job, :via => :get
   match 'job' => 'jobs#create', :as => :job,     :via => :post
+
+  match 'blog' => 'blog/articles#index', as: 'blog_path'
 
   root :to => 'home#show'
 
