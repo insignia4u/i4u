@@ -90,7 +90,6 @@ describe Tip do
       it "should return a today tip" do
         Tip.today_tip.should eql(@today_tip)
       end
-
     end
   end
 
