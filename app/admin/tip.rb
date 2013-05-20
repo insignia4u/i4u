@@ -20,7 +20,7 @@ ActiveAdmin.register Tip do
     column ("Type"), sortable: :type do |tip|
       tip_type(tip)
     end
-    column :created_at
+    column :published_at
 
     default_actions
   end
@@ -47,6 +47,7 @@ ActiveAdmin.register Tip do
       row :content do |tip|
         textilize(tip.content)
       end
+      row :published_at
       row :created_at
     end
   end
@@ -62,6 +63,7 @@ ActiveAdmin.register Tip do
       f.input :image, label: 'Hightligh Image', 
         hint: (f.object.new_record? ? "" : f.object.image.url), as: :file
       f.input :content
+      f.input :published_at, :as => :date
     end
 
     f.buttons
@@ -71,7 +73,8 @@ ActiveAdmin.register Tip do
     def resource_params
       return [] if request.get?
       [ params.require(:tip)
-        .permit(:site_id, :title, :content, :image, :description, :tip_type) ]
+        .permit(:site_id, :title, :content, :image, 
+                :description, :tip_type, :published_at) ]
     end
   end
 
