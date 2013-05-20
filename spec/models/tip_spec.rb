@@ -8,6 +8,7 @@ describe Tip do
     it { should     respond_to(:description) }
     it { should     respond_to(:content) }
     it { should     respond_to(:image) }
+    it { should     respond_to(:published_at) }
     it { should     respond_to(:site) }
   end
 
@@ -17,6 +18,22 @@ describe Tip do
     it { should validate_presence_of(:description) }
     it { should validate_presence_of(:content) }
     it { should validate_presence_of(:site) }
+    it { should validate_presence_of(:published_at) }
+
+    before(:each) do
+      @rails_tip = create(:rails_tip)
+      @today_tip = create(:today_tip)
+      @rails_tip = build(:rails_tip)
+      @today_tip = build(:today_tip)
+    end
+
+    context "#only_one_tip_per_day" do
+      it "can't create a tip whith the same published_at date and tip_type" do
+
+        expect{ @rails_tip.save }.not_to change { Tip.count }
+        expect{ @today_tip.save }.not_to change { Tip.count }
+      end
+    end
   end
 
   describe "Factory Definition" do
@@ -41,8 +58,23 @@ describe Tip do
     end
   end
 
+  describe "Callbacks" do
+    before(:each) do
+      @tip = create(:tip)
+    end
+
+    context "#set_published_time_at_beggining_of_day" do
+      it "sets the published_at to the beggining of day" do
+
+        @tip.published_at.should eql(Date.today.at_beginning_of_day)
+      end
+    end
+  end
+
   describe "Finders" do
     before(:each) do
+      create_list(:rails_tip_future,2)
+      create_list(:today_tip_future,2)
       @rails_tip = create(:rails_tip)
       @today_tip = create(:today_tip)
     end
