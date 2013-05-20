@@ -32,4 +32,16 @@ describe ApplicationHelper do
       helper.last_resource(@projects, @projects.last).should   == 'last'
     end
   end
+
+  describe "Check Tip type" do
+    before(:each) do
+      @rails_tip = create(:rails_tip)
+      @today_tip = create(:today_tip)
+    end
+    
+    it "return the Right tip string" do
+      helper.tip_type(@rails_tip).should == 'Rails Tip'
+      helper.tip_type(@today_tip).should == 'Today Tip'
+    end
+  end
 end
