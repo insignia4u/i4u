@@ -63,7 +63,7 @@ ActiveAdmin.register Tip do
       f.input :image, label: 'Hightligh Image', 
         hint: (f.object.new_record? ? "" : f.object.image.url), as: :file
       f.input :content
-      f.input :published_at, :as => :date
+      f.input :published_at, :as => :date, :start_year => Date.today.year
     end
 
     f.buttons
