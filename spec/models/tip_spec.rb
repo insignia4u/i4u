@@ -75,20 +75,34 @@ describe Tip do
     before(:each) do
       create_list(:rails_tip_future,2)
       create_list(:today_tip_future,2)
-      @rails_tip = create(:rails_tip)
-      @today_tip = create(:today_tip)
+      @old_today_tip = Tip.new(attributes_for(:today_tip,published_at:
+                                               2.months.ago))
+      @old_today_tip.save(validate: false)
+      @old_rails_tip = Tip.new(attributes_for(:rails_tip,published_at: 
+                                                2.months.ago))
+      @old_rails_tip.save(validate: false)
     end
 
     context "#rails_tip" do
-      it "should return a rails tip" do
+      it "returns a rails tip" do
+        @rails_tip = create(:rails_tip)
+
         Tip.rails_tip.should eql(@rails_tip)
       end
-
     end
 
     context "#today_tip" do
-      it "should return a today tip" do
+      it "returns a today tip" do
+        @today_tip = create(:today_tip)
+
         Tip.today_tip.should eql(@today_tip)
+      end
+    end
+
+    context "old tips" do
+      it "returns the last published tip" do
+        Tip.today_tip.should eql(@old_today_tip)
+        Tip.rails_tip.should eql(@old_rails_tip)
       end
     end
   end
