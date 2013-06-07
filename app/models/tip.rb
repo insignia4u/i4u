@@ -15,7 +15,8 @@ class Tip < ActiveRecord::Base
   validates :title, :tip_type, :description, :content,:published_at,
    :site, presence: true
 
-  validate :check_future_date, :only_one_tip_per_day
+  validate :check_future_date, :on => :create
+  validate :only_one_tip_per_day
 
   before_save :set_published_time_at_beggining_of_day
 
