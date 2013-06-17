@@ -124,7 +124,7 @@ footer{
   line-height: 44px;
 }
 
-.icon-slideshare, .icon-github, .icon-twitter, .icon-facebook{
+.icon-slideshare, .icon-github, .icon-twitter, .icon-facebook, .icon-googleplus{
   @include border-radius(20px);
   display:inline-block;
   height: 40px;
@@ -154,4 +154,8 @@ footer{
 .icon-facebook{
   @include box-shadow(0 0 1px #3B5998);
   background:#3b5998;
+}
+.icon-googleplus{
+  @include box-shadow(0 0 1px #2b5998);
+  background:#2b5998;
 }
