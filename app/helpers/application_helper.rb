@@ -58,11 +58,11 @@ module ApplicationHelper
     rtn
   end
 
-  def link_to_social_network(rs)
-    content_tag(:a, rs.capitalize, href: "http://#{rs}.com/insignia4u", 
-      class: "social-link", target: "_blank") do
-        content_tag(:i,nil,class: "icon-#{rs}")
-      end
+  def link_to_social_network(rs, url)
+    link = (url.present?)? url : "http://#{rs}.com/insignia4u"
+    content_tag(:a, rs.capitalize, href: link, class: "social-link", target: "_blank") do
+      content_tag(:i,nil,class: "icon-#{rs}")
+    end
   end
 
   def remove_protocol_from(url)
