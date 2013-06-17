@@ -324,7 +324,7 @@ DEPENDENCIES
   faker (= 1.0.1)
   friendly_id (= 4.0.9)
   gibbon (= 0.4.2)
-  jquery-rails
+  jquery-rails (= 2.0.2)
   mobile-fu (= 1.1.1)
   neat (= 1.0.2)
   newrelic_rpm (= 3.5.3.25)
