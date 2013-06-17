@@ -6,7 +6,7 @@
 
  - DBMS: Postgresql, MySQL or SQLite.
  - Ruby: ruby-1.9.3-p0
- - ImageMagick
+ - ImageMagick 
 
 ## Get the repository with:
 
