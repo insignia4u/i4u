@@ -37,7 +37,6 @@ I4u::Application.configure do
         slider}.map { |s| s+".css" }
 
   config.assets.precompile += %w{active_admin.js}
-  config.assets.precompile += %w{icomoon.dev.svg, icomoon.eot, icomoon.svg, icomoon.ttf, icomoon.woff}
 
   # Generate digests for assets URLs
   config.assets.digest = true
