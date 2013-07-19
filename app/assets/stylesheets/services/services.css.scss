@@ -43,10 +43,21 @@
         font-size:20px;
         margin-top:0;
         font-weight:300;
+        text-transform: uppercase;
+        margin-bottom: 20px;
 
         span{
-          font-size:35px;
-          color:#316baf;
+          color: #316BAF;
+          font-size: 30px;
+          font-weight: bold;
+          letter-spacing: -5px;
+        }
+        .icon-titleright {
+          float: none;
+          font-size: 20px;
+          margin-right: 0px;
+          margin-top: inherit;
+          color: #316BAF;
         }
       }
 
