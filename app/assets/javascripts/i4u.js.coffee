@@ -42,7 +42,8 @@ checkEmailOnSubscription = () ->
 all_equals = () ->
   biggestHeight = 0
   $('.equal').each ->
-    biggestHeight = $(this).height() if $(this).height() > biggestHeight
+    height = $(this).innerHeight()
+    biggestHeight = height if height > biggestHeight
   $('.equal').height( biggestHeight )
 
 check_modernizer = () ->
