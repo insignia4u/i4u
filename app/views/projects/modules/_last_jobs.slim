@@ -8,6 +8,6 @@ ul
         noscript
           = image_tag( recent_job.image.url(:medium) )
 
-      .project-info class=add_class_number(recent_jobs,recent_job)
+      .project-info.equals
         h3 = link_to recent_job.name, recent_job
         p = recent_job.summary

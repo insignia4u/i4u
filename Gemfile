@@ -61,4 +61,4 @@ gem 'dalli',                '2.6.0'
 gem 'gibbon',               '0.4.2'
 gem 'strong_parameters',    '0.2.0'
 gem 'acts-as-taggable-on',  '2.4.1'
-
+gem 'mysql2'

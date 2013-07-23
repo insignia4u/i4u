@@ -40,23 +40,10 @@ checkEmailOnSubscription = () ->
 # On Ready ->
 
 all_equals = () ->
-  numbers = ['',"2","3","4"]
-  i = 0
-  while i < numbers.length
-    biggestHeight = 0
-
-    $('.equal' + numbers[i]).each ->
-      console.log($(this).height())
-      biggestHeight = $(this).height() if $(this).height() > biggestHeight
-#     console.log($(this))
-
-
-    if numbers[i] != "4"
-  #    $(".equal" + numbers[i]).height biggestHeight
-    else
-      $('.equal4').css("min-height", biggestHeight)
-
-    i++
+  biggestHeight = 0
+  $('.equal').each ->
+    biggestHeight = $(this).height() if $(this).height() > biggestHeight
+  $('.equal').height( biggestHeight )
 
 check_modernizer = () ->
   if Modernizr.svg
