@@ -19,6 +19,8 @@ module Populator
   protected
 
     def create_project
+      start_date = time_rand
+      end_date   = start_date + (rand(1000) + 200).years
       Project.create!(
         site:           sites.sample,
         name:           Faker::Name.name,
@@ -27,8 +29,8 @@ module Populator
         url:            "http://www.#{Faker::Internet.domain_name}",
         image:          image,
         featured_image: featured_image,
-        started_at:     Date.new(rand(10)+1,rand(11)+1,rand(30)+1),
-        ended_at:       Date.new(rand(10)+10,rand(11)+1,rand(30)+1),
+        started_at:     start_date,
+        ended_at:       end_date,
         highlighted: [true, false].sample
       )
     end
@@ -59,6 +61,10 @@ module Populator
           Rails.root, 'public', 'populate_images',("1".."6").to_a.sample + ".jpg"
         )
       )
+    end
+
+    def time_rand(from = 0.0, to = Time.now)
+      Time.at(from + rand * (to.to_f - from.to_f)).to_date
     end
   end
 end

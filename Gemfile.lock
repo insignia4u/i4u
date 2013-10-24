@@ -167,6 +167,7 @@ GEM
       sassy-math (>= 1.2)
     multi_json (1.7.3)
     multi_xml (0.5.1)
+    mysql2 (0.3.13)
     neat (1.0.2)
       bourbon (>= 2.1)
       sass (>= 3.2)
@@ -326,6 +327,7 @@ DEPENDENCIES
   gibbon (= 0.4.2)
   jquery-rails (= 2.0.2)
   mobile-fu (= 1.1.1)
+  mysql2
   neat (= 1.0.2)
   newrelic_rpm (= 3.5.3.25)
   paperclip (= 3.3.1)
