@@ -45,6 +45,7 @@ group :assets do
   gem 'neat', '1.0.2'
 end
 
+gem 'devise',               '2.1.0'
 gem "activeadmin",          '0.4.4'
 gem "friendly_id",          '4.0.9'
 gem "paperclip",            '3.3.1'
@@ -62,3 +63,4 @@ gem 'gibbon',               '0.4.2'
 gem 'strong_parameters',    '0.2.0'
 gem 'acts-as-taggable-on',  '2.4.1'
 gem 'mysql2'
+gem 'memcachier'
