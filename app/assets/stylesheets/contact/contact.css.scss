@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.contact{
+.contact, .contact_form {
   .container-title{
     h2{
       font-size: 92px;
@@ -109,5 +109,89 @@
       margin-left:auto;
       margin-right:auto;
     }
+  }
+}
+
+.contact_form {
+
+  .container-title {
+    h2 {
+      font-size: 59px;
+      top: -35px;
+    }
+  }
+
+  .box-first, .box-second {
+    input {
+      margin: 27px 0 36px;
+      height: 44px;
+      background-color: #FFF;
+      outline: none;
+    }
+    i {
+      color: #000;
+    }
+    i.focus {
+      color: #df339b;
+    }
+  }
+
+  .box-first {
+    width: 32.3%;
+
+  }
+
+  .box-second {
+    width: 55.9%;
+    margin-right: 29px;
+
+    .f-textarea {
+      textarea {
+        height: 124px;
+        margin: 27px 0 36px;
+        background-color: #FFF;
+        outline: none;
+      }
+      i {
+        height: 106px;
+        color: #000;
+      }
+      i.focus {
+        color: #df339b;
+      }
+    }
+  }
+
+  .box-thirst {
+
+    input {
+      margin-right: 29px;
+      width: 131px;
+      background-color: #373435;
+      border: solid 2px #000;
+    }
+    span {
+      display: inline-block;
+      float: right;
+      margin-right: 34px;
+      margin-top: -9px;
+      font-size: 64px;
+      font-weight: lighter;
+    }
+    p {
+      display: inline-block;
+      float: right;
+      margin-top: 15px;
+      margin-right: 17px;
+      word-spacing: -1px;
+    }
+  }
+
+  .oblig-field {
+    position: absolute;
+    top: -10px;
+    right: -35px;
+    font-size: 64px;
+    font-weight: lighter;
   }
 }

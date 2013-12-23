@@ -219,6 +219,8 @@ GEM
     ref (1.0.2)
     responders (0.9.1)
       railties (~> 3.1)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.10.0)
       rspec-core (~> 2.10.0)
       rspec-expectations (~> 2.10.0)
@@ -249,6 +251,7 @@ GEM
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
+    sequel (3.20.0)
     shoulda-matchers (1.4.2)
       activesupport (>= 3.0.0)
       bourne (~> 1.1.2)
@@ -256,6 +259,8 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.5.3)
     simplecov-html (0.5.3)
+    sinatra (1.0)
+      rack (>= 1.0)
     slim (1.2.1)
       temple (~> 0.4.0)
       tilt (~> 1.3.3)
@@ -275,6 +280,11 @@ GEM
       actionpack (~> 3.0)
       activemodel (~> 3.0)
       railties (~> 3.0)
+    taps (0.3.24)
+      rack (>= 1.0.1)
+      rest-client (>= 1.4.0, < 1.7.0)
+      sequel (~> 3.20.0)
+      sinatra (~> 1.0.0)
     temple (0.4.0)
     textilize (0.0.4)
     therubyracer (0.11.3)
@@ -321,6 +331,7 @@ DEPENDENCIES
   compass-rails (= 1.0.3)
   dalli (= 2.6.0)
   database_cleaner (= 0.9.1)
+  devise (= 2.1.0)
   draper (= 0.18.0)
   factory_girl_rails (= 3.4.0)
   faker (= 1.0.1)
@@ -345,6 +356,7 @@ DEPENDENCIES
   slim-rails (= 1.0.3)
   sqlite3
   strong_parameters (= 0.2.0)
+  taps (= 0.3.24)
   textilize
   therubyracer
   thin
