@@ -129,3 +129,8 @@ $(document).ready ->
     biggestHeight = $(this).height() if $(this).height() > biggestHeight
 
   $(".equal5").css('height', biggestHeight + 50)
+
+  $('#vanilla-parallax, #intro-parallax, .careers-title').parallax()
+
+  heightScreen = $(window).height() - 137;
+  $("#intro-parallax").height(heightScreen);

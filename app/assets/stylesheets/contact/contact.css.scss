@@ -113,77 +113,120 @@
 }
 
 .contact_form {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #ed0892 !important;
 
   .container-title {
+    margin-top: 83px;
+    padding-top: 60px;
+    border-top: 2px dashed #382F2D;
+
     h2 {
       font-size: 59px;
-      top: -35px;
+      top: 44px;
+      background: #ED0892;
+      color: #fff;
     }
-  }
-
-  .box-first, .box-second {
-    input {
-      margin: 27px 0 36px;
-      height: 44px;
-      background-color: #FFF;
-      outline: none;
-    }
-    i {
+    h2:before, h2:after {
       color: #000;
     }
-    i.focus {
-      color: #df339b;
+  }
+
+  form {
+    margin: 0 0 180px 0;
+
+    .box-first, .box-second {
+      .f-text {
+        input, select {
+          border: #000 solid 1px;
+          margin: 27px 0 36px;
+          height: 44px;
+          background-color: #FFF;
+          outline: none;
+        }
+        input:focus {
+          border: #000 solid 1px;
+        }
+        select {
+          margin: 27px 0 36px;
+          -webkit-border-radius: 5px;
+          border-radius: 5px;
+          width: 100%;
+          padding: 9px 10px 12px 60px;
+          font-size: 15px;
+          -webkit-box-shadow: 1px 2px 1px -1px rgba(38, 35, 31, 0.3);
+          box-shadow: 1px 2px 1px -1px rgba(38, 35, 31, 0.3);
+          display: block;
+        }
+        select:focus {
+          border: #000 solid 1px;
+        }
+        i {
+          color: #000;
+          padding-top: 3px;
+        }
+        i.focus {
+          color: #df339b;
+        }
+      }
     }
-  }
 
-  .box-first {
-    width: 32.3%;
+    .box-first {
+      width: 32.3%;
 
-  }
-
-  .box-second {
-    width: 55.9%;
-    margin-right: 29px;
-
-    .f-textarea {
-      textarea {
-        height: 124px;
-        margin: 27px 0 36px;
-        background-color: #FFF;
-        outline: none;
-      }
-      i {
-        height: 106px;
-        color: #000;
-      }
-      i.focus {
-        color: #df339b;
-      }
     }
-  }
 
-  .box-thirst {
-
-    input {
+    .box-second {
+      width: 55.9%;
       margin-right: 29px;
-      width: 131px;
-      background-color: #373435;
-      border: solid 2px #000;
+
+      .f-textarea {
+        textarea {
+          border: #000 solid 1px;
+          height: 124px;
+          margin: 27px 0 36px;
+          background-color: #FFF;
+          outline: none;
+
+        }
+        i {
+          height: 106px;
+          color: #000;
+          padding-top: 3px;
+        }
+        i.focus {
+          color: #df339b;
+        }
+      }
     }
-    span {
-      display: inline-block;
-      float: right;
-      margin-right: 34px;
-      margin-top: -9px;
-      font-size: 64px;
-      font-weight: lighter;
-    }
-    p {
-      display: inline-block;
-      float: right;
-      margin-top: 15px;
-      margin-right: 17px;
-      word-spacing: -1px;
+
+    .box-thirst {
+
+      input {
+        margin-right: 29px;
+        width: 131px;
+        background-color: #373435;
+        border: solid 2px #000;
+      }
+      span {
+        display: inline-block;
+        float: right;
+        margin-right: 34px;
+        margin-top: -9px;
+        font-size: 64px;
+        font-weight: lighter;
+        color: #FFF;
+      }
+      p {
+        display: inline-block;
+        float: right;
+        margin-top: 15px;
+        margin-right: 17px;
+        word-spacing: -1px;
+        color: #FFF;
+      }
     }
   }
 
@@ -193,5 +236,6 @@
     right: -35px;
     font-size: 64px;
     font-weight: lighter;
+    color: #FFF;
   }
 }

@@ -6,5 +6,6 @@
 //= require carousel
 //= require totop
 //= require noty
+//= require jquery.parallax
 //= require i4u
 

@@ -2,46 +2,111 @@
   = stylesheet_link_tag "pages/contacto"
   = stylesheet_link_tag "pages/empleo"
 
-= render partial: 'contact_form'  
-
 .row
 
   .eight.columns
 
-    h3 = title_for( 'job-form-content')
+.careers
+  #vanilla-parallax
+    .layer.item1 data-depth="1.00"
+      i.icon-titleright
+    .layer.item2 data-depth="0.80"
+      i.icon-titleright
+    .layer.item3 data-depth="0.60"
+      i.icon-titleleft
+    .layer.item4 data-depth="0.50"
+      i.icon-titleright
+    .layer.item5 data-depth="0.40"
+      i.icon-titleright
+    .layer.item6 data-depth="0.15"
+      i.icon-titleright
+    .layer.item7 data-depth="1.00"
+      i.icon-titleleft
+    .layer.item8 data-depth="0.80"
+      i.icon-titleright
+    .layer.item9 data-depth="0.60"
+      i.icon-titleleft
+    .layer.item10 data-depth="0.50"
+      i.icon-titleright
+    .layer.item11 data-depth="0.40"
+      i.icon-titleright
+    .layer.item11 data-depth="0.15"
+      i.icon-titleright
 
-    == body_for('job-form-content', true)
+  #intro-parallax
+    .layer data-depth="0.10"
+      h2
+        | Want to be part of 
+        span our team
+        | 
 
-    = render "shared/flash_message_box"
-    == body_for('job-form-main-content', true, 'principal')
+    .layer data-depth="0.20"
+      .dash-left
+        .dash
 
-    = form_for @message, url: job_path, html: { multipart: true } do |f| 
+      .dash-right
+        .dash
 
-      = errors_for(@message).html_safe
+    .layer data-depth="0.30"
+      .careers-work
+        span find out 
+        a href=""
+          | how we work
+          .decoration
 
-      = f.hidden_field :is_to_job
-      = f.label(:name){ title_for('name-job-form').html_safe }
-      = f.text_field :name, :class => "ctext"
+      .careers-contact
+        a href=""
+          | contact us 
+          .decoration
+        | 
+        span right away!
 
-      = f.label(:email){ title_for('email-job-form').html_safe }
-      = f.text_field :email, :class => "ctext"
+    .scroll-now
+      | scroll 
+      span
+        i.icon-titleright
+      |  down
 
-      = f.label(:body){ title_for('message-job-form').html_safe }
-      = f.text_area :body, cols: '50', rows: '6'
+  .careers-title.cover1
 
-      p
-        = title_for('required-fields').html_safe
+    .layer data-depth="0.10"
+      h2 valores
 
-      .files
-        ul id="attachment-files"
-        a href="#"  id='attach-new-file' = title_for('attach-cv')
+    .cover
+  section
 
-      = f.file_field :file, id:'attach-file', style: "display: none"
+  .careers-title.cover2
 
-      = f.submit title_for('btn-send-job-form'), :class => "button"
+    .layer data-depth="0.10"
+      h2 puestos de trabajo
 
-  .four.columns.last
-    article.box.sidebar
-      h4 = title_for('the-road')
-      .methodologies
-        == body_for('the-road', true)
+    .cover
+  section
+
+  .careers-title.cover3
+
+    .layer data-depth="0.10"
+      h2 testimonios
+
+    .cover
+  section
+
+  .careers-title.cover4
+
+    .layer data-depth="0.10"
+      h2 eventos y conferencias
+    .cover
+
+  section.news
+    ul
+      li.news-item.equal5
+        .published-at
+          i.icon-calendar
+        .title
+        h3
+        .description
+
+        a.more href="" target="_blank"
+          | Read more
+          
+  = render partial: 'contact_form'  

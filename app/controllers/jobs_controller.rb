@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  layout "jobs"
 
   def new
     @message   = Message.new(is_to_job: true)

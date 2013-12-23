@@ -33,6 +33,9 @@ you can use the generic selector below, but it's slower:
   line-height: 1;
   -webkit-font-smoothing: antialiased;
 }
+.icon-uniF000:before {
+  content: "\f000";
+}
 .icon-googleplus:before {
   content: "\e000";
 }
@@ -97,7 +100,7 @@ you can use the generic selector below, but it's slower:
   content: "\e00e";
 }
 .icon-undo:before {
-  content: "\f0e2";
+  content: "\e600";
 }
 .icon-twitter:before {
   content: "\f099";

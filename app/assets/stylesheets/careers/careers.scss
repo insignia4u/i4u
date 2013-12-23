@@ -1,0 +1,303 @@
+#vanilla-parallax{
+  min-height: 480px;
+  position: fixed;
+  width: 100%;
+  z-index: 0;
+}
+
+#intro-parallax{
+  height: 880px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.layer{
+
+  .icon-titleright, .icon-titleleft{
+    color: $color-two;
+    font-size: 150px;
+    opacity: 0.17;
+    position: absolute;
+    left: 40px
+  }
+
+  &.item1{
+    .icon-titleright{
+      left: 154px;
+      top: 311px;
+      @include transform(rotate(48deg));
+      font-size: 113px;
+      opacity: 0.44;
+    }
+  }
+
+  &.item2{
+    .icon-titleright{
+      left: 329px;
+      top: 121px;
+      @include transform(rotate(-39deg));
+      opacity: 0.27;
+
+    }
+  }
+  &.item3{
+    .icon-titleleft{
+      font-size: 170px;
+      left: 173px;
+      top: 112px;
+      @include transform(rotate(-34deg));
+
+    }
+  }
+  &.item4{
+    .icon-titleright{
+      font-size: 213px;
+      left: 250px;
+      top: -172px;
+      @include transform(rotate(30deg));
+      opacity: 0.44;
+    }
+  }
+  &.item5{
+    .icon-titleright{
+      font-size: 375px;
+      left: 19px;
+      top: -131px;
+      @include transform(rotate(35deg));
+      opacity: 0.10;
+    }
+  }
+  &.item6{
+    .icon-titleright{
+      left: auto;
+      right: 198px;
+      top: 82px;
+      @include transform(rotate(47deg));
+      font-size: 104px;
+      opacity: 0.44;
+    }
+  }
+  &.item7{
+    .icon-titleleft{
+      left: auto;
+      right: 149px;
+      top: 68px;
+      @include transform(rotate(-65deg));
+      font-size: 167px;
+    }
+  }
+  &.item8{
+    .icon-titleright{
+      left: auto;
+      font-size: 150px;
+      right: 119px;
+      top: -74px;
+      @include transform(rotate(48deg));
+      opacity: 0.27;
+    }
+  }
+  &.item9{
+    .icon-titleleft{
+      left: auto;
+      font-size: 200px;
+      right: 235px;
+      top: -128px;
+      @include transform(rotate(182deg));
+      opacity: 0.27;
+    }
+  }
+  &.item10{
+    .icon-titleright{
+      left: auto;
+      font-size: 380px;
+      right: -55px;
+      bottom: -157px;
+      @include transform(rotate(126deg));
+    }
+  }
+}
+
+.careers{
+  overflow: hidden;
+
+  section{
+    min-height: 400px;
+    background: white;
+    z-index: 1;
+    position:relative;
+    margin:0;
+  }
+
+  h2{
+    left: 50%;
+    margin-left: -270px;
+    width: 540px;
+    top: 53px;
+    position: absolute;
+    font-family: $font-secondary;
+    font-size: 72px;
+    text-align: center;
+
+    span{
+      color: $color-two;
+    }
+  }
+
+  #first-parallax{
+    h2{
+      top: 100px;
+    }
+  }
+}
+
+.careers-work, .careers-contact{
+  font-size: 40px;
+  font-family: $font-secondary;
+  top: 325px;
+  position: absolute;
+
+  a{
+    color: $color-one;
+    font-size: 60px;
+  }
+
+  span{
+    font-weight: 300;
+  }
+}
+
+.dash-left, .dash-right{
+  top: 325px;
+  position: absolute;
+
+  .dash{
+    width: 115px;
+    border-top: dashed 2px $color-five;
+    position: absolute;
+    top: -50px;
+  }
+}
+
+.dash-left{
+  left: 55%;
+  margin-left: -175px;
+
+  .dash{
+    float: right;
+    margin-left: -175px;
+    @include transform(rotate(-51deg));
+    right: -70px;
+  }
+}
+
+.dash-right{
+  right: 55%;
+  margin-right: -175px;
+
+  .dash{
+    @include transform(rotate(51deg));
+    left: -70px;
+  }
+}
+
+.careers-work{
+  left: 33%;
+  margin-left: -150px;
+
+  .decoration{
+    background: url(asset-path("sprite.png",image)) no-repeat;
+    position: absolute;
+    height: 18px;
+    width: 180px;
+    right: 6px;
+    bottom: -12px;
+  }
+}
+
+.careers-contact{
+  right: 33%;
+  margin-right: -130px;
+
+  .decoration{
+    background: url(asset-path("sprite.png",image)) no-repeat right bottom;
+    position: absolute;
+    height: 9px;
+    width: 154px;
+    left: 6px;
+    bottom: -6px;
+  }
+}
+
+.scroll-now{
+  background: $color-one;
+  height: 136px;
+  font-family: $font-secondary;
+  color: $color-six;
+  font-size: 34px;
+  font-weight: 300;
+  text-align: center;
+  padding-top: 41px;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  span{
+    display: inline-block;
+    width: 57px;
+    height: 57px;
+    text-align: center;
+    line-height: 57px;
+    @include border-radius(50%);
+    background: $color-two;
+  }
+
+  i{
+    color: $color-one;
+    display: inline-block;
+    @include transform(rotate(90deg));
+    left: -1px;
+    position: relative;
+    top: 2px;
+  }
+}
+
+.careers-title{
+  height: 200px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cover1 {
+  background: rgba(91,148,214,0.79);
+
+  h2{
+    color: #416ea3;
+  }
+}
+
+.cover2{
+  background: rgba(242,8,146,0.20);
+
+  h2{
+    color: $color-two;
+  }
+}
+
+.cover3{
+  background: rgba(55,52,53,0.21);
+
+  h2{
+    color: $color-one;
+  }
+}

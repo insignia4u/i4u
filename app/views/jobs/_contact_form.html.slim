@@ -1,5 +1,5 @@
-contact-us
-  section.contact_form
+section.contact_form
+  .content
     .container-title
       h2 = title_for('contactáte con nosotrtos!')
 
@@ -13,7 +13,7 @@ contact-us
 
         .f-text
           = f.telephone_field :phone, placeholder: 'Phone'
-          i.icon-user
+          i.icon-phone
           .oblig-field
             |*
 
@@ -24,7 +24,7 @@ contact-us
             |*
 
         .f-text
-          = f.text_field :email, placeholder: 'Job'
+          = select_tag :param_name, options_for_select([['Front-End Developer', 'A'], ['Back-End Developer', 'B']], params[:param_name])
           i.icon-envelope-alt
           .oblig-field
             |*
@@ -44,7 +44,7 @@ contact-us
 
         .f-text
           = f.text_field :email, placeholder: 'Paste your LinkedIn Profile link'
-          i.icon-envelope-alt
+          i.icon-linkedin
 
 
       .box-thirst

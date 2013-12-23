@@ -7,6 +7,10 @@ footer{
   border-top:#3469af solid 4px;
   color:#6390d4;
   text-align:center;
+
+  &.footer-min{
+    border: none;
+  }
 }
 
 .footer-contact{
