@@ -8,10 +8,64 @@
 header{
   background:#fff;
   text-align:center;
+  position: relative;
+  z-index: 1;
 
   .container {
     height: 120px;
     position: relative;
+  }
+
+  &.header-min{
+    .container {
+      height: 115px;
+    }
+
+    nav{
+      background: none;
+      border-top: #383435 solid 22px;
+
+      ul{
+        width: 170px;
+        left: 50%;
+        position: absolute;
+        margin-left: -85px;
+        top: -11px;
+      }
+
+      li{
+        background: #383435;
+        width: 100%;
+        display: block;
+        padding: 0;
+        @include border-radius(0 0 12px 12px);
+      }
+
+      a{
+        display: block;
+        font-size: 15px;
+        line-height: 40px;
+        height: 40px;
+
+        &:after, &:before{
+          display: none;
+        }
+      }
+
+      a:hover, a:focus{
+        outline: none;
+
+        &:after, &:before{
+          display: none;
+        }
+      }
+
+      i.icon-undo{
+        display: inline-block;
+        color: $color-two;
+        margin: 0 10px 0 0;
+      }
+    }
   }
 
   h1{
@@ -86,3 +140,5 @@ nav{
     display: none;
   }
 }
+
+

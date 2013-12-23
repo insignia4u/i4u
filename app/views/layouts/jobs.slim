@@ -20,10 +20,9 @@ html
     = yield :stylesheets
 
   body onload="window.scrollTo(0,1);"
-    = render "shared/header"
-    .content
-      = yield
-    = render "shared/footer"
+    = render "shared/header-min"
+    = yield
+    = render "shared/footer-min"
 
     javascript:
       var _gaq=[['_setAccount','UA-1828552-1'],['_trackPageview']];
