@@ -149,6 +149,59 @@
       top: 100px;
     }
   }
+
+  .slider{
+    ul{
+      padding: 0 0 40px;
+    }
+    li{
+      @include outer-container;
+    }
+    .dash-box{
+      @include span-columns(4);
+      float: left;
+      border: #000 dashed 1px;
+      @include border-radius(10);
+      text-align: center;
+      margin-top: 40px;
+
+      &:nth-child(3n){
+        @include omega;
+      }
+    }
+
+    .dash-box-title{
+      display: table-cell;
+      height: 112px;
+      vertical-align: middle;
+    }
+
+    h3{
+      padding: 20px;
+      color: #316baf;
+      font-weight: 300;
+    }
+
+    a{
+      display: block;
+      background: #d8e6f5;
+      color: #373435;
+    }
+  }
+
+  .news{
+    ul{
+      @include outer-container;
+    }
+    li{
+      @include span-columns(4);
+      float: left;
+      margin-left: 0;
+    }
+    .news-item{
+      padding:33px 3.5% 42px;
+    }
+  }
 }
 
 .careers-work, .careers-contact{

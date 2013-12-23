@@ -63,13 +63,8 @@
         i.icon-titleright
       |  down
 
-  .careers-title.cover1
+  = render "valor"
 
-    .layer data-depth="0.10"
-      h2 valores
-
-    .cover
-  section
 
   .careers-title.cover2
 
@@ -93,14 +88,4 @@
       h2 eventos y conferencias
     .cover
 
-  section.news
-    ul
-      li.news-item.equal5
-        .published-at
-          i.icon-calendar
-        .title
-        h3
-        .description
-
-        a.more href="" target="_blank"
-          | Read more
+  = render "events"
