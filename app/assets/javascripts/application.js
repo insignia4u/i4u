@@ -4,8 +4,8 @@
 //= require jquery-picture.min
 //= require modernizer.min
 //= require carousel
+//= require jquery.carouFredSel-6.2.1
 //= require totop
 //= require noty
 //= require jquery.parallax
 //= require i4u
-
