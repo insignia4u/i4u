@@ -6,7 +6,7 @@ gem 'rails',        '3.2.13'
 gem 'jquery-rails', '2.0.2'
 
 group :development do
-  gem 'better_errors',       '0.0.8'
+  #@gem 'better_errors',       '0.0.8'
   gem 'binding_of_caller',   '0.6.8'
   gem 'taps',                '0.3.24'
 end

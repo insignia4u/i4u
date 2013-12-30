@@ -25,7 +25,7 @@ section.contact_form
 
         .f-text
           = select_tag :param_name, options_for_select([['Front-End Developer', 'A'], ['Back-End Developer', 'B']], params[:param_name])
-          i.icon-envelope-alt
+          i.icon-heart
           .oblig-field
             |*
 
@@ -38,7 +38,7 @@ section.contact_form
 
         .f-text
           = f.text_field :email, placeholder: 'Upload your CV (.pdf / .doc)'
-          i.icon-envelope-alt
+          i.icon-v-card
           .oblig-field
             |*
 

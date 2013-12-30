@@ -2,10 +2,6 @@
   = stylesheet_link_tag "pages/contacto"
   = stylesheet_link_tag "pages/empleo"
 
-.row
-
-  .eight.columns
-
 .careers
   #vanilla-parallax
     .layer.item1 data-depth="1.00"
@@ -67,13 +63,8 @@
         i.icon-titleright
       |  down
 
-  .careers-title.cover1
+  = render "valor"
 
-    .layer data-depth="0.10"
-      h2 valores
-
-    .cover
-  section
 
   .careers-title.cover2
 
@@ -89,7 +80,18 @@
       h2 testimonios
 
     .cover
-  section
+  section.testimonies
+    .content
+      .video-frame
+        figure title="" data-media600=asset_path("video-frame.png") data-media440=asset_path("video-frame.png") data-media=asset_path("video-frame-mobile.png")
+
+          img alt="" src=asset_path("video-frame-mobile.png")
+
+      .text-foot
+        p
+          | En Insignia nos destacamos por integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          .img.quote-open
+          .img.quote-close
 
   .careers-title.cover4
 
@@ -97,16 +99,5 @@
       h2 eventos y conferencias
     .cover
 
-  section.news
-    ul
-      li.news-item.equal5
-        .published-at
-          i.icon-calendar
-        .title
-        h3
-        .description
-
-        a.more href="" target="_blank"
-          | Read more
-          
-  = render partial: 'contact_form'  
+  = render "events"
+  = render partial: 'contact_form'

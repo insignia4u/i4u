@@ -149,6 +149,112 @@
       top: 100px;
     }
   }
+
+  .slider{
+    ul{
+      padding: 0 0 40px;
+    }
+    li{
+      @include outer-container;
+    }
+    .dash-box{
+      @include span-columns(4);
+      float: left;
+      border: #000 dashed 1px;
+      @include border-radius(10);
+      text-align: center;
+      margin-top: 40px;
+
+      &:nth-child(3n){
+        @include omega;
+      }
+    }
+
+    .dash-box-title{
+      display: table-cell;
+      height: 112px;
+      vertical-align: middle;
+    }
+
+    h3{
+      padding: 20px;
+      color: #316baf;
+      font-weight: 300;
+    }
+
+    a{
+      display: block;
+      background: #d8e6f5;
+      color: #373435;
+    }
+  }
+
+  .testimonies {
+    background: url("/assets/background-dark-pattern.gif") repeat 0 0;
+
+    .video-frame {
+      width: 697px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 43px;
+      margin-bottom: 56px;
+    }
+
+    .text-foot {
+      position: relative;
+      width: 530px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 112px;
+
+      p {
+        color: #FFF;
+        font-size: 20px;
+        font-family: $font-primary;
+        text-align: center;
+        line-height: 24px;
+      }
+
+      .quote-open {
+        background: url("/assets/quote-open.png") no-repeat;
+        width: 46px;
+        height: 38px;
+        display: block;
+        position: absolute;
+        top: -21px;
+        left: -49px;
+      }
+
+      .quote-close {
+        background: url("/assets/quote-close.png") no-repeat;
+        width: 49px;
+        height: 38px;
+        display: block;
+        position: absolute;
+        bottom: -11px;
+        right: -49px;
+      }
+    }
+  }
+
+  .news{
+    background: url("/assets/background-pattern.gif") repeat 0 0;
+
+    ul{
+      @include outer-container;
+      margin-top: 82px;
+      margin-bottom: 25px;
+    }
+    li{
+      @include span-columns(4);
+      float: left;
+      margin-left: 0;
+    }
+    .news-item{
+      padding:33px 3.5% 42px;
+    }
+  }
 }
 
 .careers-work, .careers-contact{
@@ -295,9 +401,13 @@
 }
 
 .cover3{
-  background: rgba(55,52,53,0.21);
+  background: rgba(55,52,53,0.35);
 
   h2{
     color: $color-one;
   }
+}
+
+.cover4 {
+  background: rgba(255, 252, 253, 0.56);
 }
