@@ -3,68 +3,9 @@
   = stylesheet_link_tag "pages/empleo"
 
 .careers
-  #vanilla-parallax
-    .layer.item1 data-depth="1.00"
-      i.icon-titleright
-    .layer.item2 data-depth="0.80"
-      i.icon-titleright
-    .layer.item3 data-depth="0.60"
-      i.icon-titleleft
-    .layer.item4 data-depth="0.50"
-      i.icon-titleright
-    .layer.item5 data-depth="0.40"
-      i.icon-titleright
-    .layer.item6 data-depth="0.15"
-      i.icon-titleright
-    .layer.item7 data-depth="1.00"
-      i.icon-titleleft
-    .layer.item8 data-depth="0.80"
-      i.icon-titleright
-    .layer.item9 data-depth="0.60"
-      i.icon-titleleft
-    .layer.item10 data-depth="0.50"
-      i.icon-titleright
-    .layer.item11 data-depth="0.40"
-      i.icon-titleright
-    .layer.item11 data-depth="0.15"
-      i.icon-titleright
-
-  #intro-parallax
-    .layer data-depth="0.10"
-      h2
-        | Want to be part of 
-        span our team
-        | 
-
-    .layer data-depth="0.20"
-      .dash-left
-        .dash
-
-      .dash-right
-        .dash
-
-    .layer data-depth="0.30"
-      .careers-work
-        span find out 
-        a href=""
-          | how we work
-          .decoration
-
-      .careers-contact
-        a href=""
-          | contact us 
-          .decoration
-        | 
-        span right away!
-
-    .scroll-now
-      | scroll 
-      span
-        i.icon-titleright
-      |  down
-
+  = render "parallax"
+  = render "intro"
   = render "valor"
-
 
   .careers-title.cover2
 

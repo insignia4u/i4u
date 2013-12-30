@@ -122,7 +122,7 @@
   overflow: hidden;
 
   section{
-    min-height: 400px;
+    min-height: 305px;
     background: white;
     z-index: 1;
     position:relative;
@@ -151,100 +151,95 @@
   }
 
   .slider{
+    background:#fff url(asset-path("backvalor.png",image));
+
     ul{
       padding: 0 0 40px;
     }
     li{
-      @include outer-container;
+      min-height: 204px;
+      float: left;
+      max-width: 280px;
+      width: 100%;
+      margin: 0 8px;
     }
     .dash-box{
-      @include span-columns(4);
-      float: left;
       border: #000 dashed 1px;
-      @include border-radius(10);
+      @include border-radius(5px);
       text-align: center;
-      margin-top: 40px;
-
-      &:nth-child(3n){
-        @include omega;
-      }
+      margin-top: 50px;
+      margin-bottom: 30px;
+      position: relative;
+      background: #fff;
     }
 
     .dash-box-title{
       display: table-cell;
-      height: 112px;
+      height: 138px;
       vertical-align: middle;
+      min-width: 279px;
+    }
+
+    .dash-box-circle{
+      width: 60px;
+      height: 60px;
+      border: #000 dashed 1px;
+      border-radius: 60px;
+      position: absolute;
+      left: 50%;
+      margin-left: -30px;
+      bottom: -13%;
+      background: #d8e6f5;
+      z-index: -1;
+    }
+
+    .back-box-circle{
+      position: absolute;
+      bottom: -23px;
+      display: inline-block;
+      left: 50%;
+      margin-left: -29px;
+      background: #d8e6f5;
+      width: 58px;
+      height: 58px;
+      @include border-radius(60px);
+    }
+
+    .plus{
+      width: 40px;
+      height: 40px;
+      line-height: 31px;
+      border-radius: 60px;
+      margin: 11px 10px 10px 9px;
+      background: #7aa7db;
+      color: #fff;
+      font-family: $font-secondary;
+      font-weight: 300;
+      font-size: 55px;
+      display: inline-block;
     }
 
     h3{
-      padding: 20px;
+      padding: 0 34px;
       color: #316baf;
       font-weight: 300;
+      text-transform: none;
+      font-size: 20px;
     }
 
     a{
       display: block;
       background: #d8e6f5;
       color: #373435;
-    }
-  }
-
-  .testimonies {
-    background: url("/assets/background-dark-pattern.gif") repeat 0 0;
-
-    .video-frame {
-      width: 697px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 43px;
-      margin-bottom: 56px;
-    }
-
-    .text-foot {
-      position: relative;
-      width: 530px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 112px;
-
-      p {
-        color: #FFF;
-        font-size: 20px;
-        font-family: $font-primary;
-        text-align: center;
-        line-height: 24px;
-      }
-
-      .quote-open {
-        background: url("/assets/quote-open.png") no-repeat;
-        width: 46px;
-        height: 38px;
-        display: block;
-        position: absolute;
-        top: -21px;
-        left: -49px;
-      }
-
-      .quote-close {
-        background: url("/assets/quote-close.png") no-repeat;
-        width: 49px;
-        height: 38px;
-        display: block;
-        position: absolute;
-        bottom: -11px;
-        right: -49px;
-      }
+      height: 64px;
+      line-height: 42px;
+      @include border-radius(0 0 5px 5px);
     }
   }
 
   .news{
-    background: url("/assets/background-pattern.gif") repeat 0 0;
-
     ul{
       @include outer-container;
-      margin-top: 82px;
-      margin-bottom: 25px;
     }
     li{
       @include span-columns(4);
@@ -385,10 +380,84 @@
 }
 
 .cover1 {
-  background: rgba(91,148,214,0.79);
+  background: rgba(91,148,214,0.45);
 
   h2{
     color: #416ea3;
+  }
+}
+
+.slider-valor{
+  position: absolute;
+  z-index: -1;
+
+  &.active{
+    position: static;
+    z-index: 0;
+  }
+}
+
+.single-valor{
+
+  top: 0;
+  background: white;
+  height: 100%;
+  width: 100%;
+  display: none;
+
+  &.active{
+    display: block;
+  }
+
+  .close-top{
+    background: #c6c6c6;
+    width: 48px;
+    height: 48px;
+    @include border-radius(0 0 10px 10px);
+    float: right;
+    text-align: center;
+    line-height: 43px;
+    cursor: pointer;
+    font-family: arial, sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+  }
+}
+
+.single-valor-title{
+  background: #ecf1f5;
+  height: 80px;
+  text-align: center;
+
+  h2{
+    color: $color-three;
+    display: inline-block;
+    font-size: 20px;
+    margin: 27px 0 0;
+    position: static;
+    width: auto;
+    font-family: $font-primary;
+    font-weight: 400;
+  }
+}
+
+.careers{
+  .single-valor-content{
+    text-align: center;
+
+    h3{
+      font-size: 26px;
+      color: $color-one;
+      padding: 0;
+      font-weight: 600;
+      line-height: 30.5px;
+    }
+
+    p{
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 24px;
+    }
   }
 }
 
@@ -401,13 +470,9 @@
 }
 
 .cover3{
-  background: rgba(55,52,53,0.35);
+  background: rgba(55,52,53,0.21);
 
   h2{
     color: $color-one;
   }
-}
-
-.cover4 {
-  background: rgba(255, 252, 253, 0.56);
 }

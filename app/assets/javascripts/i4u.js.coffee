@@ -132,5 +132,26 @@ $(document).ready ->
 
   $('#vanilla-parallax, #intro-parallax, .careers-title').parallax()
 
-  heightScreen = $(window).height() - 137;
-  $("#intro-parallax").height(heightScreen);
+  heightScreen = $(window).height() - 137
+  $("#intro-parallax").height(heightScreen)
+
+  $(".dash-box a").click (e) ->
+    e.preventDefault()
+    if $(".single-valor").hasClass("active")
+      $(".single-valor").removeClass("active")
+      $(".slider-valor").addClass("active")
+    else
+      $(".single-valor").addClass("active")
+      $(".slider-valor").removeClass("active")
+
+  $(".single-valor .close").click ->
+    $(".single-valor").removeClass("active")
+    $(".slider-valor").addClass("active")
+
+  $("#slider-valor ul").carouFredSel
+    responsive: true
+    pagination: "#pager2"
+    mousewheel: true
+    swipe:
+      onTouch: true
+      onMouse: true
