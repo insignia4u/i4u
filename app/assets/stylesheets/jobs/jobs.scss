@@ -47,7 +47,6 @@
       left: 173px;
       top: 112px;
       @include transform(rotate(-34deg));
-
     }
   }
   &.item4{
@@ -114,6 +113,46 @@
       right: -55px;
       bottom: -157px;
       @include transform(rotate(126deg));
+    }
+  }
+  &.item11{
+    .icon-titleright{
+      left: auto;
+      font-size: 220px;
+      left: 85px;
+      bottom: -267px;
+      @include transform(rotate(141deg));
+      opacity: 0.40;
+    }
+  }
+  &.item12{
+    .icon-titleright{
+      left: auto;
+      font-size: 130px;
+      left: 215px;
+      bottom: -75px;
+      @include transform(rotate(199deg));
+      opacity: 0.10;
+    }
+  }
+  &.item13{
+    .icon-titleright{
+      left: auto;
+      font-size: 230px;
+      right: 105px;
+      bottom: -157px;
+      @include transform(rotate(86deg));
+      opacity: 0.40;
+    }
+  }
+  &.item14{
+    .icon-titleright{
+      left: auto;
+      font-size: 240px;
+      right: 105px;
+      bottom: -357px;
+      @include transform(rotate(47deg));
+      opacity: 0.15;
     }
   }
 }
@@ -277,12 +316,19 @@
     background: url("/assets/background-dark-pattern.gif") repeat 0 0;
 
     .video-frame {
+      position: relative;
       width: 697px;
       display: block;
       margin-left: auto;
       margin-right: auto;
       margin-top: 43px;
       margin-bottom: 56px;
+
+      iframe {
+        position: absolute;
+        top: 30px;
+        left: 28px;
+      }
     }
 
     .text-foot {
@@ -323,8 +369,12 @@
   }
 
   .news{
+    background: url("/assets/background-pattern.gif") repeat 0 0;
+
     ul{
       @include outer-container;
+      margin-top: 89px;
+      margin-bottom: 26px;
     }
     li{
       @include span-columns(4);
@@ -560,7 +610,7 @@
 }
 
 .cover3{
-  background: rgba(55,52,53,0.21);
+  background: rgba(55,52,53,0.35);
 
   h2{
     color: $color-one;
@@ -611,4 +661,8 @@
 .btn-secondary{
   background-color: #373435;
   border-color: #000000;
+}
+
+.cover4{
+  background: rgba(255,255,255,0.55);
 }
