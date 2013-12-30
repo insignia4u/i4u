@@ -149,9 +149,10 @@ $(document).ready ->
     $(".slider-valor").addClass("active")
 
   $("#slider-valor ul").carouFredSel
-    responsive: true
-    pagination: "#pager2"
-    mousewheel: true
+    prev: '#prev-valor',
+    next: '#next-valor',
+    width: '100%',
+    pagination: "#pager-valor",
     swipe:
       onTouch: true
       onMouse: true

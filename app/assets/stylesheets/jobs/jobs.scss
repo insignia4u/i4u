@@ -149,7 +149,9 @@
       top: 100px;
     }
   }
-
+  #slider-valor{
+    position: relative;
+  }
   .slider{
     background:#fff url(asset-path("backvalor.png",image));
 
@@ -159,9 +161,18 @@
     li{
       min-height: 204px;
       float: left;
-      max-width: 280px;
+      max-width: 270px;
       width: 100%;
       margin: 0 8px;
+
+      a{
+        display: block;
+        background: #d8e6f5;
+        color: #373435;
+        height: 64px;
+        line-height: 42px;
+        @include border-radius(0 0 5px 5px);
+      }
     }
     .dash-box{
       border: #000 dashed 1px;
@@ -227,13 +238,38 @@
       font-size: 20px;
     }
 
-    a{
-      display: block;
-      background: #d8e6f5;
-      color: #373435;
-      height: 64px;
-      line-height: 42px;
-      @include border-radius(0 0 5px 5px);
+    .prev, .next{
+      @include border-radius(23px);
+      text-decoration: none;
+      background: #222;
+      position: absolute;
+      top: 53%;
+      left: 0;
+      width: 45px;
+      height: 45px;
+      margin-top: -20px;
+      font-size: 60px;
+      font-weight: 100;
+      line-height: 30px;
+      color: #ffffff;
+      text-align: center;
+      z-index: 999;
+
+        i{
+          font-size: 22px;
+          text-align: center;
+          position: relative;
+          top: -7px;
+          left: -0.05em;
+        }
+        .icon-titleright{
+          left: 0.05em;
+        }
+    }
+
+    .next{
+      left: auto;
+      right: 0;
     }
   }
 
@@ -491,6 +527,11 @@
 }
 
 .careers{
+
+  .careers-position{
+    background: url(asset-path("background-pattern.gif",image));
+  }
+
   .single-valor-content{
     text-align: center;
 
@@ -524,4 +565,50 @@
   h2{
     color: $color-one;
   }
+}
+
+.position{
+  padding: 73px 0;
+  overflow: hidden;
+}
+
+.position-icons{
+  background: #E50892;
+  border: 7px solid #a60563;
+  width: 290px;
+  height: 290px;
+  @include border-radius(290px);
+  text-align: center;
+  line-height: 290px;
+  float: left;
+
+  i{
+    color: #fff;
+    font-size: 180px;
+  }
+}
+
+.position-info{
+  margin-left: 50%;
+
+  .btn{
+    margin: 20px;
+
+    &.btn-primary{
+      margin-left: 0;
+    }
+  }
+
+  h3{
+    clear: none;
+  }
+}
+
+.position-description{
+  min-height: 150px;
+}
+
+.btn-secondary{
+  background-color: #373435;
+  border-color: #000000;
 }
