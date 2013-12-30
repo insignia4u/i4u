@@ -237,6 +237,55 @@
     }
   }
 
+  .testimonies {
+    background: url("/assets/background-dark-pattern.gif") repeat 0 0;
+
+    .video-frame {
+      width: 697px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 43px;
+      margin-bottom: 56px;
+    }
+
+    .text-foot {
+      position: relative;
+      width: 530px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 112px;
+
+      p {
+        color: #FFF;
+        font-size: 20px;
+        font-family: $font-primary;
+        text-align: center;
+        line-height: 24px;
+      }
+
+      .quote-open {
+        background: url("/assets/quote-open.png") no-repeat;
+        width: 46px;
+        height: 38px;
+        display: block;
+        position: absolute;
+        top: -21px;
+        left: -49px;
+      }
+
+      .quote-close {
+        background: url("/assets/quote-close.png") no-repeat;
+        width: 49px;
+        height: 38px;
+        display: block;
+        position: absolute;
+        bottom: -11px;
+        right: -49px;
+      }
+    }
+  }
+
   .news{
     ul{
       @include outer-container;
