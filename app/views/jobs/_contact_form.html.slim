@@ -1,0 +1,57 @@
+section.contact_form
+  .content
+    .container-title
+      h2 = title_for('contactáte con nosotrtos!')
+
+    = form_for @message, url: contact_path, html: { multipart: true } do |f|
+      .box-first
+        .f-text
+          = f.text_field :name, placeholder: 'Name'
+          i.icon-user
+          .oblig-field
+            |*
+
+        .f-text
+          = f.telephone_field :phone, placeholder: 'Phone'
+          i.icon-phone
+          .oblig-field
+            |*
+
+        .f-text
+          = f.text_field :email, placeholder: 'Email'
+          i.icon-envelope-alt
+          .oblig-field
+            |*
+
+        .f-text
+          = select_tag :param_name, options_for_select([['Front-End Developer', 'A'], ['Back-End Developer', 'B']], params[:param_name])
+          i.icon-heart
+          .oblig-field
+            |*
+
+      .box-second
+        .f-textarea
+          = f.text_area :body, placeholder: 'Comments', class: 'comment'
+          i.icon-pencil
+          .oblig-field
+            |*
+
+        .f-text
+          = f.text_field :email, placeholder: 'Upload your CV (.pdf / .doc)'
+          i.icon-v-card
+          .oblig-field
+            |*
+
+        .f-text
+          = f.text_field :email, placeholder: 'Paste your LinkedIn Profile link'
+          i.icon-linkedin
+
+
+      .box-thirst
+        = f.submit 'Send', class: 'btn'
+        span
+          |*
+        p
+          |Completa todos los campos obligatorios marcados con asterisko
+        
+
