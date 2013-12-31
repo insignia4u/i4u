@@ -137,16 +137,17 @@ $(document).ready ->
 
   $(".dash-box a").click (e) ->
     e.preventDefault()
-    if $(".single-valor").hasClass("active")
-      $(".single-valor").removeClass("active")
+    if $(".slider .single").hasClass("active")
+      $(".slider .single").removeClass("active")
       $(".slider-valor").addClass("active")
     else
-      $(".single-valor").addClass("active")
+      $(".slider .single").addClass("active")
       $(".slider-valor").removeClass("active")
 
-  $(".single-valor .close").click ->
-    $(".single-valor").removeClass("active")
+  $(".single .close").click ->
+    $(".slider .single").removeClass("active")
     $(".slider-valor").addClass("active")
+
 
   $("#slider-valor ul").carouFredSel
     prev: '#prev-valor',
