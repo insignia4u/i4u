@@ -295,10 +295,10 @@
       z-index: 999;
 
         i{
-          font-size: 30px;
+          font-size: 22px;
           text-align: center;
           position: relative;
-          top: -4px;
+          top: -7px;
           left: -0.05em;
         }
         .icon-titleright{
@@ -673,20 +673,65 @@
   overflow: hidden;
 
   .carousel-control {
-    bottom: 60px;
+    bottom: 210px;
   }
 }
 
 .position-icons{
   background: #E50892;
   border: 7px solid #a60563;
-  width: 290px;
-  height: 290px;
+  width: 303px;
+  height: 303px;
   @include border-radius(290px);
   text-align: center;
   line-height: 290px;
   float: left;
-  margin-left: 10%;
+  margin-left: 9%;
+  //margin-top: -6px;
+
+  .icon-imac {
+    position: relative;
+    font-size: 184px;
+    top: 14px;
+    left: 3px;
+
+    .icon-ruler {
+      position: absolute;
+      left: 69px;
+      font-size: 38px;
+      bottom: 7px;
+    }
+  }
+
+  .icon-cogs {
+    font-size: 143px;
+  }
+
+  .icon-address-book {
+    position: relative;
+    font-size: 110px;
+    left: -19px;
+    top: -7px;
+
+    .icon-mouse {
+      position: absolute;
+      font-size: 63px;
+      left: 78px;
+      top: -34px;
+    }
+  }
+
+  .icon-presentation {
+    font-size: 145px;
+    position: relative;
+    top: 3px;
+    left: 2px;
+  }
+
+  .icon-partners {
+    position: relative;
+    font-size: 120px;
+  }
 
   i{
     color: #fff;
@@ -695,10 +740,11 @@
 }
 
 .position-info{
-  margin-left: 50%;
+  margin-left: 49.5%;
 
   .btn{
-    margin: 20px;
+    margin: 11px;
+    padding: 0 17px;
 
     &.btn-primary{
       margin-left: 0;
@@ -707,7 +753,10 @@
 
   h3{
     clear: none;
-    font-size: 50px;
+    font-size: 45px;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+    padding-top: 6px;
     font-family: $font-secondary;
     font-weight: 300;
     color: $color-one;
@@ -716,16 +765,19 @@
   p{
     line-height: 24px;
     font-size: 14px;
+    width: 385px;
   }
 }
 
 .position-description{
-  min-height: 150px;
+  min-height: 144px;
 }
 
 .btn-secondary{
   background-color: #373435;
   border-color: #000000;
+  padding-right: 24px !important;
+  padding-left: 24px !important;
 }
 
 .cover4{
