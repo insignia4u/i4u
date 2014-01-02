@@ -6,54 +6,7 @@
   = render "parallax"
   = render "intro"
   = render "valor"
-
-  .careers-title.cover2
-
-    .layer data-depth="0.10"
-      h2 puestos de trabajo
-
-    .cover
-
-  section.careers-position
-    .container
-      .position
-        ul
-          li
-            .position-icons
-              i.icon-titleleft
-
-            .position-info
-              h3 desarrollador frontend
-              .position-description
-                p Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. 
-              a.btn.btn-primary href="" ver detalles
-              a.btn.btn-secondary href="" aplicar
-
-  .careers-title.cover3
-
-    .layer data-depth="0.10"
-      h2 testimonios
-
-    .cover
-  section.testimonies
-    .content
-      .video-frame
-        figure title="" data-media600=asset_path("video-frame.png") data-media440=asset_path("video-frame.png") data-media=asset_path("video-frame-mobile.png")
-
-          iframe src="//player.vimeo.com/video/61755493" width="639" height="359" frameborder="0"
-          img alt="" src=asset_path("video-frame-mobile.png")
-
-      .text-foot
-        p
-          | En Insignia nos destacamos por integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-          .img.quote-open
-          .img.quote-close
-
-  .careers-title.cover4
-
-    .layer data-depth="0.10"
-      h2 eventos y conferencias
-    .cover
-
+  = render "position"
+  = render "testimonials"
   = render "events"
-  = render partial: 'contact_form'
+  = render "contact_form"
