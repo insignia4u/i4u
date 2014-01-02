@@ -282,8 +282,8 @@
       text-decoration: none;
       background: #222;
       position: absolute;
-      top: 53%;
-      left: 0;
+      top: 41%;
+      left: -29px;
       width: 45px;
       height: 45px;
       margin-top: -20px;
@@ -295,10 +295,10 @@
       z-index: 999;
 
         i{
-          font-size: 22px;
+          font-size: 30px;
           text-align: center;
           position: relative;
-          top: -7px;
+          top: -4px;
           left: -0.05em;
         }
         .icon-titleright{
@@ -308,7 +308,7 @@
 
     .next{
       left: auto;
-      right: 0;
+      right: -29px;
     }
   }
 
@@ -529,6 +529,52 @@
   &.active{
     position: static;
     z-index: 0;
+  }
+
+  #pager-valor {
+    display: block;
+    width: 820px;
+    height: 54px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.08);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 97px;
+    margin-top: 29px;
+    padding-left: 44%;
+    padding-right: 43%;
+    padding-top: 6px;
+
+    a {
+      width: 12px;
+      height: 12px;
+      margin: 6px;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      border-radius: 6px;
+      background-color: #fff;
+      -webkit-box-shadow: inset 1px 1px rgba(1,17,35,.75);
+      -moz-box-shadow: inset 1px 1px rgba(1,17,35,.75);
+      box-shadow: inset 1px 1px rgba(1,17,35,.75);
+      display: inline-block;
+      font-size: 1px;
+      color: #fff;
+
+      &.selected {
+        width: 12px;
+        height: 12px;
+        margin: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        background-color: #000;
+        display: inline-block;
+        font-size: 1px;
+        color: #000;
+      }
+    }
   }
 }
 
