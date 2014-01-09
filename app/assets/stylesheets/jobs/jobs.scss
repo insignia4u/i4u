@@ -389,6 +389,29 @@
     }
     .news-item{
       padding:33px 3.5% 42px;
+      height: 339px;
+
+      .published-at {
+        font-size: 0.85em;
+        font-weight: bolder;
+        i {
+          font-size: 1.45em;
+        }
+      }
+
+      .title {
+        font-size: 0.83em;
+        word-spacing: 2px;
+      }
+
+      h3 {
+        font-size: 1.34em;
+        font-weight: bolder;
+      }
+
+      p {
+        font-size: 13px;
+      }
     }
   }
 }
@@ -613,7 +636,9 @@
   .close-bottom {
     bottom: 114px !important;
     position: absolute;
-    right: 47%;
+    right: 1px;
+    left: 1px;
+    margin: auto;
     width: 118px;
     -webkit-border-radius: 10px 10px 0 0;
     margin-bottom: 0;
@@ -678,7 +703,9 @@ section.slider {
     .close-bottom {
       bottom: 0;
       position: absolute;
-      right: 47%;
+      right: 1px;
+      left: 1px;
+      margin: auto;
       width: 118px;
       -webkit-border-radius: 10px 10px 0 0;
       margin-bottom: 0;
@@ -722,6 +749,7 @@ section.slider {
 
   .careers-position{
     background: url(asset-path("background-pattern.gif",image));
+    border-bottom: #000 dashed 1px;
   }
 
   .single-title{
@@ -775,7 +803,9 @@ section.slider {
     .close-bottom {
       bottom: 0;
       position: absolute;
-      right: 47%;
+      right: 1px;
+      left: 1px;
+      margin: auto;
       width: 118px;
       -webkit-border-radius: 10px 10px 0 0;
       margin-bottom: 0;
@@ -803,7 +833,7 @@ section.slider {
       line-height: 24px;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: -8px;
+      margin-bottom: 30px;
       margin-top: 51px;
       font-weight: 600;
     }
@@ -933,6 +963,56 @@ section.slider {
 
 .position-description{
   min-height: 144px;
+}
+
+.positions-frame {
+  padding: 35px 0px;
+  background: url("/assets/positions-frame.png") no-repeat;
+  height: 326px;
+  width: 777px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  margin-bottom: 119px;
+  ul {
+    display: inline-block;
+    margin-top: 0px;
+    width: 37%;
+    font-size: 14px;
+    margin-left: 59px;
+    margin-right: 35px;
+    text-align: left;
+    float: left;
+    margin-bottom: 20px;
+    h4 {
+      font-size: 17px;
+      margin-bottom: 17px;
+    }
+    li {
+      margin-left: 23px;
+      margin-bottom: 9px;
+    }
+    li:before {
+      @include ico("\f061");
+      color: #316baf;
+      display: inline-block;
+      font-size: 24px;
+      vertical-align: middle;
+      position: absolute;
+      left: -26px;
+      top: -2px;
+    }
+  }
+  .btn-primary {
+    position: absolute;
+    left: 1px;
+    right: 1px;
+    margin: auto;
+    display: inline-block;
+    width: 178px;
+    text-align: center;
+    bottom: -19px;
+  }
 }
 
 .btn-secondary{

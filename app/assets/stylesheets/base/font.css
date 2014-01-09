@@ -25,7 +25,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"]:before {
 */
-.icon-pencil:before, .icon-user:before, .icon-chevron-down:before, .icon-search:before, .icon-smiley:before, .icon-search-2:before, .icon-rss:before, .icon-comment:before, .icon-list:before, .icon-envelope-alt:before, .icon-top:before, .icon-titleright:before, .icon-titleleft:before, .icon-cursor:before, .icon-phone:before, .icon-map-marker:before, .icon-deploy:before, .icon-qa:before, .icon-slideshare:before, .icon-github:before, .icon-undo:before, .icon-heart:before, .icon-v-card:before, .icon-arrow-down:before, .icon-ruler:before, .icon-imac:before, .icon-presentation:before, .icon-address-book:before, .icon-mouse:before, .icon-cogs:before, .icon-partners:before, .icon-twitter:before, .icon-linkedin:before, .icon-facebook:before, .icon-googleplus:before, .icon-list-ol:before, .icon-eye-open:before, .icon-mobile:before, .icon-wrench:before, .icon-arrow-right:before, .icon-diamond:before, .icon-site-map:before, .icon-users:before, .icon-tech:before, .icon-calendar:before {
+.icon-pencil:before, .icon-user:before, .icon-chevron-down:before, .icon-search:before, .icon-smiley:before, .icon-search-2:before, .icon-rss:before, .icon-comment:before, .icon-list:before, .icon-envelope-alt:before, .icon-top:before, .icon-titleright:before, .icon-titleleft:before, .icon-cursor:before, .icon-phone:before, .icon-map-marker:before, .icon-deploy:before, .icon-qa:before, .icon-slideshare:before, .icon-github:before, .icon-undo:before, .icon-heart:before, .icon-v-card:before, .icon-arrow-down:before, .icon-ruler:before, .icon-imac:before, .icon-presentation:before, .icon-address-book:before, .icon-mouse:before, .icon-cogs:before, .icon-partners:before, .icon-twitter:before, .icon-linkedin:before, .icon-facebook:before, .icon-googleplus:before, .icon-list-ol:before, .icon-eye-open:before, .icon-mobile:before, .icon-wrench:before, .icon-arrow-right:before, .icon-diamond:before, .icon-site-map:before, .icon-users:before, .icon-tech:before, .icon-calendar:before, .icon-home:before {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -97,7 +97,7 @@ you can use the generic selector below, but it's slower:
   content: "\e00d";
 }
 .icon-github:before {
-  content: "\e00e";
+  content: "\e00f";
 }
 .icon-undo:before {
   content: "\e600";
@@ -157,17 +157,20 @@ you can use the generic selector below, but it's slower:
   content: "\f061";
 }
 .icon-diamond:before {
-  content: "\e00f";
-}
-.icon-site-map:before {
   content: "\e010";
 }
-.icon-users:before {
+.icon-site-map:before {
   content: "\e011";
 }
-.icon-tech:before {
+.icon-users:before {
   content: "\e012";
 }
-.icon-calendar:before {
+.icon-tech:before {
   content: "\e013";
+}
+.icon-calendar:before {
+  content: "\e014";
+}
+.icon-home:before {
+  content: "\e02f";
 }
