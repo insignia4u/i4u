@@ -17,20 +17,46 @@ header{
   }
 
   &.header-min{
-    .container {
-      height: 115px;
+    padding-bottom: 0;
+
+    h1{
+      margin-top: 25px;
+
+      @include breakpoint(tablet){
+        margin-top: 35px;
+      }
+    }
+
+    .container{
+      height: 90px;
+
+      @include breakpoint(tablet){
+        height: 120px;
+      }
     }
 
     nav{
       background: none;
-      border-top: #383435 solid 22px;
+      border-top: #383435 solid 17px;
+
+      @include breakpoint(tablet){
+        border-top: #383435 solid 22px;
+      }
 
       ul{
-        width: 170px;
+        width: 50px;
         left: 50%;
         position: absolute;
-        margin-left: -85px;
+        margin-left: -25px;
         top: -11px;
+        background: none;
+        display: block;
+        padding: 0;
+
+        @include breakpoint(tablet){
+          width: 170px;
+          margin-left: -85px;
+        }
       }
 
       li{
@@ -49,6 +75,14 @@ header{
 
         &:after, &:before{
           display: none;
+        }
+
+        span{
+          display: none;
+
+          @include breakpoint(tablet){
+            display: inline;
+          }
         }
       }
 

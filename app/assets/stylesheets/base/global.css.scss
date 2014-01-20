@@ -33,6 +33,49 @@ $color-six: #979797;
   content: $ico;
 }
 
+$w320: "320px";
+$w480: "480px";
+$w768: "768px";
+$w1024: "1024px";
+$w1280: "1280px";
+$w1500: "1500px";
+
+@mixin breakpoint($point, $value: 0) {
+  @if $point == mobile {
+    @media (min-width: $w320) { @content; }
+  }
+
+  @else if $point == mobile-horizontal {
+    @media (min-width: $w480) { @content; }
+  }
+
+  @else if $point == tablet {
+    @media (min-width: $w768) { @content; }
+  }
+
+  @else if $point == tablet-horizontal {
+    @media (min-width: $w1024) { @content; }
+  }
+
+  @else if $point == desktop {
+    @media (min-width: $w1280) { @content; }
+  }
+
+  @else if $point == desktop-wide {
+    @media (min-width: $w1500) { @content; }
+  }
+
+  @else {
+    @media ($point: $value) { @content; }
+  }
+}
+
+@mixin between-breakpoints($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
 /* ----------------------------
 :: Base
 ---------------------------- */
@@ -444,4 +487,9 @@ aside{
 
 #toTop{
   z-index:9999;
+}
+
+.reg{
+  font-weight: normal;
+  color: $color-one!important;
 }

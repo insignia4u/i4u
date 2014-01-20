@@ -53,14 +53,14 @@ check_modernizer = () ->
 
 check_client_width = () ->
   if document.documentElement.clientWidth < 767
-    $("#logo").insertAfter "nav"
+    $(".tooglenav #logo").insertAfter "nav"
   else
-    $("nav").insertAfter "#logo"
+    $(".tooglenav nav").insertAfter "#logo"
   $(window).resize ->
     if document.documentElement.clientWidth < 767
-      $("#logo").insertAfter "nav"
+      $(".tooglenav #logo").insertAfter "nav"
     else
-      $("nav").insertAfter "#logo"
+      $(".tooglenav nav").insertAfter "#logo"
 
 alert_div_if_errors = () ->
   if $(".field_with_errors").length > 0
@@ -82,6 +82,8 @@ $(document).ready ->
   $('picture, figure').picture()
 
   $('#cases, #intro, .carousel').carousel()
+
+  $('#position').carousel "pause"
 
   $("#menu-btn, header nav span").click ->
     $("header nav ul").slideToggle "slow"
@@ -130,23 +132,67 @@ $(document).ready ->
 
   $(".equal5").css('height', biggestHeight + 50)
 
-  $('#vanilla-parallax, #intro-parallax, .careers-title').parallax()
+  # $('#vanilla-parallax, #intro-parallax, .careers-title').parallax()
 
-  heightScreen = $(window).height() - 137
-  $("#intro-parallax").height(heightScreen)
+  # $('#vanilla-parallax').parallax()
+
+  # heightScreen = $(window).height() - 137
+  # $("#intro-parallax").height(heightScreen)
 
   $(".dash-box a").click (e) ->
     e.preventDefault()
+
+    $(".slider").css "height", "auto"
+
     if $(".slider .single").hasClass("active")
       $(".slider .single").removeClass("active")
       $(".slider-valor").addClass("active")
-    else
-      $(".slider .single").addClass("active")
-      $(".slider-valor").removeClass("active")
 
-  $(".single .close").click ->
+      heightSlider = $(".slider-valor").height()
+      $(".slider").height heightSlider
+    else
+      $(".slider-valor").removeClass("active")
+      $(".slider .single").addClass("active")
+
+      heightSlider2 = $(".slider .single").height()
+      $(".slider").height heightSlider2
+
+  $(".slider .close").click ->
+    $(".slider").css "height", "auto"
+
     $(".slider .single").removeClass("active")
     $(".slider-valor").addClass("active")
+
+    heightSlider = $(".slider-valor").height()
+    $(".slider").height heightSlider
+
+
+  $(".position-info .btn-primary").click (e) ->
+    e.preventDefault()
+
+    $(".slider").css "height", "auto"
+
+    if $(".careers-position .single").hasClass("active")
+      $(".careers-position .single").removeClass("active")
+      $(".slider-position").addClass("active")
+
+      heightSlider = $(".slider-position").height()
+      $(".careers-position").height heightSlider
+    else
+      $(".slider-position").removeClass("active")
+      $(".careers-position .single").addClass("active")
+
+      heightSlider2 = $(".careers-position .single").height()
+      $(".careers-position").height heightSlider2
+
+  $(".careers-position .close").click ->
+    $(".slider-position").css "height", "auto"
+
+    $(".careers-position .single").removeClass("active")
+    $(".slider-position").addClass("active")
+
+    heightSlider = $(".slider-valor").height()
+    $(".slider").height heightSlider
 
 
   $("#slider-valor ul").carouFredSel
@@ -154,6 +200,24 @@ $(document).ready ->
     next: '#next-valor',
     width: '100%',
     pagination: "#pager-valor",
+    auto:
+      play: false,
+
     swipe:
       onTouch: true
       onMouse: true
+  ,
+    # transition: true
+
+  $("#l-testimonials").click (e) ->
+    e.preventDefault()
+    $("html, body").animate
+      scrollTop: $(".cover3").offset().top
+    , 1200
+
+  $("#l-contacts").click (e) ->
+    e.preventDefault()
+    $("html, body").animate
+      scrollTop: $(".contact_form").offset().top
+    , 1200
+

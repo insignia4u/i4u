@@ -6,24 +6,46 @@
 }
 
 #intro-parallax{
-  height: 880px;
+  height: 740px;
   position: relative;
   overflow: hidden;
   width: 100%;
+
+  @include breakpoint(tablet){
+    height: 700px;
+  }
+
+  @include breakpoint(desktop){
+    height: 880px;
+  }
+
+  h2{
+    font-size: 52px;
+    line-height: 49px;
+    font-weight: normal;
+    padding: 45px 20px 0;
+
+    @include breakpoint(tablet){
+      font-size: 72px;
+      line-height: 69px;
+      padding: 0;
+    }
+  }
 }
 
 .layer{
 
-  .icon-titleright, .icon-titleleft{
+  .titleright, .titleleft{
     color: $color-two;
     font-size: 150px;
     opacity: 0.17;
     position: absolute;
-    left: 40px
+    left: 40px;
+    font-family: monospace;
   }
 
   &.item1{
-    .icon-titleright{
+    .titleright{
       left: 154px;
       top: 311px;
       @include transform(rotate(48deg));
@@ -33,7 +55,7 @@
   }
 
   &.item2{
-    .icon-titleright{
+    .titleright{
       left: 329px;
       top: 121px;
       @include transform(rotate(-39deg));
@@ -42,7 +64,7 @@
     }
   }
   &.item3{
-    .icon-titleleft{
+    .titleleft{
       font-size: 170px;
       left: 173px;
       top: 112px;
@@ -50,7 +72,7 @@
     }
   }
   &.item4{
-    .icon-titleright{
+    .titleright{
       font-size: 213px;
       left: 250px;
       top: -172px;
@@ -59,7 +81,7 @@
     }
   }
   &.item5{
-    .icon-titleright{
+    .titleright{
       font-size: 375px;
       left: 19px;
       top: -131px;
@@ -68,7 +90,7 @@
     }
   }
   &.item6{
-    .icon-titleright{
+    .titleright{
       left: auto;
       right: 198px;
       top: 82px;
@@ -78,7 +100,7 @@
     }
   }
   &.item7{
-    .icon-titleleft{
+    .titleleft{
       left: auto;
       right: 149px;
       top: 68px;
@@ -87,7 +109,7 @@
     }
   }
   &.item8{
-    .icon-titleright{
+    .titleright{
       left: auto;
       font-size: 150px;
       right: 119px;
@@ -97,7 +119,7 @@
     }
   }
   &.item9{
-    .icon-titleleft{
+    .titleleft{
       left: auto;
       font-size: 200px;
       right: 235px;
@@ -107,7 +129,7 @@
     }
   }
   &.item10{
-    .icon-titleright{
+    .titleright{
       left: auto;
       font-size: 380px;
       right: -55px;
@@ -116,7 +138,7 @@
     }
   }
   &.item11{
-    .icon-titleright{
+    .titleright{
       left: auto;
       font-size: 220px;
       left: 85px;
@@ -126,7 +148,7 @@
     }
   }
   &.item12{
-    .icon-titleright{
+    .titleright{
       left: auto;
       font-size: 130px;
       left: 215px;
@@ -136,7 +158,7 @@
     }
   }
   &.item13{
-    .icon-titleright{
+    .titleright{
       left: auto;
       font-size: 230px;
       right: 105px;
@@ -146,7 +168,7 @@
     }
   }
   &.item14{
-    .icon-titleright{
+    .titleright{
       left: auto;
       font-size: 240px;
       right: 105px;
@@ -166,26 +188,49 @@
     z-index: 1;
     position:relative;
     margin:0;
+
     &.dashed-separator {
-      min-height: 114px !important;
+      min-height: 0;
       background: url("/assets/background-pattern.gif") repeat 0 0;
       border-top: #000 dashed 1px;
-      margin-bottom: -40px;
     }
   }
 
   h2{
-    left: 50%;
-    margin-left: -270px;
-    width: 540px;
-    top: 53px;
-    position: absolute;
+    margin: 0;
+    top: 80px;
     font-family: $font-secondary;
     font-size: 72px;
     text-align: center;
+    width: auto;
 
     span{
       color: $color-two;
+    }
+
+    @include breakpoint(tablet){
+      left: 50%;
+      margin-left: -275px;
+      top: 93px;
+      width: 550px;
+      position: absolute;
+    }
+  }
+
+  .careers-title{
+    h2{
+      top: 42px;
+      font-size: 38px;
+      position: relative;
+
+      @include breakpoint(tablet){
+        top: 27px;
+        font-size: 56px;
+      }
+      @include breakpoint(desktop){
+        top: 56px;
+        font-size: 72px;
+      }
     }
   }
 
@@ -194,15 +239,31 @@
       top: 100px;
     }
   }
+
   #slider-valor{
     position: relative;
   }
+
+  .slider, .careers-position{
+    overflow: hidden;
+    @include transition(all .5s ease);
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    perspective: 1200px;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
   .slider{
     background:#fff url(asset-path("backvalor.png",image));
+    width: 100%;
+    height: 100%;
 
     ul{
       padding: 0 0 40px;
     }
+
     li{
       min-height: 204px;
       float: left;
@@ -288,8 +349,6 @@
       text-decoration: none;
       background: #222;
       position: absolute;
-      top: 41%;
-      left: -29px;
       width: 45px;
       height: 45px;
       margin-top: -20px;
@@ -299,22 +358,41 @@
       color: #ffffff;
       text-align: center;
       z-index: 999;
+      top: -99999px;
+      left: -99999px;
 
-        i{
-          font-size: 22px;
-          text-align: center;
-          position: relative;
-          top: -7px;
-          left: -0.05em;
-        }
-        .icon-titleright{
-          left: 0.05em;
-        }
+      @include breakpoint(tablet){
+        left: 1%;
+        top: 41%;
+      }
+
+      @media (min-width:1024px) {
+        left: -6%;
+      }
+
+      i{
+        font-size: 22px;
+        text-align: center;
+        position: relative;
+        top: -7px;
+        left: -0.05em;
+      }
+      .titleright{
+        left: 0.05em;
+      }
     }
 
     .next{
       left: auto;
       right: -29px;
+
+      @include breakpoint(tablet){
+        right: 1%;
+      }
+
+      @media (min-width:1024px) {
+        right: -6%;
+      }
     }
   }
 
@@ -324,32 +402,101 @@
     .video-frame {
       position: relative;
       width: 697px;
+      width: 100%;
       display: block;
       margin-left: auto;
       margin-right: auto;
       margin-top: 43px;
-      margin-bottom: 56px;
+      margin-bottom: 20px;
+      text-align: center;
+
+      @include breakpoint(tablet){
+        margin-bottom: 56px;
+      }
 
       iframe {
         position: absolute;
-        top: 30px;
-        left: 28px;
+        top: 28px;
+        left: 26px;
+        width: 84%;
+        height: 69%;
+
+        @media (min-width: 480px) {
+          top: 20px;
+          left: 18px;
+          width: 92%;
+          height: 85%;
+        }
+
+        @media (min-width: 568px) {
+          top: 25px;
+          left: 23px;
+          width: 92%;
+          height: 86%;
+        }
+
+        @media (min-width: 600px) {
+          top: 25px;
+          left: 23px;
+          width: 92%;
+          height: 86%;
+        }
+
+        @include breakpoint(tablet){
+          top: 29px;
+          left: 63px;
+          width: 84%;
+          height: 85%;
+        }
+
+        @media (min-width: 800px) {
+          top: 29px;
+          left: 79px;
+          width: 80%;
+          height: 85%;
+        }
+
+        @media (min-width: 1024px) {
+          top: 29px;
+          left: 119px;
+          width: 73%;
+          height: 85%;
+        }
+
+        @include breakpoint(desktop){
+          top: 29px;
+          left: 119px;
+          width: 73%;
+          height: 85%;
+        }
       }
     }
 
     .text-foot {
       position: relative;
-      width: 530px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 112px;
+      margin-left: 9%;
+      margin-right: 9%;
+      margin-bottom: 70px;
+
+      @include breakpoint(tablet){
+        width: 530px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 112px;
+      }
 
       p {
         color: #FFF;
-        font-size: 20px;
+        font-size: 16px;
         font-family: $font-primary;
         text-align: center;
-        line-height: 24px;
+        line-height: 22px;
+
+        @include breakpoint(tablet){
+          font-size: 20px;
+          line-height: 24px;
+          font-weight: 300;
+        }
       }
 
       .quote-open {
@@ -359,7 +506,12 @@
         display: block;
         position: absolute;
         top: -21px;
-        left: -49px;
+        left: -5px;
+        z-index: -1;
+
+        @include breakpoint(tablet){
+          left: -49px;
+        }
       }
 
       .quote-close {
@@ -369,7 +521,12 @@
         display: block;
         position: absolute;
         bottom: -11px;
-        right: -49px;
+        right: -5px;
+        z-index: -1;
+
+        @include breakpoint(tablet){
+          right: -49px;
+        }
       }
     }
   }
@@ -379,14 +536,31 @@
 
     ul{
       @include outer-container;
-      margin-top: 89px;
-      margin-bottom: 26px;
+      margin-top: 50px;
+      margin-bottom: 63px;
+
+      @include breakpoint(desktop) {
+        margin: 89 0 26px;
+      }
     }
+
     li{
-      @include span-columns(4);
-      float: left;
-      margin-left: 0;
+      display: block;
+      width: 83%;
+      float: none;
+      margin: 0 auto 54px;
+
+      @include breakpoint(desktop) {
+        margin: 0 auto;
+      }
+
+      @include breakpoint(desktop) {
+        @include span-columns(4);
+        float: left;
+        margin-left: 0;
+      }
     }
+
     .news-item{
       padding:33px 3.5% 42px;
       height: 339px;
@@ -416,25 +590,13 @@
   }
 }
 
-.careers-work, .careers-contact{
-  font-size: 40px;
-  font-family: $font-secondary;
-  top: 325px;
-  position: absolute;
-
-  a{
-    color: $color-one;
-    font-size: 60px;
-  }
-
-  span{
-    font-weight: 300;
-  }
-}
-
 .dash-left, .dash-right{
-  top: 325px;
+  top: 245px;
   position: absolute;
+
+  @include breakpoint(tablet){
+    top: 300px;
+  }
 
   .dash{
     width: 115px;
@@ -445,30 +607,111 @@
 }
 
 .dash-left{
-  left: 55%;
-  margin-left: -175px;
+  left: 50%;
+  margin-left: -1px;
+
+  @include breakpoint(tablet){
+    left: 55%;
+    margin-left: -175px;
+  }
 
   .dash{
     float: right;
     margin-left: -175px;
-    @include transform(rotate(-51deg));
-    right: -70px;
+    @include transform(rotate(90deg));
+    right: -34px;
+    width: 68px;
+
+    @include breakpoint(tablet){
+      @include transform(rotate(-51deg));
+      width: 115px;
+      right: -70px;
+    }
   }
 }
 
 .dash-right{
-  right: 55%;
-  margin-right: -175px;
+  right: 50%;
+  margin-right: -59px;
+
+  @include breakpoint(tablet){
+    right: 55%;
+    margin-right: -175px;
+  }
 
   .dash{
-    @include transform(rotate(51deg));
+    @include transform(rotate(-135deg));
     left: -70px;
+    width: 20px;
+    height: 20px;
+    border-left: dashed 2px $color-five;
+    top: -30px;
+
+    @include breakpoint(tablet){
+      @include transform(rotate(51deg));
+      top: -50px;
+      height: 0;
+      border-left: none;
+      width: 115px;
+    }
+  }
+}
+
+.careers-or{
+  font-family: $font-secondary;
+  font-size: 41px;
+  text-align: center;
+  font-weight: 300;
+  color: $color-two;
+  margin-top: 10px;
+
+  @include breakpoint(tablet){
+    display: none;
+  }
+}
+
+.careers-work, .careers-contact{
+  font-size: 40px;
+  font-family: $font-secondary;
+  position: relative;
+
+  margin-top: 260px;
+  text-align: center;
+
+  @include breakpoint(tablet){
+    top: 325px;
+    position: absolute;
+    margin-top: 0;
+  }
+
+  a{
+    color: $color-one;
+    font-size: 60px;
+    position: relative;
+  }
+
+  span{
+    font-weight: 300;
+    display: block;
+    line-height: 18px;
+
+    @include breakpoint(tablet){
+      display: inline;
+      line-height: auto;
+    }
   }
 }
 
 .careers-work{
-  left: 33%;
-  margin-left: -150px;
+
+  @include breakpoint(tablet){
+    margin-left: -150px;
+    left: 22%;
+  }
+
+  @include breakpoint(desktop){
+    left: 33%;
+  }
 
   .decoration{
     background: url(asset-path("sprite.png",image)) no-repeat;
@@ -481,8 +724,17 @@
 }
 
 .careers-contact{
-  right: 33%;
-  margin-right: -130px;
+  margin-top: 0;
+
+  @include breakpoint(tablet){
+    top: 325px;
+    margin-right: -130px;
+    right: 20%;
+  }
+
+  @include breakpoint(desktop){
+    right: 33%;
+  }
 
   .decoration{
     background: url(asset-path("sprite.png",image)) no-repeat right bottom;
@@ -491,6 +743,10 @@
     width: 154px;
     left: 6px;
     bottom: -6px;
+  }
+
+  span{
+    line-height: 60px;
   }
 }
 
@@ -529,10 +785,14 @@
 }
 
 .careers-title{
-  height: 200px;
+  height: 120px;
   position: relative;
   width: 100%;
   overflow: hidden;
+
+  @include breakpoint(desktop){
+    height: 200px;
+  }
 }
 
 .cover{
@@ -551,9 +811,10 @@
   }
 }
 
-.slider-valor{
+.slider-valor, .slider-position{
   position: absolute;
   z-index: -1;
+  width: 100%;
 
   &.active{
     position: static;
@@ -562,31 +823,30 @@
 
   #pager-valor {
     display: block;
-    width: 820px;
     height: 54px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.08);
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 97px;
-    margin-top: 29px;
-    padding-left: 44%;
-    padding-right: 43%;
+    margin-bottom: 20px;
     padding-top: 6px;
+    text-align: center;
+
+    @include breakpoint(tablet){
+      margin-top: 29px;
+      @include border-radius(10px);
+      background-color: rgba(0, 0, 0, 0.08);
+      padding-left: 44%;
+      padding-right: 43%;
+      margin-bottom: 50px;
+    }
 
     a {
       width: 12px;
       height: 12px;
       margin: 6px;
-      -webkit-border-radius: 6px;
-      -moz-border-radius: 6px;
-      border-radius: 6px;
+      @include border-radius(6px);
       background-color: #fff;
-      -webkit-box-shadow: inset 1px 1px rgba(1,17,35,.75);
-      -moz-box-shadow: inset 1px 1px rgba(1,17,35,.75);
-      box-shadow: inset 1px 1px rgba(1,17,35,.75);
+      @include box-shadow(inset 1px 1px rgba(1,17,35,.75));
       display: inline-block;
       font-size: 1px;
       color: #fff;
@@ -610,12 +870,15 @@
 .single{
   top: 0;
   background: white;
-  height: 100%;
   width: 100%;
-  display: none;
+  position: absolute;
+  @include transition(.5s ease-in-out);
+  @include transform(translateY(-100%));
+  z-index: 999;
 
   &.active{
-    display: block;
+    position: relative;
+    @include transform(translateY(0));
   }
 
   .close-top, .close-bottom {
@@ -634,7 +897,6 @@
   }
 
   .close-bottom {
-    bottom: 114px !important;
     position: absolute;
     right: 1px;
     left: 1px;
@@ -642,6 +904,7 @@
     width: 118px;
     -webkit-border-radius: 10px 10px 0 0;
     margin-bottom: 0;
+
 
     span {
       font-size: 16px;
@@ -651,99 +914,7 @@
     }
   }
 }
-section.slider {
-  .single-title{
-    background: #ecf1f5;
-    height: 80px;
-    text-align: center;
 
-    h2{
-      color: $color-three;
-      display: inline-block;
-      font-size: 20px;
-      margin: 27px 0 0;
-      position: static;
-      width: auto;
-      font-family: $font-primary;
-      font-weight: 600;
-    }
-     h2:before, h2:after {
-      @include ico("\e603");
-      color: #000;
-      display: inline-block;
-      width: 70px;
-      font-size: 30px;
-      vertical-align: middle;
-    }
-  }
-
-  .single-content{
-    text-align: center;
-    padding: 0 0 40px;
-
-    .container {
-      padding-bottom: 40px;
-    }
-
-    .close-top, .close-bottom {
-      background: #c6c6c6;
-      width: 48px;
-      height: 48px;
-      @include border-radius(0 0 10px 10px);
-      float: right;
-      text-align: center;
-      line-height: 43px;
-      cursor: pointer;
-      font-family: arial, sans-serif;
-      font-size: 28px;
-      font-weight: 300;
-      margin-bottom: 14px;
-    }
-
-    .close-bottom {
-      bottom: 0;
-      position: absolute;
-      right: 1px;
-      left: 1px;
-      margin: auto;
-      width: 118px;
-      -webkit-border-radius: 10px 10px 0 0;
-      margin-bottom: 0;
-
-      span {
-        font-size: 16px;
-        padding-left: 6px;
-        font-family: $font-primary;
-        font-weight: 600;
-      }
-    }
-
-    h3{
-      font-size: 26px;
-      color: $color-one;
-      padding: 0;
-      font-weight: 600;
-      line-height: 30.5px;
-    }
-
-    p{
-      width: 800px;
-      font-size: 14px;
-      font-weight: 300;
-      line-height: 24px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: -8px;
-      margin-top: 32px;
-      font-weight: 600;
-    }
-
-    img{
-      border: #000 solid 3px;
-      margin: 45px 0;
-    }
-  }
-}
 
 .careers{
 
@@ -756,33 +927,60 @@ section.slider {
     background: #ffe1f3;
     height: 80px;
     text-align: center;
+    display: table;
+    width: 100%;
 
     h2{
       color: #000;
-      display: inline-block;
-      font-size: 20px;
-      margin: 27px 0 0;
-      position: static;
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 17px;
+      margin: 0;
       width: auto;
       font-family: $font-primary;
-      font-weight: 600;
+      font-weight: 300;
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 80px;
+      padding: 0 40px;
+
+      @include breakpoint(tablet){
+        font-size: 20px;
+      }
     }
-     h2:before, h2:after {
+
+    h2:before, h2:after {
       @include ico("\e603");
       color: #f20892;
       display: inline-block;
-      width: 70px;
-      font-size: 30px;
+      width: 30px;
+      font-size: 25px;
       vertical-align: middle;
+      position: absolute;
+      top: 30px;
+      left: 4%;
+
+
+      @include breakpoint(tablet){
+        width: 70px;
+        font-size: 30px;
+        position: static;
+      }
+    }
+
+    h2:after {
+      left: auto;
+      right: 4%;
     }
   }
 
   .single-content{
     text-align: center;
-    padding: 0 0 40px;
+    padding: 0 ;
 
     .container {
-      padding-bottom: 40px;
+      padding-bottom: 0;
     }
 
     .close-top, .close-bottom {
@@ -798,6 +996,16 @@ section.slider {
       font-size: 28px;
       font-weight: 300;
       margin-bottom: 14px;
+    }
+
+    .close-top{
+      display: none;
+
+      @include breakpoint(tablet){
+        margin-right: 3%;
+        margin-bottom: 0;
+        display: block;
+      }
     }
 
     .close-bottom {
@@ -819,27 +1027,147 @@ section.slider {
     }
 
     h3{
-      font-size: 26px;
+      font-size: 21px;
       color: $color-one;
-      padding: 0;
-      font-weight: 600;
-      line-height: 30.5px;
+      padding: 15px 10% 0;
+      font-weight: 300;
+      line-height: 26.5px;
+      margin-bottom: 30px;
+
+      @include breakpoint(tablet){
+        padding: 0 15%;
+        font-size: 26px;
+        line-height: 30.5px;
+      }
     }
 
     p{
-      width: 800px;
       font-size: 14px;
       font-weight: 300;
       line-height: 24px;
       margin-left: auto;
       margin-right: auto;
-      margin-bottom: 30px;
-      margin-top: 51px;
-      font-weight: 600;
+      margin-bottom: 20px;
+      margin: 0 auto 20px;
+      font-weight: 300;
+      clear: both;
+      padding: 0 25px;
+
+      @include breakpoint(tablet){
+        margin: 0 auto 28px;
+        padding: 0 15%;
+        font-weight: 600;
+      }
     }
 
     img{
-      margin: 38px 0 115px;
+      margin: 0 0 50px;
+    }
+
+    .single-detail{
+      padding: 0 25px;
+
+      @include breakpoint(tablet){
+        padding: 0;
+      }
+    }
+  }
+
+  .carousel .carousel-inner{
+    height: auto;
+  }
+}
+
+section.slider {
+  .single-title{
+    background: #ecf1f5;
+
+    h2{
+      color: $color-three;
+    }
+
+    h2:before, h2:after {
+      color: #000;
+    }
+  }
+
+  .single-content{
+    text-align: center;
+    padding: 0;
+
+    .container {
+      padding-bottom: 50px;
+    }
+
+    .close-top, .close-bottom {
+      background: #c6c6c6;
+      width: 48px;
+      height: 48px;
+      @include border-radius(0 0 10px 10px);
+      float: right;
+      text-align: center;
+      line-height: 43px;
+      cursor: pointer;
+      font-family: arial, sans-serif;
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 14px;
+    }
+
+    .close-top{
+      display: none;
+
+      @include breakpoint(tablet){
+        margin-right: 3%;
+        margin-bottom: 0;
+        display: block;
+      }
+    }
+
+    .close-bottom {
+      bottom: 0;
+      position: absolute;
+      right: 1px;
+      left: 1px;
+      margin: auto;
+      width: 118px;
+      -webkit-border-radius: 10px 10px 0 0;
+      margin-bottom: 0;
+
+      span {
+        font-size: 16px;
+        padding-left: 6px;
+        font-family: $font-primary;
+        font-weight: 600;
+      }
+    }
+
+    img{
+      border: #000 solid 3px;
+    }
+  }
+
+  .single-detail{
+    p{
+
+    }
+  }
+}
+
+.careers-position{
+  .single-content{
+    .single-detail{
+      padding-top: 50px;
+    }
+
+    p{
+      padding: 0;
+      text-align: left;
+
+      @include breakpoint(tablet){
+        padding: 0 15%;
+        text-align: center;
+      }
     }
   }
 }
@@ -861,67 +1189,131 @@ section.slider {
 }
 
 #position{
-  padding: 73px 0;
+  padding: 20px 0;
   overflow: hidden;
 
+  @include breakpoint(tablet){
+    padding: 73px 0;
+  }
+
   .carousel-control {
-    bottom: 210px;
+    top: 120px;
+
+    @include breakpoint(tablet){
+      top: auto;
+      bottom: 50px;
+    }
+
+    &.left{
+      left: 2%;
+    }
+    &.right{
+      right: 2%;
+    }
   }
 }
 
 .position-icons{
   background: #E50892;
   border: 7px solid #a60563;
-  width: 303px;
-  height: 303px;
+  width: 200px;
+  height: 200px;
   @include border-radius(290px);
   text-align: center;
   line-height: 290px;
-  float: left;
-  margin-left: 9%;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint(tablet){
+    width: 303px;
+    height: 303px;
+    float: left;
+    margin-left: 9%;
+  }
 
   .icon-imac {
     position: relative;
-    font-size: 184px;
-    top: 14px;
+    font-size: 135px;
+    top: -44px;
     left: 3px;
+
+    @include breakpoint(tablet){
+      font-size: 184px;
+      top: 14px;
+    }
 
     .icon-ruler {
       position: absolute;
-      left: 69px;
-      font-size: 38px;
-      bottom: 7px;
+      left: 49px;
+      font-size: 30px;
+      bottom: -33px;
+
+      @include breakpoint(tablet){
+        left: 69px;
+        font-size: 38px;
+        bottom: 7px;
+      }
     }
   }
 
   .icon-cogs {
-    font-size: 143px;
+    font-size: 100px;
+    top: -46px;
+    position: relative;
+
+    @include breakpoint(tablet){
+      font-size: 180px;
+      top: 0;
+    }
   }
 
   .icon-address-book {
     position: relative;
-    font-size: 110px;
+    font-size: 90px;
     left: -19px;
-    top: -7px;
+    top: -50px;
+
+    @include breakpoint(tablet){
+      font-size: 110px;
+      top: -7px;
+    }
 
     .icon-mouse {
       position: absolute;
-      font-size: 63px;
-      left: 78px;
-      top: -34px;
+      font-size: 40px;
+      left: 69px;
+      top: -57px;
+
+      @include breakpoint(tablet){
+        font-size: 63px;
+        left: 78px;
+        top: -34px;
+      }
     }
   }
 
   .icon-presentation {
-    font-size: 145px;
+    font-size: 102px;
     position: relative;
-    top: 3px;
+    top: -43px;
     left: 2px;
+
+    @include breakpoint(tablet){
+      font-size: 145px;
+      top: 3px;
+    }
   }
 
   .icon-partners {
     position: relative;
-    font-size: 120px;
+    font-size: 95px;
+    top: -50px;
+
+    @include breakpoint(tablet){
+      top: 0;
+      font-size: 120px;
+    }
   }
 
   i{
@@ -932,7 +1324,12 @@ section.slider {
 }
 
 .position-info{
-  margin-left: 49.5%;
+  text-align: center;
+
+  @include breakpoint(tablet){
+    margin-left: 49.5%;
+    text-align: left;
+  }
 
   .btn{
     margin: 11px;
@@ -945,19 +1342,29 @@ section.slider {
 
   h3{
     clear: none;
-    font-size: 45px;
+    font-size: 39px;
     letter-spacing: 1px;
-    margin-bottom: 22px;
-    padding-top: 6px;
+    margin-bottom: 20px;
+    padding: 10px 20px 0;
     font-family: $font-secondary;
     font-weight: 300;
     color: $color-one;
+
+    @include breakpoint(tablet){
+      font-size: 45px;
+      padding: 10px 0 0;
+    }
   }
 
   p{
     line-height: 24px;
     font-size: 14px;
-    width: 385px;
+    padding: 0 20px;
+
+    @include breakpoint(tablet){
+      width: 385px;
+      padding: 0;
+    }
   }
 }
 
@@ -966,32 +1373,50 @@ section.slider {
 }
 
 .positions-frame {
-  padding: 35px 0px;
-  background: url("/assets/positions-frame.png") no-repeat;
-  height: 326px;
-  width: 777px;
+  padding: 35px 20px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  margin-bottom: 119px;
+  margin-bottom: 80px;
+
+  @include breakpoint(tablet){
+    width: 768px;
+    height: 326px;
+    background: url("/assets/positions-frame.png") no-repeat center top;
+    background-size: 98%;
+    padding: 35px 0px;
+    margin-bottom: 119px;
+  }
+
+  @include breakpoint(desktop){
+    width: 777px;
+  }
+
   ul {
     display: inline-block;
     margin-top: 0px;
-    width: 37%;
+    width: 100%;
     font-size: 14px;
-    margin-left: 59px;
-    margin-right: 35px;
     text-align: left;
     float: left;
     margin-bottom: 20px;
+
+    @include breakpoint(tablet){
+      margin-left: 59px;
+      margin-right: 35px;
+      width: 37%;
+    }
+
     h4 {
       font-size: 17px;
       margin-bottom: 17px;
     }
+
     li {
       margin-left: 23px;
       margin-bottom: 9px;
     }
+
     li:before {
       @include ico("\f061");
       color: #316baf;
@@ -1003,15 +1428,20 @@ section.slider {
       top: -2px;
     }
   }
+
   .btn-primary {
-    position: absolute;
     left: 1px;
     right: 1px;
     margin: auto;
     display: inline-block;
-    width: 178px;
+    width: 100%;
     text-align: center;
     bottom: -19px;
+
+    @include breakpoint(tablet){
+      position: absolute;
+      width: 178px;
+    }
   }
 }
 
@@ -1024,4 +1454,181 @@ section.slider {
 
 .cover4{
   background: rgba(255,255,255,0.55);
+}
+
+@include breakpoint(desktop) {
+  .careers h2{
+    top: 140px;
+  }
+
+  .dash-left, .dash-right{
+    top: 360px;
+  }
+
+  .careers-work, .careers-contact{
+    top: 385px;
+  }
+}
+
+/* Module form contact */
+.careers{
+  .contact_form{
+    padding: 0 3%;
+
+    @include breakpoint(desktop) {
+      padding: 0;
+    }
+
+    .box-thirst{
+      padding: 10px 0;
+
+      @include breakpoint(tablet) {
+        padding: 35px 0 70px;
+      }
+
+      @include breakpoint(desktop) {
+        padding: 10px 0;
+      }
+
+      .btn{
+        float: none;
+        display: block;
+        margin: 0 auto;
+
+        @include breakpoint(tablet) {
+          float: right;
+          margin-right: 51px;
+        }
+      }
+
+      span{
+        float: none;
+        display: block;
+        text-align: center;
+        margin: 0;
+        height: 32px;
+
+        @include breakpoint(tablet) {
+          display: inline-block;
+          float: right;
+          margin-right: 34px;
+          margin-top: -9px;
+        }
+      }
+
+      p{
+        text-align: center;
+
+        @include breakpoint(tablet) {
+          text-align: right;
+          width: 61%;
+          float: left;
+          margin-right: 0;
+          margin-top: 5px;
+        }
+
+        @include breakpoint(desktop) {
+          width: 71%;
+          margin-top: 16px;
+        }
+      }
+    }
+
+    form {
+      margin: 0 5% 0;
+
+      @include breakpoint(desktop) {
+        margin: 0 0 180px;
+      }
+
+      .box-first, .box-second {
+        width: 100%;
+        float: none;
+
+        .f-text, .f-textarea{
+          float: left;
+          margin: 10px 0 10px;
+          width: 89%;
+
+          @include breakpoint(tablet) {
+            width: 42%;
+            margin: 18px 51px 18px 0;
+          }
+
+          @include breakpoint(desktop) {
+            width: 44%;
+          }
+        }
+
+        input, select, textarea{
+          margin: 0;
+        }
+      }
+
+      @include breakpoint(desktop) {
+        .box-first{
+          float: left;
+          width: 36%;
+
+          .f-text, .f-textarea{
+            width: 96%;
+          }
+        }
+      }
+
+      @include breakpoint(tablet) {
+        .box-second{
+          .f-textarea, .f-text{
+            width: 92%;
+          }
+        }
+      }
+
+      @include breakpoint(desktop) {
+        .box-second{
+          float: right;
+          width: 56%;
+          margin: 0;
+        }
+      }
+    }
+
+    .container-title {
+      @include span-columns(12);
+      margin: 20px 0;
+      padding: 0;
+      border: none;
+      text-align: center;
+
+      @include breakpoint(tablet) {
+        margin: 0;
+      }
+
+      h2 {
+        font-size: 38px;
+        top: 44px;
+        background: #ED0892;
+        color: #fff;
+        font-weight: 300;
+
+        &:after, &:before{
+          width: 20px;
+
+          @include breakpoint(tablet) {
+            width: 50px;
+          }
+        }
+
+        @include breakpoint(tablet) {
+          font-size: 59px;
+        }
+      }
+
+      @include breakpoint(tablet) {
+        margin-top: 83px;
+        padding-top: 60px;
+        border-top: 2px dashed #382f2d;
+      }
+    }
+  }
 }
