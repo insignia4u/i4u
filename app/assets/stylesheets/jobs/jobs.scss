@@ -1,8 +1,20 @@
-#vanilla-parallax{
+.vanilla-parallax{
   min-height: 480px;
   position: fixed;
   width: 100%;
   z-index: 0;
+
+  .layer{
+    @media (max-width:1024px) {
+      display: none;
+    }
+  }
+
+  @include breakpoint(desktop){
+    .nolayer{
+      display: none;
+    }
+  }
 }
 
 #intro-parallax{
@@ -34,6 +46,14 @@
 }
 
 .layer{
+
+  @media (max-width:1024px) {
+    -webkit-transform: translate3d(0, 0, 0)!important;
+    -moz-transform: translate3d(0, 0, 0)!important;
+    -ms-transform: translate3d(0, 0, 0)!important;
+    -o-transform: translate3d(0, 0, 0)!important;
+    transform: translate3d(0, 0, 0)!important;
+  }
 
   .titleright, .titleleft{
     color: $color-two;
@@ -188,6 +208,7 @@
     z-index: 1;
     position:relative;
     margin:0;
+    @include transform(translate3d(0,0,0));
 
     &.dashed-separator {
       min-height: 0;
@@ -397,7 +418,8 @@
   }
 
   .testimonies {
-    background: url("/assets/background-dark-pattern.gif") repeat 0 0;
+    background:#000 url("/assets/background-dark-pattern.gif") repeat 0 0;
+    -webkit-transform: translate3d(0,0,0);
 
     .video-frame {
       position: relative;
@@ -751,36 +773,57 @@
 }
 
 .scroll-now{
+  @include transform(translate3d(0,0,0));
   background: $color-one;
-  height: 136px;
+  height: 67px;
   font-family: $font-secondary;
   color: $color-six;
   font-size: 34px;
   font-weight: 300;
   text-align: center;
-  padding-top: 41px;
+  padding-top: 10px;
   z-index: 1;
   position: absolute;
   bottom: 0;
   width: 100%;
 
+  @include breakpoint(tablet){
+    height: 136px;
+    padding-top: 41px;
+  }
+
   span{
     display: inline-block;
-    width: 57px;
-    height: 57px;
+    width: 40px;
+    height: 40px;
     text-align: center;
-    line-height: 57px;
+    line-height: 33px;
     @include border-radius(50%);
     background: $color-two;
+
+    @include breakpoint(tablet){
+      width: 57px;
+      height: 57px;
+      line-height: 57px;
+    }
   }
 
   i{
     color: $color-one;
     display: inline-block;
     @include transform(rotate(90deg));
-    left: -1px;
     position: relative;
+    left: -1px;
     top: 2px;
+    font-size: 23px;
+    line-height: 23px;
+
+    @include breakpoint(tablet){
+      font-size: 32px;
+      line-height: 32px;
+      left: 0;
+      top: 4px;
+    }
   }
 }
 

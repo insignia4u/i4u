@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 footer{
+  @include transform(translate3d(0,0,0));
   background: rgba(24, 52, 85, 0.9);
   border-top:#3469af solid 4px;
   color:#6390d4;

@@ -6,6 +6,7 @@
 :: HEADER
 ---------------------------- */
 header{
+  @include transform(translate3d(0,0,0));
   background:#fff;
   text-align:center;
   position: relative;

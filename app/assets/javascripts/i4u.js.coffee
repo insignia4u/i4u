@@ -132,12 +132,13 @@ $(document).ready ->
 
   $(".equal5").css('height', biggestHeight + 50)
 
-  # $('#vanilla-parallax, #intro-parallax, .careers-title').parallax()
+  $('.vanilla-parallax, #intro-parallax').parallax()
 
-  # $('#vanilla-parallax').parallax()
+  # $('.vanilla-parallax, #intro-parallax').parallax()
 
   # heightScreen = $(window).height() - 137
   # $("#intro-parallax").height(heightScreen)
+
 
   $(".dash-box a").click (e) ->
     e.preventDefault()
@@ -186,7 +187,7 @@ $(document).ready ->
       $(".careers-position").height heightSlider2
 
   $(".careers-position .close").click ->
-    $(".slider-position").css "height", "auto"
+    $(".careers-position").css "height", "auto"
 
     $(".careers-position .single").removeClass("active")
     $(".slider-position").addClass("active")

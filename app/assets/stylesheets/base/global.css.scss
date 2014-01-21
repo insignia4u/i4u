@@ -120,6 +120,7 @@ body{
   background: url(asset-path("background-pattern.gif", image)) repeat 0 0;
   font-weight: bold;
   color: $color-one;
+  @include animation(reset 0.5s ease-in,fade 0.5s ease-in 0.5s);
 }
 
 section{
@@ -492,4 +493,55 @@ aside{
 .reg{
   font-weight: normal;
   color: $color-one!important;
+}
+
+select{
+  @include appearance(none);
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+.triangle{
+  height: 0;
+  width: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 6px;
+  border-top-color: $color-two;
+  display: inline-block;
+
+  form &{
+    position: absolute;
+    top: 45%;
+    right: 4%;
+  }
+}
+
+#toTop{
+  @include transform(translate3d(0,0,0));
+}
+
+@-moz-keyframes reset{
+  0%,100%{opacity:0}
+}
+@-o-keyframes reset{
+  0%,100%{opacity:0}
+}
+@-webkit-keyframes reset{
+  0%,100%{opacity:0}
+}
+@keyframes reset{
+  0%,100%{opacity:0}
+}
+@-moz-keyframes fade{
+  0%,50%{opacity:0}100%{opacity:1}
+}
+@-o-keyframes fade{
+  0%,50%{opacity:0}100%{opacity:1}
+}
+@-webkit-keyframes fade{
+  0%,50%{opacity:0}100%{opacity:1}
+}
+@keyframes fade{
+  0%,50%{opacity:0}100%{opacity:1}
 }

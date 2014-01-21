@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require smoothscroll
 //= require jquery.transit.min
 //= require easing
 //= require jquery-picture.min
