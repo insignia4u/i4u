@@ -14,6 +14,7 @@ $color-three: #316baf; /* blue */
 $color-four: #383435; /* dark gray - background nav*/
 $color-five: #b4b4b4;
 $color-six: #979797;
+$color-seven: #626262;
 
 /* ----------------------------
 :: Mixins
@@ -179,36 +180,9 @@ nav ul, .content{
   height: 80px;
 }
 
-.container-title, .box{
+.container-title{
   h2, h3, h4{
     font-family: $font-secondary;
-  }
-}
-
-.box{
-  @include border-radius(10px);
-  background: rgba(0,0,0,.03);
-  margin-bottom: 30px;
-  padding: 15px;
-
-  h2{
-    @include titlesize(44);
-    color: #373435;
-    text-align: center;
-    margin: 0 0 25px;
-  }
-
-  h3{
-    color: #f10791;
-    @include titlesize(54);
-    margin: 15px 0;
-  }
-
-  h4{
-    @include titlesize(34);
-    color: #f21a9a;
-    margin: 5px 0;
-    line-height: 28px;
   }
 }
 
@@ -288,8 +262,8 @@ nav ul, .content{
 
   i{
     color: white;
-    font-size: 3em;
-    line-height: 1.6em;
+    font-size: em(12);
+    line-height: em(25);
     background: none;
     display: block;
   }
@@ -331,11 +305,6 @@ nav ul, .content{
   .icon-users{
     line-height: 2.3em;
     font-size: em(35);
-  }
-
-  .icon-smiley{
-    line-height: 1.8em;
-    font-size: 26px;
   }
 
 }
@@ -466,6 +435,7 @@ a.bottom-link{
   text-decoration: none;
   line-height: 15px;
   display: block;
+  font-weight: 300;
 
   span{
     font-size: 22px;

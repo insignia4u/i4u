@@ -9,5 +9,6 @@
 //= require jquery.carouFredSel-6.2.1
 //= require totop
 //= require noty
-//= require jquery.parallax
+//= require jquery.stellar.min
+//= require iscroll
 //= require i4u

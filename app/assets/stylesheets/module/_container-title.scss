@@ -1,0 +1,95 @@
+.container-title{
+  border-top: 2px dashed #B8B8B8;
+  margin-top: 90px;
+  width: 100%;
+  text-align: center;
+  clear: both;
+
+  h2{
+    background: url(asset-path("background-pattern.gif", image));
+    position: relative;
+    top: -36px;
+    color: #343233;
+    font-size: em(60);
+    line-height: 60px;
+    margin: auto;
+    display: inline-block;
+    font-family: $font-secondary;
+
+    span{
+      font-weight: 400;
+    }
+  }
+
+}
+
+.container-title.big{
+  h2{
+    font-size: em(92);
+    line-height: 92px;
+  }
+}
+
+.blog{
+
+  .container-title{
+    border: none;
+
+    h2{
+      font-size: em(66);
+      top: 0;
+      margin: 30px 25px;
+      display: block;
+      position: relative;
+
+      @include breakpoint(tablet){
+        top: -40px;
+        padding: 0 80px;
+        margin: 0;
+        display: inline-block;
+      }
+
+      &:before, &:after{
+        position: absolute;
+        top: 30%;
+        font-size: 30px;
+
+        @include breakpoint(desktop){
+          top: 55%;
+        }
+      }
+
+      &:before{
+        left: 0;
+      }
+
+      &:after{
+        right: 0;
+
+        @include breakpoint(tablet){
+          right: 3%;
+        }
+
+        @include breakpoint(desktop){
+          right: 0;
+        }
+      }
+    }
+
+    @include breakpoint(tablet){
+      border-top: 2px dashed #b8b8b8;
+      font-size: em(92,66);
+      margin: 90px 25px 0;
+    }
+
+    @include breakpoint(desktop){
+      margin: 90px 0 -20px;
+
+      h2{
+        font-size: 92px;
+        line-height: 92px;
+        top: -66px;
+      }
+    }
+  }
+}

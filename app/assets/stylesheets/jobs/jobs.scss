@@ -5,9 +5,16 @@
   z-index: 0;
 
   .layer{
-    @media (max-width:1024px) {
-      display: none;
-    }
+    // position: absolute;
+    // width: 15px;
+    // height: 15px;
+    // border-radius: 15px;
+    // background: white;
+    // @include box-shadow(0 1px 2px rgba(0,0,0,0.5));
+
+    // @media (max-width:1024px) {
+    //   display: none;
+    // }
   }
 
   @include breakpoint(desktop){
@@ -47,13 +54,17 @@
 
 .layer{
 
-  @media (max-width:1024px) {
-    -webkit-transform: translate3d(0, 0, 0)!important;
-    -moz-transform: translate3d(0, 0, 0)!important;
-    -ms-transform: translate3d(0, 0, 0)!important;
-    -o-transform: translate3d(0, 0, 0)!important;
-    transform: translate3d(0, 0, 0)!important;
-  }
+  // &.item01 { left: 130px;  }
+  // &.item02 { left: 160px;  }
+  // &.item03 { left: 190px;  }
+  // &.item04 { left: 220px;  }
+  // &.item05 { left: 250px; }
+  // &.item06 { left: 280px; }
+  // &.item07 { left: 310px; }
+  // &.item08 { left: 340px; }
+  // &.item09 { left: 370px; }
+  // &.item10 { left: 410px; }
+
 
   .titleright, .titleleft{
     color: $color-two;

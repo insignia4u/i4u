@@ -5,7 +5,6 @@
 ---------------------------- */
   header{
     border-bottom: #5f5d5e solid 2px;
-    padding-bottom: 19px;
 
     .container{
       height: auto;
@@ -13,6 +12,7 @@
 
     h1{
       margin-top: 65px;
+      padding-bottom: 20px;
 
       a{
         width: 189px;
@@ -80,16 +80,17 @@
     z-index: 999;
     display: inline-block;
     font-family: $font-primary;
-    right: 0.4em;
+    right: 0.6em;
     border: 1px solid #383435;
     padding: 0 4px;
     font-weight: bold;
   }
 
   nav #menu-btn{
-    top: 0.4em;
+    top: 0.6em;
     color: #f10993;
     font-size: 1.5em;
+    padding: 2px 4px 0;
   }
 
   nav span{

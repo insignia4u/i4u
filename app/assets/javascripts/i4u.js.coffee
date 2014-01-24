@@ -90,13 +90,19 @@ $(document).ready ->
     $("header nav span").slideToggle "slow"
 
   $(".nav-categories").click ->
-    $(".nav-blog-categories").slideDown "slow", ->
-      $(".nav-blog-categories .close").show 200
+    $(this).closest(".nav-mobile").addClass "open-categories"
+    $(".categories").addClass "showcat"
+    $(".categories").slideDown "slow", ->
+      $(".categories .close").show 200
+      $(".open-categories .arrow").slideDown "slow"
 
 
-  $(".nav-blog-categories .close").click ->
-    $(".nav-blog-categories .close").hide 200, ->
-      $(".nav-blog-categories").slideUp "slow"
+  $(".categories .close").click ->
+    $(".categories .close").hide 200, ->
+      $(".categories").slideUp "slow", ->
+        $(".open-categories .arrow").slideUp "slow"
+        $(".categories").removeClass "showcat"
+        $(".nav-mobile").removeClass "open-categories"
 
 
   $(".nav-blog .btn-search").click ->
@@ -132,7 +138,26 @@ $(document).ready ->
 
   $(".equal5").css('height', biggestHeight + 50)
 
-  $('.vanilla-parallax, #intro-parallax').parallax()
+  # ua = navigator.userAgent
+  # isMobileWebkit = /WebKit/.test(ua) and /Mobile/.test(ua)
+  # $("html").addClass "mobile"  if isMobileWebkit
+  # $ ->
+  #   iScrollInstance = undefined
+  #   if isMobileWebkit
+  #     iScrollInstance = new iScroll("wrapper")
+  #     $("#scroller").stellar
+  #       scrollProperty: "transform"
+  #       horizontalScrolling: false
+  #       verticalOffset: 150
+
+  #   else
+  #     $.stellar
+  #       horizontalScrolling: false
+  #       verticalOffset: 150
+
+
+
+  # $('.vanilla-parallax, #intro-parallax').parallax()
 
   # $('.vanilla-parallax, #intro-parallax').parallax()
 

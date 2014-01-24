@@ -2,11 +2,12 @@
   = stylesheet_link_tag "pages/contacto"
   = stylesheet_link_tag "pages/empleo"
 
-.careers
-  = render "parallax"
-  = render "intro"
-  = render "valor"
-  = render "position"
-  = render "testimonials"
-  = render "events"
-  = render "contact_form"
+#wrapper.careers
+  #scroller
+    = render "parallax"
+    = render "intro"
+    = render "valor"
+    = render "position"
+    = render "testimonials"
+    = render "events"
+    = render "contact_form"

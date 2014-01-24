@@ -1,0 +1,307 @@
+.blog{
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0;
+
+  aside{
+    float:none;
+    margin: 0 auto 40px;
+
+    @include breakpoint(tablet){
+    }
+
+    @include breakpoint(desktop){
+      width: 242px;
+      position: relative;
+      float: right;
+    }
+
+    .icon-search, .search, .subscribe-link, .categories{
+      display: none;
+
+      @include breakpoint(desktop){
+        display: block;
+      }
+    }
+
+    @include breakpoint(desktop){
+      .icon-search{
+        color: #F20892;
+        position: absolute;
+        right: 13px;
+        font-size: 22px;
+        top: 7px;
+      }
+
+      .search{
+        @include border-radius(5px);
+        @include box-shadow(1px 1px 2px #999);
+        border: #a59c9f solid 1px;
+        height: 21px;
+        line-height: 21px;
+        padding: 10px 35px 10px 18px;
+        font-size: 16px;
+        width: 186px;
+      }
+
+      .subscribe-link{
+        font-family: $font-secondary;
+        font-size: 32px;
+        color: #000;
+        text-decoration: none;
+        width: 208px;
+        margin: 35px auto 40px;
+        white-space: nowrap;
+
+        .icon-rss{
+          color: #F20892;
+          font-size: 25px;
+          margin: 0 0 0 17px;
+        }
+      }
+
+      .list-categories{
+        padding: 10px 0 20px;
+
+        li{
+          padding: 1px 20px;
+        }
+
+        a{
+          color: #a7a6a6;
+          display:block;
+          line-height: 28px;
+          font-weight: bold;
+        }
+
+        a:hover{
+          color: #316baf;
+        }
+      }
+    }
+
+    .categories{
+      @include breakpoint(desktop){
+        display: block!important;
+      }
+
+      .close{
+        display: none;
+        font-weight: 300;
+      }
+
+      .arrow{
+        display: none;
+        border-left: white solid 1px;
+        position: absolute;
+        left: 50%;
+        top: -10px;
+        width: 12px;
+        height: 12px;
+      }
+
+      &.showcat{
+        .close{
+          display: block;
+        }
+      }
+    }
+
+    form{
+      margin:0;
+    }
+
+    .showcat{
+      position: absolute;
+      margin-bottom: 140px;
+      overflow: visible;
+      display: none;
+      margin: 0;
+      padding: 0 0 30px;
+      top: 0;
+      @include border-radius(0);
+      width: 100%;
+      float: none;
+      z-index: 1;
+
+      ul{
+        background: #295991;
+        overflow: hidden;
+        padding:20px 0;
+
+        li{
+          text-align: center;
+        }
+
+        a{
+          color: #fff;
+          font-size: 15px;
+          display: block;
+          line-height: 35px;
+          text-decoration: none;
+          font-weight: 300;
+        }
+
+        a:hover{
+
+        }
+      }
+
+      a.close{
+        @include border-radius(0 0 5px 5px);
+        color: #fff;
+        background: #295991;
+        position: absolute;
+        display: block;
+        height: 30px;
+        padding: 0 16px 0 18px;
+        border: #fff solid 1px;
+        border-top: none;
+        text-decoration: none;
+        left: 50%;
+        margin-left: -60px;
+
+        span{
+          font-family: arial;
+          font-size: 22px;
+          line-height: 23px;
+          margin: 0 0 0 15px;
+          position: relative;
+        }
+      }
+    }
+
+    .tip-day{
+      @include breakpoint(tablet){
+        margin-left: 25px;
+      }
+
+      @include breakpoint(desktop){
+        margin-left: 0;
+      }
+    }
+
+    .rails-tip{
+
+      @include breakpoint(tablet){
+        float: right;
+        margin-right: 25px;
+      }
+
+      @include breakpoint(desktop){
+        float: none;
+        margin-right: 0;
+      }
+    }
+
+    .circle{
+      text-align: center;
+    }
+  }
+
+  .column{
+    float:none;
+    width: auto;
+    margin: 0 25px;
+    padding-bottom: 0;
+
+    @include breakpoint(tablet){
+      width:724px;
+      margin: 0 auto;
+    }
+
+    @include breakpoint(desktop){
+      float: left;
+      width: 637px;
+    }
+
+    article{
+      border-top: #a7a6a6 solid 1px;
+      clear:both;
+      margin-bottom: 35px;
+    }
+
+    .comment, .author{
+      color: #f20892;
+    }
+
+    .comment{
+      float: right;
+      font-size: 18px;
+      padding: 8px 0 0;
+      font-weight: 300;
+
+      .icon-comment{
+        margin: 0px 0 0 5px;
+        position: relative;
+        top: 3px;
+      }
+    }
+
+    .author{
+      padding: 11px 0 11px 2px;
+      font-weight: 300;
+    }
+
+    img{
+      width: 100%;
+      border: #000 solid 1px;
+    }
+
+    h3{
+      color: #316baf;
+      font-size: em(20);
+      margin: 25px 0 5px;
+      font-weight: 300;
+
+      @include breakpoint(tablet){
+        font-size: 26px;
+        margin: 20px 0 15px;
+      }
+
+      a{
+        color: #316baf;
+      }
+    }
+
+    .read-more{
+      margin-bottom: 35px;
+    }
+
+    .tags{
+      overflow: hidden;
+      margin:30px 0;
+
+      @include breakpoint(tablet){
+        margin:35px 0;
+      }
+
+      a{
+        @include border-radius(5px);
+        color: #a7a6a6;
+        border: #a7a6a6 dashed 1px;
+        display:block;
+        float: left;
+        margin: 0 10px 10px 0;
+        padding: 1px 10px 3px;
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: 300;
+      }
+    }
+
+    .btn{
+      display: block;
+      font-weight: 300;
+      text-align: center;
+      margin: 50px 0;
+
+      @include breakpoint(tablet){
+        display: inline-block;
+        margin: 0 0 50px;
+      }
+    }
+  }
+}

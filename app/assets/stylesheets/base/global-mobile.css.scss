@@ -4,9 +4,9 @@
     margin: 0 25px 10%;
   }
   .content p{
-    font-size: 13px;
-    line-height: 23px;
-    margin-bottom: 20px;
+    font-size: em(13,14);
+    line-height: em(23,13);
+    margin-bottom: 12px;
   }
 
   .container-title{
@@ -38,7 +38,7 @@
     section{
       .container-title{
         border-top: none;
-        
+
         h3{
           font-size: 40px;
           line-height: 40px;
