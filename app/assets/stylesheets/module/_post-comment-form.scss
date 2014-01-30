@@ -1,0 +1,14 @@
+.post-comment-form{
+  .container-title{
+    h2{
+      font-size: em(38);
+      line-height: 39px;
+      top: -25px;
+
+      &:before, &:after{
+        top: 21%;
+        color: $color-three;
+      }
+    }
+  }
+}

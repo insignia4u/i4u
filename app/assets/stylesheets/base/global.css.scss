@@ -78,8 +78,19 @@ $w1500: "1500px";
 }
 
 /* ----------------------------
+:: extends
+---------------------------- */
+
+.box-transparent-rounded{
+  @include border-radius(10px);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+
+/* ----------------------------
 :: Base
 ---------------------------- */
+
 p,a{
   -ms-word-break: break-all;
  -moz-word-break: break-all;
@@ -93,8 +104,13 @@ p,a{
           hyphens: auto;
 }
 
+p, a, h1, h2, h3, h4, h5, h6, label, input, textarea, ul, ol{
+  text-rendering: optimizeLegibility;
+}
+
 a{
   text-decoration: none;
+  -webkit-transition: all 0.4s ease-out;
 }
 
 ul{
@@ -116,6 +132,10 @@ h2, h3, h4{
   margin: 0;
 }
 
+html, input, textarea{
+  -webkit-font-smoothing: antialiased;
+}
+
 body{
   font-family: $font-primary;
   background: url(asset-path("background-pattern.gif", image)) repeat 0 0;
@@ -129,6 +149,12 @@ section{
   margin-bottom:70px;
 }
 
+%list-unstyled{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 .content{
   li, p{
     font-size: 14px;
@@ -139,7 +165,9 @@ section{
   p{
     margin: 0 0 20px;
   }
+}
 
+.column, aside{
   a{
     color:#316baf;
     text-decoration:underline;
@@ -435,7 +463,6 @@ a.bottom-link{
   text-decoration: none;
   line-height: 15px;
   display: block;
-  font-weight: 300;
 
   span{
     font-size: 22px;

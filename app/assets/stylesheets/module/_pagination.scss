@@ -1,0 +1,38 @@
+.pagination{
+  text-align: right;
+  height: em(22);
+  line-height: em(22);
+  margin: em(35) 0;
+
+  .l-previous, .l-next{
+    color: $color-two;
+    text-decoration: none;
+  }
+}
+
+.l-previous{
+  float: left;
+}
+
+.l-next{
+  .l-back-arrow{
+    margin: 0 0 0 5px;
+  }
+}
+
+.l-back{
+  @include inline-block;
+  background: $color-two;
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  right: 0;
+  top: 95px;
+  padding: 2px 10px 5px;
+  border-radius: 0 0 8px 8px;
+}
+
+.l-back-arrow{
+  @include inline-block;
+  margin-right: 5px;
+}

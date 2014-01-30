@@ -1,0 +1,17 @@
+.discussion{
+  overflow:hidden;
+
+  ol{
+    @extend %list-unstyled;
+    width: 626px;
+    float: right;
+
+    li{
+      clear: both;
+    }
+
+    ol{
+      width: 556px;
+    }
+  }
+}

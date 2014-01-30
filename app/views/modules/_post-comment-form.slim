@@ -1,0 +1,22 @@
+.post-comment-form
+  .container-title
+    h2 = title_for('Dejá tu Comentario')
+
+  form
+    .f-text
+      input type="text" placeholder="Name" name="name"
+      i.icon-user
+
+    .f-text
+      input type="email" placeholder="E-mail" name="email"
+      i.icon-envelope-alt
+
+    .f-text
+      input type="text" placeholder="Website" name="website"
+      i.icon-user
+
+    .f-textarea
+      textarea.comment placeholder="Comments"
+      i.icon-pencil
+
+    input.btn type="submit" value="Enviar"

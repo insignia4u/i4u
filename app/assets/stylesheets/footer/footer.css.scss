@@ -12,6 +12,19 @@ footer{
   &.footer-min{
     border: none;
   }
+
+  .social{
+    background:#000;
+    color:#747474;
+    height:75px;
+    font-family: $font-secondary;
+    float: left;
+    width:100%;
+
+    .container{
+      text-align:center;
+    }
+  }
 }
 
 .footer-contact{
@@ -105,62 +118,49 @@ footer{
   }
 }
 
-.social{
-  background:#000;
-  color:#747474;
-  height:75px;
-  font-family: $font-secondary;
-  float: left;
-  width:100%;
-
-  .container{
-    text-align:center;
-  }
-}
-
 .social-list{
   display:inline-block;
   padding: 9px 0 0;
   color:#747474;
   font-size:44px;
-}
 
-.social-link{
-  line-height: 44px;
-}
+  .social-link{
+    line-height: 44px;
+  }
 
-.icon-slideshare, .icon-github, .icon-twitter, .icon-facebook, .icon-googleplus{
-  @include border-radius(20px);
-  display:inline-block;
-  height: 40px;
-  margin: 0 6px;
-  position: relative;
-  top: -4px;
-  width: 40px;
-  color:#fff;
-  font-size:25px;
-}
+  .icon-slideshare, .icon-github, .icon-twitter, .icon-facebook, .icon-googleplus{
+    @include border-radius(20px);
+    display:inline-block;
+    height: 40px;
+    margin: 0 6px;
+    position: relative;
+    top: -4px;
+    width: 40px;
+    color:#fff;
+    font-size:25px;
+  }
 
-.icon-slideshare{
-  @include box-shadow(0 0 1px #00A7A9);
-  background:#00a7a9;
-}
+  .icon-slideshare{
+    @include box-shadow(0 0 1px #00A7A9);
+    background:#00a7a9;
+  }
 
-.icon-github{
-  @include box-shadow(0 0 1px #387EBE);
-  background:#387ebe;
-}
+  .icon-github{
+    @include box-shadow(0 0 1px #387EBE);
+    background:#387ebe;
+  }
 
-.icon-twitter{
-  @include box-shadow(0 0 1px #2DAAE1);
-  background:#2daae1;
-}
+  .icon-twitter{
+    @include box-shadow(0 0 1px #2DAAE1);
+    background:#2daae1;
+  }
 
-.icon-facebook{
-  @include box-shadow(0 0 1px #3B5998);
-  background:#3b5998;
-}
-.icon-googleplus{
-  @include box-shadow(0 0 1px #2b5998);
-  background:#2b5998;
+  .icon-facebook{
+    @include box-shadow(0 0 1px #3B5998);
+    background:#3b5998;
+  }
+  .icon-googleplus{
+    @include box-shadow(0 0 1px #2b5998);
+    background:#2b5998;
+  }
 }

@@ -73,7 +73,7 @@
           color: #a7a6a6;
           display:block;
           line-height: 28px;
-          font-weight: bold;
+          font-weight: 600;
         }
 
         a:hover{
@@ -223,28 +223,6 @@
       margin-bottom: 35px;
     }
 
-    .comment, .author{
-      color: #f20892;
-    }
-
-    .comment{
-      float: right;
-      font-size: 18px;
-      padding: 8px 0 0;
-      font-weight: 300;
-
-      .icon-comment{
-        margin: 0px 0 0 5px;
-        position: relative;
-        top: 3px;
-      }
-    }
-
-    .author{
-      padding: 11px 0 11px 2px;
-      font-weight: 300;
-    }
-
     img{
       width: 100%;
       border: #000 solid 1px;
@@ -270,31 +248,8 @@
       margin-bottom: 35px;
     }
 
-    .tags{
-      overflow: hidden;
-      margin:30px 0;
-
-      @include breakpoint(tablet){
-        margin:35px 0;
-      }
-
-      a{
-        @include border-radius(5px);
-        color: #a7a6a6;
-        border: #a7a6a6 dashed 1px;
-        display:block;
-        float: left;
-        margin: 0 10px 10px 0;
-        padding: 1px 10px 3px;
-        font-size: 14px;
-        text-decoration: none;
-        font-weight: 300;
-      }
-    }
-
     .btn{
       display: block;
-      font-weight: 300;
       text-align: center;
       margin: 50px 0;
 
@@ -303,5 +258,132 @@
         margin: 0 0 50px;
       }
     }
+
+    &.listpost{
+      .comment, .author{
+        color: #f20892;
+      }
+
+      .comment{
+        float: right;
+        font-size: 18px;
+        padding: 8px 0 0;
+
+        .icon-comment{
+          margin: 0px 0 0 5px;
+          position: relative;
+          top: 3px;
+        }
+      }
+
+      .author{
+        padding: 11px 0 11px 2px;
+      }
+    }
+
+    &.singlepost{
+      article{
+        border: none;
+
+        h2{
+          @extend .box-transparent-rounded;
+          font-size: em(28);
+          line-height: em(28);
+          color: $color-three;
+          padding: 25px 30px;
+        }
+      }
+
+      img{
+        margin: 10px 0 0;
+        display: block;
+      }
+    }
+
+    .labelphoto{
+      background: rgba(255,255,255,.6);
+      @include border-radius(0 0 8px 8px);
+      border: 1px dashed #000;
+      border-top: none;
+      color: $color-seven;
+      text-align: center;
+      padding: 12px 20px 15px;
+      font-size: em(14);
+      line-height: em(16);
+      margin-bottom: 30px;
+    }
   }
 }
+
+.metadata-header{
+  margin: 15px 0;
+
+  .author, .date, .comment{
+    @include inline-block;
+    color: $color-two;
+    font-size: em(14);
+    margin-right: 20px;
+  }
+  .comment{
+    float: none;
+
+    .icon-comment{
+      margin-left: 5px;
+    }
+  }
+
+  .icon-user{
+    margin-right: 5px;
+  }
+}
+.tags{
+  overflow: hidden;
+  margin:30px 0;
+
+  @include breakpoint(tablet){
+    margin:35px 0;
+  }
+
+  a{
+    @include border-radius(5px);
+    color: #a7a6a6;
+    border: #a7a6a6 dashed 1px;
+    display:block;
+    float: left;
+    margin: 0 10px 10px 0;
+    padding: 1px 10px 3px;
+    font-size: 14px;
+    text-decoration: none;
+  }
+}
+
+.metadata-footer{
+  border-top: $color-five solid 1px;
+  margin: 35px 0;
+
+  .social{
+    @extend .box-transparent-rounded;
+    float: right;
+    margin-top: 20px;
+    padding: 25px 25px 27px;
+
+    li{
+      @include inline-block;
+      padding: 0 10px;
+    }
+
+    a{
+      text-decoration: none;
+    }
+    span{
+      @include hide-text;
+      position: absolute;
+    }
+  }
+
+  .tags{
+    margin: 20px 0;
+    width: 51%;
+  }
+}
+
