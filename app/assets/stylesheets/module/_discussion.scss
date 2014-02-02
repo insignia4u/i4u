@@ -1,6 +1,10 @@
 .discussion{
   overflow:hidden;
 
+  h2{
+    color: $color-three;
+  }
+
   ol{
     @extend %list-unstyled;
     width: 626px;
@@ -12,6 +16,54 @@
 
     ol{
       width: 556px;
+
+      .comment-bubble{
+
+        &.bubble-top{
+          background-position: 0 -68px;
+        }
+
+        &.bubble-bottom{
+          background-position: 0 -82px;
+        }
+      }
+
+      .comment-author{
+        float: right;
+        top: -20px;
+        left: auto;
+        right: 40px;
+      }
+    }
+  }
+
+  .comment-bubble{
+    background: url(asset-path('box-comments.png',image));
+
+    &.bubble-top{
+      height: 14px;
+    }
+
+    &.bubble-bottom{
+      height: 45px;
+      background-position: 0 -15px;
+    }
+  }
+  
+  .comment-text{
+    background: rgba(255,255,255,.6);
+    border-left: rgba(0,0,0,.3) dashed 1px;
+    border-right: rgba(0,0,0,.3) dashed 1px;
+    padding: 15px 30px;
+  }
+
+  .comment-author{
+    position: relative;
+    top: -20px;
+    left: 40px;
+
+    strong{
+      color: $color-two;
     }
   }
 }
