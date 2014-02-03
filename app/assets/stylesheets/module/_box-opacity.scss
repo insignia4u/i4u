@@ -5,14 +5,10 @@
   padding: 15px 20px 25px;
 
   h2{
-    @include titlesize(44);
+    font-size: 44px;
     color: #373435;
     text-align: center;
     margin: 0 0 20px;
-
-    @include breakpoint(tablet){
-      margin: 0 0 25px;
-    }
 
     .circle{
       float: left;

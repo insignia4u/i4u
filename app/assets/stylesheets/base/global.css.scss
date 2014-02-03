@@ -145,7 +145,6 @@ body{
 }
 
 section{
-  font-size:15px;
   margin-bottom:70px;
 }
 
@@ -157,8 +156,8 @@ section{
 
 .content{
   li, p{
-    font-size: 14px;
-    line-height:20px;
+    font-size: em(14);
+    line-height: em(20);
     color: #373435;
   }
 

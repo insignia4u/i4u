@@ -173,9 +173,22 @@
       }
     }
 
+    .tip-day, .rails-tip{
+      @include breakpoint(tablet){
+        width: 45%;
+      }
+
+      @include breakpoint(desktop){
+        width: auto;
+      }
+    }
+
     .tip-day{
+      display: none;
+
       @include breakpoint(tablet){
         margin-left: 25px;
+        display: block;
       }
 
       @include breakpoint(desktop){
@@ -184,8 +197,10 @@
     }
 
     .rails-tip{
+      display: none;
 
       @include breakpoint(tablet){
+        display: block;
         float: right;
         margin-right: 25px;
       }
@@ -208,8 +223,6 @@
     padding-bottom: 0;
 
     @include breakpoint(tablet){
-      width:724px;
-      margin: 0 auto;
     }
 
     @include breakpoint(desktop){
@@ -220,7 +233,7 @@
     article{
       border-top: #a7a6a6 solid 1px;
       clear:both;
-      margin-bottom: 35px;
+      margin-bottom: 25px;
     }
 
     img{
@@ -287,15 +300,25 @@
 
         h2{
           @extend .box-transparent-rounded;
-          font-size: em(28);
-          line-height: em(28);
+          font-size: em(18);
+          line-height: em(23);
           color: $color-three;
-          padding: 25px 30px;
+          padding: 25px;
+          text-align: center;
+
+          @include breakpoint(tablet){
+            font-size: em(28);
+            line-height: em(28, 23);
+          }
+
+          @include breakpoint(desktop){
+            text-align: left;
+          }
         }
       }
 
       img{
-        margin: 10px 0 0;
+        margin: 20px 0 0;
         display: block;
       }
     }
@@ -307,23 +330,60 @@
       border-top: none;
       color: $color-seven;
       text-align: center;
-      padding: 12px 20px 15px;
+      padding: 15px 15px 16px;
       font-size: em(14);
-      line-height: em(16);
-      margin-bottom: 30px;
+      line-height: em(18);
+      margin-bottom: 20px;
+
+       @include breakpoint(tablet){
+        line-height: em(25);
+       }
     }
   }
 }
 
 .metadata-header{
-  margin: 15px 0;
+  margin: 15px 0 45px;
+  border-top: $color-five solid 1px;
+  border-bottom: $color-five solid 1px;
+  padding: 8px 0;
+  position: relative;
+
+  @include breakpoint(tablet){
+    padding: 0;
+    border: 0;
+    margin: 15px 0;
+  }
 
   .author, .date, .comment{
-    @include inline-block;
     color: $color-two;
     font-size: em(14);
     margin-right: 20px;
+    text-align: right;
+
+    @include breakpoint(tablet){
+      display: inline-block;
+      text-align: left;
+    }
   }
+
+  .author{
+    float: left;
+
+    @include breakpoint(tablet){
+      float: none;
+    }
+  }
+
+  .date{
+    position: absolute;
+    bottom: -30px;
+
+    @include breakpoint(tablet){
+      position: static;
+    }
+  }
+
   .comment{
     float: none;
 
@@ -333,9 +393,15 @@
   }
 
   .icon-user{
+    display: none;
     margin-right: 5px;
+
+    @include breakpoint(tablet){
+      display: inline-block;
+    }
   }
 }
+
 .tags{
   overflow: hidden;
   margin:30px 0;
@@ -350,26 +416,33 @@
     border: #a7a6a6 dashed 1px;
     display:block;
     float: left;
-    margin: 0 10px 10px 0;
+    margin: 0 10px 15px 0;
     padding: 1px 10px 3px;
-    font-size: 14px;
     text-decoration: none;
   }
 }
 
 .metadata-footer{
-  border-top: $color-five solid 1px;
-  margin: 35px 0;
+  margin: 35px 0 25px;
+
+  @include breakpoint(tablet){
+    border-top: $color-five solid 1px;
+  }
 
   .social{
     @extend .box-transparent-rounded;
-    float: right;
     margin-top: 20px;
-    padding: 25px 25px 27px;
+    padding: 25px 0 27px;
+    text-align: center;
+
+    @include breakpoint(tablet){
+      float: right;
+      width: 30%;
+    }
 
     li{
       @include inline-block;
-      padding: 0 10px;
+      padding: 0 6%;
     }
 
     a{
@@ -383,7 +456,10 @@
 
   .tags{
     margin: 20px 0;
-    width: 51%;
+
+    @include breakpoint(tablet){
+      width: 51%;
+    }
   }
 }
 
