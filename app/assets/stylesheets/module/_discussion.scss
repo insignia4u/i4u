@@ -3,6 +3,9 @@
 
   h2{
     color: $color-three;
+    border-bottom: $color-three dashed 2px;
+    line-height: 55px;
+    margin-bottom: 30px;
   }
 
   ol{
@@ -10,8 +13,67 @@
     width: 626px;
     float: right;
 
+    @include breakpoint(tablet){
+      width: 709px;
+    }
+
+    @include breakpoint(desktop){
+      width: 626px;
+    }
+
     li{
       clear: both;
+    }
+
+    .comment-bubble{
+      background: url(asset-path('box-comments.png',image));
+
+      &.bubble-top{
+        height: 14px;
+      }
+
+      &.bubble-bottom{
+        height: 45px;
+        background-position: 0 -15px;
+      }
+
+      @include breakpoint(tablet){
+        background-position: 0 -133px;
+        
+        &.bubble-bottom{
+          background-position: 0 -145px;
+        }
+      }
+
+      @include breakpoint(desktop){
+        background-position: 0 0;
+        
+        &.bubble-bottom{
+          background-position: 0 -15px;
+        }
+      }
+    }
+    
+    .comment-text{
+      background: rgba(255,255,255,.6);
+      border-left: rgba(0,0,0,.3) dashed 1px;
+      border-right: rgba(0,0,0,.3) dashed 1px;
+      padding: 15px 30px;
+
+      .retry{
+        text-align: right;
+        color: $color-two;
+      }
+    }
+
+    .comment-author{
+      position: relative;
+      top: -15px;
+      left: 40px;
+
+      strong{
+        color: $color-two;
+      }
     }
 
     ol{
@@ -30,40 +92,9 @@
 
       .comment-author{
         float: right;
-        top: -20px;
         left: auto;
         right: 40px;
       }
-    }
-  }
-
-  .comment-bubble{
-    background: url(asset-path('box-comments.png',image));
-
-    &.bubble-top{
-      height: 14px;
-    }
-
-    &.bubble-bottom{
-      height: 45px;
-      background-position: 0 -15px;
-    }
-  }
-  
-  .comment-text{
-    background: rgba(255,255,255,.6);
-    border-left: rgba(0,0,0,.3) dashed 1px;
-    border-right: rgba(0,0,0,.3) dashed 1px;
-    padding: 15px 30px;
-  }
-
-  .comment-author{
-    position: relative;
-    top: -20px;
-    left: 40px;
-
-    strong{
-      color: $color-two;
     }
   }
 }
