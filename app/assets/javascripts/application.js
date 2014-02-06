@@ -8,6 +8,8 @@
 //= require carousel
 //= require jquery.carouFredSel-6.2.1
 //= require totop
+//= require jquery.parallax
+//= require jquery.reject
 //= require noty
 //= require jquery.stellar.min
 //= require iscroll

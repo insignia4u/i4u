@@ -1,5 +1,13 @@
 
-# On Windows Load ->
+$.reject({
+  reject: {
+    msie: true,
+    msie5: true,
+    msie6: true,
+    msie7: true,
+    msie8: true
+  }
+});
 
 deleteFileToUploadClicked = () ->
   $('#attachment-files li').remove()
@@ -157,7 +165,7 @@ $(document).ready ->
 
 
 
-  # $('.vanilla-parallax, #intro-parallax').parallax()
+  $('#scene').parallax()
 
   # $('.vanilla-parallax, #intro-parallax').parallax()
 
