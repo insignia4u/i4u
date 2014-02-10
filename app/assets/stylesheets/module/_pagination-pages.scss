@@ -1,0 +1,30 @@
+.pagination-pages{
+	@extend %box-transparent-rounded;
+	padding: 10px;
+	clear: both;
+	text-align: center;
+
+	.points, .btn-circle, .btn-circle-arrow{
+		margin: 0 5px;
+		font-size: em(28);
+	}
+
+	.points{
+		display: inline-block;
+		width: 54px;
+		text-align: center;
+		letter-spacing: 6px;
+
+	}
+
+	.btn-circle{
+		@extend %circle;
+		display: inline-block;
+		font-family: $font-secondary;
+		text-decoration: none;
+	}
+
+	.btn-circle-arrow{
+		@extend %btn-circle-arrow;
+	}
+}

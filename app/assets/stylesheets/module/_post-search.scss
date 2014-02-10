@@ -1,0 +1,40 @@
+.post-search{
+	@include breakpoint(desktop){
+		margin: 0 !important;
+	}
+
+	article{
+		border-top: $color-four solid 1px;
+		margin: 0 0 25px;
+	}
+
+	.post-thumb{
+		width: 140px;
+		float: left;
+		margin: 25px 0;
+
+		img{
+			display: block;
+		}
+	}
+
+	.post-detail{
+		margin-left: 160px;
+
+		h3{
+			font-size: em(20);
+		}
+	}
+}
+
+.title-search{
+	@extend %box-transparent-rounded;
+	padding: 15px 30px;
+	margin-bottom: 35px;
+	
+	h2{
+		font-size: em(28);
+		line-height: em(35,28);
+		color: $color-two;
+	}
+}

@@ -86,6 +86,55 @@ $w1500: "1500px";
   background: rgba(0, 0, 0, 0.03);
 }
 
+%box-transparent-rounded{
+  @include border-radius(10px);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+%btn-circle-arrow{
+  @include border-radius(23px);
+  display: inline-block;
+  text-decoration: none;
+  background: #222;
+  width: 45px;
+  height: 45px;
+  font-weight: 100;
+  line-height: 45px;
+  color: #ffffff;
+  text-align: center;
+
+  .icon-titleleft, .icon-titleright{
+    font-size: 22px;
+    text-align: center;
+    position: relative;
+    top: 1px;
+    left: -0.05em;
+  }
+  
+  .icon-titleright{
+    left: 0.05em;
+  }
+}
+
+
+%circle{
+  @include border-radius(23px);
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+
+  &.red{
+    background: #f20892;
+    border: #a60563 solid 2px;
+    color: white;
+  }
+
+  &.dashed{
+    border: $color-three dashed 1px;
+    color: $color-one;
+  }
+}
 
 /* ----------------------------
 :: Base
