@@ -74,9 +74,8 @@ $.reject = function(options) {
     paragraph2: 'If you want to you may also try some other popular Internet browsers like',
     close: true, // Allow closing of window
     // Message displayed below closing link
-    closeMessage: 'By closing this window you acknowledge that your experience '+
-            'on this website may be degraded',
-    closeLink: 'Close This Window', // Text for closing link
+    closeMessage: 'If you understand the security flaws and that some features might not be displayed in the site, but still want to view the site in your current browser, ',
+    closeLink: 'click here', // Text for closing link
     closeURL: '#', // Close URL
     closeESC: true, // Allow closing of window with esc key
 
@@ -248,8 +247,7 @@ $.reject = function(options) {
   // Close list and #jr_list
   html += '<div id="jr_close">'+
   // Display close links/message if set
-  (opts.close ? '<a href="'+opts.closeURL+'">'+opts.closeLink+'</a>'+
-    '<p>'+opts.closeMessage+'</p>' : '')+'</div>'+
+  (opts.close ? '<p>'+opts.closeMessage+'</p> please <a href="'+opts.closeURL+'">'+opts.closeLink+'</a>' : '')+'</div>'+
   // Close #jr_inner and #jr_wrap
   '</div></div>';
 

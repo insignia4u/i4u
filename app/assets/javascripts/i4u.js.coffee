@@ -1,7 +1,6 @@
 
 $.reject({
   reject: {
-    msie: true,
     msie5: true,
     msie6: true,
     msie7: true,
@@ -24,7 +23,11 @@ $.reject({
     safari: {
       text: 'Safari'
     }
-  }
+  },
+  header: '<strong><span>Did you know</span> that your Browser is out of date</strong>?',
+  paragraph1: 'For the best possible experience using our website, we recommend that you upgrade Internet Explorer to the latest version for your OS. If you are using a computer at work, please contact your IT administrator.',
+  paragraph2: 'If you want to you may also try some other popular Internet browsers like',
+  imagePath: './assets/'
 });
 
 deleteFileToUploadClicked = () ->

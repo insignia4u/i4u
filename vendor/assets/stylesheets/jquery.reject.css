@@ -95,26 +95,24 @@
   list-style-image: none;
   list-style-position: outside;
   list-style-type: none;
-  margin: 0;
+  margin: 30px 0 0 45px;
   padding: 0;
 }
 
 #jr_inner ul li {
   cursor: pointer;
   float: left;
-  width: 120px;
   height: 122px;
-  margin: 0 10px 10px 10px;
+  margin: 0 15px 10px 15px;
   padding: 0;
   text-align: center;
+  font-size: 14px;
 }
 
 #jr_inner li a {
-  color: #333;
-  font-size: 0.8em;
-  text-decoration: none;
   padding: 0;
   margin: 0;
+  font-size: 14px;
 }
 
 #jr_inner li a:hover {
@@ -133,21 +131,45 @@
 #jr_close {
   margin: 0 0 0 50px;
   clear: both;
-  text-align: left;
   padding: 0;
   margin: 0;
+  font-size: 14px;
+  font-weight: 300;
 }
 
 #jr_close a {
-  color: #000;
-  display: block;
   width: auto;
   margin: 0;
   padding: 0;
-  text-decoration: underline;
+  font-weight: 600;
 }
 
 #jr_close p {
   padding: 10px 0 0 0;
-  margin: 0;
+  width: 500px;
 }
+
+#jr_msie .jr_icon{
+  width: 73px;
+}
+
+#jr_firefox .jr_icon{
+  width: 63px;
+  background-position: 0 5px!important;
+}
+
+#jr_opera .jr_icon{
+  width: 57px;
+  background-position: 0 5px!important;
+}
+
+#jr_chrome .jr_icon{
+  width: 62px;
+  background-position: 0 6px!important;
+}
+
+#jr_safari .jr_icon{
+  width: 61px;
+  background-position: 0 6px!important;
+}
+
