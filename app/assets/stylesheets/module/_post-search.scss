@@ -1,3 +1,19 @@
+.search-page{
+	aside{
+		margin: 0;
+
+		.tip-day, .rails-tip{
+			@include breakpoint(tablet){
+				display: none;
+			}
+
+			@include breakpoint(desktop){
+				display: block;
+			}
+		}
+	}
+}
+
 .post-search{
 	@include breakpoint(desktop){
 		margin: 0 !important;
@@ -9,9 +25,13 @@
 	}
 
 	.post-thumb{
-		width: 140px;
-		float: left;
-		margin: 25px 0;
+		margin: 25px 0 15px;
+
+		@include breakpoint(tablet){
+			width: 140px;
+			float: left;
+			margin: 25px 0;
+		}
 
 		img{
 			display: block;
@@ -19,22 +39,45 @@
 	}
 
 	.post-detail{
-		margin-left: 160px;
+
+		@include breakpoint(tablet){
+			margin-left: 160px;
+		}
 
 		h3{
 			font-size: em(20);
+			margin: 15px 0;
+
+			@include breakpoint(tablet){
+				margin: 20px 0 15px;
+			}
 		}
 	}
 }
 
 .title-search{
 	@extend %box-transparent-rounded;
-	padding: 15px 30px;
-	margin-bottom: 35px;
-	
+	padding: 0;
+	margin-bottom: em(20);
+	font-size: em(14);
+	color: $color-seven;
+
+	@media(max-width: 767px){
+		background: none;
+	}
+
+	@include breakpoint(tablet){
+		padding: 15px 30px;
+	}
+
 	h2{
-		font-size: em(28);
-		line-height: em(35,28);
+		font-size: em(24,14);
+		line-height: em(35,24);
 		color: $color-two;
+
+		@include breakpoint(tablet){
+			font-size: em(28);
+			line-height: em(35,28);
+		}
 	}
 }

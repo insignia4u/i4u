@@ -1,0 +1,182 @@
+.tipsday-page{
+  .post-tipsday{
+
+    @include breakpoint(desktop){
+      float: none;
+      margin: 0 auto;
+    }
+  }
+}
+
+.todaytips{
+  @extend %box-transparent-rounded;
+  text-align: center;
+  padding: 0px 20px 5px;
+  margin-bottom: 25px;
+
+  @include breakpoint(tablet){
+    padding: 0px 40px 5px;
+  }
+
+  h2{
+    font-size: em(24);
+    line-height: em(35);
+    color: $color-two;
+  }
+
+  p{
+    line-height: em(20,14);
+  }
+}
+
+.calendar{
+  @extend %box-transparent-rounded;
+  text-align: center;
+}
+
+.calendar-header{
+  font-family: $font-secondary;
+  color: $color-one;
+
+  @include breakpoint(tablet){
+    height: 60px;
+    border-bottom: dashed 1px $color-one;
+    margin-bottom: 10px;
+  }
+
+  .previoustip{
+    @extend %box-transparent-rounded;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    font-size: em(35);
+    line-height: em(39,35);
+    color: $color-one;
+    position: relative;
+
+    @include breakpoint(tablet){
+      background: none;
+      float: left;
+    }
+
+    .icon-user{
+      position: absolute;
+      left: 23px;
+      top: 14px;
+    }
+  }
+
+  .year{
+
+    @include breakpoint(tablet){
+      float: right;
+    }
+
+    span{
+      font-size: em(39);
+    }
+  }
+}
+
+.calendar-body{
+  ul{
+    text-align: center;
+    padding: 0 20px 18px;
+
+    @include breakpoint(tablet){
+      padding: 0 0 5px;
+    }
+  }
+
+  li{
+    display: inline-block;
+    margin: 0 0 5px;
+  }
+
+  .month-enable, .month-current, .month-disable{
+    width: 50px;
+    height: 40px;
+    display: block;
+    line-height: 40px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+  }
+
+  .month-enable{
+    background: $color-one;
+  }
+
+  .month-current{
+    background: $color-two;
+  }
+
+  .month-disable{
+    background: rgba(55,52,53,.3);
+  }
+}
+
+.monthtips{
+  h3{
+    color: $color-two !important;
+    font-size: em(24) !important;
+    line-height: em(35,24);
+    background: white;
+    border: 1px dashed $color-one;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px 0;
+
+    @include breakpoint(tablet){
+      width: 265px;
+      margin: 20px auto 15px !important;
+    }
+  }
+
+  ul{
+    margin-top: 40px;
+  }
+
+  li{
+    border-top: rgba(55,52,53,.5) dashed 1px;
+    border-bottom: rgba(55,52,53,.5) dashed 1px;
+    position: relative;
+    margin: 0 0 40px;
+    text-align: center;
+  }
+
+  .day{
+    color: white;
+    background: black;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto -10px;
+    padding: 5px 0 0;
+    position: relative;
+    top: -25px;
+    line-height: em(16);
+    font-size: em(13);
+
+    .daynumber{
+      line-height: em(12);
+      display: block;
+    }
+
+    .linedash{
+      border-left: rgba(55,52,53,.5) dashed 1px;
+      display: block;
+      width: 1px;
+      height: 42px;
+      position: absolute;
+      bottom: 11px;
+      left: 50%;
+      margin-left: -1px;
+    }
+  }
+
+  p{
+  }
+}
+

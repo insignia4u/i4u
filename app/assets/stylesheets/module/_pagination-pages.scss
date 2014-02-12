@@ -1,8 +1,13 @@
 .pagination-pages{
-	@extend %box-transparent-rounded;
-	padding: 10px;
+	padding: 30px 0;
 	clear: both;
 	text-align: center;
+	overflow: hidden;
+
+	@include breakpoint(tablet){
+		@extend %box-transparent-rounded;
+		padding: 30px 10px;
+	}
 
 	.points, .btn-circle, .btn-circle-arrow{
 		margin: 0 5px;
@@ -10,21 +15,56 @@
 	}
 
 	.points{
-		display: inline-block;
+		display: none;
 		width: 54px;
 		text-align: center;
 		letter-spacing: 6px;
+		color: $color-nine;
 
+		@include breakpoint(tablet){
+			display: inline-block;
+		}
 	}
 
 	.btn-circle{
+		display: none;
 		@extend %circle;
-		display: inline-block;
 		font-family: $font-secondary;
 		text-decoration: none;
+
+		&.dashed{
+			color: $color-nine;
+
+			&:hover{
+				background: white;
+			}
+		}
+
+		@include breakpoint(tablet){
+			display: inline-block;
+		}
 	}
 
 	.btn-circle-arrow{
 		@extend %btn-circle-arrow;
+		background: $color-eight;
+
+		&:hover{
+			background: $color-four;
+		}
+
+		&.left{
+			float: left;
+		}
+
+		&.right{
+			float: right;
+		}
+
+		@include breakpoint(tablet){
+			&.left, &.right{
+				float: none;
+			}
+		}
 	}
 }

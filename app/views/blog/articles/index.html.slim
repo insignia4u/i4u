@@ -41,17 +41,40 @@
 
 /     a.btn href="" OLDER ENTRIES
 
-/blog index
 
-= render "modules/nav-mobile"
+= render "module/nav-mobile"
 
+
+///----- blog index    ///
+/ section.blog
+/   .container-title
+/     h2 Our Blog
+/   = render "module/aside-blog"
+/   = render "module/post-list"
+
+
+
+///----- blog single    ///
 section.blog
-
   .container-title
     h2 Our Blog
+  = render "module/aside-blog"
+  = render "module/post-single"
 
-  = render "modules/aside-blog"
 
-  / = render "modules/post-list"
 
-  = render "modules/post-search"
+///----- blog search    ///
+/ section.blog.search-page
+/   .container-title
+/     h2 Our Blog
+/   = render "module/aside-blog"
+/   = render "module/post-search"
+
+
+
+///----- blog tips    ///
+/ section.blog.tipsday-page
+/   .container-title.title-type2
+/     h2 tips del día
+
+/   = render "module/post-tipsday"

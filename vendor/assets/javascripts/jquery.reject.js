@@ -67,13 +67,11 @@ $.reject = function(options) {
     },
 
     // Header of pop-up window
-    header: 'Did you know that your Internet Browser is out of date?',
+    header: '<strong><span>Did you know</span> that your Browser is out of date</strong>?',
     // Paragraph 1
-    paragraph1: 'Your browser is out of date, and may not be compatible with '+
-          'our website. A list of the most popular web browsers can be '+
-          'found below.',
+    paragraph1: 'For the best possible experience using our website, we recommend that you upgrade Internet Explorer to the latest version for your OS. The most current version is internet explorer 9. If you are using a computer at work, please contact your IT administrator.',
     // Paragraph 2
-    paragraph2: 'Just click on the icons to get to the download page',
+    paragraph2: 'If you want to you may also try some other popular Internet browsers like',
     close: true, // Allow closing of window
     // Message displayed below closing link
     closeMessage: 'By closing this window you acknowledge that your experience '+
@@ -97,7 +95,7 @@ $.reject = function(options) {
 
     imagePath: './images/', // Path where images are located
     overlayBgColor: '#000', // Background color for overlay
-    overlayOpacity: 0.8, // Background transparency (0-1)
+    overlayOpacity: 1, // Background transparency (0-1)
 
     // Fade in time on open ('slow','medium','fast' or integer in ms)
     fadeInTime: 'fast',
@@ -213,10 +211,10 @@ $.reject = function(options) {
   // Load background overlay (jr_overlay) + Main wrapper (jr_wrap) +
   // Inner Wrapper (jr_inner) w/ opts.header (jr_header) +
   // opts.paragraph1/opts.paragraph2 if set
-  var html = '<div id="jr_overlay"></div><div id="jr_wrap"><div id="jr_inner">'+
-    '<h1 id="jr_header">'+opts.header+'</h1>'+
+  var html = '<div id="jr_overlay"></div><div id="jr_wrap"><div id="jr_inner"><div class="header tooglenav"><div class="container" id="logo"><h1><a href="/"><img src="/assets/insignia.jpg" alt="Insignia"></a></h1></div></div>'+
+    '<h2 id="jr_header">'+opts.header+'</h2>'+
     (opts.paragraph1 === '' ? '' : '<p>'+opts.paragraph1+'</p>')+
-    (opts.paragraph2 === '' ? '' : '<p>'+opts.paragraph2+'</p>');
+    (opts.paragraph2 === '' ? '' : '<div class="box-dash"><p>'+opts.paragraph2+'</p>');
 
   if (opts.browserShow) {
     html += '<ul>';
@@ -244,7 +242,7 @@ $.reject = function(options) {
       ++displayNum;
     }
 
-    html += '</ul>';
+    html += '</ul></div>';
   }
 
   // Close list and #jr_list
@@ -353,10 +351,10 @@ $.reject = function(options) {
 
   // Wrapper for inner centered content (div)
   element.find('#jr_inner').css({
-    minWidth: displayNum*100,
-    maxWidth: displayNum*140,
+    // minWidth: displayNum*100,
+    // maxWidth: displayNum*140,
     // min/maxWidth not supported by IE
-    width: $.layout.name == 'trident' ? displayNum*155 : 'auto'
+    // width: $.layout.name == 'trident' ? displayNum*155 : 'auto'
   });
 
   element.find('#jr_inner li').css({ // Browser list items (li)

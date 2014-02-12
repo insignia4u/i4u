@@ -6,6 +6,24 @@ $.reject({
     msie6: true,
     msie7: true,
     msie8: true
+  },
+  display: ["msie","firefox","opera","chrome","safari"],
+  browserInfo: {
+    msie: {
+      text: 'IE10'
+    },
+    firefox: {
+      text: 'Firefox'
+    },
+    opera: {
+      text: 'Opera'
+    },
+    chrome: {
+      text: 'Chrome'
+    },
+    safari: {
+      text: 'Safari'
+    }
   }
 });
 
