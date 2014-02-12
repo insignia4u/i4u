@@ -172,5 +172,5 @@ you can use the generic selector below, but it's slower:
   content: "\e014";
 }
 .icon-home:before {
-  content: "\e02f";
+  content: "\e60b";
 }

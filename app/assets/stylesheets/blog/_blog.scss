@@ -27,12 +27,12 @@
     }
 
     @include breakpoint(desktop){
-      .icon-search{
+      .icon-search-2 {
         color: #F20892;
         position: absolute;
-        right: 13px;
+        right: 11px;
         font-size: 22px;
-        top: 7px;
+        top: 8px;
       }
 
       .search{

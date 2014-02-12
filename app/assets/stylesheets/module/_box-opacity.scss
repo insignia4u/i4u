@@ -2,7 +2,7 @@
   @include border-radius(10px);
   background: rgba(0,0,0,.03);
   margin: 0 25px 30px;
-  padding: 15px 20px 25px;
+  padding: 16px 23px 16px 23px;
 
   h2{
     @include titlesize(44);
@@ -24,13 +24,17 @@
       top: 6px;
 
       .icon-smiley{
-        font-size: em(25,44);
-        line-height: em(45, 24);
+        font-size: 2.4em;
+        position: absolute;
+        line-height: 1.875em;
+        left: 9px;
       }
 
       .icon-diamond{
-        font-size: em(27,44);
-        line-height: em(45, 24);
+        font-size: 2.4em;
+        position: absolute;
+        line-height: 1.875em;
+        left: 9px;
       }
     }
   }
@@ -66,11 +70,12 @@
   @include breakpoint(desktop){
     float: none;
     width: auto;
-    margin-bottom: 30px;
-    padding: 15px;
+    margin-bottom: 40px;
+    padding: 16px 23px;;
   }
 
   h2{
     text-align: left;
+    margin-bottom: 20px;
   }
 }
