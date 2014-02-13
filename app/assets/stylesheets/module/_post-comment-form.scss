@@ -1,10 +1,12 @@
 .post-comment-form{
   .container-title{
+    margin-top: 60px;
     h2{
-      font-size: em(38);
+      font-size: 1.89em;
       line-height: 39px;
       margin-left: 0;
       margin-right: 0;
+      padding: 0 38px;
 
       &:before, &:after{
         top: 21%;
@@ -14,6 +16,16 @@
       @include breakpoint(tablet){
         top: -25px;
       }
+    }
+  }
+  form {
+    margin-top: 36px;
+    input {
+      margin-bottom: 34px;
+    }
+    .btn {
+      margin: 13px 0 55px !important;
+      float: right;
     }
   }
 }
