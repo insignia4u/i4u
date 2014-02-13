@@ -134,8 +134,8 @@ $(document).ready ->
         $(".nav-mobile").removeClass "open-categories"
 
 
-  $(".nav-blog .btn-search").click ->
-    $(".nav-blog form").fadeIn 200
+  $(".nav-mobile .btn-search").click ->
+    $(".nav-mobile form").fadeIn 200
 
   $("input, textarea").on "focus blur", ->
     $(this).next().toggleClass "focus"
