@@ -1,12 +1,15 @@
 namespace(:db) do
   namespace(:populator) do
     task :setup => :environment do
+      require "populator"
+      require 'faker'
       require "populator/sites"
       require "populator/technologies"
       require "populator/tools"
       require "populator/people"
       require "populator/projects"
       require "populator/featured_contents"
+      require "populator/blog"
     end
 
     desc "Populate development database with raw data"
@@ -19,6 +22,7 @@ namespace(:db) do
       people            = Populator::People.new
       projects          = Populator::Projects.new
       featured_contents = Populator::FeaturedContents.new
+      blog              = Populator::Blog.new
       puts "> *** Done!"
 
       puts "> *** Populating support data."
@@ -40,6 +44,10 @@ namespace(:db) do
       puts "> *** Done!"
 
       system 'rake sites:en:load_text_snippets'
+
+      puts "> *** Populating blog."
+      blog.populate
+      puts "> *** Done!"
 
      puts "> Database Population process complete!"
     end
