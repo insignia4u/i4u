@@ -121,6 +121,11 @@ $(document).ready ->
   $(".nav-categories").click ->
     $(this).closest(".nav-mobile").addClass "open-categories"
     $(".categories").addClass "showcat"
+
+    if $(".nav-mobile .btn-search").hasClass "active"
+      $(".nav-mobile .js-search").removeClass "active"
+      $(".nav-mobile .js-search").css("display","none")
+
     $(".categories").slideDown "slow", ->
       $(".categories .close").show 200
       $(".open-categories .arrow").slideDown "slow"
@@ -135,7 +140,17 @@ $(document).ready ->
 
 
   $(".nav-mobile .btn-search").click ->
-    $(".nav-mobile form").fadeIn 200
+    if $(".nav-mobile").hasClass "open-categories"
+      $(".categories,.open-categories .arrow").css("display","none")
+      $(".categories").removeClass "showcat"
+      $(".nav-mobile").removeClass "open-categories"
+
+    if $(this).hasClass "active"
+      $(".nav-mobile .js-search").slideUp "fast"
+      $(this).removeClass "active"
+    else
+      $(".nav-mobile .js-search").slideDown "fast"
+      $(this).addClass "active"
 
   $("input, textarea").on "focus blur", ->
     $(this).next().toggleClass "focus"

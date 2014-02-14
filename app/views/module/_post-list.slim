@@ -1,73 +1,34 @@
 .column.listpost
-  article
-    .comment
-      | 23
-      i.icon-comment
+  - @articles.each do |article|
+    article
+      .comment
+        | 23
+        i.icon-comment
 
-    .author Carlos Kozuszko
-    picture alt=""
-      source src=asset_path("blog-photo01.jpg")
-      source src=asset_path("blog-photo01.jpg") media="(min-width:440px)"
-      source src=asset_path("blog-photo01.jpg") media="(min-width:600px)"
+      .author= article.author
+      picture alt=""
+        - if article.image
+          source src=article.image.url(:normal)
+        - else
+          source src=asset_path("blog-photo01.jpg")
+          source src=asset_path("blog-photo01.jpg") media="(min-width:440px)"
+          source src=asset_path("blog-photo01.jpg") media="(min-width:600px)"
 
-      noscript
-        img src=asset_path("blog-photo.jpg") alt=""
+          noscript
+            img src=asset_path("blog-photo.jpg") alt=""
 
-    h3
-      a href="" Búsqueda Laboral Enero 2013: Frontend Developers
+      h3
+        = link_to article.title, blog_article_path(article)
 
-    p Querés aplicar todo lo que sabés sobre HTML5, CSS3 y Javascript en proyectos que utilizarán millones de personas?
+      = article.summary
 
-    p Querés hacerlo trabajando a la par de un equipo increíble de profesionales, utilizando las herramientas y metodologías más avanzadas disponibles?
+      = link_to blog_article_path(article), class: 'bottom-link' do
+        | Seguir leyendo
+        span +
 
-    p Querés trabajar en un lugar donde siempre te motiven a aprender y a crecer?
-
-    p Si la respuesta a todo esto es un “sí, quiero”, mandanos tu CV a work@insignia4u.com.
-
-    p En Insignia queremos brindarte el mejor lugar de trabajo posible. Por esto, junto con la oportunidad de construir una gran carrera profesional, te invitamos a formar  parte de nuestro programa anual de capacitación en Inglés, como así también te invitamos a compartir diariamente con nosotros el almuerzo que la empresa ofrece a todo el equipo.
-
-    p Qué estás esperando!
-
-    a.bottom-link href=""
-      | Seguir leyendo
-      span +
-
-    .tags
-      a href="" anuncios
-      a href="" desarrollos
-      a href="" rubi on rails
-
-  article
-    .comment
-      | 0
-      i.icon-comment
-
-    .author Carlos Kozuszko
-    picture alt=""
-      source src=asset_path("blog-photo02.jpg")
-      source src=asset_path("blog-photo02.jpg") media="(min-width:440px)"
-      source src=asset_path("blog-photo02.jpg") media="(min-width:600px)"
-
-      noscript
-        img src=asset_path("blog-photo.jpg") alt=""
-
-    h3
-      a href="" Los Tanfaun entre los ganadores en BA Apps
-
-    p
-      | Con la aplicación 
-      a href="" Los Tanfaun
-      |  salimos ganadores de la categoría Urbanismo en el concurso de Buenos Aires Apps. Nuestros amigos de Indicius con quién realizamos este proyecto en conjunto recibien el premio en Buenos Aires en representación del grupo.
-
-    p Los Tanfaun es una aplicación del tipo “Lost & Found”, y sirve para conectar a las personas que encontraron y perdieron cosas en la ciudad. El objetivo principal es proveer a la comunidad de una plataforma online que funcione como el punto inicial de consulta para este tipo de situaciones. Entre todos los ganadores del concurso salimos premiados en la categoría Urbanismo.
-
-    p Una excelente resultado para nuestra primera colaboración con Indicius y una excelente motivación para seguir mejorando la aplicación!
-
-    a.bottom-link href=""
-      | Seguir leyendo
-      span +
-
-    .tags
-      a href="" proyectos
+      - if article.tags
+        .tags
+          - article.tags.each do |tag|
+            = link_to tag, tag_blog_articles_path(tag.name)
 
   a.btn href="" OLDER ENTRIES
