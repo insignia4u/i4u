@@ -12,10 +12,10 @@
   @extend %box-transparent-rounded;
   text-align: center;
   padding: 0px 20px 5px;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 
   @include breakpoint(tablet){
-    padding: 0px 40px 5px;
+    padding: 0px 40px 1px;
   }
 
   h2{
@@ -47,26 +47,38 @@
   .previoustip{
     @extend %box-transparent-rounded;
     display: block;
-    padding: 10px;
+    padding: 10px 10px 10px 16px;
     text-decoration: none;
     font-size: em(35);
     line-height: em(39,35);
     color: $color-one;
     position: relative;
 
+    span {
+      color: $color-two;
+      vertical-align: bottom;
+      font-size: 29px;
+    }
+
     @include breakpoint(tablet){
       background: none;
       float: left;
     }
 
-    .icon-user{
-      position: absolute;
-      left: 23px;
-      top: 14px;
+    .icon-calendar-2{
+      margin-right: 15px;
     }
   }
 
   .year{
+    margin-right: 10px;
+
+    a {
+      color: $color-two;
+      text-decoration: none;
+      font-size: 21px;
+      margin: 22px;
+    }
 
     @include breakpoint(tablet){
       float: right;
@@ -129,7 +141,7 @@
 
     @include breakpoint(tablet){
       width: 265px;
-      margin: 20px auto 15px !important;
+      margin: 50px auto 15px !important;
     }
   }
 
