@@ -1,4 +1,31 @@
 .tipsday-page{
+
+  h2 {
+    &:after {
+      display: none;
+    }
+    &:before {
+      display: none;
+    }
+    .circle {
+      float: left;
+      height: 63px;
+      width: 63px;
+      border-width: 2px;
+      margin: 0 -16px 0 0;
+      position: relative;
+      top: 19px;
+      left: -23px;
+
+      i {
+        font-size: 40px;
+      }
+       @include breakpoint(tablet){
+        top: 4px;
+      }
+    }
+  }
+
   .post-tipsday{
 
     @include breakpoint(desktop){
