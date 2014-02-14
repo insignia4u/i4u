@@ -49,6 +49,8 @@
     @include breakpoint(tablet){
       position: relative;
       left: 22px;
+      top: 12px;
+      width: auto;
     }
   }
 
@@ -92,10 +94,13 @@
   }
 
   form{
-    display: none;
-    position: absolute;
-    top: 6px;
-    right: 0;
+    margin: 4px auto;
+    position: relative;
+    width: 269px;
+
+    @include breakpoint(tablet){
+      width: 387px;
+    }
 
     .icon-search{
       color: #F20892;
@@ -112,7 +117,11 @@
       line-height: 21px;
       padding: 10px 35px 10px 18px;
       font-size: 16px;
-      width: 186px;
+      width: 214px;
+
+      @include breakpoint(tablet){
+        width: 332px;
+      }
     }
   }
 
@@ -121,4 +130,44 @@
 
     .arrow{}
   }
+}
+
+.btn-search{
+  position: relative;
+  height: 31px;
+  width: 31px;
+  top: 5px;
+
+
+  @include breakpoint(tablet){
+
+  }
+
+  span{
+    @include breakpoint(tablet){
+      padding: 0 0 0 5px;
+      line-height: 19px;
+      position: relative;
+      top: -13px;
+    }
+  }
+
+  .icon-search{
+    top: -1px;
+
+    @include breakpoint(tablet){
+      top: -8px;
+      right: 5px;
+    }
+  }
+
+  &.active{
+   background: gray;
+  } 
+}
+
+.js-search{
+  display: none;
+  background: gray;
+  padding: 1px;
 }
