@@ -18,7 +18,7 @@
       float: right;
     }
 
-    .icon-search, .search, .subscribe-link, .categories{
+    .icon-search-2, .search, .subscribe-link, .categories {
       display: none;
 
       @include breakpoint(desktop){
@@ -27,7 +27,7 @@
     }
 
     @include breakpoint(desktop){
-      .icon-search{
+      .icon-search-2 {
         color: #F20892;
         position: absolute;
         right: 13px;
@@ -52,7 +52,7 @@
         color: #000;
         text-decoration: none;
         width: 208px;
-        margin: 35px auto 40px;
+        margin: 38px 20px 29px;
         white-space: nowrap;
 
         .icon-rss{
@@ -318,7 +318,7 @@
       }
 
       img{
-        margin: 20px 0 0;
+        margin: 38px 0 0;
         display: block;
       }
     }
@@ -333,10 +333,10 @@
       padding: 15px 15px 16px;
       font-size: em(14);
       line-height: em(18);
-      margin-bottom: 20px;
+      margin-bottom: 42px;
 
        @include breakpoint(tablet){
-        line-height: em(25);
+        line-height: 1.4em;
        }
     }
   }
@@ -352,7 +352,7 @@
   @include breakpoint(tablet){
     padding: 0;
     border: 0;
-    margin: 15px 0;
+    margin: 24px 0 37px;
   }
 
   .author, .date, .comment{
@@ -360,6 +360,12 @@
     font-size: em(14);
     margin-right: 20px;
     text-align: right;
+
+    i {
+      margin-right: 10px;
+      font-size: 18px;
+      vertical-align: sub;
+    }
 
     @include breakpoint(tablet){
       display: inline-block;
@@ -402,6 +408,11 @@
   }
 }
 
+p {
+  font-size: 14px;
+  margin-bottom: 24px !important;
+}
+
 .tags{
   overflow: hidden;
   margin:30px 0;
@@ -423,7 +434,7 @@
 }
 
 .metadata-footer{
-  margin: 35px 0 25px;
+  margin: 61px 0 25px;
 
   @include breakpoint(tablet){
     border-top: $color-five solid 1px;
@@ -446,7 +457,20 @@
     }
 
     a{
+      text-shadow: 1px 1px 1px #fff;
       text-decoration: none;
+      .icon-thumbs-up {
+        color: #3b5998;
+      }
+      .icon-twitter {
+        color: #00aeef;
+      }
+      .icon-googleplus {
+        color: #000;
+      }
+      .icon-linkedin {
+        color: #0072b3;
+      }
     }
     span{
       @include hide-text;

@@ -70,16 +70,20 @@
       p{
         font-size: em(13,14);
         line-height: em(20,13);
+        font-weight: normal;
       }
 
       .retry{
         text-align: right;
         color: $color-two;
+        i {
+          font-size: 24px;
+        }
       }
     }
 
     .comment-author{
-      font-size: em(11,13);
+      font-size: em(12,14);
       margin-bottom: 30px;
 
       @include breakpoint(tablet){
@@ -138,12 +142,13 @@
 
       .comment-text{
         p{
-          font-size: em(13,12);
+          font-size: em(13,14);
+          font-weight: normal;
         }
       }
 
       .comment-author{
-        font-size: em(11,12);
+        font-size: em(11,14);
         float: right;
         left: auto;
         right: 40px;
