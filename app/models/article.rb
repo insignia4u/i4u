@@ -5,8 +5,8 @@ class Article < ActiveRecord::Base
 
   has_attached_file :image,
         styles: {
-                  big:          "277x250#", 
-                  thumb:        "234x230#", 
+                  big:          "277x250#",
+                  thumb:        "234x230#",
                   normal:       "818x403#",
                   medium:       "650x320#",
                   small:        "268x151#",
@@ -22,7 +22,24 @@ class Article < ActiveRecord::Base
 
   def self.most_recents
     where('publication_state = ? AND publication_date <= ?',1, Date.today)
-    .order('created_at DESC')
+    .order('publication_date DESC, id DESC')
     .limit(3)
+  end
+
+  def self.next_article(article)
+    ids = select('id').where('publication_state = ?', 1)
+                      .order('publication_date DESC, id DESC')
+    index = ids.index(article) - 1
+    return false if index < 0
+    return find(ids[index].id) if ids[index]
+    false
+  end
+
+  def self.prev_article(article)
+    ids = select('id').where('publication_state = ?', 1)
+                      .order('publication_date DESC, id DESC')
+    index = ids.index(article) + 1
+    return find(ids[index].id) if ids[index]
+    false
   end
 end

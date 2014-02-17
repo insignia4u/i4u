@@ -68,6 +68,17 @@ describe Article do
     end
   end
 
+  describe "Article position" do
+    before(:each) do
+      @all = create_list(:published_article, 3)
+    end
+
+    it { Article.next_article(@all.first).should eql(@all.second) }
+    it { Article.next_article(@all.last).should be_false }
+    it { Article.prev_article(@all.second).should eql(@all.first) }
+    it { Article.prev_article(@all.first).should be_false }
+  end
+
   describe "Tags" do
     before(:each) do
       @article  = create(:article, tag_list: 'Un tag')

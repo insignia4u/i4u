@@ -1,4 +1,4 @@
-# Generate report 
+# Generate report
 require 'simplecov'
 SimpleCov.start 'rails' do
   add_filter "/admin/"
@@ -26,6 +26,16 @@ RSpec.configure do |config|
   config.include Paperclip::Shoulda::Matchers
   config.include Devise::TestHelpers, :type => :controller
   config.extend ControllerMacros,     :type => :controller
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+    ActionMailer::Base.deliveries.clear
+  end
 
   config.after(:each) do
     DatabaseCleaner.clean

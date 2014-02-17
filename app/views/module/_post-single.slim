@@ -55,13 +55,15 @@
               = link_to tag, tag_blog_articles_path(tag.name)
 
   .pagination
-    a.l-previous href=""
-      span.icon-double-angle-left
-      span.l-back-text Anterior
+    - if @prev
+      = link_to blog_article_path(@prev), class: 'l-previous' do
+        span.icon-double-angle-left
+        span.l-back-text Anterior
 
-    a.l-next href=""
-      span.l-back-text Siguiente
-      span.icon-double-angle-right
+    - if @next
+      = link_to blog_article_path(@next), class: 'l-next' do
+        span.l-back-text Siguiente
+        span.icon-double-angle-right
 
   = render "module/discussion"
   = render "module/post-comment-form"

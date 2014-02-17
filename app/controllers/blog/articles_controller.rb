@@ -7,6 +7,8 @@ class Blog::ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @next = Article.next_article(@article)
+    @prev = Article.prev_article(@article)
   end
 
 private

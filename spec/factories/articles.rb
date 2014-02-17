@@ -24,7 +24,7 @@ FactoryGirl.define do
 
     factory :published_article do
       publication_state       1
-      publication_date        Date.today
+      publication_date        DateTime.now
     end
   end
 end
