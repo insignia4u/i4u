@@ -14,14 +14,19 @@
       border-width: 2px;
       margin: 0 -16px 0 0;
       position: relative;
-      top: 19px;
-      left: -23px;
+
+      @include breakpoint(desktop){
+        top: 19px !important;
+        left: -23px !important;
+      }
+
+      @include breakpoint(tablet){
+        top: 3px;
+        left: -30px;
+      }
 
       i {
         font-size: 40px;
-      }
-       @include breakpoint(tablet){
-        top: 4px;
       }
     }
   }

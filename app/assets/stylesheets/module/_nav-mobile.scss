@@ -62,14 +62,16 @@
   }
 
   .icon-search-2 {
-    font-size: 25px;
+    font-size: 20px;
     position: relative;
-    top: 4px;
+    top: -2px;
+    left: -10px;
 
     @include breakpoint(tablet){
       margin-left: 15px;
       font-size: 21px;
-      top: -11px;
+      top: -10px;
+      left: 0px;
     }
   }
 
@@ -140,11 +142,6 @@
   width: 31px;
   top: 5px;
 
-
-  @include breakpoint(tablet){
-
-  }
-
   span{
     @include breakpoint(tablet){
       padding: 0 0 0 5px;
@@ -160,6 +157,12 @@
     @include breakpoint(tablet){
       top: -8px;
       right: 5px;
+    }
+
+    @include breakpoint(mobile) {
+      font-size: 20px;
+      top: -4px;
+      left: -8px;
     }
   }
 
