@@ -2,11 +2,9 @@
   .todaytips
     h2 HOY
     p
-      a href="" Viewport Resizer
-      |  es una herramienta muy útil durante el 
-      | desarrollo de sitios web usando Responsive Web Design, 
-      | para cambiar el tamaño del viewport rápidamente desde el 
-      | mismo browser.
+      = link_to @rails_tip.title, '#'
+      |&nbsp;
+      = @rails_tip.description
 
   .calendar
     .calendar-header
@@ -52,41 +50,15 @@
   .monthtips
     h3 FEBRERO
     ul
-      li
-        .day
-          | Vie
-          span.daynumber 10
-          span.linedash
-        p
-          | Nullam id dolor id nibh ultricies vehicula ut id elit. 
-          | llam quis risus eget urna mollis ornare vel eu leo. 
-          | Morbi leo risus, porta ac consectetur ac, vestibulum at eros. 
-          a href="" Resizer
-          |  Donec id elit non mi porta gravida at eget metus. 
-          | Nullam id dolor id nibh ultricies vehicula ut id elit.
-      li
-        .day
-          | Jue
-          span.daynumber 09
-          span.linedash
-        p
-          | Nullam id dolor id nibh ultricies vehicula ut id elit. 
-          | llam quis risus eget urna mollis ornare vel eu leo. 
-          | Morbi leo risus, porta ac consectetur ac, vestibulum at eros. 
-          a href="" Resizer
-          |  Donec id elit non mi porta gravida at eget metus. 
-          | Nullam id dolor id nibh ultricies vehicula ut id elit.
-      li
-        .day
-          | Mie
-          span.daynumber 07
-          span.linedash
-        p
-          | Nullam id dolor id nibh ultricies vehicula ut id elit. 
-          | llam quis risus eget urna mollis ornare vel eu leo. 
-          | Morbi leo risus, porta ac consectetur ac, vestibulum at eros. 
-          a href="" Resizer
-          |  Donec id elit non mi porta gravida at eget metus. 
-          | Nullam id dolor id nibh ultricies vehicula ut id elit.
+      - @month_tips.each do |tip|
+        li
+          .day
+            = tip.published_at.strftime('%a')
+            span.daynumber= tip.published_at.strftime('%d')
+            span.linedash
+          p
+            = link_to @rails_tip.title, '#'
+            |&nbsp;
+            = @rails_tip.description
 
   = render "module/pagination-pages"

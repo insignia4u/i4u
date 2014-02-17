@@ -10,6 +10,7 @@ namespace(:db) do
       require "populator/projects"
       require "populator/featured_contents"
       require "populator/blog"
+      require "populator/tips"
     end
 
     desc "Populate development database with raw data"
@@ -23,6 +24,7 @@ namespace(:db) do
       projects          = Populator::Projects.new
       featured_contents = Populator::FeaturedContents.new
       blog              = Populator::Blog.new
+      tip               = Populator::Tips.new
       puts "> *** Done!"
 
       puts "> *** Populating support data."
@@ -47,6 +49,10 @@ namespace(:db) do
 
       puts "> *** Populating blog."
       blog.populate
+      puts "> *** Done!"
+
+      puts "> *** Populating tip."
+      tip.populate
       puts "> *** Done!"
 
      puts "> Database Population process complete!"
