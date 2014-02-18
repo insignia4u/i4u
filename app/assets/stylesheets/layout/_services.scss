@@ -1,0 +1,21 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.services{
+  .box-dashed{
+    @include breakpoint(desktop){
+      margin-left: -20px;
+    }
+
+    li{
+      @include box-dashed2;
+
+      @include breakpoint(desktop){
+        width: 440px;
+        margin-left: 20px;
+        float: left;
+      }
+    }
+  }
+}

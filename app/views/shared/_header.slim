@@ -1,26 +1,25 @@
 header.tooglenav
-  .container#logo
-    h1
-      a href="/"
-        = image_tag(asset_path("insignia.svg"))
+  h1
+    a href="/"
+      = image_tag(asset_path("insignia.svg"))
 
-    /a.lang href="" English Please
+  .navbar
+    nav
+      ul
+        li
+          a class=active_if_equals(controller_name,'home') href="/" Home
+        li
+          a class=active_if_equals(controller_name,'people') href="/staff" Staff
+        li
+          a class=active_if_equals(controller_name, 'services') href="/services"Services
+        li
+          a class=active_if_equals(controller_name,'projects') href="/projects"Projects
+        li
+          a class=active_if_equals(controller_name,'contacts') href="/contact" Contact
+        li
+          a class=active_if_equals(controller_name,'articles') href="http://www.insignia4u-blog.com/" Blog
 
-  nav
-    i#menu-btn.icon-list
-    ul
-      li
-        a class=active_if_equals(controller_name,'home') href="/" Home
-      li
-        a class=active_if_equals(controller_name,'people') href="/staff" Staff
-      li
-        a class=active_if_equals(controller_name, 'services') href="/services"Services
-      li
-        a class=active_if_equals(controller_name,'projects') href="/projects"Projects
-      li
-        a class=active_if_equals(controller_name,'contacts') href="/contact" Contact
-      li
-        a class=active_if_equals(controller_name,'articles') href="http://www.insignia4u-blog.com/" Blog
-    span x
+  i#menu-btn.icon-list
+  span x
 
   = yield :head

@@ -1,0 +1,109 @@
+.primary-title{
+  text-align: center;
+  margin: 35px 0;
+
+  @include breakpoint(tablet){
+    border-top: 2px dashed $color-five;
+    margin: 90px 0 0;
+  }
+
+  // &.big{
+  //   h2{
+  //     font-size: em(92);
+  //     line-height: 92px;
+  //   }
+  // }
+
+  h2, h3{
+    font-family: $font-secondary;
+    font-size: em(66);
+    line-height: em(56,66);
+    padding: 0 25px;
+    display: block;
+    position: relative;
+    background: url(asset-path("background-pattern.gif", image));
+
+    @include breakpoint(tablet){
+      top: -37px;
+      padding: 0 80px;
+      margin: 0;
+      display: inline-block;
+    }
+
+    &:before, &:after{
+      display: inline-block;
+      width: 30px;
+      color: $color-two;
+      position: absolute;
+      top: 40%;
+      font-size: em(30,66);
+
+      @include breakpoint(tablet){
+        top: 38%;
+      }
+    }
+
+    &:before{
+      @include ico("\e009");
+      left: -10px;
+
+      @include breakpoint(tablet){
+        left: 0;
+      }
+    }
+
+    &:after{
+      @include ico("\e008");
+      right: -10px;
+
+      @include breakpoint(tablet){
+        right: 0;
+      }
+    }
+
+    &.blue{
+      color: $color-three;
+    }
+
+    span{
+      font-weight: 300;
+    }
+  }
+}
+
+.twocols{
+  .primary-title{
+    border-top: none;
+
+    h3{
+      font-size: em(50,66);
+      line-height: em(40,50);
+    }
+
+    @include breakpoint(tablet){
+      margin-bottom: 0;
+      border-top: 2px dashed #B8B8B8;
+
+      h3{
+        top: -0.6em;
+        position: relative;
+      }
+    }
+
+    @include breakpoint(desktop){
+      border: medium none;
+      margin-top: 0;
+      margin-bottom: 30px;
+
+      h3{
+        background: url(asset-path("background-pattern.gif", image));
+        color: #343233;
+        font-size: 54px;
+        line-height: 54px;
+        margin: auto;
+        display: inline-block;
+        font-family: $font-secondary;
+      }
+    }
+  }
+}

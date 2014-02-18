@@ -1,5 +1,5 @@
 section.contact
-  .container-title
+  .primary-title
     h2 = title_for('contact')
 
   = form_for @message, url: contact_path, html: { multipart: true } do |f|
@@ -23,7 +23,7 @@ section.contact
       = f.submit 'Contact Us', class: 'btn'
 
 section.contact-info
-  .container-title
+  .primary-title
     h2 = title_for('contact info')
 
   ul.list-contact

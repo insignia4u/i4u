@@ -1,5 +1,5 @@
 section.services
-  .container-title
+  .primary-title
     h2 = title_for('our-services-title').strip
   ul.box-dashed.two
     - @services_snippet.each do |service|
@@ -7,7 +7,7 @@ section.services
         h3 = title_for("#{service[:snippet]}-text-snippet")
         p == body_for("#{service[:snippet]}-text-snippet",true)
 section.process
-  .container-title
+  .primary-title
     h2 = title_for('our-process').strip
 
   ul
@@ -24,15 +24,15 @@ section.process
 
 
 section.howdowedoit
-  .container-title
-    h2 
+  .primary-title
+    h2
       = title_for('how-do-we-do-it').strip
       span ?
 
   = raw body_for('how-do-we-do-it',true)
 
 section.our-offering
-  .container-title
+  .primary-title
     h2 = title_for('our-offering').strip
 
   = body_for('our-offering',true)

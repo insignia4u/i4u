@@ -9,7 +9,7 @@
 
 @media (max-width: 599px){
   .projects-page{
-    .container-title{
+    .primary-title{
       h2{
         font-size: 38px;
       }
@@ -112,12 +112,12 @@
 :: PROJECTS
 ---------------------------- */
   .projects-page{
-    .container-title{
+    .primary-title{
       margin-top: 0px;
       border-top: 0;
     }
   }
-  .more-projects .container-title h2{
+  .more-projects .primary-title h2{
     font-size: 50px;
   }
 
@@ -221,7 +221,7 @@
     }
   }
 
-  .projects-page .container-title h2 , .more-projects .container-title h2{
+  .projects-page .primary-title h2 , .more-projects .primary-title h2{
     height: auto;
   }
 
@@ -233,7 +233,7 @@
   :: PROJECT SHOW
   ---------------------------- */
   .project-page{
-    .container-title{
+    .primary-title{
       border-top: 0;
 
       h2{
@@ -281,7 +281,7 @@
   }
 
   .more-info{
-    .container-title{
+    .primary-title{
       margin-top: 0;
       margin-bottom: 25px;
       border: none;

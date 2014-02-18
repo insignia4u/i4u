@@ -1,0 +1,288 @@
+// -----------------------
+// == Base
+// -----------------------
+
+// = Inline-block
+// -----------------------------
+@mixin inline-block ($haslayout : true){
+  display: inline-block;
+  vertical-align: middle;
+  @if $haslayout == true {
+    .lt-ie8 & {
+      display: inline;
+      zoom: 1;
+    }
+  }
+}
+
+// = Clearfix
+// -----------------------------
+@mixin clearfix ($haslayout : true) {
+  @if $haslayout == true {
+    .lt-ie8 & {
+      zoom: 1;
+    }
+  }
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// = Opacity
+// -----------------------------
+@mixin opacity($opacity) {
+    filter: unquote("progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round($opacity * 100)})");
+    opacity: $opacity;
+
+    /* Hack IE6 */
+    .lt-ie7 & {
+        filter : alpha(opacity=#{round($opacity * 100)});
+        zoom: 1;
+    }
+}
+
+// = Placeholder
+// -----------------------------
+@mixin placeholder($color : $clr-mixin-placeholder) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+// = Position
+// -----------------------------
+@mixin position ($position: relative, $coordinates: 0 0 0 0) {
+  @if type-of($position) == list {
+    $coordinates: $position;
+    $position: relative;
+  }
+  $top: nth($coordinates, 1);
+  $right: nth($coordinates, 2);
+  $bottom: nth($coordinates, 3);
+  $left: nth($coordinates, 4);
+  position: $position;
+  @if $top == auto {
+    top: $top;
+  }
+  @else if not(unitless($top)) {
+    top: $top;
+  }
+  @if $right == auto {
+    right: $right;
+  }
+  @else if not(unitless($right)) {
+    right: $right;
+  }
+  @if $bottom == auto {
+    bottom: $bottom;
+  }
+  @else if not(unitless($bottom)) {
+    bottom: $bottom;
+  }
+  @if $left == auto {
+    left: $left;
+  }
+  @else if not(unitless($left)) {
+    left: $left;
+  }
+}
+
+// ----------------------------------------------------------
+// == CSS3
+// ----------------------------------------------------------
+
+
+// = Border-radius
+// -----------------------------
+@mixin border-radius($radius : 5px) {
+  @include prefixer(border-radius, $radius, moz spec)
+}
+
+@mixin border-top-radius($radius : 5px) {
+  @include prefixer(border-top-left-radius, $radius, moz spec);
+  @include prefixer(border-top-right-radius, $radius, moz spec);
+}
+
+@mixin border-bottom-radius($radius : 5px) {
+  @include prefixer(border-bottom-left-radius, $radius, moz spec);
+  @include prefixer(border-bottom-right-radius, $radius, moz spec);
+}
+
+@mixin border-left-radius($radius : 5px) {
+  @include prefixer(border-top-left-radius, $radius, moz spec);
+  @include prefixer(border-bottom-left-radius, $radius, moz spec);
+}
+
+@mixin border-right-radius($radius : 5px) {
+  @include prefixer(border-top-right-radius, $radius, moz spec);
+  @include prefixer(border-bottom-right-radius, $radius, moz spec);
+}
+
+// = Transition
+// -----------------------------
+@mixin transition ($transition : all .3s ease-in-out) {
+  @include prefixer(transition, $transition, webkit moz ms o spec);
+}
+
+// = Box-sizing
+// -----------------------------
+@mixin box-sizing ($box : border-box) {
+  //  content-box | border-box | inherit
+  @include prefixer(box-sizing, $box, webkit moz spec);
+}
+
+// = Filter
+// -----------------------------
+@mixin filter (
+  $filter-1,
+  $filter-2 : false,
+  $filter-3 : false,
+  $filter-4 : false,
+  $filter-5 : false,
+  $filter-6 : false,
+  $filter-7 : false,
+  $filter-8 : false,
+  $filter-9 : false,
+  $filter-10: false
+  ) {
+  $filter : compact($filter-1, $filter-2, $filter-3, $filter-4, $filter-5, $filter-6, $filter-7, $filter-8, $filter-9, $filter-10);
+  @include prefixer(filter, $filter, webkit moz spec);
+}
+
+// = UL
+// -----------------------------
+@mixin ul-list-inline() {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        @include inline-block();
+    }
+}
+
+@mixin reset-ul() {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+// = Transform
+// -----------------------------
+@mixin transform($property: none) {
+    @include prefixer(transform, $property, webkit moz ms o spec);
+}
+
+@mixin transform-origin($axes: 50%) {
+    @include prefixer(transform-origin, $axes, webkit moz ms o spec);
+}
+
+@mixin transform-style ($style: flat) {
+    @include prefixer(transform-style, $style, webkit moz ms o spec);
+}
+
+// = Keyframes
+// -----------------------------
+@mixin keyframes($name) {
+    $original-prefix-for-webkit:    $prefix-for-webkit;
+    $original-prefix-for-mozilla:   $prefix-for-mozilla;
+    $original-prefix-for-microsoft: $prefix-for-microsoft;
+    $original-prefix-for-opera:     $prefix-for-opera;
+    $original-prefix-for-spec:      $prefix-for-spec;
+
+    @if $original-prefix-for-webkit {
+        @include disable-prefix-for-all();
+        $prefix-for-webkit: true;
+        @-webkit-keyframes #{$name} {
+            @content;
+        }
+    }
+    @if $original-prefix-for-mozilla {
+        @include disable-prefix-for-all();
+        $prefix-for-mozilla: true;
+        @-moz-keyframes #{$name} {
+            @content;
+        }
+    }
+    @if $original-prefix-for-spec {
+        @include disable-prefix-for-all();
+        $prefix-for-spec: true;
+        @keyframes #{$name} {
+            @content;
+        }
+    }
+
+    $prefix-for-webkit:    $original-prefix-for-webkit   ;
+    $prefix-for-mozilla:   $original-prefix-for-mozilla  ;
+    $prefix-for-microsoft: $original-prefix-for-microsoft;
+    $prefix-for-opera:     $original-prefix-for-opera    ;
+    $prefix-for-spec:      $original-prefix-for-spec     ;
+}
+
+// = Calc
+// -----------------------------
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -o-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+@mixin titlesize($tsize){
+  font-size: em($tsize);
+  line-height: ($tsize+2)px;
+}
+
+@mixin ico($ico){
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: $ico;
+}
+
+@mixin box-dashed2{
+  @include border-radius(5px);
+  margin-top:0;
+  margin-bottom:40px;
+  padding: 25px 20px 10px;
+
+  @media(max-width:1023px){
+    height: auto !important;
+  }
+
+  @include breakpoint(tablet){
+    padding: 35px 40px 20px;
+  }
+
+  h3{
+    font-family: $font-primary;
+    color:#316baf;
+    font-size:16px;
+    text-transform:uppercase;
+    text-align: center;
+    margin-bottom: 10px;
+
+    @include breakpoint(tablet){
+      text-align: left;
+    }
+  }
+
+  p{
+    font-size:13px;
+    line-height:23px;
+  }
+}

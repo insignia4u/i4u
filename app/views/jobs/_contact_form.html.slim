@@ -1,6 +1,6 @@
 section.contact_form
   .content
-    .container-title
+    .primary-title
       h2 = title_for('contactáte con nosotros!')
 
     = form_for @message, url: contact_path, html: { multipart: true } do |f|

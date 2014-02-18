@@ -72,24 +72,13 @@ all_equals = () ->
   biggestHeight = 0
   $('.equal').each ->
     biggestHeight = $(this).height() if $(this).height() > biggestHeight
-  $('.equal').height( biggestHeight )
+  $('.equal').height( biggestHeight + 50)
 
 check_modernizer = () ->
   if Modernizr.svg
     $("header h1 a").html "<img src=\"/assets/insignia.svg\" alt=\"Insignia\"/>"
   else
     $("header h1 a").html "<img src=\"/assets/insignia.jpg\" alt=\"Insignia\"/>"
-
-check_client_width = () ->
-  if document.documentElement.clientWidth < 767
-    $(".tooglenav #logo").insertAfter "nav"
-  else
-    $(".tooglenav nav").insertAfter "#logo"
-  $(window).resize ->
-    if document.documentElement.clientWidth < 767
-      $(".tooglenav #logo").insertAfter "nav"
-    else
-      $(".tooglenav nav").insertAfter "#logo"
 
 alert_div_if_errors = () ->
   if $(".field_with_errors").length > 0
@@ -103,7 +92,6 @@ $(window).load () ->
 
 $(document).ready ->
   check_modernizer()
-  check_client_width()
   alert_div_if_errors()
 
   $().UItoTop easingType: "easeOutQuart"
@@ -114,9 +102,9 @@ $(document).ready ->
 
   $('#position').carousel "pause"
 
-  $("#menu-btn, header nav span").click ->
-    $("header nav ul").slideToggle "slow"
-    $("header nav span").slideToggle "slow"
+  $("#menu-btn, .tooglenav span").click ->
+    $(".tooglenav .navbar").slideToggle "slow"
+    $(".tooglenav span").slideToggle "slow"
 
   $(".nav-categories").click ->
     $(this).closest(".nav-mobile").addClass "open-categories"

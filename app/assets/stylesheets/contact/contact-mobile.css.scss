@@ -4,13 +4,13 @@
 
 @media (max-width: 767px){
   .contact, .contact-info{
-    .container-title{
+    .primary-title{
       border-top: none;
     }
   }
 
   .contact{
-    .container-title{
+    .primary-title{
       h2{
         font-size: 60px;
         margin-top: 34px;
@@ -24,7 +24,7 @@
   }
 
   .contact-info{
-    .container-title{
+    .primary-title{
       h2{
         font-size: 52px;
         margin: 0px 0 52px;

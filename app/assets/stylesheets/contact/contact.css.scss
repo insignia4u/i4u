@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .contact, .contact_form {
-  .container-title{
+  .primary-title{
     h2{
       font-size: 92px;
     }
@@ -41,7 +41,7 @@
 }
 
 .contact-info{
-  .container-title{
+  .primary-title{
     h2{
       font-size: 68px;
     }
@@ -118,7 +118,7 @@
   display: block;
   background: #ed0892 !important;
 
-  .container-title {
+  .primary-title {
     margin-top: 83px;
     padding-top: 60px;
     border-top: 2px dashed #382F2D;

@@ -1,0 +1,133 @@
+.howdowedoit, .our-offering{
+
+  @include breakpoint(desktop){
+    float: left;
+  }
+}
+
+.howdowedoit{
+  @include breakpoint(desktop){
+    border-right: 2px dashed #B8B8B8;
+    float: left;
+    width: 50%;
+    margin-top: 60px;
+    padding: 0;
+    margin-right: 0;
+  }
+
+  .primary-title{
+
+    @include breakpoint(tablet){
+      border-top:2px dashed #B8B8B8;
+      margin-top:90px;
+    }
+
+    @include breakpoint(desktop){
+      border:none;
+      margin-top:40px;
+    }
+
+    h2{
+      font-size: em(50,16);
+      line-height: em(40,50);
+
+      &:before, &:after{
+        font-size: em(30,50);
+        top: 20%;
+      }
+
+      @include breakpoint(tablet){
+        font-size: em(66,16);
+        line-height: em(56,66);
+        top: -36px;
+        padding: 0 40px;
+
+        &:before, &:after{
+          font-size: em(30,66);
+          top: 38%;
+        }
+      }
+    }
+  }
+
+  .bullets-blue{
+    padding: 0 10px;
+
+    @include breakpoint(tablet){
+      padding: 20px 11% 20px 16%;
+    }
+
+    @include breakpoint(desktop){
+      padding:0 40px 0 30px;
+    }
+
+    li{
+      font-size: em(13);
+      line-height: em(24,13);
+      margin-bottom: 20px;
+
+      @include breakpoint(tablet){
+        font-size: em(15);
+        line-height: em(27,15);
+      }
+    }
+  }
+}
+
+.our-offering{
+
+  @include breakpoint(desktop){
+    width:49%;
+  }
+
+  .primary-title{
+
+    @include breakpoint(tablet){
+      border-top:2px dashed #B8B8B8;
+      margin-top:90px;
+    }
+
+    @include breakpoint(desktop){
+      border:none;
+      margin-top:100px;
+    }
+
+    h2{
+      font-size: em(60,16);
+      line-height: em(50,60);
+
+      &:before, &:after{
+        font-size: em(30,60);
+        top: 30%;
+      }
+
+      @include breakpoint(tablet){
+        font-size: em(66,16);
+        line-height: em(56,66);
+        top: -36px;
+        padding: 0 40px;
+
+        &:before, &:after{
+          font-size: em(30,66);
+          top: 38%;
+        }
+      }
+    }
+  }
+
+  p{
+    padding: 0;
+    font-size: em(13);
+    line-height: em(24,13);
+    margin-bottom: 20px;
+
+    @include breakpoint(tablet){
+      font-size: em(15);
+      line-height: em(27,15);
+    }
+
+    @include breakpoint(desktop){
+      
+    }
+  }
+}

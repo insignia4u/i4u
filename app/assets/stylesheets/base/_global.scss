@@ -1,47 +1,3 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-/* ----------------------------
-:: Variable
----------------------------- */
-$font-primary: 'Enriqueta', cursive;
-$font-secondary: 'Amatic SC',cursive;
-
-$color-one: #373435; /* dark gray - text */
-$color-two: #F10993; /* pink */
-$color-three: #316baf; /* blue */
-$color-four: #383435; /* dark gray - background nav*/
-$color-five: #b4b4b4;
-$color-six: #979797;
-$color-seven: #626262;
-$color-eight: #9a9294;
-$color-nine: #817f80;
-
-/* ----------------------------
-:: Mixins
----------------------------- */
-@mixin titlesize($tsize){
-  font-size: em($tsize);
-  line-height: ($tsize+2)px;
-}
-
-@mixin ico($ico){
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  content: $ico;
-}
-
-
-
-/* ----------------------------
-:: extends
----------------------------- */
-
 .box-transparent-rounded{
   @include border-radius(10px);
   background: rgba(0, 0, 0, 0.03);
@@ -77,7 +33,6 @@ $color-nine: #817f80;
   }
 }
 
-
 %circle{
   @include border-radius(23px);
   height: 45px;
@@ -97,9 +52,11 @@ $color-nine: #817f80;
   }
 }
 
-/* ----------------------------
-:: Base
----------------------------- */
+%list-unstyled{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 
 p,a{
   -ms-word-break: break-all;
@@ -119,8 +76,12 @@ p, a, h1, h2, h3, h4, h5, h6, label, input, textarea, ul, ol{
 }
 
 a{
-  text-decoration: none;
-  -webkit-transition: all 0.4s ease-out;
+  color:#316baf;
+  @include transition(all 0.4s ease-out);
+}
+
+p{
+  margin: 0 0 20px;
 }
 
 ul{
@@ -156,31 +117,14 @@ body{
 }
 
 section{
-  margin-bottom:70px;
+  @include span-columns(12);
+  padding: 0 20px;
 }
 
-%list-unstyled{
-  padding: 0;
-  margin: 0;
-  list-style: none;
+.box-dashed{
+  margin: auto
 }
 
-.content{
-  p{
-    margin: 0 0 20px;
-  }
-}
-
-
-a{
-  color:#316baf;
-  text-decoration:underline;
-}
-
-
-/* ----------------------------
-:: global
----------------------------- */
 .container,
 .container-contact,
 nav ul, .content{
@@ -210,12 +154,6 @@ nav ul, .content{
   border: #333 dashed 1px;
   width: 80px;
   height: 80px;
-}
-
-.container-title{
-  h2, h3, h4{
-    font-family: $font-secondary;
-  }
 }
 
 .list-with-photos{
@@ -249,21 +187,29 @@ nav ul, .content{
 }
 
 .box-dashed{
-  margin-left: -20px;
-  overflow:hidden;
+  @include breakpoint(desktop){
+    margin-left: -20px;
+    overflow:hidden;
+  }
 
   li{
     @include border-radius(10px);
     background: repeat 0 0 rgba(255, 255, 255, 0.4);
     border: #817f7f dashed 1px;
-    float: left;
-    margin:12px 0 12px 20px;
+    margin-bottom: 30px;
+
+    @include breakpoint(desktop){
+      float: left;
+      margin:12px 0 12px 20px;
+    }
   }
 }
 
 .box-dashed.two{
   li{
-    width: 460px;
+    @include breakpoint(desktop){
+      width: 460px;
+    }
   }
 }
 
@@ -279,18 +225,36 @@ nav ul, .content{
 
 .box-dashed.four{
   li{
-    width: 218px;
+    margin: 20px auto;
+    width: 100%;
+
+    @include breakpoint(tablet){
+      margin: 0 10px 20px;
+      width: 47%;
+    }
+    @include breakpoint(desktop){
+      width: 218px;
+    }
   }
 }
 
 .circle{
   @include border-radius(39px);
   background:#f20892;
-  border:#a60563 solid 5px;
   height:78px;
   width:78px;
   margin:19px auto 10px;
   margin-bottom: 7px;
+  border: 0.3em solid #A60563;
+
+  &.blue{
+    background:#316baf;
+    border:#224a79 solid 5px;
+  }
+
+  @include breakpoint(desktop){
+    border:#a60563 solid 5px;
+  }
 
   i{
     color: white;
@@ -338,44 +302,52 @@ nav ul, .content{
     line-height: 2.3em;
     font-size: em(35);
   }
-
 }
 
-.circle.blue{
-  background:#316baf;
-  border:#224a79 solid 5px;
-}
+.list-with-photos{
+  margin: 0;
+  padding: 30px 0 0;
 
-.container-title{
-  border-top: 2px dashed #B8B8B8;
-  margin-top: 90px;
-  width: 100%;
-  text-align: center;
-  clear: both;
+  li{
+    padding: 0 0 0 90px;
+    margin: 0 0 25px;
+    border-bottom: #b6c7dc solid 1px;
+    width: 100%;
+    min-height: 130px;
+  }
 
-  h2{
-    background: url(asset-path("background-pattern.gif", image));
-    position: relative;
-    top: -36px;
-    color: #343233;
-    font-size: em(60);
-    line-height: 60px;
-    margin: auto;
-    display: inline-block;
-    font-family: $font-secondary;
+  @include breakpoint(tablet){
+    overflow: hidden;
+    margin: 25px 0 0 45px;
 
-    span{
-      font-weight: 400;
+    li{
+      margin: 5px 18px;
+      min-height: 165px;
     }
   }
-
 }
 
-.container-title.big{
-  h2{
-    font-size: em(92);
-    line-height: 92px;
+.carousel{
+  .carousel-control{
+    i{
+      font-size: 26px;
+      left: -2px;
+      top: -6px;
+    }
   }
+}
+
+.carousel-inner{
+  margin: auto;
+  width: 90%;
+}
+
+.carousel .more{
+  left: 1px;
+  right: 1px;
+  font-size: 35px;
+  margin:auto;
+  text-align: center;
 }
 
 .twocols{
@@ -387,26 +359,17 @@ nav ul, .content{
     margin-top: 30px;
     padding-bottom: 40px;
     margin-bottom: 0;
+  }
 
-    .container-title{
-      border: medium none;
-      margin-top: 0;
-      margin-bottom: 30px;
+  p{
+    margin: 15px 0;
+  }
 
-      h3{
-        background: url(asset-path("background-pattern.gif", image));
-        color: #343233;
-        font-size: 54px;
-        line-height: 54px;
-        margin: auto;
-        display: inline-block;
-        font-family: $font-secondary;
-
-        span{
-          font-weight: 400;
-        }
-      }
-    }
+  .firstcol, .secondcol{
+    width: 100%;
+    border: none;
+    padding: 0;
+    margin: 50px 0 80px;
   }
 
   .firstcol{
@@ -416,34 +379,15 @@ nav ul, .content{
   }
 
   .secondcol{
+    margin-bottom: 30px;
     width: 50%;
     padding-left: 30px;
   }
 
+
 }
 
-.container-title{
-  h2:before, h3:before, h2:after, h3:after{
-    display: inline-block;
-    width: 30px;
-    font-size: em(8);
-    color: $color-two;
-  }
-
-  h2:before, h3:before{
-    @include ico("\e009");
-  }
-
-  h2:after, h3:after{
-    @include ico("\e008");
-  }
-
-  h2.blue:after, h2.blue:before, h3.blue:after, h3.blue:before{
-    color: $color-three;
-  }
-}
-
-a.more{
+.more{
   background:#E50892;
   border: 2px solid #A60563;
   border-radius: 5px 5px 5px 5px;
@@ -462,7 +406,7 @@ a.more{
   text-decoration: none;
 }
 
-a.bottom-link{
+.bottom-link{
   color: #f20892;
   text-decoration: none;
   line-height: 15px;
@@ -542,11 +486,11 @@ $w1500: "1500px";
     @media (min-width: $w768) { @content; }
   }
 
-  @else if $point == tablet-horizontal {
+  @else if $point == desktop {
     @media (min-width: $w1024) { @content; }
   }
 
-  @else if $point == desktop {
+  @else if $point == desktop-large {
     @media (min-width: $w1280) { @content; }
   }
 
@@ -589,3 +533,17 @@ $w1500: "1500px";
 @keyframes fade{
   0%,50%{opacity:0}100%{opacity:1}
 }
+
+// ====================
+// :: Only Tablet
+// ====================
+
+@include breakpoint(tablet){
+  .box{
+    h3{
+      margin-top: 10px;
+    }
+  }
+}
+
+
