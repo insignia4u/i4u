@@ -302,7 +302,7 @@ nav ul, .content{
 
   .icon-diamond{
     font-size: em(43);
-    line-height: 2em;
+    line-height: 1.8em;
   }
 
   .icon-php{
@@ -312,16 +312,17 @@ nav ul, .content{
     font-weight: bold;
     font-style: normal;
     font-size: 1.6em;
-    line-height: 3em;
+    line-height: 2.4em;
   }
 
   .icon-tech, .icon-mobile{
-    line-height: 1.7em;
+    line-height: 1.8em;
+    font-size: em(40);
   }
 
   .icon-undo{
     font-size: em(40);
-    line-height: 2em;
+    line-height: 1.8em;
   }
 
   .icon-site-map{
@@ -331,11 +332,11 @@ nav ul, .content{
 
   .icon-cursor{
     font-size: em(40);
-    line-height: 2em;
+    line-height: 1.8em;
   }
 
   .icon-users{
-    line-height: 2.3em;
+    line-height: 1.8em;
     font-size: em(35);
   }
 
