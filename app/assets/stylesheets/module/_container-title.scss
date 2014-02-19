@@ -94,7 +94,7 @@
   @include breakpoint(tablet){
     border-top: 2px dashed #b8b8b8;
     font-size: em(92,66);
-    margin: 90px 25px 0;
+    margin: 90px 0px 0;
   }
 
   @include breakpoint(desktop){

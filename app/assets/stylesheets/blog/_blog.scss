@@ -268,6 +268,7 @@
       border-top: #a7a6a6 solid 1px;
       clear:both;
       margin-bottom: 25px;
+      font-size: 14px;
     }
 
     img{
@@ -306,6 +307,7 @@
     }
 
     &.listpost{
+      font-size: 14px;
       .comment, .author{
         color: #f20892;
       }
@@ -324,6 +326,15 @@
 
       .author{
         padding: 11px 0 11px 2px;
+      }
+
+      h3 {
+        margin-top: 34px;
+        margin-bottom: 20px;
+      }
+
+      .bottom-link {
+        margin-top: 8px;
       }
     }
 
