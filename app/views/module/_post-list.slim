@@ -2,7 +2,7 @@
   - @articles.each do |article|
     article
       .comment
-        | 23
+        = article.count_comments
         i.icon-comment
 
       .author= article.author

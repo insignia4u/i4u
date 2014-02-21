@@ -14,9 +14,12 @@ I4u::Application.routes.draw do
   resources :services,                only: :index
   resources :newsletter_subscriber,   only: :create
 
+
+
   namespace :blog do
     resources :articles, only: [:index,:show] do
       get '/tag/:tag', to: "articles#index", on: :collection, as: 'tag'
+      resource :comments
     end
   end
 

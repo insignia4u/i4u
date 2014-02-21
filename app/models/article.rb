@@ -2,6 +2,7 @@ class Article < ActiveRecord::Base
   extend FriendlyId
 
   belongs_to :site
+  has_many :comments
 
   has_attached_file :image,
         styles: {
@@ -41,5 +42,9 @@ class Article < ActiveRecord::Base
     index = ids.index(article) + 1
     return find(ids[index].id) if ids[index]
     false
+  end
+
+  def count_comments
+    comments.count
   end
 end

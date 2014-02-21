@@ -2,21 +2,21 @@
   .container-title
     h2 Dejá tu Comentario
 
-  form
+  = form_for @comment, url: blog_article_comments_path(@article) do |f|
     .f-text
-      input type="text" placeholder="Name" name="name"
+      = f.text_field :name, placeholder: 'Name'
       i.icon-user
 
     .f-text
-      input type="email" placeholder="E-mail" name="email"
+      = f.email_field :email, placeholder: 'E-mail'
       i.icon-envelope-alt
 
     .f-text
-      input type="text" placeholder="Website" name="website"
+      = f.url_field :website, placeholder: "Website"
       i.icon-earth
 
     .f-textarea
-      textarea.comment placeholder="Comments"
+      = f.text_area :text, placeholder:"Comments", class: 'comment'
       i.icon-pencil
 
-    input.btn type="submit" value="Enviar"
+    = f.submit "Enviar", class: 'btn'
