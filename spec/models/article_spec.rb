@@ -95,7 +95,7 @@ describe Article do
     context "#tagged_with" do
       it "return the articles filtred by tags" do
         Article.tagged_with('Tag1').count.should eql(@with_tag.count)
-        Article.tagged_with('Tag2').to_a.reverse.should eql(@with_tag)
+        Article.tagged_with('Tag2').to_a.should eql(@with_tag)
         Article.tagged_with('Tag3').each do |tag|
           @articles.should_not include(tag)
         end

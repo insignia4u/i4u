@@ -2,7 +2,14 @@ class Blog::ArticlesController < ApplicationController
   before_filter :shared_variables
 
   def index
-    @articles   = tag ? Article.tagged_with(tag) : Article.most_recents
+    if tag
+      @articles = Article.tagged_with(tag)
+    elsif category
+      @articles = Category.find(category).articles
+    else
+      @articles = Article.most_recents
+    end
+    @article
   end
 
   def show
@@ -19,10 +26,15 @@ private
     @today_tip  = Tip.today_tip
     @month_tips = Tip.month_tips(1.month.ago)
     @comment    = Comment.new
+    @categories = Category.all
   end
 
   def tag
     params[:tag]
+  end
+
+  def category
+    params[:category]
   end
 
 end

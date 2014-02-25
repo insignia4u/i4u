@@ -17,6 +17,7 @@ I4u::Application.routes.draw do
 
 
   namespace :blog do
+    get '/categories/:category', to: "articles#index", as: 'category'
     resources :articles, only: [:index,:show] do
       get '/tag/:tag', to: "articles#index", on: :collection, as: 'tag'
       resource :comments
