@@ -286,3 +286,39 @@
     line-height:23px;
   }
 }
+
+@mixin breakpoint($point, $value: 0) {
+  @if $point == mobile {
+    @media (min-width: $w320) { @content; }
+  }
+
+  @else if $point == mobile-horizontal {
+    @media (min-width: $w480) { @content; }
+  }
+
+  @else if $point == tablet {
+    @media (min-width: $w768) { @content; }
+  }
+
+  @else if $point == desktop {
+    @media (min-width: $w1024) { @content; }
+  }
+
+  @else if $point == desktop-large {
+    @media (min-width: $w1280) { @content; }
+  }
+
+  @else if $point == desktop-wide {
+    @media (min-width: $w1500) { @content; }
+  }
+
+  @else {
+    @media ($point: $value) { @content; }
+  }
+}
+
+@mixin between-breakpoints($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}

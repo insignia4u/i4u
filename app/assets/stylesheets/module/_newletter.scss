@@ -1,0 +1,102 @@
+.newletter {
+  padding: 30px 0 50px;
+  border-top: 1px solid #132742;
+  margin: 0;
+
+  @include breakpoint(tablet){
+    float: right;
+    width: 49%;
+    padding-bottom: 0;
+    border: none;
+  }
+
+  @include breakpoint(desktop){
+    position: relative;
+    background: #19375a;
+    width: 100%;
+    float: none;
+    padding-bottom: 60px;
+  }
+
+  label {
+    @extend %title-dash;
+
+    @include breakpoint(tablet){
+    }
+
+    @include breakpoint(desktop){
+      border: none;
+      padding: 0;
+    }
+  }
+
+  p {
+    font-size: em(14);
+    margin: 0 10% 20px;
+
+    @include breakpoint(tablet){
+      margin: 20px 0 40px;
+      padding: 0 65px;
+    }
+
+    @include breakpoint(desktop){
+      margin: 0;
+      margin-top: 12px;
+      font-size: 14px;
+      position: absolute;
+      bottom: 46px;
+      width: 100%;
+    }
+  }
+
+  input {
+    @include border-radius(5px);
+    @include box-shadow( 2px 2px 16px -5px black );
+    line-height: normal;
+    margin: 0 10px;
+    @include breakpoint(desktop){
+
+    }
+  }
+
+  .email {
+    width: 80%;
+    padding: 5px 10px;
+    font-weight: 300;
+    border: none;
+    height: 42px;
+
+    @include breakpoint(tablet){
+      width: 65%;
+      display:block;
+      margin:0 auto;
+    }
+
+    @include breakpoint(desktop){
+      width: 430px;
+      padding: 8px 24px;
+      position: relative;
+      top: -13px;
+      left: 0;
+      display: inline-block;
+      margin: 0 20px;
+    }
+  }
+
+  .btn-subscribe {
+    margin-top: 22px;
+
+    @include breakpoint(tablet){
+      clear: both;
+      position:static;
+      margin: 20px auto;
+    }
+
+    @include breakpoint(desktop){
+      position:relative;
+      top: -8px;
+      margin: 0;
+      left: 0;
+    }
+  }
+}

@@ -1,23 +1,4 @@
 .post-comment-form{
-  .primary-title{
-    margin-top: 60px;
-    h2{
-      font-size: 1.89em;
-      line-height: 39px;
-      margin-left: 0;
-      margin-right: 0;
-      padding: 0 38px;
-
-      &:before, &:after{
-        top: 21%;
-        color: $color-three;
-      }
-
-      @include breakpoint(tablet){
-        top: -25px;
-      }
-    }
-  }
   form {
     margin-top: 36px;
     input {

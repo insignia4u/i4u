@@ -7,17 +7,9 @@
     margin: 90px 0 0;
   }
 
-  // &.big{
-  //   h2{
-  //     font-size: em(92);
-  //     line-height: 92px;
-  //   }
-  // }
-
   h2, h3{
-    font-family: $font-secondary;
-    font-size: em(66);
-    line-height: em(56,66);
+    font-size: em(50);
+    line-height: em(45,50);
     padding: 0 25px;
     display: block;
     position: relative;
@@ -28,6 +20,11 @@
       padding: 0 80px;
       margin: 0;
       display: inline-block;
+    }
+
+    @include breakpoint(desktop){
+      font-size: em(66);
+      line-height: em(56,66);
     }
 
     &:before, &:after{
@@ -61,9 +58,9 @@
       }
     }
 
-    &.blue{
-      color: $color-three;
-    }
+    // &.blue{
+    //   color: $color-three;
+    // }
 
     span{
       font-weight: 300;
@@ -73,16 +70,24 @@
 
 .twocols{
   .primary-title{
-    border-top: none;
-
     h3{
-      font-size: em(50,66);
-      line-height: em(40,50);
+      font-size: em(45);
+      line-height: em(40,45);
+      display: inline-block;
+
+      &:before, &:after{
+        font-size: em(30,45);
+        top: 18%;
+      }
     }
 
     @include breakpoint(tablet){
       margin-bottom: 0;
       border-top: 2px dashed #B8B8B8;
+
+      h2{
+        padding: 0 35px;
+      }
 
       h3{
         top: -0.6em;
@@ -91,19 +96,242 @@
     }
 
     @include breakpoint(desktop){
-      border: medium none;
-      margin-top: 0;
       margin-bottom: 30px;
+    }
+  }
 
+  .secondcol{
+    .primary-title{
       h3{
-        background: url(asset-path("background-pattern.gif", image));
-        color: #343233;
-        font-size: 54px;
-        line-height: 54px;
-        margin: auto;
-        display: inline-block;
-        font-family: $font-secondary;
+        font-size: em(50);
       }
+    }
+  }
+}
+
+.post-comment-form{
+  .primary-title{
+    margin-top: 60px;
+    h2{
+      font-size: 1.89em;
+      line-height: 39px;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0 38px;
+
+      &:before, &:after{
+        top: 21%;
+        color: $color-three;
+      }
+
+      @include breakpoint(tablet){
+        top: -25px;
+      }
+    }
+  }
+}
+
+.howdowedoit{
+  .primary-title{
+
+    @include breakpoint(tablet){
+      border-top:2px dashed #B8B8B8;
+      margin-top:90px;
+    }
+
+    @include breakpoint(desktop){
+      border:none;
+      margin-top:40px;
+    }
+
+    h2{
+      font-size: em(50,16);
+      line-height: em(40,50);
+
+      &:before, &:after{
+        font-size: em(30,50);
+        top: 20%;
+      }
+
+      @include breakpoint(tablet){
+        font-size: em(66,16);
+        line-height: em(56,66);
+        top: -36px;
+        padding: 0 40px;
+
+        &:before, &:after{
+          font-size: em(30,66);
+          top: 38%;
+        }
+      }
+    }
+  }
+}
+
+.our-offering{
+  .primary-title{
+    @include breakpoint(tablet){
+      border-top:2px dashed #B8B8B8;
+      margin-top:90px;
+    }
+
+    @include breakpoint(desktop){
+      border:none;
+      margin-top:40px;
+    }
+
+    h2{
+      font-size: em(60,16);
+      line-height: em(50,60);
+
+      &:before, &:after{
+        font-size: em(30,60);
+        top: 30%;
+      }
+
+      @include breakpoint(tablet){
+        font-size: em(66,16);
+        line-height: em(56,66);
+        top: -36px;
+        padding: 0 40px;
+
+        &:before, &:after{
+          font-size: em(30,66);
+          top: 38%;
+        }
+      }
+    }
+  }
+}
+
+.whoweare{
+  .primary-title{
+    text-align: center;
+    margin: 25px 0;
+    border: none;
+
+    @include breakpoint(tablet){
+      margin: 25px 0;
+    }
+
+    @include breakpoint(desktop){
+      margin: 0 0 30px;
+    }
+
+    h3{
+      padding: 0 35px;
+
+      @include breakpoint(tablet){
+        top: 0;
+      }
+    }
+  }
+}
+
+.quality-policy{
+  .primary-title{
+    text-align: center;
+    margin: 25px 0;
+    border: none;
+
+    @include breakpoint(tablet){
+      margin: 25px 0;
+    }
+
+    @include breakpoint(desktop){
+      margin: 0 0 30px;
+    }
+
+    h3{
+      padding: 0 14px;
+
+      @include breakpoint(tablet){
+        padding: 0 35px;
+        top: 0;
+      }
+    }
+  }
+}
+
+.meet-staff{
+  .primary-title{
+    font-size: em(50,60);
+    line-height: em(40,50);
+
+    h3{
+
+    }
+
+    @include breakpoint(tablet){
+      border: none;
+
+      h2{
+        padding: 0 35px;
+      }
+    }
+
+    @include breakpoint(desktop){
+      border-top: 2px dashed $color-five;
+      margin: 60px 0 0;
+
+      h2{
+        top: -30px;
+        padding: 0 80px;
+      }
+    }
+  }
+}
+
+.contact_form{
+  .primary-title {
+    font-size: em(50,60);
+    line-height: em(40,50);
+
+    @include breakpoint(tablet){
+       border-top: 2px dashed #382F2D;
+    }
+
+    h2 {
+      background: #ED0892;
+      color: $white;
+
+      @include breakpoint(tablet){
+        top: -30px;
+      }
+    }
+    h2:before, h2:after {
+      color: #000;
+    }
+  }
+}
+
+.contact-form{
+  .primary-title{
+
+    @include breakpoint(tablet){
+      font-size: em(80,60);
+      line-height: em(70,80);
+
+      h2{
+        top: -49px;
+      }
+    }
+  }
+}
+
+.contact-info{
+  .primary-title{
+    font-size: em(50,60);
+    line-height: em(40,50);
+
+    h2{
+      @include breakpoint(tablet){
+        top: -30px;
+      }
+    }
+
+    @include breakpoint(desktop){
+      margin-top: 60px;
     }
   }
 }

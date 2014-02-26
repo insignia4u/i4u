@@ -1,61 +1,36 @@
-.box-transparent-rounded{
-  @include border-radius(10px);
-  background: rgba(0, 0, 0, 0.03);
+html, input, textarea{
+  -webkit-font-smoothing: antialiased;
 }
 
-%box-transparent-rounded{
-  @include border-radius(10px);
-  background: rgba(0, 0, 0, 0.03);
+body{
+  font-family: $font-primary;
+  background: url(asset-path("background-pattern.gif", image)) repeat 0 0;
+  font-weight: 700;
+  color: $color-one;
+  font-size: 100%;
+  @include animation(reset 0.5s ease-in,fade 0.5s ease-in 0.5s);
+  font-size: em(16);
 }
 
-%btn-circle-arrow{
-  @include border-radius(23px);
-  display: inline-block;
-  text-decoration: none;
-  background: #222;
-  width: 45px;
-  height: 45px;
-  font-weight: 100;
-  line-height: 45px;
-  color: #ffffff;
-  text-align: center;
+section{
+  @include span-columns(12);
 
-  .icon-titleleft, .icon-titleright{
-    font-size: 22px;
-    text-align: center;
-    position: relative;
-    top: 0;
-    left: -0.05em;
-  }
-
-  .icon-titleright{
-    left: 0.05em;
+  @media(max-width: 768px){
+    padding: 0 25px;
   }
 }
 
-%circle{
-  @include border-radius(23px);
-  height: 45px;
-  width: 45px;
-  text-align: center;
-  line-height: 45px;
-
-  &.red{
-    background: #f20892;
-    border: #a60563 solid 2px;
-    color: white;
-  }
-
-  &.dashed{
-    border: $color-three dashed 1px;
-    color: $color-one;
-  }
+article{
+  margin-bottom: 45px;
 }
 
-%list-unstyled{
-  padding: 0;
+h2, h3, h4{
   margin: 0;
-  list-style: none;
+  font-family: $font-secondary;
+}
+
+p, a, h1, h2, h3, h4, h5, h6, label, input, textarea, ul, ol{
+  text-rendering: optimizeLegibility;
 }
 
 p,a{
@@ -71,54 +46,26 @@ p,a{
           hyphens: auto;
 }
 
-p, a, h1, h2, h3, h4, h5, h6, label, input, textarea, ul, ol{
-  text-rendering: optimizeLegibility;
-}
-
-a{
-  color:#316baf;
-  @include transition(all 0.4s ease-out);
-}
-
 p{
   margin: 0 0 20px;
 }
 
-ul{
-  margin-top:0;
-  margin-bottom:0;
-  padding:0;
+p, li{
+  font-size: em(14);
+  line-height: em(22,14);
+}
 
-  li{
-    list-style:none;
-    position:relative;
-  }
+a{
+  color: #316baf;
+  @include transition(all 0.4s ease-out);
+}
+
+ul, ol{
+  @extend %list-unstyled;
 }
 
 img{
   max-width: 100%;
-}
-
-h2, h3, h4{
-  margin: 0;
-}
-
-html, input, textarea{
-  -webkit-font-smoothing: antialiased;
-}
-
-body{
-  font-family: $font-primary;
-  background: url(asset-path("background-pattern.gif", image)) repeat 0 0;
-  font-weight: bold;
-  color: $color-one;
-  font-size: 100%;
-  @include animation(reset 0.5s ease-in,fade 0.5s ease-in 0.5s);
-}
-
-section{
-  @include span-columns(12);
-  padding: 0 20px;
 }
 
 .box-dashed{
@@ -126,16 +73,25 @@ section{
 }
 
 .container,
-.container-contact,
 nav ul, .content{
   @include outer-container;
 }
 
+figure{
+  margin: 0;
+}
+
 .bullets-blue{
+
   li{
     padding-left:27px;
-    margin: 6px 0;
+    margin: 0 0 25px;
     color:#373435;
+    line-height: em(22);
+
+    @include breakpoint(desktop){
+      margin: 0 0 5px;
+    }
   }
 
   li:before{
@@ -154,30 +110,6 @@ nav ul, .content{
   border: #333 dashed 1px;
   width: 80px;
   height: 80px;
-}
-
-.list-with-photos{
-  overflow: hidden;
-  margin: 15px 0 0;
-
-  li{
-    float: left;
-    position: relative;
-    padding: 0 0 0 90px;
-    margin: 5px 15px;
-    width: 273px;
-    min-height: 160px;
-  }
-
-  .img-circle{
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  p{
-    font-weight: normal;
-  }
 }
 
 .aside{
@@ -224,8 +156,12 @@ nav ul, .content{
 }
 
 .box-dashed.four{
+  @include breakpoint(desktop){
+    margin-left: -20px;
+  }
+
   li{
-    margin: 20px auto;
+    margin: 40px auto;
     width: 100%;
 
     @include breakpoint(tablet){
@@ -233,96 +169,8 @@ nav ul, .content{
       width: 47%;
     }
     @include breakpoint(desktop){
+      margin: 0 0 20px 20px;
       width: 218px;
-    }
-  }
-}
-
-.circle{
-  @include border-radius(39px);
-  background:#f20892;
-  height:78px;
-  width:78px;
-  margin:19px auto 10px;
-  margin-bottom: 7px;
-  border: 0.3em solid #A60563;
-
-  &.blue{
-    background:#316baf;
-    border:#224a79 solid 5px;
-  }
-
-  @include breakpoint(desktop){
-    border:#a60563 solid 5px;
-  }
-
-  i{
-    color: white;
-    font-size: em(12);
-    line-height: em(25);
-    background: none;
-    display: block;
-  }
-
-  .icon-diamond{
-    font-size: em(43);
-    line-height: 2em;
-  }
-
-  .icon-php{
-    height: 22px;
-    margin: auto;
-    width: 48px;
-    font-weight: bold;
-    font-style: normal;
-    font-size: 1.6em;
-    line-height: 3em;
-  }
-
-  .icon-tech, .icon-mobile{
-    line-height: 1.7em;
-  }
-
-  .icon-undo{
-    font-size: em(40);
-    line-height: 2em;
-  }
-
-  .icon-site-map{
-    font-size: 55px;
-    line-height: 1.3em;
-  }
-
-  .icon-cursor{
-    font-size: em(40);
-    line-height: 2em;
-  }
-
-  .icon-users{
-    line-height: 2.3em;
-    font-size: em(35);
-  }
-}
-
-.list-with-photos{
-  margin: 0;
-  padding: 30px 0 0;
-
-  li{
-    padding: 0 0 0 90px;
-    margin: 0 0 25px;
-    border-bottom: #b6c7dc solid 1px;
-    width: 100%;
-    min-height: 130px;
-  }
-
-  @include breakpoint(tablet){
-    overflow: hidden;
-    margin: 25px 0 0 45px;
-
-    li{
-      margin: 5px 18px;
-      min-height: 165px;
     }
   }
 }
@@ -350,52 +198,15 @@ nav ul, .content{
   text-align: center;
 }
 
-.twocols{
-  overflow: hidden;
-  margin-bottom: 30px;
-
-  section{
-    float: left;
-    margin-top: 30px;
-    padding-bottom: 40px;
-    margin-bottom: 0;
-  }
-
-  p{
-    margin: 15px 0;
-  }
-
-  .firstcol, .secondcol{
-    width: 100%;
-    border: none;
-    padding: 0;
-    margin: 50px 0 80px;
-  }
-
-  .firstcol{
-    border-right: 2px dashed #B8B8B8;
-    width: 49%;
-    padding-right: 20px;
-  }
-
-  .secondcol{
-    margin-bottom: 30px;
-    width: 50%;
-    padding-left: 30px;
-  }
-
-
-}
-
 .more{
   background:#E50892;
   border: 2px solid #A60563;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 5px;
   bottom: -21px;
   color: #fff;
   font-family: $font-secondary;
-  font-size: 34px;
-  font-weight: bold;
+  font-size: em(34);
+  font-weight: 700;
   height: 47px;
   left: 42%;
   line-height: 40px;
@@ -446,68 +257,10 @@ select{
   text-overflow: '';
 }
 
-.triangle{
-  height: 0;
-  width: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 6px;
-  border-top-color: $color-two;
-  display: inline-block;
-
-  form &{
-    position: absolute;
-    top: 45%;
-    right: 4%;
-  }
-}
-
 #toTop{
   @include transform(translate3d(0,0,0));
 }
 
-$w320: "320px";
-$w480: "480px";
-$w768: "768px";
-$w1024: "1024px";
-$w1280: "1280px";
-$w1500: "1500px";
-
-@mixin breakpoint($point, $value: 0) {
-  @if $point == mobile {
-    @media (min-width: $w320) { @content; }
-  }
-
-  @else if $point == mobile-horizontal {
-    @media (min-width: $w480) { @content; }
-  }
-
-  @else if $point == tablet {
-    @media (min-width: $w768) { @content; }
-  }
-
-  @else if $point == desktop {
-    @media (min-width: $w1024) { @content; }
-  }
-
-  @else if $point == desktop-large {
-    @media (min-width: $w1280) { @content; }
-  }
-
-  @else if $point == desktop-wide {
-    @media (min-width: $w1500) { @content; }
-  }
-
-  @else {
-    @media ($point: $value) { @content; }
-  }
-}
-
-@mixin between-breakpoints($min, $max) {
-  @media (min-width: $min) and (max-width: $max) {
-    @content;
-  }
-}
 
 @-moz-keyframes reset{
   0%,100%{opacity:0}

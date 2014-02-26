@@ -1,0 +1,58 @@
+.staff, .mission-vision, .meet-staff{
+  p{
+    font-size: em(14);
+  }
+}
+
+.mission-vision{
+  @include breakpoint(desktop){
+    overflow: hidden;
+  }
+
+  .box {
+    @extend %box-transparent-rounded;
+    padding: 15px 20px;
+    text-align: center;
+    margin-bottom: 25px;
+
+    h3{
+      font-size: em(50);
+      color: $color-two;
+      margin-bottom: 10px;
+    }
+
+    @include breakpoint(tablet){
+      padding: 10px 60px;
+    }
+
+    @include breakpoint(desktop){
+      text-align: center;
+      width: 49%;
+      min-height: 195px;
+      padding: 10px 20px;
+
+      h3{
+        margin: 0 0 5px;
+      }
+    }
+  }
+
+  .first{
+    float: left;
+  }
+
+  .second{
+    float: right;
+  }
+}
+
+.meet-staff{
+  @include breakpoint(tablet){
+    margin-bottom: 50px;
+  }
+
+  @include breakpoint(desktop){
+
+  }
+}
+

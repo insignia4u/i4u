@@ -1,62 +1,71 @@
-// Place all the styles related to the contact controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-.contact, .contact_form {
-  .primary-title{
-    h2{
-      font-size: 92px;
-    }
-
-    h2:before, h3:before, h2:after, h3:after {
-      width: 50px;
-    }
-  }
-
-  form{
-    margin-top: 0;
-    overflow: hidden;
-    padding: 0 5px;
-  }
-
-  .box-first{
-    float: left;
-    width: 35%;
-  }
-
-  .box-second{
-    float: right;
-    width: 60%;
+.contact-form{
+  .box-first, .box-second, .box-thirst .btn{
+    // width: 100%;
+    // float: none;
   }
 
   .box-thirst{
-    width: 100%;
-    clear: both;
+    text-align: center;
+  }
 
-    .btn{
+  @include breakpoint(tablet){
+    form{
+      margin-top: 0;
+
+      .f-text input, textarea{
+        margin-top: 0;
+      }
+    }
+
+    .box-first{
+      width: 44%;
+      float: left;
+    }
+
+    .box-second {
       float: right;
+      width: 51%;
+    }
+
+    .box-thirst{
+      width: 100%;
+      clear: both;
+
+      .btn{
+        float: right;
+      }
     }
   }
 
+  @include breakpoint(desktop){
+    form{
+      margin-top: 0;
+      overflow: hidden;
+      padding: 0 5px;
+      padding: 0 22px;
+    }
+
+    .box-first{
+      width: 35%;
+    }
+
+    .box-second{
+      float: right;
+      width: 60%;
+    }
+  }
 }
 
 .contact-info{
-  .primary-title{
-    h2{
-      font-size: 68px;
-    }
-  }
 
   .list-contact{
-    width: 715px;
-    margin: 0 auto 30px;
-    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0 0;
 
     li{
-      display: block;
-      float: left;
-      font-size: 14px;
-      font-weight: normal;
+      font-size: em(14);
+      font-weight: 400;
       margin: 0 12px;
       text-align: center;
       width: auto;
@@ -64,26 +73,33 @@
       vertical-align: top;
       color: #373435;
       height: 191px;
+      display: inline-block;
+    }
 
-      i{
-        display: block;
-        margin: auto;
-        width: 20px;
-        font-size: 26px;
-        color: #316baf;
+    i{
+      display: block;
+      margin: auto;
+      width: 20px;
+      font-size: 26px;
+      color: #316baf;
+    }
+
+    .contact-phone {
+      width: 194px;
+      background-position: -258px -28px;
+      padding: 30px 0 0;
+      height: 116px;
+
+      @include breakpoint(tablet){
+        background-position: -258px 0;
+        padding: 58px 0 0;
+        height: 191px;
       }
     }
 
     .contact-street{
       width: 255px;
       padding: 32px 15px 0 15px;
-    }
-
-    .contact-phone{
-      width: 194px;
-      background-position: -258px 0;
-      padding: 58px 0 0;
-      height: 191px;
     }
 
     .contact-email{
@@ -95,44 +111,40 @@
         font-size: 19px;
       }
     }
-  }
 
-  .map{
-    text-align: center;
-  }
-}
+    @include breakpoint(tablet){
+      padding: 0 0 40px;
+    }
 
-@media (min-width: 940px){
-  #noty_top_layout_container{
-    li{
-      width: 940px;
-      margin-left:auto;
-      margin-right:auto;
+    @include breakpoint(tablet){
+      width: 715px;
+      margin: 0 auto;
+      overflow: hidden;
+
+      li{
+        display: block;
+        float: left;
+      }
     }
   }
 }
+
+  .map{
+    padding: 0 0 70px;
+  }
+
+  @include breakpoint(desktop){
+    .map{
+      text-align: center;
+    }
+  }
+
 
 .contact_form {
   width: 100%;
   height: 100%;
   display: block;
   background: #ed0892 !important;
-
-  .primary-title {
-    margin-top: 83px;
-    padding-top: 60px;
-    border-top: 2px dashed #382F2D;
-
-    h2 {
-      font-size: 59px;
-      top: 44px;
-      background: #ED0892;
-      color: #fff;
-    }
-    h2:before, h2:after {
-      color: #000;
-    }
-  }
 
   form {
     margin: 0 0 180px 0;
@@ -204,28 +216,46 @@
 
     .box-thirst {
 
-      input {
+      @include breakpoint(tablet){
+        clear: both;
+      }
+
+      input{
         margin-right: 29px;
         width: 131px;
         background-color: #373435;
         border: solid 2px #000;
       }
-      span {
+
+      span{
         display: inline-block;
         float: right;
         margin-right: 34px;
         margin-top: -9px;
         font-size: 64px;
-        font-weight: lighter;
+        font-weight: $weight-normal;
         color: #FFF;
       }
-      p {
-        display: inline-block;
-        float: right;
+
+      p{
+        text-align: center;
         margin-top: 15px;
         margin-right: 17px;
         word-spacing: -1px;
         color: #FFF;
+
+        @include breakpoint(tablet){
+          text-align: right;
+          width: 40%;
+          float: right;
+          margin-right: 15px;
+          margin-top: 2px;
+        }
+
+        @include breakpoint(desktop){
+           float: right;
+           display: inline-block;
+        }
       }
     }
   }
@@ -237,5 +267,15 @@
     font-size: 64px;
     font-weight: lighter;
     color: #FFF;
+  }
+}
+
+@media (min-width: 940px){
+  #noty_top_layout_container{
+    li{
+      width: 940px;
+      margin-left:auto;
+      margin-right:auto;
+    }
   }
 }

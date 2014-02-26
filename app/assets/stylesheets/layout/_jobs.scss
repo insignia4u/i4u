@@ -25,7 +25,7 @@
 }
 
 #intro-parallax{
-  height: 740px;
+  height: 630px;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -39,12 +39,26 @@
   }
 
   h2{
+    margin: 0;
+    top: 80px;
+    font-family: $font-secondary;
+    font-size: 72px;
+    text-align: center;
+    width: auto;
     font-size: 52px;
     line-height: 49px;
-    font-weight: normal;
     padding: 45px 20px 0;
 
+    span{
+      color: $color-two;
+    }
+
     @include breakpoint(tablet){
+      left: 50%;
+      margin-left: -275px;
+      top: 93px;
+      width: 550px;
+      position: absolute;
       font-size: 72px;
       line-height: 69px;
       padding: 0;
@@ -228,32 +242,22 @@
     }
   }
 
-  h2{
-    margin: 0;
-    top: 80px;
-    font-family: $font-secondary;
-    font-size: 72px;
-    text-align: center;
-    width: auto;
+  .news{
+    padding-top: 30px;
+    background: url("/assets/background-pattern.gif");
 
-    span{
-      color: $color-two;
-    }
-
-    @include breakpoint(tablet){
-      left: 50%;
-      margin-left: -275px;
-      top: 93px;
-      width: 550px;
-      position: absolute;
+    @media(min-width: 600px){
+      padding-top: 45px;
+      padding-bottom: 10px;
     }
   }
 
   .careers-title{
     h2{
-      top: 42px;
-      font-size: 38px;
-      position: relative;
+      font-size: em(50);
+      text-align: center;
+      line-height: 120px;
+      padding: 0 20px;
 
       @include breakpoint(tablet){
         top: 27px;
@@ -262,6 +266,23 @@
       @include breakpoint(desktop){
         top: 56px;
         font-size: 72px;
+        line-height: 200px;
+      }
+    }
+
+    &.cover4{
+      h2{
+        padding-top: 20px;
+        line-height: 40px;
+
+        @media(min-width: 600px){
+          padding-top: 0;
+          line-height: 120px;
+        }
+
+        @include breakpoint(desktop){
+          line-height: 200px;
+        }
       }
     }
   }
@@ -449,8 +470,8 @@
 
       iframe {
         position: absolute;
-        top: 28px;
-        left: 26px;
+        top: 25px;
+        left: 22px;
         width: 84%;
         height: 69%;
 
@@ -476,30 +497,30 @@
         }
 
         @include breakpoint(tablet){
-          top: 29px;
-          left: 63px;
-          width: 84%;
+          top: 30px;
+          left: 44px;
+          width: 88%;
           height: 85%;
         }
 
         @media (min-width: 800px) {
           top: 29px;
-          left: 79px;
-          width: 80%;
+          left: 60px;
+          width: 84%;
           height: 85%;
         }
 
         @media (min-width: 1024px) {
           top: 29px;
-          left: 119px;
-          width: 73%;
+          left: 150px;
+          width: 68%;
           height: 85%;
         }
 
         @include breakpoint(desktop){
           top: 29px;
-          left: 119px;
-          width: 73%;
+          left: 150px;
+          width: 68%;
           height: 85%;
         }
       }
@@ -563,69 +584,15 @@
       }
     }
   }
-
-  .news{
-    background: url("/assets/background-pattern.gif") repeat 0 0;
-
-    ul{
-      @include outer-container;
-      margin-top: 50px;
-      margin-bottom: 63px;
-
-      @include breakpoint(desktop) {
-        margin: 89 0 26px;
-      }
-    }
-
-    li{
-      display: block;
-      width: 83%;
-      float: none;
-      margin: 0 auto 54px;
-
-      @include breakpoint(desktop) {
-        margin: 0 auto;
-      }
-
-      @include breakpoint(desktop) {
-        @include span-columns(4);
-        float: left;
-        margin-left: 0;
-      }
-    }
-
-    .news-item{
-      padding:33px 3.5% 42px;
-      height: 339px;
-
-      .published-at {
-        font-size: 0.85em;
-        font-weight: bolder;
-        i {
-          font-size: 1.45em;
-        }
-      }
-
-      .title {
-        font-size: 0.83em;
-        word-spacing: 2px;
-      }
-
-      h3 {
-        font-size: 1.34em;
-        font-weight: bolder;
-      }
-
-      p {
-        font-size: 13px;
-      }
-    }
-  }
 }
 
 .dash-left, .dash-right{
   top: 245px;
   position: absolute;
+
+  @media(min-width:480px){
+    top: 192px;
+  }
 
   @include breakpoint(tablet){
     top: 300px;
@@ -708,7 +675,7 @@
   font-family: $font-secondary;
   position: relative;
 
-  margin-top: 260px;
+  margin-top: 110px;
   text-align: center;
 
   @include breakpoint(tablet){
@@ -721,6 +688,7 @@
     color: $color-one;
     font-size: 60px;
     position: relative;
+    text-decoration: none;
   }
 
   span{
@@ -1381,8 +1349,12 @@ section.slider {
   text-align: center;
 
   @include breakpoint(tablet){
-    margin-left: 49.5%;
+    margin-left: 55%;
     text-align: left;
+  }
+
+  @include breakpoint(desktop){
+    margin-left: 49.5%;
   }
 
   .btn{
@@ -1416,7 +1388,6 @@ section.slider {
     padding: 0 20px;
 
     @include breakpoint(tablet){
-      width: 385px;
       padding: 0;
     }
   }
@@ -1516,7 +1487,7 @@ section.slider {
   }
 
   .dash-left, .dash-right{
-    top: 360px;
+    top: 330px;
   }
 
   .careers-work, .careers-contact{
@@ -1527,11 +1498,7 @@ section.slider {
 /* Module form contact */
 .careers{
   .contact_form{
-    padding: 0 3%;
-
-    @include breakpoint(desktop) {
-      padding: 0;
-    }
+    padding: 0 25px;
 
     .box-thirst{
       padding: 10px 0;
@@ -1570,26 +1537,26 @@ section.slider {
         }
       }
 
-      p{
-        text-align: center;
+      // p{
+      //   text-align: center;
 
-        @include breakpoint(tablet) {
-          text-align: right;
-          width: 61%;
-          float: left;
-          margin-right: 0;
-          margin-top: 5px;
-        }
+      //   @include breakpoint(tablet) {
+      //     text-align: right;
+      //     width: 61%;
+      //     float: left;
+      //     margin-right: 0;
+      //     margin-top: 5px;
+      //   }
 
-        @include breakpoint(desktop) {
-          width: 71%;
-          margin-top: 16px;
-        }
-      }
+      //   @include breakpoint(desktop) {
+      //     width: 71%;
+      //     margin-top: 16px;
+      //   }
+      // }
     }
 
     form {
-      margin: 0 5% 0;
+      margin: 0;
 
       @include breakpoint(desktop) {
         margin: 0 0 180px;
@@ -1647,42 +1614,6 @@ section.slider {
       }
     }
 
-    .primary-title {
-      @include span-columns(12);
-      margin: 20px 0;
-      padding: 0;
-      border: none;
-      text-align: center;
-
-      @include breakpoint(tablet) {
-        margin: 0;
-      }
-
-      h2 {
-        font-size: 38px;
-        top: 44px;
-        background: #ED0892;
-        color: #fff;
-        font-weight: 300;
-
-        &:after, &:before{
-          width: 20px;
-
-          @include breakpoint(tablet) {
-            width: 50px;
-          }
-        }
-
-        @include breakpoint(tablet) {
-          font-size: 59px;
-        }
-      }
-
-      @include breakpoint(tablet) {
-        margin-top: 83px;
-        padding-top: 60px;
-        border-top: 2px dashed #382f2d;
-      }
-    }
+    
   }
 }

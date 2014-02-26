@@ -1,0 +1,75 @@
+.technologies, .tools{
+  ul{
+    width: 100%;
+  }
+
+  li{
+    margin: 40px auto;
+    height: auto;
+    width: 100%;
+    display: block;
+
+    @media(max-width:600px){
+      background: none;
+      border: none;
+    }
+
+    @include breakpoint(tablet){
+      float: left;
+      min-height: 165px;
+      padding: 0 25px;
+    }
+
+    @include breakpoint(desktop){
+      padding: 0;
+    }
+  }
+
+  h3{
+    height: auto;
+    width: 80%;
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-family: $font-primary;
+  }
+
+  @include breakpoint(tablet){
+    ul{
+      margin: 0 auto;
+      width: 672px;
+    }
+
+    h3{
+      width: 100%;
+      margin: auto;
+      display: block;
+    }
+  }
+
+  @include breakpoint(desktop){
+    clear:both;
+    padding-bottom:6px;
+
+    ul{
+      margin-top: 7px;
+      width: auto;
+    }
+
+    li{
+      height:184px;
+      text-align:center;
+    }
+
+    h3{
+      display: table-cell;
+      font-size: em(16);
+      height: 50px;
+      line-height: 21px;
+      padding: 0 22px;
+      vertical-align: middle;
+      width: 216px;
+      font-family: $font-primary;
+    }
+  }
+}

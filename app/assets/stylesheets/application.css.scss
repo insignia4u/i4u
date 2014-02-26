@@ -1,37 +1,9 @@
-
-
-// @import "base/ui.totop";
-// @import "base/carousel";
-// @import "base/form";
-// @import "base/button";
-
-// @import "home/home";
-// @import "home/home-tablet";
-// @import "home/home-mobile";
-
-// @import "contact/contact";
-// @import "contact/contact-tablet";
-// @import "contact/contact-mobile";
-
-// @import "staff/staff";
-// @import "staff/staff-tablet";
-// @import "staff/staff-mobile";
-
-// @import "projects/projects";
-// @import "projects/projects-tablet";
-// @import "projects/projects-mobile";
-
-// @import "blog/blog";
-
-// @import "jobs/jobs";
-
-// @import "module/*";
-
 // ======================
 // :: vendor / base
 // ======================
 @import "base/normalize";
 @import "jquery.reject.css";
+@import "base/ui.totop";
 @import "bourbon";
 @import "base/grid-settings";
 @import "neat";
@@ -42,19 +14,48 @@
 
 @import "base/global";
 @import "base/font";
+@import "base/button";
+@import "base/carousel";
+@import "base/form";
+
+@import "module/circle";
 
 
 
 // ======================
 // == layout
 // ======================
+
+// shared partials
 @import "layout/header";
+@import "layout/header-min";
 @import "layout/footer";
+
+// home page
+@import "layout/introduction";
+@import "layout/cases";
+@import "layout/techno&method";
 
 // services page
 @import "layout/services";
 @import "layout/progress";
 @import "layout/howdowedoit&offering";
+
+// staff page
+@import "layout/staff";
+
+// contact page
+@import "layout/contact";
+
+// blog page
+@import "layout/blog";
+
+// job page
+@import "layout/jobs";
+
+// projects page
+@import "layout/projects";
+@import "layout/more-projects";
 
 
 
@@ -63,3 +64,17 @@
 // ======================
 @import "module/navbar";
 @import "module/primary-title";
+@import "module/list-with-photos";
+@import "module/twocols";
+@import "module/nav-mobile";
+@import "module/box-opacity";
+@import "module/discussion";
+@import "module/pagination";
+@import "module/pagination-pages";
+@import "module/post-comment-form";
+@import "module/post-search";
+@import "module/post-tipsday";
+@import "module/pagination";
+@import "module/news";
+@import "module/more-info";
+@import "module/certify";

@@ -227,7 +227,7 @@
 
     @include breakpoint(desktop){
       float: left;
-      width: 660px;
+      width: 630px;
       margin: 0;
     }
 
@@ -299,12 +299,13 @@
         border: none;
 
         h2{
-          @extend .box-transparent-rounded;
+          @extend %box-transparent-rounded;
           font-size: em(18);
           line-height: em(23);
           color: $color-three;
           padding: 25px;
           text-align: center;
+          font-family: $font-primary;
 
           @include breakpoint(tablet){
             font-size: em(28);
@@ -408,11 +409,6 @@
   }
 }
 
-p {
-  font-size: 14px;
-  margin-bottom: 24px !important;
-}
-
 .tags{
   overflow: hidden;
   margin:30px 0;
@@ -441,7 +437,7 @@ p {
   }
 
   .social{
-    @extend .box-transparent-rounded;
+    @extend %box-transparent-rounded;
     margin-top: 20px;
     padding: 25px 0 27px;
     text-align: center;

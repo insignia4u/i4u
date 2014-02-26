@@ -113,6 +113,9 @@ $space-n : 0;
 // $logo-w : image-width('logo.png');
 // $logo-h : image-height('logo.png');
 
+$weight-light:  300;
+$weight-normal: 400;
+$weigth-bold:   700;
 
 $font-primary: 'Enriqueta', cursive;
 $font-secondary: 'Amatic SC',cursive;
@@ -127,3 +130,10 @@ $color-six: #979797;
 $color-seven: #626262;
 $color-eight: #9a9294;
 $color-nine: #817f80;
+
+$w320: "320px";
+$w480: "480px";
+$w768: "768px";
+$w1024: "1024px";
+$w1280: "1280px";
+$w1500: "1500px";
