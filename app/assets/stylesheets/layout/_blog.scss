@@ -16,6 +16,20 @@
     float:none;
     margin: 0 auto 40px;
 
+    .box-opacity{
+      margin: 0 0px 30px;
+      padding: 20px 20px 25px 20px;
+
+      h2{
+        margin: 0 0 15px;
+      }
+
+      p{
+        font-size: em(12);
+        line-height: em(20,12);
+      }
+    }
+
     @include breakpoint(tablet){
     }
 
@@ -90,6 +104,7 @@
     }
 
     .categories{
+
       @include breakpoint(desktop){
         display: block!important;
       }
@@ -121,6 +136,7 @@
     }
 
     .showcat{
+      @include border-radius(0);
       position: absolute;
       margin-bottom: 140px;
       overflow: visible;
@@ -128,10 +144,10 @@
       margin: 0;
       padding: 0 0 30px !important;
       top: 0;
-      @include border-radius(0);
       width: 100%;
       float: none;
       z-index: 1;
+      margin-left: -25px;
 
       ul{
         background: #295991;
@@ -224,7 +240,6 @@
     }
 
     .tip-day{
-      display: none;
 
       @include breakpoint(tablet){
         margin-left: 25px;
@@ -237,7 +252,6 @@
     }
 
     .rails-tip{
-      display: none;
 
       @include breakpoint(tablet){
         display: block;
@@ -257,10 +271,10 @@
   }
 
   .column{
-    float:none;
+    // float:none;
     width: auto;
-    margin: 0 25px;
-    padding-bottom: 0;
+    // margin: 0 25px;
+    // padding-bottom: 0;
 
     @include breakpoint(tablet){
     }
@@ -287,6 +301,7 @@
       color: #316baf;
       font-size: em(20);
       margin: 25px 0 5px;
+      font-family: $font-primary;
 
       @include breakpoint(tablet){
         font-size: 26px;
@@ -306,6 +321,8 @@
       display: block;
       text-align: center;
       margin: 50px 0;
+      font-size: em(30,14);
+      line-height: em(43,30);
 
       @include breakpoint(tablet){
         display: inline-block;
@@ -336,8 +353,13 @@
       }
 
       h3 {
-        margin-top: 34px;
-        margin-bottom: 20px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+
+        @include breakpoint(desktop){
+          margin-top: 34px;
+          margin-bottom: 20px;
+        }
       }
 
       .bottom-link {
