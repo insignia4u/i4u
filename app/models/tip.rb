@@ -49,9 +49,9 @@ class Tip < ActiveRecord::Base
   end
 
 
-  def self.month_tips(date)
-    where("published_at >= ? and published_at <= ?", date.beginning_of_month, date.end_of_month).
-    order('published_at DESC, created_at DESC')
+  def self.month_tips(type, date = Date.today)
+    by_type(type)
+      .where("published_at >= ? and published_at <= ?", date.beginning_of_month, date.end_of_month)
   end
 
 private
