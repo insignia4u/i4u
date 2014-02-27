@@ -1,6 +1,9 @@
 class Article < ActiveRecord::Base
   extend FriendlyId
 
+  scope :published, -> { where(publication_state: 1) }
+  scope :latest_first, -> { order(publication_date: :desc) }
+
   belongs_to :site
   has_many :comments
   has_and_belongs_to_many :categories
@@ -23,14 +26,15 @@ class Article < ActiveRecord::Base
   acts_as_taggable
 
   def self.most_recents
-    where('publication_state = ? AND publication_date <= ?',1, Date.today)
-    .order('publication_date DESC, id DESC')
+    published.where('publication_date <= ?', Date.today)
+    .latest_first
+    .order('id DESC')
     .limit(3)
   end
 
   def self.next_article(article)
-    ids = select('id').where('publication_state = ?', 1)
-                      .order('publication_date DESC, id DESC')
+    ids = select('id').published.latest_first
+                      .order('id DESC')
     index = ids.index(article) - 1
     return false if index < 0
     return find(ids[index].id) if ids[index]
@@ -38,8 +42,8 @@ class Article < ActiveRecord::Base
   end
 
   def self.prev_article(article)
-    ids = select('id').where('publication_state = ?', 1)
-                      .order('publication_date DESC, id DESC')
+    ids = select('id').published.latest_first
+                      .order('id DESC')
     index = ids.index(article) + 1
     return find(ids[index].id) if ids[index]
     false

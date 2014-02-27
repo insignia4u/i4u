@@ -7,4 +7,8 @@ class Category < ActiveRecord::Base
   validates :name, presence:true
 
   friendly_id :name, use: [:slugged, :history]
+
+  def published_articles
+    articles.published
+  end
 end
