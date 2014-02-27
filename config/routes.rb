@@ -22,7 +22,7 @@ I4u::Application.routes.draw do
       get '/tag/:tag', to: "articles#index", on: :collection, as: 'tag'
       resource :comments
     end
-    get 'tips/:type', to: "tips#index"
+    get 'tips/:type', to: "tips#index", as: 'tips'
     get 'tips/:type/:year/:month', to: "tips#index", as: 'filter_tips'
   end
 

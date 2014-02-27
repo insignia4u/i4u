@@ -14,8 +14,8 @@ aside
 
     = textilize(@today_tip.description) if @today_tip
 
-    a.bottom-link href=""
-      | Ver últimos tips
+    = link_to blog_tips_path(type: 'today_tips'), class: 'bottom-link' do
+      |Ver últimos tips
       span +
 
   .box.rails-tip
@@ -25,9 +25,9 @@ aside
 
       | rails tips
     = textilize(@rails_tip.description) if @rails_tip
-    
-    a.bottom-link href=""
-      | Ver últimos tips
+
+    = link_to blog_tips_path(type: 'rails_tips'), class: 'bottom-link' do
+      |Ver últimos tips
       span +
 
   .box.categories

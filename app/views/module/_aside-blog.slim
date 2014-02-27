@@ -19,7 +19,7 @@ aside
       |&nbsp;
       = @rails_tip.description
 
-    a.bottom-link href=""
+    = link_to blog_tips_path('today_tips'), class: 'bottom-link' do
       | Ver últimos tips
       span +
 
@@ -34,7 +34,7 @@ aside
       |&nbsp;
       = @today_tip.description
 
-    a.bottom-link href=""
+    = link_to blog_tips_path(type: 'rails_tips'), class: 'bottom-link' do
       | Ver últimos tips
       span +
 
