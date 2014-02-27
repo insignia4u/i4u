@@ -16,13 +16,13 @@
       position: relative;
 
       @include breakpoint(desktop){
-        top: 19px !important;
-        left: -23px !important;
+        // top: 19px !important;
+        // left: -23px !important;
       }
 
       @include breakpoint(tablet){
-        top: 3px;
-        left: -30px;
+        // top: 3px;
+        // left: -30px;
       }
 
       i {
@@ -36,6 +36,7 @@
     @include breakpoint(desktop){
       float: none;
       margin: 0 auto;
+      width: 670px;
     }
   }
 }
@@ -54,6 +55,7 @@
     font-size: em(24);
     line-height: em(35);
     color: $color-two;
+    font-family: $font-primary;
   }
 
   p{

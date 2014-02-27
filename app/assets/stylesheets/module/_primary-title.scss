@@ -206,6 +206,30 @@
 
 .tipsday-page{
   .primary-title{
+
+    &.title-type2{
+      h2{
+        display: inline-block;
+      }
+
+      .circle{
+        top: -5px;
+        margin: 0 10px 0 0;
+      }
+
+      @include breakpoint(tablet){
+        h2{
+          padding: 0 20px;
+          top: -30px;
+        }
+      }
+
+      @include breakpoint(desktop){
+        h2{
+        }
+      }
+    }
+
     h2, h3{
       padding: 0;
     }
