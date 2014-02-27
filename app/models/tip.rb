@@ -5,7 +5,7 @@ class Tip < ActiveRecord::Base
 
   has_attached_file :image,
         styles: {
-                  thumb:        "234x230#", 
+                  thumb:        "234x230#",
                   normal:       "818x403#",
                   medium:       "650x320#",
                   small:        "268x151#",
@@ -36,6 +36,11 @@ class Tip < ActiveRecord::Base
     first
   end
 
+  def self.month_tips(date)
+    where("published_at >= ? and published_at <= ?", date.beginning_of_month, date.end_of_month).
+    order('published_at DESC, created_at DESC')
+  end
+
 private
 
   def check_future_date
@@ -50,7 +55,7 @@ private
 
   def only_one_tip_per_day
     if published_at
-      tips = Tip.where('published_at = ? AND tip_type = ?', 
+      tips = Tip.where('published_at = ? AND tip_type = ?',
                     self.published_at.at_beginning_of_day, self.tip_type)
 
       errors.add(:published_at, 'already a tip with this date.') if tips.any?

@@ -42,24 +42,22 @@
 /     a.btn href="" OLDER ENTRIES
 
 
-= render "module/nav-mobile"
-
-
 ///----- blog index    ///
-/ section.blog
-/   .primary-title
-/     h2 Our Blog
-/   = render "module/aside-blog"
-/   = render "module/post-list"
+
+section.blog
+  .container-title
+    h2 Our Blog
+  = render "module/aside-blog"
+  = render "module/post-list"
 
 
 
 ///----- blog single    ///
-section.blog
-  .primary-title
-    h2 Our Blog
-  = render "module/aside-blog"
-  = render "module/post-single"
+/ section.blog
+/   .primary-title
+/     h2 Our Blog
+/   = render "module/aside-blog"
+/   = render "module/post-single"
 
 
 
@@ -73,8 +71,12 @@ section.blog
 
 
 ///----- blog tips    ///
-/ section.blog.tipsday-page
-/   .primary-title.title-type2
-/     h2 tips del día
+section.blog.tipsday-page
+  .primary-title.title-type2
+    h2
+      span.circle
+        i.icon-smiley
 
-/   = render "module/post-tipsday"
+      | tips del día
+
+  = render "module/post-tipsday"

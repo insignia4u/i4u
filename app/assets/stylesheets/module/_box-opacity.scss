@@ -2,7 +2,8 @@
   @include border-radius(10px);
   background: rgba(0,0,0,.03);
   margin: 0 25px 30px;
-  padding: 26px 18px 20px 22px !important;
+  padding: 26px 18px 26px 22px !important;
+  margin-bottom: 40px !important;
 
   h2{
     font-size: 44px;
@@ -21,13 +22,11 @@
 
       .icon-smiley{
         font-size: em(25,44);
-        line-height: em(45, 24);
-      }
+        line-height: em(45, 24); }
 
       .icon-diamond{
         font-size: em(27,44);
-        line-height: em(45, 24);
-      }
+        line-height: em(45, 24); }
     }
   }
 

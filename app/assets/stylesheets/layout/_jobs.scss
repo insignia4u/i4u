@@ -34,10 +34,6 @@
     height: 700px;
   }
 
-  @include breakpoint(desktop){
-    height: 880px;
-  }
-
   h2{
     margin: 0;
     top: 80px;
@@ -1360,6 +1356,7 @@ section.slider {
   .btn{
     margin: 11px;
     padding: 0 17px;
+    margin-right: 0;
 
     &.btn-primary{
       margin-left: 0;

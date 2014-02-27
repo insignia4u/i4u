@@ -9,6 +9,7 @@ group :development do
   #@gem 'better_errors',       '0.0.8'
   gem 'binding_of_caller',   '0.6.8'
   gem 'taps',                '0.3.24'
+  gem 'populator'
 end
 
 group :development, :test do
@@ -50,7 +51,6 @@ gem 'devise',               '2.1.0'
 gem "activeadmin",          '0.4.4'
 gem "friendly_id",          '4.0.9'
 gem "paperclip",            '3.3.1'
-gem "faker",                '1.0.1'
 gem 'slim',                 '1.2.1'
 gem 'slim-rails',           '1.0.3'
 gem 'textilize'

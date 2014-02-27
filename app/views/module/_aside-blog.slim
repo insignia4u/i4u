@@ -15,8 +15,9 @@ aside
       | tip del día
 
     p
-      a href="" Viewport Resizer
-      |  es una herramienta muy útil durante el desarrollo de sitios web usando Responsive Web Design, para cambiar el tamaño del viewport rápidamente desde el mismo browser.
+      = link_to @rails_tip.title, '#'
+      |&nbsp;
+      = @rails_tip.description
 
     a.bottom-link href=""
       | Ver últimos tips
@@ -29,8 +30,9 @@ aside
 
       | rails tips
     p
-      a href="" Viewport Resizer
-      |  es una herramienta muy útil durante el desarrollo de sitios web usando Responsive Web Design, para cambiar el tamaño del viewport rápidamente desde el mismo browser.
+      = link_to @today_tip.title, '#'
+      |&nbsp;
+      = @today_tip.description
 
     a.bottom-link href=""
       | Ver últimos tips
@@ -68,11 +70,15 @@ aside
       li
         a href="" Foundation
 
+    ul.list-categories
       li
         a href="" Front-End Frameworks
 
       li
         a href="" Git
+
+      li
+        a href="" Insignia
 
       li
         a href="" Linux
@@ -95,6 +101,7 @@ aside
       li
         a href="" Proyectos
 
+    ul.list-categories
       li
         a href="" Recursos
 
@@ -106,6 +113,9 @@ aside
 
       li
         a href="" Team
+
+      li
+        a href="" Testing
 
       li
         a href="" Tucuman Valley

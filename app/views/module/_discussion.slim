@@ -1,80 +1,40 @@
-.discussion
-  h2 3 Comentarios
+- if @article.comments.any?
+  .discussion
+    h2= pluralize(@article.count_comments, 'Comentario', 'Comentarios')
 
-  ol
-    li
-      .comment
-        .comment-bubble.bubble-top
-        .comment-text
-          p
-            | Curabitur blandit tempus porttitor. Nullam quis risus eget urna 
-            | llis ornare vel eu leo. Curabitur blandit tempus porttitor. Duis 
-            | mollis, est non commodo luctus, nisi erat porttitor ligula, eget 
-            | lacinia odio sem nec elit.
-
-          .retry
-            i.icon-redo
-            span 
-        .comment-bubble.bubble-bottom
-
-        .comment-author
-          strong Jack Bauer
-          |  - 23 de Noviembre, 2012 a las 9:49
-
-      ol
+    ol
+      - @article.comments.each do |comment|
         li
           .comment
             .comment-bubble.bubble-top
             .comment-text
-              p
-                | Curabitur blandit tempus porttitor. Nullam quis risus eget urna 
-                | llis ornare vel eu leo. Curabitur blandit tempus porttitor. Duis 
-                | mollis, est non commodo luctus, nisi erat porttitor ligula, eget 
-                | lacinia odio sem nec elit.
+              p= comment.text
 
               .retry
                 i.icon-redo
-                span 
+                span
             .comment-bubble.bubble-bottom
 
             .comment-author
-              strong Jack Bauer
-              |  - 23 de Noviembre, 2012 a las 9:49
+              strong= comment.get_name_or_anony
+              = " - #{comment.created_at.strftime("%d de %B, %Y a las %H:%M")}"
 
-        li
-          .comment
-            .comment-bubble.bubble-top
-            .comment-text
-              p
-                | Curabitur blandit tempus porttitor. Nullam quis risus eget urna 
-                | llis ornare vel eu leo. Curabitur blandit tempus porttitor. Duis 
-                | mollis, est non commodo luctus, nisi erat porttitor ligula, eget 
-                | lacinia odio sem nec elit.
+        /ol
+        /  li
+        /    .comment
+        /      .comment-bubble.bubble-top
+        /      .comment-text
+        /        p
+        /          | Curabitur blandit tempus porttitor. Nullam quis risus eget urna
+        /          | llis ornare vel eu leo. Curabitur blandit tempus porttitor. Duis
+        /          | mollis, est non commodo luctus, nisi erat porttitor ligula, eget
+        /          | lacinia odio sem nec elit.
 
-              .retry
-                i.icon-redo
-                span 
-            .comment-bubble.bubble-bottom
-
-            .comment-author
-              strong Jack Bauer
-              |  - 23 de Noviembre, 2012 a las 9:49
-
-    li
-      .comment
-        .comment-bubble.bubble-top
-        .comment-text
-          p
-            | Curabitur blandit tempus porttitor. Nullam quis risus eget urna 
-            | llis ornare vel eu leo. Curabitur blandit tempus porttitor. Duis 
-            | mollis, est non commodo luctus, nisi erat porttitor ligula, eget 
-            | lacinia odio sem nec elit.
-
-          .retry
-            i.icon-redo
-            span 
-        .comment-bubble.bubble-bottom
-
-        .comment-author
-          strong Jack Bauer
-          |  - 23 de Noviembre, 2012 a las 9:49
+        /        .retry
+        /          i.icon-redo
+        /          span
+        /      .comment-bubble.bubble-bottom
+/
+/              .comment-author
+/                strong Jack Bauer
+/                |  - 23 de Noviembre, 2012 a las 9:49

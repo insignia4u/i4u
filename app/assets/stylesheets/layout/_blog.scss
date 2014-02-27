@@ -5,6 +5,13 @@
   position: relative;
   margin-bottom: 0;
 
+  .icon-double-angle-left {
+    margin-right: 6px;
+    font-size: 16px;
+    position: relative;
+    top: 1px;
+  }
+
   aside{
     float:none;
     margin: 0 auto 40px;
@@ -63,7 +70,7 @@
       }
 
       .list-categories{
-        padding: 10px 0 20px;
+        padding: 0;
 
         li{
           padding: 1px 20px;
@@ -119,7 +126,7 @@
       overflow: visible;
       display: none;
       margin: 0;
-      padding: 0 0 30px;
+      padding: 0 0 30px !important;
       top: 0;
       @include border-radius(0);
       width: 100%;
@@ -129,23 +136,52 @@
       ul{
         background: #295991;
         overflow: hidden;
-        padding:20px 0;
 
-        li{
+        &:first-child {
+            padding-top: 20px;
+        }
+        &:last-child {
+          padding-bottom: 20px;
+        }
+
+        li {
           text-align: center;
         }
 
         a{
-          color: #fff;
-          font-size: 15px;
-          display: block;
-          line-height: 35px;
-          text-decoration: none;
-          font-weight: 300;
-        }
+            color: #fff;
+            font-size: 15px;
+            display: block;
+            line-height: 35px;
+            text-decoration: none;
+            font-weight: bolder;
+          }
+        @include breakpoint(tablet){
+          padding: 20px 0;
+          display: inline-block;
+          margin-right: -4px;
+          width: 33.33%;
 
-        a:hover{
 
+          li{
+            text-align: left;
+            margin: 0px 0px 0px 0px;
+            margin-right: 18%;
+            margin-left: 18%;
+          }
+
+          a{
+            color: #fff;
+            font-size: 15px;
+            display: block;
+            line-height: 35px;
+            text-decoration: none;
+            font-weight: 300;
+          }
+
+          a:hover{
+
+          }
         }
       }
 
@@ -162,6 +198,10 @@
         text-decoration: none;
         left: 50%;
         margin-left: -60px;
+
+        @include breakpoint(tablet) {
+          margin-top: -4px;
+        }
 
         span{
           font-family: arial;
@@ -235,6 +275,7 @@
       border-top: #a7a6a6 solid 1px;
       clear:both;
       margin-bottom: 25px;
+      font-size: 14px;
     }
 
     img{
@@ -273,6 +314,7 @@
     }
 
     &.listpost{
+      font-size: 14px;
       .comment, .author{
         color: #f20892;
       }
@@ -291,6 +333,15 @@
 
       .author{
         padding: 11px 0 11px 2px;
+      }
+
+      h3 {
+        margin-top: 34px;
+        margin-bottom: 20px;
+      }
+
+      .bottom-link {
+        margin-top: 8px;
       }
     }
 

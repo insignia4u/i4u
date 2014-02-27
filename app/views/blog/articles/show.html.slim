@@ -37,15 +37,13 @@
 /       .fb-like data-href=blog_article_url(@article) data-send="true" data-width="450" data-show-faces="true">
 /       .fb-comments data-href=blog_article_url(@article) data-width="470" data-num-posts="10"
 
-= render "module/nav-mobile"
-
 section.blog
 
   .primary-title
     h2 Our Blog
 
-  a.l-back href=""
-    span.l-back-arrow <<
+  = link_to blog_articles_path, class: 'l-back' do
+    span.icon-double-angle-left 
     span.l-back-text Volver
 
   = render "module/aside-blog"
