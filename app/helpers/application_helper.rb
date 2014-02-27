@@ -49,7 +49,7 @@ module ApplicationHelper
 
   def img_snippet_for(text_snippet, version, css_class='')
     rtn = nil
-    if ts = snippet(text_snippet) 
+    if ts = snippet(text_snippet)
       if ts.image?
         rtn = tag(:img, src: ts.image.url(version), class: css_class)
       end
@@ -143,10 +143,23 @@ module ApplicationHelper
 
   def tip_type(tip)
     case tip.tip_type
-    when 0
-      'Rails Tip'
-    when 1
-      'Today Tip'
+    when Tip::RAILS_TIP
+      'Rails Tips'
+    when Tip::TODAY_TIP
+      'Today Tips'
+    else
+      'All Tips'
+    end
+  end
+
+  def tip_title(tip_type)
+    case tip_type
+    when Tip::RAILS_TIP
+      'Rails Tips'
+    when Tip::TODAY_TIP
+      'Today Tips'
+    else
+      'All Tips'
     end
   end
 end

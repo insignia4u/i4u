@@ -1,6 +1,13 @@
 class Tip < ActiveRecord::Base
   extend FriendlyId
 
+  RAILS_TIP = 0
+  TODAY_TIP = 1
+
+  scope :latest_first, -> { order('published_at DESC, created_at DESC') }
+  scope :rails_tips, -> { where(tip_type: Tip::RAILS_TIP) }
+  scope :today_tips, -> { where(tip_type: Tip::TODAY_TIP) }
+
   belongs_to :site
 
   has_attached_file :image,
@@ -23,22 +30,28 @@ class Tip < ActiveRecord::Base
   friendly_id :title, use: [:slugged, :history]
 
   def self.rails_tip
-    where('tip_type = 0 AND published_at <= ?', Date.today).
-    order('published_at DESC, created_at DESC').
-    limit(1).
-    first
+    rails_tips.where('published_at <= ?', Date.today)
+      .latest_first
+      .limit(1)
+      .first
+  end
+
+  def self.by_type(type)
+    return where("tip_type = ?", type).latest_first if type
+    where('published_at <= ?', Date.today).latest_first
   end
 
   def self.today_tip
-    where('tip_type = 1 AND published_at <= ?', Date.today).
-    order('published_at DESC, created_at DESC').
-    limit(1).
-    first
+    today_tips.where('published_at <= ?', Date.today)
+      .latest_first
+      .limit(1)
+      .first
   end
 
-  def self.month_tips(date)
-    where("published_at >= ? and published_at <= ?", date.beginning_of_month, date.end_of_month).
-    order('published_at DESC, created_at DESC')
+
+  def self.month_tips(type, date = Date.today)
+    by_type(type)
+      .where("published_at >= ? and published_at <= ?", date.beginning_of_month, date.end_of_month)
   end
 
 private

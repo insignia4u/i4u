@@ -1,8 +1,7 @@
-class Blog::ArticlesController < ApplicationController
-  before_filter :shared_variables
+class Blog::ArticlesController < Blog::BaseController
 
   def index
-    @articles   = tag ? Article.tagged_with(tag) : Article.most_recents
+    @articles = Article.published.latest_first.paginate(page: params[:page], per_page: 3)
   end
 
   def show
@@ -11,18 +10,9 @@ class Blog::ArticlesController < ApplicationController
     @prev = Article.prev_article(@article)
   end
 
-private
-
-  def shared_variables
-    @tags       = Article.tag_counts
-    @rails_tip  = Tip.rails_tip
-    @today_tip  = Tip.today_tip
-    @month_tips = Tip.month_tips(1.month.ago)
-    @comment    = Comment.new
-  end
-
-  def tag
-    params[:tag]
-  end
+  private
+    def tag
+      params[:tag]
+    end
 
 end

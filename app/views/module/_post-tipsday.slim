@@ -2,9 +2,9 @@
   .todaytips
     h2 HOY
     p
-      = link_to @rails_tip.title, '#'
+      = link_to @today_tip.title, '#'
       |&nbsp;
-      = @rails_tip.description
+      = @today_tip.description
 
   .calendar
     .calendar-header
@@ -16,7 +16,7 @@
         a href=""
           i.icon-arrow-left
 
-        span 2013
+        span= @date.strftime('%Y')
 
         a href=""
           i.icon-arrow-right
@@ -47,18 +47,19 @@
         li
           span.month-disable DIC
 
-  .monthtips
-    h3 FEBRERO
-    ul
-      - @month_tips.each do |tip|
-        li
-          .day
-            = tip.published_at.strftime('%a')
-            span.daynumber= tip.published_at.strftime('%d')
-            span.linedash
-          p
-            = link_to @rails_tip.title, '#'
-            |&nbsp;
-            = @rails_tip.description
+  - if @tips.any?
+    .monthtips
+      h3= @date.strftime('%^B')
+      ul
+        - @tips.each do |tip|
+          li
+            .day
+              = tip.published_at.strftime('%a')
+              span.daynumber= tip.published_at.strftime('%d')
+              span.linedash
+            p
+              = link_to tip.title, '#'
+              |&nbsp;
+              = tip.description
 
-  = render "module/pagination-pages"
+    = render "module/pagination-pages"

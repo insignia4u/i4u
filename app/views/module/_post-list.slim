@@ -31,4 +31,4 @@
           - article.tags.each do |tag|
             = link_to tag, tag_blog_articles_path(tag.name)
 
-  a.btn href="" OLDER ENTRIES
+  = will_paginate @articles, page_links:false
