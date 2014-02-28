@@ -26,6 +26,9 @@ ActiveAdmin.register Article do
     column ("Publication State"), sortable: :publication_state do |article|
       check_state(article.publication_state)
     end
+    column ("Publication date"), sortable: :publication_date do |article|
+      article.publication_date
+    end
     column ("Categories") do |article|
       article.categories.map {|cat| cat.name }.join(', ')
     end
@@ -80,6 +83,7 @@ ActiveAdmin.register Article do
       f.input :description, hint: "description its shown in home page"
       f.input :image, label: 'Hightligh Image',
         hint: (f.object.new_record? ? "" : f.object.image.url), as: :file
+      f.input :image_caption, hint: "It is the images' caption"
       f.input :content
       f.input :summary, hint: "summary its show in blog"
       f.input :publication_state, label: 'Publication state', as: :select,
@@ -97,7 +101,7 @@ ActiveAdmin.register Article do
       [ params.require(:article)
         .permit(:site_id,:author, :title, :content,:subtitle,
          :summary, :publication_date, :publication_state,
-         :image,:description, :tag_list, category_ids: []) ]
+         :image,:description, :tag_list, :image_caption, category_ids: []) ]
     end
   end
 

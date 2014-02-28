@@ -24,8 +24,10 @@
 
         noscript
           img src=asset_path("blog-photo02.jpg") alt=""
-
-    .labelphoto El equipo de Indicius representando a Insignia en BAapps
+    - if @article.image_caption
+      .labelphoto= @article.image_caption
+    - else
+      br
 
     = @article.content
 

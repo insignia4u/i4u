@@ -1,47 +1,3 @@
-/ = render 'blog/articles/modules/head'
-
-/ section.blog
-
-/   = render 'blog/articles/modules/blog_tags'
-
-/   .primary-title
-/     h2 Our Blog
-
-/   = render 'blog/articles/modules/aside'
-
-/   .column
-/     - @articles.each do |article|
-/       article
-/         .comment
-/           = link_to '0', blog_article_url(article), class: 'fb-comments-count',
-/           data: { href: blog_article_url(article) }
-/           i.icon-comment
-
-/         .author = article.author
-/         - if article.image.present?
-/           picture alt=""
-/             source src=article.image.url(:small)
-/             source src=article.image.url(:medium) media="(min-width:440px)"
-/             source src=article.image.url(:medium) media="(min-width:600px)"
-
-/           noscript
-/             img src=article.image.url(:small) alt=""
-
-/         h3 = link_to article.title, blog_article_path(article)
-
-/         = textilize(article.summary)
-
-/         a.bottom-link href=blog_article_path(article)
-/           | Seguir leyendo
-/           span +
-
-/         .tags
-/           - article.tag_list.each do |tag|
-/             = link_to tag, tag_blog_articles_path(tag)
-
-/     a.btn href="" OLDER ENTRIES
-
-
 ///----- blog index    ///
 
 section.blog
@@ -49,17 +5,6 @@ section.blog
     h2 Our Blog
   = render "module/aside-blog"
   = render "module/post-list"
-
-
-
-///----- blog single    ///
-/ section.blog
-/   .primary-title
-/     h2 Our Blog
-/   = render "module/aside-blog"
-/   = render "module/post-single"
-
-
 
 ///----- blog search    ///
 / section.blog.search-page

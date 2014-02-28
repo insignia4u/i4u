@@ -2,7 +2,7 @@ class Article < ActiveRecord::Base
   extend FriendlyId
 
   scope :published, -> { where(publication_state: 1) }
-  scope :latest_first, -> { order(publication_date: :desc) }
+  scope :latest_first, -> { order('publication_date DESC, id DESC') }
 
   belongs_to :site
   has_many :comments
@@ -28,13 +28,11 @@ class Article < ActiveRecord::Base
   def self.most_recents
     published.where('publication_date <= ?', Date.today)
     .latest_first
-    .order('id DESC')
     .limit(3)
   end
 
   def self.next_article(article)
     ids = select('id').published.latest_first
-                      .order('id DESC')
     index = ids.index(article) - 1
     return false if index < 0
     return find(ids[index].id) if ids[index]
@@ -43,7 +41,6 @@ class Article < ActiveRecord::Base
 
   def self.prev_article(article)
     ids = select('id').published.latest_first
-                      .order('id DESC')
     index = ids.index(article) + 1
     return find(ids[index].id) if ids[index]
     false
