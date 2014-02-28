@@ -1,7 +1,7 @@
 class Blog::ArticlesController < Blog::BaseController
 
   def index
-    @articles = Article.published.latest_first.paginate(page: params[:page], per_page: 3)
+    @articles = Article.published.latest_first.page(params[:page]).per(3)
   end
 
   def show

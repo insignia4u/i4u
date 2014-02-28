@@ -31,4 +31,5 @@
           - article.tags.each do |tag|
             = link_to tag, tag_blog_articles_path(tag.name)
 
-  = will_paginate @articles, page_links:false
+  = link_to_next_page @articles, 'Older Entries', class: 'btn'
+  = link_to_previous_page @articles, 'Newer Entries', class: 'btn'

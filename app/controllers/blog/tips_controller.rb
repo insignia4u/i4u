@@ -3,9 +3,9 @@ class Blog::TipsController < ApplicationController
 
   def index
     if params[:date]
-      @tips = Tip.month_tips(type, @date).paginate(page: params[:page], per_page: 10)
+      @tips = Tip.month_tips(type, @date).page(params[:page]).per(10)
     else
-      @tips = Tip.by_type(type).paginate(page: params[:page], per_page: 10)
+      @tips = Tip.by_type(type).page(params[:page]).per(10)
     end
     @today_tip = (@tip_type === Tip::RAILS_TIP)? Tip.rails_tip : Tip.today_tip
   end
