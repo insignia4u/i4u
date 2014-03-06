@@ -32,9 +32,10 @@
 
   li{
     width: 60%;
-    display: inline-block;
+    display: block;
     font-size: em(13);
     line-height: 20px;
+    margin: 0 auto;
 
     @include breakpoint(tablet){
       width: 50%;
@@ -44,6 +45,7 @@
       text-align: left;
       width: auto;
       margin-right: 25px;
+      display: inline-block;
     }
   }
 

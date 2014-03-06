@@ -1,4 +1,5 @@
 class Blog::ArticlesController < Blog::BaseController
+  layout "blog"
 
   def index
     @articles = Article.published.latest_first.page(params[:page]).per(3)

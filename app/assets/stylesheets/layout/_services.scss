@@ -12,7 +12,6 @@
       @include box-dashed2;
 
       @include breakpoint(desktop){
-        width: 440px;
         margin-left: 20px;
         float: left;
       }

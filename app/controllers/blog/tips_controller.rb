@@ -1,4 +1,5 @@
 class Blog::TipsController < ApplicationController
+  layout "blog"
   before_filter :shared_variables
 
   def index

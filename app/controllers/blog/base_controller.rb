@@ -1,4 +1,5 @@
 class Blog::BaseController < ApplicationController
+  layout "blog"
   before_filter :shared_variables
 
   private

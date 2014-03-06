@@ -231,7 +231,8 @@
 
     .tip-day, .rails-tip{
       @include breakpoint(tablet){
-        width: 45%;
+        width: 48%;
+        min-height: 235px;
       }
 
       @include breakpoint(desktop){
@@ -242,12 +243,10 @@
     .tip-day{
 
       @include breakpoint(tablet){
-        margin-left: 25px;
         display: block;
       }
 
       @include breakpoint(desktop){
-        margin-left: 0;
       }
     }
 
@@ -256,12 +255,10 @@
       @include breakpoint(tablet){
         display: block;
         float: right;
-        margin-right: 25px;
       }
 
       @include breakpoint(desktop){
         float: none;
-        margin-right: 0;
       }
     }
 
@@ -271,10 +268,7 @@
   }
 
   .column{
-    // float:none;
     width: auto;
-    // margin: 0 25px;
-    // padding-bottom: 0;
 
     @include breakpoint(tablet){
     }

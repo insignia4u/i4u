@@ -65,13 +65,13 @@
     font-size: 20px;
     position: relative;
     top: -2px;
-    left: -10px;
+    left: 0px;
 
     @include breakpoint(tablet){
-      margin-left: 15px;
+      margin-left: 13px;
       font-size: 21px;
       top: -10px;
-      left: 0px;
+      left: -5px;
     }
   }
 
@@ -167,12 +167,28 @@
   }
 
   &.active{
-   background: gray;
-  } 
+   background: $blue2;
+  }
 }
 
 .js-search{
   display: none;
-  background: gray;
+  background: $blue2;
   padding: 1px;
+
+  .icon-search{
+    position: absolute;
+    width: 25px;
+    top: 8px;
+    right: 10px;
+    font-size: em(20);
+    color: $color-two;
+
+    @include breakpoint(tablet){
+
+    }
+
+    @include breakpoint(desktop) {
+    }
+  }
 }

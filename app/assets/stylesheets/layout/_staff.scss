@@ -23,6 +23,7 @@
 
     @include breakpoint(tablet){
       padding: 10px 60px;
+      width: 48%;
     }
 
     @include breakpoint(desktop){
@@ -38,11 +39,15 @@
   }
 
   .first{
-    float: left;
+    @include breakpoint(tablet){
+      float: left;
+    }
   }
 
   .second{
-    float: right;
+    @include breakpoint(tablet){
+      float: right;
+    }
   }
 }
 

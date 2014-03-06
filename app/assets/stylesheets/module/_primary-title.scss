@@ -15,29 +15,13 @@
     position: relative;
     background: url(asset-path("background-pattern.gif", image));
 
-    @include breakpoint(tablet){
-      top: -37px;
-      padding: 0 80px;
-      margin: 0;
-      display: inline-block;
-    }
-
-    @include breakpoint(desktop){
-      font-size: em(66);
-      line-height: em(56,66);
-    }
-
     &:before, &:after{
       display: inline-block;
       width: 30px;
       color: $color-two;
       position: absolute;
-      top: 40%;
-      font-size: em(30,66);
-
-      @include breakpoint(tablet){
-        top: 38%;
-      }
+      top: 26%;
+      font-size: 30px;
     }
 
     &:before{
@@ -58,52 +42,46 @@
       }
     }
 
-    // &.blue{
-    //   color: $color-three;
-    // }
-
     span{
       font-weight: 300;
+    }
+
+    @include breakpoint(tablet){
+      top: -37px;
+      padding: 0 80px;
+      margin: 0;
+      display: inline-block;
+      font-size: em(66);
+      line-height: em(56,66);
+
+      &:before, &:after{
+        top: 38%;
+      }
+    }
+
+    @include breakpoint(desktop){
+
     }
   }
 }
 
 .twocols{
   .primary-title{
-    h3{
-      font-size: em(45);
-      line-height: em(40,45);
-      display: inline-block;
+    h2{
+      font-size: em(66);
+      line-height: em(56,66);
 
       &:before, &:after{
-        font-size: em(30,45);
-        top: 18%;
+        top: 38%;
       }
     }
 
-    @include breakpoint(tablet){
-      margin-bottom: 0;
-      border-top: 2px dashed #B8B8B8;
+    h3{
+      font-size: em(50);
+      line-height: em(40,50);
 
-      h2{
-        padding: 0 35px;
-      }
-
-      h3{
-        top: -0.6em;
-        position: relative;
-      }
-    }
-
-    @include breakpoint(desktop){
-      margin-bottom: 30px;
-    }
-  }
-
-  .secondcol{
-    .primary-title{
-      h3{
-        font-size: em(50);
+      &:before, &:after{
+        top: 26%;
       }
     }
   }
@@ -112,6 +90,7 @@
 .post-comment-form{
   .primary-title{
     margin-top: 60px;
+
     h2{
       font-size: 1.89em;
       line-height: 39px;
@@ -134,35 +113,15 @@
 .howdowedoit{
   .primary-title{
 
-    @include breakpoint(tablet){
-      border-top:2px dashed #B8B8B8;
-      margin-top:90px;
-    }
-
     @include breakpoint(desktop){
       border:none;
       margin-top:40px;
     }
 
     h2{
-      font-size: em(50,16);
-      line-height: em(40,50);
-
-      &:before, &:after{
-        font-size: em(30,50);
-        top: 20%;
-      }
 
       @include breakpoint(tablet){
-        font-size: em(66,16);
-        line-height: em(56,66);
-        top: -36px;
         padding: 0 40px;
-
-        &:before, &:after{
-          font-size: em(30,66);
-          top: 38%;
-        }
       }
     }
   }
@@ -171,8 +130,6 @@
 .our-offering{
   .primary-title{
     @include breakpoint(tablet){
-      border-top:2px dashed #B8B8B8;
-      margin-top:90px;
     }
 
     @include breakpoint(desktop){
@@ -181,25 +138,6 @@
     }
 
     h2{
-      font-size: em(60,16);
-      line-height: em(50,60);
-
-      &:before, &:after{
-        font-size: em(30,60);
-        top: 30%;
-      }
-
-      @include breakpoint(tablet){
-        font-size: em(66,16);
-        line-height: em(56,66);
-        top: -36px;
-        padding: 0 40px;
-
-        &:before, &:after{
-          font-size: em(30,66);
-          top: 38%;
-        }
-      }
     }
   }
 }
@@ -287,8 +225,6 @@
 
 .meet-staff{
   .primary-title{
-    font-size: em(50,60);
-    line-height: em(40,50);
 
     h3{
 
@@ -307,7 +243,6 @@
       margin: 60px 0 0;
 
       h2{
-        top: -30px;
         padding: 0 80px;
       }
     }
@@ -329,6 +264,10 @@
 
       @include breakpoint(tablet){
         top: -30px;
+
+        &:before, &:after {
+          top: 30%;
+        }
       }
     }
     h2:before, h2:after {
@@ -345,7 +284,7 @@
       line-height: em(70,80);
 
       h2{
-        top: -49px;
+        top: -44px;
       }
     }
   }
@@ -353,17 +292,24 @@
 
 .contact-info{
   .primary-title{
-    font-size: em(50,60);
-    line-height: em(40,50);
+
 
     h2{
       @include breakpoint(tablet){
-        top: -30px;
+
       }
     }
 
     @include breakpoint(desktop){
       margin-top: 60px;
+    }
+  }
+}
+
+.tools{
+  .primary-title{
+    h2:before, h2:after {
+      color: $color-three;
     }
   }
 }

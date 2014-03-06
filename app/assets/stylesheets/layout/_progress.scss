@@ -9,10 +9,6 @@
       border-top: none;
       padding-top: 0;
     }
-
-    @include breakpoint(desktop){
-
-    }
   }
 
   li{
@@ -34,7 +30,8 @@
   h3{
     font-family: $font-primary;
     font-size:em(18,16);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
 
     span{
       color: #316BAF;
@@ -52,7 +49,7 @@
   }
 
   p{
-    font-size: em(14);
+    font-size: em(14,14);
 
     @include breakpoint(tablet){
       width:80%;
@@ -66,7 +63,7 @@
     margin: 2px 0 0;
 
     @include breakpoint(tablet){
-      margin-top: 7%;
+      margin-top: 4%;
       margin-right: 5%;
       font-size: em(60);
       }

@@ -1,4 +1,5 @@
 class Blog::CategoryController < Blog::BaseController
+  layout "blog"
   before_filter :find_category
 
   def index
