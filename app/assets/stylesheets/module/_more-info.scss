@@ -11,11 +11,6 @@
       padding: 0;
     }
 
-    @include breakpoint(desktop){
-      margin: 0 auto;
-      width: 745px;
-    }
-
     li{
       width: 100%;
       margin: auto;
