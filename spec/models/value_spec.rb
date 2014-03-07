@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Values do
+describe Value do
   describe "Associations" do
     it { should belong_to(:site) }
   end

@@ -3,7 +3,7 @@ class JobsController < ApplicationController
 
   def new
     @message = Message.new(is_to_job: true)
-    @values = Values.all
+    @values = Value.all
   end
 
   def create
