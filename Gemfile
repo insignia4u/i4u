@@ -47,6 +47,7 @@ group :assets do
   gem 'neat', '1.0.2'
 end
 
+gem 'kaminari',             '0.15.0'
 gem 'devise',               '2.1.0'
 gem "activeadmin",          '0.4.4'
 gem "friendly_id",          '4.0.9'
