@@ -21,6 +21,7 @@ group :development, :test do
   gem "faker",              '1.0.1'
   gem "simplecov"
   gem "therubyracer"
+  gem 'mysql2'
 end
 
 group :test do
@@ -29,7 +30,7 @@ group :test do
 end
 
 group :production do
-  # gem 'pg'
+  gem 'pg'
   gem 'thin'
 end
 
@@ -64,6 +65,5 @@ gem 'dalli',                '2.6.0'
 gem 'gibbon',               '0.4.2'
 gem 'strong_parameters',    '0.2.0'
 gem 'acts-as-taggable-on',  '2.4.1'
-gem 'mysql2'
 gem 'memcachier'
 gem 'virtus'
