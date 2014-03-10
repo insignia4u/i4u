@@ -279,3 +279,10 @@ $(document).ready ->
       scrollTop: $(".contact_form").offset().top
     , 1200
 
+  $('.contact_form #file_field_text').on 'click', (e) ->
+    e.preventDefault()
+    $('.contact_form .hidden_field').click()
+
+  $('.contact_form .hidden_field').on 'change', (e) ->
+    $('.contact_form #file_field_text').val($(this).val())
+
