@@ -3,6 +3,7 @@ class Article < ActiveRecord::Base
 
   scope :published, -> { where(publication_state: 1) }
   scope :latest_first, -> { order('publication_date DESC, id DESC') }
+  scope :events, -> { where(:is_event => true) }
 
   belongs_to :site
   has_many :comments

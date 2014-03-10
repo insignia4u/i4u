@@ -50,6 +50,9 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
+    axiom-types (0.0.5)
+      descendants_tracker (~> 0.0.1)
+      ice_nine (~> 0.9)
     bcrypt-ruby (3.1.2)
     binding_of_caller (0.6.8)
     bourbon (2.1.2)
@@ -66,6 +69,8 @@ GEM
       xpath (~> 2.0)
     chunky_png (1.2.9)
     cocaine (0.4.2)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -83,6 +88,7 @@ GEM
     daemons (1.1.9)
     dalli (2.6.0)
     database_cleaner (0.9.1)
+    descendants_tracker (0.0.3)
     devise (2.1.0)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.7)
@@ -93,6 +99,7 @@ GEM
     draper (0.18.0)
       actionpack (~> 3.2)
       activesupport (~> 3.2)
+    equalizer (0.0.9)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
@@ -122,6 +129,7 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.6.1)
+    ice_nine (0.11.0)
     inherited_resources (1.4.1)
       has_scope (~> 0.6.0.rc)
       responders (~> 1.0.0.rc)
@@ -285,6 +293,11 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     uuidtools (2.1.4)
+    virtus (1.0.1)
+      axiom-types (~> 0.0.5)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0.1)
+      equalizer (~> 0.0.7)
     warden (1.1.1)
       rack (>= 1.0)
     xpath (2.0.0)
@@ -317,6 +330,7 @@ DEPENDENCIES
   friendly_id (= 4.0.9)
   gibbon (= 0.4.2)
   jquery-rails (= 2.0.2)
+  kaminari (= 0.15.0)
   memcachier
   mobile-fu (= 1.1.1)
   mysql2
@@ -340,4 +354,5 @@ DEPENDENCIES
   therubyracer
   thin
   uglifier (>= 1.0.3)
+  virtus
   zurb-foundation (= 3.0.9)
