@@ -2,8 +2,9 @@ class JobsController < ApplicationController
   layout "jobs"
 
   def new
-    @message = Message.new(is_to_job: true)
-    @values = Value.all
+    @message   = Message.new(is_to_job: true)
+    @testimony = Testimony.published
+    @values    = Value.all
   end
 
   def create
