@@ -1,0 +1,7 @@
+development:
+  RECAPTCHA_PUBLIC_KEY:  some-public-key
+  RECAPTCHA_PRIVATE_KEY: some-private-key
+
+production:
+  RECAPTCHA_PUBLIC_KEY:  some-public-key
+  RECAPTCHA_PRIVATE_KEY: some-private-key
