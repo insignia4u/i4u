@@ -410,10 +410,12 @@
   }
 
   .more{
-    left: 384px;
-    right: auto;
-    text-align: center;
-    bottom: 12px;
+    @include breakpoint(desktop) {
+      left: 384px;
+      right: auto;
+      text-align: center;
+      bottom: 12px;
+    }
   }
 }
 
