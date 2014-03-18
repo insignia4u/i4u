@@ -7,18 +7,27 @@ section.contact-form
       .f-text
         = f.text_field :name, placeholder: 'Name'
         i.icon-user
+        .oblig-field
+          |*
 
       .f-text
         = f.text_field :email, placeholder: 'Email'
         i.icon-envelope-alt
+        .oblig-field
+          |*
 
       .f-text
         = f.telephone_field :phone, placeholder: 'Phone'
         i.icon-phone
+        .oblig-field
+          |*
+
     .box-second
       .f-textarea
         = f.text_area :body, placeholder: 'Comments', class: 'comment'
         i.icon-pencil
+        .oblig-field
+          |*
     .box-thirst
       = f.submit 'Contact Us', class: 'btn'
 
