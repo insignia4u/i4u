@@ -141,7 +141,6 @@ GEM
     kaminari (0.15.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -213,7 +212,6 @@ GEM
     rake (10.1.1)
     rdoc (3.12.2)
       json (~> 1.4)
-    ref (1.0.5)
     responders (1.0.0)
       railties (>= 3.2, < 5)
     rest-client (1.6.7)
@@ -277,9 +275,6 @@ GEM
       sinatra (~> 1.0.0)
     temple (0.4.1)
     textilize (0.0.4)
-    therubyracer (0.12.0)
-      libv8 (~> 3.16.14.0)
-      ref
     thin (1.6.1)
       daemons (>= 1.0.9)
       eventmachine (>= 1.0.0)
@@ -353,7 +348,6 @@ DEPENDENCIES
   strong_parameters (= 0.2.0)
   taps (= 0.3.24)
   textilize
-  therubyracer
   thin
   uglifier (>= 1.0.3)
   virtus

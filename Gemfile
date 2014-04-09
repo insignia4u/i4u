@@ -20,7 +20,7 @@ group :development, :test do
   gem "factory_girl_rails", '3.4.0'
   gem "faker",              '1.0.1'
   gem "simplecov"
-  gem "therubyracer"
+  # gem "therubyracer"
   gem 'mysql2'
 end
 
