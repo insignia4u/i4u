@@ -1,37 +1,52 @@
 aside
-  /= render 'blog/articles/modules/google'
+  - if false  # not implemented yet
+    i.icon-search-2
+    form
+      input.search type="search" placeholder="Search..."
 
   a.subscribe-link href=""
     | Subscribe to our RSS
     i.icon-rss
 
-  .box.tip-day
+  .box-opacity.tip-day
     h2
       span.circle
         i.icon-smiley
 
       | tip del día
 
-    = textilize(@today_tip.description) if @today_tip
+    p
+      = link_to @rails_tip.title, '#'
+      |&nbsp;
+      = @rails_tip.description
 
-    = link_to blog_tips_path(type: 'today_tips'), class: 'bottom-link' do
-      |Ver últimos tips
+    = link_to blog_tips_path('today_tips'), class: 'bottom-link' do
+      | Ver últimos tips
       span +
 
-  .box.rails-tip
+  .box-opacity.rails-tip
     h2
       span.circle
         i.icon-diamond
 
       | rails tips
-    = textilize(@rails_tip.description) if @rails_tip
+    p
+      = link_to @today_tip.title, '#'
+      |&nbsp;
+      = @today_tip.description
 
     = link_to blog_tips_path(type: 'rails_tips'), class: 'bottom-link' do
-      |Ver últimos tips
+      | Ver últimos tips
       span +
 
-  .box.categories
-    ul.list-categories
-      - @tags.each do |tag|
-        li
-          = link_to tag.name, tag_blog_articles_path(tag.name)
+  - if @categories.any?
+    .box-opacity.categories
+      ul.list-categories
+        li = link_to 'All', blog_path_path
+        - @categories.each do |category|
+          li= link_to category.name, blog_category_path(category.slug)
+
+      a.close href="javascript:void(0)"
+        | CERRAR
+        span x
+

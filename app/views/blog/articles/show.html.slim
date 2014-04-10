@@ -1,51 +1,82 @@
-/ = render 'blog/articles/modules/head'
-
-/ section.blog
-
-/   = render 'blog/articles/modules/blog_tags'
-
-/   .primary-title
-/     h2 Our Blog
-
-/   = render 'blog/articles/modules/aside'
-
-/   .column
-/     article
-/       .comment
-/           = link_to '0', blog_article_url(@article), class: 'fb-comments-count',
-/           data: { href: blog_article_url(@article) }
-/           i.icon-comment
-
-/       .author = @article.author
-/       - if @article.image.present?
-/         picture alt=""
-/           source src=@article.image.url(:small)
-/           source src=@article.image.url(:medium) media="(min-width:440px)"
-/           source src=@article.image.url(:medium) media="(min-width:600px)"
-
-/         noscript
-/           img src=@article.image.url(:small) alt=""
-
-/       h3 = link_to @article.title, blog_article_path(@article)
-
-/       = textilize(@article.content)
-
-/       .tags
-/         - @article.tag_list.each do |tag|
-/           = link_to tag, tag_blog_articles_path(tag)
-
-/       .fb-like data-href=blog_article_url(@article) data-send="true" data-width="450" data-show-faces="true">
-/       .fb-comments data-href=blog_article_url(@article) data-width="470" data-num-posts="10"
-
 section.blog
 
   .primary-title
     h2 Our Blog
 
   = link_to blog_articles_path, class: 'l-back' do
-    span.icon-double-angle-left 
+    span.icon-double-angle-left
     span.l-back-text Volver
 
-  = render "module/aside-blog"
+  = render "blog/articles/modules/aside"
 
-  = render "module/post-single"
+  .column.singlepost
+    article
+      h2= @article.title
+
+      .metadata-header
+        .author
+          i.icon-user-2
+          = @article.author
+
+        .date
+          i.icon-calendar-3
+          = @article.publication_date.strftime('%-d de %B, %Y')
+        .comment
+          = @article.count_comments
+          i.icon-comment
+
+      picture alt=""
+        - if @article.image?
+          source src=@article.image.url(:normal)
+        - else
+          source src=asset_path("blog-photo02.jpg")
+          source src=asset_path("blog-photo02.jpg") media="(min-width:440px)"
+          source src=asset_path("blog-photo02.jpg") media="(min-width:600px)"
+
+          noscript
+            img src=asset_path("blog-photo02.jpg") alt=""
+      - if @article.image_caption
+        .labelphoto= @article.image_caption
+      - else
+        br
+
+      = @article.content
+
+      .metadata-footer
+        ul.social
+          li
+            a href=""
+              i.icon-thumbs-up
+              span facebook
+          li
+            a href=""
+              i.icon-twitter
+              span twitter
+          li
+            a href=""
+              i.icon-googleplus
+              span google+
+          li
+            a href=""
+              i.icon-linkedin
+              span linkedin
+
+        - if @article.tags
+          ul.tags
+            - @article.tags.each do |tag|
+              li
+                = link_to tag, tag_blog_articles_path(tag.name)
+
+    .pagination
+      - if @prev
+        = link_to blog_article_path(@prev), class: 'l-previous' do
+          span.icon-double-angle-left
+          span.l-back-text Anterior
+
+      - if @next
+        = link_to blog_article_path(@next), class: 'l-next' do
+          span.l-back-text Siguiente
+          span.icon-double-angle-right
+
+    = render "blog/articles/modules/discussion"
+    = render "blog/articles/modules/post-comment-form"
