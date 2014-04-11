@@ -12,7 +12,6 @@ describe Article do
     it { should     respond_to(:image) }
     it { should     respond_to(:description) }
     it { should     respond_to(:site) }
-    it { should     respond_to(:tag_list) }
   end
 
   describe "Validations" do
@@ -24,7 +23,6 @@ describe Article do
     it { should validate_presence_of(:publication_date) }
     it { should validate_presence_of(:description) }
     it { should validate_presence_of(:site) }
-    it { should validate_presence_of(:tag_list) }
   end
 
   describe "Factory Definition" do
@@ -77,30 +75,6 @@ describe Article do
     it { Article.next_article(@all.last).should be_false }
     it { Article.prev_article(@all.second).should eql(@all.first) }
     it { Article.prev_article(@all.first).should be_false }
-  end
-
-  describe "Tags" do
-    before(:each) do
-      @article  = create(:article, tag_list: 'Un tag')
-      @articles = create_list(:article,4)
-      @with_tag = create_list(:article_with_tags,3)
-    end
-
-    context "#tag_list" do
-      it "returns the article tag" do
-        @article.tag_list.first.should eql('Un tag')
-      end
-    end
-
-    context "#tagged_with" do
-      it "return the articles filtred by tags" do
-        Article.tagged_with('Tag1').count.should eql(@with_tag.count)
-        Article.tagged_with('Tag2').to_a.should eql(@with_tag)
-        Article.tagged_with('Tag3').each do |tag|
-          @articles.should_not include(tag)
-        end
-      end
-    end
   end
 end
 

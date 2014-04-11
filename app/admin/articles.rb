@@ -32,9 +32,6 @@ ActiveAdmin.register Article do
     column ("Categories") do |article|
       article.categories.map {|cat| cat.name }.join(', ')
     end
-    column ("Tag List") do |article|
-      article.tag_list
-    end
     column("Event article") do |article|
       article.is_event ? 'Yes' : 'No'
     end
@@ -71,7 +68,6 @@ ActiveAdmin.register Article do
         check_state(article.publication_state)
       end
       row :publication_date
-      row :tag_list
       row :is_event do |article|
         article.is_event ? 'Yes' : 'No'
       end
@@ -95,7 +91,6 @@ ActiveAdmin.register Article do
       f.input :publication_state, label: 'Publication state', as: :select,
         collection: [['Draft',0],['Published',1]]
       f.input :publication_date
-      f.input :tag_list
       f.input :is_event
     end
 
@@ -109,7 +104,7 @@ ActiveAdmin.register Article do
         params.require(:article)
         .permit(:site_id,:author, :title, :content,:subtitle,
         :summary, :publication_date, :publication_state,
-        :image,:description, :tag_list, :image_caption, :is_event, category_ids: [])
+        :image,:description, :image_caption, :is_event, category_ids: [])
       ]
     end
   end

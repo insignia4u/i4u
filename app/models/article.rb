@@ -20,11 +20,9 @@ class Article < ActiveRecord::Base
                 }
 
   validates :author, :title, :subtitle, :content, :summary, :publication_date,
-  :description, :site, :tag_list,presence: true
+  :description, :site,presence: true
 
   friendly_id :title, use: [:slugged, :history]
-
-  acts_as_taggable
 
   def self.most_recents
     published.where('publication_date <= ?', Date.today)

@@ -30,9 +30,9 @@ section.blog
           | Seguir leyendo
           span +
 
-        - if article.tags
+        - if article.categories
           .tags
-            - article.tags.each do |tag|
-              = link_to tag, tag_blog_articles_path(tag.name)
+            - article.categories.each do |category|
+              = link_to category.name, blog_category_path(category.slug)
 
     = link_to_next_page @articles, 'Older Entries', class: 'btn'

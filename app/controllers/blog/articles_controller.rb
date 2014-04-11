@@ -10,10 +10,4 @@ class Blog::ArticlesController < Blog::BaseController
     @next = Article.next_article(@article)
     @prev = Article.prev_article(@article)
   end
-
-  private
-    def tag
-      params[:tag]
-    end
-
 end
