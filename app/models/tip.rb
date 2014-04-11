@@ -20,7 +20,8 @@ class Tip < ActiveRecord::Base
                 }
 
   validates :title, :tip_type, :description, :content,:published_at,
-   :site, presence: true
+   :site, :link, presence: true
+  validates :link, :format => URI::regexp(%w(http https))
 
   validate :check_future_date, :on => :create
   validate :only_one_tip_per_day
@@ -68,12 +69,12 @@ private
 
   def only_one_tip_per_day
     if published_at
-      tips = Tip.where('published_at = ? AND tip_type = ?',
-                    self.published_at.at_beginning_of_day, self.tip_type)
+      tip = Tip.where('published_at = ? AND tip_type = ?',
+                    self.published_at.at_beginning_of_day, self.tip_type).first
 
-      errors.add(:published_at, 'already a tip with this date.') if tips.any?
-
+      if tip && (tip.id != self.id)
+        errors.add(:published_at, 'already exist a tip with this date.')
+      end
     end
   end
-
 end

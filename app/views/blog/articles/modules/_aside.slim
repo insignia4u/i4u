@@ -16,7 +16,7 @@ aside
       | tip del día
 
     p
-      = link_to @rails_tip.title, '#'
+      = link_to @rails_tip.title, @rails_tip.link, target: "_blank"
       |&nbsp;
       = @rails_tip.description
 
@@ -31,7 +31,7 @@ aside
 
       | rails tips
     p
-      = link_to @today_tip.title, '#'
+      = link_to @today_tip.title, @today_tip.link, target: "_blank"
       |&nbsp;
       = @today_tip.description
 
