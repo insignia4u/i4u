@@ -61,12 +61,11 @@ section.blog
               i.icon-linkedin
               span linkedin
 
-        - if @article.tags
+        - if @article.categories
           ul.tags
-            - @article.tags.each do |tag|
+            - @article.categories.each do |category|
               li
-                = link_to tag, tag_blog_articles_path(tag.name)
-
+                = link_to category.name, blog_category_path(category.slug)
     .pagination
       - if @prev
         = link_to blog_article_path(@prev), class: 'l-previous' do
