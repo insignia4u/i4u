@@ -170,8 +170,9 @@ module ApplicationHelper
   end
 
   def twitter_share(post, summary)
+
     return "https://twitter.com/intent/tweet?" \
-    "text=#{summary.truncate(40)}&" \
+    "text=#{summary.truncate(139 - blog_article_url(post).length)}&" \
     "url=#{blog_article_url(post)}" if post
     ""
   end
