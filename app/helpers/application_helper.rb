@@ -164,12 +164,15 @@ module ApplicationHelper
   end
 
   def facebook_share(post)
-    return "http://www.facebook.com/sharer/sharer.php?u=#{blog_article_url(post)}" if post
+    return "http://www.facebook.com/sharer/sharer.php?" \
+    "u=#{blog_article_url(post)}" if post
     ""
   end
 
   def twitter_share(post, summary)
-    return "https://twitter.com/intent/tweet?text=#{summary.truncate(40)}&url=#{blog_article_url(post)}" if post
+    return "https://twitter.com/intent/tweet?" \
+    "text=#{summary.truncate(40)}&" \
+    "url=#{blog_article_url(post)}" if post
     ""
   end
 
@@ -179,7 +182,10 @@ module ApplicationHelper
   end
 
   def linkedin_share(post, title, summary)
-    return "http://www.linkedin.com/shareArticle?mini=true&url=#{blog_article_url(post)}&title=#{title}&summary=#{summary.truncate(40)}&source=Insignia Blog" if post
+    return "http://www.linkedin.com/shareArticle?mini=true&" \
+    "url=#{blog_article_url(post)}&" \
+    "title=#{title}&summary=#{summary}&" \
+    "source=Insignia Blog" if post
     ""
   end
 end
