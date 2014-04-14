@@ -18,6 +18,7 @@ html
 
     = stylesheet_link_tag "application", :media => "all"
     = yield :stylesheets
+    = yield :head
 
   body onload="window.scrollTo(0,1);"
     = render "shared/header"

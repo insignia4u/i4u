@@ -45,19 +45,19 @@ section.blog
       .metadata-footer
         ul.social
           li
-            a href=""
+            a href="#{facebook_share(@article)}" target="_blank"
               i.icon-thumbs-up
               span facebook
           li
-            a href=""
+            a href="#{twitter_share(@article, @article.summary)}" target="_blank"
               i.icon-twitter
               span twitter
           li
-            a href=""
+            a href="https://plus.google.com/share?url=http://i4u-staging.herokuapp.com/blog/articles/la-historia-de-insignia&title=Esto es una prueba" target="_blank"
               i.icon-googleplus
               span google+
           li
-            a href=""
+            a href="#{linkedin_share(@article, @article.title, @article.summary)}" target="_blank"
               i.icon-linkedin
               span linkedin
 
@@ -79,3 +79,9 @@ section.blog
 
     = render "blog/articles/modules/discussion"
     = render "blog/articles/modules/post-comment-form"
+
+- content_for :head do
+  meta property="og:title"  content="#{@article.title}"
+  meta property="og:type"   content="sdff:post"
+  meta property="og:url"    content="#{blog_article_url(@article)}"
+  meta property="og:image"  content="#{ @article.image? ? @article.image.url(:normal) : ''}"
