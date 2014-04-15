@@ -13,39 +13,21 @@
         span tips anteriores
 
       .year
-        a href=""
+        = link_to tip_prev_year(params[:type], @date) do
           i.icon-arrow-left
 
         span= @date.strftime('%Y')
 
-        a href=""
+        = link_to tip_next_year(params[:type], @date) do
           i.icon-arrow-right
     .calendar-body
       ul
-        li
-          a.month-enable href="" ENE
-        li
-          a.month-current href="" FEB
-        li
-          span.month-disable MAR
-        li
-          span.month-disable ABR
-        li
-          span.month-disable MAY
-        li
-          span.month-disable JUN
-        li
-          span.month-disable JUL
-        li
-          span.month-disable AGO
-        li
-          span.month-disable SEP
-        li
-          span.month-disable OCT
-        li
-          span.month-disable NOV
-        li
-          span.month-disable DIC
+        - (1..12).each do |i|
+          li
+            - if tip_inactive_month?(i, @date)
+              span.month-disable= tip_month_name(i)
+            - else
+              = link_to tip_month_name(i), tip_month_path(params[:type], i, @date), class: tip_month_class(i, @date)
 
   - if @tips.any?
     .monthtips
