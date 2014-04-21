@@ -3,8 +3,10 @@ aside
     i.icon-search-2
     form
       input.search type="search" placeholder="Search..."
+  - content_for :head do
+    = auto_discovery_link_tag(:rss, blog_articles_url(format: "rss"))
 
-  a.subscribe-link href=""
+  = link_to blog_articles_url(format: "rss"), class: "subscribe-link" do
     | Subscribe to our RSS
     i.icon-rss
 
