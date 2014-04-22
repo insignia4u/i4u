@@ -109,6 +109,20 @@ describe Tip do
         Tip.rails_tip.should eql(@old_rails_tip)
       end
     end
+
+    context ".month_tips" do
+      it "it returns the today tips within a month of a specific date" do
+        today_tip = create(:today_tip, published_at: Date.today + 5.month)
+
+        Tip.month_tips(Tip::TODAY_TIP, Date.today + 5.month).should eq([today_tip])
+      end
+
+      it "it returns the rails tips within a month of a specific date" do
+        rails_tip = create(:rails_tip, published_at: Date.today + 5.month)
+
+        Tip.month_tips(Tip::RAILS_TIP, Date.today + 5.month).should eq([rails_tip])
+      end
+    end
   end
 
 end
