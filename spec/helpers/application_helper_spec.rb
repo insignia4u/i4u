@@ -109,4 +109,20 @@ describe ApplicationHelper do
       helper.tip_month_class(@disable_month, @current_date).should eq("month-disable")
     end
   end
+
+  describe "tip_inactive_month?" do
+    before(:each) do
+      @current_date = Date.today
+      @current_month = Date.today.month
+      @future_month = Date.today.month + 1
+    end
+
+    it "returns true for inactive month" do
+      helper.tip_inactive_month?(@future_month, @current_date).should be_true
+    end
+
+    it "returns true for inactive month" do
+      helper.tip_inactive_month?(@current_month, @current_date).should be_false
+    end
+  end
 end
