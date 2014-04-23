@@ -4,7 +4,7 @@ class Blog::TipsController < ApplicationController
 
   def index
     @tip_type = type
-    @tips = Tip.month_tips(type, @date).page(params[:page]).per(2)
+    @tips = Tip.month_tips(type, @date).page(params[:page]).per(5)
     @today_tip = (@tip_type === Tip::RAILS_TIP)? Tip.rails_tip : Tip.today_tip
   end
 
