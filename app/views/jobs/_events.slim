@@ -1,43 +1,21 @@
-.careers-title.cover4
-  .layer data-depth="0.10"
-    h2 eventos y conferencias
-  .cover
+- if @events.present?
+  .careers-title.cover4
+    .layer data-depth="0.10"
+      h2 eventos y conferencias
+    .cover
 
-section.news
-  .content
-    ul
-      li.news-item.equal5
-        .published-at
-          i.icon-calendar
-          | 23 de Marzo 2012
-        .title del freelancing a la empresa
-        h3 La Historia de Insignia
-        .description
-          p El día 15 de noviembre participamos de la jornada de cierre anual del Tucumán Valley con una presentación en el marco de la serie de charlas denominadas “Como vender servicios tecnológicos al mundo (y no morir en el intento)” .
+  section.news
+    .content
+      ul
+        - @events.each do |event|
+          li.news-item.equal5
+            .published-at
+              i.icon-calendar
+              = l event.publication_date, format: :long
+            .title = event.subtitle
+            h3 = event.title
+            .description
+              p = event.description
 
-        a.more href="" target="_blank"
-          | Read more
-
-      li.news-item.equal5
-        .published-at
-          i.icon-calendar
-          | 23 de Marzo 2012
-        .title del freelancing a la empresa
-        h3 La Historia de Insignia
-        .description
-          p El día 15 de noviembre participamos de la jornada de cierre anual del Tucumán Valley con una presentación en el marco de la serie de charlas denominadas “Como vender servicios tecnológicos al mundo (y no morir en el intento)” .
-
-        a.more href="" target="_blank"
-          | Read more
-
-      li.news-item.equal5
-        .published-at
-          i.icon-calendar
-          | 23 de Marzo 2012
-        .title del freelancing a la empresa
-        h3 La Historia de Insignia
-        .description
-          p El día 15 de noviembre participamos de la jornada de cierre anual del Tucumán Valley con una presentación en el marco de la serie de charlas denominadas “Como vender servicios tecnológicos al mundo (y no morir en el intento)” .
-
-        a.more href="" target="_blank"
-          | Read more
+            a.more href="" target="_blank"
+              | Read more

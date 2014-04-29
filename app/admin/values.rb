@@ -1,4 +1,4 @@
-ActiveAdmin.register Values do
+ActiveAdmin.register Value do
   filter :site
 
   index do
@@ -36,7 +36,7 @@ ActiveAdmin.register Values do
   controller do
     def resource_params
       return [] if request.get?
-      [ params.require(:values)
+      [ params.require(:value)
         .permit(:site_id, :title, :subtitle, :description, :image) ]
     end
   end

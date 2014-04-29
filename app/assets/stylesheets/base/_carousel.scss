@@ -223,6 +223,10 @@
 #cases.carousel{
   margin-bottom: 40px;
 
+  img {
+    min-height: 433px;
+  }
+
   .carousel-inner{
     .item{
       border:#c2b7bb solid 1px;
@@ -410,10 +414,12 @@
   }
 
   .more{
-    left: 384px;
-    right: auto;
-    text-align: center;
-    bottom: 12px;
+    @include breakpoint(desktop) {
+      left: 384px;
+      right: auto;
+      text-align: center;
+      bottom: 12px;
+    }
   }
 }
 

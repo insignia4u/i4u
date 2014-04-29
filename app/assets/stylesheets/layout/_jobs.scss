@@ -90,6 +90,7 @@
       left: 154px;
       top: 311px;
       @include transform(rotate(48deg));
+      -ms-transform: rotate(48deg);
       font-size: 113px;
       opacity: 0.44;
     }
@@ -100,6 +101,7 @@
       left: 329px;
       top: 121px;
       @include transform(rotate(-39deg));
+      -ms-transform: rotate(-39deg);
       opacity: 0.27;
 
     }
@@ -110,6 +112,7 @@
       left: 173px;
       top: 112px;
       @include transform(rotate(-34deg));
+      -ms-transform: rotate(-34deg);
     }
   }
   &.item4{
@@ -118,6 +121,7 @@
       left: 250px;
       top: -172px;
       @include transform(rotate(30deg));
+      -ms-transform: rotate(30deg);
       opacity: 0.44;
     }
   }
@@ -127,6 +131,7 @@
       left: 19px;
       top: -131px;
       @include transform(rotate(35deg));
+      -ms-transform: rotate(35deg);
       opacity: 0.10;
     }
   }
@@ -136,6 +141,7 @@
       right: 198px;
       top: 82px;
       @include transform(rotate(47deg));
+      -ms-transform: rotate(47deg);
       font-size: 104px;
       opacity: 0.44;
     }
@@ -146,6 +152,7 @@
       right: 149px;
       top: 68px;
       @include transform(rotate(-65deg));
+      -ms-transform: rotate(-65deg);
       font-size: 167px;
     }
   }
@@ -156,6 +163,7 @@
       right: 119px;
       top: -74px;
       @include transform(rotate(48deg));
+      -ms-transform: rotate(48deg);
       opacity: 0.27;
     }
   }
@@ -166,6 +174,7 @@
       right: 235px;
       top: -128px;
       @include transform(rotate(182deg));
+      -ms-transform: rotate(182deg);
       opacity: 0.27;
     }
   }
@@ -176,6 +185,7 @@
       right: -55px;
       bottom: -157px;
       @include transform(rotate(126deg));
+      -ms-transform: rotate(126deg);
     }
   }
   &.item11{
@@ -185,6 +195,7 @@
       left: 85px;
       bottom: -267px;
       @include transform(rotate(141deg));
+      -ms-transform: rotate(141deg);
       opacity: 0.40;
     }
   }
@@ -195,6 +206,7 @@
       left: 215px;
       bottom: -75px;
       @include transform(rotate(199deg));
+      -ms-transform: rotate(199deg);
       opacity: 0.10;
     }
   }
@@ -205,6 +217,7 @@
       right: 105px;
       bottom: -157px;
       @include transform(rotate(86deg));
+      -ms-transform: rotate(86deg);
       opacity: 0.40;
     }
   }
@@ -215,6 +228,7 @@
       right: 105px;
       bottom: -357px;
       @include transform(rotate(47deg));
+      -ms-transform: rotate(47deg);
       opacity: 0.15;
     }
   }
@@ -615,11 +629,13 @@
     float: right;
     margin-left: -175px;
     @include transform(rotate(90deg));
+    -ms-transform: rotate(90deg);
     right: -34px;
     width: 68px;
 
     @include breakpoint(tablet){
       @include transform(rotate(-51deg));
+      -ms-transform: rotate(-51deg);
       width: 115px;
       right: -70px;
     }
@@ -637,6 +653,7 @@
 
   .dash{
     @include transform(rotate(-135deg));
+    -ms-transform: rotate(-135deg);
     left: -70px;
     width: 20px;
     height: 20px;
@@ -645,6 +662,7 @@
 
     @include breakpoint(tablet){
       @include transform(rotate(51deg));
+      -ms-transform: rotate(51deg);
       top: -50px;
       height: 0;
       border-left: none;
@@ -787,6 +805,7 @@
     color: $color-one;
     display: inline-block;
     @include transform(rotate(90deg));
+    -ms-transform: rotate(90deg);
     position: relative;
     left: -1px;
     top: 2px;

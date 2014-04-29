@@ -39,8 +39,6 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
-    acts-as-taggable-on (2.4.1)
-      rails (>= 3, < 5)
     airbrake (3.1.6)
       builder
       girl_friday
@@ -50,6 +48,9 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
+    axiom-types (0.0.5)
+      descendants_tracker (~> 0.0.1)
+      ice_nine (~> 0.9)
     bcrypt-ruby (3.1.2)
     binding_of_caller (0.6.8)
     bourbon (2.1.2)
@@ -66,6 +67,8 @@ GEM
       xpath (~> 2.0)
     chunky_png (1.2.9)
     cocaine (0.4.2)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -83,6 +86,7 @@ GEM
     daemons (1.1.9)
     dalli (2.6.0)
     database_cleaner (0.9.1)
+    descendants_tracker (0.0.3)
     devise (2.1.0)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.7)
@@ -93,6 +97,7 @@ GEM
     draper (0.18.0)
       actionpack (~> 3.2)
       activesupport (~> 3.2)
+    equalizer (0.0.9)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
@@ -122,6 +127,7 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.6.1)
+    ice_nine (0.11.0)
     inherited_resources (1.4.1)
       has_scope (~> 0.6.0.rc)
       responders (~> 1.0.0.rc)
@@ -133,7 +139,6 @@ GEM
     kaminari (0.15.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -171,6 +176,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.4.0)
       mime-types
+    pg (0.17.1)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -204,7 +210,6 @@ GEM
     rake (10.1.1)
     rdoc (3.12.2)
       json (~> 1.4)
-    ref (1.0.5)
     responders (1.0.0)
       railties (>= 3.2, < 5)
     rest-client (1.6.7)
@@ -268,9 +273,6 @@ GEM
       sinatra (~> 1.0.0)
     temple (0.4.1)
     textilize (0.0.4)
-    therubyracer (0.12.0)
-      libv8 (~> 3.16.14.0)
-      ref
     thin (1.6.1)
       daemons (>= 1.0.9)
       eventmachine (>= 1.0.0)
@@ -285,6 +287,11 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     uuidtools (2.1.4)
+    virtus (1.0.1)
+      axiom-types (~> 0.0.5)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0.1)
+      equalizer (~> 0.0.7)
     warden (1.1.1)
       rack (>= 1.0)
     xpath (2.0.0)
@@ -300,7 +307,6 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin (= 0.4.4)
-  acts-as-taggable-on (= 2.4.1)
   airbrake (= 3.1.6)
   aws-sdk (= 1.7.1)
   binding_of_caller (= 0.6.8)
@@ -317,12 +323,14 @@ DEPENDENCIES
   friendly_id (= 4.0.9)
   gibbon (= 0.4.2)
   jquery-rails (= 2.0.2)
+  kaminari (= 0.15.0)
   memcachier
   mobile-fu (= 1.1.1)
   mysql2
   neat (= 1.0.2)
   newrelic_rpm (= 3.5.3.25)
   paperclip (= 3.3.1)
+  pg
   populator
   puma (= 1.6.3)
   rails (= 3.2.13)
@@ -337,7 +345,7 @@ DEPENDENCIES
   strong_parameters (= 0.2.0)
   taps (= 0.3.24)
   textilize
-  therubyracer
   thin
   uglifier (>= 1.0.3)
+  virtus
   zurb-foundation (= 3.0.9)

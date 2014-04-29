@@ -7,6 +7,7 @@ module Populator
     def populate
       Tip.populate 35 do |tip|
         tip.title = Faker::Name.title.titleize
+        tip.link  = "http://www.google.com"
         tip.description = Populator.words(10..30).titleize
         tip.content = Faker::Lorem.paragraphs
         tip.published_at = 2.years.ago..Time.now

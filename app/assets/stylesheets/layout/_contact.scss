@@ -1,7 +1,15 @@
 .contact-form{
-  .box-first, .box-second, .box-thirst .btn{
-    // width: 100%;
+  .box-first, .box-second {
+    width: 90%;
     // float: none;
+    .oblig-field {
+      position: absolute;
+      top: -10px;
+      right: -35px;
+      font-size: 64px;
+      font-weight: lighter;
+      color: #666;
+    }
   }
 
   .box-thirst{
@@ -25,6 +33,9 @@
     .box-second {
       float: right;
       width: 51%;
+      .f-textarea {
+        margin-right: 13px;
+      }
     }
 
     .box-thirst{
@@ -33,6 +44,7 @@
 
       .btn{
         float: right;
+        margin-right: 13px;
       }
     }
   }
@@ -259,6 +271,11 @@
       }
     }
   }
+
+  .hidden_field {
+    display: none;
+  }
+
 
   .oblig-field {
     position: absolute;

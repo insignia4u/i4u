@@ -3,6 +3,11 @@ class Blog::ArticlesController < Blog::BaseController
 
   def index
     @articles = Article.published.latest_first.page(params[:page]).per(3)
+
+    respond_to do |format|
+      format.html
+      format.rss  { render :layout => false }
+    end
   end
 
   def show
@@ -10,10 +15,4 @@ class Blog::ArticlesController < Blog::BaseController
     @next = Article.next_article(@article)
     @prev = Article.prev_article(@article)
   end
-
-  private
-    def tag
-      params[:tag]
-    end
-
 end

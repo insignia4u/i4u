@@ -20,7 +20,8 @@ group :development, :test do
   gem "factory_girl_rails", '3.4.0'
   gem "faker",              '1.0.1'
   gem "simplecov"
-  gem "therubyracer"
+  # gem "therubyracer"
+  gem 'mysql2'
 end
 
 group :test do
@@ -29,7 +30,7 @@ group :test do
 end
 
 group :production do
-  # gem 'pg'
+  gem 'pg'
   gem 'thin'
 end
 
@@ -47,6 +48,7 @@ group :assets do
   gem 'neat', '1.0.2'
 end
 
+gem 'kaminari',             '0.15.0'
 gem 'devise',               '2.1.0'
 gem "activeadmin",          '0.4.4'
 gem "friendly_id",          '4.0.9'
@@ -62,6 +64,5 @@ gem 'newrelic_rpm',         '3.5.3.25'
 gem 'dalli',                '2.6.0'
 gem 'gibbon',               '0.4.2'
 gem 'strong_parameters',    '0.2.0'
-gem 'acts-as-taggable-on',  '2.4.1'
-gem 'mysql2'
 gem 'memcachier'
+gem 'virtus'
