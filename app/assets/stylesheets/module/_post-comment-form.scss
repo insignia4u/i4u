@@ -1,12 +1,24 @@
 .post-comment-form{
-  form {
-    margin-top: 36px;
-    input {
-      margin-bottom: 34px;
+  .column{
+    form {
+      margin-top: 36px;
+      input {
+        margin-bottom: 34px;
+      }
+      .btn {
+        margin: 13px 0 55px !important;
+        float: right;
+      }
     }
-    .btn {
-      margin: 13px 0 55px !important;
-      float: right;
+  }
+}
+.post-comment-form{
+  .column{
+    .btn{
+      float: none;
+      width: 100%;
+      font-weight: 600;
+      font-size: 35px;
     }
   }
 }

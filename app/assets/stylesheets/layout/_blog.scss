@@ -315,8 +315,8 @@
       display: block;
       text-align: center;
       margin: 50px 0;
-      font-size: em(30,14);
-      line-height: em(43,30);
+      font-size: em(35,14);
+      line-height: 42px;
 
       @include breakpoint(tablet){
         display: inline-block;
@@ -349,6 +349,11 @@
       h3 {
         margin-top: 20px;
         margin-bottom: 5px;
+        font-size: 20px;
+
+        @include breakpoint(tablet){
+          font-size: 26px;
+        }
 
         @include breakpoint(desktop){
           margin-top: 34px;
@@ -358,6 +363,7 @@
 
       .bottom-link {
         margin-top: 8px;
+        font-size: 15px;
       }
     }
 
@@ -425,7 +431,6 @@
 
   .author, .date, .comment{
     color: $color-two;
-    font-size: em(14);
     margin-right: 20px;
     text-align: right;
 
@@ -444,8 +449,16 @@
   .author{
     float: left;
 
+    i {
+      display: none;
+    }
+
     @include breakpoint(tablet){
       float: none;
+
+      i{
+        display: inline-block;
+      }
     }
   }
 
@@ -475,6 +488,35 @@
     }
   }
 }
+.column{
+  .post-comment-form{
+    form {
+      input {
+        margin-bottom: 34px;
+      }
+      .btn {
+        margin: 45px 0 30px;
+        width: 100%;
+        font-weight: 600;
+        font-size: 35px;
+      }
+    }
+
+    @include breakpoint(tablet){
+      form{
+        .btn{
+          float: right;
+          width: auto;
+          font-size: 35px;
+          font-weight: 600px;
+          padding: 0 35px;
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+}
+
 
 .tags{
   overflow: hidden;
@@ -497,7 +539,8 @@
 }
 
 .metadata-footer{
-  margin: 61px 0 25px;
+  margin: 40px 0 25px;
+  overflow: hidden;
 
   @include breakpoint(tablet){
     border-top: $color-five solid 1px;
@@ -506,7 +549,7 @@
   .social{
     @extend %box-transparent-rounded;
     margin-top: 20px;
-    padding: 25px 0 27px;
+    padding: 22px 0 18px;
     text-align: center;
 
     @include breakpoint(tablet){
@@ -522,6 +565,8 @@
     a{
       text-shadow: 1px 1px 1px #fff;
       text-decoration: none;
+      font-size: 18px;
+
       .icon-thumbs-up {
         color: #3b5998;
       }
