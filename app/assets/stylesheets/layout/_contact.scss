@@ -1,0 +1,298 @@
+.contact-form{
+  .box-first, .box-second {
+    width: 90%;
+    // float: none;
+    .oblig-field {
+      position: absolute;
+      top: -10px;
+      right: -35px;
+      font-size: 64px;
+      font-weight: lighter;
+      color: #666;
+    }
+  }
+
+  .box-thirst{
+    text-align: center;
+  }
+
+  @include breakpoint(tablet){
+    form{
+      margin-top: 0;
+
+      .f-text input, textarea{
+        margin-top: 0;
+      }
+    }
+
+    .box-first{
+      width: 44%;
+      float: left;
+    }
+
+    .box-second {
+      float: right;
+      width: 51%;
+      .f-textarea {
+        margin-right: 13px;
+      }
+    }
+
+    .box-thirst{
+      width: 100%;
+      clear: both;
+
+      .btn{
+        float: right;
+        margin-right: 13px;
+      }
+    }
+  }
+
+  @include breakpoint(desktop){
+    form{
+      margin-top: 0;
+      overflow: hidden;
+      padding: 0 5px;
+      padding: 0 22px;
+    }
+
+    .box-first{
+      width: 35%;
+    }
+
+    .box-second{
+      float: right;
+      width: 60%;
+    }
+  }
+}
+
+.contact-info{
+
+  .list-contact{
+    width: 100%;
+    text-align: center;
+    padding: 20px 0 0;
+
+    li{
+      font-size: em(14);
+      font-weight: 400;
+      margin: 0 12px;
+      text-align: center;
+      width: auto;
+      background: url(asset-path("contact.png", image)) no-repeat 0 0;
+      vertical-align: top;
+      color: #373435;
+      height: 191px;
+      display: inline-block;
+    }
+
+    i{
+      display: block;
+      margin: auto;
+      width: 20px;
+      font-size: 26px;
+      color: #316baf;
+    }
+
+    .contact-phone {
+      width: 194px;
+      background-position: -258px -28px;
+      padding: 30px 0 0;
+      height: 116px;
+
+      @include breakpoint(tablet){
+        background-position: -258px 0;
+        padding: 58px 0 0;
+        height: 191px;
+      }
+    }
+
+    .contact-street{
+      width: 255px;
+      padding: 32px 15px 0 15px;
+    }
+
+    .contact-email{
+      width: 194px;
+      background-position: -457px 0;
+      padding: 62px 0 0;
+
+      .icon-envelope-alt{
+        font-size: 19px;
+      }
+    }
+
+    @include breakpoint(tablet){
+      padding: 0 0 40px;
+    }
+
+    @include breakpoint(tablet){
+      width: 715px;
+      margin: 0 auto;
+      overflow: hidden;
+
+      li{
+        display: block;
+        float: left;
+      }
+    }
+  }
+}
+
+  .map{
+    padding: 0 0 70px;
+  }
+
+  @include breakpoint(desktop){
+    .map{
+      text-align: center;
+    }
+  }
+
+
+.contact_form {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: #ed0892 !important;
+
+  form {
+    margin: 0 0 180px 0;
+
+    .box-first, .box-second {
+      .f-text {
+        input, select {
+          border: #000 solid 1px;
+          margin: 27px 0 36px;
+          height: 44px;
+          background-color: #FFF;
+          outline: none;
+        }
+        input:focus {
+          border: #000 solid 1px;
+        }
+        select {
+          margin: 27px 0 36px;
+          -webkit-border-radius: 5px;
+          border-radius: 5px;
+          width: 100%;
+          padding: 9px 10px 12px 60px;
+          font-size: 15px;
+          -webkit-box-shadow: 1px 2px 1px -1px rgba(38, 35, 31, 0.3);
+          box-shadow: 1px 2px 1px -1px rgba(38, 35, 31, 0.3);
+          display: block;
+        }
+        select:focus {
+          border: #000 solid 1px;
+        }
+        i {
+          color: #000;
+          top: 6px;
+        }
+        i.focus {
+          color: #df339b;
+        }
+      }
+    }
+
+    .box-first {
+      width: 32.3%;
+
+    }
+
+    .box-second {
+      width: 55.9%;
+      margin-right: 29px;
+
+      .f-textarea {
+        textarea {
+          border: #000 solid 1px;
+          height: 124px;
+          margin: 27px 0 36px;
+          background-color: #FFF;
+          outline: none;
+
+        }
+        i {
+          height: 110px;
+          color: #000;
+          padding-top: 3px;
+        }
+        i.focus {
+          color: #df339b;
+        }
+      }
+    }
+
+    .box-thirst {
+
+      @include breakpoint(tablet){
+        clear: both;
+      }
+
+      input{
+        margin-right: 29px;
+        width: 131px;
+        background-color: #373435;
+        border: solid 2px #000;
+      }
+
+      span{
+        display: inline-block;
+        float: right;
+        margin-right: 34px;
+        margin-top: -9px;
+        font-size: 64px;
+        font-weight: $weight-normal;
+        color: #FFF;
+      }
+
+      p{
+        text-align: center;
+        margin-top: 15px;
+        margin-right: 17px;
+        word-spacing: -1px;
+        color: #FFF;
+
+        @include breakpoint(tablet){
+          text-align: right;
+          width: 40%;
+          float: right;
+          margin-right: 15px;
+          margin-top: 2px;
+        }
+
+        @include breakpoint(desktop){
+           float: right;
+           display: inline-block;
+        }
+      }
+    }
+  }
+
+  .hidden_field {
+    display: none;
+  }
+
+
+  .oblig-field {
+    position: absolute;
+    top: -10px;
+    right: -35px;
+    font-size: 64px;
+    font-weight: lighter;
+    color: #FFF;
+  }
+}
+
+@media (min-width: 940px){
+  #noty_top_layout_container{
+    li{
+      width: 940px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+  }
+}

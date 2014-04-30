@@ -1,34 +1,31 @@
 require 'valid_formats'
 
 class Message
+  include Virtus.model
   include ActiveModel::ForbiddenAttributesProtection
   include ActiveModel::Validations
   include ActiveModel::Conversion
   extend  ActiveModel::Naming
 
-  attr_accessor  :file, :is_to_job ,:body, :email, :name, :phone
-  attr_reader :subject
+  attribute :is_to_job, Boolean
+  attribute :body,      String
+  attribute :email,     String
+  attribute :name,      String
+  attribute :phone,     String
+  attribute :linked_in, String
+  attribute :subject,   String
+  attribute :file,      Paperclip::Attachment
 
   validates :body, :name, :email, presence: true
   validates :email, format: { with: ValidFormats::EMAIL }, allow_blank: true
 
   validates :file, presence: true, if: :is_to_job
 
-  def initialize(attributes = {})
-    @body      = attributes[:body]
-    @name      = attributes[:name]
-    @email     = attributes[:email]
-    @phone     = attributes[:phone]
-    @file      = attributes[:file]
-    @is_to_job = (attributes[:is_to_job] == true || attributes[:is_to_job] == "true")
-    @subject   = attributes[:subject]
-    @subject   = 'Insignia website'
+  def self.build_with(attrs)
+    builder         = new(attrs)
+    builder.subject = "CV to #{@name}" if builder.is_to_job
 
-    if @is_to_job
-      @subject = "CV to #{@name}"
-    end
-
-    self
+    builder
   end
 
   def persisted?

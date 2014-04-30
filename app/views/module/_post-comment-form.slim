@@ -1,0 +1,22 @@
+.post-comment-form
+  .primary-title
+    h2 Dejá tu Comentario
+
+  = form_for @comment, url: blog_article_comments_path(@article) do |f|
+    .f-text
+      = f.text_field :name, placeholder: 'Name'
+      i.icon-user
+
+    .f-text
+      = f.email_field :email, placeholder: 'E-mail'
+      i.icon-envelope-alt
+
+    .f-text
+      = f.url_field :website, placeholder: "Website"
+      i.icon-earth
+
+    .f-textarea
+      = f.text_area :text, placeholder:"Comments", class: 'comment'
+      i.icon-pencil
+
+    = f.submit "Enviar", class: 'btn'

@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+
+//----------------------------------------
+//   Debug
+//---------------------------------------
+
+// Uncomment ligne 9 for activate debug
+// @import "base/_debug.scss";
+
+//----------------------------------------
+//   Common variables
+//----------------------------------------
+
+// Base color
+$white         : #fff;
+$clr-error     : #e74c3c; // red
+$clr-sucess    : #54B980; // green
+$clr-warn      : #f1c40f; // orange
+$clr-info      : #95a5a6; // grey
+
+$clr-0         : #888; // grey
+$clr-0-light   : #ddd;
+$clr-0-lighten : #fafafa;
+$clr-0-dark    : #444;
+$clr-0-darken  : #212121;
+
+$clr-1         : #3498db; // blue
+$clr-1-light   : #3498db; // tint($clr-1, 50%);
+$clr-1-lighten : #3498db; // tint($clr-1, 85%);
+$clr-1-dark    : #3498db; // shade($clr-1, 15%);
+$clr-1-darken  : #3498db; // shade($clr-1, 30%);
+
+$clr-2         : #54B980; // green
+$clr-2-light   : #54B980; // tint($clr-2, 50%);
+$clr-2-lighten : #54B980; // tint($clr-2, 85%);
+$clr-2-dark    : #54B980; // shade($clr-2, 15%);
+$clr-2-darken  : #54B980; // shade($clr-2, 30%);
+
+
+//----------------------------------------
+//   Support
+//----------------------------------------
+
+// Browser support
+$ie7: false;
+
+//----------------------------------------
+//   CSS3
+//----------------------------------------
+
+$rad: 3px;
+$trans: all .3s ease-in-out;
+
+//----------------------------------------
+//   Typography
+//----------------------------------------
+
+// Base font stack by http://cssfontstack.com/
+$sans-serif : "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif      : "Consolas", Monaco, Menlo, Courier New, monospace;
+
+// http://compass-style.org/reference/compass/typography/vertical_rhythm/
+$base-font-size: 14px;
+$base-line-height: 21px;
+
+// Texte base color
+$text-clr : $clr-0;
+
+// Link
+$color-link: $clr-1;
+$color-link-hover: $clr-1-darken;
+
+// Placeholder
+$color-mixin-placeholder: $clr-0-light;
+
+// Selection
+$color-selection: $clr-1;
+
+//----------------------------------------
+//   Grid
+//----------------------------------------
+
+// Grid choice
+$grid-fluid: true !default; // false for grid in px
+
+// Wrapper max size in px
+$wrapper-max-width: 960px;
+
+
+// Wrapper min size in px
+$wrapper-min-width: 320px;
+
+// Number of col
+$cols: 12;
+
+// Gutter size in px
+$gutter-width: 20px;
+
+//----------------------------------------
+//   Spacing
+//----------------------------------------
+
+$space-n : 0;
+// $space-s : rhythm(.5,$base-font-size);
+// $space-m : rhythm(1,$base-font-size);
+// $space-l : rhythm(2,$base-font-size);
+
+//----------------------------------------
+//   Header
+//----------------------------------------
+
+// $logo-w : image-width('logo.png');
+// $logo-h : image-height('logo.png');
+
+$weight-light:  300;
+$weight-normal: 400;
+$weigth-bold:   700;
+
+$font-primary: 'Enriqueta', cursive;
+$font-secondary: 'Amatic SC',cursive;
+$arial: Arial;
+
+$color-one: #373435; /* dark gray - text */
+$color-two: #F10993; /* pink */
+
+$color-three: #316baf; /* blue */
+$blue2: #183455;
+
+$color-four: #383435; /* dark gray - background nav*/
+$color-five: #b4b4b4;
+$color-six: #979797;
+$color-seven: #626262;
+$color-eight: #9a9294;
+$color-nine: #817f80;
+
+$w320: "320px";
+$w480: "480px";
+$w768: "768px";
+$w1024: "1024px";
+$w1280: "1280px";
+$w1500: "1500px";

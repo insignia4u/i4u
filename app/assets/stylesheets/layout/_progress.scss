@@ -1,0 +1,75 @@
+.process{
+  line-height:23px;
+
+  ul{
+    border-top: 1px solid #B3C4D9;
+    padding-top: 10%;
+
+    @include breakpoint(tablet){
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+
+  li{
+    border-bottom:#b3c4d9 solid 1px;
+    padding:0 0 15px;
+    margin:0 0 30px;
+  }
+
+  li:last-child{
+    @include breakpoint(tablet){
+      border-bottom: none;
+    }
+
+    @include breakpoint(desktop){
+      border-bottom: 1px solid #B3C4D9;
+    }
+  }
+
+  h3{
+    font-family: $font-primary;
+    font-size:em(18,16);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+
+    span{
+      color: #316BAF;
+      font-size: 30px;
+      font-weight: bold;
+      letter-spacing: -5px;
+    }
+    .icon-titleright {
+      float: none;
+      font-size: 20px;
+      margin-right: 0px;
+      margin-top: inherit;
+      color: #316BAF;
+    }
+  }
+
+  p{
+    font-size: em(14,14);
+
+    @include breakpoint(tablet){
+      width:80%;
+    }
+  }
+
+  i{
+    float:right;
+    font-size: em(30);
+    color: #F10993;
+    margin: 2px 0 0;
+
+    @include breakpoint(tablet){
+      margin-top: 4%;
+      margin-right: 5%;
+      font-size: em(60);
+      }
+
+    @include breakpoint(desktop){
+      margin:40px 8% 0 0;
+    }
+  }
+}

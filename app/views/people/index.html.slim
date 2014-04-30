@@ -1,16 +1,16 @@
 section.staff.twocols
-  .container-title
-    h2 = title_for('our-staff')
+  .primary-title
+    h2 = title_for('Our Staff')
 
-  section.whoweare.firstcol
-    .container-title
-      h3.blue
+  article.whoweare.firstcol
+    .primary-title
+      h3
         = title_for('who-we-are')
     = body_for('who-we-are',true)
 
 
-  section.quality-policy.secondcol
-    .container-title
+  article.quality-policy.secondcol
+    .primary-title
       h3.blue = title_for('our-quality-policy')
     = body_for('our-quality-policy', true)
 
@@ -27,8 +27,8 @@ section.mission-vision
     = body_for('our-vision', true)
 
 section.meet-staff
-  .container-title
-    h2.blue = title_for('meet-our-staff')
+  .primary-title
+    h2.blue = title_for('meet our staff')
 
   .box
     ul.list-with-photos

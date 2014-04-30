@@ -1,47 +1,9 @@
-- content_for :stylesheets do
-  = stylesheet_link_tag "pages/contacto"
-  = stylesheet_link_tag "pages/empleo"
-
-= render partial: 'contact_form'  
-
-.row
-
-  .eight.columns
-
-    h3 = title_for( 'job-form-content')
-
-    == body_for('job-form-content', true)
-
-    = render "shared/flash_message_box"
-    == body_for('job-form-main-content', true, 'principal')
-
-    = form_for @message, url: job_path, html: { multipart: true } do |f| 
-
-      = errors_for(@message).html_safe
-
-      = f.hidden_field :is_to_job
-      = f.label(:name){ title_for('name-job-form').html_safe }
-      = f.text_field :name, :class => "ctext"
-
-      = f.label(:email){ title_for('email-job-form').html_safe }
-      = f.text_field :email, :class => "ctext"
-
-      = f.label(:body){ title_for('message-job-form').html_safe }
-      = f.text_area :body, cols: '50', rows: '6'
-
-      p
-        = title_for('required-fields').html_safe
-
-      .files
-        ul id="attachment-files"
-        a href="#"  id='attach-new-file' = title_for('attach-cv')
-
-      = f.file_field :file, id:'attach-file', style: "display: none"
-
-      = f.submit title_for('btn-send-job-form'), :class => "button"
-
-  .four.columns.last
-    article.box.sidebar
-      h4 = title_for('the-road')
-      .methodologies
-        == body_for('the-road', true)
+#wrapper.careers
+  #scroller
+    = render "parallax"
+    = render "intro"
+    = render "valor"
+    = render "position"
+    = render "testimonials"
+    = render "events"
+    = render "contact_form"

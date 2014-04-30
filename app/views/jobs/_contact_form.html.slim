@@ -1,9 +1,9 @@
-contact-us
-  section.contact_form
-    .container-title
-      h2 = title_for('contactáte con nosotrtos!')
+section.contact_form
+  .content
+    .primary-title
+      h2 Contactáte con nosotros!
 
-    = form_for @message, url: contact_path, html: { multipart: true } do |f|
+    = form_for @message, url: job_path, html: { multipart: true } do |f|
       .box-first
         .f-text
           = f.text_field :name, placeholder: 'Name'
@@ -13,7 +13,7 @@ contact-us
 
         .f-text
           = f.telephone_field :phone, placeholder: 'Phone'
-          i.icon-user
+          i.icon-phone
           .oblig-field
             |*
 
@@ -24,8 +24,9 @@ contact-us
             |*
 
         .f-text
-          = f.text_field :email, placeholder: 'Job'
-          i.icon-envelope-alt
+          = select_tag :param_name, options_for_select([['Front-End Developer', 'A'], ['Back-End Developer', 'B']], params[:param_name])
+          i.icon-heart
+          span.triangle
           .oblig-field
             |*
 
@@ -37,14 +38,15 @@ contact-us
             |*
 
         .f-text
-          = f.text_field :email, placeholder: 'Upload your CV (.pdf / .doc)'
-          i.icon-envelope-alt
+          = text_field_tag :file, nil, placeholder: 'Upload your CV (.pdf / .doc)', id: 'file_field_text'
+          = f.file_field :file, class: 'hidden_field'
+          i.icon-v-card
           .oblig-field
             |*
 
         .f-text
-          = f.text_field :email, placeholder: 'Paste your LinkedIn Profile link'
-          i.icon-envelope-alt
+          = f.text_field :linked_in, placeholder: 'Paste your LinkedIn Profile link'
+          i.icon-linkedin
 
 
       .box-thirst
@@ -53,5 +55,4 @@ contact-us
           |*
         p
           |Completa todos los campos obligatorios marcados con asterisko
-        
 

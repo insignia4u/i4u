@@ -1,0 +1,540 @@
+.carousel{
+  position: relative;
+  margin-bottom: 20px;
+  line-height: 1;
+  overflow: hidden;
+
+  .carousel-inner{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 0 0 20px;
+
+    .item{
+      position: relative;
+      display: none;
+      @include transition(0.6s ease-in-out left);
+
+      .img{
+        width: auto\9;
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+        border: 0;
+        -ms-interpolation-mode: bicubic;
+        display: block;
+        line-height: 1;
+      }
+    }
+
+    .active, .next, .prev{
+      display: block;
+    }
+
+    .active {
+      left: 0;
+    }
+
+    .next, .prev{
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    .next, .active.right{
+      left: 100%;
+    }
+
+    .prev, .active.left{
+      left: -100%;
+    }
+
+    .next.left, .prev.right{
+      left: 0;
+    }
+  }
+
+  .carousel-control{
+    @include border-radius(23px);
+    text-decoration: none;
+    background: #222;
+    position: absolute;
+    bottom: 0;
+    left: 1px;
+    width: 45px;
+    height: 45px;
+    margin-top: -20px;
+    font-size: 60px;
+    font-weight: 100;
+    line-height: 30px;
+    color: #ffffff;
+    text-align: center;
+    z-index:999;
+
+    i{
+      font-size: 22px;
+      text-align: center;
+      position: relative;
+      top: -7px;
+      left: -0.05em;
+    }
+  }
+
+  .carousel-control.right{
+    right: 1px;
+    left: auto;
+
+    i{
+      left: 0.05em;
+    }
+  }
+
+  .more{
+    min-width: 135px;
+  }
+}
+
+.carousel-caption{
+  padding: 15px;
+
+  h4, p, li {
+    line-height: 20px;
+    color: #373435;
+  }
+
+  h4 {
+    margin: 0 0 5px;
+    font-size:20px;
+    font-family: $font-primary;
+  }
+
+  p {
+    margin-bottom: 0;
+    font-size:14px;
+  }
+
+  ul.bullets-blue{
+    padding:0 30px 0 22px;
+
+    li{
+      line-height:23px;
+      padding:0 0 3px;
+      font-size: 14px;
+    }
+
+    li:before{
+      margin-left: -22px;
+    }
+  }
+}
+
+.carousel.carousel-fade{
+  .item{
+    -webkit-transition: opacity 2s ease-in-out;
+    -moz-transition: opacity 2s ease-in-out;
+    -ms-transition: opacity 2s ease-in-out;
+    -o-transition: opacity 2s ease-in-out;
+    transition: opacity 2s ease-in-out;
+  }
+
+  .active.left, .active.right{
+    left: 0;
+    z-index: 2;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+
+  .next, .prev{
+    left: 0;
+    z-index: 1;
+  }
+
+  .carousel-control{
+    z-index:3;
+  }
+}
+
+
+#intro{
+  height: 570px;
+
+  .carousel-inner{
+    padding-bottom: 40px;
+  }
+
+  @media(min-width:600px){
+    height: 510px;
+  }
+
+  @include breakpoint(tablet){
+    height: 480px;
+
+    .carousel.slide, .carousel-inner > .item > img, .carousel-inner{
+      float: none;
+      position: static;
+      margin: auto;
+    }
+
+    .carousel-caption{
+      position: static;
+    }
+
+    .item{
+      text-align: center;
+    }
+
+    img{
+      display: inline-block;
+    }
+
+    p{
+      margin: auto;
+    }
+  }
+
+  @include breakpoint(desktop){
+    margin: 0;
+    height: auto;
+
+    .carousel-inner{
+      .item{
+        text-align: left;
+
+        img{
+          max-height:297px;
+        }
+      }
+    }
+
+    .carousel-caption{
+      float: right;
+      position: absolute;
+      bottom: 72px;
+      left: 480px;
+      background: none;
+    }
+
+    p{
+      text-align: left;
+    }
+  }
+}
+
+#cases.carousel{
+  margin-bottom: 40px;
+
+  img {
+    min-height: 433px;
+  }
+
+  .carousel-inner{
+    .item{
+      border:#c2b7bb solid 1px;
+    }
+  }
+
+  .carousel-caption{
+    padding: 15px 15px 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border:#000 solid 1px;
+    min-height: 160px;
+  }
+
+  .carousel-control{
+    &.left{
+      left: 5%;
+    }
+
+    &.right{
+      right: 5%;
+    }
+  }
+
+  img{
+    width:100%;
+  }
+
+  @include breakpoint(tablet){
+    margin:0 7% 40px;
+  }
+  @include breakpoint(desktop){
+
+    .carousel-inner{
+      .item{
+        border:#c2b7bb solid 1px;
+      }
+    }
+
+    .carousel-caption{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 15px 15px 30px;
+      background: rgba(255, 255, 255, 0.9);
+      border:#000 solid 1px;
+      text-align: left;
+      min-height:auto;
+    }
+
+    img{
+      width:100%;
+    }
+  }
+}
+
+
+#projects-page.carousel{
+  left: -24px;
+  width: 118%;
+
+  @include breakpoint(desktop){
+    margin-bottom: 0;
+  }
+
+  @media(min-width:480px){
+    left: 0;
+    width: 100%;
+  }
+
+  .carousel-inner{
+    background:url(asset_path("macbook-mobile.png", image)) no-repeat center 10px;
+    height: auto;
+
+    @media(min-width:600px){
+      background:url(asset_path("macbook.png", image)) no-repeat center 10px;
+    }
+
+    @include breakpoint(desktop){
+      background-position: 0 10px;
+      height: 310px;
+    }
+  }
+
+
+  .carousel-control{
+    height: 35px;
+    width: 35px;
+    bottom: 6px;
+    top: auto;
+
+    i{
+      font-size: 19px;
+      top: -14px;
+    }
+
+    &.left{
+      left: 11%;
+    }
+
+    &.right{
+      right: 11%;
+    }
+
+    @include breakpoint(desktop){
+      bottom: 49%;
+
+      &.left{
+        left: 0;
+      }
+
+      &.right{
+        right: 0;
+      }
+    }
+  }
+
+  .carousel-caption{
+    margin: auto;
+    width: 84%;
+    border: #000 solid 1px;
+    background: #fff;
+    padding: 25px 20px;
+    min-height: 330px;
+    position: relative;
+
+    @media(min-width:480px){
+      min-height: 240px;
+    }
+
+    h4{
+      padding: 0;
+    }
+
+    p, ul{
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    @include breakpoint(desktop){
+      background:url(asset_path("background-pattern.gif", image)) repeat 0 0;
+      left:384px;
+      width:405px;
+      padding:0;
+      top: 5px;
+      position:absolute;
+      border:0;
+      min-height: initial !important;
+      height: 260px;
+      margin: 0;
+
+      p{
+        margin:0 0 22px;
+      }
+    }
+  }
+
+  .item{
+    @include breakpoint(desktop){
+      margin: 0 0 0 100px;
+    }
+
+    .macbook{
+      height: auto;
+      display: block;
+      margin: auto;
+      margin-top: 35px;
+      margin-bottom: 14%;
+      width: 202px;
+      padding: 0 0 0 1px;
+
+      @media(min-width:600px){
+        height: 263px;
+        margin: 51px auto 0;
+        padding: 0 0 0 7px;
+        width: 346px;
+      }
+
+      @include breakpoint(desktop){
+        margin: 0;
+        padding: 51px 0 0;
+        width: 338px;
+      }
+    }
+  }
+
+  .more{
+    @include breakpoint(desktop) {
+      left: 384px;
+      right: auto;
+      text-align: center;
+      bottom: 12px;
+    }
+  }
+}
+
+#project-page.carousel{
+  left: -24px;
+  width: 118%;
+
+  @include breakpoint(desktop){
+    margin-bottom: 0;
+  }
+
+  @media(min-width:480px){
+    left: 0;
+    width: 100%;
+  }
+
+  .carousel-inner{
+    background:url(asset_path("macbook-mobile.png", image)) no-repeat center 10px;
+    height: auto;
+
+    @media(min-width:600px){
+      background:url(asset_path("macbook.png", image)) no-repeat center 10px;
+    }
+  }
+
+
+  .carousel-control{
+    height: 35px;
+    width: 35px;
+    bottom: 48%;
+    top: auto;
+    z-index: -2;
+
+    i{
+      font-size: 19px;
+      top: -14px;
+    }
+
+    &.left{
+      left: 7%;
+    }
+
+    &.right{
+      right: 6%;
+    }
+
+    @include breakpoint(desktop){
+      bottom: 49%;
+
+      &.left{
+        left: 0;
+      }
+
+      &.right{
+        right: 0;
+      }
+    }
+  }
+
+  .item{
+
+    .macbook{
+      height: auto;
+      display: block;
+      margin: auto;
+      margin-top: 35px;
+      margin-bottom: 14%;
+      width: 202px;
+      padding: 0 0 0 1px;
+
+      img{
+        height: 112px;
+      }
+
+      @media(min-width:600px){
+        height: 263px;
+        margin: 51px auto 0;
+        padding: 0 0 0 7px;
+        width: 346px;
+
+        img{
+          height: 191px;
+        }
+      }
+    }
+  }
+}
+
+.project-page{
+  position: relative;
+
+  .carousel-caption{
+    border: #000 solid 1px;
+    background: #fff;
+    padding: 25px 20px;
+    min-height: 195px;
+    position: relative;
+
+    @media(min-width:480px){
+      min-height: 240px;
+    }
+
+    h4{
+      padding: 0;
+    }
+
+    p, ul{
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .more{
+    left: 50%;
+    margin-left: -65px;
+    bottom: -21px;
+  }
+}

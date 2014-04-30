@@ -1,0 +1,35 @@
+.column.listpost
+  - @articles.each do |article|
+    article
+      .comment
+        = article.count_comments
+        i.icon-comment
+
+      .author= article.author
+      picture alt=""
+        - if article.image
+          source src=article.image.url(:normal)
+        - else
+          source src=asset_path("blog-photo01.jpg")
+          source src=asset_path("blog-photo01.jpg") media="(min-width:440px)"
+          source src=asset_path("blog-photo01.jpg") media="(min-width:600px)"
+
+          noscript
+            img src=asset_path("blog-photo.jpg") alt=""
+
+      h3
+        = link_to article.title, blog_article_path(article)
+
+      = article.summary
+
+      = link_to blog_article_path(article), class: 'bottom-link' do
+        | Seguir leyendo
+        span +
+
+      - if article.tags
+        .tags
+          - article.tags.each do |tag|
+            = link_to tag, tag_blog_articles_path(tag.name)
+
+  = link_to_next_page @articles, 'Older Entries', class: 'btn'
+  / = link_to_previous_page @articles, 'Newer Entries', class: 'btn'

@@ -1,10 +1,16 @@
 //= require jquery
 //= require jquery_ujs
+//= require smoothscroll
+//= require jquery.transit.min
 //= require easing
 //= require jquery-picture.min
 //= require modernizer.min
 //= require carousel
+//= require jquery.carouFredSel-6.2.1
 //= require totop
+//= require jquery.parallax
+//= require jquery.reject
 //= require noty
+//= require jquery.stellar.min
+//= require iscroll
 //= require i4u
-

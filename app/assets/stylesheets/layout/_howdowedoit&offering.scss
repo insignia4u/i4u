@@ -1,0 +1,63 @@
+.howdowedoit, .our-offering{
+
+  @include breakpoint(desktop){
+    float: left;
+  }
+}
+
+.howdowedoit{
+  @include breakpoint(desktop){
+    border-right: 2px dashed #B8B8B8;
+    float: left;
+    width: 50%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 0;
+    margin-right: 0;
+  }
+
+  .bullets-blue{
+    padding: 0 10px;
+
+    @include breakpoint(tablet){
+      padding: 20px 11% 20px 16%;
+    }
+
+    @include breakpoint(desktop){
+      padding:0 40px 0 30px;
+    }
+
+    li{
+      font-size: em(13);
+      line-height: em(24,13);
+      margin-bottom: 20px;
+
+      @include breakpoint(tablet){
+        font-size: em(15);
+        line-height: em(27,15);
+      }
+    }
+  }
+}
+
+.our-offering{
+  margin-bottom: 50px;
+
+  @include breakpoint(desktop){
+    width:49%;
+    margin-top: 60px;
+  }
+
+  p{
+    padding: 0;
+    font-size: em(13);
+    line-height: em(24,13);
+    margin: 0 0 10px;
+    padding: 9px 10px 10px 25px;
+
+    @include breakpoint(tablet){
+      font-size: em(15);
+      line-height: em(27,15);
+    }
+  }
+}

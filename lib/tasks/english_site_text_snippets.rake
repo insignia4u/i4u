@@ -57,12 +57,12 @@ namespace(:sites) do
 
       puts "\n*** > Portfolio Snippets"
       site.text_snippets.create!(name: "highlighted-projects", title: "Highlighted projects")
-      site.text_snippets.create!(name: "more-works-pc-version", title: "More works", 
+      site.text_snippets.create!(name: "more-works-pc-version", title: "More works",
         body: "Indeed, a jolly little clown came walking toward them, " \
         "and Dorothy could see that in spite of his pretty clothes of red and "\
         "yellow and green he was completely")
 
-      site.text_snippets.create!(name: "more-works-mobile-version", title: "More works", 
+      site.text_snippets.create!(name: "more-works-mobile-version", title: "More works",
         body: '| Version mobile...')
       site.text_snippets.create!(name: "full-list-of-works", title: "Full list of works")
       site.text_snippets.create!(name: "recent-jobs-pc-version", title: "Recent jobs")
@@ -80,14 +80,14 @@ namespace(:sites) do
 
 
       puts "\n*** > People Snippets"
-      site.text_snippets.create!( name: "meet-our-staff", 
+      site.text_snippets.create!( name: "meet-our-staff",
                                   title: "Meet Our Staff")
 
-      site.text_snippets.create!( name: "our-staff", 
+      site.text_snippets.create!( name: "our-staff",
                                   title: "Our Staff")
 
 
-      site.text_snippets.create!(name: "our-mission", title: "Our mission", 
+      site.text_snippets.create!(name: "our-mission", title: "Our mission",
         body: "Provide our clients with software solutions based on the " \
         " Internet, to allow them to be at the cutting edge and get a " \
         " decisive competitive advantage in the market.")
@@ -97,7 +97,7 @@ namespace(:sites) do
         " portfolio of successful projects ratifying our positioning as a " \
         " reliable and responsible company in web application development. ")
 
-      site.text_snippets.create!(name: "our-values", title: "Our values", 
+      site.text_snippets.create!(name: "our-values", title: "Our values",
         body: "The players all played at once without waiting for turns, quarrelling" \
         " all the while, and fighting for the hedgehogs; and in a very short" \
         " time the Queen was in a furious passion, and went stamping about, and" \
@@ -122,7 +122,7 @@ namespace(:sites) do
         " <p>We are always open and eager to face new challenges. We'd " \
         " love to learn more about your projects and to be part of them.</p>",)
 
-        site.text_snippets.create!( name:'our-quality-policy', 
+        site.text_snippets.create!( name:'our-quality-policy',
                                     title: 'Our quality policy',
         body: "<p>We have a strong commitment to completely fulfill the " \
         " requirements and expectations of our clients in the web app " \
@@ -134,7 +134,7 @@ namespace(:sites) do
         " development of the app. As a work team we base our actions in " \
         " the following principles: </p>")
 
-        site.text_snippets.create!( name:'our-quality-policy-list', 
+        site.text_snippets.create!( name:'our-quality-policy-list',
                                     body: "<ul class=\"bullets-blue\"> "\
           " <li>Creativity and innovation, as a part of our daily " \
           " challenge to continuous improvement.</li>" \
@@ -152,15 +152,15 @@ namespace(:sites) do
       puts "*** > Complete!"
 
       puts "\n*** > Contact form Snippets"
-      site.text_snippets.create!(name: 'name-form-contact', title: 'Name<sup>*</sup>') 
+      site.text_snippets.create!(name: 'name-form-contact', title: 'Name<sup>*</sup>')
       site.text_snippets.create!(name: 'email-form-contact', title: 'Email<sup>*</sup>')
       site.text_snippets.create!(name: 'message-form-contact', title: 'Coments<sup>*</sup>')
       site.text_snippets.create!(name: 'required-fields', title: '<sup>*</sup> Required fields')
       site.text_snippets.create!(name: 'subject-form-contact', title: 'Subject<sup>*</sup>')
       site.text_snippets.create!(name: 'attach-new-file', title: 'Attach file >>')
-      site.text_snippets.create!(name: 'contact-form', title: 'Contact', 
+      site.text_snippets.create!(name: 'contact-form', title: 'Contact',
         body: '"What\'s that?" cried a boatman, and "Shut up, you fool!" said a man near me to a yelping dog. Then the sound came again, this time from the direction of Chertsey, a muffled thud--the sound of a gun.')
-      
+
       site.text_snippets.create!(name: 'btn-send-contact-form', title: 'Contact us')
       site.text_snippets.create!(name: 'contact-details', title: 'Contact details',
         body: "Lamadrid 318, Piso 4 - Dpto. A\nSan Miguel de Tucuman\nTucuman, Argentina\n" \
@@ -170,11 +170,11 @@ namespace(:sites) do
 
 
       puts "\n*** > Job form Snippets"
-      site.text_snippets.create!(name: 'name-job-form', title: 'Name<sup>*</sup>') 
+      site.text_snippets.create!(name: 'name-job-form', title: 'Name<sup>*</sup>')
       site.text_snippets.create!(name: 'email-job-form', title: 'Email<sup>*</sup>')
       site.text_snippets.create!(name: 'message-job-form', title: 'Coments<sup>*</sup>')
       site.text_snippets.create!(name: 'attach-cv', title: 'Attach CV >>')
-      site.text_snippets.create!(name: 'job-form-content', title: 'Job', 
+      site.text_snippets.create!(name: 'job-form-content', title: 'Job',
         body: "\"What's that?\" cried a boatman, and \"Shut up, you fool!\" said " \
         "a man near me to a yelping dog. Then the sound came again, this time" \
         "from the direction of Chertsey, a muffled thud--the sound of a gun.\n" \
@@ -183,14 +183,14 @@ namespace(:sites) do
         "it might happen any minute, 'and then,' thought she, 'what would " \
         "become of me?")
 
-      site.text_snippets.create!(name: 'job-form-main-content', title: 'job', 
+      site.text_snippets.create!(name: 'job-form-main-content', title: 'job',
         body: "\"MAIN MAIN MAIN What's that?\" cried a boatman, and \"Shut up, " \
         "you fool!\" said a man near me to a yelping dog. Then the sound came " \
         "again, this time from the direction of Chertsey, a muffled thud--the " \
         "sound of a gun.")
 
       site.text_snippets.create!(name: 'btn-send-job-form', title: 'Join us')
-      site.text_snippets.create!(name: 'the-road', title: 'The Road', 
+      site.text_snippets.create!(name: 'the-road', title: 'The Road',
         body: "\"What's that?\" cried a boatman, and \"Shut up, you fool!\" " \
         "said a man near me to a yelping dog.  Then the sound came again, " \
         "this time from the direction of Chertsey, a muffled thud--the sound of a gun." \
@@ -215,7 +215,7 @@ namespace(:sites) do
       site.text_snippets.create!(name: 'our-services-title', title: 'Our services')
       site.text_snippets.create!(name: 'our-process', title: 'Our process')
 
-      names = %w{ planificacion codificacion revision control produccion 
+      names = %w{ planificacion codificacion revision control produccion
                  mantenimiento }.each do |name|
         site.text_snippets.create!(name: "#{name}-text-snippet",
         title: 'highly interactive sites development',
@@ -234,7 +234,7 @@ namespace(:sites) do
         " for the budgeting of the projects as well as its implementation.")
       end
 
-      site.text_snippets.create!(name: 'how-do-we-do-it', 
+      site.text_snippets.create!(name: 'how-do-we-do-it',
       title: 'How do we do it',
       body: "<ul class=\"bullets-blue\"><li>No hassle, no bureaucracy, we " \
       " create high quality code. The maintainability and quality assurance " \
@@ -247,7 +247,7 @@ namespace(:sites) do
       "<li>Also we love integrating third party API’s to create 2.0 " \
       " web applications.</li>")
 
-      site.text_snippets.create!(name: 'our-offering', 
+      site.text_snippets.create!(name: 'our-offering',
       title: 'Our Offering',
       body: "<p>INSIGNIA’s offering is founded upon a solid, professional and " \
       " interdisciplinary team of really passionate web developers. We’re " \
@@ -259,6 +259,11 @@ namespace(:sites) do
       " projects due to our variety of skills that complement each other. " \
       " For more information about this you can take a look at " \
       " <a href=\"/people\">our Staff</a>.")
+
+      site.text_snippets.create!(name: 'ISO Text',
+      title: "Insignia's quality management system has been certified " \
+      "accordingly to <span> IRAM ISO 9001:2008 </span> standards.",
+      body: "")
 
       puts "*** > Complete!"
 

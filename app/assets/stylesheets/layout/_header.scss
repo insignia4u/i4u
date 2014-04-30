@@ -1,0 +1,53 @@
+
+header{
+  @include transform(translate3d(0,0,0));
+  background:#fff;
+  text-align:center;
+  z-index: 1;
+  border-bottom: #5f5d5e solid 2px;
+  min-height: 144px;
+  padding: 0 0 144px;
+
+  @include breakpoint(tablet){
+    border-bottom: 0;
+    padding: 0;
+    min-height: 175px;
+  }
+
+  h1{
+    margin: 0;
+    padding: 65px 0 19px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
+    a{
+      display:block;
+      width: 189px;
+      margin: 0 auto;
+    }
+
+    @include breakpoint(tablet){
+      padding:37px 0 25px;
+      position: static;
+
+      a{
+        width:242px;
+      }
+    }
+  }
+
+  .lang {
+    right: 5%;
+    top: -40px;
+    color: #F10993;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-size: em(14);
+
+    @include breakpoint(tablet){
+      float: right;
+      position: relative;
+    }
+  }
+}

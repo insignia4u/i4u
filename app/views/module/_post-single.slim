@@ -1,0 +1,71 @@
+.column.singlepost
+  article
+    h2= @article.title
+
+    .metadata-header
+      .author
+        i.icon-user-2
+        = @article.author
+
+      .date
+        i.icon-calendar-3
+        = @article.publication_date.strftime('%-d de %B, %Y')
+      .comment
+        = @article.count_comments
+        i.icon-comment
+
+    picture alt=""
+      - if @article.image
+        source src=@article.image.url(:normal)
+      - else
+        source src=asset_path("blog-photo02.jpg")
+        source src=asset_path("blog-photo02.jpg") media="(min-width:440px)"
+        source src=asset_path("blog-photo02.jpg") media="(min-width:600px)"
+
+        noscript
+          img src=asset_path("blog-photo02.jpg") alt=""
+    - if @article.image_caption
+      .labelphoto= @article.image_caption
+    - else
+      br
+
+    = @article.content
+
+    .metadata-footer
+      ul.social
+        li
+          a href=""
+            i.icon-thumbs-up
+            span facebook
+        li
+          a href=""
+            i.icon-twitter
+            span twitter
+        li
+          a href=""
+            i.icon-googleplus
+            span google+
+        li
+          a href=""
+            i.icon-linkedin
+            span linkedin
+
+      - if @article.tags
+        ul.tags
+          - @article.tags.each do |tag|
+            li
+              = link_to tag, tag_blog_articles_path(tag.name)
+
+  .pagination
+    - if @prev
+      = link_to blog_article_path(@prev), class: 'l-previous' do
+        span.icon-double-angle-left
+        span.l-back-text Anterior
+
+    - if @next
+      = link_to blog_article_path(@next), class: 'l-next' do
+        span.l-back-text Siguiente
+        span.icon-double-angle-right
+
+  = render "module/discussion"
+  = render "module/post-comment-form"

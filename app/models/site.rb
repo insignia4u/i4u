@@ -8,6 +8,7 @@ class Site < ActiveRecord::Base
   has_many :featured_contents
   has_many :articles
   has_many :tips
+  has_many :values
 
   validates :name,         presence: true
   validates :abbreviation, presence: true, uniqueness: true

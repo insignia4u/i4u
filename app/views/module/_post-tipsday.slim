@@ -1,0 +1,65 @@
+.column.post-tipsday
+  .todaytips
+    h2 HOY
+    p
+      = link_to @today_tip.title, '#'
+      |&nbsp;
+      = @today_tip.description
+
+  .calendar
+    .calendar-header
+      a.previoustip href=""
+        i.icon-calendar-2
+        span tips anteriores
+
+      .year
+        a href=""
+          i.icon-arrow-left
+
+        span= @date.strftime('%Y')
+
+        a href=""
+          i.icon-arrow-right
+    .calendar-body
+      ul
+        li
+          a.month-enable href="" ENE
+        li
+          a.month-current href="" FEB
+        li
+          span.month-disable MAR
+        li
+          span.month-disable ABR
+        li
+          span.month-disable MAY
+        li
+          span.month-disable JUN
+        li
+          span.month-disable JUL
+        li
+          span.month-disable AGO
+        li
+          span.month-disable SEP
+        li
+          span.month-disable OCT
+        li
+          span.month-disable NOV
+        li
+          span.month-disable DIC
+
+  - if @tips.any?
+    .monthtips
+      h3= @date.strftime('%^B')
+      ul
+        - @tips.each do |tip|
+          li
+            .day
+              = tip.published_at.strftime('%a')
+              span.daynumber= tip.published_at.strftime('%d')
+              span.linedash
+            p
+              = link_to tip.title, '#'
+              |&nbsp;
+              = tip.description
+
+    = render "module/pagination-pages"

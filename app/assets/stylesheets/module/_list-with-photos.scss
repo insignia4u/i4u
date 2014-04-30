@@ -1,0 +1,57 @@
+.list-with-photos{
+  @extend %box-transparent-tablet;
+  margin: 50px 0;
+
+
+  li{
+    overflow: hidden;
+    position: relative;
+    padding: 0 0 25px 90px;
+    margin: 30px 0;
+    border-bottom: #b6c7dc solid 1px;
+  }
+
+  .img-circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  h4{
+    font-size: em(35);
+    line-height: em(35,35);
+    margin: 5px 0;
+    color: $color-two;
+
+    @include breakpoint(desktop){
+
+    }
+  }
+
+  p{
+    font-weight: 400;
+    margin: 0;
+  }
+
+  @include breakpoint(tablet){
+    margin: 0;
+    padding: 40px 60px 10px;
+
+    li{
+      margin: 5px 20px;
+      border: none;
+      display: inline-block;
+      width: 43%;
+      height: 150px;
+    }
+  }
+
+  @include breakpoint(desktop){
+    padding: 30px 0px 0px;
+
+    li{
+      margin: 5px 0 5px 30px;
+      width: 29%;
+    }
+  }
+}

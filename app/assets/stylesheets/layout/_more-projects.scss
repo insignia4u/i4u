@@ -1,0 +1,65 @@
+.more-projects{
+  ul{
+    margin: auto;
+    width: 100%;
+
+    @include breakpoint(tablet){
+      width: auto;
+      margin-left: -20px;
+      margin-bottom: 30px;
+      overflow: hidden;
+      padding: 0 30px;
+    }
+  }
+
+  li{
+    margin-bottom: 45px;
+
+    img{
+      display:block;
+      border:#000 solid 1px;
+      width:100%;
+    }
+
+    @include breakpoint(tablet){
+      width: 46%;
+      float: left;
+      margin-left: 25px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.project-info{
+  @include border-radius(0 0 5px 5px);
+  background: repeat 0 0 rgba(255, 255, 255, 0.4);
+  border: #7e7c7d dashed 1px;
+  border-top:0;
+  text-align: left;
+  padding:25px 18px 22px;
+  font-size:14px;
+
+  @include breakpoint(tablet){
+    min-height: 150px;
+  }
+
+  @include breakpoint(tablet){
+    min-height: 110px;
+  }
+
+  h3{
+    font-size:20px;
+    margin:0;
+    font-family: $font-primary;
+
+    a{
+      color:#316baf;
+    }
+  }
+
+  p{
+    margin: 0 0 10px;
+    font-size: 0.9em;
+    margin: 5px 0px 10px;
+  }
+}

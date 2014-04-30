@@ -1,0 +1,160 @@
+.discussion{
+  overflow:hidden;
+
+  h2{
+    color: $color-three;
+    border-bottom: rgba(49,107,175,.3) dashed 2px;
+    line-height: 55px;
+    margin-bottom: 30px;
+    font-family: "Enriqueta";
+    margin-bottom: 20px;
+  }
+
+  ol{
+    width: 268px;
+    float: right;
+
+    @include breakpoint(tablet){
+      width: 709px;
+    }
+
+    @include breakpoint(desktop){
+      width: 626px;
+    }
+
+    li{
+      clear: both;
+    }
+
+    .comment-bubble{
+      background: url(asset-path('box-comments.png',image));
+
+      &.bubble-top{
+        height: 17px;
+        background-position: 0 -255px;
+      }
+
+      &.bubble-bottom{
+        height: 45px;
+        background-position: 0 -270px;
+      }
+
+      @include breakpoint(tablet){
+
+        &.bubble-top{
+          height: 14px;
+          background-position: 0 -133px;
+        }
+
+        &.bubble-bottom{
+          background-position: 0 -145px;
+        }
+      }
+
+      @include breakpoint(desktop){
+        &.bubble-top{
+          background-position: 0 0;
+        }
+
+        &.bubble-bottom{
+          background-position: 0 -15px;
+        }
+      }
+    }
+
+    .comment-text{
+      background: rgba(255,255,255,.55);
+      border-left: rgba(0,0,0,.3) dashed 1px;
+      border-right: rgba(0,0,0,.3) dashed 1px;
+      padding: 5px 20px 1px;
+
+      p{
+        font-size: em(13,14);
+        line-height: em(20,13);
+        font-weight: normal;
+      }
+
+      .retry{
+        display: none;
+        text-align: right;
+        color: $color-two;
+        i {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .comment-author{
+      font-size: em(12,14);
+      margin-bottom: 30px;
+
+      @include breakpoint(tablet){
+        position: relative;
+        top: -15px;
+        left: 40px;
+        margin-bottom: 0;
+      }
+
+      strong{
+        color: $color-two;
+      }
+    }
+
+    ol{
+      width: 248px;
+
+      @include breakpoint(tablet){
+        width: 604px;
+      }
+
+      @include breakpoint(desktop){
+        width: 556px;
+      }
+
+      .comment-bubble{
+
+        &.bubble-top{
+          background-position: right -256px;
+        }
+
+        &.bubble-bottom{
+          background-position: right -272px;
+        }
+
+        @include breakpoint(tablet){
+          &.bubble-top{
+            background-position: 0 -195px;
+          }
+
+          &.bubble-bottom{
+            background-position: 0 -210px;
+          }
+        }
+
+        @include breakpoint(desktop){
+          &.bubble-top{
+            background-position: 0 -68px;
+          }
+
+          &.bubble-bottom{
+            background-position: 0 -82px;
+          }
+        }
+      }
+
+      .comment-text{
+        p{
+          font-size: em(13,14);
+          font-weight: normal;
+        }
+      }
+
+      .comment-author{
+        font-size: em(11,14);
+        float: right;
+        left: auto;
+        right: 40px;
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+.news{
+  ul{
+    margin: auto;
+
+    @include breakpoint(tablet){
+      margin: 0;
+    }
+
+    @include breakpoint(desktop){
+      margin-left: -20px;
+      margin-top: 15px;
+    }
+  }
+
+  .news-item {
+    margin: 0 auto 55px;
+    padding: 7%;
+    width: 100%;
+    background: $white;
+    border: 1px solid #C2B7BB;
+    position: relative;
+
+    @media(max-width: 768px){
+      height: auto !important;
+    }
+
+    .icon-calendar{
+      float: left;
+      font-size: em(18);
+      margin-right: 5px;
+    }
+
+    .published-at,h3{
+      margin-bottom: 15px;
+    }
+
+    h3{
+      font-size: em(20,14);
+      margin-bottom: 17px;
+      line-height: 22px;
+      margin-top: 0;
+      font-family: $font-primary;
+      text-transform: none;
+    }
+
+    .title {
+      text-transform: uppercase;
+      font-weight: $weight-normal;
+    }
+
+    .published-at, .description{
+      color: #373435;
+    }
+
+    .published-at, p, .title{
+      font-size: em(13,14);
+    }
+
+    .title, h3{
+      color: #e80892;
+    }
+
+    .description{
+      height: auto;
+      margin-bottom: 15px;
+      line-height: 20px;
+      font-weight: $weight-light;
+    }
+
+    .more {
+      font-size: 2.2em;
+      left: 1px;
+      right: 1px;
+      margin: auto;
+      display: inline-block;
+      width: 130px;
+      text-align: center;
+      @include border-radius(5px);
+      @include box-shadow(2px 2px 16px -5px #000);
+      background: #E50892;
+      border: 2px solid #A60563;
+      color: #fff;
+      font-family: $font-secondary;
+      font-weight: bold;
+      font-size: em(34);
+    }
+
+    @include breakpoint(tablet){
+      width: 83%;
+      height: auto;
+      margin:0 auto 50px;
+      padding: 5% 7%;
+
+      .more{
+        font-size: 2.2em;
+        left: 1px;
+        right: 1px;
+        margin: auto;
+        display: inline-block;
+        width: 140px;
+        text-align: center;
+      }
+    }
+
+    @include breakpoint(desktop){
+      width: 300px;
+      min-height: 335px;
+      height: auto;
+      float: left;
+      margin-left: 20px;
+      margin-bottom: 147px;
+      position: relative;
+      padding: 3% 4%;
+    }
+  }
+}
