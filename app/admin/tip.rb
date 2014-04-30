@@ -5,7 +5,7 @@ ActiveAdmin.register Tip do
   index do
     column ("Site") { |article| article.site.name }
     column ("Title"), sortable: :title do |article|
-      article.title 
+      article.title
     end
     column ("description"), sortable: :description do |tip|
       tip.description
@@ -13,7 +13,7 @@ ActiveAdmin.register Tip do
     column 'Image' do |tip|
       if tip.image.present?
         image_tag tip.image, size: '50x50'
-      else 
+      else
         ''
       end
     end
@@ -31,13 +31,14 @@ ActiveAdmin.register Tip do
         article.site.name
       end
       row :title
+      row :link
       row :description do |tip|
         textilize(tip.description)
       end
       row :image do |tip|
         if tip.image.present?
           image_tag tip.image.url(:small)
-        else 
+        else
           ''
         end
       end
@@ -57,10 +58,11 @@ ActiveAdmin.register Tip do
       f.input :site_id, :label => "Site",
               :as => :select, :collection => Hash[Site.all.map{|s| [s.name, s.id]}]
       f.input :title
+      f.input :link
       f.input :tip_type, label: 'Type', as: :select,
         collection: [['Rails Tip',0],['Day Tip',1]]
       f.input :description
-      f.input :image, label: 'Hightligh Image', 
+      f.input :image, label: 'Hightligh Image',
         hint: (f.object.new_record? ? "" : f.object.image.url), as: :file
       f.input :content
       f.input :published_at, :as => :date, :start_year => Date.today.year
@@ -73,7 +75,7 @@ ActiveAdmin.register Tip do
     def resource_params
       return [] if request.get?
       [ params.require(:tip)
-        .permit(:site_id, :title, :content, :image, 
+        .permit(:site_id, :title, :link, :content, :image,
                 :description, :tip_type, :published_at) ]
     end
   end

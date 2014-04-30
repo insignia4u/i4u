@@ -1,0 +1,67 @@
+.circle{
+  @include border-radius(39px);
+  background:#f20892;
+  height:78px;
+  width:78px;
+  margin:19px auto 10px;
+  margin-bottom: 7px;
+  border: 0.3em solid #A60563;
+
+  &.blue{
+    background:#316baf;
+    border:#224a79 solid 5px;
+  }
+
+  @include breakpoint(desktop){
+    border:#a60563 solid 5px;
+  }
+
+  i{
+    color: white;
+    font-size: em(12);
+    line-height: em(25);
+    background: none;
+    display: block;
+    text-align: center;
+  }
+
+  .icon-diamond{
+    font-size: em(43);
+    line-height: 2em;
+  }
+
+  .icon-php{
+    height: 22px;
+    margin: auto;
+    width: 48px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 1.6em;
+    line-height: 3em;
+  }
+
+  .icon-tech, .icon-mobile{
+    line-height: 1.7em;
+    font-size: em(45);
+  }
+
+  .icon-undo{
+    font-size: em(40);
+    line-height: 2em;
+  }
+
+  .icon-site-map{
+    font-size: 55px;
+    line-height: 1.3em;
+  }
+
+  .icon-cursor{
+    font-size: em(40);
+    line-height: 2em;
+  }
+
+  .icon-users{
+    line-height: 2.3em;
+    font-size: em(35);
+  }
+}

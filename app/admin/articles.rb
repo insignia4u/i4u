@@ -8,7 +8,7 @@ ActiveAdmin.register Article do
       article.author
     end
     column ("Title"), sortable: :title do |article|
-      article.title 
+      article.title
     end
     column ("Subtitle"), sortable: :subtitle do |article|
       article.subtitle
@@ -16,7 +16,7 @@ ActiveAdmin.register Article do
     column 'Image' do |article|
       if article.image.present?
         image_tag article.image, size: '50x50'
-      else 
+      else
         ''
       end
     end
@@ -26,8 +26,14 @@ ActiveAdmin.register Article do
     column ("Publication State"), sortable: :publication_state do |article|
       check_state(article.publication_state)
     end
-    column ("Tag List") do |article|
-      article.tag_list
+    column ("Publication date"), sortable: :publication_date do |article|
+      article.publication_date
+    end
+    column ("Categories") do |article|
+      article.categories.map {|cat| cat.name }.join(', ')
+    end
+    column("Event article") do |article|
+      article.is_event ? 'Yes' : 'No'
     end
 
     default_actions
@@ -38,6 +44,9 @@ ActiveAdmin.register Article do
       row "Site" do |article|
         article.site.name
       end
+      row :categories do |article|
+        article.categories.map {|cat| cat.name }.join(', ')
+      end
       row :author
       row :title
       row :subtitle
@@ -47,7 +56,7 @@ ActiveAdmin.register Article do
       row :image do |article|
         if article.image.present?
           image_tag article.image.url(:small)
-        else 
+        else
           ''
         end
       end
@@ -59,7 +68,9 @@ ActiveAdmin.register Article do
         check_state(article.publication_state)
       end
       row :publication_date
-      row :tag_list
+      row :is_event do |article|
+        article.is_event ? 'Yes' : 'No'
+      end
     end
   end
 
@@ -67,18 +78,20 @@ ActiveAdmin.register Article do
     f.inputs "Edit News" do
       f.input :site_id, :label => "Site",
               :as => :select, :collection => Hash[Site.all.map{|s| [s.name, s.id]}]
+      f.input :categories, as: :select
       f.input :author
       f.input :title
       f.input :subtitle
       f.input :description, hint: "description its shown in home page"
-      f.input :image, label: 'Hightligh Image', 
+      f.input :image, label: 'Hightligh Image',
         hint: (f.object.new_record? ? "" : f.object.image.url), as: :file
+      f.input :image_caption, hint: "It is the images' caption"
       f.input :content
       f.input :summary, hint: "summary its show in blog"
       f.input :publication_state, label: 'Publication state', as: :select,
         collection: [['Draft',0],['Published',1]]
       f.input :publication_date
-      f.input :tag_list
+      f.input :is_event
     end
 
     f.buttons
@@ -87,10 +100,12 @@ ActiveAdmin.register Article do
   controller do
     def resource_params
       return [] if request.get?
-      [ params.require(:article)
+      [
+        params.require(:article)
         .permit(:site_id,:author, :title, :content,:subtitle,
-         :summary, :publication_date, :publication_state,
-         :image,:description, :tag_list) ]
+        :summary, :publication_date, :publication_state,
+        :image,:description, :image_caption, :is_event, category_ids: [])
+      ]
     end
   end
 

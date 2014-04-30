@@ -1,5 +1,34 @@
 
-# On Windows Load ->
+$.reject({
+  reject: {
+    msie5: true,
+    msie6: true,
+    msie7: true,
+    msie8: true
+  },
+  display: ["msie","firefox","opera","chrome","safari"],
+  browserInfo: {
+    msie: {
+      text: 'IE10'
+    },
+    firefox: {
+      text: 'Firefox'
+    },
+    opera: {
+      text: 'Opera'
+    },
+    chrome: {
+      text: 'Chrome'
+    },
+    safari: {
+      text: 'Safari'
+    }
+  },
+  header: '<strong><span>Did you know</span> that your Browser is out of date</strong>?',
+  paragraph1: 'For the best possible experience using our website, we recommend that you upgrade Internet Explorer to the latest version for your OS. If you are using a computer at work, please contact your IT administrator.',
+  paragraph2: 'If you want to you may also try some other popular Internet browsers like',
+  imagePath: './assets/'
+});
 
 deleteFileToUploadClicked = () ->
   $('#attachment-files li').remove()
@@ -43,24 +72,13 @@ all_equals = () ->
   biggestHeight = 0
   $('.equal').each ->
     biggestHeight = $(this).height() if $(this).height() > biggestHeight
-  $('.equal').height( biggestHeight )
+  $('.equal').height( biggestHeight + 50)
 
 check_modernizer = () ->
   if Modernizr.svg
     $("header h1 a").html "<img src=\"/assets/insignia.svg\" alt=\"Insignia\"/>"
   else
     $("header h1 a").html "<img src=\"/assets/insignia.jpg\" alt=\"Insignia\"/>"
-
-check_client_width = () ->
-  if document.documentElement.clientWidth < 767
-    $("#logo").insertAfter "nav"
-  else
-    $("nav").insertAfter "#logo"
-  $(window).resize ->
-    if document.documentElement.clientWidth < 767
-      $("#logo").insertAfter "nav"
-    else
-      $("nav").insertAfter "#logo"
 
 alert_div_if_errors = () ->
   if $(".field_with_errors").length > 0
@@ -74,7 +92,6 @@ $(window).load () ->
 
 $(document).ready ->
   check_modernizer()
-  check_client_width()
   alert_div_if_errors()
 
   $().UItoTop easingType: "easeOutQuart"
@@ -83,22 +100,45 @@ $(document).ready ->
 
   $('#cases, #intro, .carousel').carousel()
 
-  $("#menu-btn, header nav span").click ->
-    $("header nav ul").slideToggle "slow"
-    $("header nav span").slideToggle "slow"
+  $('#position').carousel "pause"
+
+  $("#menu-btn, .tooglenav span").click ->
+    $(".tooglenav .navbar").slideToggle "slow"
+    $(".tooglenav span").slideToggle "slow"
 
   $(".nav-categories").click ->
-    $(".nav-blog-categories").slideDown "slow", ->
-      $(".nav-blog-categories .close").show 200
+    $(this).closest(".nav-mobile").addClass "open-categories"
+    $(".categories").addClass "showcat"
+
+    if $(".nav-mobile .btn-search").hasClass "active"
+      $(".nav-mobile .js-search").removeClass "active"
+      $(".nav-mobile .js-search").css("display","none")
+
+    $(".categories").slideDown "slow", ->
+      $(".categories .close").show 200
+      $(".open-categories .arrow").slideDown "slow"
 
 
-  $(".nav-blog-categories .close").click ->
-    $(".nav-blog-categories .close").hide 200, ->
-      $(".nav-blog-categories").slideUp "slow"
+  $(".categories .close").click ->
+    $(".categories .close").hide 200, ->
+      $(".categories").slideUp "slow", ->
+        $(".open-categories .arrow").slideUp "slow"
+        $(".categories").removeClass "showcat"
+        $(".nav-mobile").removeClass "open-categories"
 
 
-  $(".nav-blog .btn-search").click ->
-    $(".nav-blog form").fadeIn 200
+  $(".nav-mobile .btn-search").click ->
+    if $(".nav-mobile").hasClass "open-categories"
+      $(".categories,.open-categories .arrow").css("display","none")
+      $(".categories").removeClass "showcat"
+      $(".nav-mobile").removeClass "open-categories"
+
+    if $(this).hasClass "active"
+      $(".nav-mobile .js-search").slideUp "fast"
+      $(this).removeClass "active"
+    else
+      $(".nav-mobile .js-search").slideDown "fast"
+      $(this).addClass "active"
 
   $("input, textarea").on "focus blur", ->
     $(this).next().toggleClass "focus"
@@ -129,3 +169,120 @@ $(document).ready ->
     biggestHeight = $(this).height() if $(this).height() > biggestHeight
 
   $(".equal5").css('height', biggestHeight + 50)
+
+  # ua = navigator.userAgent
+  # isMobileWebkit = /WebKit/.test(ua) and /Mobile/.test(ua)
+  # $("html").addClass "mobile"  if isMobileWebkit
+  # $ ->
+  #   iScrollInstance = undefined
+  #   if isMobileWebkit
+  #     iScrollInstance = new iScroll("wrapper")
+  #     $("#scroller").stellar
+  #       scrollProperty: "transform"
+  #       horizontalScrolling: false
+  #       verticalOffset: 150
+
+  #   else
+  #     $.stellar
+  #       horizontalScrolling: false
+  #       verticalOffset: 150
+
+
+
+  $('#scene').parallax()
+
+  # $('.vanilla-parallax, #intro-parallax').parallax()
+
+  # heightScreen = $(window).height() - 137
+  # $("#intro-parallax").height(heightScreen)
+
+
+  $(".dash-box a").click (e) ->
+    e.preventDefault()
+
+    $(".slider").css "height", "auto"
+
+    if $(".slider .single").hasClass("active")
+      $(".slider .single").removeClass("active")
+      $(".slider-valor").addClass("active")
+
+      heightSlider = $(".slider-valor").height()
+      $(".slider").height heightSlider
+    else
+      $(".slider-valor").removeClass("active")
+      $(".slider .single").addClass("active")
+
+      heightSlider2 = $(".slider .single").height()
+      $(".slider").height heightSlider2
+
+  $(".slider .close").click ->
+    $(".slider").css "height", "auto"
+
+    $(".slider .single").removeClass("active")
+    $(".slider-valor").addClass("active")
+
+    heightSlider = $(".slider-valor").height()
+    $(".slider").height heightSlider
+
+
+  $(".position-info .btn-primary").click (e) ->
+    e.preventDefault()
+
+    $(".slider").css "height", "auto"
+
+    if $(".careers-position .single").hasClass("active")
+      $(".careers-position .single").removeClass("active")
+      $(".slider-position").addClass("active")
+
+      heightSlider = $(".slider-position").height()
+      $(".careers-position").height heightSlider
+    else
+      $(".slider-position").removeClass("active")
+      $(".careers-position .single").addClass("active")
+
+      heightSlider2 = $(".careers-position .single").height()
+      $(".careers-position").height heightSlider2
+
+  $(".careers-position .close").click ->
+    $(".careers-position").css "height", "auto"
+
+    $(".careers-position .single").removeClass("active")
+    $(".slider-position").addClass("active")
+
+    heightSlider = $(".slider-valor").height()
+    $(".slider").height heightSlider
+
+
+  $("#slider-valor ul").carouFredSel
+    prev: '#prev-valor',
+    next: '#next-valor',
+    width: '100%',
+    pagination: "#pager-valor",
+    auto:
+      play: false,
+
+    swipe:
+      onTouch: true
+      onMouse: true
+  ,
+    # transition: true
+
+  $("#l-testimonials").click (e) ->
+    e.preventDefault()
+    $("html, body").animate
+      scrollTop: $(".cover3").offset().top
+    , 1200
+
+  $("#l-contacts").click (e) ->
+    e.preventDefault()
+    $("html, body").animate
+      scrollTop: $(".contact_form").offset().top
+    , 1200
+
+  $('.contact_form #file_field_text').on 'click', (e) ->
+    e.preventDefault()
+    $('.contact_form .hidden_field').click()
+
+  $('.contact_form .hidden_field').on 'change', (e) ->
+    $('.contact_form #file_field_text').val($(this).val())
+

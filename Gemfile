@@ -6,9 +6,10 @@ gem 'rails',        '3.2.13'
 gem 'jquery-rails', '2.0.2'
 
 group :development do
-  gem 'better_errors',       '0.0.8'
+  #@gem 'better_errors',       '0.0.8'
   gem 'binding_of_caller',   '0.6.8'
   gem 'taps',                '0.3.24'
+  gem 'populator'
 end
 
 group :development, :test do
@@ -19,7 +20,8 @@ group :development, :test do
   gem "factory_girl_rails", '3.4.0'
   gem "faker",              '1.0.1'
   gem "simplecov"
-  gem "therubyracer"
+  # gem "therubyracer"
+  gem 'mysql2'
 end
 
 group :test do
@@ -46,11 +48,11 @@ group :assets do
   gem 'neat', '1.0.2'
 end
 
+gem 'kaminari',             '0.15.0'
 gem 'devise',               '2.1.0'
 gem "activeadmin",          '0.4.4'
 gem "friendly_id",          '4.0.9'
 gem "paperclip",            '3.3.1'
-gem "faker",                '1.0.1'
 gem 'slim',                 '1.2.1'
 gem 'slim-rails',           '1.0.3'
 gem 'textilize'
@@ -62,6 +64,5 @@ gem 'newrelic_rpm',         '3.5.3.25'
 gem 'dalli',                '2.6.0'
 gem 'gibbon',               '0.4.2'
 gem 'strong_parameters',    '0.2.0'
-gem 'acts-as-taggable-on',  '2.4.1'
-gem 'mysql2'
 gem 'memcachier'
+gem 'virtus'

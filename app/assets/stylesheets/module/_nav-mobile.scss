@@ -1,0 +1,194 @@
+.nav-mobile{
+  border-top: #fff solid 1px;
+  border-bottom: $color-one solid 1px;
+  text-align: center;
+
+  @include breakpoint(desktop){
+    display: none;
+  }
+
+  ul{
+    background: #316baf;
+
+    li{
+      display: inline-block;
+      padding: 0 4%;
+      position: relative;
+
+      @include breakpoint(tablet){
+        padding: 0 55px;
+      }
+    }
+  }
+
+  a{
+    color: #fff;
+    display:inline-block;
+    line-height: 36px;
+    outline: 0;
+    text-decoration: none;
+
+    @include breakpoint(tablet){
+      line-height: 51px;
+    }
+
+    span{
+      display: none;
+
+      @include breakpoint(tablet){
+        display: inline-block;
+      }
+    }
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+
+  .btn-search{
+    @include breakpoint(tablet){
+      position: relative;
+      left: 22px;
+      top: 12px;
+      width: auto;
+    }
+  }
+
+  .icon-rss{
+    position: relative;
+    top: 5px;
+    margin-left: 15px;
+    font-size: 24px;
+  }
+
+  .icon-search-2 {
+    font-size: 20px;
+    position: relative;
+    top: -2px;
+    left: 0px;
+
+    @include breakpoint(tablet){
+      margin-left: 13px;
+      font-size: 21px;
+      top: -10px;
+      left: -5px;
+    }
+  }
+
+  .nav-categories{
+    font-size: 20px;
+    font-weight: normal;
+    position: relative;
+  }
+
+  .icon-chevron-down{
+    font-size: 14px;
+    margin: 0 0 0 11px;
+  }
+
+  .arrow{
+    background: url(asset-path("arrow-blue-top.png", image)) no-repeat -5px 0;
+    width: 14px;
+    height: 8px;
+    position: absolute;
+    display: none;
+    bottom: -1px;
+    left: 50%;
+    margin-left: -7px;
+  }
+
+  form{
+    margin: 4px auto;
+    position: relative;
+    width: 269px;
+
+    @include breakpoint(tablet){
+      width: 387px;
+    }
+
+    .icon-search-2{
+      color: #F20892;
+      position: absolute;
+      right: 13px;
+      font-size: 22px;
+      top: 7px;
+    }
+
+    .nav-search{
+      @include border-radius(5px);
+      border: #a59c9f solid 1px;
+      height: 21px;
+      line-height: 21px;
+      padding: 10px 35px 10px 18px;
+      font-size: 16px;
+      width: 214px;
+
+      @include breakpoint(tablet){
+        width: 332px;
+      }
+    }
+  }
+
+  &.open-categories{
+    border-bottom-color: white;
+
+    .arrow{}
+  }
+}
+
+.btn-search{
+  position: relative;
+  height: 31px;
+  width: 31px;
+  top: 5px;
+
+  span{
+    @include breakpoint(tablet){
+      padding: 0 0 0 5px;
+      line-height: 19px;
+      position: relative;
+      top: -13px;
+    }
+  }
+
+  .icon-search{
+    top: -1px;
+
+    @include breakpoint(tablet){
+      top: -8px;
+      right: 5px;
+    }
+
+    @include breakpoint(mobile) {
+      font-size: 20px;
+      top: -4px;
+      left: -8px;
+    }
+  }
+
+  &.active{
+   background: $blue2;
+  }
+}
+
+.js-search{
+  display: none;
+  background: $blue2;
+  padding: 1px;
+
+  .icon-search{
+    position: absolute;
+    width: 25px;
+    top: 8px;
+    right: 10px;
+    font-size: em(20);
+    color: $color-two;
+
+    @include breakpoint(tablet){
+
+    }
+
+    @include breakpoint(desktop) {
+    }
+  }
+}

@@ -49,7 +49,7 @@ module ApplicationHelper
 
   def img_snippet_for(text_snippet, version, css_class='')
     rtn = nil
-    if ts = snippet(text_snippet) 
+    if ts = snippet(text_snippet)
       if ts.image?
         rtn = tag(:img, src: ts.image.url(version), class: css_class)
       end
@@ -143,10 +143,74 @@ module ApplicationHelper
 
   def tip_type(tip)
     case tip.tip_type
-    when 0
-      'Rails Tip'
-    when 1
-      'Today Tip'
+    when Tip::RAILS_TIP
+      'Rails Tips'
+    when Tip::TODAY_TIP
+      'Today Tips'
+    else
+      'All Tips'
     end
+  end
+
+  def tip_title(tip_type)
+    case tip_type
+    when Tip::RAILS_TIP
+      'Rails Tips'
+    when Tip::TODAY_TIP
+      'Today Tips'
+    else
+      'All Tips'
+    end
+  end
+
+  def facebook_share(post)
+    return "http://www.facebook.com/sharer/sharer.php?" \
+    "u=#{blog_article_url(post)}" if post
+    ""
+  end
+
+  def twitter_share(post, summary)
+    return "https://twitter.com/intent/tweet?" \
+    "text=#{summary.truncate(139 - blog_article_url(post).length)}&" \
+    "url=#{blog_article_url(post)}" if post
+    ""
+  end
+
+  def google_share(post)
+    return "https://plus.google.com/share?url=#{blog_article_url(post)}" if post
+    ""
+  end
+
+  def linkedin_share(post, title, summary)
+    return "http://www.linkedin.com/shareArticle?mini=true&" \
+    "url=#{blog_article_url(post)}&" \
+    "title=#{title}&summary=#{summary}&" \
+    "source=Insignia Blog" if post
+    ""
+  end
+
+  def tip_prev_year(type, date)
+    blog_tips_path(type , month: 1, year: (@date - 1.year).year)
+  end
+
+  def tip_next_year(type, date)
+    blog_tips_path(type , month: 1, year: (@date + 1.year).year)
+  end
+
+  def tip_month_name(month)
+    Date::ABBR_MONTHNAMES[month].upcase
+  end
+
+  def tip_month_path(type, month, date)
+    blog_tips_path(type, month: month, year: date.year)
+  end
+
+  def tip_month_class(month, date)
+    return 'month-disable' if tip_inactive_month?(month, date)
+    date.month==month ? 'month-current' : 'month-enable'
+  end
+
+  def tip_inactive_month?(month, date)
+    date.year == Date.today.year && month > Date.today.month
   end
 end

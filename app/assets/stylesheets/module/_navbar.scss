@@ -1,0 +1,130 @@
+.tooglenav{
+  span, #menu-btn{
+    position: absolute;
+    display: inline-block;
+    right: em(15);
+    border: 1px solid $color-one;
+
+    @include breakpoint(tablet){
+      display: none !important;
+    }
+  }
+
+  span{
+    @include border-radius(0 0 em(3) em(3));
+    display: none;
+    background: $color-one;
+    padding: 0px 9px 3px;
+    color: $color-two;
+    font-family: $arial;
+    bottom: 117px;
+    font-size: em(20);
+    cursor: pointer;
+  }
+
+  #menu-btn{
+    top: 0.6em;
+    color: $color-two;
+    font-size: 1.5em;
+    padding: 2px 4px 0;
+    @include border-radius(0.2em);
+  }
+}
+
+.navbar{
+  display: none;
+
+  @include breakpoint(tablet){
+    display: block !important;
+  }
+}
+
+nav{
+  @include transition(all 0.4s ease);
+  background: none;
+
+  @include breakpoint(tablet){
+    background: $color-one;
+  }
+
+  ul{
+    clear:both;
+    margin: auto;
+    background: $color-one;
+    position:relative;
+    z-index: 9999;
+    padding: 20px 0;
+
+    @include breakpoint(tablet){
+      padding: 0;
+    }
+  }
+
+  li{
+    display: block;
+    text-align: center;
+
+    @include breakpoint(tablet){
+      margin: auto;
+      display: inline-block;
+      padding: 0 6px;
+    }
+  }
+
+  a{
+    height: 45px;
+    font-size: em(20,14);
+    line-height: 45px;
+    vertical-align: middle;
+    color:#fff;
+    text-transform:uppercase;
+    text-decoration: none;
+    padding: 0 16px;
+    position: relative;
+
+    @include breakpoint(tablet){
+      line-height: 55px;
+      height:55px;
+      font-size: em(16,14);
+    }
+
+    &.active{
+      &:before, &:after{
+        position: absolute;
+        top: 20%;
+        color: $color-two;
+
+        @include breakpoint(tablet){
+          font-size: em(23);
+          top: -6%;
+        }
+      }
+
+      &:before{
+        @include ico("\e009");
+        left: -20px;
+
+        @include breakpoint(tablet){
+          left: -5px;
+        }
+      }
+
+      &:after{
+        @include ico("\e008");
+        right: -20px;
+
+        @include breakpoint(tablet){
+          right: -5px;
+        }
+      }
+    }
+
+    &:hover{
+      color: $color-two;
+    }
+
+    &.active:hover{
+      color: white;
+    }
+  }
+}

@@ -1,0 +1,306 @@
+html, input, textarea{
+  -webkit-font-smoothing: antialiased;
+}
+
+body{
+  font-family: $font-primary;
+  background: url(asset-path("background-pattern.gif", image)) repeat 0 0;
+  font-weight: 700;
+  color: $color-one;
+  font-size: 100%;
+  @include animation(reset 0.5s ease-in,fade 0.5s ease-in 0.5s);
+  font-size: em(16);
+}
+
+section{
+  @include span-columns(12);
+
+  @media(max-width: 1024px){
+    padding: 0 25px;
+  }
+}
+
+article{
+  margin-bottom: 45px;
+}
+
+h2, h3, h4{
+  margin: 0;
+  font-family: $font-secondary;
+}
+
+p, a, h1, h2, h3, h4, h5, h6, label, input, textarea, ul, ol{
+  text-rendering: optimizeLegibility;
+}
+
+p,a{
+ //  -ms-word-break: break-all;
+ // -moz-word-break: break-all;
+      // word-break: break-all;
+
+  // -moz-word-break: break-word;
+       // word-break: break-word;
+
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+          hyphens: auto;
+}
+
+p{
+  margin: 0 0 20px;
+}
+
+p, li{
+  font-size: em(14);
+  line-height: em(22,14);
+}
+
+a{
+  color: #316baf;
+  @include transition(all 0.4s ease-out);
+}
+
+ul, ol{
+  @extend %list-unstyled;
+}
+
+img{
+  max-width: 100%;
+}
+
+.box-dashed{
+  margin: auto
+}
+
+.container,
+nav ul, .content{
+  @include outer-container;
+}
+
+figure{
+  margin: 0;
+}
+
+.bullets-blue{
+
+  li{
+    padding-left:27px;
+    margin: 0 0 25px;
+    color:#373435;
+    line-height: em(22);
+
+    @include breakpoint(desktop){
+      margin: 0 0 5px;
+    }
+  }
+
+  li:before{
+    @include ico("\f061");
+    color: #316BAF;
+    font-size: em(25);
+    float: left;
+    margin-left: -27px;
+  }
+}
+
+.img-circle{
+  @include border-radius(40px);
+  padding: 5px;
+  background: #fff;
+  border: #333 dashed 1px;
+  width: 80px;
+  height: 80px;
+}
+
+.aside{
+  .box{
+    padding:20px;
+  }
+}
+
+.box-dashed{
+  @include breakpoint(desktop){
+    margin-left: -20px;
+    overflow:hidden;
+  }
+
+  li{
+    @include border-radius(10px);
+    background: repeat 0 0 rgba(255, 255, 255, 0.4);
+    border: #817f7f dashed 1px;
+    margin-bottom: 30px;
+
+    @include breakpoint(desktop){
+      float: left;
+      margin:12px 0 12px 20px;
+    }
+  }
+}
+
+.box-dashed.two{
+  li{
+    @include breakpoint(desktop){
+      width: 460px;
+    }
+  }
+}
+
+.box-dashed.three{
+  margin-left: -35px;
+  padding-left: 7%;
+
+  li{
+  width: 248px;
+  margin-left: 35px;
+  }
+}
+
+.box-dashed.four{
+  @include breakpoint(desktop){
+    margin-left: -20px;
+  }
+
+  li{
+    margin: 40px auto;
+    width: 100%;
+
+    @include breakpoint(tablet){
+      margin: 0 10px 20px;
+      width: 47%;
+    }
+    @include breakpoint(desktop){
+      margin: 0 0 20px 20px;
+      width: 218px;
+    }
+  }
+}
+
+.carousel{
+  .carousel-control{
+    i{
+      font-size: 26px;
+      left: -2px;
+      top: -6px;
+    }
+  }
+}
+
+.triangle{
+  @extend %triangle;
+}
+
+.carousel-inner{
+  margin: auto;
+  width: 90%;
+}
+
+.carousel .more{
+  left: 1px;
+  right: 1px;
+  font-size: 35px;
+  margin:auto;
+  text-align: center;
+}
+
+.more{
+  background:#E50892;
+  border: 2px solid #A60563;
+  border-radius: 5px;
+  bottom: -21px;
+  color: #fff;
+  font-family: $font-secondary;
+  font-size: em(34);
+  font-weight: 700;
+  height: 47px;
+  left: 42%;
+  line-height: 40px;
+  padding: 0 20px 2px 17px;
+  position: absolute;
+  width: 130px;
+  display: block;
+  text-decoration: none;
+}
+
+.bottom-link{
+  color: #f20892;
+  text-decoration: none;
+  line-height: 15px;
+  display: block;
+
+  span{
+    font-size: 22px;
+    font-family: arial;
+    position: relative;
+    right: -4px;
+    top: 4px;
+  }
+}
+
+aside{
+  float: right;
+}
+
+.column{
+  float: left;
+  width: 660px;
+  padding-bottom: 50px;
+}
+
+#toTop{
+  z-index:9999;
+}
+
+.reg{
+  font-weight: normal;
+  color: $color-one!important;
+}
+
+select{
+  @include appearance(none);
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+#toTop{
+  @include transform(translate3d(0,0,0));
+}
+
+
+@-moz-keyframes reset{
+  0%,100%{opacity:0}
+}
+@-o-keyframes reset{
+  0%,100%{opacity:0}
+}
+@-webkit-keyframes reset{
+  0%,100%{opacity:0}
+}
+@keyframes reset{
+  0%,100%{opacity:0}
+}
+@-moz-keyframes fade{
+  0%,50%{opacity:0}100%{opacity:1}
+}
+@-o-keyframes fade{
+  0%,50%{opacity:0}100%{opacity:1}
+}
+@-webkit-keyframes fade{
+  0%,50%{opacity:0}100%{opacity:1}
+}
+@keyframes fade{
+  0%,50%{opacity:0}100%{opacity:1}
+}
+
+// ====================
+// :: Only Tablet
+// ====================
+
+@include breakpoint(tablet){
+  .box{
+    h3{
+      margin-top: 10px;
+    }
+  }
+}
+
+

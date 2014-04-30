@@ -6,6 +6,7 @@ FactoryGirl.define do
 
     tip_type                 1
     sequence(:title)     { |n| "Some Title-#{n}"}
+    link                 "http://www.google.com"
     description          "Some Description"
     content              "Some Content"
     published_at         Date.today

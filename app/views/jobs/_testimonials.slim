@@ -1,0 +1,20 @@
+- if @testimony
+  .careers-title.cover3
+
+    .layer data-depth="0.10"
+      h2 testimonios
+
+    .cover
+  section.testimonies
+    .content
+      .video-frame
+          figure title="" data-media600=asset_path("video-frame.png") data-media440=asset_path("video-frame.png") data-media=asset_path("video-frame-mobile.png")
+
+            iframe src="//player.vimeo.com/video/#{@testimony.video_id}" width="639" height="359" frameborder="0"
+            img alt="" src=asset_path("video-frame-mobile.png")
+
+      .text-foot
+        p
+          = @testimony.body
+          .img.quote-open
+          .img.quote-close

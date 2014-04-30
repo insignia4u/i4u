@@ -1,0 +1,60 @@
+.introduction{
+  h2{
+    font-size: em(35);
+    line-height: 39px;
+    margin: 39px 0px;
+    padding: 0 2%;
+    text-align: center;
+
+    strong{
+      color: $color-two;
+    }
+
+    @include breakpoint(tablet){
+      font-size: em(42);
+      margin:50px 0;
+    }
+  }
+
+  p{
+    text-align: center;
+    font-size: em(18);
+    line-height: em(24);
+
+    strong{
+      color: $color-two;
+    }
+  }
+
+  @include breakpoint(desktop){
+    overflow:hidden;
+    position:relative;
+
+    h2{
+      font-size: em(50);
+      line-height: em(52,50);
+      text-align: center;
+      margin:60px 0;
+      padding: 0px 50px;
+      letter-spacing: 1px;
+      min-height: 100px;
+
+      strong{
+        color:$color-two;
+      }
+    }
+
+    p{
+      font-size: em(18);
+      line-height: 27px;
+      min-height: 200px;
+      margin: 0;
+
+      strong{
+        color: white;
+        padding: 0px 5px;
+        background: $color-two;
+      }
+    }
+  }
+}

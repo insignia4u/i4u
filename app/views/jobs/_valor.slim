@@ -1,0 +1,48 @@
+.careers-title.cover1
+  .layer data-depth="0.10"
+    h2 valores
+
+  .cover
+section.slider
+  .slider-valor.active
+    - if @values
+      .container
+        #slider-valor
+          ul
+            - @values.each do |value|
+              li
+                .dash-box
+                  .dash-box-title
+                    h3=value.title
+
+                  span.dash-box-circle
+                  a href=""
+                    | Ver más
+                    span.back-box-circle
+                      span.plus +
+          a#prev-valor.prev href="#"
+            i.icon-titleleft
+          a#next-valor.next href="#"
+            i.icon-titleright
+          #pager-valor
+
+  - if @values
+    - @values.each do |value|
+      .single
+        .single-title
+          h2=value.title
+
+        .single-content
+          .container
+            .close-top.close x
+            - if value.subtitle
+              h3=value.subtitle
+            p=value.description
+
+            - if value.image
+              img src=value.image.url alt=""
+
+            .close-bottom.close
+              | x
+              span Cerrar
+          section.dashed-separator

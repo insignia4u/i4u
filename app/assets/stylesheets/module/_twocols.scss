@@ -1,0 +1,25 @@
+.twocols{
+
+  section{
+  }
+
+  article{
+    @include breakpoint(desktop){
+      @include span-columns(6);
+      @include pad();
+    }
+  }
+
+  .whoweare{
+    @include breakpoint(desktop){
+      border-right: 2px dashed #b8b8b8;
+      padding: 0 30px 0 0;
+    }
+  }
+
+  .quality-policy{
+    @include breakpoint(desktop){
+      padding: 0 0 0 10px;
+    }
+  }
+}

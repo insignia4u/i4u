@@ -1,0 +1,334 @@
+.primary-title{
+  text-align: center;
+  margin: 35px 0;
+
+  @include breakpoint(tablet){
+    border-top: 2px dashed $color-five;
+    margin: 90px 0 0;
+  }
+
+  h2, h3{
+    font-size: em(50);
+    line-height: em(45,50);
+    padding: 0 25px;
+    display: block;
+    position: relative;
+    background: url(asset-path("background-pattern.gif", image));
+
+    &:before, &:after{
+      display: inline-block;
+      width: 30px;
+      color: $color-two;
+      position: absolute;
+      top: 26%;
+      font-size: 30px;
+    }
+
+    &:before{
+      @include ico("\e009");
+      left: -10px;
+
+      @include breakpoint(tablet){
+        left: 0;
+      }
+    }
+
+    &:after{
+      @include ico("\e008");
+      right: -10px;
+
+      @include breakpoint(tablet){
+        right: 0;
+      }
+    }
+
+    span{
+      font-weight: 300;
+    }
+
+    @include breakpoint(tablet){
+      top: -37px;
+      padding: 0 80px;
+      margin: 0;
+      display: inline-block;
+      font-size: em(66);
+      line-height: em(56,66);
+
+      &:before, &:after{
+        top: 38%;
+      }
+    }
+
+    @include breakpoint(desktop){
+
+    }
+  }
+}
+
+.twocols{
+  .primary-title{
+    h2{
+      font-size: em(66);
+      line-height: em(56,66);
+
+      &:before, &:after{
+        top: 38%;
+      }
+    }
+
+    h3{
+      font-size: em(50);
+      line-height: em(40,50);
+
+      &:before, &:after{
+        top: 26%;
+      }
+    }
+  }
+}
+
+.blog{
+  .primary-title{
+    h2{
+      font-size: 65px;
+
+      @include breakpoint(tablet){
+        font-size: 90px;
+        top: -45px;
+      }
+    }
+  }
+}
+
+
+.post-comment-form{
+  .primary-title{
+    margin-top: 60px;
+
+    h2{
+      font-size: 38px;
+      line-height: 39px;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0 25px;
+
+      &:before, &:after{
+        top: 21%;
+        color: $color-three;
+      }
+
+      @include breakpoint(tablet){
+        top: -25px;
+        padding: 0 35px;
+      }
+    }
+  }
+}
+
+.howdowedoit{
+  .primary-title{
+
+    @include breakpoint(desktop){
+      border:none;
+      margin-top:40px;
+    }
+
+    h2{
+
+      @include breakpoint(tablet){
+        padding: 0 40px;
+      }
+    }
+  }
+}
+
+.our-offering{
+  .primary-title{
+    @include breakpoint(tablet){
+    }
+
+    @include breakpoint(desktop){
+      border:none;
+      margin-top:40px;
+    }
+
+    h2{
+    }
+  }
+}
+
+.tipsday-page{
+  .primary-title{
+
+    &.title-type2{
+      h2{
+        display: inline-block;
+      }
+
+      .circle{
+        top: -5px;
+        margin: 0 10px 0 0;
+      }
+
+      @include breakpoint(tablet){
+        h2{
+          padding: 0 20px;
+          top: -50px;
+        }
+
+        .circle{
+          top: 9px;
+        }
+      }
+
+      @include breakpoint(desktop){
+        h2{
+        }
+      }
+    }
+
+    h2, h3{
+      padding: 0;
+    }
+  }
+}
+
+.whoweare{
+  .primary-title{
+    text-align: center;
+    margin: 25px 0;
+    border: none;
+
+    @include breakpoint(tablet){
+      margin: 25px 0;
+    }
+
+    @include breakpoint(desktop){
+      margin: 0 0 30px;
+    }
+
+    h3{
+      padding: 0 35px;
+
+      @include breakpoint(tablet){
+        top: 0;
+      }
+    }
+  }
+}
+
+.quality-policy{
+  .primary-title{
+    text-align: center;
+    margin: 25px 0;
+    border: none;
+
+    @include breakpoint(tablet){
+      margin: 25px 0;
+    }
+
+    @include breakpoint(desktop){
+      margin: 0 0 30px;
+    }
+
+    h3{
+      padding: 0 14px;
+
+      @include breakpoint(tablet){
+        padding: 0 35px;
+        top: 0;
+      }
+    }
+  }
+}
+
+.meet-staff{
+  .primary-title{
+
+    h3{
+
+    }
+
+    @include breakpoint(tablet){
+      border: none;
+
+      h2{
+        padding: 0 35px;
+      }
+    }
+
+    @include breakpoint(desktop){
+      border-top: 2px dashed $color-five;
+      margin: 60px 0 0;
+
+      h2{
+        padding: 0 80px;
+      }
+    }
+  }
+}
+
+.contact_form{
+  .primary-title {
+    font-size: em(50,60);
+    line-height: em(40,50);
+
+    @include breakpoint(tablet){
+       border-top: 2px dashed #382F2D;
+    }
+
+    h2 {
+      background: #ED0892;
+      color: $white;
+
+      @include breakpoint(tablet){
+        top: -30px;
+
+        &:before, &:after {
+          top: 30%;
+        }
+      }
+    }
+    h2:before, h2:after {
+      color: #000;
+    }
+  }
+}
+
+.contact-form{
+  .primary-title{
+
+    @include breakpoint(tablet){
+      font-size: em(80,60);
+      line-height: em(70,80);
+
+      h2{
+        top: -44px;
+      }
+    }
+  }
+}
+
+.contact-info{
+  .primary-title{
+
+
+    h2{
+      @include breakpoint(tablet){
+
+      }
+    }
+
+    @include breakpoint(desktop){
+      margin-top: 60px;
+    }
+  }
+}
+
+.tools, .more-info{
+  .primary-title{
+    h2:before, h2:after {
+      color: $color-three;
+    }
+  }
+}

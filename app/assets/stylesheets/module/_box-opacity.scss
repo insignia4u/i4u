@@ -1,0 +1,73 @@
+.box-opacity{
+  @include border-radius(10px);
+  background: rgba(0,0,0,.03);
+  margin: 0 25px 30px;
+  padding: 26px 18px 26px 22px;
+  margin-bottom: 40px;
+
+  h2{
+    font-size: 44px;
+    color: #373435;
+    text-align: center;
+    margin: 0 0 20px;
+
+    .circle{
+      float: left;
+      height: 45px;
+      width: 45px;
+      border-width: 2px;
+      margin: 0 20px 0 0;
+      position: relative;
+      top: 6px;
+
+      .icon-smiley{
+        font-size: em(25,44);
+        line-height: em(45, 24);
+      }
+
+      .icon-diamond{
+        font-size: em(27,44);
+        line-height: em(45, 24);
+      }
+    }
+  }
+
+  h3{
+    color: #f10791;
+    font-size: em(54);
+    margin: 15px 0;
+  }
+
+  h4{
+    font-size: em(34);
+    color: #f21a9a;
+    margin: 5px 0;
+    line-height: 28px;
+  }
+
+  h2, h3, h4{
+    font-family: $font-secondary;
+  }
+
+  p{
+    color: $color-seven;
+  }
+
+  @include breakpoint(tablet){
+    float: left;
+    width: 345px;
+    margin: 0 0 50px;
+    padding: 20px 40px;
+  }
+
+  @include breakpoint(desktop){
+    float: none;
+    width: auto;
+    margin-bottom: 30px;
+    padding: 15px;
+  }
+
+  h2{
+    text-align: left;
+  }
+}

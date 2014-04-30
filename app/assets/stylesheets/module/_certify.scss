@@ -1,0 +1,77 @@
+.certify{
+  border:#19375a solid 1px;
+  margin: 60px 25px;
+  float: left;
+
+  @include breakpoint(tablet){
+    margin: 60px 10%;
+  }
+
+  @include breakpoint(desktop){
+    margin: 60px 0 60px 40px;
+  }
+}
+
+.ribbon{
+  @include box-shadow( 0 4px 10px #777 );
+  font-size: em(18);
+  line-height: em(26,18);
+  width: 100%;
+  position: relative;
+  background: rgba(46, 99, 163, 0.9);
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+  border:#387cb9 solid 1px;
+
+  @include breakpoint(tablet){
+    font-size: em(15);
+    line-height: em(20,15);
+    padding: 7px 10% 10px;
+  }
+
+  @include breakpoint(desktop){
+    padding: 7px 25px 10px;
+  }
+
+  strong{
+    text-shadow: 1px 1px 2px #333;
+  }
+
+  span{
+    color:#5e99dd;
+    display: block;
+  }
+
+  .ribbon-right, .ribbon-left{
+    display: none;
+
+    @include breakpoint(tablet){
+      background:url(asset-path("ribbon-left.png", image)) no-repeat 0 0;
+      width:104px;
+      height:53px;
+      position:absolute;
+      bottom:-27px;
+      display: block;
+    }
+  }
+
+  @include breakpoint(tablet){
+
+    span{
+      display: inline-block;
+    }
+  }
+
+  @include breakpoint(tablet){
+
+    .ribbon-left{
+      left:-47px;
+    }
+
+    .ribbon-right{
+      background:url(asset-path("ribbon-right.png", image)) no-repeat 0 0;
+      right:-48px;
+    }
+  }
+}

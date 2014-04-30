@@ -1,0 +1,98 @@
+.header-min{
+  padding-bottom: 0;
+  position: relative;
+  min-height: 150px;
+
+  h1{
+    margin-top: 0;
+    position: static;
+    padding: 50px 0 30px;
+  }
+
+  .container{
+
+
+    @include breakpoint(tablet){
+    }
+
+    @include breakpoint(desktop){
+    }
+  }
+
+  nav{
+    background: none;
+    border-top: #383435 solid 17px;
+    position: relative;
+
+    @include breakpoint(tablet){
+      border-top: #383435 solid 22px;
+    }
+
+    ul{
+      width: 50px;
+      left: 50%;
+      position: absolute;
+      margin-left: -25px;
+      top: -11px!important;
+      background: none;
+      display: block;
+      padding: 0;
+
+      @include breakpoint(tablet){
+        width: 170px;
+        margin-left: -85px;
+      }
+    }
+
+    li{
+      background: #383435;
+      width: 100%;
+      display: block;
+      padding: 0;
+      @include border-radius(0 0 12px 12px);
+    }
+
+    a{
+      display: block;
+      font-size: 15px;
+      line-height: 40px;
+      height: 40px;
+
+      &:after, &:before{
+        display: none;
+      }
+
+      span{
+        display: none;
+
+        @include breakpoint(tablet){
+          display: inline;
+        }
+      }
+    }
+
+    a:hover, a:focus{
+      outline: none;
+
+      &:after, &:before{
+        display: none;
+      }
+    }
+
+    .icon-undo{
+      display: none;
+      color: $color-two;
+      margin: 0 10px 0 0;
+
+      @include breakpoint(tablet){
+        display: inline-block;
+      }
+    }
+
+    .icon-home{
+      @include breakpoint(tablet){
+        display: none;
+      }
+    }
+  }
+}

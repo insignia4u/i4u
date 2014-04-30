@@ -1,0 +1,158 @@
+.error404{
+  .scene,
+  .layer {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .layer div {
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  #scene{
+    position: relative;
+    overflow: hidden;
+    min-height: 310px;
+
+    @include breakpoint(tablet){
+      min-height: 395px;
+    }
+  }
+
+  .layer{
+  }
+
+  .eyes,
+  .bg-error,
+  .error-text,
+  .oops,
+  .broken{
+    position: absolute;
+    background: url(asset-path("error404.png",image));
+    left: 50%;
+  }
+
+  .eyes{
+    width: 135px;
+    height: 38px;
+    background-position: -503px -333px;
+    margin-left: -63px;
+    top: 40px;
+
+    @include breakpoint(tablet){
+      top: 52px;
+    }
+  }
+
+  .bg-error{
+    width: 270px;
+    height: 80px;
+    background-position: -16px -54px;
+    top: 100px;
+    margin-left: -135px;
+    background-size: 300px;
+
+    @include breakpoint(tablet){
+      width: 629px;
+      height: 183px;
+      background-position: -33px -127px;
+      top: 120px;
+      margin-left: -306px;
+      background-size: initial;
+    }
+  }
+
+  .error-text{
+    width: 137px;
+    height: 52px;
+    background-position: 0 0;
+    margin-left: -75px;
+    top: 100px;
+    background-size: 300px;
+
+    @include breakpoint(tablet){
+      height: 119px;
+      width: 318px;
+      margin-left: -167px;
+      top: 120px;
+      background-size: initial;
+    }
+  }
+
+  .oops{
+    width: 200px;
+    height: 33px;
+    background-position: right -31px;
+    margin-left: -100px;
+    top: 190px;
+    background-size: 400px;
+
+    @include breakpoint(tablet){
+      width: 348px;
+      height: 56px;
+      background-position: right -55px;
+      margin-left: -172px;
+      top: 243px;
+      background-size: initial;
+    }
+  }
+
+  .broken{
+    width: 221px;
+    height: 46px;
+    background-position: -223px bottom;
+    margin-left: -115px;
+    top: 245px;
+
+    @include breakpoint(tablet){
+      top: 318px;
+    }
+  }
+
+  .error-server, .link-decoration{
+    width: 298px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .error-server{
+    display: none;
+
+    @include breakpoint(tablet){
+      display: block;
+
+      p{
+        line-height: em(24,14);
+      }
+    }
+  }
+
+  .link-decoration{
+    font-family: $font-secondary;
+    font-size: em(48);
+
+    a{
+      color: $color-two;
+      position: relative;
+
+      .text-decoration{
+        background: url(asset-path("error404.png",image));
+        width: 122px;
+        height: 22px;
+        display: inline-block;
+        bottom: -10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+footer{
+  @include transform(translate3d(0,0,0));
+  background: rgba(24, 52, 85, 1);
+  border-top:#3469af solid 4px;
+  color:#6390d4;
+  text-align:center;
+
+  @include breakpoint(tablet){
+    overflow: hidden;
+  }
+
+  @include breakpoint(desktop){
+    background: rgba(24, 52, 85, 0.9);
+  }
+
+  &.footer-min{
+    border: none;
+  }
+
+  @import "../module/contact";
+  @import "../module/newletter";
+  @import "../module/social";
+}

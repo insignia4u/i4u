@@ -1,38 +1,87 @@
-= render 'blog/articles/modules/head'
-
 section.blog
 
-  = render 'blog/articles/modules/blog_tags'
-
-  .container-title
+  .primary-title
     h2 Our Blog
 
-  = render 'blog/articles/modules/aside'
+  = link_to blog_articles_path, class: 'l-back' do
+    span.icon-double-angle-left
+    span.l-back-text Volver
 
-  .column
+  = render "blog/articles/modules/aside"
+
+  .column.singlepost
     article
-      .comment
-          = link_to '0', blog_article_url(@article), class: 'fb-comments-count',
-          data: { href: blog_article_url(@article) }
+      h2= @article.title
+
+      .metadata-header
+        .author
+          i.icon-user-2
+          = @article.author
+
+        .date
+          i.icon-calendar-3
+          = @article.publication_date.strftime('%-d de %B, %Y')
+        .comment
+          = @article.count_comments
           i.icon-comment
 
-      .author = @article.author
-      - if @article.image.present?
-        picture alt=""
-          source src=@article.image.url(:small)
-          source src=@article.image.url(:medium) media="(min-width:440px)"
-          source src=@article.image.url(:medium) media="(min-width:600px)"
+      picture alt=""
+        - if @article.image?
+          source src=@article.image.url(:normal)
+        - else
+          source src=asset_path("blog-photo02.jpg")
+          source src=asset_path("blog-photo02.jpg") media="(min-width:440px)"
+          source src=asset_path("blog-photo02.jpg") media="(min-width:600px)"
 
-        noscript
-          img src=@article.image.url(:small) alt=""
+          noscript
+            img src=asset_path("blog-photo02.jpg") alt=""
+      - if @article.image_caption
+        .labelphoto= @article.image_caption
+      - else
+        br
 
-      h3 = link_to @article.title, blog_article_path(@article)
+      = @article.content
 
-      = textilize(@article.content)
+      .metadata-footer
+        ul.social
+          li
+            a href="#{facebook_share(@article)}" target="_blank"
+              i.icon-facebook
+              span facebook
+          li
+            a href="#{twitter_share(@article, @article.summary)}" target="_blank"
+              i.icon-twitter
+              span twitter
+          li
+            a href="#{google_share(@article)}" target="_blank"
+              i.icon-googleplus
+              span google+
+          li
+            a href="#{linkedin_share(@article, @article.title, @article.summary)}" target="_blank"
+              i.icon-linkedin
+              span linkedin
 
-      .tags
-        - @article.tag_list.each do |tag|
-          = link_to tag, tag_blog_articles_path(tag)
+        - if @article.categories
+          ul.tags
+            - @article.categories.each do |category|
+              li
+                = link_to category.name, blog_category_path(category.slug)
+    .pagination
+      - if @prev
+        = link_to blog_article_path(@prev), class: 'l-previous' do
+          span.icon-double-angle-left
+          span.l-back-text Anterior
 
-      .fb-like data-href=blog_article_url(@article) data-send="true" data-width="450" data-show-faces="true">
-      .fb-comments data-href=blog_article_url(@article) data-width="470" data-num-posts="10"
+      - if @next
+        = link_to blog_article_path(@next), class: 'l-next' do
+          span.l-back-text Siguiente
+          span.icon-double-angle-right
+
+    = render "blog/articles/modules/discussion"
+    = render "blog/articles/modules/post-comment-form"
+
+- content_for :head do
+  meta property="og:title"  content="#{@article.title}"
+  meta property="og:type"   content="sdff:post"
+  meta property="og:url"    content="#{blog_article_url(@article)}"
+  meta property="og:image"  content="#{ @article.image? ? @article.image.url(:normal) : ''}"

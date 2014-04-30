@@ -1,0 +1,72 @@
+
+.more-info{
+  padding: 50px 25px;
+
+  ul{
+    width: 100%;
+    padding: 0 40px;
+
+    @include breakpoint(tablet){
+      text-align: center;
+      padding: 0;
+    }
+
+    li{
+      width: 100%;
+      margin: auto;
+      min-height: auto !important;
+      padding-bottom: 20px;
+
+      i{
+        text-align: center;
+        font-size: 45px;
+      }
+
+      h3{
+        font-family: $font-primary;
+        color: #316baf;
+        text-transform: uppercase;
+      }
+
+      h3, p{
+        display: block;
+        height: auto;
+        text-align: center;
+        vertical-align: middle;
+        width: auto;
+        font-size: em(15);
+
+        a{
+          color: #316BAF;
+          text-decoration: none;
+        }
+      }
+
+      @include breakpoint(tablet){
+        @include border-radius(10px);
+        text-align: center;
+        min-height: 250px !important;
+        background: repeat 0 0 rgba(255,255,255,0.4);
+        border: #817f7f dashed 1px;
+        display: inline-block;
+        vertical-align: top;
+        width: 30%;
+        margin: 0 10px;
+        padding-bottom: 0;
+
+        h3{
+          margin: 0 25px;
+        }
+
+        p{
+          margin: 2px 25px 12px;
+        }
+      }
+
+      @include breakpoint(desktop){
+        margin: 0 9px 18px;
+        width: 230px;
+      }
+    }
+  }
+}

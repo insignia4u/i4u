@@ -10,6 +10,7 @@ describe Tip do
     it { should     respond_to(:image) }
     it { should     respond_to(:published_at) }
     it { should     respond_to(:site) }
+    it { should     respond_to(:link) }
   end
 
   describe "Validations" do
@@ -19,6 +20,9 @@ describe Tip do
     it { should validate_presence_of(:content) }
     it { should validate_presence_of(:site) }
     it { should validate_presence_of(:published_at) }
+    it { should validate_presence_of(:link) }
+    it { should allow_value('http://foo.com', 'http://bar.com/baz').for(:link) }
+    it { should_not allow_value('asdfjkl').for(:link) }
 
     before(:each) do
       @rails_tip = create(:rails_tip)
@@ -78,7 +82,7 @@ describe Tip do
       @old_today_tip = Tip.new(attributes_for(:today_tip,published_at:
                                                2.months.ago))
       @old_today_tip.save(validate: false)
-      @old_rails_tip = Tip.new(attributes_for(:rails_tip,published_at: 
+      @old_rails_tip = Tip.new(attributes_for(:rails_tip,published_at:
                                                 2.months.ago))
       @old_rails_tip.save(validate: false)
     end
@@ -103,6 +107,20 @@ describe Tip do
       it "returns the last published tip" do
         Tip.today_tip.should eql(@old_today_tip)
         Tip.rails_tip.should eql(@old_rails_tip)
+      end
+    end
+
+    context ".month_tips" do
+      it "it returns the today tips within a month of a specific date" do
+        today_tip = create(:today_tip, published_at: Date.today + 5.month)
+
+        Tip.month_tips(Tip::TODAY_TIP, Date.today + 5.month).should eq([today_tip])
+      end
+
+      it "it returns the rails tips within a month of a specific date" do
+        rails_tip = create(:rails_tip, published_at: Date.today + 5.month)
+
+        Tip.month_tips(Tip::RAILS_TIP, Date.today + 5.month).should eq([rails_tip])
       end
     end
   end

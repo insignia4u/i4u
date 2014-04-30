@@ -1,24 +1,18 @@
-class Blog::ArticlesController < ApplicationController
-  before_filter :shared_variables
+class Blog::ArticlesController < Blog::BaseController
+  layout "blog"
 
   def index
-    @articles   = tag ? Article.tagged_with(tag) : Article.most_recents
+    @articles = Article.published.latest_first.page(params[:page]).per(3)
+
+    respond_to do |format|
+      format.html
+      format.rss  { render :layout => false }
+    end
   end
 
   def show
     @article = Article.find(params[:id])
+    @next = Article.next_article(@article)
+    @prev = Article.prev_article(@article)
   end
-
-private
-
-  def shared_variables
-    @tags       = Article.tag_counts
-    @rails_tip  = Tip.rails_tip
-    @today_tip  = Tip.today_tip
-  end
-
-  def tag
-    params[:tag]
-  end
-
 end

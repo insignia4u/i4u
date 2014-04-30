@@ -1,0 +1,21 @@
+- if @events.present?
+  .careers-title.cover4
+    .layer data-depth="0.10"
+      h2 eventos y conferencias
+    .cover
+
+  section.news
+    .content
+      ul
+        - @events.each do |event|
+          li.news-item.equal5
+            .published-at
+              i.icon-calendar
+              = l event.publication_date, format: :long
+            .title = event.subtitle
+            h3 = event.title
+            .description
+              p = event.description
+
+            a.more href="" target="_blank"
+              | Read more
