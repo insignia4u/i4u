@@ -225,18 +225,17 @@ $(document).ready ->
   $(".position-info .btn-primary").click (e) ->
     e.preventDefault()
 
-    if $(".careers-position .single").hasClass("active")
-      $(".careers-position .single").removeClass("active")
-      $(".slider-position").addClass("active")
+    box=$(this).parent().parent()
+    id= box.data 'box'
 
-      heightSlider = $(".slider-position").height()
-      $(".careers-position").height heightSlider
-    else
-      $(".slider-position").removeClass("active")
-      $(".careers-position .single").addClass("active")
+    $(".careers-position").css "height", "auto"    
 
-      heightSlider2 = $(".careers-position .single").height()
-      $(".careers-position").height heightSlider2
+    $(".slider-position").removeClass("active")
+
+    $('#boxp_'+id).addClass("active")
+
+    heightSlider2 = $(".careers-position .single").height()
+    $(".careers-position").height heightSlider2
 
   $(".careers-position .close").click ->
     $(".careers-position").css "height", "auto"
