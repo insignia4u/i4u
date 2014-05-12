@@ -10,13 +10,13 @@ section.slider
         #slider-valor
           ul
             - @values.each do |value|
-              li
-                .dash-box
+              li 
+                .dash-box data-box=value.id
                   .dash-box-title
                     h3=value.title
 
                   span.dash-box-circle
-                  a href=""
+                  a href="" 
                     | Ver más
                     span.back-box-circle
                       span.plus +
@@ -28,7 +28,7 @@ section.slider
 
   - if @values
     - @values.each do |value|
-      .single
+      .single id="box_#{value.id}"
         .single-title
           h2=value.title
 
