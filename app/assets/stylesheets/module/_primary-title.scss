@@ -13,7 +13,7 @@
     padding: 0 25px;
     display: block;
     position: relative;
-    background: url(asset-path("background-pattern.gif", image));
+    background: url(asset-path("background-pattern.gif"));
 
     &:before, &:after{
       display: inline-block;

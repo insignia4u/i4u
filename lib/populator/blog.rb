@@ -1,7 +1,7 @@
 module Populator
   class Blog
     def initialize
-      [Article, ActsAsTaggableOn::Tag].each(&:delete_all)
+      [Article].each(&:delete_all)
     end
 
     def populate

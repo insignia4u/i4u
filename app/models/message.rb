@@ -2,10 +2,7 @@ require 'valid_formats'
 
 class Message
   include Virtus.model
-  include ActiveModel::ForbiddenAttributesProtection
-  include ActiveModel::Validations
-  include ActiveModel::Conversion
-  extend  ActiveModel::Naming
+  include ActiveModel::Model
 
   attribute :is_to_job, Boolean
   attribute :body,      String
@@ -17,7 +14,7 @@ class Message
   attribute :file,      Paperclip::Attachment
 
   validates :body, :name, :email, presence: true
-  validates :email, format: { with: ValidFormats::EMAIL }, allow_blank: true
+  # validates :email, format: { with: ValidFormats::EMAIL }, allow_blank: true
 
   validates :file, presence: true, if: :is_to_job
 
@@ -36,5 +33,4 @@ class Message
   def new_record?
     true
   end
-
 end

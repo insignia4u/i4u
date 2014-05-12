@@ -6,8 +6,7 @@ class Testimony < ActiveRecord::Base
     where(published: true).order('published_at DESC').first
   end
 
-  private
-
+private
   def set_published_at
     self.published_at = DateTime.now if published and new_record?
   end

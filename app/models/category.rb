@@ -1,8 +1,8 @@
 class Category < ActiveRecord::Base
   extend FriendlyId
 
-  has_and_belongs_to_many :articles
   belongs_to :site
+  has_and_belongs_to_many :articles
 
   validates :name, presence:true
 

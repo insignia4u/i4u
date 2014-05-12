@@ -14,7 +14,7 @@ ActiveAdmin.register Person do
       f.input :photo, :as => :file
     end
 
-    f.buttons
+    f.actions
   end
 
   action_item :only => :index do

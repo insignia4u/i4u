@@ -8,6 +8,7 @@ module Populator
     end
 
     def create!(q=1)
+      image = @images.sample
       q.times do
         FeaturedContent.create!(
           site:  sites.sample,
@@ -22,14 +23,6 @@ module Populator
 
     def sites
       Site.all
-    end
-
-    def image
-      @image ||= File.open(
-        File.join(
-          Rails.root, 'public', 'populate_images',("1".."5").to_a.sample + ".jpg"
-        )
-      )
     end
   end
 end

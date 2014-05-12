@@ -8,7 +8,7 @@ class TextSnippet < ActiveRecord::Base
   validates :name, presence: true
   validates :site_id, presence: true
 
-  friendly_id :name, use: [:slugged, :history]
+  friendly_id :name, use: [:slugged]
 
   def summary
     (body || '')[0...140]

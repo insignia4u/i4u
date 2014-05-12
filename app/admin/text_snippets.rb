@@ -41,10 +41,14 @@ ActiveAdmin.register TextSnippet do
       f.input :body
       f.input :image, :as => :file
     end
-    f.buttons
+    f.actions
   end
 
   controller do
+    def resource
+      TextSnippet.friendly.find(params[:id])
+    end
+
     def resource_params
       return [] if request.get?
       [ params.require(:text_snippet)

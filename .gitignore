@@ -1,32 +1,16 @@
-# Ignore bundler config
 /.bundle
-
-# Ignore the default SQLite database.
 /db/*.sqlite3
-
-# Ignore the schema file.
-/db/schema.rb
-
-# Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
 /config/database.yml
-
-# Ignore uploaded files.
 /public/system
-
-# Ignore static site.
 /public/static-site
-
-# Ignore populate files.
 /public/populate_images
-
-# Ignore spec report.
 /coverage
-
 .DS_Store
 .rvmrc
-
 /a
-
 /doc
+
+# Ignore application configuration
+/config/application.yml

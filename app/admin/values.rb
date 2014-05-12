@@ -30,7 +30,7 @@ ActiveAdmin.register Value do
       f.input :image, hint: ( (f.object.new_record?)? "" : f.object.image.url ),
               as: :file
     end
-    f.buttons
+    f.actions
   end
 
   controller do

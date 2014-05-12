@@ -24,7 +24,7 @@ ActiveAdmin.register Tool do
       f.input :title
       f.input :description
     end
-    f.buttons
+    f.actions
   end
 
   action_item :only => :index do

@@ -5,8 +5,8 @@ class Project
     included do
       has_attached_file :image,
         styles: {
-                  big:          "277x250#", 
-                  thumb:        "234x230#", 
+                  big:          "277x250#",
+                  thumb:        "234x230#",
                   normal:       "818x403#",
                   medium:       "650x320#",
                   small:        "268x151#",

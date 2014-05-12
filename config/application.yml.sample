@@ -1,0 +1,9 @@
+development:
+  APP_SECRET_TOKEN: "run rake secret to generate a new secret"
+  APP_SECRET_BASE: "run rake secret to generate a new secret"
+  DEVISE_SECRET: "run rake secret to generate a new secret"
+
+test:
+  APP_SECRET_TOKEN: "run rake secret to generate a new secret"
+  APP_SECRET_BASE: "run rake secret to generate a new secret"
+  DEVISE_SECRET: "run rake secret to generate a new secret"

@@ -319,7 +319,7 @@
   }
 
   .slider{
-    background:#fff url(asset-path("backvalor.png",image));
+    background:#fff url(asset-path("backvalor.png"));
     width: 100%;
     height: 100%;
 
@@ -729,7 +729,7 @@
   }
 
   .decoration{
-    background: url(asset-path("sprite.png",image)) no-repeat;
+    background: url(asset-path("sprite.png")) no-repeat;
     position: absolute;
     height: 18px;
     width: 180px;
@@ -752,7 +752,7 @@
   }
 
   .decoration{
-    background: url(asset-path("sprite.png",image)) no-repeat right bottom;
+    background: url(asset-path("sprite.png")) no-repeat right bottom;
     position: absolute;
     height: 9px;
     width: 154px;
@@ -956,7 +956,7 @@
 .careers{
 
   .careers-position{
-    background: url(asset-path("background-pattern.gif",image));
+    background: url(asset-path("background-pattern.gif"));
     border-bottom: #000 dashed 1px;
   }
 

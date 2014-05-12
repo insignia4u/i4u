@@ -23,7 +23,7 @@ ActiveAdmin.register Testimony do
       f.input :video_id
       f.input :published
     end
-    f.buttons
+    f.actions
   end
 
   controller do

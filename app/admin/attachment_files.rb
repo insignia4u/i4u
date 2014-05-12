@@ -24,7 +24,7 @@ ActiveAdmin.register AttachmentFile, :as => "Assets" do
       f.input :summary
     end
 
-    f.buttons
+    f.actions
   end
 
   show do

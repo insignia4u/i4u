@@ -1,5 +1,4 @@
 class Site < ActiveRecord::Base
-
   has_many :site_sections
   has_many :projects
   has_many :people
@@ -13,10 +12,11 @@ class Site < ActiveRecord::Base
   validates :name,         presence: true
   validates :abbreviation, presence: true, uniqueness: true
 
-  scope :live,   where( live: true )
-  scope :hidden, where( live: false )
-
-  scope :with_language, ->(abbreviation) { where(abbreviation: abbreviation) }
+  scope :live,   -> { where( live: true ) }
+  scope :hidden, -> { where( live: false ) }
+  scope :with_language, ->(abbreviation) {
+    where(abbreviation: abbreviation)
+  }
 
   def home_projects
     projects.featured.limit(3)

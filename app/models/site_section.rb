@@ -3,7 +3,7 @@ class SiteSection < ActiveRecord::Base
 
   belongs_to :site
 
-  validates       :site, presence: true
+  validates  :site, presence: true
 
-  friendly_id     :name, use: :slugged
+  friendly_id :name, use: :slugged
 end

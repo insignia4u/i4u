@@ -1,4 +1,4 @@
-class ProjectsController < InheritedResources::Base
+class ProjectsController < ApplicationController
 
   def index
     @recent_jobs          = current_site.projects.recent_jobs
@@ -11,9 +11,13 @@ class ProjectsController < InheritedResources::Base
     @tools        = resource.tools.by_position
   end
 
-  protected
-
+protected
   def begin_of_association_chain
     current_site
   end
+
+  def resource
+    @resource ||= current_site.projects.friendly.find(params[:id])
+  end
+  helper_method :resource
 end

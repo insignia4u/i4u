@@ -16,13 +16,14 @@ html
 
     link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700|Enriqueta:400,700' rel='stylesheet' type='text/css'
 
-    = stylesheet_link_tag "application", :media => "all"
+    = stylesheet_link_tag "application", media: :all
     = yield :stylesheets
 
   body onload="window.scrollTo(0,1);"
-    = render "shared/header-min"
-    = yield
-    = render "shared/footer-min"
+    = render "shared/header"
+    .content
+      = yield
+    = render "shared/footer"
 
     javascript:
       var _gaq=[['_setAccount','UA-1828552-1'],['_trackPageview']];

@@ -57,7 +57,7 @@ ActiveAdmin.register Project do
       f.input :tools, :as => :check_boxes
     end
 
-    f.buttons
+    f.actions
   end
 
   show do

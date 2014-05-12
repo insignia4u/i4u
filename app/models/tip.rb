@@ -4,20 +4,7 @@ class Tip < ActiveRecord::Base
   RAILS_TIP = 0
   TODAY_TIP = 1
 
-  scope :latest_first, -> { order('published_at DESC, created_at DESC') }
-  scope :rails_tips, -> { where(tip_type: Tip::RAILS_TIP) }
-  scope :today_tips, -> { where(tip_type: Tip::TODAY_TIP) }
-
   belongs_to :site
-
-  has_attached_file :image,
-        styles: {
-                  thumb:        "234x230#",
-                  normal:       "818x403#",
-                  medium:       "650x320#",
-                  small:        "268x151#",
-                  cms_thumb:    "169x100#"
-                }
 
   validates :title, :tip_type, :description, :content,:published_at,
    :site, :link, presence: true
@@ -28,7 +15,20 @@ class Tip < ActiveRecord::Base
 
   before_save :set_published_time_at_beggining_of_day
 
+  has_attached_file :image,
+        styles: {
+                  thumb:        "234x230#",
+                  normal:       "818x403#",
+                  medium:       "650x320#",
+                  small:        "268x151#",
+                  cms_thumb:    "169x100#"
+                }
+
   friendly_id :title, use: [:slugged, :history]
+
+  scope :latest_first, -> { order('published_at DESC, created_at DESC') }
+  scope :rails_tips,   -> { where(tip_type: Tip::RAILS_TIP) }
+  scope :today_tips,   -> { where(tip_type: Tip::TODAY_TIP) }
 
   def self.rails_tip
     rails_tips.where('published_at <= ?', Date.today)
@@ -56,7 +56,6 @@ class Tip < ActiveRecord::Base
   end
 
 private
-
   def check_future_date
     if published_at and published_at < Date.today
       errors.add(:published_at, 'has to be a date of today or the future.')
