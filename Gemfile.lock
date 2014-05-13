@@ -184,6 +184,7 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rack-timeout (0.0.4)
     rails (3.2.18)
       actionmailer (= 3.2.18)
       actionpack (= 3.2.18)
@@ -192,6 +193,11 @@ GEM
       activesupport (= 3.2.18)
       bundler (~> 1.0)
       railties (= 3.2.18)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.2)
+    rails_stdout_logging (0.0.3)
     railties (3.2.18)
       actionpack (= 3.2.18)
       activesupport (= 3.2.18)
@@ -315,7 +321,9 @@ DEPENDENCIES
   paperclip (= 3.3.1)
   pg
   populator
+  rack-timeout
   rails (= 3.2.18)
+  rails_12factor
   rspec-rails (= 2.10.1)
   sass
   sass-rails
