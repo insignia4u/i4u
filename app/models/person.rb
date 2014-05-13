@@ -16,7 +16,7 @@ class Person < ActiveRecord::Base
 
   scope :by_position,   order(:position)
   scope :last_position, order('position DESC')
-  
+
   def full_name
     "#{first_name} #{last_name}"
   end

@@ -1,19 +1,6 @@
 require 'spec_helper'
 
 describe Project do
-  describe "Attributes accessibility" do
-    it { should     respond_to(:name) }
-    it { should     respond_to(:summary) }
-    it { should     respond_to(:description) }
-    it { should     respond_to(:extended_description) }
-    it { should     respond_to(:url) }
-    it { should     respond_to(:started_at) }
-    it { should     respond_to(:ended_at) }
-    it { should     respond_to(:technology_ids) }
-    it { should     respond_to(:tool_ids) }
-    it { should     respond_to(:highlighted) }
-  end
-
   describe "Validations" do
     it { should validate_presence_of(:site) }
     it { should validate_presence_of(:name) }
@@ -111,26 +98,6 @@ describe Project do
 
       it "have a paperclip filed named Featured Image" do
         @project.featured_image.should be_an_instance_of(Paperclip::Attachment)
-      end
-    end
-
-    context "validations" do
-      it { should have_attached_file(:image) }
-      it { should validate_attachment_presence(:image) }
-      it { should validate_attachment_content_type(:image).
-            allowing('image/png', 'image/jpeg').
-            rejecting('text/plain', 'text/xml')
-      }
-
-      it { should have_attached_file(:featured_image) }
-      it { should validate_attachment_content_type(:featured_image).
-            allowing('image/png', 'image/jpeg').
-            rejecting('text/plain', 'text/xml')
-      }
-
-      it "should invalid without started_at and a ended_at" do
-        project = build(:project, started_at: nil, ended_at: DateTime.yesterday)
-        project.should_not be_valid 
       end
     end
   end

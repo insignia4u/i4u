@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe AttachmentFile do
-
   it "has a valid factory" do
     create(:attachment_file).should be_valid
   end
