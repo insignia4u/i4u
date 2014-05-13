@@ -958,6 +958,9 @@
   .careers-position{
     background: url(asset-path("background-pattern.gif",image));
     border-bottom: #000 dashed 1px;
+    @media(max-width: 1024px){
+      padding: 0;
+    }
   }
 
   .single-title{
@@ -1474,6 +1477,7 @@ section.slider {
     left: 1px;
     right: 1px;
     margin: auto;
+    padding-top: 5px;
     display: inline-block;
     width: 100%;
     text-align: center;
@@ -1483,6 +1487,7 @@ section.slider {
       position: absolute;
       width: 178px;
     }
+    
   }
 }
 

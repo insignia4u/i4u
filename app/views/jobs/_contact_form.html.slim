@@ -1,7 +1,7 @@
-section.contact_form
+section.contact_form id="contact"
   .content
     .primary-title
-      h2 Contactáte con nosotros!
+      h2 Contact us!
 
     = form_for @message, url: job_path, html: { multipart: true } do |f|
       .box-first
@@ -54,5 +54,5 @@ section.contact_form
         span
           |*
         p
-          |Completa todos los campos obligatorios marcados con asterisko
+          |Complete the required fields
 

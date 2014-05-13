@@ -199,21 +199,18 @@ $(document).ready ->
 
   $(".dash-box a").click (e) ->
     e.preventDefault()
+    box=$(this).parent()
+    id= box.data 'box'
+ 
 
     $(".slider").css "height", "auto"
 
-    if $(".slider .single").hasClass("active")
-      $(".slider .single").removeClass("active")
-      $(".slider-valor").addClass("active")
+    $(".slider-valor").removeClass("active")
 
-      heightSlider = $(".slider-valor").height()
-      $(".slider").height heightSlider
-    else
-      $(".slider-valor").removeClass("active")
-      $(".slider .single").addClass("active")
+    $('#box_'+id).addClass("active")
 
-      heightSlider2 = $(".slider .single").height()
-      $(".slider").height heightSlider2
+    heightSlider = $('box_'+id).height()
+    $(".slider").height heightSlider
 
   $(".slider .close").click ->
     $(".slider").css "height", "auto"
@@ -228,20 +225,17 @@ $(document).ready ->
   $(".position-info .btn-primary").click (e) ->
     e.preventDefault()
 
-    $(".slider").css "height", "auto"
+    box=$(this).parent().parent()
+    id= box.data 'box'
 
-    if $(".careers-position .single").hasClass("active")
-      $(".careers-position .single").removeClass("active")
-      $(".slider-position").addClass("active")
+    $(".careers-position").css "height", "auto"    
 
-      heightSlider = $(".slider-position").height()
-      $(".careers-position").height heightSlider
-    else
-      $(".slider-position").removeClass("active")
-      $(".careers-position .single").addClass("active")
+    $(".slider-position").removeClass("active")
 
-      heightSlider2 = $(".careers-position .single").height()
-      $(".careers-position").height heightSlider2
+    $('#boxp_'+id).addClass("active")
+
+    heightSlider2 = $(".careers-position .single").height()
+    $(".careers-position").height heightSlider2
 
   $(".careers-position .close").click ->
     $(".careers-position").css "height", "auto"
