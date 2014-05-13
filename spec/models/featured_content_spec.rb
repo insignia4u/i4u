@@ -1,17 +1,6 @@
 require 'spec_helper'
 
 describe FeaturedContent do
-
-
-
-  describe "Attributes accessibility" do
-    it { should     respond_to(:site) }
-    it { should     respond_to(:name) }
-    it { should     respond_to(:body) }
-    it { should     respond_to(:image)}
-    it { should     respond_to(:slug) }
-  end
-
   describe "Validations" do
     it { should validate_presence_of(:site) }
     it { should validate_presence_of(:name) }
@@ -40,5 +29,4 @@ describe FeaturedContent do
       end
     end
   end
-
 end

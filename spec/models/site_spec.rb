@@ -1,12 +1,6 @@
 require 'spec_helper'
 
 describe Site do
-  describe "attributes accessibility" do
-    it { should     respond_to(:name) }
-    it { should     respond_to(:abbreviation) }
-    it { should_not have_accessible(:live) }
-  end
-
   describe "validations" do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:abbreviation) }

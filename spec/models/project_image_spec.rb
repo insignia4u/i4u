@@ -1,11 +1,6 @@
 require 'spec_helper'
 
 describe ProjectImage do
-  describe "Attributes accessibility" do
-    it { should respond_to(:image) }
-    it { should respond_to(:description) }
-  end
-
   describe "Validations" do
     it { should validate_presence_of(:image) }
   end
@@ -35,15 +30,6 @@ describe ProjectImage do
       it "have a paperclip filed named image" do
         @project_image.image.should be_an_instance_of(Paperclip::Attachment)
       end
-    end
-
-    context "validations" do
-      it { should have_attached_file(:image) }
-      it { should validate_attachment_presence(:image) }
-      it { should validate_attachment_content_type(:image).
-            allowing('image/png', 'image/jpeg').
-            rejecting('text/plain', 'text/xml')
-      }
     end
   end
 end
