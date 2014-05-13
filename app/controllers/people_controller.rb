@@ -1,12 +1,5 @@
-class PeopleController < InheritedResources::Base
-  actions :index
+class PeopleController < ApplicationController
+  expose(:team) { current_site.people.by_position }
 
-  protected
-    def begin_of_association_chain
-      current_site
-    end
-
-    def collection
-      @people ||= end_of_association_chain.by_position
-    end
+  def index; end
 end
