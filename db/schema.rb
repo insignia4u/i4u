@@ -19,14 +19,14 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.integer  "author_id"
     t.string   "author_type"
     t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.string   "namespace"
   end
 
   add_index "active_admin_comments", ["author_type", "author_id"], :name => "index_active_admin_comments_on_author_type_and_author_id"
   add_index "active_admin_comments", ["namespace"], :name => "index_active_admin_comments_on_namespace"
-  add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_active_admin_comments_on_resource_type_and_resource_id"
+  add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
 
   create_table "admin_users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
@@ -61,8 +61,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "site_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.string   "image_caption"
     t.boolean  "is_event",           :default => false
   end
@@ -82,8 +82,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.text     "summary"
     t.string   "slug"
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
   add_index "attachment_files", ["slug"], :name => "index_attachment_files_on_slug", :unique => true
@@ -92,8 +92,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.string   "name"
     t.string   "slug"
     t.integer  "site_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "categories", ["slug"], :name => "index_categories_on_slug", :unique => true
@@ -105,12 +105,9 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.text     "text"
     t.integer  "comments_id"
     t.integer  "article_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
-
-  add_index "comments", ["article_id"], :name => "index_comments_on_article_id"
-  add_index "comments", ["comments_id"], :name => "index_comments_on_comments_id"
 
   create_table "featured_contents", :force => true do |t|
     t.string   "name",               :null => false
@@ -120,8 +117,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "site_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "slug"
   end
 
@@ -140,8 +137,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
 
   create_table "newsletter_subscribers", :force => true do |t|
     t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.boolean  "on_mail_chimp_list", :default => false
   end
 
@@ -153,8 +150,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.string   "first_name"
     t.string   "last_name"
     t.text     "bio"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
@@ -172,8 +169,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.datetime "image_updated_at"
     t.text     "description"
     t.integer  "project_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   add_index "project_images", ["project_id"], :name => "index_project_images_on_project_id"
@@ -181,8 +178,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
   create_table "project_technologies", :force => true do |t|
     t.integer  "project_id"
     t.integer  "technology_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   add_index "project_technologies", ["project_id"], :name => "index_project_technologies_on_project_id"
@@ -191,8 +188,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
   create_table "project_tools", :force => true do |t|
     t.integer  "project_id"
     t.integer  "tool_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "project_tools", ["project_id"], :name => "index_project_tools_on_project_id"
@@ -208,8 +205,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.date     "started_at"
     t.date     "ended_at"
     t.boolean  "highlighted",                 :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -227,8 +224,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.integer  "site_id"
     t.string   "title"
     t.text     "summary"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -242,8 +239,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.string   "name"
     t.string   "url"
     t.string   "slug"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "site_sections", ["site_id"], :name => "index_site_sections_on_site_id"
@@ -253,14 +250,14 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.string   "name"
     t.string   "abbreviation"
     t.boolean  "live",         :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "technologies", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "position"
     t.text     "description"
   end
@@ -270,8 +267,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.string   "video_id"
     t.boolean  "published",    :default => false
     t.datetime "published_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "text_snippets", :force => true do |t|
@@ -280,8 +277,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.string   "title"
     t.text     "body"
     t.string   "slug"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -303,8 +300,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.datetime "published_at"
     t.string   "slug"
     t.integer  "site_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "link"
   end
 
@@ -312,8 +309,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
 
   create_table "tools", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "position"
     t.text     "description"
   end
@@ -323,8 +320,8 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.string   "subtitle"
     t.text     "description"
     t.integer  "site_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
