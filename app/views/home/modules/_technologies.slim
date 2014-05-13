@@ -1,5 +1,5 @@
 ul.box-dashed.four
-  - @technologies.each do |technology|
+  - StaticContent::Technologies.data.each do |technology|
     li
       .circle
         i class="icon-#{technology[:icon_type]}" = technology[:icon_text]

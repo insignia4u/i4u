@@ -1,7 +1,7 @@
 #cases.carousel.slide.carousel-fade
   .carousel-inner
-    - featured_projects.each do |project|
-      .item class=active_if_first(@featured_projects,project)
+    - projects.each do |project|
+      .item class=active_if_first(projects, project)
         figure title="" data-media600=project.image.url(:normal) data-media440=project.image.url(:medium) data-media=project.image.url(:small)
 
           = image_tag project.image.url(:small)

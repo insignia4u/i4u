@@ -14,7 +14,7 @@ module Populator
           title:      titles.sample,
           first_name: Faker::Name.first_name,
           last_name:  Faker::Name.last_name,
-          bio:        Faker::Lorem.sentence(1),
+          bio:        Faker::Lorem.sentence(1)[0,55],
           photo:      photo
         )
       end

@@ -1,19 +1,19 @@
-/ section.news
-/   .primary-title
-/     h2 News
+section.news
+  .primary-title
+    h2 News
 
-/   ul
-/     - @articles_most_recents.each do |article|
-/       li.news-item.equal5
-/         .published-at
-/           i.icon-calendar
-/           = article.created_at.to_date.to_formatted_s(:long_ordinal)
-/         .title
-/           = article.subtitle
-/         h3
-/           = article.title
-/         .description
-/           = textilize(article.description)
+  ul
+    - recent_news.each do |article|
+      li.news-item.equal5
+        .published-at
+          i.icon-calendar
+          = article.created_at.to_date.to_formatted_s(:long_ordinal)
+        .title
+          = article.subtitle
+        h3
+          = article.title
+        .description
+          = textilize(article.description)
 
-/         a.more href="#{blog_article_path(article)}" target="_blank"
-/           | Read more
+        a.more href="#{blog_article_url(article)}" target="_blank"
+          | Read more
