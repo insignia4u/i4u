@@ -1,6 +1,6 @@
 .careers-title.cover1
   .layer data-depth="0.10"
-    h2 valores
+    h2 Values
 
   .cover
 section.slider
@@ -13,8 +13,7 @@ section.slider
               li 
                 .dash-box data-box=value.id
                   .dash-box-title
-                    h3=value.title
-
+                    h3.font-primary=value.title
                   span.dash-box-circle
                   a href="" 
                     | See more
@@ -30,13 +29,13 @@ section.slider
     - @values.each do |value|
       .single id="box_#{value.id}"
         .single-title
-          h2=value.title
+          h2.font-primary=value.title
 
         .single-content
           .container
             .close-top.close x
             - if value.subtitle
-              h3=value.subtitle
+              h3.font-primary=value.subtitle
             p=value.description
 
             - if value.image
@@ -44,5 +43,5 @@ section.slider
 
             .close-bottom.close
               | x
-              span Cerrar
+              span Close
           section.dashed-separator
