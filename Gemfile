@@ -36,7 +36,6 @@ group :development do
   gem 'quiet_assets'
   gem "spring-commands-rspec"
   gem 'spring'
-  gem 'rb-fsevent' if `uname` =~ /Darwin/
 end
 
 # Test Suite
