@@ -1,5 +1,5 @@
-- featured_contents.each do |item|
-  .item class=active_if_first(featured_contents,item)
+- slider.each do |item|
+  .item class=active_if_first(slider, item)
     figure title="" data-media600=item[:image][:medium] data-media440=item[:image][:medium] data-media=item[:image][:small]
       = image_tag( item[:image][:small] )
 

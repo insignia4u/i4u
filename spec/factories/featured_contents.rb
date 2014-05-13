@@ -3,8 +3,11 @@
 FactoryGirl.define do
   factory :featured_content do
     site
-    name "MyString"
-    image { FactoryGirl::AttachmentHelper.uploaded_image }
-    body "MyText"
+    sequence(:name) { |n| "Featured content ##{n}" }
+    sequence(:body) { |n| "Featured description ##{n}" }
+    image_file_name    "pic.jpg"
+    image_content_type "image/jpeg"
+    image_file_size    "81386"
+    image_updated_at   Time.now
   end
 end

@@ -1,8 +1,8 @@
 ul.box-dashed.four
-  - tools.each do |tool|
+  - StaticContent::Tools.data.each do |tool|
     li
       .circle.blue
         i class="icon-#{tool[:icon_type]}"
       h3
-        | 
+        |
         = tool[:title]

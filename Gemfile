@@ -15,6 +15,7 @@ gem 'draper',               '0.18.0'
 gem 'dalli',                '2.6.0'
 gem 'strong_parameters',    '0.2.0'
 gem 'virtus'
+gem 'decent_exposure'
 
 # Engines
 gem 'devise',               '2.1.0'
@@ -32,12 +33,16 @@ gem 'memcachier'
 group :development do
   gem 'taps',                '0.3.24'
   gem 'populator'
+  gem 'quiet_assets'
+  gem "spring-commands-rspec"
+  gem 'spring'
+  gem 'rb-fsevent' if `uname` =~ /Darwin/
 end
 
 # Test Suite
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails',        '2.10.1'
+  gem 'rspec-rails',        '2.14.2'
   gem 'factory_girl_rails', '3.4.0'
   gem 'faker',              '1.0.1'
 end
@@ -46,6 +51,7 @@ group :test do
   gem 'capybara'
   gem 'shoulda-matchers',    '1.4.2'
   gem 'database_cleaner',    '0.9.1'
+  gem 'launchy'
   gem 'simplecov'
 end
 

@@ -17,6 +17,7 @@ RSpec.configure do |config|
   config.include Paperclip::Shoulda::Matchers
   config.include Capybara::DSL
   config.include Capybara::RSpecMatchers, type: :feature
+  config.include IntegrationHelpers,      type: :feature
   config.include Devise::TestHelpers,     type: :controller
   config.extend  ControllerMacros,        type: :controller
 

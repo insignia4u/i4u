@@ -1,4 +1,4 @@
-Teamoti
+Insignia Official Site
 =======
 
 Dependencies
