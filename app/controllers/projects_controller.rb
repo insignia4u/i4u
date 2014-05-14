@@ -1,19 +1,10 @@
-class ProjectsController < InheritedResources::Base
+class ProjectsController < ApplicationController
+  expose(:project)      { current_site.projects.find(params[:id]) }
+  expose(:picks)        { current_site.featured_projects }
+  expose(:projects)     { current_site.projects.recent_jobs }
+  expose(:technologies) { project.technologies.by_position }
+  expose(:tools)        { project.tools.by_position }
 
-  def index
-    @recent_jobs          = current_site.projects.recent_jobs
-    @projects             = current_site.projects_by_created_date
-    @highlighted_projects = current_site.featured_projects
-  end
-
-  def show
-    @technologies = resource.technologies.by_position
-    @tools        = resource.tools.by_position
-  end
-
-  protected
-
-  def begin_of_association_chain
-    current_site
-  end
+  def index; end
+  def show; end
 end

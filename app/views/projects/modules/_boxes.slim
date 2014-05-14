@@ -1,15 +1,15 @@
 ul
 
-  - if resource.started_at and resource.ended_at
+  - if project.started_at and project.ended_at
     li.equal4
       .circle.blue
         i.icon-calendar
 
       h3 = title_for('duration-project-header')
       p
-        = resource.started_at.strftime('%B %d, %Y')
+        = project.started_at.strftime('%B %d, %Y')
         br
-        = resource.ended_at.strftime('%B %d, %Y')
+        = project.ended_at.strftime('%B %d, %Y')
 
   - if technologies.any?
     li.equal4
