@@ -1,8 +1,7 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
-  factory :category, :class => 'Categories' do
-    name "MyString"
-    slug "MyString"
+  factory :category do
+    site
+
+    sequence(:name) { |n| "Category ##{n}" }
   end
 end

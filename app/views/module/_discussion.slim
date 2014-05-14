@@ -1,9 +1,9 @@
-- if @article.comments.any?
+- if article.comments.any?
   .discussion
-    h2= pluralize(@article.count_comments, 'Comentario', 'Comentarios')
+    h2= pluralize(article.count_comments, 'Comentario', 'Comentarios')
 
     ol
-      - @article.comments.each do |comment|
+      - article.comments.each do |comment|
         li
           .comment
             .comment-bubble.bubble-top
@@ -18,23 +18,3 @@
             .comment-author
               strong= comment.get_name_or_anony
               = " - #{comment.created_at.strftime("%d de %B, %Y a las %H:%M")}"
-
-        /ol
-        /  li
-        /    .comment
-        /      .comment-bubble.bubble-top
-        /      .comment-text
-        /        p
-        /          | Curabitur blandit tempus porttitor. Nullam quis risus eget urna
-        /          | llis ornare vel eu leo. Curabitur blandit tempus porttitor. Duis
-        /          | mollis, est non commodo luctus, nisi erat porttitor ligula, eget
-        /          | lacinia odio sem nec elit.
-
-        /        .retry
-        /          i.icon-redo
-        /          span
-        /      .comment-bubble.bubble-bottom
-/
-/              .comment-author
-/                strong Jack Bauer
-/                |  - 23 de Noviembre, 2012 a las 9:49

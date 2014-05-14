@@ -56,10 +56,10 @@ feature "Homepage" do
   end
 
   scenario "presenting three latest news" do
-    article_1 = create(:article, site: current_site, publication_date: 1.day.ago.to_date, publication_state: 1)
-    article_2 = create(:article, site: current_site, publication_date: 2.day.ago.to_date, publication_state: 1)
-    article_3 = create(:article, site: current_site, publication_date: 3.day.ago.to_date, publication_state: 1)
-    article_4 = create(:article, site: current_site, publication_date: 4.day.ago.to_date, publication_state: 1)
+    article_1 = create_published_article(current_site, 1.day.ago.to_date)
+    article_2 = create_published_article(current_site, 2.day.ago.to_date)
+    article_3 = create_published_article(current_site, 3.day.ago.to_date)
+    article_4 = create_published_article(current_site, 4.day.ago.to_date)
 
     visit "/"
 
