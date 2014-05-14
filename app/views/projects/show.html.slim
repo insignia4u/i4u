@@ -1,18 +1,16 @@
 section.project-page
   .primary-title
-    h2 = resource.name
+    h2 = project.name
 
-  = render 'projects/modules/carousel', resource: resource
+  = render 'projects/modules/carousel'
 
   .carousel-caption
-    = textilize(resource.description)
+    = textilize(project.description)
 
-  = link_to 'Visit Site', resource.url, class: 'more'
+  = link_to 'Visit Site', project.url, class: 'more'
 
 section.more-info
   .primary-title
     h2.blue = title_for('more-info')
 
-  = render 'projects/modules/boxes', resource: resource,
-                                     technologies: @technologies,
-                                     tools: @tools
+  = render 'projects/modules/boxes'

@@ -1,8 +1,6 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :tool do
-    title "Foo Name"
-    description 'Bar Description'
+    sequence(:title) { |n| "Tool ##{n}" }
+    sequence(:description) { |n| "Tool ##{n} Description" }
   end
 end
