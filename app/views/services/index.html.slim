@@ -2,7 +2,7 @@ section.services
   .primary-title
     h2 = title_for('our-services-title').strip
   ul.box-dashed.two
-    - @services_snippet.each do |service|
+    - StaticContent::Services.data.each do |service|
       li.equal
         h3 = title_for("#{service[:snippet]}-text-snippet")
         p == body_for("#{service[:snippet]}-text-snippet",true)
@@ -11,7 +11,7 @@ section.process
     h2 = title_for('our-process').strip
 
   ul
-    - @services_snippet.each_with_index do |name,i|
+    - StaticContent::Services.data.each_with_index do |name,i|
       li
         i class="icon-#{name[:icon_type]}"
 
