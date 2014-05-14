@@ -367,7 +367,7 @@
     }
 
     @include breakpoint(desktop){
-      background:url(asset_path("background-pattern.gif", image)) repeat 0 0;
+      background:#E8E8E8;
       left:384px;
       width:405px;
       padding:0;
