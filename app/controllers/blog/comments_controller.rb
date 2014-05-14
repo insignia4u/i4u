@@ -1,24 +1,21 @@
 class Blog::CommentsController < ApplicationController
-  def index
-  end
-
-  def new
-  end
-
   def create
-    article = Article.find(params[:article_id])
-    comment = Comment.new(comment_params)
-    comment.article = article
+    comment = current_article.comments.build(comment_params)
     if comment.save
-      redirect_to blog_article_path(article), success: 'Comment added successfully.'
+      redirect_to blog_article_path(current_article),
+        success: 'Comment added successfully.'
     else
-      redirect_to blog_article_path(article), error: 'Comment error.'
+      redirect_to blog_article_path(current_article),
+        error: 'Comment error.'
     end
   end
 
-  private
+private
+  def current_article
+    @article ||= current_site.articles.find(params[:article_id])
+  end
 
-    def comment_params
-      params.require(:comment).permit(:name, :email, :website, :text)
-    end
+  def comment_params
+    params.require(:comment).permit(:name, :email, :website, :text)
+  end
 end

@@ -3,7 +3,7 @@ section.blog
     h2 Our Blog
   = render "blog/articles/modules/aside"
   .column.listpost
-    - @articles.each do |article|
+    - articles.each do |article|
       article
         .comment
           = article.count_comments
@@ -27,7 +27,7 @@ section.blog
         = article.summary
 
         = link_to blog_article_path(article), class: 'bottom-link' do
-          | Seguir leyendo
+          | Read more
           span +
 
         - if article.categories
@@ -35,4 +35,4 @@ section.blog
             - article.categories.each do |category|
               = link_to category.name, blog_category_path(category.slug)
 
-    = link_to_next_page @articles, 'Older Entries', class: 'btn'
+    = link_to_next_page articles, 'Older Entries', class: 'btn'

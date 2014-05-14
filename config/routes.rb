@@ -19,7 +19,7 @@ I4u::Application.routes.draw do
   namespace :blog do
     get '/categories/:category', to: "category#index", as: 'category'
     resources :articles, only: [:index,:show] do
-      resource :comments
+      resource :comments, only: [:create]
     end
     get 'tips/:type', to: "tips#index", as: 'tips'
     get 'tips/:type/:year/:month', to: "tips#index", as: 'filter_tips'

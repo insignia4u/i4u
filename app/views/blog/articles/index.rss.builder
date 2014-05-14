@@ -5,7 +5,7 @@ xml.rss version: "2.0" do
     xml.description "Post"
     xml.link blog_articles_url
 
-    @articles.each do |article|
+    rss_feed.each do |article|
       xml.item do
         xml.title article.title
         xml.description article.content

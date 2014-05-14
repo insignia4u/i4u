@@ -1,9 +1,9 @@
-- if @article.comments.any?
+- if article.comments.any?
   .discussion
-    h2= pluralize(@article.count_comments, 'Comentario', 'Comentarios')
+    h2= pluralize(article.count_comments, 'Comentario', 'Comentarios')
 
     ol
-      - @article.comments.each do |comment|
+      - article.comments.each do |comment|
         li
           .comment
             .comment-bubble.bubble-top
