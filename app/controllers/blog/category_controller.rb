@@ -1,18 +1,24 @@
 class Blog::CategoryController < Blog::BaseController
-  layout "blog"
-  before_filter :find_category
+  before_filter :check_a_valid_category_has_been_requested
+
+  expose(:articles) {
+    current_category.published_articles.page(params[:page]).per(3)
+  }
 
   def index
-    @articles = (@category)? @category.published_articles.page(params[:page]).per(3) : Article.most_recents
     render "blog/articles/index"
   end
 
-  private
-  def category
-    params[:category]
+private
+  def current_category
+    @category ||= begin
+      current_site.categories.find(params[:category])
+    rescue ActiveRecord::RecordNotFound
+      nil
+    end
   end
 
-  def find_category
-    @category = Category.find(category)
+  def check_a_valid_category_has_been_requested
+    redirect_to '/blog' unless current_category
   end
 end
