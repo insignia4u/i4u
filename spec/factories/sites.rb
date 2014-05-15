@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :site do
-    name           "Foo Bar Site"
-    abbreviation   { ("aa".."zz").to_a.sample }
+    sequence(:name) { |n| "Site ##{n}" }
+    sequence(:abbreviation) { |n| "si-#{n}" }
   end
 end
