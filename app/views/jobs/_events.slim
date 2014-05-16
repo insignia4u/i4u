@@ -1,4 +1,4 @@
-- if @events.present?
+- unless recent_events.empty?
   .careers-title.cover4
     .layer data-depth="0.10"
       h2 eventos y conferencias
@@ -7,7 +7,7 @@
   section.news
     .content
       ul
-        - @events.each do |event|
+        - recent_events.each do |event|
           li.news-item.equal5
             .published-at
               i.icon-calendar

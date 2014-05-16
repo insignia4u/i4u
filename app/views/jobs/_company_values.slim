@@ -1,21 +1,21 @@
-.careers-title.cover1
-  .layer data-depth="0.10"
-    h2 Values
+- unless values.empty?
+  .careers-title.cover1
+    .layer data-depth="0.10"
+      h2 Values
 
-  .cover
-section.slider
-  .slider-valor.active
-    - if @values
+    .cover
+  section.slider
+    .slider-valor.active
       .container
         #slider-valor
           ul
-            - @values.each do |value|
-              li 
+            - values.each do |value|
+              li
                 .dash-box data-box=value.id
                   .dash-box-title
                     h3.font-primary=value.title
                   span.dash-box-circle
-                  a href="" 
+                  a href="#"
                     | See more
                     span.back-box-circle
                       span.plus +
@@ -25,8 +25,7 @@ section.slider
             i.icon-titleright
           #pager-valor
 
-  - if @values
-    - @values.each do |value|
+    - values.each do |value|
       .single id="box_#{value.id}"
         .single-title
           h2.font-primary=value.title

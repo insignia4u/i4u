@@ -15,6 +15,6 @@ class Notifier < ActionMailer::Base
 protected
   def subject_for(message)
     name = message.name
-    message.is_to_job ? "Job Applications: #{mame}" : "Message: #{name}"
+    message.is_to_job ? "Job Applications: #{name}" : "Message: #{name}"
   end
 end

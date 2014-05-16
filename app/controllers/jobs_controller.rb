@@ -1,22 +1,20 @@
 class JobsController < ApplicationController
   layout "jobs"
 
-  def new
-    @message   = Message.new
-    @testimony = Testimony.published
-    @values    = Value.all
-    @events    = Article.published.events.latest_first.limit(3)
-  end
+  expose(:message)   { Message.new(params[:message]) }
+  expose(:testimony) { Testimony.published }
+  expose(:values)    { current_site.values.all }
+  expose(:recent_events)    {
+    current_site.articles.published.events.latest_first.limit(3)
+  }
+
+  def new; end
 
   def create
-    @message = Message.new(params[:message])
-
-    if @message.send!
-      redirect_to new_job_path, notice: "Your cv was successfully sent."
+    message.is_to_job = true
+    if message.send!
+      redirect_to jobs_path, notice: "Your application was successfully sent."
     else
-      @testimony = Testimony.published
-      @values    = Value.all
-      @events    = Article.published.events.latest_first.limit(3)
       render :new
     end
   end

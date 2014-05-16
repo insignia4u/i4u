@@ -19,5 +19,11 @@ FactoryGirl.define do
       publication_state       1
       publication_date        DateTime.now - 1
     end
+
+    factory :published_event do
+      is_event          true
+      publication_state 1
+      sequence(:publication_date) { |n| n.days.ago }
+    end
   end
 end
