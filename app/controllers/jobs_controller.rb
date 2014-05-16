@@ -2,17 +2,16 @@ class JobsController < ApplicationController
   layout "jobs"
 
   def new
-    @message   = Message.new(is_to_job: true)
+    @message   = Message.new
     @testimony = Testimony.published
     @values    = Value.all
     @events    = Article.published.events.latest_first.limit(3)
   end
 
   def create
-    @message = Message.build_with(params[:message])
+    @message = Message.new(params[:message])
 
-    if @message.valid?
-      Notifier.contact_message(@message).deliver
+    if @message.send!
       redirect_to new_job_path, notice: "Your cv was successfully sent."
     else
       @testimony = Testimony.published

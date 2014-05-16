@@ -21,20 +21,13 @@ class Message
 
   validates :file, presence: true, if: :is_to_job
 
-  def self.build_with(attrs)
-    builder         = new(attrs)
-    builder.subject = "CV to #{@name}" if builder.is_to_job
+  def send!
+    return false unless valid?
 
-    builder
-  end
-
-  def persisted?
-    false
-  end
-
-  #Used to be compatible with ErrorDecorator
-  def new_record?
+    Notifier.contact_message(self).deliver
     true
   end
 
+  def persisted?; false; end
+  def new_record?; true; end
 end
