@@ -1,9 +1,9 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
-  factory :value, :class => 'Value' do
-    title "MyString"
-    subtitle "MyString"
-    description "MyText"
+  factory :value do
+    site
+
+    sequence(:title) { |n| "Value ##{n}" }
+    sequence(:subtitle) { |n| "Value Subtitle ##{n}" }
+    sequence(:description) { |n| "Value Description ##{n}" }
   end
 end

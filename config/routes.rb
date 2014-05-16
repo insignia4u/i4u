@@ -22,11 +22,11 @@ I4u::Application.routes.draw do
     get 'tips/:type/:year/:month', to: "tips#index", as: 'filter_tips'
   end
 
-  get  "/contact" => 'contacts#new'
-  post "/contact" => 'contacts#create'
+  get  '/contact' => 'contacts#new'
+  post '/contact' => 'contacts#create'
 
-  get  'job' => 'jobs#new',    as: :new_job
-  post 'job' => 'jobs#create', as: :job
+  get  '/jobs' => 'jobs#new'
+  post '/jobs' => 'jobs#create'
 
   match 'blog' => 'blog/articles#index', as: 'blog_path'
 
