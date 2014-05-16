@@ -120,6 +120,8 @@ GEM
     girl_friday (0.11.2)
       connection_pool (~> 1.0)
       rubinius-actor
+    haml (4.0.5)
+      tilt
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
@@ -145,6 +147,16 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mailcatcher (0.2.4)
+      eventmachine
+      haml
+      i18n
+      json
+      mail
+      sinatra
+      skinny (>= 0.1.2)
+      sqlite3-ruby
+      thin
     memcachier (0.0.2)
     meta_search (1.1.3)
       actionpack (~> 3.1)
@@ -253,6 +265,9 @@ GEM
     simplecov-html (0.8.0)
     sinatra (1.0)
       rack (>= 1.0)
+    skinny (0.2.2)
+      eventmachine (~> 1.0)
+      thin
     slim (1.2.1)
       temple (~> 0.4.0)
       tilt (~> 1.3.3)
@@ -270,6 +285,8 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.8)
+    sqlite3-ruby (1.3.3)
+      sqlite3 (>= 1.3.3)
     strong_parameters (0.2.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -328,6 +345,7 @@ DEPENDENCIES
   jquery-rails (= 2.0.2)
   kaminari (= 0.15.0)
   launchy
+  mailcatcher
   memcachier
   mobile-fu (= 1.1.1)
   neat

@@ -2,7 +2,7 @@ section.contact-form
   .primary-title
     h2 = title_for('contact')
 
-  = form_for @message, url: contact_path, html: { multipart: true } do |f|
+  = form_for message, url: contact_path, html: { multipart: true } do |f|
     .box-first
       .f-text
         = f.text_field :name, placeholder: 'Name'

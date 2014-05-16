@@ -13,5 +13,9 @@ module IntegrationHelpers
       publication_date: date, publication_state: 1
     )
   end
+
+  def last_email
+    ActionMailer::Base.deliveries.last
+  end
 end
 

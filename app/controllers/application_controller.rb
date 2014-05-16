@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   has_mobile_fu false
 
+  decent_configuration do
+    strategy DecentExposure::StrongParametersStrategy
+  end
+
 protected
   def current_site
     language = session[:language] || "en"
