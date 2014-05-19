@@ -228,7 +228,7 @@ $(document).ready ->
     box=$(this).parent().parent()
     id= box.data 'box'
 
-    $(".careers-position").css "height", "auto"    
+    $(".careers-position").css "height", "auto"
 
     $(".slider-position").removeClass("active")
 

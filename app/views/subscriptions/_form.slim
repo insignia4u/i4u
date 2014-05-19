@@ -1,0 +1,6 @@
+#newsletter
+  = form_for subscriber, url: subscribe_path, html: { :class => "newletter" } do |f|
+    label Newsletter
+    p Subscribe to our Newsletter and frequent updates about our company in your inbox.
+    = f.email_field :email, placeholder: 'type in your email', class: 'email'
+    = f.submit 'Subscribe', class: "btn btn-subscribe"

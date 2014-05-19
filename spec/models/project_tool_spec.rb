@@ -1,11 +1,6 @@
 require 'spec_helper'
 
 describe ProjectTool do
-  describe "Attributes accessibility" do
-    it { should have_accessible(:project_id) }
-    it { should have_accessible(:tool_id) }
-  end
-
   describe "Validations" do
     it { should validate_presence_of(:project) }
     it { should validate_presence_of(:tool) }

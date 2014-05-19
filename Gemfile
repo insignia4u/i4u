@@ -16,6 +16,7 @@ gem 'dalli',                '2.6.0'
 gem 'strong_parameters',    '0.2.0'
 gem 'virtus'
 gem 'decent_exposure'
+gem 'spectator-validates_email', require: 'validates_email'
 
 # Engines
 gem 'devise',               '2.1.0'

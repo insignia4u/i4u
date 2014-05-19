@@ -1,11 +1,6 @@
 require 'spec_helper'
 
 describe ProjectTechnology do
-  describe "Attributes accessibility" do
-    it { should have_accessible(:project_id) }
-    it { should have_accessible(:technology_id) }
-  end
-
   describe "Validations" do
     it { should validate_presence_of(:project) }
     it { should validate_presence_of(:technology) }
