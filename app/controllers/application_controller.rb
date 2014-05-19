@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
     strategy DecentExposure::StrongParametersStrategy
   end
 
+  expose(:subscriber)  { NewsletterSubscriber.new }
+
 protected
   def current_site
     language = session[:language] || "en"

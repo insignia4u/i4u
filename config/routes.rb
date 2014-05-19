@@ -11,7 +11,6 @@ I4u::Application.routes.draw do
 
   resources :people, path: :staff,    only: :index
   resources :services,                only: :index
-  resources :newsletter_subscriber,   only: :create
 
   namespace :blog do
     get '/categories/:category', to: "category#index", as: 'category'
@@ -21,6 +20,8 @@ I4u::Application.routes.draw do
     get 'tips/:type', to: "tips#index", as: 'tips'
     get 'tips/:type/:year/:month', to: "tips#index", as: 'filter_tips'
   end
+
+  post '/subscribe' => 'subscriptions#create'
 
   get  '/contact' => 'contacts#new'
   post '/contact' => 'contacts#create'

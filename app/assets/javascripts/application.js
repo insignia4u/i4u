@@ -13,4 +13,5 @@
 //= require noty
 //= require jquery.stellar.min
 //= require iscroll
+//= require behaviors/newsletter_subscriptions
 //= require i4u
