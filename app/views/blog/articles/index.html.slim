@@ -6,7 +6,7 @@ section.blog
     - articles.each do |article|
       article
         .comment
-          = article.count_comments
+          = article.comments_count
           i.icon-comment
 
         .author= article.author

@@ -1,6 +1,6 @@
 - if article.comments.any?
   .discussion
-    h2= pluralize(article.count_comments, 'Comentario', 'Comentarios')
+    h2= pluralize(article.comments_count, 'Comentario', 'Comentarios')
 
     ol
       - article.comments.each do |comment|
