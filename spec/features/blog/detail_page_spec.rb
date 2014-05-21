@@ -17,7 +17,7 @@ feature "[Blog] Detail Page" do
     expect(page).to have_content(
       article.publication_date.strftime('%-d de %B, %Y')
     )
-    expect(page).to have_content(article.count_comments)
+    expect(page).to have_content(article.comments_count)
     expect(page).to have_content(article.content)
     expect(page).to have_content(category.name)
   end
@@ -29,8 +29,8 @@ feature "[Blog] Detail Page" do
 
     visit blog_article_path(article_2)
 
-    expect(find('a.l-previous')['href']).to eql(blog_article_path(article_3))
-    expect(find('a.l-next')['href']).to eql(blog_article_path(article_1))
+    expect(find('a.l-previous')['href']).to eql(blog_article_path(article_1))
+    expect(find('a.l-next')['href']).to eql(blog_article_path(article_3))
   end
 
   scenario "presenting article's comments" do

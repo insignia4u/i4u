@@ -22,7 +22,7 @@ section.blog
           i.icon-calendar-3
           = article.publication_date.strftime('%-d de %B, %Y')
         .comment
-          = article.count_comments
+          = article.comments_count
           i.icon-comment
 
       picture alt=""
@@ -67,14 +67,14 @@ section.blog
               li
                 = link_to category.name, blog_category_path(category.slug)
     .pagination
-      - if prev_article
-        = link_to blog_article_path(prev_article), class: 'l-previous' do
+      - if pager.previous
+        = link_to blog_article_path(pager.previous), class: 'l-previous' do
           span.icon-double-angle-left
-          span.l-back-text Anterior
+          span.l-back-text Previous
 
-      - if next_article
-        = link_to blog_article_path(next_article), class: 'l-next' do
-          span.l-back-text Siguiente
+      - if pager.next
+        = link_to blog_article_path(pager.next), class: 'l-next' do
+          span.l-back-text Next
           span.icon-double-angle-right
 
     = render "blog/articles/modules/discussion"
