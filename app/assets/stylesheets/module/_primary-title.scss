@@ -14,6 +14,7 @@
     display: block;
     position: relative;
     background: #E8E8E8;
+    background: url(asset-path("background-pattern.gif", image));
 
     &:before, &:after{
       display: inline-block;

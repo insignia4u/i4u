@@ -957,6 +957,7 @@
 
   .careers-position{
     background: #E8E8E8;
+    background: url(asset-path("background-pattern.gif", image));
     border-bottom: #000 dashed 1px;
     @media(max-width: 1024px){
       padding: 0;
