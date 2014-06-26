@@ -5,6 +5,7 @@ html, input, textarea{
 body{
   font-family: $font-primary;
   background: #E8E8E8;
+  background: url(asset-path("background-pattern.gif", image));
   font-weight: 700;
   color: $color-one;
   font-size: 100%;
