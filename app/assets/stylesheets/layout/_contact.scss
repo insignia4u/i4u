@@ -69,6 +69,14 @@
 }
 
 .contact-info{
+  .blue {
+    &:before {
+      color: #316baf;      
+    }
+    &:after {
+      color: #316baf;
+    }
+  }
 
   .list-contact{
     width: 100%;
