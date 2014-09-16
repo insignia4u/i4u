@@ -16,6 +16,19 @@ ActiveAdmin.register Project do
     redirect_to admin_project_path(project), notice: "This project is not highlight anymore!"
   end
 
+  member_action :publish, method: :put do
+    project = Project.find(params[:id])
+    message = project.publish!? {notice: "This project has been published!"} :
+      {alert: project.errors.full_messages}
+    redirect_to admin_project_path(project), message
+  end
+
+  member_action :unpublish, method: :put do
+    project = Project.find(params[:id])
+    project.unpublish!
+    redirect_to admin_project_path(project), notice: "This project is not longer published"
+  end
+
   action_item only: :show do
     link_to('Highlight this Project', highlight_admin_project_path(project), method: :put) unless project.highlighted?
   end
@@ -23,6 +36,15 @@ ActiveAdmin.register Project do
   action_item only: :show do
     link_to('Unhighlight this Project', unhighlight_admin_project_path(project), method: :put) if project.highlighted?
   end
+
+  action_item only: :show do
+    link_to('Publish this Project', publish_admin_project_path(project), method: :put) unless project.published?
+  end
+
+  action_item only: :show do
+    link_to('Unpulish this Project', unpublish_admin_project_path(project), method: :put) if project.published?
+  end
+
 
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs "Basic Information" do
@@ -95,6 +117,10 @@ ActiveAdmin.register Project do
       row "Highlighted" do
         project.highlighted ? 'Yes' : 'No'
       end
+
+      row "Published" do
+        project.published ? 'Yes' : 'No'
+      end
     end
   end
 
@@ -104,11 +130,20 @@ ActiveAdmin.register Project do
     column :url
     column ("Summary")   { |project| truncate(project.summary.gsub(/<.*?>/,''), :length => 84) }
     column ("Highlight") { |project| status_tag(project.highlight_state, :class => 'red') }
+    column ("Published") { |project| status_tag(project.publish_state, :class => 'green') }
     column :started_at
     column :ended_at
 
     column :actions do |project|
       link_to "Manage Images", [:admin, project, :project_images]
+    end
+
+    column :publish do |project|
+      if project.published?
+        link_to 'Unpublish', unpublish_admin_project_path(project), method: :put, :class=>"unpublished-link"
+      else
+        link_to 'Publish', publish_admin_project_path(project), method: :put, :class=>"published-link "
+      end
     end
 
     column "Technologies" do |project|

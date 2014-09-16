@@ -4,3 +4,37 @@
 
 // To customize the Active Admin interfaces, add your
 // styles here:
+
+.published-link {
+  text-decoration: none !important;
+  background: #7A73AA;
+  padding: 2px;
+  color: #FFF !important;
+  border-radius: 4px;  
+}
+
+.published-link:hover {
+  text-decoration: none !important;
+  background: #948EBD;
+  padding: 2px;
+  color: #FFF !important;
+  border-radius: 4px;  
+  font-weight: bold;
+}
+
+.unpublished-link {
+  text-decoration: none !important;
+  background: #AFACC4;
+  padding: 2px;
+  color: #FFF !important;
+  border-radius: 4px; 
+}
+
+.unpublished-link:hover {
+  text-decoration: none !important;
+  background: #BBB9C7;
+  padding: 2px;
+  color: #FFF !important;
+  border-radius: 4px; 
+  font-weight: bold;
+}

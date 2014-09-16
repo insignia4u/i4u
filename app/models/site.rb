@@ -35,6 +35,10 @@ class Site < ActiveRecord::Base
     projects.featured
   end
 
+  def published_projects
+    projects.published
+  end
+
   def live!
     self.live = true
     save!
