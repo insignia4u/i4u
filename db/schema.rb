@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140411135144) do
+ActiveRecord::Schema.define(:version => 20140916181507) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -216,6 +216,7 @@ ActiveRecord::Schema.define(:version => 20140411135144) do
     t.integer  "featured_image_file_size"
     t.datetime "featured_image_updated_at"
     t.string   "slug"
+    t.boolean  "published",                   :default => false
   end
 
   add_index "projects", ["slug"], :name => "index_projects_on_slug", :unique => true
