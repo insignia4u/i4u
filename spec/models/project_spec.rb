@@ -106,19 +106,15 @@ describe Project do
     before :each do
       @yesterday = create(:project, created_at: DateTime.yesterday)
       @today     = create(:project, created_at: DateTime.now)
+      @not_today = create(:project, created_at: DateTime.now, published: false)
       @tomorrow  = create(:project, created_at: DateTime.tomorrow)
     end
 
     describe "list recent jobs" do
-      context "with n" do
-        it "list the n projects order by creation date in descending order" do
-          Project.recent_jobs(2).should eq [@tomorrow, @today]
-        end
-      end
-
-      context "without n" do
-        it "list the 3 projects order by creation date in descending order" do
+      context "without unpublished" do
+        it "list the published projects order by creation date in descending order" do
           Project.recent_jobs.should eq [@tomorrow, @today, @yesterday]
+          Project.recent_jobs.should_not include(@not_today)
         end
       end
     end

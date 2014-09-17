@@ -11,6 +11,7 @@ FactoryGirl.define do
     started_at { "2000-06-13" }
     ended_at   { "2001-06-14" }
     highlighted false
+    published true
     image_file_name    "pic.jpg"
     image_content_type "image/jpeg"
     image_file_size    "81386"
