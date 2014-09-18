@@ -10,7 +10,14 @@ class Project
                      :medium    => "650x320",
                      :small     => "268x151",
                      :cms_thumb => "110x100" },
-        :convert_options => { :medium => "-crop 650x320+0+0" }
+
+        :convert_options => { :big       => "-crop 277x250+0+0",
+                              :thumb     => "-crop 234x230+0+0",
+                              :normal    => "-crop 818x403+0+0",
+                              :medium    => "-crop 650x320+0+0", 
+                              :small     => "-crop 268x151+0+0",
+                              :cms_thumb => "-crop 110x100+0+0"
+        }
 
       has_attached_file :featured_image,
         styles: { big: "940x555#", cms_thumb: "169x100#" }
