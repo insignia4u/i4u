@@ -20,7 +20,10 @@ class Project
         }
 
       has_attached_file :featured_image,
-        styles: { big: "940x555#", cms_thumb: "169x100#" }
+        :styles          => { :big       => "940x555",
+                              :cms_thumb => "169x100" },
+        :convert_options => { :big       => "-crop 940x555+0+0",
+                              :cms_thumb => "-crop 169x100+0+0" }
 
 
       validates_attachment :image, presence: true,
