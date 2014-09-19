@@ -372,7 +372,7 @@
       left:384px;
       width:405px;
       padding:0;
-      top: 5px;
+      top: 11px;
       position:absolute;
       border:0;
       min-height: initial !important;
@@ -428,7 +428,7 @@
 
   .more{
     @include breakpoint(desktop) {
-      left: 384px;
+      left: 635px;
       right: auto;
       text-align: center;
       bottom: 12px;

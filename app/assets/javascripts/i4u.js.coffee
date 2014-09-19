@@ -98,9 +98,11 @@ $(document).ready ->
 
   $('picture, figure').picture()
 
-  $('#cases, #intro, .carousel').carousel()
+  $('#intro, .carousel').carousel()
 
   $('#position').carousel "pause"
+
+  $('#cases').carousel('pause')
 
   $("#menu-btn, .tooglenav span").click ->
     $(".tooglenav .navbar").slideToggle "slow"
