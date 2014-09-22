@@ -24,7 +24,7 @@ class Site < ActiveRecord::Base
   end
 
   def home_content
-   featured_contents.limit(3)
+   featured_contents.ordered
   end
 
   def projects_by_created_date
