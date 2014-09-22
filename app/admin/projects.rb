@@ -171,8 +171,7 @@ ActiveAdmin.register Project do
       [ params.require(:project)
         .permit(:site_id, :description, :ended_at, :extended_description,
         :name, :started_at, :summary, :url, :image, :featured_image,
-        :technology_ids, :tool_ids, :site, :technologies, :tools,
-        :highlighted) ]
+        :site, :technologies, :tools, :highlighted, :tool_ids => [] , :technology_ids => []  ) ]
     end
   end
 
