@@ -5,18 +5,20 @@ feature "Homepage" do
     create_default_site
   end
 
-  scenario "presenting three latest featured content" do
+  scenario "presenting four latest featured content" do
     featured_1 = create(:featured_content, site: current_site)
     featured_2 = create(:featured_content, site: current_site)
     featured_3 = create(:featured_content, site: current_site)
     featured_4 = create(:featured_content, site: current_site)
+    featured_5 = create(:featured_content, site: current_site)
 
     visit "/"
 
     expect(page).to have_content(featured_1.body)
     expect(page).to have_content(featured_2.body)
     expect(page).to have_content(featured_3.body)
-    expect(page).not_to have_content(featured_4.body)
+    expect(page).to have_content(featured_4.body)
+    expect(page).not_to have_content(featured_5.body)
   end
 
   scenario "presenting three latest successful projects" do

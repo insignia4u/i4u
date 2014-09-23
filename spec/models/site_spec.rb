@@ -66,10 +66,10 @@ describe Site do
         @site.home_projects.count.should eq 3
       end
 
-      it "list three featured content for Home Page" do
+      it "list four featured content for Home Page" do
         featured_contents = []
 
-        3.times{ featured_contents << FactoryGirl.create(:featured_content, :site_id => @site.id) }
+        4.times{ featured_contents << FactoryGirl.create(:featured_content, :site_id => @site.id) }
         FactoryGirl.create(:featured_content, :site => @site)
 
         @site.home_content.should eq featured_contents
