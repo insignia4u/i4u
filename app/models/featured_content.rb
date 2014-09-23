@@ -16,7 +16,7 @@ class FeaturedContent < ActiveRecord::Base
 
   validates_attachment_presence :image
 
-  scope :ordered, order("name ASC").limit(3)
+  scope :ordered, order("name ASC").limit(4)
 
   friendly_id :name, use: [:slugged, :history]
 end
