@@ -5,7 +5,7 @@ section.project-page
   = render 'projects/modules/carousel'
 
   .carousel-caption
-    = textilize(project.description)
+    = textilize(project.extended_description)
 
   = link_to 'Visit Site', project.url, class: 'more'
 
