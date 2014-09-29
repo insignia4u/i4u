@@ -32,7 +32,7 @@ feature "Projects Page" do
       visit project_path(project)
 
       expect(page).to have_content(project.name)
-      expect(page).to have_content(project.description)
+      expect(page).to have_content(project.extended_description)
       expect(page).to have_link('Visit Site', href: project.url)
     end
 
