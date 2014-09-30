@@ -45,9 +45,7 @@ feature "Projects Page" do
       visit project_path(project)
 
       expect(page).to have_content(tool_1.title)
-      expect(page).to have_content(tool_1.description)
       expect(page).not_to have_content(tool_2.title)
-      expect(page).not_to have_content(tool_2.description)
     end
 
     scenario "presenting project technologies" do
@@ -59,9 +57,7 @@ feature "Projects Page" do
       visit project_path(project)
 
       expect(page).to have_content(technology_1.title)
-      expect(page).to have_content(technology_1.description)
       expect(page).not_to have_content(technology_2.title)
-      expect(page).not_to have_content(technology_2.description)
     end
   end
 end
