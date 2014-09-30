@@ -1,6 +1,6 @@
 class Technology < ActiveRecord::Base
 
-  validates :title, :description, presence: true
+  validates :title, presence: true
 
   scope :top, ->(l) { limit(l) }
   scope :by_position, order(:position)
