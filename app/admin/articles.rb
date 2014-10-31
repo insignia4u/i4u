@@ -86,8 +86,8 @@ ActiveAdmin.register Article do
       f.input :image, label: 'Hightligh Image',
         hint: (f.object.new_record? ? "" : f.object.image.url), as: :file
       f.input :image_caption, hint: "It is the images' caption"
-      f.input :content
-      f.input :summary, hint: "summary its show in blog"
+      f.input :content, hint: "You can use textile format to write this"
+      f.input :summary, hint: "summary its show in blog with textile format"
       f.input :publication_state, label: 'Publication state', as: :select,
         collection: [['Draft',0],['Published',1]]
       f.input :publication_date
