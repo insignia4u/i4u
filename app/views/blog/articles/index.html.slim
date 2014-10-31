@@ -1,6 +1,8 @@
 section.blog
   .primary-title
-    h2 Our Blog
+    h2
+      = title_for("our-blog")
+
   = render "blog/articles/modules/aside"
   .column.listpost
     - articles.each do |article|
@@ -35,4 +37,4 @@ section.blog
             - article.categories.each do |category|
               = link_to category.name, blog_category_path(category.slug)
 
-    = link_to_next_page articles, 'Older Entries', class: 'btn'
+    = link_to_next_page articles, title_for("older-entries"), class: 'btn'
