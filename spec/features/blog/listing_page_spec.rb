@@ -18,7 +18,7 @@ feature "[Blog] Listing Page" do
     expect(page).to have_content(article_3.title)
     expect(page).not_to have_content(article_4.title)
 
-    click_link "Older Entries"
+    click_link "older-entries"
 
     expect(page).to have_content(article_4.title)
     expect(page).not_to have_content(article_1.title)
