@@ -16,7 +16,7 @@ feature "Commenting" do
     fill_in "comment[text]",    with: "hello!"
 
     expect {
-      click_button "Enviar"
+      click_button "send-comment"
     }.to change { article.reload.comments.count }.by(1)
 
     latest_comment = Comment.last
@@ -31,7 +31,7 @@ feature "Commenting" do
     visit blog_article_path(article)
 
     expect {
-      click_button "Enviar"
+      click_button "send-comment"
     }.not_to change { article.reload.comments.count }.by(1)
   end
 end
