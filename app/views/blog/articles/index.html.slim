@@ -24,7 +24,7 @@ section.blog
         h3
           = link_to article.title, blog_article_path(article)
 
-        = article.summary
+        = raw(article.summary)
 
         = link_to blog_article_path(article), class: 'bottom-link' do
           | Read more
