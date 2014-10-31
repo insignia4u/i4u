@@ -1,6 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require smoothscroll
 //= require jquery.transit.min
 //= require easing
 //= require jquery-picture.min
@@ -12,6 +11,5 @@
 //= require jquery.reject
 //= require noty
 //= require jquery.stellar.min
-//= require iscroll
 //= require behaviors/newsletter_subscriptions
 //= require i4u
