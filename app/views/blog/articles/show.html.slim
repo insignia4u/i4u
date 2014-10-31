@@ -1,7 +1,8 @@
 section.blog
 
   .primary-title
-    h2 Our Blog
+    h2
+      = title_for("our-blog")
 
   = link_to blog_articles_path, class: 'l-back' do
     span.icon-double-angle-left
