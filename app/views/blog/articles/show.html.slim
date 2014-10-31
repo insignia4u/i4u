@@ -35,12 +35,12 @@ section.blog
 
           noscript
             img src=asset_path("blog-photo02.jpg") alt=""
-      - if article.image_caption
+      - if article.image_caption.present?
         .labelphoto= article.image_caption
       - else
         br
 
-      = raw(article.content)
+      = textilize(article.content)
 
       .metadata-footer
         ul.social
