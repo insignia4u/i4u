@@ -55,6 +55,16 @@ namespace(:sites) do
       site.text_snippets.create!(name: "more-info", title: "More info")
       puts "*** > Complete!"
 
+      puts "*** > Blog titles"
+      site.text_snippets.create!(name: "our-blog",           title: "Our Blog")
+      site.text_snippets.create!(name: "leave-your-comment", title: "Leave your comment")
+      site.text_snippets.create!(name: "send-comment",       title: "Send")
+      site.text_snippets.create!(name: "comments-single",    title: "Comment")
+      site.text_snippets.create!(name: "comments-plural",    title: "Comments")
+      site.text_snippets.create!(name: "older-entries",      title: "Older Entries")
+      puts "*** > Complete!"
+
+
       puts "\n*** > Portfolio Snippets"
       site.text_snippets.create!(name: "highlighted-projects", title: "Highlighted projects")
       site.text_snippets.create!(name: "more-works-pc-version", title: "More works",
