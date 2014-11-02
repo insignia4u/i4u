@@ -72,6 +72,15 @@
 
     }
   }
+
+  h2{
+    &:before, &:after{
+      @include breakpoint(tablet){
+        padding: 0 10px;
+        position: absolute;
+      }
+    }
+  }
 }
 
 .twocols{
@@ -248,13 +257,15 @@
       padding: 0px;
 
       @include breakpoint(tablet){
-        font-size: em(66);
+        font-size: em(50);
+        line-height: em(40,50);
         padding: 0 55px;
         top: 0;
       }
 
       @include breakpoint(desktop){
-        font-size: em(66);
+        font-size: em(50);
+        line-height: em(40,50);
       }
     }
   }
