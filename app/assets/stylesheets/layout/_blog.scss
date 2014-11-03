@@ -284,6 +284,12 @@
       clear:both;
       margin-bottom: 25px;
       font-size: 14px;
+
+      ul{
+        list-style: inherit;
+        padding-bottom: 20px;
+        padding-left: 25px;
+      }
     }
 
     img{
@@ -388,6 +394,12 @@
           @include breakpoint(desktop){
             text-align: left;
           }
+        }
+
+        ul{
+          list-style: inherit;
+          padding-bottom: 20px;
+          padding-left: 25px;
         }
       }
 
