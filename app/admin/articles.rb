@@ -64,6 +64,10 @@ ActiveAdmin.register Article do
       row :content do |article|
         textilize(article.content)
       end
+      row :snippet
+      row :snippet_demo do |article|
+        raw(article.snippet)
+      end
       row :publication_state do |article|
         check_state(article.publication_state)
       end
@@ -88,6 +92,7 @@ ActiveAdmin.register Article do
       f.input :image_caption, hint: "It is the images' caption"
       f.input :content, hint: "You can use textile format to write this"
       f.input :summary, hint: "summary its show in blog with textile format"
+      f.input :snippet, hint: "Add raw html here, this will be shown at the bottom of the article", :input_html => { :class => 'autogrow', :rows => 20, :cols => 30}
       f.input :publication_state, label: 'Publication state', as: :select,
         collection: [['Draft',0],['Published',1]]
       f.input :publication_date
@@ -104,7 +109,7 @@ ActiveAdmin.register Article do
         params.require(:article)
         .permit(:site_id,:author, :title, :content,:subtitle,
         :summary, :publication_date, :publication_state,
-        :image,:description, :image_caption, :is_event, category_ids: [])
+        :image,:description, :image_caption, :is_event, :snippet, category_ids: [])
       ]
     end
   end
