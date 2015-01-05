@@ -29,13 +29,7 @@ section.blog
       picture alt=""
         - if article.image?
           source src=article.image.url(:normal)
-        - else
-          source src=asset_path("blog-photo02.jpg")
-          source src=asset_path("blog-photo02.jpg") media="(min-width:440px)"
-          source src=asset_path("blog-photo02.jpg") media="(min-width:600px)"
 
-          noscript
-            img src=asset_path("blog-photo02.jpg") alt=""
       - if article.image_caption.present?
         .labelphoto= article.image_caption
       - else
