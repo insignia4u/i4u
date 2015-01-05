@@ -285,6 +285,11 @@
       margin-bottom: 25px;
       font-size: 14px;
 
+      p{
+        font-size: 14px;
+        font-weight: normal;
+      }
+
       ul{
         list-style: inherit;
         padding-bottom: 20px;
@@ -376,6 +381,11 @@
     &.singlepost{
       article{
         border: none;
+
+        p{
+          font-size: 14px;
+          font-weight: normal;
+        }
 
         h2{
           @extend %box-transparent-rounded;
