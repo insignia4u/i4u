@@ -26,8 +26,8 @@ section.blog
           = article.comments_count
           i.icon-comment
 
-      picture alt=""
-        - if article.image?
+      - if article.image?
+        picture alt=""
           source src=article.image.url(:normal)
 
       - if article.image_caption.present?

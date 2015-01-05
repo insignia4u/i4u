@@ -551,6 +551,7 @@
 .tags{
   overflow: hidden;
   margin:30px 0;
+  list-style: none !important;
 
   @include breakpoint(tablet){
     margin:35px 0;
