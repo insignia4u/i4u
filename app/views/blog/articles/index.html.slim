@@ -12,8 +12,8 @@ section.blog
           i.icon-comment
 
         .author= article.author
-        picture alt=""
-          - if article.image?
+        - if article.image?
+          picture alt=""
             source src=article.image.url(:normal)
 
         h3
