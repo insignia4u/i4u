@@ -286,7 +286,7 @@
       font-size: 14px;
 
       p{
-        font-size: 14px;
+        font-size: 1.18em;
         font-weight: normal;
       }
 
@@ -294,6 +294,9 @@
         list-style: inherit;
         padding-bottom: 20px;
         padding-left: 25px;
+        li{
+          font-size: 1.18em;
+        }
       }
     }
 
@@ -383,7 +386,7 @@
         border: none;
 
         p{
-          font-size: 14px;
+          font-size: 1.18em;
           font-weight: normal;
         }
 
@@ -410,6 +413,9 @@
           list-style: inherit;
           padding-bottom: 20px;
           padding-left: 25px;
+          li{
+            font-size: 1.18em;
+          }
         }
       }
 
