@@ -78,7 +78,7 @@ section.blog
 
 - content_for :head do
   meta property="og:title"  content="#{article.title}"
-  meta property="og:type"   content="sdff:post"
+  meta property="og:type"   content="website"
   meta property="og:url"    content='#{raw(blog_article_url(article))}'
   meta property="og:image"  content='#{ raw(article.image? ? article.image.url(:normal) : "http://assets.insignia4u.com/projects/images/000/000/018/Insignia-Logo-Square-Facebook_normal.jpg")}'
 - content_for :title do
