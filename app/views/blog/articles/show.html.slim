@@ -80,6 +80,6 @@ section.blog
   meta property="og:title"  content="#{article.title}"
   meta property="og:type"   content="sdff:post"
   meta property="og:url"    content="#{blog_article_url(article)}"
-  meta property="og:image"  content="#{ article.image? ? article.image.url(:normal) : ''}"
+  meta property="og:image"  content="#{ article.image? ? article.image.url(:normal) : 'http://assets.insignia4u.com/projects/images/000/000/018/Insignia-Logo-Square-Facebook_normal.jpg'}"
 - content_for :title do
   title Ruby on Rails Web Development | Insignia | #{article.title}
