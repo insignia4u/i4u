@@ -12,6 +12,17 @@ class Notifier < ActionMailer::Base
     })
   end
 
+  def comment_notification(comment)
+    @comment =  comment
+    comment.email ? @email = comment.email : @email = "anonymous@insignia4u.com"
+
+    mail({
+      from:     @email,
+      to:      'info@insignia4u.com',
+      subject: "New comment in #{@comment.article.title}"
+    })
+  end
+
 protected
   def subject_for(message)
     name = message.name

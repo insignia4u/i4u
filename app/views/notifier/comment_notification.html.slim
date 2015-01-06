@@ -1,0 +1,10 @@
+h1 New comment in #{@comment.article.title}
+
+h3 From #{@comment.name}, #{@email}
+
+h3 Comment:
+
+p #{@comment.text}
+
+p You can read the comment here:
+a href="www.insignia4u.com/blog/articles/#{@comment.article.slug}" #{@comment.article.title} @ insignia4u Blog
