@@ -1,10 +1,12 @@
 h1 New comment in #{@comment.article.title}
 
-h3 From #{@comment.name}, #{@email}
+h3
+  | From :
+  span style="color:#777"  #{@comment.name}, #{@email}
 
 h3 Comment:
 
-p #{@comment.text}
+p style="background:#6E6E6E;color:#ffffff;padding:10px;" #{@comment.text}
 
 p You can read the comment here:
 a href="www.insignia4u.com/blog/articles/#{@comment.article.slug}" #{@comment.article.title} @ insignia4u Blog
