@@ -19,6 +19,9 @@ feature "Commenting" do
       click_button "send-comment"
     }.to change { article.reload.comments.count }.by(1)
 
+    expect(last_email.to).to include("info@insignia4u.com")
+    expect(last_email.subject).to eql("New comment in #{article.title}")
+
     latest_comment = Comment.last
     expect(page).to have_content(latest_comment.text)
     expect(page).to have_content(latest_comment.name)
