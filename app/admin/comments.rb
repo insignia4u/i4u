@@ -23,6 +23,17 @@ ActiveAdmin.register Comment, as: "Blog Comment" do
     default_actions
   end
 
+  form do |f|
+    f.inputs "Edit Comment" do
+      f.input :name
+      f.input :email
+      f.input :website
+      f.input :text
+    end
+
+    f.buttons
+  end
+
   controller do
     def resource_params
       return [] if request.get?
