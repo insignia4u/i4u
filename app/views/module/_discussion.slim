@@ -3,7 +3,7 @@
     h2= pluralize(article.comments_count, title_for("comments-single"), title_for("comments-plural"))
 
     ol
-      - article.comments.each do |comment|
+      - article.comments.ordered.each do |comment|
         li
           .comment
             .comment-bubble.bubble-top
