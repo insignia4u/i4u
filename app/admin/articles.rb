@@ -1,5 +1,5 @@
 ActiveAdmin.register Article do
-
+  menu parent: "Blog"
   filter :site
 
   index do
