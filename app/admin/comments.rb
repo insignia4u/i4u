@@ -1,14 +1,7 @@
 ActiveAdmin.register Comment, as: "Blog Comment" do
-  # t.string   "name"
-  # t.string   "email"
-  # t.string   "website"
-  # t.text     "text"
-  # t.integer  "comments_id"
-  # t.integer  "article_id"
-  # t.datetime "created_at",  :null => false
-  # t.datetime "updated_at",  :null => false
   menu parent: "Blog"
   config.comments = false
+  actions :all, :except => [:new]
 
   index do
     column ("Author"), sortable: :name do |comment|
