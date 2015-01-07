@@ -6,7 +6,7 @@ class Comment < ActiveRecord::Base
 
   after_create :notify_comment
 
-  scope :ordered, -> { order("created_at ASC") }
+  scope :ordered, order("created_at ASC")
 
   def get_name_or_anony
     (name.blank?)? 'Anonymous' : name.titleize
