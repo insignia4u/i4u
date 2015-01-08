@@ -38,7 +38,7 @@ ActiveAdmin.register Comment, as: "Blog Comment" do
     def resource_params
       return [] if request.get?
       [
-        params.require(:comment)
+        params.require(:blog_comment)
         .permit(:name, :email, :website, :text)
       ]
     end
