@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-  has_many :replies, :class_name => "Comment"
+  has_many :replies, :class_name => "Comment", dependent: :destroy
 
   belongs_to :article
   belongs_to :comment
