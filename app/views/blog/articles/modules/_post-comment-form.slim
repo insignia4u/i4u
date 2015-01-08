@@ -8,7 +8,7 @@
       ol
         li.reply-copy
 
-
+  = flash[:error]
   = form_for @comment, url: blog_article_comments_path(article) do |f|
     .f-text
       = f.hidden_field :comment_id, placeholder: 'Comment ID'
@@ -28,5 +28,9 @@
     .f-textarea
       = f.text_area :text, placeholder:"Comments", class: 'comment'
       i.icon-pencil
+      |You have
+      span#charsLeft
+      |  chars left
+
 
     = f.submit title_for("send-comment"), class: 'btn'

@@ -5,6 +5,8 @@ class Comment < ActiveRecord::Base
   belongs_to :comment
 
   validates :article, :text, presence:true
+  validates :text, length: { maximum: 1401,
+      too_long: "%{count} characters is the maximum allowed" }
 
   after_create :notify_comment
 

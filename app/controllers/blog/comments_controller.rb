@@ -5,8 +5,8 @@ class Blog::CommentsController < ApplicationController
       redirect_to blog_article_path(current_article),
         success: 'Comment added successfully.'
     else
-      redirect_to blog_article_path(current_article),
-        error: 'Comment error.'
+      redirect_to blog_article_path(current_article)
+      flash[:error] = "Comment can't be published: #{comment.errors.full_messages.join(', ')}"
     end
   end
 

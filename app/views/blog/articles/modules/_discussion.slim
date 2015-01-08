@@ -9,7 +9,7 @@
             .comment.reply data-reply="#{comment.comment_id}"
               .comment-bubble.bubble-top
               .comment-text
-                p= comment.text
+                p= textilize(comment.text)
 
               .comment-bubble.bubble-bottom
 
@@ -21,7 +21,7 @@
             .comment data-id="#{comment.id}"
               .comment-bubble.bubble-top
               .comment-text
-                p= comment.text
+                p= textilize(comment.text)
 
                 .retry
                   i.icon-redo
