@@ -16,6 +16,6 @@ private
   end
 
   def comment_params
-    params.require(:comment).permit(:name, :email, :website, :text)
+    params.require(:comment).permit(:name, :email, :website, :text, :comment_id)
   end
 end

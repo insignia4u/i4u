@@ -26,6 +26,10 @@
       clear: both;
     }
 
+    .reply {
+      margin-left: 35px;
+    }
+
     .comment-bubble{
       background: url(asset-path('box-comments.png',image));
 
@@ -75,9 +79,9 @@
       }
 
       .retry{
-        display: none;
         text-align: right;
-        color: $color-two;
+        color: #C2C2C2;
+        cursor: pointer;
         i {
           font-size: 24px;
         }

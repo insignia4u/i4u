@@ -1,4 +1,13 @@
 .post-comment-form{
+  .reply-form{
+    display: none;
+    .remove-reply{
+      text-align: right;
+      font-size: 22px;
+      color: $color-two;
+      cursor: pointer;
+    }
+  }
   .column{
     form {
       margin-top: 36px;

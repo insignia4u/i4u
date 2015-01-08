@@ -2,8 +2,17 @@
   .primary-title
     h2
       = title_for("leave-your-comment")
+  .reply-form
+    h2 You are answering to
+    .discussion
+      ol
+        li.reply-copy
+
 
   = form_for @comment, url: blog_article_comments_path(article) do |f|
+    .f-text
+      = f.hidden_field :comment_id, placeholder: 'Comment ID'
+
     .f-text
       = f.text_field :name, placeholder: 'Name'
       i.icon-user
