@@ -3,3 +3,15 @@
 
 en:
   hello: "Hello world"
+  time:
+      formats:
+        default: "%d/%m/%Y"
+        short: "%d de %b"
+        long: "%d de %B de %Y"
+        comment: "%d of %B, %Y at %H:%M"
+  date:
+      formats:
+        default: "%d/%m/%Y"
+        short: "%d de %b"
+        long: "%d de %B de %Y"
+        comment: "%d of %B, %Y at %H:%M"

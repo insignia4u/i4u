@@ -15,7 +15,7 @@
 
               .comment-author
                 strong= comment.get_name_or_anony
-                = " - #{comment.created_at.strftime("%d de %B, %Y a las %H:%M")}"
+                = " - #{l comment.created_at, format: :comment}"
         - else
           li
             .comment data-id="#{comment.id}"
@@ -30,4 +30,4 @@
 
               .comment-author
                 strong= comment.get_name_or_anony
-                = " - #{comment.created_at.strftime("%d de %B, %Y a las %H:%M")}"
+                = " - #{l comment.created_at, format: :comment}"
