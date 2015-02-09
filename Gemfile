@@ -17,6 +17,7 @@ gem 'strong_parameters',    '0.2.0'
 gem 'virtus'
 gem 'decent_exposure'
 gem 'spectator-validates_email', require: 'validates_email'
+gem 'jquery-cookie-rails'
 
 # Engines
 gem 'devise',               '2.1.0'

@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  before_action :antispam!, only: [:create]
+
   expose(:message) { Message.new(params[:message]) }
 
   def new; end

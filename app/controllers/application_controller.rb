@@ -14,4 +14,10 @@ protected
     @current_site ||= Site.with_language(language.upcase).first
   end
   helper_method :current_site
+
+  def antispam!
+    return redirect_to(:back) unless cookies[:antispam]
+    cookies.delete :antispam
+  end
+
 end
