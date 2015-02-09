@@ -1,3 +1,3 @@
 $(document).on 'ready', ->
-  if $.cookie('antispam')
+  unless $.cookie('antispam')
     $.cookie('antispam', true, { expires: 1, path: '/' });
