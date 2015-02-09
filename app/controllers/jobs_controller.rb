@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :antispam!, only: [:create]
+  before_filter :antispam!, only: [:create]
 
   layout "jobs"
 

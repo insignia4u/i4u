@@ -16,8 +16,11 @@ protected
   helper_method :current_site
 
   def antispam!
-    return redirect_to(:back) unless cookies[:antispam]
-    cookies.delete :antispam
+    if cookies[:antispam]
+      cookies.delete :antispam
+    else
+      return redirect_to(:back)
+    end
   end
 
 end

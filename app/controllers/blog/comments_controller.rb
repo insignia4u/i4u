@@ -1,5 +1,5 @@
 class Blog::CommentsController < ApplicationController
-  before_action :antispam!, only: [:create]
+  before_filter :antispam!, only: [:create]
 
   def create
     comment = current_article.comments.build(comment_params)
