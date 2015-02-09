@@ -249,7 +249,7 @@ $(document).ready ->
     $(".slider").height heightSlider
 
 
-  if($("#slider-valor ul").length)
+  if($('#slider-valor').length)
     $("#slider-valor ul").carouFredSel
       prev: '#prev-valor',
       next: '#next-valor',

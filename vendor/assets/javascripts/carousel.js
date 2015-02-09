@@ -278,7 +278,8 @@
         this.$element.trigger(e)
         if (e.isDefaultPrevented()) return
         $next.addClass(type)
-        $next[0].offsetWidth // force reflow
+        if($next[0])
+          $next[0].offsetWidth // force reflow
         $active.addClass(direction)
         $next.addClass(direction)
         this.$element.one($.support.transition.end, function () {
