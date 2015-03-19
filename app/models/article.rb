@@ -11,6 +11,7 @@ class Article < ActiveRecord::Base
     normal:       "818x403#",
     medium:       "650x320#",
     small:        "268x151#",
+    post_thumb:   "818",
     cms_thumb:    "169x100#"
   }
 
