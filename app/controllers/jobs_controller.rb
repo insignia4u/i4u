@@ -1,4 +1,6 @@
 class JobsController < ApplicationController
+  before_filter :antispam!, only: [:create]
+
   layout "jobs"
 
   expose(:message)   { Message.new(params[:message]) }

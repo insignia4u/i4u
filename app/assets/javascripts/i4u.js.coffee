@@ -203,7 +203,7 @@ $(document).ready ->
     e.preventDefault()
     box=$(this).parent()
     id= box.data 'box'
- 
+
 
     $(".slider").css "height", "auto"
 
@@ -249,19 +249,20 @@ $(document).ready ->
     $(".slider").height heightSlider
 
 
-  $("#slider-valor ul").carouFredSel
-    prev: '#prev-valor',
-    next: '#next-valor',
-    width: '100%',
-    pagination: "#pager-valor",
-    auto:
-      play: false,
+  if($('#slider-valor').length)
+    $("#slider-valor ul").carouFredSel
+      prev: '#prev-valor',
+      next: '#next-valor',
+      width: '100%',
+      pagination: "#pager-valor",
+      auto:
+        play: false,
 
-    swipe:
-      onTouch: true
-      onMouse: true
-  ,
-    # transition: true
+      swipe:
+        onTouch: true
+        onMouse: true
+    ,
+      # transition: true
 
   $("#l-testimonials").click (e) ->
     e.preventDefault()
