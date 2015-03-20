@@ -31,5 +31,7 @@ I4u::Application.routes.draw do
 
   match 'blog' => 'blog/articles#index', as: 'blog_path'
 
+  get '/blog/articles/capacitacion-ruby-on-rails-studio', to: redirect('/blog/articles/capacitacion-git-y-github', status: 302)
+
   root to: 'home#show'
 end
