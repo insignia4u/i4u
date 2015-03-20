@@ -56,8 +56,8 @@ GEM
     bcrypt (3.1.10)
     bcrypt-ruby (3.1.5)
       bcrypt (>= 3.1.3)
-    bourbon (4.2.1)
-      sass (~> 3.4)
+    bourbon (2.1.3)
+      sass (>= 3.2)
       thor
     bourne (1.1.2)
       mocha (= 0.10.5)
@@ -82,22 +82,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1)
-    compass (1.0.3)
+    compass (0.12.2)
       chunky_png (~> 1.2)
-      compass-core (~> 1.0.2)
-      compass-import-once (~> 1.0.5)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9)
-      sass (>= 3.3.13, < 3.5)
-    compass-core (1.0.3)
-      multi_json (~> 1.0)
-      sass (>= 3.3.0, < 3.5)
-    compass-import-once (1.0.5)
-      sass (>= 3.2, < 3.5)
-    compass-rails (2.0.4)
-      compass (~> 1.0.0)
-      sass-rails (<= 5.0.1)
-      sprockets (< 2.13)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    compass-rails (2.0.0)
+      compass (>= 0.12.2)
     connection_pool (1.2.0)
     daemons (1.2.2)
     dalli (2.6.0)
@@ -127,10 +117,10 @@ GEM
     faker (1.0.1)
       i18n (~> 0.4)
     fastercsv (1.5.5)
-    ffi (1.9.8)
     formtastic (2.1.1)
       actionpack (~> 3.0)
     friendly_id (4.0.9)
+    fssm (0.2.10)
     gibbon (0.4.2)
       httparty
       json
@@ -194,9 +184,9 @@ GEM
       metaclass (~> 0.0.1)
     multi_json (1.11.0)
     multi_xml (0.5.5)
-    neat (1.7.2)
-      bourbon (>= 4.0)
-      sass (>= 3.3)
+    neat (1.0.2)
+      bourbon (>= 2.1)
+      sass (>= 3.2)
     newrelic_rpm (3.5.3.25)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -245,9 +235,6 @@ GEM
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
     rake (10.4.2)
-    rb-fsevent (0.9.4)
-    rb-inotify (0.9.5)
-      ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
     responders (1.1.2)
@@ -274,7 +261,7 @@ GEM
     rubinius-actor (0.0.2)
       rubinius-core-api
     rubinius-core-api (0.0.1)
-    sass (3.4.13)
+    sass (3.2.5)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -357,7 +344,7 @@ DEPENDENCIES
   activeadmin (= 0.4.4)
   airbrake (= 3.1.6)
   aws-sdk (= 1.7.1)
-  bourbon
+  bourbon (~> 2.1.2)
   capybara
   capybara-webkit
   coffee-rails
@@ -378,7 +365,7 @@ DEPENDENCIES
   mailcatcher
   memcachier
   mobile-fu (= 1.1.1)
-  neat
+  neat (~> 1.0.2)
   newrelic_rpm (= 3.5.3.25)
   paperclip (= 3.3.1)
   pg
@@ -389,7 +376,7 @@ DEPENDENCIES
   rails_12factor
   rspec (= 2.14.1)
   rspec-rails (= 2.14.2)
-  sass
+  sass (~> 3.2.5)
   sass-rails
   shoulda-matchers (= 1.4.2)
   simplecov
