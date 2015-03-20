@@ -5,7 +5,6 @@
 /config/database.yml
 /public/system
 /public/static-site
-/public/populate_images
 /coverage
 .DS_Store
 .rvmrc
