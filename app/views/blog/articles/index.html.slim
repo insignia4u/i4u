@@ -14,7 +14,7 @@ section.blog
         .author= article.author
         - if article.image?
           picture alt=""
-            source src=article.image.url(:normal)
+            source src=article.image.url(:post_thumb)
 
         h3
           = link_to article.title, blog_article_path(article)
