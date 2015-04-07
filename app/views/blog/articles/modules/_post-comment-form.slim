@@ -32,5 +32,6 @@
       span#charsLeft
       |  chars left
 
-
-    = f.submit title_for("send-comment"), class: 'btn'
+    .captcha-wrapper
+      .captcha = recaptcha_tags
+      = f.submit title_for("send-comment"), class: 'btn'
