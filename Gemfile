@@ -18,6 +18,8 @@ gem 'virtus'
 gem 'decent_exposure'
 gem 'spectator-validates_email', require: 'validates_email'
 gem 'jquery-cookie-rails'
+gem 'recaptcha',             :require => 'recaptcha/rails'
+gem 'figaro'
 
 # Engines
 gem 'devise',               '2.1.0'
