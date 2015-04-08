@@ -23,6 +23,17 @@ class Notifier < ActionMailer::Base
     })
   end
 
+  def notify_to_comments_author(comment)
+    @comment =  comment
+    @email   = @comment.email
+
+    mail({
+      from:     'info@insignia4u.com',
+      to:      @email,
+      subject: "Answer in your comment"
+    })
+  end
+
 protected
   def subject_for(message)
     name = message.name

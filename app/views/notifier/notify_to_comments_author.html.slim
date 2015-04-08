@@ -1,0 +1,8 @@
+h1 Someone answered your comment in '#{@comment.article.title}'
+
+h3 Comment:
+
+p style="background:#6E6E6E;color:#ffffff;padding:10px;" #{@comment.text}
+
+p You can read the answer here:
+a href="www.insignia4u.com/blog/articles/#{@comment.article.slug}" #{@comment.article.title} @ insignia4u Blog
