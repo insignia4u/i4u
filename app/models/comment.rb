@@ -11,7 +11,7 @@ class Comment < ActiveRecord::Base
   }
 
   after_create :notify_comment
-  after_save :notify_author, if: :is_answer?
+  after_save :notify_author, if: :can_sent?
 
   scope :ordered, order("created_at ASC")
 
@@ -21,12 +21,16 @@ class Comment < ActiveRecord::Base
 
   protected
 
-  def is_answer?
-    comment && !comment.email.blank?
+  def get_parents_email
+    Comment.find(self.comment_id).email
+  end
+
+  def can_sent?
+    comment && !get_parents_email.blank?
   end
 
   def notify_author
-    Notifier.notify_to_comments_author(self).deliver
+    Notifier.notify_to_comments_author(self, get_parents_email).deliver
   end
 
   def notify_comment

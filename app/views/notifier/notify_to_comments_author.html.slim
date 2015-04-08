@@ -1,8 +1,8 @@
-h1 Someone answered your comment in '#{@comment.article.title}'
+h1 Someone answered your comment in #{@article_title}
 
-h3 Comment:
-
-p style="background:#6E6E6E;color:#ffffff;padding:10px;" #{@comment.text}
+h3 Answer:
+p style="background: #6E6E6E; color: #ffffff; padding: 10px;"
+  = @answer
 
 p You can read the answer here:
-a href="www.insignia4u.com/blog/articles/#{@comment.article.slug}" #{@comment.article.title} @ insignia4u Blog
+a href="www.insignia4u.com/blog/articles/#{@comment.article.slug}" #{@article_title} @ insignia4u Blog
