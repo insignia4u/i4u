@@ -17,3 +17,5 @@
 //= require vendor/jquery.limit-1.2.source
 //= require i4u
 //= require blog
+//= require fullcalendar
+//= require calendar

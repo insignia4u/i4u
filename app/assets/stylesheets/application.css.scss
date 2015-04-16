@@ -7,6 +7,7 @@
 @import "bourbon";
 @import "base/grid-settings";
 @import "neat";
+@import "fullcalendar";
 
 @import "tools/settings";
 @import "tools/mixins";
@@ -79,3 +80,28 @@
 @import "module/more-info";
 @import "module/certify";
 @import "module/errorpage";
+
+
+.fc-header-title{
+  margin-bottom: 10px;
+}
+
+.fc-widget-header{
+    background-color:#5985BF;
+    line-height: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.fc-week{
+  border: 2px solid #444444;
+}
+
+
+.fc-event-title{
+  text-align: center;
+}
+
+.fc-day-header{
+  color:#FFF;
+}
