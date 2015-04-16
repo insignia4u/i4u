@@ -3,12 +3,12 @@ $( document ).ready( function(){
 
   var fechas = /\{\{calendar(.*?)\}/.exec(cont)[1].split(" ");
 
-  cont = cont.replace(/\{{2}(.*?)\}{2}/g, "<div id='calendar-dates'></div>");
+  cont = cont.replace(/\{{2}(.*?)\}{2}/g, "<div id='calendar-dates' class= 'content-calendar'></div>");
   $('#content-article').html(cont);
 
   var array = [];
   for(i=1; i < fechas.length; i++){
-    var json = { title: 'clase ' + i, start: (fechas[i]), allDay: false}
+    var json = { title: 'hs clase ' + i, start: (fechas[i]), allDay: false}
       array.push(json);
   }
 
@@ -17,8 +17,10 @@ $( document ).ready( function(){
           left: 'prev,next today',
           center: 'title',
           right: 'month',
-          color: 'red'
       },
+      editable: true,
+      allDaySlot: false,
+      slotEventOverlap: false,
       events: array,
       timeFormat: 'H(:mm)'
   });

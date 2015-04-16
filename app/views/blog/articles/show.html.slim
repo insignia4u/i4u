@@ -34,8 +34,11 @@ section.blog
         .labelphoto= article.image_caption
       - else
         br
-      #content-article
+      #content-article.asd
         = textilize(article.content)
+        .out-of-print.js-quota-sold
+          span CUPOS AGOTADOS
+
       = raw(article.snippet)
 
       .metadata-footer
