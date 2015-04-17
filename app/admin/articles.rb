@@ -64,6 +64,9 @@ ActiveAdmin.register Article do
       row :content do |article|
         textilize(article.content)
       end
+      row :calendar do |article|
+        raw(article.calendar)
+      end
       row :snippet
       row :snippet_demo do |article|
         raw(article.snippet)
@@ -91,6 +94,7 @@ ActiveAdmin.register Article do
         hint: (f.object.new_record? ? "" : f.object.image.url), as: :file
       f.input :image_caption, hint: "It is the images' caption"
       f.input :content, hint: "You can use textile format to write this"
+      f.input :calendar
       f.input :summary, hint: "summary its show in blog with textile format"
       f.input :snippet, hint: "Add raw html here, this will be shown at the bottom of the article", :input_html => { :class => 'autogrow', :rows => 20, :cols => 30}
       f.input :publication_state, label: 'Publication state', as: :select,
@@ -108,7 +112,7 @@ ActiveAdmin.register Article do
       [
         params.require(:article)
         .permit(:site_id,:author, :title, :content,:subtitle,
-        :summary, :publication_date, :publication_state,
+        :summary, :calendar, :publication_date, :publication_state,
         :image,:description, :image_caption, :is_event, :snippet, category_ids: [])
       ]
     end

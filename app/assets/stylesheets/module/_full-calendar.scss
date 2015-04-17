@@ -1,27 +1,50 @@
-.fc-header-title{
-  margin-bottom: 10px;
-}
+.fc{
 
-.fc-widget-header{
+  .fc-header-title{
+    margin-bottom: 10px;
+  }
+
+  .fc-day-header{
+    color:#FFF;
     background-color:#5985BF;
     line-height: 30px;
     height: 30px;
     vertical-align: middle;
-}
+  }
+  .fc-week{
+    border: 2px solid #444444;
+  }
 
-.fc-week{
-  border: 2px solid #444444;
-}
+  .fc-button-today{
+    display: none;
+  }
 
-
-.fc-event-title{
-  text-align: center;
-}
-
-.fc-day-header{
-  color:#FFF;
-}
-
-.fc-today{
-  background-color: #fff;
+  .fc td{
+    border-color:#C8BFBF;
+  }
+  .fc-today{
+    background-color: #fff;
+  }
+  .fc-widget-content{
+    height: 61px;
+  }
+  .fc-event-inner{
+    text-align: center;
+    span{
+      font-family: arial;
+    }
+    .fc-event-time{
+      display:none;
+      @include breakpoint(tablet, desktop){
+        display: block;
+      }
+    }
+    .fc-event-title{
+      text-align: center;
+      font-size: 10px;
+      @include breakpoint(tablet, desktop){
+        font-size: 12px;
+      }
+    }
+  }
 }

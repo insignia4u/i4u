@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150107210513) do
+ActiveRecord::Schema.define(:version => 20150417150628) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20150107210513) do
     t.string   "image_caption"
     t.boolean  "is_event",           :default => false
     t.text     "snippet"
+    t.string   "calendar"
   end
 
   add_index "articles", ["slug"], :name => "index_articles_on_slug", :unique => true

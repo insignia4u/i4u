@@ -420,23 +420,21 @@
           }
         }
 
-        .content-calendar{
+        .wrapper-calendar{
           background-color:#FFF;
           padding: 10px;
-        }
-        .asd{
           position: relative;
+          overflow: hidden;
           .out-of-print{
+            display: none;
             text-align: center;
-            background-color: #e4e8e8 ;
+            background-color: #CFD1D7;
             padding: 5px 100px;
             position: absolute;
-            top: 530px;
-            right: -97px;
-            overflow:hidden;
-            transform: rotate(45deg);
-            overflow: hidden;
-            z-index:3;
+            top: 50px;
+            right: -100px;
+            transform: rotate(35deg);
+            z-index: 3;
             span{
               font-weight: bold;
               font-size: 20px;

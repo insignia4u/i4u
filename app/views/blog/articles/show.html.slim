@@ -34,9 +34,12 @@ section.blog
         .labelphoto= article.image_caption
       - else
         br
-      #content-article.asd
-        = textilize(article.content)
-        .out-of-print.js-quota-sold
+
+      = textilize(article.content)
+
+      #content-calendar.wrapper-calendar
+        = raw(article.calendar)
+        .out-of-print
           span CUPOS AGOTADOS
 
       = raw(article.snippet)
