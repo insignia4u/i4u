@@ -22,6 +22,7 @@ gem 'fullcalendar-rails'
 
 # Engines
 gem 'devise',               '2.1.0'
+gem 'inherited_resources',  '1.3.1'  #fixed because the latest version is not compatible with activeadmin
 gem 'activeadmin',          '0.4.4'
 
 # 3rd Party services
