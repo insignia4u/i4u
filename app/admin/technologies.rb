@@ -1,5 +1,5 @@
 ActiveAdmin.register Technology do
-  menu parent: "Portfolio"
+  menu parent: "Projects"
 
   config.sort_order = 'position_asc'
 

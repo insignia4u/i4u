@@ -1,6 +1,4 @@
 ActiveAdmin.register ProjectImage do
-  menu false
-
   belongs_to :project
 
   filter :description
