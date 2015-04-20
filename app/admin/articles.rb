@@ -97,8 +97,8 @@ ActiveAdmin.register Article do
         hint: (f.object.new_record? ? "" : f.object.image.url), as: :file
       f.input :image_caption, hint: "It is the images' caption"
       f.input :content, hint: "You can use textile format to write this"
-      f.input :calendar, hint: "Example: {{calendar 2013-04-23T08:45 2013-04-23:45}}"
-      f.input :second_calendar, hint: "Example: {{calendar 2013-05-23T08:45 2013-05-23:45}}"
+      f.input :calendar, hint: "Example: {{calendar 2013-04-23T08:45 2013-04-23:45}} {{agotado}}. Add {{agotado}} only for sold out"
+      f.input :second_calendar, hint: "Example: {{calendar2 2013-05-23T08:45 2013-05-23:45}} {{agotado}}. Add {{agotado}} only for sold out"
       f.input :summary, hint: "summary its show in blog with textile format"
       f.input :snippet, hint: "Add raw html here, this will be shown at the bottom of the article", :input_html => { :class => 'autogrow', :rows => 20, :cols => 30}
       f.input :publication_state, label: 'Publication state', as: :select,
