@@ -13,8 +13,4 @@ class Blog::ArticlesController < Blog::BaseController
 
   def show; end
 
-protected
-  def site_articles
-    current_site.articles.published.latest_first
-  end
 end
