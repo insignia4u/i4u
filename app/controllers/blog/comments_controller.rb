@@ -1,6 +1,4 @@
 class Blog::CommentsController < ApplicationController
-  before_filter :antispam!, only: [:create]
-
   def create
     comment = current_article.comments.build(comment_params)
 
@@ -8,7 +6,7 @@ class Blog::CommentsController < ApplicationController
       redirect_to blog_article_path(current_article),
         success: 'Comment added successfully.'
     else
-      redirect_to blog_article_path(current_article)
+      redirect_to :back
       flash[:error] = "Comment can't be published: #{comment.errors.full_messages.join(', ')}"
     end
   end
