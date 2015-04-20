@@ -21,7 +21,6 @@ gem 'jquery-cookie-rails'
 gem 'fullcalendar-rails'
 gem 'recaptcha',             :require => 'recaptcha/rails'
 gem 'figaro'
-gem 'fullcalendar-rails'
 
 
 # Engines
