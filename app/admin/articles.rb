@@ -67,6 +67,9 @@ ActiveAdmin.register Article do
       row :calendar do |article|
         raw(article.calendar)
       end
+      row :second_calendar do |article|
+        raw(article.second_calendar)
+      end
       row :snippet
       row :snippet_demo do |article|
         raw(article.snippet)
@@ -94,7 +97,8 @@ ActiveAdmin.register Article do
         hint: (f.object.new_record? ? "" : f.object.image.url), as: :file
       f.input :image_caption, hint: "It is the images' caption"
       f.input :content, hint: "You can use textile format to write this"
-      f.input :calendar, hint: "example: {{calendar 2015-04-28T20:30 2015-04-29T21:30}}. Add {{agotado}} to display 'soldout' banner"
+      f.input :calendar, hint: "Example: {{calendar 2013-04-23T08:45 2013-04-23:45}}"
+      f.input :second_calendar, hint: "Example: {{calendar 2013-05-23T08:45 2013-05-23:45}}"
       f.input :summary, hint: "summary its show in blog with textile format"
       f.input :snippet, hint: "Add raw html here, this will be shown at the bottom of the article", :input_html => { :class => 'autogrow', :rows => 20, :cols => 30}
       f.input :publication_state, label: 'Publication state', as: :select,
@@ -112,7 +116,7 @@ ActiveAdmin.register Article do
       [
         params.require(:article)
         .permit(:site_id,:author, :title, :content,:subtitle,
-        :summary, :calendar, :publication_date, :publication_state,
+        :summary, :calendar, :second_calendar, :publication_date, :publication_state,
         :image,:description, :image_caption, :is_event, :snippet, category_ids: [])
       ]
     end

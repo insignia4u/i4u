@@ -425,7 +425,8 @@
           padding: 10px;
           position: relative;
           overflow: hidden;
-          .out-of-print{
+          margin-bottom: 30px;
+          .out-of-print, .out-of-print-second{
             display: none;
             text-align: center;
             background-color: #CFD1D7;
