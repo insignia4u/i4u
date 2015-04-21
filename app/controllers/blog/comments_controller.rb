@@ -1,13 +1,15 @@
-class Blog::CommentsController < ApplicationController
-  def create
-    comment = current_article.comments.build(comment_params)
+class Blog::CommentsController < Blog::ArticlesController
+  expose(:article){ current_site.articles.published.find(params[:article_id]) }
 
-    if is_comment_valid?(comment)
+  def create
+    @comment = current_article.comments.build(comment_params)
+
+    if is_comment_valid?(@comment)
       redirect_to blog_article_path(current_article),
         success: 'Comment added successfully.'
     else
-      redirect_to :back
-      flash[:error] = "Comment can't be published: #{comment.errors.full_messages.join(', ')}"
+      flash[:error] = "Comment can't be published: #{@comment.errors.full_messages.join(', ')}"
+      render :show
     end
   end
 
