@@ -18,3 +18,4 @@
 //= require blog
 //= require fullcalendar
 //= require calendar
+//= require create_comment
