@@ -5,11 +5,10 @@ class Blog::CommentsController < Blog::ArticlesController
     @comment = current_article.comments.build(comment_params)
 
     if is_comment_valid?(@comment)
-      redirect_to blog_article_path(current_article),
-        success: 'Comment added successfully.'
+      render json: { data: @comment, response: true }
+
     else
-      flash[:error] = "Comment can't be published: #{@comment.errors.full_messages.join(', ')}"
-      render :show
+      render json: { response: false, errors: @comment.errors.full_messages }, status: 422
     end
   end
 

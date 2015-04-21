@@ -8,8 +8,9 @@
       ol
         li.reply-copy
 
-  = flash[:error]
-  = form_for @comment, url: blog_article_comments_path(article) do |f|
+  #errors-on-commments
+
+  = form_for @comment, url: blog_article_comments_path(article), html: { data: { article: article.slug } } do |f|
     .f-text
       = f.hidden_field :comment_id, placeholder: 'Comment ID'
 
