@@ -1,23 +1,10 @@
 #comment-list
-  - if article.comments.any?
+  - if article.comments.get_parents.any?
     .discussion
       h2= pluralize(article.comments_count, title_for("comments-single"), title_for("comments-plural"))
 
       ol
-        - article.comments.ordered.each do |comment|
-          - if comment.comment_id
-            li
-              .comment.reply data-reply="#{comment.comment_id}"
-                .comment-bubble.bubble-top
-                .comment-text
-                  p= textilize(comment.text)
-
-                .comment-bubble.bubble-bottom
-
-                .comment-author
-                  strong= comment.get_name_or_anony
-                  = " - #{l comment.created_at, format: :comment}"
-          - else
+        - article.comments.get_parents.ordered.each do |comment|
             li
               .comment data-id="#{comment.id}"
                 .comment-bubble.bubble-top
@@ -33,10 +20,13 @@
                   strong= comment.get_name_or_anony
                   = " - #{l comment.created_at, format: :comment}"
 
+            - comment.replies.each do |reply|
+              = render "blog/articles/modules/reply", reply: reply
+
 
 script#comment-template type="template/html"
   .comment-template
-    .comment data-id=""
+    .comment
       .comment-bubble.bubble-top
       .comment-text
         p

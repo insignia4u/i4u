@@ -5,10 +5,9 @@ class Blog::CommentsController < Blog::ArticlesController
     @comment = current_article.comments.build(comment_params)
 
     if is_comment_valid?(@comment)
-      render json: { data: @comment, response: true }
-
+      render json: { data: CommentDecorator.new(@comment) }
     else
-      render json: { response: false, errors: @comment.errors.full_messages }, status: 422
+      render json: { errors: @comment.errors.full_messages }, status: 422
     end
   end
 
@@ -22,6 +21,8 @@ private
   end
 
   def is_comment_valid?(comment)
+    return comment.save if Rails.env.development? || Rails.env.test?
+
     verify_recaptcha(model: comment, message: 'An error has occurred with recaptcha') && comment.save
   end
 end

@@ -4,72 +4,60 @@ $(document).on 'ready', ->
   list            = $('#comment-list')
   commentTemplate = $('#comment-template').html()
 
-  buildTemplate = (comment, name, date, id, isReply) ->
+  buildTemplate = (data) ->
 
-    if( isReply && isReply == true )
-      _obj = $(commentTemplate)
-                .find('.comment').addClass('reply').attr('data-reply', id).end()
-                .find('#comment-text').html(comment).end()
-                .find('#comment-author').html(name).end()
-                .find('#comment-date').html(date).end()
-                .find('.retry').remove().end()
+    _obj = $(commentTemplate)
 
+    _obj.find('.comment').attr('id','comment-'+data.id).end()
+        .find('#comment-text').html(data.text).end()
+        .find('#comment-author').html(data.name || 'Anon').end()
+        .find('#comment-date').html(data.date).end()
+
+
+    if !data.comment_id
+      _obj.find('.comment').attr 'data-id', data.id
     else
-      _obj = $(commentTemplate)
-                .find('.comment').attr('data-id', id).end()
-                .find('#comment-text').html(comment).end()
-                .find('#comment-author').html(name).end()
-                .find('#comment-date').html(date).end()
+      _obj.find('.comment').addClass('reply').attr('data-reply', data.id).end()
+          .find('.retry').remove().end()
 
     return _obj.html()
-
-  retry = ->
-    commentId = $(this).parent().parent().data('id')
-    offsetForm = $('.post-comment-form').offset().top - 150
-    comment = $(this).parent().parent().clone()
-
-    $('.reply-form').show()
-    $('.reply-copy').html comment
-    $(comment).find('.retry').html('Cancel').addClass('remove-reply').removeClass 'retry'
-    $('#comment_comment_id').val commentId
-    $('html, body').animate scrollTop: parseInt(offsetForm)
-    $('#comment_name').focus()
-
-    $('.remove-reply').click ->
-      $('.reply-form').fadeOut()
-      $('#comment_comment_id').val null
 
 
   $(form).on 'submit', (event) ->
     event.preventDefault()
 
+    $('#errors-on-commments').html('')
+
     $.ajax
       type:     'POST'
-      url:      '/blog/articles/' + article + '/comments'
+      url:      $(form).attr 'action'
       dataType: 'json'
       data:     $(form).serialize()
 
       success: (response) ->
-        $(form)[0].reset()
+        $(form).trigger 'reset'
         grecaptcha.reset()
 
-        comment = response.data.text
-        name    = if response.data.name then response.data.name else 'Anonymous'
-        date    = response.data.created_at
-        id      = response.data.id
+        item = buildTemplate(response.data)
+        $('.post-comment-form .remove-reply').trigger('click')
 
-        if (response.data.comment_id)
-          item = buildTemplate(comment, name, date, id, true)
-          $('.post-comment-form .remove-reply').trigger('click')
+        if !response.data.comment_id
+          insert_in = list.find('.discussion ol li:last')
         else
-          item = buildTemplate(comment, name, date, id, false)
+          insert_in = list.find('.comment[data-reply="'+response.data.comment_id+'"]').last().parent()
 
-        list.find('.discussion ol').append('<li>' + item + '</li>')
+        if !insert_in
+          insert_in = list.find('.comment[data-id="'+response.data.comment_id+'"]').parent()
 
-        $('.retry').on 'click', retry
+        insert_in.after('<li>' + item + '</li>')
+
+        $('body,html').animate({scrollTop: $('#comment-'+response.data.id).offset().top},1000);
 
       error: (error) ->
         grecaptcha.reset()
+        if(error.status == 422)
+          data = JSON.parse(error.responseText)
+          $('#errors-on-commments').html(data.errors.join('<br/>'))
 
 
 

@@ -1,0 +1,11 @@
+li
+  .comment.reply data-reply=reply.comment_id
+    .comment-bubble.bubble-top
+    .comment-text
+      p= textilize(reply.text)
+
+    .comment-bubble.bubble-bottom
+
+    .comment-author
+      strong= reply.get_name_or_anony
+      = " - #{l reply.created_at, format: :comment}"

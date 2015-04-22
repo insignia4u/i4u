@@ -31,4 +31,5 @@ class Article < ActiveRecord::Base
     .latest_first
     .limit(3)
   end
+
 end
