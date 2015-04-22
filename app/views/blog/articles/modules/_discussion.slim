@@ -1,27 +1,26 @@
 #comment-list
-  - if article.comments.get_parents.any?
-    .discussion
-      h2= pluralize(article.comments_count, title_for("comments-single"), title_for("comments-plural"))
+  .discussion style=(!article.comments.get_parents.any? ? 'display:none': '')
+    h2= pluralize(article.comments_count, title_for("comments-single"), title_for("comments-plural"))
 
-      ol
-        - article.comments.get_parents.ordered.each do |comment|
-            li
-              .comment data-id="#{comment.id}"
-                .comment-bubble.bubble-top
-                .comment-text
-                  p= textilize(comment.text)
+    ol
+      - article.comments.get_parents.ordered.each do |comment|
+          li
+            .comment data-id="#{comment.id}"
+              .comment-bubble.bubble-top
+              .comment-text
+                p= textilize(comment.text)
 
-                  .retry
-                    i.icon-redo
-                    span
-                .comment-bubble.bubble-bottom
+                .retry
+                  i.icon-redo
+                  span
+              .comment-bubble.bubble-bottom
 
-                .comment-author
-                  strong= comment.get_name_or_anony
-                  = " - #{l comment.created_at, format: :comment}"
+              .comment-author
+                strong= comment.get_name_or_anony
+                = " - #{l comment.created_at, format: :comment}"
 
-            - comment.replies.each do |reply|
-              = render "blog/articles/modules/reply", reply: reply
+          - comment.replies.each do |reply|
+            = render "blog/articles/modules/reply", reply: reply
 
 
 script#comment-template type="template/html"

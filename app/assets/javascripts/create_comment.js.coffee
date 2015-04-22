@@ -1,6 +1,5 @@
 $(document).on 'ready', ->
   form            = '#new_comment'
-  article         = $(form).data('article')
   list            = $('#comment-list')
   commentTemplate = $('#comment-template').html()
 
@@ -39,17 +38,24 @@ $(document).on 'ready', ->
         grecaptcha.reset()
 
         item = buildTemplate(response.data)
+        total_comments = list.find('.discussion ol li').length + 1;
+        title_comments = $('h2', list).html().replace(/([0-9])/i, total_comments);
+
+        $('h2', list).html(title_comments);
+
         $('.post-comment-form .remove-reply').trigger('click')
 
         if !response.data.comment_id
-          insert_in = list.find('.discussion ol li:last')
+          box_comment = list.find('.discussion').css('display', 'block').find('ol')
+
+          unless box_comment.find('li').length
+            box_comment.append('<li>' + item + '</li>')
+          else
+            box_comment.find('li:last').after('<li>' + item + '</li>')
         else
           insert_in = list.find('.comment[data-reply="'+response.data.comment_id+'"]').last().parent()
-
-        if !insert_in
-          insert_in = list.find('.comment[data-id="'+response.data.comment_id+'"]').parent()
-
-        insert_in.after('<li>' + item + '</li>')
+          insert_in = list.find('.comment[data-id="'+response.data.comment_id+'"]').parent() if !insert_in.html()
+          insert_in.after('<li>' + item + '</li>')
 
         $('body,html').animate({scrollTop: $('#comment-'+response.data.id).offset().top},1000);
 
