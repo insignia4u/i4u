@@ -14,7 +14,7 @@ class Notifier < ActionMailer::Base
 
   def comment_notification(comment)
     @comment =  comment
-    comment.email.present? ? @email = comment.email : @email = "anonymous@noemail.com"
+    @email = comment.email.present? ?  comment.email : "anonymous@noemail.com"
 
     mail({
       from:     @email,

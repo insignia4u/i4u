@@ -1,7 +1,7 @@
 # Seed Default Admin User
 puts "*** Creating admin user..."
 AdminUser.create!(
-  email:                 "admin@example.com",
+  email:                 "admin22@example.com",
   password:              "please_change_me",
   password_confirmation: "please_change_me"
 )
