@@ -426,21 +426,22 @@
           position: relative;
           overflow: hidden;
           margin-bottom: 30px;
-          .out-of-print, .out-of-print-second{
-            display: none;
-            text-align: center;
-            background-color: #CFD1D7;
-            padding: 5px 100px;
-            position: absolute;
-            top: 50px;
-            right: -100px;
-            transform: rotate(35deg);
-            z-index: 3;
-            span{
-              font-weight: bold;
-              font-size: 20px;
-              color: #e94da7;
-            }
+        }
+        .out-of-print{
+          display: none;
+          text-align: center;
+          background-color: #f2219e;
+          opacity: 0.8;
+          padding: 5px 100px;
+          position: absolute;
+          top: 50px;
+          right: -100px;
+          transform: rotate(35deg);
+          z-index: 3;
+          span{
+            font-weight: bold;
+            font-size: 20px;
+            color: white;
           }
         }
       }

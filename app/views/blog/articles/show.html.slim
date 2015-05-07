@@ -34,7 +34,8 @@ section.blog
         .labelphoto= article.image_caption
       - else
         br
-      #content-article
+
+      #js-content-article
         = textilize(article.content)
       = raw(article.snippet)
 

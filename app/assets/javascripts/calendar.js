@@ -1,70 +1,68 @@
-$( document ).ready( function(){
 
-  var cont = $('#content-article').html();
+$( document ).ready( function(){
+  var cont = $('#js-content-article').html();
 
   var fechas = /\{\{calendar(.*?)\}\}/.exec(cont)[1].split(" ");
+  console.log("<<<<<<<<<<<<<<<<<<<<<<------------------->>>>>>>>>>>>>>>>>>>>>>>>>><<<");
+  console.log(fechas);
 
-  cont = cont.replace(/\{{2}calendar(.*?)\}{2}/g, "<div id='calendar-dates'></div>");
-  $('#content-calendar').html(cont);
-
-  var cont_agotado = $('#content-calendar').html();
-  if(cont_agotado.match(/\{\{agotado\}\}/)){
-      console.log("se emcontro lñararara");
-      cont_agotado = cont_agotado.replace(/\{\{agotado\}\}/, '');
-      $('#content-calendar').html(cont_agotado);
-      $('.out-of-print').show();
-  }
-
-  var array = [];
+  var m = 0
+  var c = 0
   for(i=1; i < fechas.length; i++){
-    var json = { title: 'clase ' + i, start: (fechas[i]), allDay: false}
+    var d = new Date(fechas[i].split("T")[0]);
+    if (m != d.getMonth()){
+      m = d.getMonth();
+      c++;
+      eval("var fecha_"+m+"= [fechas[i]];");
+    }
+    else{
+      eval("fecha_"+m+".push(fechas[i]);");
+    }
+  }
+  console.log(c);
+
+  for(i=c-1; i >= 0; i--){
+    if (typeof string === 'undefined'){
+      var string = "<div id='calendar"+ i +"-dates' class='wrapper-calendar'><div class='out-of-print'><span>CUPOS AGOTADOS</span></div></div>"
+    }else{
+      string = string + "<div id='calendar"+ i +"-dates' class='wrapper-calendar'><div class='out-of-print'><span>CUPOS AGOTADOS</span></div></div>"
+    }
+  }
+
+  cont = cont.replace(/\{{2}calendar(.*?)\}{2}/g, string);
+  $('#js-content-article').html(cont);
+
+  var cont_agotado = $('#js-content-article').html();
+  if(cont_agotado.match(/\{\{agotado\}\}/)){
+    cont_agotado = cont_agotado.replace(/\{\{agotado\}\}/, '');
+    $('#js-content-article').html(cont_agotado);
+    $('.out-of-print').show();
+  }
+
+  var a = (fechas.length - 1);
+  for(e=1; e <= c; e++){
+    var array = [];
+    var fIndex = m - (e -1);
+    for(i=0; i < eval("fecha_"+fIndex+".length"); i++){
+      var json = { title: 'Clase' + a, start: (eval("fecha_"+fIndex+"[i]")), allDay: false}
+      console.log("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+      console.log(eval("fecha_"+fIndex+"[i]"));
+      console.log("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
       array.push(json);
+    a--;
+
+    }
+
+    $("#calendar"+(e-1)+"-dates").fullCalendar({
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month',
+        },
+        slotEventOverlap: false,
+        events: array,
+        timeFormat: '(H:mm)'
+    });
+    $("#calendar"+(e-1)+"-dates").fullCalendar('gotoDate', array[0].start);
   }
-
-  $("#calendar-dates").fullCalendar({
-      header: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'month',
-          color: 'red'
-      },
-      events: array,
-      timeFormat: 'H(:mm)'
-  });
-  $('#calendar-dates').fullCalendar('gotoDate', array[1].start);
-
-  //second_calendar
-
-  var content = $('#content-second-calendar').html();
-
-  var fechas2 = /\{\{calendar2(.*?)\}\}/.exec(content)[1].split(" ");
-
-  content = content.replace(/\{{2}calendar2(.*?)\}{2}/g, "<div id='calendar-dates-second'></div>");
-  $('#content-second-calendar').html(content);
-
-  var content_agotado = $('#content-second-calendar').html();
-  if(content_agotado.match(/\{\{agotado\}\}/)){
-      console.log("se emcontro asdsadsdasd");
-      content_agotado = content_agotado.replace(/\{\{agotado\}\}/, '');
-      $('#content-second-calendar').html(content_agotado);
-      $('.out-of-print-second').show();
-  }
-
-    var array2 = [];
-  for(i=1; i < fechas2.length; i++){
-    var json = { title: 'Clase ' + i, start: (fechas2[i]), allDay: false}
-      array2.push(json);
-  }
-
-  $("#calendar-dates-second").fullCalendar({
-      header: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'month',
-      },
-      slotEventOverlap: false,
-      events: array2,
-      timeFormat: 'H:mm'
-  });
-  $('#calendar-dates-second').fullCalendar('gotoDate', array2[1].start);
-})
+});
