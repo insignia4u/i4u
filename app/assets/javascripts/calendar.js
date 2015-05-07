@@ -39,18 +39,17 @@ $( document ).ready( function(){
     $('.out-of-print').show();
   }
 
-  var a = (fechas.length - 1);
-  for(e=1; e <= c; e++){
+  var a = 1;
+  for(e=c; e > 0; e--){
     var array = [];
     var fIndex = m - (e -1);
     for(i=0; i < eval("fecha_"+fIndex+".length"); i++){
       var json = { title: 'Clase' + a, start: (eval("fecha_"+fIndex+"[i]")), allDay: false}
-      console.log("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+      console.log("++++++++++++++++++++++++++++++++++++++++++");
       console.log(eval("fecha_"+fIndex+"[i]"));
       console.log("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
       array.push(json);
-    a--;
-
+      a++;
     }
 
     $("#calendar"+(e-1)+"-dates").fullCalendar({
