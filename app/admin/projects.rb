@@ -54,7 +54,7 @@ ActiveAdmin.register Project do
       f.input :name
       f.input :url
       f.input :summary
-      f.input :description
+      f.input :description, hint: "This field support markdown"
       f.input :image , hint: "Mostrada en la seccion de ultimos trabajos. (Tamanio requerido 277px x 250px)", input_html:
       {
         'url-data'  => (project.image? ?  project.image.url(:cms_thumb) : ''),
@@ -64,7 +64,7 @@ ActiveAdmin.register Project do
     end
 
     f.inputs "Detailed Information" do
-      f.input :extended_description
+      f.input :extended_description, hint: "This field support markdown"
       f.input :started_at
       f.input :ended_at
       f.input :featured_image, hint: "Mostrada en la seccion de projectos destacados. (Tamanio requerido 940px x 555px)", input_html:
