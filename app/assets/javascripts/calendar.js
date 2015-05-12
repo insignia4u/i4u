@@ -85,16 +85,34 @@ $( document ).ready( function(){
         if (array_fechas[e] != 'agotado'){
           month = date;
           month_counter++;
-          month_array[month_counter] = [{title: 'Clase '+ x , start: array_fechas[e]}];
-          console.log("===============")
-          console.log(month_array.length);
         }
       }else{
         if (array_fechas[e] != 'agotado'){
           month = month;
         }
+      }
+    }
+    for (a = 0; a < month_counter ; a ++){
+      for(e = 0; e < array_fechas.length; e++){
+        var dates = array_fechas[e].split("-")[1];
+        if (array_fechas[e].split("-")[2] === 1){
+          dates = dates + 1
+        }
+
+        if( month !== dates){
+          if (array_fechas[e] != 'agotado'){
+            month = dates;
+            month_array[a] = [{title: 'Clase '+ x , start: array_fechas[e]}];
+            month_array.push(month_array[a])
+            console.log("aaaaaaaaaaaaaaaaaaaaaaa")
+            console.log(month_array[a]);
+          }else{
+            if (array_fechas[e] != 'agotado'){
+              month_array[a].push({title: 'Clase '+ x , start: array_fechas[e]});
+            }
+          }
         x++;
-          month_array[month_counter].push({title: 'Clase '+ x , start: array_fechas[e]});
+        }
       }
     }
     return month_array;
