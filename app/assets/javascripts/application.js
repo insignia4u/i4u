@@ -21,3 +21,4 @@
 //= require create_comment
 //= require fullcalendar
 //= require calendar
+//= require fullcalendar

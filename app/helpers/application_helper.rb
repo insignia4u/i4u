@@ -211,4 +211,5 @@ module ApplicationHelper
   def tip_inactive_month?(month, date)
     date.year == Date.today.year && month > Date.today.month
   end
+
 end

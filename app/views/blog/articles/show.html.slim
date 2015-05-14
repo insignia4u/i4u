@@ -36,7 +36,7 @@ section.blog
         br
 
       #js-content-article
-        = textilize(article.content)
+        = parse_regex(textilize(article.content))
       = raw(article.snippet)
 
       .metadata-footer
