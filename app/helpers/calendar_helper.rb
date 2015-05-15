@@ -1,9 +1,8 @@
 module CalendarHelper
  def parse_regex(text)
     regex = /\{\{calendar(.*?)\}\}/
-    asd = /\{\{calendar(.*?)\}\}/.exec(text)[1]
-    text.gsub(asd)do |s|
-      fechas = s.split(" ")
+    text.gsub(regex)do |s|
+      fechas = "#{s}".match(/\{\{calendar(.*?)\}\}/)[1].split(" ")
       puts "------------------"
       puts fechas
       dates = fechas.map{|f| Date.parse(f)}
