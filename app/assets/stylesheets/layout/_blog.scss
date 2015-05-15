@@ -426,6 +426,9 @@
           position: relative;
           overflow: hidden;
           margin-bottom: 30px;
+          .hidden-dates{
+            display: none;
+          }
           .out-of-print{
             display: none;
             text-align: center;
