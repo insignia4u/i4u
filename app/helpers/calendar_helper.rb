@@ -10,7 +10,7 @@ module CalendarHelper
         puts month
         rtn << <<-eos
           <div class='wrapper-calendar' data-month='#{month}'>
-            <div class="hidden-dates  sad#{i}">#{dates.map{|d| "#{d} "}.join}</div>
+            <div class="hidden-dates">#{dates.map{|d| "#{d} "}.join}</div>
           </div>
         eos
       end
