@@ -1,0 +1,7 @@
+development:
+  RECAPTCHA_PUBLIC_KEY:  'put your public key here'
+  RECAPTCHA_PRIVATE_KEY: 'put your private key here'
+
+production:
+  RECAPTCHA_PUBLIC_KEY:  'put your public key here'
+  RECAPTCHA_PRIVATE_KEY: 'put your private key here'
