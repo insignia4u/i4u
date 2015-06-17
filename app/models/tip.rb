@@ -31,7 +31,7 @@ class Tip < ActiveRecord::Base
   friendly_id :title, use: [:slugged, :history]
 
   def self.rails_tip
-    rails_tips.where('published_at <= ?', Date.today)
+    rails_tips.where('published_at <= ?', DateTime.now)
       .latest_first
       .limit(1)
       .first
@@ -43,7 +43,7 @@ class Tip < ActiveRecord::Base
   end
 
   def self.today_tip
-    today_tips.where('published_at <= ?', Date.today)
+    today_tips.where('published_at <= ?', DateTime.now)
       .latest_first
       .limit(1)
       .first
