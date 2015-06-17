@@ -13,7 +13,7 @@ aside
   .box-opacity.tip-day
     h2
       span.circle
-        i.icon-smiley
+        i.icon-diamond
 
       | Rails Tip
 
@@ -22,14 +22,14 @@ aside
       |&nbsp;
       = @rails_tip.description
 
-    = link_to blog_tips_path('today_tips'), class: 'bottom-link' do
+    = link_to blog_tips_path('rails_tips'), class: 'bottom-link' do
       | See previous
       span +
 
   .box-opacity.rails-tip
     h2
       span.circle
-        i.icon-diamond
+        i.icon-smiley
 
       | WebDev Tip
     p
@@ -37,7 +37,7 @@ aside
       |&nbsp;
       = @today_tip.description
 
-    = link_to blog_tips_path(type: 'rails_tips'), class: 'bottom-link' do
+    = link_to blog_tips_path(type: 'today_tips'), class: 'bottom-link' do
       | See previous
       span +
 
