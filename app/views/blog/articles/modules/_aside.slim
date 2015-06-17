@@ -15,7 +15,7 @@ aside
       span.circle
         i.icon-smiley
 
-      | tip del día
+      | Rails Tip
 
     p
       = link_to @rails_tip.title, @rails_tip.link, target: "_blank"
@@ -23,7 +23,7 @@ aside
       = @rails_tip.description
 
     = link_to blog_tips_path('today_tips'), class: 'bottom-link' do
-      | Ver últimos tips
+      | See previous
       span +
 
   .box-opacity.rails-tip
@@ -31,14 +31,14 @@ aside
       span.circle
         i.icon-diamond
 
-      | rails tips
+      | WebDev Tip
     p
       = link_to @today_tip.title, @today_tip.link, target: "_blank"
       |&nbsp;
       = @today_tip.description
 
     = link_to blog_tips_path(type: 'rails_tips'), class: 'bottom-link' do
-      | Ver últimos tips
+      | See previous
       span +
 
   - if @categories.any?
