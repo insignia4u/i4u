@@ -10,45 +10,44 @@ aside
     | Subscribe to our RSS
     i.icon-rss
 
-  - if false
-    .box-opacity.tip-day
-      h2
-        span.circle
-          i.icon-smiley
+  .box-opacity.tip-day
+    h2
+      span.circle
+        i.icon-smiley
 
-        | tip del día
+      | tip del día
 
-      p
-        = link_to @rails_tip.title, @rails_tip.link, target: "_blank"
-        |&nbsp;
-        = @rails_tip.description
+    p
+      = link_to @rails_tip.title, @rails_tip.link, target: "_blank"
+      |&nbsp;
+      = @rails_tip.description
 
-      = link_to blog_tips_path('today_tips'), class: 'bottom-link' do
-        | Ver últimos tips
-        span +
+    = link_to blog_tips_path('today_tips'), class: 'bottom-link' do
+      | Ver últimos tips
+      span +
 
-    .box-opacity.rails-tip
-      h2
-        span.circle
-          i.icon-diamond
+  .box-opacity.rails-tip
+    h2
+      span.circle
+        i.icon-diamond
 
-        | rails tips
-      p
-        = link_to @today_tip.title, @today_tip.link, target: "_blank"
-        |&nbsp;
-        = @today_tip.description
+      | rails tips
+    p
+      = link_to @today_tip.title, @today_tip.link, target: "_blank"
+      |&nbsp;
+      = @today_tip.description
 
-      = link_to blog_tips_path(type: 'rails_tips'), class: 'bottom-link' do
-        | Ver últimos tips
-        span +
+    = link_to blog_tips_path(type: 'rails_tips'), class: 'bottom-link' do
+      | Ver últimos tips
+      span +
 
-    - if @categories.any?
-      .box-opacity.categories
-        ul.list-categories
-          li = link_to 'All', blog_path_path
-          - @categories.each do |category|
-            li= link_to category.name, blog_category_path(category.slug)
+  - if @categories.any?
+    .box-opacity.categories
+      ul.list-categories
+        li = link_to 'All', blog_path_path
+        - @categories.each do |category|
+          li= link_to category.name, blog_category_path(category.slug)
 
-        a.close href="javascript:void(0)"
-          | CERRAR
-          span x
+      a.close href="javascript:void(0)"
+        | CERRAR
+        span x
