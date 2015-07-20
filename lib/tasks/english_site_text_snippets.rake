@@ -228,7 +228,7 @@ namespace(:sites) do
       names = %w{ planificacion codificacion revision control produccion
                  mantenimiento }.each do |name|
         site.text_snippets.create!(name: "#{name}-text-snippet",
-        title: 'highly interactive sites development',
+        title: 'highly interactive site development',
         body: "We've got the necessary resources and the experience to take " \
         " your idea, shape it, and enhance it to produce a professional web " \
         " site based on the most advanced technologies. We’re specialized in" \
