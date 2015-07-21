@@ -11,7 +11,7 @@ I4u::Application.routes.draw do
     end
   end
 
-  resources :people, path: :staff,    only: :index
+  resources :people, path: :team,    only: :index
   resources :services,                only: :index
 
   namespace :blog do
