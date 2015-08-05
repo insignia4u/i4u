@@ -297,6 +297,11 @@
         li{
           font-size: 1.18em;
           font-weight: normal;
+          ul{
+            li{
+              font-size: 14px !important;
+            }
+          }
         }
       }
     }
