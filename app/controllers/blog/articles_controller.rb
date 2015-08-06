@@ -5,6 +5,7 @@ class Blog::ArticlesController < Blog::BaseController
   expose(:pager)    { ArticlesPager.new(site_articles, article) }
 
   def index
+    @tips = Tip.find(:all, :order => "published_at DESC")
     respond_to do |format|
       format.html
       format.rss  { render layout: false }
