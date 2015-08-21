@@ -6,9 +6,7 @@ section.blog
 
   = link_to blog_articles_path, class: 'l-back' do
     span.icon-double-angle-left
-    span.l-back-text Volver
-
-  = render "blog/articles/modules/aside"
+    span.l-back-text Volver 
 
   .column.singlepost
     article
@@ -76,6 +74,7 @@ section.blog
 
     = render "blog/articles/modules/discussion"
     = render "blog/articles/modules/post-comment-form"
+  = render "blog/articles/modules/aside"
 
 - content_for :head do
   meta property="og:title"  content="#{article.title}"

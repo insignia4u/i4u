@@ -3,7 +3,6 @@ section.blog
     h2
       = title_for("our-blog")
 
-  = render "blog/articles/modules/aside"
   .column.listpost
     - articles.each do |article|
       article
@@ -31,3 +30,5 @@ section.blog
               = link_to category.name, blog_category_path(category.slug)
 
     = link_to_next_page articles, title_for("older-entries"), class: 'btn'
+
+  = render "blog/articles/modules/aside"
