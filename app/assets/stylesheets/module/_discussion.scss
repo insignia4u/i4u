@@ -11,7 +11,7 @@
   }
 
   ol{
-    width: 268px;
+    width: 89%;
     float: right;
 
     @include breakpoint(tablet){
@@ -35,12 +35,12 @@
 
       &.bubble-top{
         height: 17px;
-        background-position: 0 -255px;
+        background-position: 0 2px;
       }
 
       &.bubble-bottom{
         height: 45px;
-        background-position: 0 -270px;
+        background-position: 0 -14px;
       }
 
       @include breakpoint(tablet){
