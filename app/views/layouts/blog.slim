@@ -17,14 +17,14 @@ html
     meta name="description" content="Insignia web"
     meta name="viewport" content="width=device-width"
 
-    link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700|Enriqueta:400,700' rel='stylesheet' type='text/css'
+    link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700|Enriqueta:400,700|Dosis:400,300,200' rel='stylesheet' type='text/css'
 
     = stylesheet_link_tag "application", :media => "all"
     = yield :stylesheets
     = yield :head
 
   body onload="window.scrollTo(0,1);"
-    = render "shared/header"
+    = render "shared/blog_header"
     = render "shared/blog-nav-mobile"
     .content
       = yield

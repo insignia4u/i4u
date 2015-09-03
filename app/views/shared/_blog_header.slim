@@ -1,0 +1,44 @@
+.blog-header-container
+  header.tooglenav.blog-header
+    a.logo href="/"
+      = image_tag "insigniav2.svg"
+
+    .navbar
+      h1
+        a href="/"
+          = image_tag "insigniav2.svg"
+      nav
+        ul
+          li
+            a class=active_if_equals(controller_name,'home') href="/" Home
+          li
+            a class=active_if_equals(controller_name,'people') href="/team" Team
+          li
+            a class=active_if_equals(controller_name, 'services') href="/services" Services
+          li
+            a class=active_if_equals(controller_name,'projects') href="/projects" Projects
+          li
+            a class=active_if_equals(controller_name,'jobs') href="/jobs" Jobs
+          li
+            a class=active_if_equals(controller_name,'contacts') href="/contact" Contact
+          li
+            a class=active_if_equals(controller_name,'articles') href="/blog" Blog
+
+    i#menu-btn.icon-list
+    span x
+
+    = yield :head
+  .blog-newsletter
+    .container
+      h2
+        |Artículos técnicos sobre front-end y Ruby on Rails. Conocé también todas nuestras capacitaciones y búsquedas laborales.
+
+      .newsl
+        h3
+          |Unite a más de 500 suscriptores que reciben nuestras novedades.
+        .newsletter-box
+          .input
+            input type="text" placeholder="Insert your Email..."
+          .button
+            button type="submit"
+              |Join

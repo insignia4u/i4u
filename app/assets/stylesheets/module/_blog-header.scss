@@ -1,0 +1,126 @@
+.blog-header{
+  background: $color-one;
+  min-height: 0;
+  padding: 0 0 118px;
+
+  @include breakpoint(tablet){
+    min-height: 0;
+    padding: 5px 0;
+    a.logo{
+      display: none;
+    }
+  }
+
+  a.logo{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+  }
+
+  h1{
+    position: absolute;
+    width: auto;
+    left: 5px;
+    top: 10px;
+    width: 150px;
+    padding: 0;
+    bottom: auto;
+    display: none;
+
+    @include breakpoint(tablet){
+      display: block;
+    }
+
+    a, img{
+      display: block;
+      width: 100%;
+    }
+
+  }
+
+  .navbar{
+    @include outer-container;
+    position: relative;
+
+    @include breakpoint(tablet){
+      padding-left: 170px;
+    }
+
+    ul{
+      background: none;
+      list-style: none;
+      text-align: left;
+
+      li{
+        display: block;
+        text-align: center;
+
+        @include breakpoint(tablet){
+          margin: auto;
+          display: inline-block;
+          padding: 0 1.5%;
+        }
+
+        @include breakpoint(min-width, 850px){
+          padding: 0 2%;
+        }
+        @include breakpoint(min-width, 930px){
+          padding: 0 3%;
+        }
+
+        a{
+          font-size: em(20,14);
+          line-height: 45px;
+          vertical-align: middle;
+          color:#fff;
+          text-transform:uppercase;
+          text-decoration: none;
+          padding: 0;
+          position: relative;
+
+          @include breakpoint(tablet){
+            line-height: 55px;
+            height:55px;
+            font-size: em(16,14);
+          }
+
+          &.active{
+            &:before, &:after{
+              position: absolute;
+              top: 20%;
+              color: $color-two;
+
+              @include breakpoint(tablet){
+                font-size: em(23);
+                top: -6%;
+              }
+            }
+
+            &:before{
+              @include ico("\e009");
+              right: 100%;
+            }
+
+            &:after{
+              @include ico("\e008");
+              left: 100%;
+            }
+          }
+
+          &:hover{
+            color: $color-two;
+          }
+
+          &.active:hover{
+            color: white;
+          }
+        }
+
+      }//li
+
+    }//ul
+
+  }//.navbar
+
+}

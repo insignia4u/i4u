@@ -74,12 +74,6 @@ all_equals = () ->
     biggestHeight = $(this).height() if $(this).height() > biggestHeight
   $('.equal').height( biggestHeight + 50)
 
-check_modernizer = () ->
-  if Modernizr.svg
-    $("header h1 a").html "<img src=\"/assets/insignia.svg\" alt=\"Insignia\"/>"
-  else
-    $("header h1 a").html "<img src=\"/assets/insignia.jpg\" alt=\"Insignia\"/>"
-
 alert_div_if_errors = () ->
   if $(".field_with_errors").length > 0
     $(".field_with_errors").siblings()
@@ -91,7 +85,6 @@ $(window).load () ->
   all_equals()
 
 $(document).ready ->
-  check_modernizer()
   alert_div_if_errors()
 
   $().UItoTop easingType: "easeOutQuart"
