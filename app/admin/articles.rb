@@ -90,7 +90,7 @@ ActiveAdmin.register Article do
       f.input :image, label: 'Hightligh Image',
         hint: (f.object.new_record? ? "" : f.object.image.url), as: :file
       f.input :image_caption, hint: "It is the images' caption"
-      f.input :content, hint: "You can use textile format to write this"
+      f.input :content, hint: "You can use textile format to write this - {{calendar aaaa-mm-dd}} - {{training classes hours weeks $price discount% }} | e.g. {{training 3 2 6 $1000 10%}}"
       f.input :summary, hint: "summary its show in blog with textile format"
       f.input :snippet, hint: "Add raw html here, this will be shown at the bottom of the article", :input_html => { :class => 'autogrow', :rows => 20, :cols => 30}
       f.input :publication_state, label: 'Publication state', as: :select,
