@@ -21,5 +21,21 @@ module CalendarHelper
       eos
       rtn
     end
+
+    regex = /\{\{training(.*?)\}\}/
+    reset_regex = /\{\{resetcounter(.*?)\}\}/
+    new_text = text.gsub(regex) do |s|
+      rest = "#{s}".match(/\{\{training(.*?)\}\}/)[1].split(" ")
+      rtn = "<div class='banner clearfix'>"
+        rtn << <<-eos
+          <div class='class'><b>#{rest[0]} clases</b> de <b>#{rest[1]} hs</b> en <b>#{rest[2]} semanas</b></div>
+          <div class='price clearfix'><div class='left'>#{rest[3]}</div><div class='off'>(#{rest[4]} OFF Contado Efectivo)</div></div>
+        eos
+      rtn << <<-eos
+        </div>
+      eos
+      rtn
+    end
+
   end
 end

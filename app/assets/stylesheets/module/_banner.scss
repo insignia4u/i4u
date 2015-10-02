@@ -1,0 +1,68 @@
+
+.banner{
+	width: 100%;
+	margin: 10px auto;
+	color: #fff;
+	font-size: 18px;
+	font-weight: normal;
+	font-family: "Enriqueta", cursive;
+	border: 5px solid rgba(0, 0, 0, 0.05);
+	text-align: center;
+
+	.class{
+		background: #f10993;
+		height: 70px;
+		padding: 10px;
+		color: #fff;
+		float: left;
+		width: 65%;
+		@include breakpoint(desktop){
+			padding: 17px;
+			font-size: 24px;	
+		}
+		@include breakpoint(tablet){
+			padding: 17px;
+			font-size: 24px;
+		}
+	}
+	.price{
+		background: #000;
+		height: 70px;
+		width: 35%;
+		float: right;
+
+		.left{
+			font-size: 30px;
+			font-weight: bold;
+			margin: 0 auto;
+			padding: 0;
+			@include breakpoint(desktop){
+				float: left;
+				width: 45%;
+				padding: 10px 0;
+			}
+			@include breakpoint(tablet){
+				float: left;
+				width: 45%;
+				padding: 10px 0;
+			}
+		}
+
+		.off{
+			font-size: 10px;
+			@include breakpoint(desktop){
+				float: right;
+				width: 55%;
+				padding: 20px 0;
+				font-size: 12px;
+			}
+			@include breakpoint(tablet){
+				float: right;
+				width: 55%;
+				padding: 20px 0;
+				font-size: 12px;
+			}
+		}
+	}
+}
+
