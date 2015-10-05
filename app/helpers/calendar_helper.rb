@@ -22,9 +22,8 @@ module CalendarHelper
       rtn
     end
 
-    regex = /\{\{training(.*?)\}\}/
-    reset_regex = /\{\{resetcounter(.*?)\}\}/
-    new_text = text.gsub(regex) do |s|
+    regex1 = /\{\{training(.*?)\}\}/
+    new_text1 = new_text.gsub(regex1) do |s|
       rest = "#{s}".match(/\{\{training(.*?)\}\}/)[1].split(" ")
       rtn = "<div class='banner clearfix'>"
         rtn << <<-eos
@@ -36,6 +35,5 @@ module CalendarHelper
       eos
       rtn
     end
-
   end
 end

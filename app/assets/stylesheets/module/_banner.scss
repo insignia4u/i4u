@@ -8,28 +8,37 @@
 	font-family: "Enriqueta", cursive;
 	border: 5px solid rgba(0, 0, 0, 0.05);
 	text-align: center;
+	overflow: hidden;
 
 	.class{
 		background: #f10993;
 		height: 70px;
-		padding: 10px;
+		padding: 18px;
 		color: #fff;
-		float: left;
-		width: 65%;
 		@include breakpoint(desktop){
 			padding: 17px;
-			font-size: 24px;	
+			font-size: 24px;
+			float: left;
+			width: 65%;	
 		}
 		@include breakpoint(tablet){
 			padding: 17px;
 			font-size: 24px;
+			float: left;
+			width: 65%;
 		}
 	}
 	.price{
 		background: #000;
 		height: 70px;
-		width: 35%;
-		float: right;
+		@include breakpoint(desktop){
+			width: 35%;
+			float: right;
+		}
+		@include breakpoint(tablet){
+			width: 35%;
+			float: right;
+		}
 
 		.left{
 			font-size: 30px;
@@ -49,7 +58,7 @@
 		}
 
 		.off{
-			font-size: 10px;
+			font-size: 13px;
 			@include breakpoint(desktop){
 				float: right;
 				width: 55%;
