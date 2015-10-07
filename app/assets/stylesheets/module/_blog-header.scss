@@ -39,18 +39,31 @@
 
   }
 
+  span{
+    bottom: 92px;
+  }
+  .icon-list{
+    z-index: -1;
+  }
+
   .navbar{
-    @include outer-container;
-    position: relative;
+    display: none;
 
     @include breakpoint(tablet){
       padding-left: 170px;
+      @include outer-container;
+      position: relative;
     }
 
     ul{
       background: none;
       list-style: none;
       text-align: left;
+      padding: 20px 0 10px;
+      z-index: 9999;
+      @include breakpoint(tablet){
+        padding: 0;
+      }
 
       li{
         display: block;

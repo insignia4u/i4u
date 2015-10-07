@@ -16,12 +16,15 @@
   h2{
     font-family: 'Dosis';
     font-weight: 200;
-    font-size: 26px;
+    font-size: 20px;
     color: #F20892;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px 5px;
 
     @include breakpoint(tablet){
+      font-size: 36px;
+    }
+    @include breakpoint(desktop){
       font-size: 36px;
     }
 
@@ -35,6 +38,14 @@
       font-weight: 300;
       text-align: center;
       color: #575757;
+      font-size: 14px;
+
+      @include breakpoint(tablet){
+      font-size: 19px;
+      }
+      @include breakpoint(desktop){
+        font-size: 19px;
+      }
     }
 
     .newsletter-box{
@@ -46,6 +57,19 @@
       position: relative;
       background: #D83B98;
       margin-top: 18px;
+
+      form{
+        margin: 0;
+        input{
+          border: none;
+          box-shadow: none !important;
+          background: #FFF;
+          border-radius: 0;
+          font-family: 'Dosis';
+          padding: 10px;
+          font-weight: 400;
+        }
+      }
 
       .input{
         width: 100%;
@@ -62,6 +86,7 @@
       }
       .button{
         position: absolute;
+        color: #fff;
         right: 0;
         top: 0px;
         bottom: 0;

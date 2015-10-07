@@ -37,8 +37,6 @@
         h3
           |Unite a más de 500 suscriptores que reciben nuestras novedades.
         .newsletter-box
-          .input
-            input type="text" placeholder="Insert your Email..."
-          .button
-            button type="submit"
-              |Join
+          = form_for subscriber, url: subscribe_path do |f|
+            = f.email_field :email, placeholder: 'Insert your Email...', class: "input"
+            = f.submit 'Join', class: "button"

@@ -100,6 +100,9 @@ $(document).ready ->
   $("#menu-btn, .tooglenav span").click ->
     $(".tooglenav .navbar").slideToggle "slow"
     $(".tooglenav span").slideToggle "slow"
+    $(".icon-list").css("visibility","hidden")
+  $(".tooglenav span").click ->
+    $(".icon-list").css("visibility","initial")
 
   $(".nav-categories").click ->
     $(this).closest(".nav-mobile").addClass "open-categories"
