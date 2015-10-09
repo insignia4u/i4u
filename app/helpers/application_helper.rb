@@ -212,4 +212,8 @@ module ApplicationHelper
     date.year == Date.today.year && month > Date.today.month
   end
 
+  def title(text)
+    content_for :title, text
+  end
+
 end
