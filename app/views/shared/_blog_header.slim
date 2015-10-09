@@ -32,11 +32,9 @@
     .container
       h2
         |Artículos técnicos sobre front-end y Ruby on Rails. Conocé también todas nuestras capacitaciones y búsquedas laborales.
-
-      .newsl
+    .newsl
+      .container
         h3
           |Unite a más de 500 suscriptores que reciben nuestras novedades.
         .newsletter-box
-          = form_for subscriber, url: subscribe_path do |f|
-            = f.email_field :email, placeholder: 'Insert your Email...', class: "input"
-            = f.submit 'Join', class: "button"
+          =render "subscriptions/form"

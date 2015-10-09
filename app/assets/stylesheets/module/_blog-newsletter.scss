@@ -1,8 +1,7 @@
 .blog-newsletter{
-  padding-bottom: 30px;
-  background: #E2E2E2;
-  border-bottom: 1px solid #FA86CA;
-  position: relative;
+  background: rgba(24, 52, 85, 0.9); //#19375a;
+  border-top: #3469af solid 4px;
+  border-bottom: #373435 solid 4px;
 
   &:before{
     position: absolute;
@@ -14,116 +13,139 @@
   }
 
   h2{
-    font-family: 'Dosis';
-    font-weight: 200;
-    font-size: 20px;
-    color: #F20892;
+    font-family: "Amatic SC", cursive;
+    font-weight: 600;
+    font-size: 26px;
+    color: #fff;
     text-align: center;
     padding: 20px 5px;
 
     @include breakpoint(tablet){
-      font-size: 36px;
+      font-size: 40px;
     }
     @include breakpoint(desktop){
-      font-size: 36px;
+      font-size: 40px;
     }
 
 
   }
 
   .newsl{
+    width: 100%;
+    background: #183455;
+    padding-top: 30px;
+    padding-bottom: 30px;
 
     h3{
-      font-family: 'Dosis';
+      font-family: "Enriqueta", cursive;
       font-weight: 300;
       text-align: center;
-      color: #575757;
+      color: #6390d4;
       font-size: 14px;
 
       @include breakpoint(tablet){
-      font-size: 19px;
+      font-size: 16px;
       }
       @include breakpoint(desktop){
-        font-size: 19px;
+        font-size: 16px;
       }
     }
 
     .newsletter-box{
-      width: 95%;
-      max-width: 350px;
+      width: 90%;
       margin: 0 auto;
       padding: 2px;
-      padding-right: 70px;
       position: relative;
-      background: #D83B98;
       margin-top: 18px;
+      text-align: center;
+
+      p{
+        display: none;
+      }
 
       form{
         margin: 0;
-        input{
-          border: none;
-          box-shadow: none !important;
-          background: #FFF;
-          border-radius: 0;
-          font-family: 'Dosis';
-          padding: 10px;
-          font-weight: 400;
-        }
       }
 
-      .input{
-        width: 100%;
-        input{
-          width: 100%;
-          border: none;
-          box-shadow: none !important;
-          background: #FFF;
-          border-radius: 0;
-          font-family: 'Dosis';
-          padding: 10px;
-          font-weight: 400;
+      label{
+        font-size: em(40);
+        color: white;
+        font-family: $font-secondary;
+        display: inline-block;
+        padding: 0 0 10px;
+
+        @include breakpoint(tablet){
+          font-size: em(50);
         }
       }
-      .button{
-        position: absolute;
-        color: #fff;
-        right: 0;
-        top: 0px;
-        bottom: 0;
-        width: 70px;
-        background: #D83B98;
-        @include transition(background 0.5s);
+      input{
+        border: none;
+        background: #FFF;
+        border-radius: 0;
+        font-family: 'Dosis';
+        padding: 10px;
+        font-weight: 400;
+        @include border-radius(5px);
+        @include box-shadow( 2px 2px 16px -5px black );
+        line-height: normal;
+        margin: 0 10px;
+      }
 
+      .email {
+        width: 80%;
+        padding: 5px 10px;
+        font-weight: 300;
+        border: none;
+        height: 42px;
+
+        @include breakpoint(tablet){
+          width: 65%;
+          display:block;
+          margin:0 auto;
+        }
+
+        @include breakpoint(desktop){
+          width: 350px;
+          padding: 8px 24px;
+          position: relative;
+          top: -13px;
+          left: 0;
+          display: inline-block;
+          margin: 0 20px;
+        }
+      }
+      .btn-subscribe {
+        margin-top: 10px;
+
+        @include breakpoint(tablet){
+          clear: both;
+          position:static;
+          margin: 20px auto;
+        }
+
+        @include breakpoint(desktop){
+          position:relative;
+          top: -9px;
+          margin: 0;
+          left: 0;
+        }
         &:hover{
-          background: #D55BA3;
-        }
-
-        &:active{
-          button{
-            @include transform(scale(0.5));
+            border: 1px solid #fff;
           }
-        }
-
-        button{
-          background: none;
-          padding: 0;
-          border: 0;
-          font-family: 'Dosis';
-          font-weight: 300;
-          text-align: center;
-          display: block;
-          width: 100%;
-          line-height: 44px;
-          color: #FFF;
-          outline: none !important;
-          @include transition(transform 0.5s);
-        }
       }
-
+      .btn{
+        @include box-shadow(1px 4px 7px -3px rgba(38, 35, 31, 0.9));
+        background: #E50892;
+        border: 2px solid #A60563;
+        border-radius: 5px 5px 5px 5px;
+        color: #fff;
+        font-family: $font-secondary;
+        font-size: em(30);
+        height: 44px;
+        line-height: em(47,47);
+        padding: 0 20px;
+        text-decoration: none;
+      }
     }
-
-
-
-
   }
 }

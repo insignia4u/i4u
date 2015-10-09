@@ -28,7 +28,9 @@ html
     = render "shared/blog-nav-mobile"
     .content
       = yield
-    = render "shared/footer"
+    footer
+      = render "module/contact"
+      = render "module/social"
 
     javascript:
       var _gaq=[['_setAccount','UA-1828552-1'],['_trackPageview']];

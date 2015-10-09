@@ -2,6 +2,7 @@
   background: $color-one;
   min-height: 0;
   padding: 0 0 118px;
+  border-bottom: none;
 
   @include breakpoint(tablet){
     min-height: 0;
