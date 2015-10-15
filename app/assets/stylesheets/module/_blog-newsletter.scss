@@ -1,6 +1,5 @@
 .blog-newsletter{
   background: rgba(24, 52, 85, 0.9); //#19375a;
-  border-top: #3469af solid 4px;
   border-bottom: #373435 solid 4px;
 
   &:before{
@@ -71,7 +70,7 @@
         font-size: em(40);
         color: white;
         font-family: $font-secondary;
-        display: inline-block;
+        display: none;
         padding: 0 0 10px;
 
         @include breakpoint(tablet){
