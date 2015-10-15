@@ -4,7 +4,11 @@ html
     meta charset="utf-8"
     meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
 
-    title Ruby on Rails Web Development | Insignia
+    title 
+      |Ruby on Rails Web Development | Insignia | 
+      - if content_for?(:title)
+        = yield(:title)
+
     = favicon_link_tag "insignia_logo_small.ico",     rel: "shortcut icon"
     = favicon_link_tag "iconos/insignia_ico_57.ico",  rel: "apple-touch-icon-precomposed", size: "57x57"
     = favicon_link_tag "iconos/insignia_ico_114.ico", rel: "apple-touch-icon-precomposed", size: "114x114"
