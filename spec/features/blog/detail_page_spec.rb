@@ -9,6 +9,8 @@ feature "[Blog] Detail Page" do
     category = create(:category, site: current_site)
     article = create_published_article(current_site, 1.day.ago.to_date)
     article.categories << category
+    rails_tip = create(:rails_tip)
+    today_tip = create(:today_tip)
 
     visit blog_article_path(article)
 
@@ -26,6 +28,8 @@ feature "[Blog] Detail Page" do
     article_1 = create_published_article(current_site, 1.day.ago.to_date)
     article_2 = create_published_article(current_site, 2.day.ago.to_date)
     article_3 = create_published_article(current_site, 3.day.ago.to_date)
+    rails_tip = create(:rails_tip)
+    today_tip = create(:today_tip)
 
     visit blog_article_path(article_2)
 
@@ -37,6 +41,8 @@ feature "[Blog] Detail Page" do
     article = create_published_article(current_site, 1.day.ago.to_date)
     comment_1 = create(:comment, article: article)
     comment_2 = create(:comment)
+    rails_tip = create(:rails_tip)
+    today_tip = create(:today_tip)
 
     visit blog_article_path(article)
 
