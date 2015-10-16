@@ -81,5 +81,6 @@ section.blog
   meta property="og:type"   content="website"
   meta property="og:url"    content='#{raw(blog_article_url(article))}'
   meta property="og:image"  content='#{ raw(article.image? ? article.image.url(:normal) : "http://assets.insignia4u.com/projects/images/000/000/018/Insignia-Logo-Square-Facebook_normal.jpg")}'
+  meta property="og:description"    content='#{article.description}'
 - content_for :title do
   title Ruby on Rails Web Development | Insignia | #{article.title}
