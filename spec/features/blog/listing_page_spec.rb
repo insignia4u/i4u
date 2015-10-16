@@ -10,6 +10,8 @@ feature "[Blog] Listing Page" do
     article_2 = create_published_article(current_site, 2.day.ago.to_date)
     article_3 = create_published_article(current_site, 3.day.ago.to_date)
     article_4 = create_published_article(current_site, 4.day.ago.to_date)
+    rails_tip = create(:rails_tip)
+    today_tip = create(:today_tip)
 
     visit "/blog"
 
@@ -31,15 +33,19 @@ feature "[Blog] Listing Page" do
     category_2 = create(:category, site: current_site)
     article    = create_published_article(current_site, 1.day.ago.to_date)
     article.categories << category_1
+    rails_tip = create(:rails_tip)
+    today_tip = create(:today_tip)
 
     visit "/blog"
 
     expect(page).to have_content(category_1.name)
-    expect(page).not_to have_content(category_2.name)
+    expect(page).to have_content(category_2.name)
   end
 
   scenario "presenting 'read more' link" do
     article    = create_published_article(current_site, 1.day.ago.to_date)
+    rails_tip = create(:rails_tip)
+    today_tip = create(:today_tip)
 
     visit "/blog"
 

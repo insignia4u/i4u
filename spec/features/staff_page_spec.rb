@@ -9,7 +9,7 @@ feature "Staff Page" do
     ts = current_site.text_snippets.
       create(name: 'who-we-are', title: "Who we are", body: "who we are text")
 
-    visit "/staff"
+    visit "/team"
 
     expect(page).to have_content(ts.title)
     expect(page).to have_content(ts.body)
@@ -21,7 +21,7 @@ feature "Staff Page" do
     items  = current_site.text_snippets.
       create(name: 'our-quality-policy-list', title: "quality list", body: "quality list")
 
-    visit "/staff"
+    visit "/team"
 
     expect(page).to have_content(policy.title)
     expect(page).to have_content(policy.body)
@@ -32,7 +32,7 @@ feature "Staff Page" do
     ts = current_site.text_snippets.
       create(name: 'our-mission', title: "Our Mission", body: "mission text")
 
-    visit "/staff"
+    visit "/team"
 
     expect(page).to have_content(ts.title)
     expect(page).to have_content(ts.body)
@@ -42,7 +42,7 @@ feature "Staff Page" do
     ts = current_site.text_snippets.
       create(name: 'our-vision', title: "Our vision", body: "vision text")
 
-    visit "/staff"
+    visit "/team"
 
     expect(page).to have_content(ts.title)
     expect(page).to have_content(ts.body)
@@ -52,7 +52,7 @@ feature "Staff Page" do
     person_1 = create(:person, site: current_site)
     person_2 = create(:person, site: current_site)
 
-    visit "/staff"
+    visit "/team"
 
     expect(page).to have_content(person_1.full_name)
     expect(page).to have_content(person_1.title)

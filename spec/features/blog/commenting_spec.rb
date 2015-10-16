@@ -7,6 +7,8 @@ feature "Commenting" do
 
   scenario "posting a valid comment" do
     article = create_published_article(current_site, 1.day.ago.to_date)
+    rails_tip = create(:rails_tip)
+    today_tip = create(:today_tip)
 
     visit blog_article_path(article)
 
@@ -25,11 +27,13 @@ feature "Commenting" do
     latest_comment = Comment.last
     expect(page).to have_content(latest_comment.text)
     expect(page).to have_content(latest_comment.name)
-    expect(current_path).to eql(blog_article_path(article))
+    expect(current_path).to eql(blog_article_comments_path(article))
   end
 
   scenario "posting an invalid comment" do
     article = create_published_article(current_site, 1.day.ago.to_date)
+    rails_tip = create(:rails_tip)
+    today_tip = create(:today_tip)
 
     visit blog_article_path(article)
 

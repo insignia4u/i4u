@@ -5,10 +5,10 @@ FactoryGirl.define do
     site
 
     tip_type                 1
-    sequence(:title)     { |n| "Some Title-#{n}"}
+    sequence(:title)     { |n| "Some Tips Title-#{n}"}
     link                 "http://www.google.com"
-    description          "Some Description"
-    content              "Some Content"
+    description          "Some Tips Description"
+    content              "Some Tips Content"
     published_at         Date.today
     image_file_name      "pic.jpg"
     image_content_type   "image/jpeg"

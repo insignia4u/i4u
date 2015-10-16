@@ -125,4 +125,13 @@ describe ApplicationHelper do
       helper.tip_inactive_month?(@current_month, @current_date).should be_false
     end
   end
+
+  describe "title" do
+    before(:each) do
+      @text = "Title"
+    end
+    it "should output content for title" do
+      helper.title(@text).should == @text
+    end
+  end
 end
