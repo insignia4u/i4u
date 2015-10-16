@@ -10,4 +10,6 @@ I4u::Application.configure do
   config.action_mailer.delivery_method = :test
   config.active_record.mass_assignment_sanitizer = :strict
   config.active_support.deprecation = :stderr
+  ENV['RECAPTCHA_PUBLIC_KEY'] = 'PUBLICKEYHERE'
+  ENV['RECAPTCHA_PRIVATE_KEY'] = 'PRIVATEKEYHERE'
 end
