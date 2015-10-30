@@ -30,7 +30,8 @@ gem 'activeadmin',          '0.4.4'
 
 # 3rd Party services
 gem 'aws-sdk',              '1.7.1'
-gem 'airbrake',             '3.1.6'
+gem 'rollbar',              '2.4.0'
+gem 'oj',                   '2.12.14'
 gem 'newrelic_rpm',         '3.5.3.25'
 gem 'gibbon',               '0.4.2'
 gem 'memcachier'
