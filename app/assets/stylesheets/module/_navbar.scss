@@ -59,6 +59,14 @@ nav.version1{
       padding: 0;
     }
   }
+  .position-link{
+    padding: 0px;
+    border-radius: 50%;
+    left: 0px;
+    @include breakpoint(tablet){
+      left: 40%;
+    }
+  }
 
   li{
     display: block;
