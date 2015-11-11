@@ -2,15 +2,6 @@
   background: rgba(24, 52, 85, 0.9); //#19375a;
   border-bottom: #373435 solid 4px;
 
-  &:before{
-    position: absolute;
-    content: "";
-    width: 100%;
-    bottom: -2px;
-    height: 1px;
-    background: #fff;
-  }
-
   h2{
     font-family: "Amatic SC", cursive;
     font-weight: 600;
