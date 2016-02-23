@@ -32,6 +32,7 @@ I4u::Application.routes.draw do
   post '/jobs' => 'jobs#create'
 
   match 'blog' => 'blog/articles#index', as: 'blog_path'
+  match '/:slug' => 'blog/articles#slug', slug: /[a-zA-Z0-9\-]+/
 
   root to: 'home#show'
 end
