@@ -14,6 +14,14 @@ class Blog::ArticlesController < Blog::BaseController
 
   def show; end
 
+  def slug
+    if article = Article.where(short_url: params[:slug]).first
+      redirect_to blog_article_url(article), status: :moved_permanently
+    else
+      redirect_to blog_path_url
+    end
+  end
+
 protected
   def site_articles
     current_site.articles.published.latest_first

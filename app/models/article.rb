@@ -16,7 +16,14 @@ class Article < ActiveRecord::Base
   }
 
   validates :author, :title, :subtitle, :content, :summary, :publication_date,
-  :description, :site,presence: true
+  :description, :site, presence: true
+
+  validates :short_url, if: :short_url_present?, 
+    uniqueness: true,
+    format: { 
+      with: /\A[a-zA-Z0-9\-]+\z/, 
+      message: 'Only letters, numbers and dashes allowed.'
+    }
 
   friendly_id :title, use: [:slugged, :history]
 
@@ -30,6 +37,12 @@ class Article < ActiveRecord::Base
     published.where('publication_date <= ?', Date.today)
     .latest_first
     .limit(3)
+  end
+
+protected
+
+  def short_url_present?
+    short_url.present?
   end
 
 end

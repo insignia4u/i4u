@@ -48,6 +48,7 @@ ActiveAdmin.register Article do
         article.categories.map {|cat| cat.name }.join(', ')
       end
       row :author
+      row :short_url
       row :title
       row :subtitle
       row :description do |article|
@@ -84,6 +85,7 @@ ActiveAdmin.register Article do
               :as => :select, :collection => Hash[Site.all.map{|s| [s.name, s.id]}]
       f.input :categories, as: :select
       f.input :author
+      f.input :short_url, hint: "Optional. Set a site-wide short url for this article."
       f.input :title
       f.input :subtitle
       f.input :description, hint: "description its shown in home page"
@@ -107,9 +109,12 @@ ActiveAdmin.register Article do
       return [] if request.get?
       [
         params.require(:article)
-        .permit(:site_id,:author, :title, :content,:subtitle,
-        :summary, :publication_date, :publication_state,
-        :image,:description, :image_caption, :is_event, :snippet, category_ids: [])
+        .permit(
+          :site_id,:author, :title, :content,:subtitle,
+          :summary, :publication_date, :publication_state,
+          :image,:description, :image_caption, :is_event, :snippet, :short_url, 
+          category_ids: []
+        )
       ]
     end
   end
