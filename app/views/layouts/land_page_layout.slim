@@ -1,0 +1,33 @@
+doctype html
+<!-- saved from url=(0095)http://multifour.com/projects/select/multi-builder-4/elements/preview_4Fpcezc2uvvK86BB5FaT.html -->
+html
+   <!-- Head -->
+   head
+      title Proceso Insignia
+      meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+      meta charset="utf-8"
+      meta name="viewport" content="width=device-width, initial-scale=1.0"
+      
+      <!--META-DESCRIPTION-->
+      meta name="description" content="Insignia Web"
+         
+      = favicon_link_tag "insignia_logo_small.ico",     rel: "shortcut icon"
+      = favicon_link_tag "iconos/insignia_ico_57.ico",  rel: "apple-touch-icon-precomposed", size: "57x57"
+      = favicon_link_tag "iconos/insignia_ico_114.ico", rel: "apple-touch-icon-precomposed", size: "114x114"
+      = favicon_link_tag "iconos/insignia_ico_72.ico",  rel: "apple-touch-icon-precomposed", size: "72x72"
+      = favicon_link_tag "iconos/insignia_ico_144.ico", rel: "apple-touch-icon-precomposed", size: "144x144"
+      
+      / All css "landing_page"
+      / = stylesheet_link_tag "application", :media => "all"
+      = stylesheet_link_tag "landing_page", :media => "all"
+      
+         
+   body data-spy="scroll" data-target=".navMenuCollapse" data-feedly-mini="yes"
+      
+      #wrap
+         = render "shared/landing_page_header"
+         / Header
+         = yield 
+         = render "shared/landing_page_footer"
+      
+      = javascript_include_tag 'landing_pagejs'

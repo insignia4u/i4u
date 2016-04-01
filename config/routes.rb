@@ -35,4 +35,6 @@ I4u::Application.routes.draw do
   match '/:slug' => 'blog/articles#slug', slug: /[a-zA-Z0-9\-]+/
 
   root to: 'home#show'
+
+  resources :Landing_Page
 end
