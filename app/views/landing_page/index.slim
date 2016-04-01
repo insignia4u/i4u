@@ -31,17 +31,19 @@ section#contact-half.bg-color1.cover-bg[style="padding-top: 90px; padding-bottom
               i.icon.fa.fa-envelope[data-selector=".icon"]
               | contacto@insignia4u.com
       .col-md-5.col-md-offset-1
-        .form-container[data-selector="#testimonials-grid .quote, .pricing-table, .pricing-table .stamp, .post, .panel, .panel-heading, .form-container, .post-content .price-circle"]
-          h3.title.form-title
-            | Dejános tus datos asi te contactamos.
-          form#contact_form[action="http://multifour.com/projects/select/multi-builder-4/elements/scripts/contact.php" role="form" novalidate="novalidate" data-selector="form"]
-            .form-group
-              input#contact_name.form-control[type="text" placeholder="Nombre" name="name"]
-            .form-group
-              textarea#CorreoElectronico.form-control[rows="4" placeholder="Correo Electronico" name="email"]
-            button#contact_submit.btn.btn-lg.btn-block.btn-primary[type="submit" data-loading-text="•••" data-selector="a.btn, a.download-btn, button.btn, a.goto" style="color: rgb(255, 255, 255); border-color: rgb(166, 5, 99); border-width: 1px; border-radius: 5px; font-size: 20px; background-color: rgb(229, 8, 146);" src="images/uploads/img44.png"]
-              i.icon.fa.fa-check[data-selector=".icon"]
-              | Enviar
+        .form-container
+          #newletter
+             = form_for subscriber, url: subscribe_path, html: { :class => "newletter" } do |f|
+                h3.title.form-title
+                  | Dejános tus datos asi te contactamos.
+                form#contact_form
+                  .form-group
+                     = f.email_field :email, placeholder: 'Correo Electronico', class: 'form-control',id: "CorreoElectronico"
+                  .form-group
+                  button#contact_submit.btn.btn-lg.btn-block.btn-primary[type="submit" data-loading-text="•••" data-selector="a.btn, a.download-btn, button.btn, a.goto" style="color: rgb(255, 255, 255); border-color: rgb(166, 5, 99); border-width: 1px; border-radius: 5px; font-size: 20px; background-color: rgb(229, 8, 146);" src="images/uploads/img44.png"]
+                    i.icon.fa.fa-check
+                     = f.submit 'Enviar',class: "btn-send"
+        
 section#portfolio-grid.portfolio-block.text-center.dark-bg.bg-color1[data-selector="section" src="images/uploads/DSC_0121.jpg" style="padding-top: 50px; padding-bottom: 90px; border-bottom-width: 0px; border-bottom-color: rgb(255, 255, 255); background-image: none; background-attachment: fixed; background-color: rgb(37, 40, 48); background-size: cover; background-repeat: no-repeat;"]
   .container
     .row
@@ -64,7 +66,6 @@ section#portfolio-grid.portfolio-block.text-center.dark-bg.bg-color1[data-select
          = image_tag "landing_page/static_landing/DSC_0144.jpg", class: ".portfolio-list"
       li
          = image_tag "landing_page/static_landing/DSC_0134.jpg", class: ".portfolio-list"
-
       li
          = image_tag "landing_page/static_landing/DSC_0127.jpg", class: ".portfolio-list"
          

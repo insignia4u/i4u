@@ -3597,6 +3597,16 @@ ul.posts-line .post .title {
 
 }
 
+.icon-social-awesome a:hover{
+	text-decoration: none !important;
+}
+
 .icon-contact-awesome{
 	font-size: 2rem;
+}
+
+.btn-send {
+	background: none !important;
+	border: none !important;
+	font-family: 'Roboto',sans-serif;
 }
