@@ -5,7 +5,7 @@ class SubscriptionsController < ApplicationController
     if request.xhr?
       proccess_ajax_request
     else
-      redirect_to root_path
+      redirect_to root_url, :notice => "Gracias por tu subscripcion!"
     end
   end
 

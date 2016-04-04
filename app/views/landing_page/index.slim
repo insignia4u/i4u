@@ -1,0 +1,121 @@
+section#contact-half.bg-color1.cover-bg[style="padding-top: 90px; padding-bottom: 80px; border-bottom-width: 0px; border-bottom-color: rgb(232, 232, 232); background-image: none; background-attachment: scroll; background-color: rgb(37, 40, 48); background-size: cover; background-repeat: no-repeat;" data-selector="section" src="images/uploads/DSC_0121.jpg"]
+  .container
+    .row
+      .col-md-6.dark-bg.editContent[data-selector="Footer"]
+        h2.title
+          strong
+            a[href="http://www.insignia4u.com/" target="_blank"]
+              | INSIGNIA SRL
+        p[data-selector="p"]
+          |  Somos
+          strong
+            | TUCUMANOS
+          | , somos especialistas en el desarrollo de Aplicaciones Web y Móviles, nos apasionan los desafios y queremos trabajar con vos!
+        p[data-selector="p"]
+          |  Nos respaldan 12 años de experiencia brindando soluciones tecnológicas exitosas y de calidad, a clientes dispersos por todo el mundo.
+        p[data-selector="p"]
+          |  Sabemos cómo hacer nuestro trabajo para darle a tu empresa el diferencial que necesita, siempre utilizando las plataformas y tecnologías mas modernas que existen en el mercado.
+        p[data-selector="p"]
+          br
+        ul.data-list
+          li
+            i.icon.fa.fa-map-marker[data-selector=".icon"]
+            | Lamadrid 318 - 4to A / 5to B
+            br
+            |  San Miguel de Tucumán. Tucumán.
+          li
+            i.icon.fa.fa-phone[data-selector=".icon"]
+            | 0381- 420 2730
+          li
+            a[href="http://insignia4u.com/contact" target="_blank"]
+              i.icon.fa.fa-envelope[data-selector=".icon"]
+              | contacto@insignia4u.com
+      .col-md-5.col-md-offset-1
+        .form-container
+          #newletter
+             = form_for subscriber, url: subscribe_path, html: { :class => "newletter" } do |f|
+                h3.title.form-title
+                  | Dejános tus datos asi te contactamos.
+                form#contact_form
+                  .form-group
+                     = f.email_field :email, placeholder: 'Correo Electronico', class: 'form-control',id: "CorreoElectronico"
+                  .form-group
+                  button#contact_submit.btn.btn-lg.btn-block.btn-primary[type="submit" data-loading-text="•••" data-selector="a.btn, a.download-btn, button.btn, a.goto" style="color: rgb(255, 255, 255); border-color: rgb(166, 5, 99); border-width: 1px; border-radius: 5px; font-size: 20px; background-color: rgb(229, 8, 146);" src="images/uploads/img44.png"]
+                    i.icon.fa.fa-check
+                     = f.submit 'Enviar',class: "btn-send"
+        
+section#portfolio-grid.portfolio-block.text-center.dark-bg.bg-color1[data-selector="section" src="images/uploads/DSC_0121.jpg" style="padding-top: 50px; padding-bottom: 90px; border-bottom-width: 0px; border-bottom-color: rgb(255, 255, 255); background-image: none; background-attachment: fixed; background-color: rgb(37, 40, 48); background-size: cover; background-repeat: no-repeat;"]
+  .container
+    .row
+      .col-sm-6.col-sm-offset-3
+        h2.title
+          | Portfolio
+        p.sep-bottom.desc-text.editContent[data-selector="p"]
+          | Nuestro portfolio de proyectos es el mejor indicador de la calidad, el conocimiento, la experiencia y el profesionalismo con el que trabajamos. Nos avalan una gran cantidad de proyectos exitosos y una gran diversidad de clientes a lo largo de nuestra historia.
+          br
+          br
+          |  Te mostramos nuestros últimos lanzamientos!
+    ul.portfolio-list
+      li
+         = image_tag "landing_page/static_landing/DSC_0112.jpg", class: ".portfolio-list" 
+      li
+         = image_tag "landing_page/static_landing/DSC_0121.jpg", class: ".portfolio-list"
+      li
+         = image_tag "landing_page/static_landing/DSC_0128.jpg", class: ".portfolio-list"
+      li
+         = image_tag "landing_page/static_landing/DSC_0144.jpg", class: ".portfolio-list"
+      li
+         = image_tag "landing_page/static_landing/DSC_0134.jpg", class: ".portfolio-list"
+      li
+         = image_tag "landing_page/static_landing/DSC_0127.jpg", class: ".portfolio-list"
+         
+section#steps-path-2.dark-bg.bg-color1[data-selector="section" src="images/uploads/DSC_0121.jpg" style="padding-top: 50px; padding-bottom: 80px; border-bottom-width: 0px; border-bottom-color: rgb(255, 255, 255); background-image: none; background-attachment: scroll; background-color: rgb(37, 40, 48); background-size: auto; background-repeat: repeat;"]
+  .container
+    .sep-bottom.text-center
+      h2.step
+        | Paso a paso en la Construcción de la Aplicación Móvil
+        br[style="line-height: 22.4px;"]
+        strong.gaceta
+          a[href="http://m.lagaceta.com.ar/"]
+            | LA GACETA
+      p.desc-text.editContent[data-selector="p" src="http://insignia4u.com/assets/insigniav2-d59d1d8a806e117270098716412f6e2c.svg" style="color: rgb(255, 255, 255); font-size: 17px;"]
+        | En el 2014 desarrollamos y lanzamos la versión móvil del sitio de La Gaceta, el que seguramente visitás todos los días. Te contamos cómo trabajamos en ese proyecto, las metodologías que utilizamos y por supuesto la receta del éxito.
+    ul.step-path-block
+      li[data-selector=".step-left-block li, .step-center-block li, .step-path-block li"]
+        .step-img
+            = image_tag "landing_page/step_landing/img11.png", class: "screen img_step"
+        .step-text[data-selector="Footer"]
+          h3.title[data-selector="h3"]
+            strong
+              | Planificación
+          p[data-selector="p"]
+            |  Junto al equipo de La Gaceta fuimos definiendo los principales requerimientos del proyecto y produjimos la documentación inicial necesaria para comenzar a trabajar, que nos sirvió para estimar el tiempo de desarrollo del proyecto y lograr un presupuesto. El uso de metodologías ágiles y la experiencia de nuestro equipo, fueron las bases para lograr una sólida definición del alcance.
+            span
+      li.reverse[data-selector=".step-left-block li, .step-center-block li, .step-path-block li"]
+        .step-img
+            = image_tag "landing_page/step_landing/img22.png", class: "screen img_step"
+        .step-text[data-selector="Footer"]
+          h3.title[data-selector="h3"]
+            strong
+              | Desarrollo
+          p[data-selector="p"]
+            |  La Gaceta confió en nosotros por ser referentes en el desarrollo de aplicaciones web. Desarrollamos e implementamos las características del sitio móvil de La Gaceta teniendo en mente la escalabilidad y el rendimiento esperado, pero por sobre todo para facilitar el mantenimiento a largo plazo de la aplicación. Como en todos nuestros proyectos, pusimos un gran énfasis en entregar un producto que respete altos estándares de calidad, lo que permitió que el cliente continuara luego con el mantenimiento sin inconvenientes.
+            span
+      li[data-selector=".step-left-block li, .step-center-block li, .step-path-block li"]
+        .step-img
+            = image_tag "landing_page/step_landing/img33.png",class: "screen img_step"
+        .step-text[data-selector="Footer"]
+          h3.title[data-selector="h3"]
+            strong
+              | Control de Calidad
+          p[data-selector="p"]
+            |  El principal objetivo a verificar era que el sitio sea compatible con la gran variedad de dispositivos móviles que lo visitarían, smartphones con Android, Windows Mobile y iPhones, en todas sus versiones accederían diariamente. Fue nuestro deber aseguramos de que la aplicación móvil del diario La Gaceta funcione correctamente en todos ellos, cumpliendo con todos los requerimientos y por supuesto que esté libre de errores. Este proceso de control de calidad se repitió hasta que entregamos una solución estable.
+      li.reverse[data-selector=".step-left-block li, .step-center-block li, .step-path-block li"]
+        .step-img
+            = image_tag "landing_page/step_landing/img44.png",class: "screen img_step"
+        .step-text[data-selector="Footer"]
+          h3.title[data-selector="h3"]
+            strong
+              | Voilà... la aplicación funcionando!
+          p[data-selector="p"]
+            |  Durante el lanzamiento acompañamos a La Gaceta a detectar y solucionar los inconvenientes imprevistos y casos excepcionales propios del lanzamiento público de toda aplicación. Una respuesta rápida fue clave para ofrecer una buena experiencia a los visitantes. Hoy La Gaceta Móvil tiene un tráfico diario de 250.000 personas, las cuales interactúan de forma constante con las noticias, visualizando, comentando y compartiendo las mismas en redes sociales y profesionales. 
