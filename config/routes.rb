@@ -31,10 +31,12 @@ I4u::Application.routes.draw do
   get  '/jobs' => 'jobs#new'
   post '/jobs' => 'jobs#create'
 
+  get "landing" => "Landing_Page#index"
+
   match 'blog' => 'blog/articles#index', as: 'blog_path'
   match '/:slug' => 'blog/articles#slug', slug: /[a-zA-Z0-9\-]+/
 
   root to: 'home#show'
 
-  resources :Landing_Page
+
 end
