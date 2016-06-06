@@ -1,0 +1,372 @@
+$lato: 'Lato', sans-serif;
+
+.headline-2 {
+  font-family: $lato;
+  font-weight: 700;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px 1px #666;
+  padding: 20px 5px;
+
+  @include breakpoint(tablet){
+    font-size: 26px;
+  }
+  @include breakpoint(desktop){
+    font-size: 30px;
+  }
+}
+
+.landing-page {
+  h2 {
+    @extend .headline-2;
+  }
+
+  .call-to-action {
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 45px;
+
+    background: image-url('landing.jpg');
+    background-size: cover;
+    background-clip: padding-box;
+
+    border-bottom: #373435 solid 4px;
+
+    text-align: center;
+
+    .container {
+      padding: 16px;
+
+      @include breakpoint(tablet){
+        padding: 0;
+      }
+      @include breakpoint(desktop){
+        padding: 0;
+      }
+    }
+
+    .header {
+      a {
+        img {
+          width: 220px;
+          padding-bottom: 20px;
+        }
+      }
+    }
+
+    .inner-box {
+      @include clearfix;
+      background: #183455;
+      opacity: 0.8;
+      padding: 20px;
+      width: 95%;
+      margin: 0 auto;
+    }
+
+    h3{
+      font-family: $lato;
+      font-weight: 300;
+      color: #fff;
+      font-size: 21px;
+
+      @include breakpoint(tablet){
+        font-size: 20px;
+      }
+      @include breakpoint(desktop){
+        font-size: 20px;
+      }
+    }
+
+    .trigger {
+      float: none;
+      padding: 40px 0px 10px 0px;
+      text-align: center;
+
+      .btn {
+        font-family: $lato;
+        font-size: 40px;
+
+        @include breakpoint(tablet){
+          font-size: 36px;
+        }
+
+        @include breakpoint(desktop){
+          font-size: 26px;
+          padding: 10px 20px;
+        }
+      }
+    }
+  } // .call-to-action
+
+  .details {
+
+    padding: 30px 0;
+
+    .fa-stack {
+      float: left;
+      margin-top: 0;
+      margin-left: 10px;
+
+      @include breakpoint(tablet){
+        margin-top: 7px;
+        margin-left: 0px;
+      }
+      @include breakpoint(desktop){
+        margin-top: 7px;
+        margin-left: 0px;
+      }
+
+      .fa-circle {
+        color: #2FE508;
+      }
+    }
+
+    .item {
+
+      .text {
+        float: right;
+
+        width: 85%;
+        padding-right: 20px;
+
+        @include breakpoint(tablet){
+          width: 95%;
+          padding-right: 0px;
+        }
+        @include breakpoint(desktop){
+          width: 95%;
+          padding-right: 0px;
+        }
+
+      h3{
+        font-family: $lato;
+        font-weight: 600;
+        color: #19375a;
+        font-size: 24px;
+        text-shadow: 1px 1px 1px #666;
+
+        @include breakpoint(tablet){
+        font-size: 30px;
+        }
+        @include breakpoint(desktop){
+          font-size: 28px;
+        }
+      }
+
+        p {
+          font-family: $lato;
+          font-weight: 300;
+          font-size: 18px;
+          margin-top: 15px;
+        }
+      } // .text
+
+    } // .item
+
+  } //.details
+
+  .contact-us {
+    background: #E50892;
+    border-top: 4px solid #a60563;
+    padding: 30px 0px;
+
+    h2 {
+      @extend .headline-2;
+      padding-bottom: 0px;
+    }
+
+    p {
+      font-family: $lato;
+      font-weight: 300;
+      font-size: 18px;
+
+      color: #f4f4f4;
+      text-align:center;
+    }
+
+    form {
+      @include clearfix;
+
+      .col {
+        float: none;
+        margin-right: 0px;
+        padding: 5px 20px;
+
+        @include breakpoint(tablet){
+          float: left;
+          width: 40%;
+          margin-right: 2%;
+
+          &:last-child {
+            margin-right: 0;
+            width: 16%;
+          }
+        }
+        @include breakpoint(desktop){
+          float: left;
+          width: 40%;
+          margin-right: 2%;
+          padding: 0;
+
+          &:last-child {
+            margin-right: 0;
+            width: 16%;
+          }
+        }
+
+        input[type=text], input[type=email] {
+          font-family: $lato;
+          width: 100%;
+          margin-top: 2px;
+          border: 2px solid #a60563;
+          height: 44px;
+          background-color: #FFF;
+          outline: none;
+
+          -webkit-border-radius: 5px;
+          border-radius: 5px;
+
+          -webkit-box-shadow: 1px 2px 1px -1px rgba(38, 35, 31, 0.3);
+          box-shadow: 1px 2px 1px -1px rgba(38, 35, 31, 0.3);
+
+          &:input {
+            border: #000 solid 1px;
+          }
+        }
+
+        .btn {
+          font-family: $lato;
+          background-color: #183455;
+          border: 2px solid #3469af;
+          font-weight: 700;
+          color: #fff;
+          font-size: 20px;
+          width: 100%;
+        }
+      } // .col
+    } // .form-box
+  } // .contact-us
+
+  .learn-more {
+    
+    border-top: 4px solid #183455;
+    padding: 40px 0;
+    font-family: $lato;
+    font-weight: 300;
+    text-align: center;
+
+    .link {
+      color: #183455;
+      font-weight: 400;
+      text-decoration: none;
+      border: 2px solid #183455;
+      padding: 7px 15px;
+      -webkit-box-shadow: 1px 2px 1px -1px #666;
+      box-shadow: 1px 2px 1px -1px #666;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+
+      display: block;
+      margin: 10px 20px;
+
+      @include breakpoint(tablet){
+        display: inline;
+        margin: 0 0 0 10px !important;
+      }
+
+      @include breakpoint(desktop){
+        display: inline;
+        margin: 0 0 0 10px !important;
+      }
+    }
+
+  } // .learn-more
+
+  .footer {
+
+    padding: 30px 0px;
+    background-color: #333;
+    border-top: 4px solid #666;
+
+    .logo {
+      img {
+        width: 120px;
+        margin-bottom: 20px;
+      }
+    } // .logo
+
+    .contact-box {
+
+      float: none;
+      padding-left: 20px;
+
+      @include breakpoint(tablet){
+        float: left;
+        padding-left: 0;
+      }
+
+      @include breakpoint(desktop){
+        float: left;
+        padding-left: 0;
+      }
+
+      .contact-info {
+        color: #fff;
+        margin-bottom: 10px;
+        font-family: $lato;
+        font-weight: 300;
+        font-size: 16px;
+        @include clearfix;
+
+        i, .data {
+          float: left;
+        }
+
+        i {
+          margin-top: 2px;
+        }
+
+        .data {
+          margin-left: 15px;
+        }
+      } // .contact-info
+
+    } // .contact-box
+      
+
+    .social-box {
+
+      float: none;
+      margin-top: 30px;
+      padding-left: 20px;
+
+      @include breakpoint(tablet){
+        float: right;
+        margin-top: 0;
+        padding-left: 0;
+      }
+
+      @include breakpoint(desktop){
+        float: right;
+        margin-top: 0;
+        padding-left: 0;
+      }      
+
+      a {
+        font-size: 18px;
+      }
+
+      span.title {
+        font-family: $lato;
+        font-weight: 300;
+        font-size: 16px;
+        color: #f4f4f4;
+        margin-right: 10px;
+      }
+
+    } // .social-box
+
+  } // .footer
+
+} // .landing-page

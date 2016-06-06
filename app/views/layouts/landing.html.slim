@@ -17,23 +17,14 @@ html
     meta name="description" content="Insignia web"
     meta name="viewport" content="width=device-width"
 
-    link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700|Enriqueta:400,700|Dosis:400,300,200' rel='stylesheet' type='text/css'
+    link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'
 
     = stylesheet_link_tag "application", :media => "all"
     = yield :stylesheets
     = yield :head
 
   body onload="window.scrollTo(0,1);"
-
-    = render "shared/blog-nav-mobile"
-    = render "shared/blog_header"
-
-    .content
-      = yield
-
-    footer
-      = render "module/contact"
-      = render "module/social"
+    = yield
 
     javascript:
       var _gaq=[['_setAccount','UA-1828552-1'],['_trackPageview']];
