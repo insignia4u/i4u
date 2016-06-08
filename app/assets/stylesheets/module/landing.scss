@@ -17,6 +17,15 @@ $lato: 'Lato', sans-serif;
   }
 }
 
+.subtitle {
+  font-family: $lato;
+  font-weight: 300;
+  font-size: 18px;
+
+  color: #f4f4f4;
+  text-align:center;
+}
+
 .landing-page {
   h2 {
     @extend .headline-2;
@@ -177,12 +186,7 @@ $lato: 'Lato', sans-serif;
     }
 
     p {
-      font-family: $lato;
-      font-weight: 300;
-      font-size: 18px;
-
-      color: #f4f4f4;
-      text-align:center;
+      @extend .subtitle;
     }
 
     form {
@@ -250,36 +254,53 @@ $lato: 'Lato', sans-serif;
 
   .learn-more {
     
+    background-color: #3469af;
     border-top: 4px solid #183455;
     padding: 40px 0;
     font-family: $lato;
     font-weight: 300;
     text-align: center;
+    color: #f4f4f4;
 
-    .link {
-      color: #183455;
-      font-weight: 400;
-      text-decoration: none;
-      border: 2px solid #183455;
-      padding: 7px 15px;
-      -webkit-box-shadow: 1px 2px 1px -1px #666;
-      box-shadow: 1px 2px 1px -1px #666;
-      -webkit-border-radius: 5px;
-      border-radius: 5px;
-
-      display: block;
-      margin: 10px 20px;
-
-      @include breakpoint(tablet){
-        display: inline;
-        margin: 0 0 0 10px !important;
-      }
-
-      @include breakpoint(desktop){
-        display: inline;
-        margin: 0 0 0 10px !important;
-      }
+    h2 {
+      padding-bottom: 0px;
     }
+
+    p {
+      @extend .subtitle;
+    }
+
+
+    .services {
+      padding-top: 20px;
+
+      .link {
+        color: #f4f4f4;
+        font-size: 18px;
+        font-weight: 400;
+        text-decoration: none;
+        border: 2px solid #ebebeb;
+        padding: 7px 15px;
+        -webkit-box-shadow: 1px 2px 1px -1px #666;
+        box-shadow: 1px 2px 1px -1px #666;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+
+        display: block;
+        margin: 10px 20px;
+
+        @include breakpoint(tablet){
+          display: inline;
+          margin: 0 0 0 10px !important;
+        }
+
+        @include breakpoint(desktop){
+          display: inline;
+          margin: 0 0 0 10px !important;
+        }
+      } // .link
+
+    } // .services
 
   } // .learn-more
 
