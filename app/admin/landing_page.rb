@@ -16,6 +16,13 @@ ActiveAdmin.register LandingPage do
       row :heading
       row :description
     end
+    panel 'Items' do
+      table_for landing_page.landing_page_items do
+        column :title
+        column :description
+      end
+    end
+
   end
 
   form do |f|
@@ -31,7 +38,7 @@ ActiveAdmin.register LandingPage do
       f.input :description, required: true, input_html: {rows: 4}
     end
     f.inputs "Features" do
-      f.has_many :landing_page_items, sortable: :position do |t|
+      f.has_many :landing_page_items, heading: 'Items', allow_destroy: true, sortable: :position do |t|
         t.input :title, required: true
         t.input :description, required: true, input_html: {rows: 4}
       end
@@ -44,7 +51,7 @@ ActiveAdmin.register LandingPage do
       return [] if request.get?
       [
         params.require(:landing_page)
-        .permit(:folder, :slug, :title, :heading, :description, landing_page_items_attributes: [:title, :description, :position])
+        .permit(:folder, :slug, :title, :heading, :description, landing_page_items_attributes: [:id, :"_destroy", :title, :description, :position])
       ]
     end
   end
