@@ -31,9 +31,8 @@ I4u::Application.routes.draw do
   get  '/jobs' => 'jobs#new'
   post '/jobs' => 'jobs#create'
 
-  get '/rails' => 'landing_pages#rails'
-
   match 'blog' => 'blog/articles#index', as: 'blog_path'
+  match '/:folder/:slug' => 'landing_pages#index', as: 'landing'
   match '/:slug' => 'blog/articles#slug', slug: /[a-zA-Z0-9\-]+/
 
   root to: 'home#show'

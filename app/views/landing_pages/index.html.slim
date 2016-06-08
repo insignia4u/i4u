@@ -1,3 +1,5 @@
+- title @landing_page.title
+
 .landing-page
     
   .call-to-action
@@ -8,46 +10,23 @@
 
       .inner-box
         h2
-          | We have developed dozens of Ruby on Rails applications
+          = @landing_page.heading
 
         h3
-          | We were born as a Ruby on Rails development shop, with 10 years of experience with the framework, we are a team with the right mix of backend and frontend skills to handle different kinds of projects.
+          = @landing_page.description
 
         .trigger
           = link_to "Contact us!", "#", class: "btn"
 
   .details
-    .item.container
-      = fa_stacked_icon "check inverse", base: "circle"
+    - @landing_page.landing_page_items.each do |lpi|
+      .item.container
+        = fa_stacked_icon "check inverse", base: "circle"
 
-      .text
-        h3 We have worked with every Rails version
+        .text
+          h3= lpi.title
 
-        p We have been there since the beginning, doing our first projects with Rails 1.2 and our latest with Rails 4, we are certainly ready to adopt Rails 5 as soon as the stable version is released. We have experience maintaining legacy Rails 2 and 3 apps and have been part of several upgrade projects.
-
-    .item.container
-      = fa_stacked_icon "check inverse", base: "circle"
-
-      .text
-        h3 Some of our projects
-
-        p Some of the latest projects we have done as Rails apps from scratch are GuguGuru, Holroyd's Environmental Headquarters, TrueFuneral among others. Take a look at our portfolio to see some featured projects.
-
-    .item.container
-      = fa_stacked_icon "check inverse", base: "circle"
-
-      .text
-        h3 Our own website is an open source project
-
-        p We feel confident of the quality of the code we write, that's why our own website is open sourced for anyone to take a look at.
-
-    .item.container
-      = fa_stacked_icon "check inverse", base: "circle"
-
-      .text
-        h3 Team Structure
-
-        p As a team we always make sure there is a project manager assigned to your project and a technical director reviewing the code and ensuring the right architectural decisions are made. We also take care of the quality assurance, assigning a different person, other than the developer to check the correct implementation of the features. Structuring our team that way we can plan our availability, milestones, deadlines and make sure we're delivering great quality code in each iteration.
+          p= lpi.description
 
   .contact-us
     .container
