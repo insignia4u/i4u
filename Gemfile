@@ -7,7 +7,7 @@ ruby '1.9.3', patchlevel: '547'
 gem 'rails', '3.2.18'
 
 # Plugins
-gem 'kaminari',             '0.15.0'
+gem 'kaminari'
 gem 'friendly_id',          '4.0.9'
 gem 'paperclip',            '3.3.1'
 gem 'textilize'
@@ -27,7 +27,7 @@ gem 'figaro'
 # Engines
 gem 'devise',               '2.1.0'
 gem 'inherited_resources',  '1.3.1'  #fixed because the latest version is not compatible with activeadmin
-gem 'activeadmin',          '0.5.1'
+gem 'activeadmin',          '0.6.6'
 
 # 3rd Party services
 gem 'aws-sdk',              '1.7.1'
