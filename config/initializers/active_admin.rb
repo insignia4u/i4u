@@ -102,6 +102,7 @@ ActiveAdmin.setup do |config|
   #   config.namespace :without_comments do |without_comments|
   #     without_comments.allow_comments = false
   #   end
+  config.allow_comments = false
 
 
   # == Controller Filters
