@@ -30,6 +30,12 @@ ActiveAdmin.register LandingPage do
       f.input :heading, required: true
       f.input :description, required: true, input_html: {rows: 4}
     end
+    f.inputs "Features" do
+      f.has_many :landing_page_items, sortable: :position do |t|
+        t.input :title, required: true
+        t.input :description, required: true, input_html: {rows: 4}
+      end
+    end
     f.buttons
   end
 
@@ -38,7 +44,7 @@ ActiveAdmin.register LandingPage do
       return [] if request.get?
       [
         params.require(:landing_page)
-        .permit(:folder, :slug, :title, :heading, :description)
+        .permit(:folder, :slug, :title, :heading, :description, landing_page_items_attributes: [:title, :description, :position])
       ]
     end
   end

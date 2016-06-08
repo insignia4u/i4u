@@ -1,5 +1,9 @@
 class LandingPage < ActiveRecord::Base
-  attr_accessible :folder, :slug, :title, :heading, :description
+
+  has_many :landing_page_items, dependent: :destroy
+
+  attr_accessible :folder, :slug, :title, :heading, :description, :landing_page_items_attributes
+  accepts_nested_attributes_for :landing_page_items
 
   validates :folder, :slug, :title, :heading, :description, presence: true
 
