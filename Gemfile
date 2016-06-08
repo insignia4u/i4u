@@ -27,7 +27,7 @@ gem 'figaro'
 # Engines
 gem 'devise',               '2.1.0'
 gem 'inherited_resources',  '1.3.1'  #fixed because the latest version is not compatible with activeadmin
-gem 'activeadmin',          '0.4.4'
+gem 'activeadmin',          '0.5.1'
 
 # 3rd Party services
 gem 'aws-sdk',              '1.7.1'
