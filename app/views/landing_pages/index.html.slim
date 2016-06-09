@@ -1,0 +1,105 @@
+- title @landing_page.title
+
+- if flash[:notice]
+  #notice_div
+
+.landing-page
+    
+  .call-to-action
+    .container
+      .header
+        a.logo href="/"
+          = image_tag "insigniav2.svg"
+
+      .inner-box
+        h2
+          = @landing_page.heading
+
+        h3
+          = @landing_page.description
+
+        .trigger
+          = link_to "Contact us!", "#", class: "btn"
+
+  .details
+    - @landing_page.landing_page_items.each do |lpi|
+      .item.container
+        = fa_stacked_icon "check inverse", base: "circle"
+
+        .text
+          h3= lpi.title
+
+          p= lpi.description
+
+  .contact-us
+    .container
+      h2 Let's get in touch!
+
+      p Just fill up the form with your name and email and we'll be contacting you shortly
+
+      = form_for message, url: contact_path(to: landing_path(folder: @landing_page.folder, slug: @landing_page.slug)), html: { multipart: true } do |f|
+
+        = f.hidden_field :body, value: "Message from landing page #{@landing_page.path}"
+
+        .col
+          = f.text_field :name, placeholder: "What's your name?", required: true
+
+        .col
+          = f.email_field :email, placeholder: 'Email'
+
+        .col
+          = f.submit 'Contact Us', class: 'btn'
+
+  - if false
+    .learn-more
+      .container
+        h2 And there's more!
+
+        p Learn more about the rest of our services
+
+        .services
+          a.link href="#" Front End Development
+          a.link href="#" Application Deployment
+
+  .footer
+    .container
+      .contact-box
+        a.logo href="/"
+          = image_tag "insigniav2.svg"
+
+        .contact-info
+          i class="fa fa-building-o" aria-hidden="true"
+
+          .data
+            span Lamadrid 318, 4th Floor Apart B
+            br
+            span San Miguel de Tucumán, 4000
+            br
+            span Tucumán, Argentina
+
+
+        .contact-info
+          i class="fa fa-envelope-o" aria-hidden="true"
+
+          .data
+            span info@insignia4u.com
+
+        .contact-info
+          i class="fa fa-phone" aria-hidden="true"
+
+          .data
+            span +54 (0381) 4202730
+
+      .social-box
+        span.title Follow us
+
+        a href="http://facebook.com/insignia4u" target="_blank"
+          = fa_stacked_icon "facebook inverse",    base: "circle"
+        a href="http://twitter.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "twitter inverse",     base: "circle"
+        a href="https://plus.google.com/116935483924237252050"  target="_blank"
+          = fa_stacked_icon "google-plus inverse", base: "circle"
+        a href="http://github.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "github inverse",      base: "circle"
+        a href="http://slideshare.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "slideshare inverse",  base: "circle"

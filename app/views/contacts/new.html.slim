@@ -6,13 +6,13 @@ section.contact-form
   = form_for message, url: contact_path, html: { multipart: true } do |f|
     .box-first
       .f-text
-        = f.text_field :name, placeholder: 'Name'
+        = f.text_field :name, placeholder: 'Name', required: true
         i.icon-user
         .oblig-field
           |*
 
       .f-text
-        = f.text_field :email, placeholder: 'Email'
+        = f.email_field :email, placeholder: 'Email', required: true
         i.icon-envelope-alt
         .oblig-field
           |*
@@ -20,12 +20,10 @@ section.contact-form
       .f-text
         = f.telephone_field :phone, placeholder: 'Phone'
         i.icon-phone
-        .oblig-field
-          |*
 
     .box-second
       .f-textarea
-        = f.text_area :body, placeholder: 'Comments', class: 'comment'
+        = f.text_area :body, placeholder: 'Comments', class: 'comment', required: true
         i.icon-pencil
         .oblig-field
           |*

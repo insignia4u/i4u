@@ -6,7 +6,7 @@ ruby '1.9.3', patchlevel: '551'
 gem 'rails', '3.2.18'
 
 # Plugins
-gem 'kaminari',             '0.15.0'
+gem 'kaminari'
 gem 'friendly_id',          '4.0.9'
 gem 'paperclip',            '3.3.1'
 gem 'textilize'
@@ -19,18 +19,18 @@ gem 'decent_exposure'
 gem 'spectator-validates_email', require: 'validates_email'
 gem 'jquery-cookie-rails'
 gem 'fullcalendar-rails'
-gem 'recaptcha',             :require => 'recaptcha/rails'
+gem 'recaptcha',             '0.4.0'
 gem 'figaro'
 
 
 # Engines
 gem 'devise',               '2.1.0'
 gem 'inherited_resources',  '1.3.1'  #fixed because the latest version is not compatible with activeadmin
-gem 'activeadmin',          '0.4.4'
+gem 'activeadmin',          '0.6.6'
 
 # 3rd Party services
 gem 'aws-sdk',              '1.7.1'
-gem 'rollbar',              '2.4.0'
+gem 'rollbar',              '2.11.5'
 gem 'oj',                   '2.12.14'
 gem 'newrelic_rpm',         '3.5.3.25'
 gem 'gibbon',               '0.4.2'
@@ -68,6 +68,7 @@ end
 # Frontend
 gem 'jquery-rails', '2.0.2'
 gem 'slim-rails',   '1.0.3'
+gem 'font-awesome-rails'
 
 group :assets do
   gem 'sass', '~> 3.2.5'

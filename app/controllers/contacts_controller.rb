@@ -5,7 +5,8 @@ class ContactsController < ApplicationController
 
   def create
     if message.send!
-      redirect_to contact_path, notice: "Your message was successfully sent."
+      redirect_path = params[:to].present? ? params[:to] : contact_path
+      redirect_to redirect_path, notice: "Your message was successfully sent."
     else
       render :new
     end

@@ -1,4 +1,5 @@
 ActiveAdmin.register AdminUser do
+  menu label: 'Admins'
   filter :email
 
   index do

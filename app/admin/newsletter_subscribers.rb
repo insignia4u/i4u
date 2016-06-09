@@ -1,4 +1,5 @@
 ActiveAdmin.register NewsletterSubscriber do
+  menu label: 'Subscribers'
   filter :email
 
   actions :index
