@@ -85,5 +85,5 @@ group :production do
   gem 'pg'
   gem 'thin'
   gem 'rails_12factor'
-  # gem 'rack-timeout'
+  gem 'rack-timeout'
 end
