@@ -85,5 +85,5 @@ group :production do
   gem 'pg'
   gem 'thin'
   gem 'rails_12factor'
-  gem 'rack-timeout'
+  gem 'rack-timeout', '0.2.1' #I'm fixing the version number because newer versions fail in Heroku, at least with this rails version and current stack.
 end
