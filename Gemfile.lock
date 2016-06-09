@@ -395,8 +395,5 @@ DEPENDENCIES
   uglifier
   virtus
 
-RUBY VERSION
-   ruby 1.9.3p547
-
 BUNDLED WITH
    1.12.5

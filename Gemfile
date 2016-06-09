@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-#ruby '1.9.3', patchlevel: '551'
-ruby '1.9.3', patchlevel: '547'
+ruby '1.9.3', patchlevel: '551'
 
 # Rails
 gem 'rails', '3.2.18'
