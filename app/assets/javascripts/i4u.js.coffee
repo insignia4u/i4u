@@ -145,7 +145,7 @@ $(document).ready ->
 
   if errors.length > 0
     nt = noty
-      text: 'Please fill mandatory fields.'
+      text: 'Please fill in all mandatory fields.'
       type: "error"
       dismissQueue: true
       layout: 'top'

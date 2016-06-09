@@ -1,5 +1,8 @@
 - title @landing_page.title
 
+- if flash[:notice]
+  #notice_div
+
 .landing-page
     
   .call-to-action
@@ -34,26 +37,29 @@
 
       p Just fill up the form with your name and email and we'll be contacting you shortly
 
-      form
+      = form_for message, url: contact_path(to: landing_path(folder: @landing_page.folder, slug: @landing_page.slug)), html: { multipart: true } do |f|
+
+        = f.hidden_field :body, value: "Message from landing page #{@landing_page.path}"
 
         .col
-          input type="text" placeholder="What's your name?"
+          = f.text_field :name, placeholder: "What's your name?", required: true
 
         .col
-          input type="email" placeholder="what's your email account?"
+          = f.email_field :email, placeholder: 'Email'
 
         .col
-          input type="submit" class="btn" value="Send!"
+          = f.submit 'Contact Us', class: 'btn'
 
-  .learn-more
-    .container
-      h2 And there's more!
+  - if false
+    .learn-more
+      .container
+        h2 And there's more!
 
-      p Learn more about the rest of our services
+        p Learn more about the rest of our services
 
-      .services
-        a.link href="#" Front End Development
-        a.link href="#" Application Deployment
+        .services
+          a.link href="#" Front End Development
+          a.link href="#" Application Deployment
 
   .footer
     .container
