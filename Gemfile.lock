@@ -212,7 +212,7 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
-    rack-timeout (0.4.2)
+    rack-timeout (0.2.1)
     rails (3.2.18)
       actionmailer (= 3.2.18)
       actionpack (= 3.2.18)
@@ -372,7 +372,7 @@ DEPENDENCIES
   pg
   populator
   quiet_assets
-  rack-timeout
+  rack-timeout (= 0.2.1)
   rails (= 3.2.18)
   rails_12factor
   recaptcha (= 0.4.0)
