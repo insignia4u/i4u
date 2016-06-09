@@ -6,6 +6,7 @@ class LandingPage < ActiveRecord::Base
   accepts_nested_attributes_for :landing_page_items, allow_destroy: true
 
   validates :folder, :slug, :title, :heading, :description, presence: true
+  validates :folder, :slug, uniqueness: true
 
   before_save :normalize_url_fields
 
