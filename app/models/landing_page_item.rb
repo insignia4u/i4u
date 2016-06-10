@@ -3,4 +3,7 @@ class LandingPageItem < ActiveRecord::Base
   attr_accessible :title, :description, :position
 
   validates :title, :description, presence: true
+
+  scope :by_position, -> { order(:position) }
+
 end

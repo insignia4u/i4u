@@ -8,7 +8,7 @@ ActiveAdmin.register SiteSection do
   index do
     column :name
     column :url
-    default_actions
+    actions
   end
 
   show do |site_section|

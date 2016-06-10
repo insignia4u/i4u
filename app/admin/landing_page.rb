@@ -8,7 +8,7 @@ ActiveAdmin.register LandingPage do
     end
     column :title
     column :heading
-    default_actions
+    actions
   end
 
   show title: :path do
@@ -21,7 +21,7 @@ ActiveAdmin.register LandingPage do
       row :description
     end
     panel 'Items' do
-      table_for landing_page.landing_page_items do
+      table_for landing_page.landing_page_items.by_position do
         column :title
         column :description do |lpi|
           textilize(lpi.description)
@@ -37,7 +37,7 @@ ActiveAdmin.register LandingPage do
       f.input :slug, required: true
     end
     f.inputs "Metadata" do
-      f.input :title, required: true, hint: "Html title for the page"
+      f.input :title, required: true, hint: "HTML title for the page"
     end
     f.inputs "Hero section" do
       f.input :heading, required: true
@@ -49,7 +49,7 @@ ActiveAdmin.register LandingPage do
         t.input :description, required: true, input_html: {rows: 4}, hint: 'You can use textile format to add html to this content.'
       end
     end
-    f.buttons
+    actions
   end
 
   controller do

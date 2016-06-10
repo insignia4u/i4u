@@ -20,7 +20,7 @@ ActiveAdmin.register Comment, as: "Blog Comment" do
       comment.article.title
     end
 
-    default_actions
+    actions
   end
 
   form do |f|

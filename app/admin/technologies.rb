@@ -9,7 +9,7 @@ ActiveAdmin.register Technology do
   index do
     column :title
     column :description
-    default_actions
+    actions
   end
 
   show do |site|

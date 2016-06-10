@@ -17,7 +17,7 @@ ActiveAdmin.register Value do
       end
     end
 
-    default_actions
+    actions
   end
 
   form do |f|

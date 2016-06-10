@@ -14,7 +14,7 @@ ActiveAdmin.register ProjectImage do
     column 'Url' do |project_image|
       image_tag project_image.image, size: '50x50'
     end
-    default_actions
+    actions
   end
 
   show do

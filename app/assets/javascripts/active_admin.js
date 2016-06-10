@@ -2,6 +2,7 @@
 //= require jquery-ui
 //= require active_admin/base
 
+
 $(document).ready(function(){
   makeTableSortable("#button-reorder-technologies", '#technologies');
   makeTableSortable("#button-reorder-tools",        '#tools');

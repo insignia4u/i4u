@@ -7,7 +7,7 @@ ActiveAdmin.register Category do
     column ("Name"), sortable: :name do |category|
       category.name
     end
-    default_actions
+    actions
   end
 
   show do

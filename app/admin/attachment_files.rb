@@ -14,7 +14,7 @@ ActiveAdmin.register AttachmentFile, :as => "Assets" do
     column 'Url' do |attachment_file|
       attachment_file.file_i4u.url
     end
-    default_actions
+    actions
   end
 
   form do |f|

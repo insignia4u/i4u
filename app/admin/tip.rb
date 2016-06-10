@@ -22,7 +22,7 @@ ActiveAdmin.register Tip do
     end
     column :published_at
 
-    default_actions
+    actions
   end
 
   show do

@@ -163,7 +163,7 @@ ActiveAdmin.register Project do
       link_to project.name, project_path(project), target: "_blank"
     end
 
-    default_actions
+    actions
   end
 
   controller do

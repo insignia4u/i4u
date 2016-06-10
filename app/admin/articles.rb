@@ -36,7 +36,7 @@ ActiveAdmin.register Article do
       article.is_event ? 'Yes' : 'No'
     end
 
-    default_actions
+    actions
   end
 
   show do

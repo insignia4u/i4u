@@ -6,7 +6,7 @@ ActiveAdmin.register Service do
   index do
     column :title
     column ("Summary") { |service| truncate(service.summary.gsub(/<.*?>/,''), :length => 84) }
-    default_actions
+    actions
   end
 
   show do |site|

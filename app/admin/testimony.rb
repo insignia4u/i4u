@@ -4,7 +4,7 @@ ActiveAdmin.register Testimony do
     column :body
     column :video_id
     column("Publication Status") { |testimony| testimony.published? ? 'Yes' : 'No' }
-    default_actions
+    actions
   end
 
   show do |site|
