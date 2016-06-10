@@ -50,7 +50,7 @@ ActiveAdmin.register Site do
       f.input :name
       f.input :abbreviation
     end
-    f.buttons
+    actions
   end
 
   controller do

@@ -28,7 +28,7 @@ ActiveAdmin.register Service do
       f.input :image, :as => :file
     end
 
-    f.buttons
+    actions
   end
 
   controller do

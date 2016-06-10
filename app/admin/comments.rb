@@ -31,7 +31,7 @@ ActiveAdmin.register Comment, as: "Blog Comment" do
       f.input :text
     end
 
-    f.buttons
+    actions
   end
 
   controller do

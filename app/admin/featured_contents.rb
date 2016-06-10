@@ -45,7 +45,7 @@ ActiveAdmin.register FeaturedContent do
       }
     end
 
-    f.buttons
+    actions
   end
 
   controller do

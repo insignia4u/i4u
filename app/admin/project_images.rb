@@ -37,7 +37,7 @@ ActiveAdmin.register ProjectImage do
       f.input :description
     end
 
-    f.buttons
+    actions
   end
 
   controller do

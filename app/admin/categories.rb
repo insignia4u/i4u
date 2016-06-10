@@ -26,7 +26,7 @@ ActiveAdmin.register Category do
       f.input :name
     end
 
-    f.buttons
+    actions
   end
 
   controller do

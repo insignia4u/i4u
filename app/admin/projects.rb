@@ -80,7 +80,7 @@ ActiveAdmin.register Project do
       f.input :tools, :as => :check_boxes
     end
 
-    f.buttons
+    actions
   end
 
   show do

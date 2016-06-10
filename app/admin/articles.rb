@@ -101,7 +101,7 @@ ActiveAdmin.register Article do
       f.input :is_event
     end
 
-    f.buttons
+    actions
   end
 
   controller do

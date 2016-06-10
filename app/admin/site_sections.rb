@@ -23,7 +23,7 @@ ActiveAdmin.register SiteSection do
       f.input :name
       f.input :url
     end
-    f.buttons
+    actions
   end
 
   controller do

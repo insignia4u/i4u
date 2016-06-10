@@ -41,7 +41,7 @@ ActiveAdmin.register TextSnippet do
       f.input :body
       f.input :image, :as => :file
     end
-    f.buttons
+    actions
   end
 
   controller do

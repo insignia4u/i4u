@@ -28,7 +28,7 @@ ActiveAdmin.register AdminUser do
       f.input :password
       f.input :password_confirmation
     end
-    f.buttons
+    actions
   end
 
   controller do
