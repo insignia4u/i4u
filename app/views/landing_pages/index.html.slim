@@ -22,7 +22,7 @@
           = link_to "Contact us!", "#", class: "btn"
 
   .details
-    - @landing_page.landing_page_items.each do |lpi|
+    - @landing_page.landing_page_items.by_position.each do |lpi|
       .item.container
         = fa_stacked_icon "check inverse", base: "circle"
 
