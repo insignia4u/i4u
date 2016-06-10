@@ -20,7 +20,7 @@ ActiveAdmin.register Comment, as: "Blog Comment" do
       comment.article.title
     end
 
-    default_actions
+    actions
   end
 
   form do |f|
@@ -31,7 +31,7 @@ ActiveAdmin.register Comment, as: "Blog Comment" do
       f.input :text
     end
 
-    f.buttons
+    actions
   end
 
   controller do

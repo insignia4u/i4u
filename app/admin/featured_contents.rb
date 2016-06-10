@@ -13,7 +13,7 @@ ActiveAdmin.register FeaturedContent do
       featured_content.updated_at
     end
 
-    default_actions
+    actions
   end
 
   show do
@@ -45,7 +45,7 @@ ActiveAdmin.register FeaturedContent do
       }
     end
 
-    f.buttons
+    actions
   end
 
   controller do

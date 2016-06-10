@@ -8,7 +8,7 @@ ActiveAdmin.register SiteSection do
   index do
     column :name
     column :url
-    default_actions
+    actions
   end
 
   show do |site_section|
@@ -23,7 +23,7 @@ ActiveAdmin.register SiteSection do
       f.input :name
       f.input :url
     end
-    f.buttons
+    actions
   end
 
   controller do

@@ -6,7 +6,7 @@ ruby '1.9.3', patchlevel: '551'
 gem 'rails', '3.2.18'
 
 # Plugins
-gem 'kaminari'
+gem 'kaminari',             '0.17.0'
 gem 'friendly_id',          '4.0.9'
 gem 'paperclip',            '3.3.1'
 gem 'textilize'
@@ -21,12 +21,13 @@ gem 'jquery-cookie-rails'
 gem 'fullcalendar-rails'
 gem 'recaptcha',             '0.4.0'
 gem 'figaro'
+gem 'jquery-scrollto-rails'
 
 
 # Engines
-gem 'devise',               '2.1.0'
-gem 'inherited_resources',  '1.3.1'  #fixed because the latest version is not compatible with activeadmin
-gem 'activeadmin',          '0.6.6'
+gem 'devise',               '3.2.4' #Minimum version required by activeadmin
+gem 'inherited_resources',  '1.6.0'
+gem 'activeadmin',          '1.0.0.pre2'
 
 # 3rd Party services
 gem 'aws-sdk',              '1.7.1'

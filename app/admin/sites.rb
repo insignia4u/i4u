@@ -31,7 +31,7 @@ ActiveAdmin.register Site do
     column :name
     column :abbreviation
     column ("Publication State")  {|site| status_tag(site.publication_state, :class => 'red') }
-    default_actions
+    actions
     column :actions do |site|
       link_to "Manage Sections", [:admin, site, :site_sections]
     end
@@ -50,7 +50,7 @@ ActiveAdmin.register Site do
       f.input :name
       f.input :abbreviation
     end
-    f.buttons
+    actions
   end
 
   controller do

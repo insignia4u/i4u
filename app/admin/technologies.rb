@@ -9,7 +9,7 @@ ActiveAdmin.register Technology do
   index do
     column :title
     column :description
-    default_actions
+    actions
   end
 
   show do |site|
@@ -24,7 +24,7 @@ ActiveAdmin.register Technology do
       f.input :title
       f.input :description
     end
-    f.buttons
+    actions
   end
 
   action_item :only => :index do

@@ -22,7 +22,7 @@ ActiveAdmin.register Tip do
     end
     column :published_at
 
-    default_actions
+    actions
   end
 
   show do
@@ -68,7 +68,7 @@ ActiveAdmin.register Tip do
       f.input :published_at, :as => :date, :start_year => Date.today.year
     end
 
-    f.buttons
+    actions
   end
 
   controller do

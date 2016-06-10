@@ -4,7 +4,7 @@ class LandingPagesController < ApplicationController
   expose(:message) { Message.new }
 
   def index
-    @landing_page = LandingPage.find_by_folder_and_slug(params[:folder], params[:slug])
+    @landing_page = LandingPage.find_by_folder_and_slug!(params[:folder], params[:slug])
   end
 
 end

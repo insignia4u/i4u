@@ -14,7 +14,7 @@ ActiveAdmin.register Person do
       f.input :photo, :as => :file
     end
 
-    f.buttons
+    actions
   end
 
   action_item :only => :index do
@@ -46,7 +46,7 @@ ActiveAdmin.register Person do
     column :last_name
     column ("Bio")   { |person| truncate(person.bio.gsub(/<.*?>/,''), :length => 84) }
 
-    default_actions
+    actions
   end
 
   collection_action :sort, :method => :post do

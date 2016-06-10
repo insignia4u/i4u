@@ -15,7 +15,7 @@ ActiveAdmin.register TextSnippet do
       image_tag(text_snippet.image.url(:thumb)) if text_snippet.image?
     end
 
-    default_actions
+    actions
   end
 
   show do |text_snippet|
@@ -41,7 +41,7 @@ ActiveAdmin.register TextSnippet do
       f.input :body
       f.input :image, :as => :file
     end
-    f.buttons
+    actions
   end
 
   controller do

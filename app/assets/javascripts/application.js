@@ -14,6 +14,7 @@
 //= require jquery.stellar.min
 //= require behaviors/newsletter_subscriptions
 //= require vendor/jquery.limit-1.2.source
+//= require jquery.scrollTo
 //= require i4u
 //= require blog
 //= require fullcalendar
@@ -21,3 +22,4 @@
 //= require create_comment
 //= require fullcalendar
 //= require calendar
+//= require landing_pages
