@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160608115633) do
+ActiveRecord::Schema.define(:version => 20160611145142) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -139,26 +139,35 @@ ActiveRecord::Schema.define(:version => 20160608115633) do
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
-  create_table "landing_page_items", :force => true do |t|
+  create_table "landing_page_contents", :force => true do |t|
+    t.string   "name"
     t.string   "title"
-    t.text     "description"
-    t.integer  "position"
-    t.integer  "landing_page_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  add_index "landing_page_items", ["landing_page_id"], :name => "index_landing_page_items_on_landing_page_id"
-
-  create_table "landing_pages", :force => true do |t|
-    t.string   "folder"
-    t.string   "slug"
-    t.string   "title"
-    t.string   "heading"
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "landing_page_items", :force => true do |t|
+    t.integer  "position"
+    t.integer  "landing_page_id"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.integer  "landing_page_content_id"
+  end
+
+  add_index "landing_page_items", ["landing_page_id", "landing_page_content_id"], :name => "landing_page_items_main_idx"
+
+  create_table "landing_pages", :force => true do |t|
+    t.string   "folder"
+    t.string   "slug"
+    t.string   "heading"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "title"
+    t.text     "description"
+  end
+
+  add_index "landing_pages", ["folder", "slug"], :name => "index_landing_pages_on_folder_and_slug"
 
   create_table "newsletter_subscribers", :force => true do |t|
     t.string   "email"
