@@ -1,8 +1,8 @@
 class LandingPageItem < ActiveRecord::Base
   belongs_to :landing_page
-  attr_accessible :title, :description, :position
+  belongs_to :landing_page_content
 
-  validates :title, :description, presence: true
+  attr_accessible :position, :landing_page_content_id
 
   scope :by_position, -> { order(:position) }
 

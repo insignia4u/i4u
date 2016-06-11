@@ -22,9 +22,10 @@ ActiveAdmin.register LandingPage do
     end
     panel 'Items' do
       table_for landing_page.landing_page_items.by_position do
-        column :title
+        column(:name) {|lpi| lpi.landing_page_content.name }
+        column(:title) {|lpi| lpi.landing_page_content.name }
         column :description do |lpi|
-          textilize(lpi.description)
+          textilize(lpi.landing_page_content.description)
         end
       end
     end
@@ -43,10 +44,9 @@ ActiveAdmin.register LandingPage do
       f.input :heading, required: true
       f.input :description, required: true, input_html: {rows: 4}
     end
-    f.inputs "Features" do
+    f.inputs "Content Items" do
       f.has_many :landing_page_items, heading: 'Items', allow_destroy: true, sortable: :position do |t|
-        t.input :title, required: true
-        t.input :description, required: true, input_html: {rows: 4}, hint: 'You can use textile format to add html to this content.'
+        t.input :landing_page_content_id, as: :select, collection: LandingPageContent.by_name
       end
     end
     actions
@@ -57,7 +57,7 @@ ActiveAdmin.register LandingPage do
       return [] if request.get?
       [
         params.require(:landing_page)
-        .permit(:folder, :slug, :title, :heading, :description, landing_page_items_attributes: [:id, :"_destroy", :title, :description, :position])
+        .permit(:folder, :slug, :title, :heading, :description, landing_page_items_attributes: [:id, :"_destroy", :landing_page_content_id, :position])
       ]
     end
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160611141524) do
+ActiveRecord::Schema.define(:version => 20160611145142) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -148,25 +148,26 @@ ActiveRecord::Schema.define(:version => 20160611141524) do
   end
 
   create_table "landing_page_items", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
     t.integer  "position"
     t.integer  "landing_page_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.integer  "landing_page_content_id"
   end
 
-  add_index "landing_page_items", ["landing_page_id"], :name => "index_landing_page_items_on_landing_page_id"
+  add_index "landing_page_items", ["landing_page_id", "landing_page_content_id"], :name => "landing_page_items_main_idx"
 
   create_table "landing_pages", :force => true do |t|
     t.string   "folder"
     t.string   "slug"
-    t.string   "title"
     t.string   "heading"
-    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "title"
+    t.text     "description"
   end
+
+  add_index "landing_pages", ["folder", "slug"], :name => "index_landing_pages_on_folder_and_slug"
 
   create_table "newsletter_subscribers", :force => true do |t|
     t.string   "email"
