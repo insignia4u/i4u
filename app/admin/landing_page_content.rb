@@ -9,7 +9,7 @@ ActiveAdmin.register LandingPageContent do
     actions
   end
 
-  show title: :path do
+  show title: :name do
     attributes_table do
       row :name
       row :title
@@ -21,7 +21,7 @@ ActiveAdmin.register LandingPageContent do
     f.inputs "Landing Page Content Details" do
       f.input :name, required: true
       f.input :title, required: true
-      f.input :description, required: true
+      f.input :description, required: true, input_html: {rows: 4}
     end
     actions
   end
