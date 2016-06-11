@@ -1,6 +1,6 @@
 ActiveAdmin.register LandingPage do
-  menu parent: "Marketing"
-  filter :site
+  menu parent: "Marketing", priority: 1
+  filter :title
 
   index do
     column :path do |landing_page|
