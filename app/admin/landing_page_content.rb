@@ -5,7 +5,9 @@ ActiveAdmin.register LandingPageContent do
   index do
     column :name
     column :title
-    column :description
+    column :description do |lpc|
+      textilize(lpc.description)
+    end
     actions
   end
 
@@ -13,7 +15,9 @@ ActiveAdmin.register LandingPageContent do
     attributes_table do
       row :name
       row :title
-      row :description
+      row :description do |lpc|
+        textilize(lpc.description)
+      end
     end
   end
 
@@ -21,7 +25,8 @@ ActiveAdmin.register LandingPageContent do
     f.inputs "Landing Page Content Details" do
       f.input :name, required: true
       f.input :title, required: true
-      f.input :description, required: true, input_html: {rows: 4}
+      f.input :description, required: true, input_html: {rows: 4},
+        hint: "HTML title for the page"
     end
     actions
   end
