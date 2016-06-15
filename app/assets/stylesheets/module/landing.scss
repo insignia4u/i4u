@@ -148,22 +148,27 @@ $lato: 'Lato', sans-serif;
           padding-right: 0px;
         }
 
-      h3{
-        font-family: $lato;
-        font-weight: 600;
-        color: #19375a;
-        font-size: 24px;
-        text-shadow: 1px 1px 1px #666;
+        h3{
+          font-family: $lato;
+          font-weight: 600;
+          color: #19375a;
+          font-size: 24px;
+          text-shadow: 1px 1px 1px #666;
 
-        @include breakpoint(tablet){
-        font-size: 30px;
+          @include breakpoint(tablet){
+          font-size: 30px;
+          }
+          @include breakpoint(desktop){
+            font-size: 28px;
+          }
         }
-        @include breakpoint(desktop){
-          font-size: 28px;
-        }
-      }
 
-        p {
+        ul {
+          margin-left: 20px;
+          list-style: square;
+        }
+
+        p, li {
           font-family: $lato;
           font-weight: 300;
           font-size: 18px;
