@@ -21,7 +21,6 @@ gem 'jquery-cookie-rails'
 gem 'fullcalendar-rails'
 gem 'recaptcha',             '0.4.0'
 gem 'figaro'
-gem 'jquery-scrollto-rails'
 
 
 # Engines
