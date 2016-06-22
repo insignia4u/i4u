@@ -87,8 +87,6 @@ $(window).load () ->
 $(document).ready ->
   alert_div_if_errors()
 
-  $().UItoTop easingType: "easeOutQuart"
-
   $('picture, figure').picture()
 
   $('#intro, .carousel').carousel()
@@ -166,7 +164,7 @@ $(document).ready ->
   $(".equal5").each ->
     biggestHeight = $(this).height() if $(this).height() > biggestHeight
 
-  $(".equal5").css('height', biggestHeight + 50)
+  $(".equal5").css('height', biggestHeight + 75)
 
   # ua = navigator.userAgent
   # isMobileWebkit = /WebKit/.test(ua) and /Mobile/.test(ua)

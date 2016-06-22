@@ -7,14 +7,12 @@
 //= require modernizer.min
 //= require carousel
 //= require jquery.carouFredSel-6.2.1
-//= require totop
 //= require jquery.parallax
 //= require jquery.reject
 //= require noty
 //= require jquery.stellar.min
 //= require behaviors/newsletter_subscriptions
 //= require vendor/jquery.limit-1.2.source
-//= require jquery.scrollTo
 //= require i4u
 //= require blog
 //= require fullcalendar
