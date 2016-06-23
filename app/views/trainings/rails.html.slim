@@ -1,0 +1,184 @@
+.training-page
+
+  .call-to-action
+    .header
+      a.logo href="/"
+        = image_tag "insigniav2.svg"
+
+    .container
+
+      .inner-box
+        .detailed-info
+          h2 HTML & CSS
+
+          h3 Curso básico sobre Maquetado pixel perfect
+
+          p Training Studio es un programa de capacitación en front-end development, que busca proveer todos los conocimientos necesarios para desenvolverse de manera productiva en un entorno de trabajo profesional realizando maquetados de sitios web en HTML5 y CSS3 con calidad pixel perfect.
+
+          .checkout
+
+            .pricing
+
+              .price
+                h3
+                  | $1200
+                  span &nbsp; Inscripción
+
+                p
+                  span 10% Off Pago en Efectivo
+
+            .schedule
+
+              p
+                span Inicio 29 de Diciembre
+                span.comming-soon Faltan 25 días
+              p
+                span Lunes y Jueves, 16hs a 18hs
+
+        .extra-info
+
+          form action="#"
+
+            .field
+              label Nombre
+              input type="text"
+
+            .field
+              label Email
+              input type="email"
+
+            .field
+              label Teléfono
+              input type="tel"
+
+            .action
+              input type="submit" value="Reserva tu lugar" class="btn"
+
+      .credits
+
+        .profile
+          = image_tag 'samples/profile.jpg'
+
+        .personal-data
+
+          .fullname
+            span Dictado por
+            h2 Juan Maria Martinez Arce
+            .degree Senior Full Stack Developer
+
+          .short-bio
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, recusandae dolore unde culpa tempore perferendis deleniti velit voluptas numquam quas dolorem, voluptate iure voluptates vitae voluptatibus! Placeat asperiores, corrupti maiores!
+
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, recusandae dolore unde culpa tempore perferendis deleniti velit voluptas numquam quas dolorem, voluptate iure voluptates vitae voluptatibus! Placeat asperiores, corrupti maiores!
+
+  .complementary-box
+
+    .container
+
+      .topics
+
+        h2 Temas de la Capacitación
+
+
+        .topic
+
+          h3 Introducción al Marketing Digital
+
+          ul
+
+            li El consumidor 2.0.
+            li El Marketing digital en el contexto del Marketing tradicional.
+            li Campañas integradas.
+
+        .topic
+
+          h3 Introducción al Marketing Digital
+
+          ul
+
+            li El consumidor 2.0.
+            li El Marketing digital en el contexto del Marketing tradicional.
+            li Campañas integradas.
+
+        .topic
+
+          h3 Introducción al Marketing Digital
+
+          ul
+
+            li El consumidor 2.0.
+            li El Marketing digital en el contexto del Marketing tradicional.
+            li Campañas integradas.
+
+
+      .who-should-take-it
+
+        h3 A quién está dirigido
+
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas dolore, numquam soluta delectus ex quis expedita sit quibusdam libero officiis. Quam sequi, neque vero quia nemo quos dignissimos, dolorem cupiditate!
+
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas dolore, numquam soluta delectus ex quis expedita sit quibusdam libero officiis. Quam sequi, neque vero quia nemo quos dignissimos, dolorem cupiditate!
+
+.landing-page
+
+  .contact-us
+    .container
+      h2 Let's get in touch!
+
+      p Just fill up the form with your name and email and we'll be contacting you shortly
+
+      = form_for message, url: "#", html: { multipart: true } do |f|
+
+        = f.hidden_field :body, value: "Message from training page"
+
+        .col
+          = f.text_field :name, placeholder: "What's your name?", required: true
+
+        .col
+          = f.email_field :email, placeholder: 'Email'
+
+        .col
+          = f.submit 'Contact Us', class: 'btn'
+
+  .footer
+    .container
+      .contact-box
+        a.logo href="/"
+          = image_tag "insigniav2.svg"
+
+        .contact-info
+          i class="fa fa-building-o" aria-hidden="true"
+
+          .data
+            span Lamadrid 318, 4th Floor Apart B
+            br
+            span San Miguel de Tucumán, 4000
+            br
+            span Tucumán, Argentina
+
+
+        .contact-info
+          i class="fa fa-envelope-o" aria-hidden="true"
+
+          .data
+            span info@insignia4u.com
+
+        .contact-info
+          i class="fa fa-phone" aria-hidden="true"
+
+          .data
+            span +54 (0381) 4202730
+
+      .social-box
+        span.title Follow us
+
+        a href="http://facebook.com/insignia4u" target="_blank"
+          = fa_stacked_icon "facebook inverse",    base: "circle"
+        a href="http://twitter.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "twitter inverse",     base: "circle"
+        a href="https://plus.google.com/116935483924237252050"  target="_blank"
+          = fa_stacked_icon "google-plus inverse", base: "circle"
+        a href="http://github.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "github inverse",      base: "circle"
+        a href="http://slideshare.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "slideshare inverse",  base: "circle"
