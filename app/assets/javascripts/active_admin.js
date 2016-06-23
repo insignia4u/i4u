@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery-ui
 //= require active_admin/base
+//= require tinymce
 
 
 $(document).ready(function(){
@@ -16,7 +17,14 @@ $(document).ready(function(){
   $('head').append("<link href='../assets/iconos/insignia_ico_114.ico' rel='apple-touch-icon-precomposed' sizes='114x114' />");
   $('head').append("<link href='../assets/iconos/insignia_ico_72.ico' rel='apple-touch-icon-precomposed' sizes='72x72' />");
   $('head').append("<link href='../assets/iconos/insignia_ico_144.ico' rel='apple-touch-icon-precomposed' sizes='144x144' />");
-})
+
+  return tinyMCE.init({
+    selector: "textarea#training_topics",
+    theme: "modern",
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | emoticons",
+    plugins: ["advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker", "visualblocks visualchars fullscreen insertdatetime media nonbreaking", "save table contextmenu directionality emoticons template paste textcolor"]
+  });
+});
 
 function makeTableSortable(dataSortUrlElementId, tableId ){
   if ( '#' + $('table').attr('id') !== tableId) {

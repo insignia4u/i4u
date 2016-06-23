@@ -9,11 +9,11 @@
 
       .inner-box
         .detailed-info
-          h2 HTML & CSS
+          h2= training.title
 
-          h3 Curso básico sobre Maquetado pixel perfect
+          h3= training.subtitle
 
-          p Training Studio es un programa de capacitación en front-end development, que busca proveer todos los conocimientos necesarios para desenvolverse de manera productiva en un entorno de trabajo profesional realizando maquetados de sitios web en HTML5 y CSS3 con calidad pixel perfect.
+          p= training.summary
 
           .checkout
 
@@ -21,19 +21,25 @@
 
               .price
                 h3
-                  | $1200
+                  |$ 
+                  =training.price
                   span &nbsp; Inscripción
 
                 p
-                  span 10% Off Pago en Efectivo
+                  span 
+                    =training.discount 
+                    |% Off Pago en Efectivo
 
             .schedule
 
               p
-                span Inicio 29 de Diciembre
+                span 
+                  |Inicio 
+                  =" - #{l training.initial_date, locale: :es, format: :start}"
                 span.comming-soon Faltan 25 días
               p
-                span Lunes y Jueves, 16hs a 18hs
+                span 
+                  = training.days.to_sentence(words_connector: ' , ', last_word_connector: ' y ', locale: :es)
 
         .extra-info
 

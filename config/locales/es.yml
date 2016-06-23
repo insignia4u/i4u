@@ -6,6 +6,7 @@ es:
       short: "%d de %b"
       long: "%d de %B de %Y"
       comment: "%d de %B, %Y a las %H:%M"
+      start: "%d de %B"
   date:
     day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
     abbr_day_names: [Dom, Lun, Mar, Mie, Jue, Vie, Sab]
@@ -17,3 +18,5 @@ es:
       - :day
       - :month
       - :year
+    formats:
+      start: "%d de %B"

@@ -297,7 +297,10 @@
 
     padding: 40px 0;
     box-shadow: 0 -5px 5px -2px #aaa;
-
+    clear: both;
+    .clearfix {
+      @include clearfix;
+    }
     .topics {
 
       float: left;
@@ -364,7 +367,53 @@
 
       }
 
-    } // .get-in-touch
+    } // .who-should-take-it
+
+    .calendar{
+      margin: 60px 0 20px;
+      background: none;
+      h2{
+        color: #183455;
+        font-family: $lato;
+        font-weight: 700;
+        font-size: 22px;
+        text-shadow: 1px 1px 1px #666;
+        text-align: left;
+        @include breakpoint(tablet){
+          font-size: 26px;
+        }
+        @include breakpoint(desktop){
+          font-size: 26px;
+        }
+      }
+      .calendar-1, .calendar-2{
+        width: 48%;
+        background: #fff;
+        padding: 5px;
+        border: none;
+        .fc-header{
+          margin-bottom: 3px;
+          background: #E50892;
+          .fc-header-center{
+            padding-top: 10px;
+            h2{
+              font-size: 1.125em;
+              text-shadow: none;
+              color: #fff;
+            }
+          }
+        }
+      }
+      .calendar-1{
+        float: left;
+      }
+      .calendar-2{
+        float: right;
+      }
+      .fc .fc-day-header {
+        background-color: #247BA0;
+      }
+    } // .calendar
 
   } // .complementary-box
 

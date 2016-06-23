@@ -34,6 +34,7 @@ I4u::Application.routes.draw do
   match 'blog' => 'blog/articles#index', as: 'blog_path'
 
   get '/training/rails' => 'trainings#rails'
+  get '/training/:id' => 'trainings#show'
 
   match '/:folder/:slug' => 'landing_pages#index', as: 'landing'
   match '/:slug' => 'blog/articles#slug', slug: /[a-zA-Z0-9\-]+/

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160611145142) do
+ActiveRecord::Schema.define(:version => 20160623183457) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(:version => 20160611145142) do
     t.string   "image_caption"
     t.boolean  "is_event",           :default => false
     t.text     "snippet"
-    t.string   "calendar"
     t.string   "short_url"
   end
 
@@ -156,15 +155,16 @@ ActiveRecord::Schema.define(:version => 20160611145142) do
   end
 
   add_index "landing_page_items", ["landing_page_id", "landing_page_content_id"], :name => "landing_page_items_main_idx"
+  add_index "landing_page_items", ["landing_page_id"], :name => "index_landing_page_items_on_landing_page_id"
 
   create_table "landing_pages", :force => true do |t|
     t.string   "folder"
     t.string   "slug"
+    t.string   "title"
     t.string   "heading"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.string   "title"
-    t.text     "description"
   end
 
   add_index "landing_pages", ["folder", "slug"], :name => "index_landing_pages_on_folder_and_slug"
@@ -349,6 +349,40 @@ ActiveRecord::Schema.define(:version => 20160611145142) do
     t.integer  "position"
     t.text     "description"
   end
+
+  create_table "trainers", :force => true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.text     "profile"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "profile_url"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "trainings", :force => true do |t|
+    t.string   "title",                                             :null => false
+    t.string   "subtitle"
+    t.text     "summary"
+    t.integer  "price"
+    t.integer  "discount"
+    t.date     "initial_date"
+    t.text     "days",              :limit => 255, :default => "'"
+    t.string   "time"
+    t.integer  "number_of_classes"
+    t.text     "topics"
+    t.text     "addressed_to"
+    t.string   "slug"
+    t.integer  "trainer_id"
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
+  end
+
+  add_index "trainings", ["slug"], :name => "index_trainings_on_slug", :unique => true
+  add_index "trainings", ["trainer_id"], :name => "index_trainings_on_trainer_id"
 
   create_table "values", :force => true do |t|
     t.string   "title"

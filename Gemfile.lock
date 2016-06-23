@@ -326,6 +326,8 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
+    tinymce-rails (4.3.13)
+      railties (>= 3.1.1)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -401,5 +403,6 @@ DEPENDENCIES
   taps (= 0.3.24)
   textilize
   thin
+  tinymce-rails
   uglifier
   virtus
