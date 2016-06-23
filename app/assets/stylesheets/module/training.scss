@@ -39,8 +39,13 @@
 
       .detailed-info {
 
-        float: left;
-        width: 71%;
+        float: none;
+        width: 100%;
+
+        @include breakpoint(desktop){
+          float: left;
+          width: 71%;
+        }
 
         h2 {
           font-family: $lato;
@@ -50,7 +55,7 @@
           text-shadow: 1px 1px 1px #333;
 
           @include breakpoint(tablet){
-            font-size: 26px;
+            font-size: 42px;
           }
           @include breakpoint(desktop){
             font-size: 46px;
@@ -60,7 +65,7 @@
         h3 {
           font-family: $lato;
           font-weight: 300;
-          font-size: 24px;
+          font-size: 20px;
 
           color: #f4f4f4;
           text-shadow: 1px 1px 1px #333;
@@ -69,8 +74,15 @@
         p {
           color: #fff;
           margin: 20px 0;
-          font-size: 16px;
+          font-size: 14px;
           font-weight: 300;
+
+          @include breakpoint(tablet){
+            font-size: 16px;
+          }
+          @include breakpoint(desktop){
+            font-size: 16px;
+          }
         }
 
         .checkout {
@@ -79,8 +91,18 @@
 
           .pricing {
 
-            float: left;
-            width: 35%;
+            float: none;
+            width: 100%;
+
+            @include breakpoint(tablet){
+              float: left;
+              width: 45%;
+            }
+
+            @include breakpoint(desktop){
+              float: left;
+              width: 35%;
+            }
 
             .price {
               h3 {
@@ -104,6 +126,14 @@
                   -webkit-border-radius: 10px;
                      -moz-border-radius: 10px;
                           border-radius: 10px;
+
+                  @include breakpoint(tablet){
+                    font-size: 14px;
+                  }
+
+                  @include breakpoint(desktop){
+                    font-size: 16px;
+                  }
                 }
               }
             }
@@ -112,8 +142,15 @@
 
           .schedule {
 
-            float: right;
-            width: 55%;
+            float: none;
+            width: 100%;
+            margin-top: 30px;
+
+            @include breakpoint(desktop){
+              float: right;
+              width: 55%;
+              margin-top: 0px;
+            }
 
             p {
               margin: 5px 0 !important;
@@ -131,6 +168,14 @@
               -webkit-border-radius: 10px;
                  -moz-border-radius: 10px;
                       border-radius: 10px;
+
+              @include breakpoint(tablet){
+                font-size: 14px;
+              }
+
+              @include breakpoint(desktop){
+                font-size: 16px;
+              }
             }
 
           } // .schedule
@@ -141,11 +186,18 @@
 
       .extra-info {
 
-        float: right;
-        width: 27%;
+        float: none;
+        width: 100%;
+        margin-top: 30px;
+
         padding: 10px 20px;
 
         background: #247BA0;
+
+        @include breakpoint(desktop){
+          float: right;
+          width: 27%;
+        }
 
         h3 {
           font-family: $lato;
@@ -233,8 +285,10 @@
 
       .profile {
 
-        float: left;
-        margin-right: 30px;
+        float: none;
+        margin: 0 auto;
+        width:  160px;
+        height: 160px;
 
         -webkit-border-radius: 50%;
            -moz-border-radius: 50%;
@@ -242,8 +296,17 @@
 
         border: 10px solid #666;
 
-        width:  270px;
-        height: 270px;
+        @include breakpoint(tablet){
+          float: left;
+          width:  200px;
+          height: 200px;
+        }
+
+        @include breakpoint(desktop){
+          float: left;
+          width:  270px;
+          height: 270px;
+        }
 
         img {
           -webkit-border-radius: 50%;
@@ -254,6 +317,20 @@
       } // .profile
 
       .personal-data {
+
+        float: none;
+        width: 100%;
+        margin-top: 30px;
+
+        @include breakpoint(tablet){
+          float: right;
+          width: 65%;
+        }
+
+        @include breakpoint(desktop){
+          float: right;
+          width: 65%;
+        }
 
         .fullname {
 
@@ -267,7 +344,7 @@
             margin-top: 10px;
             font-family: $lato;
             font-weight: 700;
-            font-size: 30px;
+            font-size: 24px;
             text-shadow: 1px 1px 1px #333;
 
             @include breakpoint(tablet){
@@ -285,6 +362,19 @@
           font-weight: 300;
           color: #000;
 
+          .linked-in {
+            text-decoration: none;
+            font-weight: 700;
+
+            span.fa-stack {
+              margin-top: -5px;
+            }
+
+            span {
+              margin-right: 5px;
+            }
+          }
+
         } // .short-bio
 
       } // .personal-data
@@ -295,13 +385,31 @@
 
   .complementary-box {
 
-    padding: 40px 0;
+    padding: 30px;
     box-shadow: 0 -5px 5px -2px #aaa;
+
+    @include breakpoint(tablet){
+      padding: 40px 20px;
+    }
+
+    @include breakpoint(desktop){
+      padding: 40px 0;
+    }
 
     .topics {
 
-      float: left;
-      width: 68%;
+      float: none;
+      width: 100%;
+
+      @include breakpoint(tablet){
+        float: left;
+        width: 68%;
+      }
+
+      @include breakpoint(desktop){
+        float: left;
+        width: 68%;
+      }
 
       h2 {
         margin-bottom: 30px;
@@ -343,8 +451,10 @@
 
     .who-should-take-it {
 
-      float: right;
-      width: 30%;
+      float: none;
+      width: 100%;
+      margin-top: 30px;
+
       padding: 10px 20px;
       background: #247BA0;
       color: #fff;
@@ -352,6 +462,18 @@
       -webkit-border-radius: 10px;
          -moz-border-radius: 10px;
               border-radius: 10px;
+
+      @include breakpoint(tablet){
+        float: right;
+        width: 30%;
+        margin-top: 0px;
+      }
+
+      @include breakpoint(desktop){
+        float: right;
+        width: 30%;
+        margin-top: 0px;
+      }
 
       h3 {
         font-family: $lato;
