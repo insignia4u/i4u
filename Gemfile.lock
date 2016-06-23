@@ -406,6 +406,3 @@ DEPENDENCIES
   thin
   uglifier
   virtus
-
-BUNDLED WITH
-   1.12.5

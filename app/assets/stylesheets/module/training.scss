@@ -1,0 +1,371 @@
+.training-page {
+
+  font-family: $lato;
+  position: relative;
+
+  .header {
+
+    position: relative;
+    top: -50px;
+
+    width: 170px;
+    margin: 0 auto;
+    padding: 10px 35px;
+
+    background: #333;
+
+    -webkit-border-radius: 0px 0px 99px 99px;
+       -moz-border-radius: 0px 0px 99px 99px;
+            border-radius: 0px 0px 99px 99px;
+
+    -webkit-box-shadow: 0 8px 6px -6px black;
+       -moz-box-shadow: 0 8px 6px -6px black;
+            box-shadow: 0 8px 6px -6px black;
+
+  } // .header
+
+  .call-to-action {
+
+    background: asset-url('training-bg.png', image);
+    padding: 50px 0;
+
+    .inner-box {
+      @include clearfix();
+
+      background-color: #183455;
+      color: #fff;
+
+      padding: 30px;
+
+      .detailed-info {
+
+        float: left;
+        width: 71%;
+
+        h2 {
+          font-family: $lato;
+          font-weight: 700;
+          font-size: 30px;
+          color: #fff;
+          text-shadow: 1px 1px 1px #333;
+
+          @include breakpoint(tablet){
+            font-size: 26px;
+          }
+          @include breakpoint(desktop){
+            font-size: 46px;
+          }
+        }
+
+        h3 {
+          font-family: $lato;
+          font-weight: 300;
+          font-size: 24px;
+
+          color: #f4f4f4;
+          text-shadow: 1px 1px 1px #333;
+        }
+
+        p {
+          color: #fff;
+          margin: 20px 0;
+          font-size: 16px;
+          font-weight: 300;
+        }
+
+        .checkout {
+
+          @include clearfix();
+
+          .pricing {
+
+            float: left;
+            width: 35%;
+
+            .price {
+              h3 {
+                font-weight: 700;
+                font-size: 24px;
+
+                span {
+                  font-weight: 300;
+                  font-size: 16px;
+                }
+              }
+
+              p {
+                margin: 5px 0;
+                font-weight: 700;
+
+                span {
+                  background: #E50892;
+                  padding: 5px 10px;
+
+                  -webkit-border-radius: 10px;
+                     -moz-border-radius: 10px;
+                          border-radius: 10px;
+                }
+              }
+            }
+
+          } // .pricing
+
+          .schedule {
+
+            float: right;
+            width: 55%;
+
+            p {
+              margin: 5px 0 !important;
+            }
+
+            span {
+            }
+
+            .comming-soon {
+              font-weight: 700;
+              background: #2FE508;
+              padding: 3px 10px;
+              margin-left: 10px;
+
+              -webkit-border-radius: 10px;
+                 -moz-border-radius: 10px;
+                      border-radius: 10px;
+            }
+
+          } // .schedule
+
+        } // .checkout
+
+      } // .detailed-info
+
+      .extra-info {
+
+        float: right;
+        width: 27%;
+        padding: 10px 20px;
+
+        background: #247BA0;
+
+        h3 {
+          font-family: $lato;
+        }
+
+        h4 {
+          font-family: $lato;
+          font-size: 14px;
+        }
+
+        form {
+
+          margin: 0;
+
+          label {
+            display: block;
+            font-weight: 300;
+            font-size: 14px;
+          }
+
+          .field {
+            input, textarea {
+              width: 100%;
+              border: none;
+              padding: 5px;
+              color: #333;
+              margin: 5px 0;
+
+              -webkit-border-radius: 0;
+                 -moz-border-radius: 0;
+                      border-radius: 0;
+            }
+
+            textarea {
+              height: 100px;
+            }
+          }
+
+          .action {
+            margin-top: 20px;
+
+            .btn {
+              background: #183455;
+              border: 2px solid darken(#183455, 2%) !important;
+              font-family: $lato;
+              font-weight: 700;
+              font-size: 16px;
+            }
+          }
+
+        }
+
+      } // .extra-info
+
+      .trigger {
+
+        padding: 20px 0px 10px 0px;
+
+        .btn {
+          font-family: $lato;
+
+          font-family: $lato;
+          font-size: 40px;
+
+          @include breakpoint(tablet){
+            font-size: 36px;
+          }
+
+          @include breakpoint(desktop){
+            font-size: 22px;
+            padding: 10px 20px;
+          }
+        }
+
+      } // .trigger
+
+    } // .inner-box
+
+    .credits {
+
+      @include clearfix();
+
+      background: #cfcfcf;
+      padding: 30px;
+
+      .profile {
+
+        float: left;
+        margin-right: 30px;
+
+        -webkit-border-radius: 50%;
+           -moz-border-radius: 50%;
+                border-radius: 50%;
+
+        border: 10px solid #666;
+
+        width:  270px;
+        height: 270px;
+
+        img {
+          -webkit-border-radius: 50%;
+             -moz-border-radius: 50%;
+                  border-radius: 50%;
+        }
+
+      } // .profile
+
+      .personal-data {
+
+        .fullname {
+
+          margin-bottom: 30px;
+
+          span {
+            font-weight: 300;
+          }
+
+          h2 {
+            margin-top: 10px;
+            font-family: $lato;
+            font-weight: 700;
+            font-size: 30px;
+            text-shadow: 1px 1px 1px #333;
+
+            @include breakpoint(tablet){
+              font-size: 26px;
+            }
+            @include breakpoint(desktop){
+              font-size: 34px;
+            }
+          }
+
+        } // .fullname
+
+        .short-bio {
+
+          font-weight: 300;
+          color: #000;
+
+        } // .short-bio
+
+      } // .personal-data
+
+    } // .credits
+
+  } // .call-to-action
+
+  .complementary-box {
+
+    padding: 40px 0;
+    box-shadow: 0 -5px 5px -2px #aaa;
+
+    .topics {
+
+      float: left;
+      width: 68%;
+
+      h2 {
+        margin-bottom: 30px;
+        color: #183455;
+        font-family: $lato;
+        font-weight: 700;
+        font-size: 22px;
+        text-shadow: 1px 1px 1px #666;
+
+        @include breakpoint(tablet){
+          font-size: 26px;
+        }
+        @include breakpoint(desktop){
+          font-size: 26px;
+        }
+      }
+
+      .topic {
+
+        h3 {
+          margin: 20px 0 10px 0;
+          font-family: $lato;
+          // font-weight: 300;
+        }
+
+        ul {
+          list-style: disc inside;
+
+          li {
+            color: #000;
+            font-size: 16px;
+            font-weight: 300;
+          }
+        }
+
+      } // .topic
+
+    } // .topics
+
+    .who-should-take-it {
+
+      float: right;
+      width: 30%;
+      padding: 10px 20px;
+      background: #247BA0;
+      color: #fff;
+
+      -webkit-border-radius: 10px;
+         -moz-border-radius: 10px;
+              border-radius: 10px;
+
+      h3 {
+        font-family: $lato;
+        font-size: 18px;
+        margin: 20px 0;
+      }
+
+      p {
+        font-weight: 300;
+
+      }
+
+    } // .get-in-touch
+
+  } // .complementary-box
+
+} // .training-page
