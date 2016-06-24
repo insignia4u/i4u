@@ -533,4 +533,71 @@
 
   } // .complementary-box
 
+  .payment-info {
+
+    background: #183455;
+    border-top: 2px solid #247BA0;
+    padding: 30px 0;
+    text-align: center;
+    color: #fff;
+
+    .cards {
+
+      padding: 0 30px 20px 30px;
+
+      @include breakpoint(tablet) {
+        padding: 0;
+      }
+
+      @include breakpoint(desktop) {
+        padding: 0;
+      }
+
+      h4 {
+        font-family: $lato;
+        font-weight: 300;
+        margin-bottom: 10px;
+      }
+
+      i.fa {
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .pay-now-button {
+        position: relative;
+        top: 15px;
+        display: block;
+        font-size: 22px;
+
+        @include breakpoint(tablet) {
+          top: -10px;
+          display: inline-block;
+          font-size: 16px;
+        }
+
+        @include breakpoint(desktop) {
+          top: -10px;
+          display: inline-block;
+          font-size: 16px;
+        }
+
+        background: #2FE508;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        border: 2px solid #fff;
+
+        -webkit-border-radius: 4px;
+           -moz-border-radius: 4px;
+                border-radius: 4px;
+      }
+
+    } // .cards
+
+  } // ..payment-info
+
 } // .training-page
