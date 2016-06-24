@@ -21,3 +21,4 @@
 //= require fullcalendar
 //= require calendar
 //= require landing_pages
+//= require training

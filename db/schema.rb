@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160623183457) do
+ActiveRecord::Schema.define(:version => 20160624151303) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -364,21 +364,20 @@ ActiveRecord::Schema.define(:version => 20160623183457) do
   end
 
   create_table "trainings", :force => true do |t|
-    t.string   "title",                                             :null => false
+    t.string   "title",        :null => false
     t.string   "subtitle"
     t.text     "summary"
     t.integer  "price"
     t.integer  "discount"
     t.date     "initial_date"
-    t.text     "days",              :limit => 255, :default => "'"
-    t.string   "time"
-    t.integer  "number_of_classes"
     t.text     "topics"
     t.text     "addressed_to"
     t.string   "slug"
     t.integer  "trainer_id"
-    t.datetime "created_at",                                        :null => false
-    t.datetime "updated_at",                                        :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "days_time"
+    t.string   "calendar"
   end
 
   add_index "trainings", ["slug"], :name => "index_trainings_on_slug", :unique => true

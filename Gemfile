@@ -1,12 +1,7 @@
 source 'https://rubygems.org'
 
-<<<<<<< HEAD
 ruby '1.9.3', patchlevel: '551'
 #ruby '1.9.3', patchlevel: '547'
-=======
-#ruby '1.9.3', patchlevel: '551'
-ruby '1.9.3', patchlevel: '547'
->>>>>>> 43427c26f0f0d98d463a9f6dc9c47003a537f2f9
 
 # Rails
 gem 'rails', '3.2.18'
@@ -27,7 +22,6 @@ gem 'jquery-cookie-rails'
 gem 'fullcalendar-rails'
 gem 'recaptcha',             '0.4.0'
 gem 'figaro'
-gem 'tinymce-rails'
 
 
 # Engines

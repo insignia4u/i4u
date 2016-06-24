@@ -499,35 +499,47 @@
           font-size: 26px;
         }
       }
-      .calendar-1, .calendar-2{
-        width: 100%;
-        background: #fff;
-        padding: 5px;
-        border: none;
-        @include breakpoint(tablet){
-          width: 48%;
-        }
-        .fc-header{
-          margin-bottom: 3px;
-          background: #E50892;
-          .fc-header-center{
-            padding-top: 10px;
-            h2{
-              font-size: 1.125em;
-              text-shadow: none;
-              color: #fff;
+      .reset-calendar-counter{
+        .wrapper-calendar{
+          width: 100%;
+          background: #fff;
+          padding: 5px;
+          border: none;
+          
+          @include breakpoint(tablet){
+            width: 48%;
+            &:first-child{
+              float: left;
+            }
+            &:last-child{
+              float: right;
             }
           }
+
+          .hidden-dates{
+            display: none;
+          }
+
+          .fc-header{
+            margin-bottom: 3px;
+            background: #E50892;
+            .fc-header-center{
+              padding-top: 10px;
+              h2{
+                font-size: 1.125em;
+                text-shadow: none;
+                color: #fff;
+                margin-bottom: 0;
+              }
+            }
+          }
+          .fc-day-header {
+            background-color: #247BA0;
+          }
+          .fc-event-title{
+            line-height: 18px;
+          }
         }
-      }
-      .calendar-1{
-        float: left;
-      }
-      .calendar-2{
-        float: right;
-      }
-      .fc .fc-day-header {
-        background-color: #247BA0;
       }
     } // .calendar
 

@@ -11,9 +11,7 @@ ActiveAdmin.register Training do
         column ("Price") { |training| training.price }
         column ("Discount") { |training| training.discount }
         column ("Start Day") { |training| training.initial_date }
-        column ("Days") { |training| training.days }
-        column ("Schedule") { |training| training.time }
-        column ("Number of classes") { |training| training.number_of_classes }
+        column ("Days") { |training| training.days_time }
         column ("Trainer") { |training| training.trainer.name }
         actions
     end
@@ -28,11 +26,7 @@ ActiveAdmin.register Training do
             row :price
             row :discount
             row :initial_date
-            row :days do |training|
-                raw(training.days)
-            end
-            row :time
-            row :number_of_classes
+            row :days_time
             row :topics do |training|
                 textilize(training.topics)
             end
@@ -52,15 +46,14 @@ ActiveAdmin.register Training do
             f.input :title, label: "Title"
             f.input :subtitle, label: "Subtitle"
             f.input :summary, label: "Summary"
+            f.input :trainer_id, label: "Trainer", :as => :select, :collection => Hash[Trainer.all.map{|s| [s.name, s.id]}]
             f.input :price, label: "Price"
             f.input :discount, label: "Discount"
             f.input :initial_date, label: "Start Day"
-            f.input :days, as: :select, collection: ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"], multiple: true, label: "Days"
-            f.input :time, label: "Schedule", hint: "Example: 18hs a 20hs"
-            f.input :number_of_classes, label: "Number of classes"
+            f.input :days_time, label: "Days", hint: "Example: Lunes y Viernes, 18hs a 20hs"
             f.input :topics, label: "Topics"
             f.input :addressed_to, label: "Addressed to"
-            f.input :trainer_id, label: "Trainer", :as => :select, :collection => Hash[Trainer.all.map{|s| [s.name, s.id]}]
+            f.input :calendar, label: "Calendar", hint: "Example: {{calendar 2015-12-12 2015-12-13}}"
         end
         actions
     end
@@ -72,8 +65,8 @@ ActiveAdmin.register Training do
             params.require(:training)
             .permit(
               :title, :subtitle, :summary, :price,
-              :discount, :initial_date, {:days => []}, :time, 
-              :number_of_classes, :topics, :addressed_to, :trainer_id
+              :discount, :initial_date, :days_time,
+              :topics, :addressed_to, :trainer_id, :calendar
             )
           ]
         end

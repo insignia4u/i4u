@@ -33,13 +33,13 @@
             .schedule
 
               p
-                span 
+                span.start data-start="#{training.initial_date}"
                   |Inicio 
                   =" - #{l training.initial_date, locale: :es, format: :start}"
                 span.comming-soon Faltan 25 días
               p
                 span 
-                  = training.days.to_sentence(words_connector: ' , ', last_word_connector: ' y ', locale: :es)
+                  = training.days_time
 
         .extra-info
 
@@ -63,19 +63,18 @@
       .credits
 
         .profile
-          = image_tag 'samples/profile.jpg'
+          picture alt=""
+            source src=training.trainer.image.url
 
         .personal-data
 
           .fullname
             span Dictado por
-            h2 Juan Maria Martinez Arce
-            .degree Senior Full Stack Developer
+            h2 = training.trainer.name
+            .degree =training.trainer.title
 
           .short-bio
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, recusandae dolore unde culpa tempore perferendis deleniti velit voluptas numquam quas dolorem, voluptate iure voluptates vitae voluptatibus! Placeat asperiores, corrupti maiores!
-
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, recusandae dolore unde culpa tempore perferendis deleniti velit voluptas numquam quas dolorem, voluptate iure voluptates vitae voluptatibus! Placeat asperiores, corrupti maiores!
+            = textilize(training.trainer.profile)
 
   .complementary-box
 
@@ -85,50 +84,18 @@
 
           h2 Temas de la Capacitación
 
-
-          .topic
-
-            h3 Introducción al Marketing Digital
-
-            ul
-
-              li El consumidor 2.0.
-              li El Marketing digital en el contexto del Marketing tradicional.
-              li Campañas integradas.
-
-          .topic
-
-            h3 Introducción al Marketing Digital
-
-            ul
-
-              li El consumidor 2.0.
-              li El Marketing digital en el contexto del Marketing tradicional.
-              li Campañas integradas.
-
-          .topic
-
-            h3 Introducción al Marketing Digital
-
-            ul
-
-              li El consumidor 2.0.
-              li El Marketing digital en el contexto del Marketing tradicional.
-              li Campañas integradas.
+          = textilize(training.topics)
 
 
         .who-should-take-it
 
           h3 A quién está dirigido
 
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas dolore, numquam soluta delectus ex quis expedita sit quibusdam libero officiis. Quam sequi, neque vero quia nemo quos dignissimos, dolorem cupiditate!
-
-          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas dolore, numquam soluta delectus ex quis expedita sit quibusdam libero officiis. Quam sequi, neque vero quia nemo quos dignissimos, dolorem cupiditate!
+          = textilize(training.addressed_to)
 
       .calendar
         h2 Días de Cursado
-        .calendar-1
-        .calendar-2
+        = textilize(parse_regex(training.calendar))
 
 
 .landing-page
