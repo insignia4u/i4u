@@ -578,6 +578,20 @@
           margin-right: 0;
         }
       }
+      .mp{
+        display: inline-block;
+        text-decoration: none;
+        right: 10px;
+        img{
+          width: 150px;
+        }
+        .text{
+          font-size: 10px;
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+      
 
       .pay-now-button {
         position: relative;
@@ -592,7 +606,8 @@
         }
 
         @include breakpoint(desktop) {
-          top: -10px;
+          top: -19px;
+          left: 10px;
           display: inline-block;
           font-size: 16px;
         }

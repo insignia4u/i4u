@@ -1,4 +1,5 @@
 $(document).ready ->
+    return if !$('.start').length
     oneDay = 24*60*60*1000;
     d = new Date()
     start = $('.start').data("start").split("-")
@@ -8,3 +9,6 @@ $(document).ready ->
 
     soon = $('.comming-soon')
     soon.html "Faltan " + diffDays + " días"
+
+    if $('#noty_top_layout_container')
+    	$('#noty_top_layout_container').delay(4000).fadeOut('slow');

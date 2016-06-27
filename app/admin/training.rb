@@ -40,8 +40,6 @@ ActiveAdmin.register Training do
     end
 
     form do |f|
-        f.semantic_errors *f.object.errors.keys
-
         f.inputs "Edit Training" do
             f.input :title, label: "Title"
             f.input :subtitle, label: "Subtitle"

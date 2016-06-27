@@ -3,6 +3,8 @@ class TrainingsController < ApplicationController
 
   expose(:message) { Message.new }
 
+  expose(:reservation) { Reservation.new }
+
   expose(:training)  { Training.find(params[:id]) }
 
   def rails; end

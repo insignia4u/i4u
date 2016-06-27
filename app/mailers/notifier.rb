@@ -35,6 +35,26 @@ class Notifier < ActionMailer::Base
     })
   end
 
+  def reservation_msg(reservation)
+    @reservation = reservation
+
+    mail({
+      from:     reservation.email,
+      to:      'info@insignia4u.com',
+      subject: "Training Reservation"
+    })
+  end
+
+  def reservation_author_msg(reservation)
+    @reservation = reservation
+
+    mail({
+      from:     'info@insignia4u.com',
+      to:      reservation.email,
+      subject: "Training Reservation"
+    })
+  end
+
 protected
   def subject_for(message)
     name = message.name

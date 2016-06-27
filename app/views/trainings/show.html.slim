@@ -43,22 +43,24 @@
 
         .extra-info
 
-          form action="#"
+          = form_for reservation, url: reservation_path(to: training_path(id: training.slug)), html: { multipart: true } do |f|
+
+            = f.hidden_field :training, value: "#{training.title}"
 
             .field
               label Nombre
-              input type="text"
+              = f.text_field :name, required: true
 
             .field
               label Email
-              input type="email"
+              = f.email_field :email, required: true
 
             .field
               label Teléfono
-              input type="tel"
+              = f.telephone_field :phone
 
             .action
-              input type="submit" value="Reserva tu lugar" class="btn"
+              = f.submit 'Reserva tu lugar', class: 'btn'
 
       .credits
 
@@ -75,6 +77,12 @@
 
           .short-bio
             = textilize(training.trainer.profile)
+
+            -if training.trainer.profile_url
+              p
+                a.linked-in href="#{training.trainer.profile_url}" target="_blank"
+                  = fa_stacked_icon "linkedin inverse",    base: "circle"
+                  | Ver Perfil en Linkedin
 
   .complementary-box
 
@@ -94,9 +102,21 @@
           = textilize(training.addressed_to)
 
       .calendar
-        h2 Días de Cursado
-        = textilize(parse_regex(training.calendar))
+        -if training.calendar
+          h2 Días de Cursado
+          = textilize(parse_regex(training.calendar))
 
+  .payment-info
+
+    .container
+
+      .cards
+        h4 Paga con MercadoPago
+        a.mp href="https://www.mercadopago.com.ar/ayuda/medios-de-pago-cuotas-promociones_264"
+          = image_tag "MP-logo.png"
+          .text
+            |Formas de Pagos y Promociones
+        a.pay-now-button href="#" Pagar Ahora!
 
 .landing-page
 
@@ -106,9 +126,9 @@
 
       p Just fill up the form with your name and email and we'll be contacting you shortly
 
-      = form_for message, url: "#", html: { multipart: true } do |f|
+      = form_for message, url: contact_path(to: training_path(id: training.slug)), html: { multipart: true } do |f|
 
-        = f.hidden_field :body, value: "Message from training page"
+        = f.hidden_field :body, value: "Message from training page - #{training.title}"
 
         .col
           = f.text_field :name, placeholder: "What's your name?", required: true
@@ -161,3 +181,6 @@
           = fa_stacked_icon "github inverse",      base: "circle"
         a href="http://slideshare.com/insignia4u"  target="_blank"
           = fa_stacked_icon "slideshare inverse",  base: "circle"
+
+- if flash[:notice]
+  #notice_div

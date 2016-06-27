@@ -6,6 +6,8 @@ class Training < ActiveRecord::Base
   attr_accessible :title, :subtitle, :summary, :price, :discount, :initial_date, :days_time,
                   :calendar, :topics, :addressed_to, :trainer_id
 
+  validates :title, :summary, :price, :initial_date, :trainer_id, presence: true
+
   friendly_id :title, use: [:slugged, :history]
 
 end
