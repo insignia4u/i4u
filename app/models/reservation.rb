@@ -12,7 +12,7 @@ class Reservation
   attribute :phone,     String
   attribute :training,  String
 
-  validates :name, :email, presence: true
+  validates :name, :email, :phone, presence: true
   validates :email, format: { with: ValidFormats::EMAIL }, allow_blank: true
 
   def send!

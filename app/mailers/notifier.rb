@@ -41,7 +41,8 @@ class Notifier < ActionMailer::Base
     mail({
       from:     reservation.email,
       to:      'info@insignia4u.com',
-      subject: "Training Reservation"
+      subject: "Reservacion al curso #{@reservation.training}",
+      reply_to: reservation.email
     })
   end
 
@@ -49,9 +50,9 @@ class Notifier < ActionMailer::Base
     @reservation = reservation
 
     mail({
-      from:     'info@insignia4u.com',
+      from:     'Insignia Training <training@insignia4u.com>',
       to:      reservation.email,
-      subject: "Training Reservation"
+      subject: "Reservacion al curso #{@reservation.training}"
     })
   end
 
