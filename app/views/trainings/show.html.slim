@@ -110,32 +110,43 @@
     .container
 
       .cards
-        h4 Paga con MercadoPago
+        h2 Pagá ahora y reservá tu lugar!
+
+        -if !training.disable_payment
+          a.pay-now-button href="#{training.payment}" target="_blank" 
+            span
+              |$
+              =training.price
+            |&nbsp; &nbsp; Pagar Ahora!
+        -else
+          .cupo
+            |Cupo completo
+        p
         a.mp href="https://www.mercadopago.com.ar/ayuda/medios-de-pago-cuotas-promociones_264" target="_blank"
           = image_tag "MP-logo.png"
           .text
             |Formas de Pagos y Promociones
-        a.pay-now-button href="#{training.snippet}" target="_blank" Pagar Ahora!
+        
 
 .landing-page
 
   .contact-us
     .container
-      h2 Nos pongamos en contacto!
+      h2 ¿Tenés alguna consulta?
 
-      p Sólo tenés que completar el formulario con tu nombre y correo electrónico, y te estaremos contactando a la brevedad
+      p Completá el formulario y te vamos a contestar lo más rápido posible.
 
       = form_for message, url: contact_path(to: training_path(id: training.slug)), html: { multipart: true } do |f|
 
-        = f.hidden_field :body, value: "Message from training page - #{training.title}"
+        =f.hidden_field :from_page, value: "Message from training page /training/#{training.slug}"
 
         .col
           = f.text_field :name, placeholder: "¿Cuál es tu nombre?", required: true
-
-        .col
           = f.email_field :email, placeholder: 'Email', required: true
+        .coment
+          = f.text_area :body, placeholder: 'Comentario', required: true
 
-        .col
+        .submit
           = f.submit 'Contáctanos', class: 'btn'
 
   .footer

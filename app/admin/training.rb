@@ -36,6 +36,10 @@ ActiveAdmin.register Training do
             row "Trainer" do |training|
                 training.trainer.name
             end
+            row "Payment Link" do |training|
+                training.payment
+            end
+            row :disable_payment
         end
     end
 
@@ -52,7 +56,8 @@ ActiveAdmin.register Training do
             f.input :topics, label: "Topics"
             f.input :addressed_to, label: "Addressed to"
             f.input :calendar, label: "Calendar", hint: "Example: {{calendar 2015-12-12 2015-12-13}}"
-            f.input :snippet, hint:"Add payment link"
+            f.input :payment, label: "Payment link", hint:"Add payment link"
+            f.input :disable_payment
         end
         actions
     end
@@ -65,7 +70,7 @@ ActiveAdmin.register Training do
             .permit(
               :title, :subtitle, :summary, :price,
               :discount, :initial_date, :days_time,
-              :topics, :addressed_to, :trainer_id, :calendar, :snippet
+              :topics, :addressed_to, :trainer_id, :calendar, :payment, :disable_payment
             )
           ]
         end

@@ -15,6 +15,7 @@ class Message
   attribute :linked_in, String
   attribute :subject,   String
   attribute :file,      Paperclip::Attachment
+  attribute :from_page,  String
 
   validates :body, :name, :email, presence: true
   validates :email, format: { with: ValidFormats::EMAIL }, allow_blank: true
