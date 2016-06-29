@@ -6,7 +6,8 @@ class Notifier < ActionMailer::Base
     attachments[@message.file.original_filename] = {content: message.file.read } if message.file
 
     mail({
-      from:     message.email,
+      from:     from(message),
+      reply_to: message.email,
       to:      'info@insignia4u.com',
       subject: subject_for(message)
     })
@@ -35,9 +36,48 @@ class Notifier < ActionMailer::Base
     })
   end
 
+  def reservation_msg(reservation)
+    @reservation = reservation
+
+    mail({
+      from:    'Insignia Training <training@insignia4u.com>',
+      to:      'info@insignia4u.com',
+      subject: "Reservacion al curso #{@reservation.training}",
+      reply_to: reservation.email
+    })
+  end
+
+  def reservation_author_msg(reservation)
+    @reservation = reservation
+
+    mail({
+      from:    'info@insignia4u.com',
+      to:      reservation.email,
+      subject: "Reservacion al curso #{@reservation.training}"
+    })
+  end
+
 protected
   def subject_for(message)
     name = message.name
-    message.is_to_job ? "Job Applications: #{name}" : "Message: #{name}"
+    from = message.from_page
+    if message.is_to_job  
+      "Job Applications: #{name}"
+    else 
+      if from
+        "#{from}"
+      else
+        "Message: #{name}"
+      end
+    end
+  end
+
+  def from(message)
+    from = message.from_page
+    if from
+      "Insignia Training <training@insignia4u.com>"
+    else
+      message.email
+    end
   end
 end

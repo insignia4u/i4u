@@ -1,0 +1,734 @@
+.training-page {
+
+  font-family: $lato;
+  position: relative;
+
+  .header {
+
+    position: relative;
+    top: -50px;
+
+    width: 170px;
+    margin: 0 auto;
+    padding: 10px 35px;
+
+    background: #333;
+
+    -webkit-border-radius: 0px 0px 99px 99px;
+       -moz-border-radius: 0px 0px 99px 99px;
+            border-radius: 0px 0px 99px 99px;
+
+    -webkit-box-shadow: 0 8px 6px -6px black;
+       -moz-box-shadow: 0 8px 6px -6px black;
+            box-shadow: 0 8px 6px -6px black;
+
+  } // .header
+
+  .call-to-action {
+
+    background: asset-url('training-bg.png', image);
+    padding: 50px 0;
+
+    .inner-box {
+      @include clearfix();
+
+      background-color: #183455;
+      color: #fff;
+
+      padding: 30px;
+
+      .detailed-info {
+
+        float: none;
+        width: 100%;
+
+        @include breakpoint(desktop){
+          float: left;
+          width: 71%;
+        }
+
+        h2 {
+          font-family: $lato;
+          font-weight: 700;
+          font-size: 30px;
+          color: #fff;
+          text-shadow: 1px 1px 1px #333;
+
+          @include breakpoint(tablet){
+            font-size: 42px;
+          }
+          @include breakpoint(desktop){
+            font-size: 46px;
+          }
+        }
+
+        h3 {
+          font-family: $lato;
+          font-weight: 300;
+          font-size: 20px;
+          color: #f4f4f4;
+          text-shadow: 1px 1px 1px #333;
+        }
+
+        p {
+          color: #fff;
+          margin: 20px 0;
+          font-size: 14px;
+          font-weight: 300;
+
+          @include breakpoint(tablet){
+            font-size: 16px;
+          }
+          @include breakpoint(desktop){
+            font-size: 16px;
+          }
+        }
+
+        .checkout {
+
+          @include clearfix();
+
+          .pricing {
+            float: none;
+            width: 100%;
+
+            @include breakpoint(tablet){
+              float: left;
+              width: 45%;
+            }
+
+            @include breakpoint(desktop){
+              float: left;
+              width: 35%;
+            }
+
+            .price {
+              h3 {
+                font-weight: 700;
+                font-size: 24px;
+
+                span {
+                  font-weight: 300;
+                  font-size: 16px;
+                }
+              }
+
+              p {
+                margin: 5px 0;
+                font-weight: 700;
+
+                span {
+                  background: #E50892;
+                  padding: 5px 10px;
+
+                  -webkit-border-radius: 10px;
+                     -moz-border-radius: 10px;
+                          border-radius: 10px;
+
+                  @include breakpoint(tablet){
+                    font-size: 14px;
+                  }
+
+                  @include breakpoint(desktop){
+                    font-size: 16px;
+                  }
+                }
+              }
+            }
+
+          } // .pricing
+
+          .schedule {
+
+            float: none;
+            width: 100%;
+            margin-top: 30px;
+
+            @include breakpoint(desktop){
+              float: right;
+              width: 55%;
+              margin-top: 0px;
+            }
+
+            p {
+              margin: 5px 0 !important;
+            }
+
+            span {
+            }
+
+            .comming-soon {
+              font-weight: 700;
+              background: #2FE508;
+              padding: 3px 10px;
+              margin-left: 10px;
+
+              -webkit-border-radius: 10px;
+                 -moz-border-radius: 10px;
+                      border-radius: 10px;
+
+              @include breakpoint(tablet){
+                font-size: 14px;
+              }
+
+              @include breakpoint(desktop){
+                font-size: 16px;
+              }
+            }
+
+          } // .schedule
+
+        } // .checkout
+
+      } // .detailed-info
+
+      .extra-info {
+
+        float: none;
+        width: 100%;
+        margin-top: 30px;
+        padding: 10px 20px;
+        background: #247BA0;
+
+        @include breakpoint(desktop){
+          float: right;
+          width: 27%;
+        }
+
+        h3 {
+          font-family: $lato;
+        }
+
+        h4 {
+          font-family: $lato;
+          font-size: 14px;
+        }
+
+        form {
+
+          margin: 0;
+
+          label {
+            display: block;
+            font-weight: 300;
+            font-size: 14px;
+          }
+
+          .field {
+            input, textarea {
+              width: 100%;
+              border: none;
+              padding: 5px;
+              color: #333;
+              margin: 5px 0;
+
+              -webkit-border-radius: 0;
+                 -moz-border-radius: 0;
+                      border-radius: 0;
+            }
+
+            textarea {
+              height: 100px;
+            }
+          }
+
+          .action {
+            margin-top: 20px;
+            .btn {
+              background: #183455;
+              border: 2px solid darken(#183455, 2%) !important;
+              font-family: $lato;
+              font-weight: 700;
+              font-size: 16px;
+            }
+          }
+
+        }
+
+      } // .extra-info
+
+      .trigger {
+
+        padding: 20px 0px 10px 0px;
+
+        .btn {
+          font-family: $lato;
+
+          font-family: $lato;
+          font-size: 40px;
+
+          @include breakpoint(tablet){
+            font-size: 36px;
+          }
+
+          @include breakpoint(desktop){
+            font-size: 22px;
+            padding: 10px 20px;
+          }
+        }
+
+      } // .trigger
+
+    } // .inner-box
+
+    .credits {
+
+      @include clearfix();
+
+      background: #cfcfcf;
+      padding: 30px;
+
+      .profile {
+
+        float: none;
+        margin: 0 auto;
+        width:  160px;
+        height: 160px;
+        -webkit-border-radius: 50%;
+           -moz-border-radius: 50%;
+                border-radius: 50%;
+
+        border: 10px solid #666;
+
+        @include breakpoint(tablet){
+          float: left;
+          width:  200px;
+          height: 200px;
+        }
+
+        @include breakpoint(desktop){
+          float: left;
+          width:  270px;
+          height: 270px;
+        }
+
+        .image {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          background-position: center !important;
+          background-size: cover !important;
+          -webkit-border-radius: 50%;
+             -moz-border-radius: 50%;
+                  border-radius: 50%;
+        }
+
+      } // .profile
+
+      .personal-data {
+
+        float: none;
+        width: 100%;
+        margin-top: 30px;
+
+        @include breakpoint(tablet){
+          float: right;
+          width: 65%;
+        }
+
+        @include breakpoint(desktop){
+          float: right;
+          width: 65%;
+        }
+
+        .fullname {
+
+          margin-bottom: 30px;
+
+          span {
+            font-weight: 300;
+          }
+
+          h2 {
+            margin-top: 10px;
+            font-family: $lato;
+            font-weight: 700;
+            font-size: 24px;
+            text-shadow: 1px 1px 1px #333;
+
+            @include breakpoint(tablet){
+              font-size: 26px;
+            }
+            @include breakpoint(desktop){
+              font-size: 34px;
+            }
+          }
+
+        } // .fullname
+
+        .short-bio {
+
+          font-weight: 300;
+          color: #000;
+          .linked-in {
+            text-decoration: none;
+            font-weight: 700;
+
+            span.fa-stack {
+              margin-top: -5px;
+            }
+
+            span {
+              margin-right: 5px;
+            }
+          }
+        } // .short-bio
+
+      } // .personal-data
+
+    } // .credits
+
+  } // .call-to-action
+
+  .complementary-box {
+
+    padding: 30px;
+    box-shadow: 0 -5px 5px -2px #aaa;
+
+    @include breakpoint(tablet){
+      padding: 40px 20px;
+    }
+
+    @include breakpoint(desktop){
+      padding: 40px 0;
+    }
+
+    .clearfix {
+      @include clearfix;
+    }
+
+    .topics {
+
+      float: none;
+      width: 100%;
+
+      @include breakpoint(tablet){
+        float: left;
+        width: 68%;
+      }
+
+      @include breakpoint(desktop){
+        float: left;
+        width: 68%;
+      }
+
+      h2 {
+        margin-bottom: 30px;
+        color: #183455;
+        font-family: $lato;
+        font-weight: 700;
+        font-size: 22px;
+        text-shadow: 1px 1px 1px #666;
+
+        @include breakpoint(tablet){
+          font-size: 26px;
+        }
+        @include breakpoint(desktop){
+          font-size: 26px;
+        }
+      }
+
+      h3 {
+        margin: 20px 0 10px 0;
+        font-family: $lato;
+        // font-weight: 300;
+      }
+
+      ul {
+        list-style: disc inside;
+
+        li {
+          color: #000;
+          font-size: 16px;
+          font-weight: 300;
+        }
+      }
+
+    } // .topics
+
+    .who-should-take-it {
+      float: none;
+      width: 100%;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #247BA0;
+      color: #fff;
+
+      -webkit-border-radius: 10px;
+         -moz-border-radius: 10px;
+              border-radius: 10px;
+
+      @include breakpoint(tablet){
+        float: right;
+        width: 30%;
+        margin-top: 0px;
+      }
+
+      @include breakpoint(desktop){
+        float: right;
+        width: 30%;
+        margin-top: 0px;
+      }
+      h3 {
+        font-family: $lato;
+        font-size: 18px;
+        margin: 20px 0;
+      }
+
+      p {
+        font-weight: 300;
+
+      }
+
+    } // .who-should-take-it
+
+    .calendar{
+      margin: 60px 0 20px;
+      background: none;
+      h2{
+        color: #183455;
+        font-family: $lato;
+        font-weight: 700;
+        font-size: 22px;
+        text-shadow: 1px 1px 1px #666;
+        text-align: left;
+        @include breakpoint(tablet){
+          font-size: 26px;
+        }
+        @include breakpoint(desktop){
+          font-size: 26px;
+        }
+      }
+      .reset-calendar-counter{
+        .wrapper-calendar{
+          width: 100%;
+          background: #fff;
+          padding: 5px;
+          border: none;
+          
+          @include breakpoint(tablet){
+            width: 48%;
+            &:first-child{
+              float: left;
+            }
+            &:last-child{
+              float: right;
+            }
+          }
+
+          .hidden-dates{
+            display: none;
+          }
+
+          .fc-header{
+            margin-bottom: 3px;
+            background: #E50892;
+            .fc-header-center{
+              padding-top: 10px;
+              h2{
+                font-size: 1.125em;
+                text-shadow: none;
+                color: #fff;
+                margin-bottom: 0;
+              }
+            }
+          }
+          .fc-day-header {
+            background-color: #247BA0;
+          }
+          .fc-event-title{
+            line-height: 18px;
+          }
+        }
+      }
+    } // .calendar
+
+  } // .complementary-box
+
+  .payment-info {
+
+    background: #183455;
+    border-top: 2px solid #247BA0;
+    padding: 30px 0;
+    text-align: center;
+    color: #fff;
+
+    h2{
+      @extend .headline-2;
+    }
+
+    h3{
+      @extend .headline-2;
+      font-size: 20px;
+      display: inline-block;
+      text-shadow: none;
+    }
+
+    .cards {
+
+      padding: 0 30px 20px 30px;
+
+      @include breakpoint(tablet) {
+        padding: 0;
+      }
+
+      @include breakpoint(desktop) {
+        padding: 0;
+      }
+
+      h4 {
+        font-family: $lato;
+        font-weight: 300;
+        margin-bottom: 10px;
+      }
+
+      i.fa {
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      .mp{
+        text-decoration: none;
+        right: 10px;
+        img{
+          width: 150px;
+        }
+        .text{
+          font-size: 12px;
+          color: #fff;
+          text-decoration: none;
+          padding-top: 8px;
+          &:hover{
+            color: #2FE508;
+          }
+        }
+      }
+
+      .pay-now-button {
+        position: relative;
+        top: 15px;
+        display: block;
+        font-size: 22px;
+        margin-bottom: 50px;
+
+        @include breakpoint(tablet) {
+          top: -1px;
+          left: 10px;
+          display: inline-block;
+          font-size: 18px;
+          margin-bottom: 0;
+        }
+
+        @include breakpoint(desktop) {
+          top: -2px;
+          left: 10px;
+          display: inline-block;
+          font-size: 18px;
+          padding-top: 2px;
+        }
+
+        background: #2FE508;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        border: 2px solid #fff;
+
+        -webkit-border-radius: 4px;
+           -moz-border-radius: 4px;
+                border-radius: 4px;
+
+        span{
+          font-size: 28px;
+          position: relative;
+          top: 3px;
+        }
+      }
+
+    } // .cards
+
+    .cupo{
+      font-size: 20px;
+      text-transform: uppercase;
+      background: #2FE508;
+      color: #fff;
+      padding: 10px;
+      border: 2px solid #fff;
+      display: inline-block;
+      -webkit-border-radius: 4px;
+         -moz-border-radius: 4px;
+              border-radius: 4px;
+    }
+
+  } // ..payment-info
+
+} // .training-page
+
+.landing-page{
+  .contact-us{
+    .container{
+      .coment{
+        float: none;
+        margin-right: 0px;
+        padding: 0px 20px;
+        margin-top: -3px;
+        @include breakpoint(tablet){
+          float: left;
+          width: 58%;
+          padding-left: 0;
+          margin-top: 8px;
+        }
+        @include breakpoint(desktop){
+          margin-top: 2px;
+        }
+        textarea{
+          font-family: $lato;
+          width: 100%;
+          margin-top: 0;
+          margin-bottom: 10px;
+          padding-left: 10px;
+          border: 2px solid #a60563;
+          height: 90px;
+          background-color: #FFF;
+          outline: none;
+
+          -webkit-border-radius: 5px;
+          border-radius: 5px;
+
+          -webkit-box-shadow: 1px 2px 1px -1px rgba(38, 35, 31, 0.3);
+          box-shadow: 1px 2px 1px -1px rgba(38, 35, 31, 0.3);
+        }
+      }
+      .submit{
+        margin-right: 20px;
+        margin-left: 20px;
+        .btn {
+          font-family: $lato;
+          background-color: #183455;
+          border: 2px solid #3469af;
+          font-weight: 700;
+          color: #fff;
+          font-size: 20px;
+          width: 100%;
+          float: right;
+          @include breakpoint(tablet){
+            width: 25%;
+          }
+          @include breakpoint(desktop){
+            width: 20%;
+          }
+        }
+      }
+    }
+  }
+}
+
+#noty_top_layout_container{
+  .noty_bar{
+    .noty_message{
+      font-family: $lato;
+      font-style: normal;
+    }
+  }
+}

@@ -1,0 +1,196 @@
+.training-page
+
+  .call-to-action
+    .header
+      a.logo href="/"
+        = image_tag "insigniav2.svg"
+
+    .container
+
+      .inner-box
+        .detailed-info
+          h2= training.title
+
+          h3= training.subtitle
+
+          p= training.summary
+
+          .checkout
+
+            .pricing
+
+              .price
+                h3
+                  |$ 
+                  =training.price
+                  span &nbsp; Inscripción
+
+                p
+                  span 
+                    =training.discount 
+                    |% Off Pago en Efectivo
+
+            .schedule
+
+              p
+                span.start data-start="#{training.initial_date}"
+                  |Inicio 
+                  =" - #{l training.initial_date, locale: :es, format: :start}"
+                span.comming-soon Faltan 25 días
+              p
+                span 
+                  = training.days_time
+
+        .extra-info
+
+          = form_for reservation, url: reservation_path(to: training_path(id: training.slug)), html: { multipart: true } do |f|
+
+            = f.hidden_field :training, value: "#{training.title}"
+
+            .field
+              label Nombre
+              = f.text_field :name, required: true
+
+            .field
+              label Email
+              = f.email_field :email, required: true
+
+            .field
+              label Teléfono
+              = f.telephone_field :phone, required: true
+
+            .action
+              = f.submit 'Reservá tu lugar', class: 'btn'
+
+      .credits
+
+        .profile
+          .image style="background: url(#{training.trainer.image.url})"
+
+        .personal-data
+
+          .fullname
+            span Dictado por
+            h2 = training.trainer.name
+            .degree =training.trainer.title
+
+          .short-bio
+            = textilize(training.trainer.profile)
+
+            -if training.trainer.profile_url
+              p
+                a.linked-in href="#{training.trainer.profile_url}" target="_blank"
+                  = fa_stacked_icon "linkedin inverse",    base: "circle"
+                  | Ver Perfil en Linkedin
+
+  .complementary-box
+
+    .container
+      .clearfix
+        .topics
+
+          h2 Temas de la Capacitación
+
+          = textilize(training.topics)
+
+
+        .who-should-take-it
+
+          h3 A quién está dirigido
+
+          = textilize(training.addressed_to)
+
+      .calendar
+        -if training.calendar
+          h2 Días de Cursado
+          = textilize(parse_regex(training.calendar))
+
+  .payment-info
+
+    .container
+
+      .cards
+        h2 Pagá ahora y reservá tu lugar!
+
+        -if !training.disable_payment
+          a.pay-now-button href="#{training.payment}" target="_blank" 
+            span
+              |$
+              =training.price
+            |&nbsp; &nbsp; Pagar Ahora!
+        -else
+          .cupo
+            |Cupo completo
+        p
+        a.mp href="https://www.mercadopago.com.ar/ayuda/medios-de-pago-cuotas-promociones_264" target="_blank"
+          = image_tag "MP-logo.png"
+          .text
+            |Formas de Pagos y Promociones
+        
+
+.landing-page
+
+  .contact-us
+    .container
+      h2 ¿Tenés alguna consulta?
+
+      p Completá el formulario y te vamos a contestar lo más rápido posible.
+
+      = form_for message, url: contact_path(to: training_path(id: training.slug)), html: { multipart: true } do |f|
+
+        =f.hidden_field :from_page, value: "Message from training page /training/#{training.slug}"
+
+        .col
+          = f.text_field :name, placeholder: "¿Cuál es tu nombre?", required: true
+          = f.email_field :email, placeholder: 'Email', required: true
+        .coment
+          = f.text_area :body, placeholder: 'Comentario', required: true
+
+        .submit
+          = f.submit 'Contáctanos', class: 'btn'
+
+  .footer
+    .container
+      .contact-box
+        a.logo href="/"
+          = image_tag "insigniav2.svg"
+
+        .contact-info
+          i class="fa fa-building-o" aria-hidden="true"
+
+          .data
+            span Lamadrid 318, 4th Floor Apart B
+            br
+            span San Miguel de Tucumán, 4000
+            br
+            span Tucumán, Argentina
+
+
+        .contact-info
+          i class="fa fa-envelope-o" aria-hidden="true"
+
+          .data
+            span info@insignia4u.com
+
+        .contact-info
+          i class="fa fa-phone" aria-hidden="true"
+
+          .data
+            span +54 (0381) 4202730
+
+      .social-box
+        span.title Follow us
+
+        a href="http://facebook.com/insignia4u" target="_blank"
+          = fa_stacked_icon "facebook inverse",    base: "circle"
+        a href="http://twitter.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "twitter inverse",     base: "circle"
+        a href="https://plus.google.com/116935483924237252050"  target="_blank"
+          = fa_stacked_icon "google-plus inverse", base: "circle"
+        a href="http://github.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "github inverse",      base: "circle"
+        a href="http://slideshare.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "slideshare inverse",  base: "circle"
+
+- if flash[:notice]
+  #notice_div

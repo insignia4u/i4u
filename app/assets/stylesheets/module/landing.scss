@@ -224,7 +224,7 @@ $lato: 'Lato', sans-serif;
           }
         }
 
-        input[type=text], input[type=email] {
+        input[type=text], input[type=email]{
           font-family: $lato;
           width: 100%;
           margin-top: 2px;
@@ -258,7 +258,7 @@ $lato: 'Lato', sans-serif;
   } // .contact-us
 
   .learn-more {
-    
+
     background-color: #3469af;
     border-top: 4px solid #183455;
     padding: 40px 0;
@@ -315,6 +315,10 @@ $lato: 'Lato', sans-serif;
     background-color: #333;
     border-top: 4px solid #666;
 
+    @include breakpoint(tablet){
+      padding: 40px;
+    }
+
     .logo {
       img {
         width: 120px;
@@ -359,7 +363,7 @@ $lato: 'Lato', sans-serif;
       } // .contact-info
 
     } // .contact-box
-      
+
 
     .social-box {
 
@@ -377,7 +381,7 @@ $lato: 'Lato', sans-serif;
         float: right;
         margin-top: 0;
         padding-left: 0;
-      }      
+      }
 
       a {
         font-size: 18px;
