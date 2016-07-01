@@ -30,8 +30,13 @@ ActiveAdmin.register Training do
             row :topics do |training|
                 textilize(training.topics)
             end
+            row :addressed_to_title
             row :addressed_to do |training|
                 textilize(training.addressed_to)
+            end
+            row :requirements_title
+            row :requirements do |training|
+                textilize(training.requirements)
             end
             row "Trainer" do |training|
                 training.trainer.name
@@ -54,7 +59,10 @@ ActiveAdmin.register Training do
             f.input :initial_date, label: "Start Day"
             f.input :days_time, label: "Days", hint: "Example: Lunes y Viernes, 18hs a 20hs"
             f.input :topics, label: "Topics"
+            f.input :addressed_to_title, label: "Addressed to Title"
             f.input :addressed_to, label: "Addressed to"
+            f.input :requirements_title, label: "Requirements Title"
+            f.input :requirements, label: "Requirements"
             f.input :calendar, label: "Calendar", hint: "Example: {{calendar 2015-12-12 2015-12-13}}"
             f.input :payment, label: "Payment link", hint:"Add payment link"
             f.input :disable_payment
@@ -70,7 +78,8 @@ ActiveAdmin.register Training do
             .permit(
               :title, :subtitle, :summary, :price,
               :discount, :initial_date, :days_time,
-              :topics, :addressed_to, :trainer_id, :calendar, :payment, :disable_payment
+              :topics, :addressed_to, :trainer_id, :calendar, :payment, :disable_payment,
+              :addressed_to_title, :requirements_title, :requirements
             )
           ]
         end

@@ -401,6 +401,7 @@
 
       float: none;
       width: 100%;
+      margin-bottom: 20px;
 
       @include breakpoint(tablet){
         float: left;
@@ -458,6 +459,13 @@
          -moz-border-radius: 10px;
               border-radius: 10px;
 
+      ul{
+        margin-bottom: 20px;
+        list-style: inherit;
+        font-weight: normal;
+        padding-left: 20px;
+      }
+
       @include breakpoint(tablet){
         float: right;
         width: 30%;
@@ -481,6 +489,10 @@
       }
 
     } // .who-should-take-it
+
+    .top-space{
+        margin-top: 20px;
+      }
 
     .calendar{
       margin: 60px 0 20px;
