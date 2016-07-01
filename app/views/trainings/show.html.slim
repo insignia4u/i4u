@@ -96,9 +96,17 @@
 
         .who-should-take-it
 
-          h3 A quién está dirigido
+          h3
+            =training.addressed_to_title
 
           = textilize(training.addressed_to)
+
+        .who-should-take-it.top-space
+
+          h3 
+            =training.requirements_title
+
+          = textilize(training.requirements)
 
       .calendar
         -if training.calendar
