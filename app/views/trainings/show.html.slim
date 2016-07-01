@@ -93,20 +93,21 @@
 
           = textilize(training.topics)
 
+        -if training.addressed_to_title !='' && training.addressed_to != ''
+          .who-should-take-it
 
-        .who-should-take-it
+            h3
+              =training.addressed_to_title
 
-          h3
-            =training.addressed_to_title
+            = textilize(training.addressed_to)
 
-          = textilize(training.addressed_to)
+        -if training.requirements_title != '' && training.requirements!= ''
+          .who-should-take-it.top-space
 
-        .who-should-take-it.top-space
+            h3 
+              =training.requirements_title
 
-          h3 
-            =training.requirements_title
-
-          = textilize(training.requirements)
+            = textilize(training.requirements)
 
       .calendar
         -if training.calendar
