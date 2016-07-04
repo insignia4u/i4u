@@ -7,6 +7,11 @@
 
     .container
 
+      .sold-out
+        = fa_icon "exclamation-circle"
+
+        span CUPOS AGOTADOS.
+
       .inner-box
         .detailed-info
           h2 HTML & CSS
@@ -53,6 +58,14 @@
 
             .action
               input type="submit" value="Reserva tu lugar" class="btn"
+
+              p Esta reserva es sin compromiso de compra.
+
+      .where-to-pay
+
+        = fa_icon "check"
+
+        span Por pagos en efectivo, te esperamos en Lamadrid 318 Piso 5 Dpto B, de 9 a 17 horas.
 
       .credits
 
@@ -134,11 +147,17 @@
     .container
 
       .cards
-        h4 Paga con Tarjeta de Crédito
-        = fa_icon "cc-visa 3x"
-        = fa_icon "cc-mastercard 3x"
-        = fa_icon "cc-amex 3x"
-        a.pay-now-button href="#" Pagar Ahora!
+        h2 Pagá ahora y reservá tu lugar!
+
+        a.pay-now-button href="#" target="_blank"
+          span
+            | $800 Pagar Ahora!
+
+        p
+          a.mp href="https://www.mercadopago.com.ar/ayuda/medios-de-pago-cuotas-promociones_264" target="_blank"
+            = image_tag "MP-logo.png"
+            .text
+              |Formas de Pagos y Promociones
 
 .landing-page
 

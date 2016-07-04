@@ -33,8 +33,9 @@ I4u::Application.routes.draw do
 
   match 'blog' => 'blog/articles#index', as: 'blog_path'
 
+  # FIXME: remove this static route after final deployment
   get '/training/rails' => 'trainings#rails'
-  
+
   get '/training/:id' => 'trainings#show', as: 'training'
 
   get  '/reservation' => 'reservation#new'

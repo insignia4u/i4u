@@ -29,6 +29,37 @@
     background: asset-url('training-bg.png', image);
     padding: 50px 0;
 
+    .sold-out {
+      background: #2FE508;
+      color: #fff;
+      padding: 20px 30px;
+
+      i.fa {
+        margin-right: 10px;
+        font-size: 22px;
+
+        @include breakpoint(tablet){
+          font-size: 32px;
+        }
+
+        @include breakpoint(desktop){
+          font-size: 32px;
+        }
+      }
+
+      span {
+        font-size: 22px;
+
+        @include breakpoint(tablet){
+          font-size: 32px;
+        }
+
+        @include breakpoint(desktop){
+          font-size: 32px;
+        }
+      }
+    } // .sold-out
+
     .inner-box {
       @include clearfix();
 
@@ -193,6 +224,13 @@
         @include breakpoint(desktop){
           float: right;
           width: 27%;
+          margin-top: 0px;
+        }
+
+        @include breakpoint(desktop){
+          float: right;
+          width: 27%;
+          margin-top: 0px;
         }
 
         h3 {
@@ -215,7 +253,7 @@
           }
 
           .field {
-            input, textarea {
+            input[type=text], input[type=email], input[type=tel] {
               width: 100%;
               border: none;
               padding: 5px;
@@ -227,19 +265,25 @@
                       border-radius: 0;
             }
 
-            textarea {
-              height: 100px;
+            input[type=checkbox] {
+              margin-right: 7px;
             }
           }
 
           .action {
             margin-top: 20px;
+
             .btn {
               background: #183455;
               border: 2px solid darken(#183455, 2%) !important;
               font-family: $lato;
               font-weight: 700;
               font-size: 16px;
+            }
+
+            p {
+              font-weight: 300;
+              margin: 15px 0 10px 0;
             }
           }
 
@@ -270,6 +314,19 @@
       } // .trigger
 
     } // .inner-box
+
+
+    .where-to-pay {
+
+      background: #E50892;
+      color: #fff;
+      padding: 20px 30px;
+
+      i.fa {
+        margin-right: 10px;
+      }
+
+    } // .where-to-pay
 
     .credits {
 
@@ -517,7 +574,7 @@
           background: #fff;
           padding: 5px;
           border: none;
-          
+
           @include breakpoint(tablet){
             width: 48%;
             &:first-child{
