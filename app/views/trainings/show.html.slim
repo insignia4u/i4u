@@ -134,22 +134,28 @@
     .container
 
       .cards
-        h2 Pagá ahora y reservá tu lugar!
 
         -if !training.disable_payment
+          h2 Pagá ahora y reservá tu lugar!
+
           a.pay-now-button href="#{training.payment}" target="_blank" 
             span
               |$
               =training.price
             |&nbsp; &nbsp; Pagar Ahora!
+
+          p
+          a.mp href="https://www.mercadopago.com.ar/ayuda/medios-de-pago-cuotas-promociones_264" target="_blank"
+            = image_tag "MP-logo.png"
+            .text
+              |Formas de Pagos y Promociones
+
         -else
+
+          h2 Los cupos de este curso están agotados
+
           .cupo
             |Cupo completo
-        p
-        a.mp href="https://www.mercadopago.com.ar/ayuda/medios-de-pago-cuotas-promociones_264" target="_blank"
-          = image_tag "MP-logo.png"
-          .text
-            |Formas de Pagos y Promociones
         
 
 .landing-page
