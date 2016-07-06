@@ -7,14 +7,19 @@ $(document).ready ->
 
     diffDays = Math.round((date.getTime()-d.getTime())/(oneDay));
 
-    soon = $('.comming-soon')
+    soon = $('.days-left')
 
     if diffDays == 0
+        if !soon.hasClass('comming-soon')
+            soon.addClass('comming-soon')
         soon.html "Inicia HOY"
     else
         if diffDays < 0
-            soon.html "Curso Iniciado"
+            if soon.hasClass('comming-soon')
+                soon.removeClass('comming-soon')
         else
+            if !soon.hasClass('comming-soon')
+                soon.addClass('comming-soon')
             soon.html "Faltan " + diffDays + " días"
 
     if $('#noty_top_layout_container')

@@ -7,6 +7,12 @@
 
     .container
 
+      -if training.disable_payment
+        .sold-out
+          = fa_icon "exclamation-circle"
+
+          span CUPOS AGOTADOS.
+
       .inner-box
         .detailed-info
           h2= training.title
@@ -36,7 +42,7 @@
                 span.start data-start="#{training.initial_date}"
                   |Inicio 
                   =" - #{l training.initial_date, locale: :es, format: :start}"
-                span.comming-soon Faltan 25 días
+                span.days-left.comming-soon 
               p
                 span 
                   = training.days_time
@@ -61,6 +67,15 @@
 
             .action
               = f.submit 'Reservá tu lugar', class: 'btn'
+
+              p Esta reserva es sin compromiso de compra.
+
+      -if !training.disable_payment
+        .where-to-pay
+
+          = fa_icon "check"
+
+          span Por pagos en efectivo, te esperamos en Lamadrid 318 Piso 5 Dpto B, de 9 a 17 horas.
 
       .credits
 
@@ -93,6 +108,14 @@
 
           = textilize(training.topics)
 
+          -if training.requirements_title != '' && training.requirements!= ''
+            br
+            br
+            br
+            h2 =training.requirements_title
+
+            = textilize(training.requirements)
+
         -if training.addressed_to_title !='' && training.addressed_to != ''
           .who-should-take-it
 
@@ -100,14 +123,6 @@
               =training.addressed_to_title
 
             = textilize(training.addressed_to)
-
-        -if training.requirements_title != '' && training.requirements!= ''
-          .who-should-take-it.top-space
-
-            h3 
-              =training.requirements_title
-
-            = textilize(training.requirements)
 
       .calendar
         -if training.calendar
