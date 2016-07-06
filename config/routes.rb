@@ -33,8 +33,6 @@ I4u::Application.routes.draw do
 
   match 'blog' => 'blog/articles#index', as: 'blog_path'
 
-  get '/training/rails' => 'trainings#rails'
-  
   get '/training/:id' => 'trainings#show', as: 'training'
 
   get  '/reservation' => 'reservation#new'

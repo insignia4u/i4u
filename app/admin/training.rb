@@ -1,5 +1,5 @@
 ActiveAdmin.register Training do
-    menu parent: "Marketing"
+    menu parent: "Marketing", label: "Training Pages"
     filter :title
 
     index do
@@ -13,7 +13,9 @@ ActiveAdmin.register Training do
         column ("Start Day") { |training| training.initial_date }
         column ("Days") { |training| training.days_time }
         column ("Trainer") { |training| training.trainer.name }
-        actions
+        actions do |training|
+            link_to "Preview", training_path(training), target:"_blank"
+        end
     end
 
     show do
@@ -45,6 +47,9 @@ ActiveAdmin.register Training do
                 training.payment
             end
             row :disable_payment
+            row "Link" do |training|
+                link_to "#{training_url(training)}", training_path(training), target: "_blank"
+            end
         end
     end
 
