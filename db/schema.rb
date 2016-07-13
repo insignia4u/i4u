@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160701120618) do
+ActiveRecord::Schema.define(:version => 20160713181652) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -383,8 +383,10 @@ ActiveRecord::Schema.define(:version => 20160701120618) do
     t.string   "addressed_to_title"
     t.string   "requirements_title"
     t.text     "requirements"
+    t.string   "short_url"
   end
 
+  add_index "trainings", ["short_url"], :name => "index_trainings_on_short_url"
   add_index "trainings", ["slug"], :name => "index_trainings_on_slug", :unique => true
   add_index "trainings", ["trainer_id"], :name => "index_trainings_on_trainer_id"
 

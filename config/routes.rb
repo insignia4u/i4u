@@ -34,6 +34,7 @@ I4u::Application.routes.draw do
   match 'blog' => 'blog/articles#index', as: 'blog_path'
 
   get '/training/:id' => 'trainings#show', as: 'training'
+  match '/:slug' => 'trainings#slug', name: /[a-zA-Z0-9\-]+/
 
   get  '/reservation' => 'reservation#new'
   post '/reservation' => 'reservation#create'
