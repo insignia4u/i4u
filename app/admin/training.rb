@@ -13,6 +13,7 @@ ActiveAdmin.register Training do
         column ("Start Day") { |training| training.initial_date }
         column ("Days") { |training| training.days_time }
         column ("Trainer") { |training| training.trainer.name }
+        column ("Short URL") { |training| training.short_url }
         actions do |training|
             link_to "Preview", training_path(training), target:"_blank"
         end
@@ -47,6 +48,7 @@ ActiveAdmin.register Training do
                 training.payment
             end
             row :disable_payment
+            row :short_url
             row "Link" do |training|
                 link_to "#{training_url(training)}", training_path(training), target: "_blank"
             end
@@ -56,6 +58,7 @@ ActiveAdmin.register Training do
     form do |f|
         f.inputs "Edit Training" do
             f.input :title, label: "Title"
+            f.input :short_url, hint: "Optional. Set a site-wide short url for this training."
             f.input :subtitle, label: "Subtitle"
             f.input :summary, label: "Summary"
             f.input :trainer_id, label: "Trainer", :as => :select, :collection => Hash[Trainer.all.map{|s| [s.name, s.id]}]
@@ -84,7 +87,7 @@ ActiveAdmin.register Training do
               :title, :subtitle, :summary, :price,
               :discount, :initial_date, :days_time,
               :topics, :addressed_to, :trainer_id, :calendar, :payment, :disable_payment,
-              :addressed_to_title, :requirements_title, :requirements
+              :addressed_to_title, :requirements_title, :requirements, :short_url
             )
           ]
         end
