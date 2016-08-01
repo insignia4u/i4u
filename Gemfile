@@ -1,84 +1,77 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3', patchlevel: '551'
-# ruby '1.9.3', patchlevel: '547'
+ruby '2.3.0'
 
 # Rails
-gem 'rails', '3.2.18'
+gem 'rails', '5.0'
 
-# Plugins
-gem 'kaminari',             '0.17.0'
-gem 'friendly_id',          '4.0.9'
-gem 'paperclip',            '3.3.1'
+# # Plugins
+gem 'kaminari'
+gem 'friendly_id'
+gem 'paperclip'
 gem 'textilize'
-gem 'mobile-fu',            '1.1.1'
-gem 'draper',               '0.18.0'
-gem 'dalli',                '2.6.0'
-gem 'strong_parameters',    '0.2.0'
+gem 'mobile-fu'
+gem 'dalli'
 gem 'virtus'
 gem 'decent_exposure'
 gem 'spectator-validates_email', require: 'validates_email'
-gem 'jquery-cookie-rails'
 gem 'fullcalendar-rails'
-gem 'recaptcha',             '0.4.0'
+gem 'recaptcha'
 gem 'figaro'
 
 
 # Engines
-gem 'devise',               '3.2.4' #Minimum version required by activeadmin
-gem 'inherited_resources',  '1.6.0'
-gem 'activeadmin',          '1.0.0.pre2'
+gem 'devise',              github: 'plataformatec/devise'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'ransack',             github: 'activerecord-hackery/ransack'
+gem 'draper',              '> 3.x'
+gem 'sass-rails'
+gem 'activeadmin', github: 'activeadmin'
 
 # 3rd Party services
-gem 'aws-sdk',              '1.7.1'
-gem 'rollbar',              '2.11.5'
-gem 'oj',                   '2.12.14'
-gem 'newrelic_rpm',         '3.5.3.25'
-gem 'gibbon',               '0.4.2'
+gem 'aws-sdk'
+gem 'fog'
+gem 'rollbar'
+gem 'oj'
+gem 'newrelic_rpm'
+gem 'gibbon'
 gem 'memcachier'
 
 
 # Development Tools
 group :development do
-  gem 'taps',                '0.3.24'
-  gem 'populator'
-  gem 'quiet_assets'
-  gem "spring-commands-rspec"
   gem 'spring'
-  gem 'mailcatcher'
 end
 
 # Test Suite
 group :development, :test do
-  gem 'rspec',              '2.14.1'
+  gem 'rspec'
   gem 'sqlite3'
-  gem 'rspec-rails',        '2.14.2'
-  gem 'factory_girl_rails', '3.4.0'
-  gem 'faker',              '1.0.1'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :test do
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'shoulda-matchers',    '1.4.2'
-  gem 'database_cleaner',    '0.9.1'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
   gem 'launchy'
   gem 'simplecov'
 end
 
 # Frontend
-gem 'jquery-rails', '2.0.2'
-gem 'slim-rails',   '1.0.3'
+gem 'jquery-rails'
+gem 'slim-rails'
 gem 'font-awesome-rails'
 
 group :assets do
-  gem 'sass', '~> 3.2.5'
-  gem 'sass-rails'
   gem 'coffee-rails'
   gem 'compass-rails'
   gem 'uglifier'
-  gem 'bourbon', '~> 2.1.2'
-  gem 'neat', '~> 1.0.2'
+  gem 'bourbon'
+  gem 'neat'
 end
 
 # Production
@@ -86,5 +79,5 @@ group :production do
   gem 'pg'
   gem 'thin'
   gem 'rails_12factor'
-  gem 'rack-timeout', '0.2.1' #I'm fixing the version number because newer versions fail in Heroku, at least with this rails version and current stack.
+  gem 'rack-timeout'
 end

@@ -1,5 +1,5 @@
 //= require jquery
-//= require jquery.cookie
+//= require vendor/jquery.cookie
 //= require jquery_ujs
 //= require jquery.transit.min
 //= require easing
