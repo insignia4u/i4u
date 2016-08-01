@@ -1,5 +1,5 @@
 class Blog::CommentsController < Blog::ArticlesController
-  expose(:article){ current_site.articles.published.find(params[:article_id]) }
+  expose(:article){ current_site.articles.published.friendly.find(params[:article_id]) }
 
   def create
     @comment = current_article.comments.build(comment_params)
@@ -13,7 +13,7 @@ class Blog::CommentsController < Blog::ArticlesController
 
 private
   def current_article
-    @article ||= current_site.articles.find(params[:article_id])
+    @article ||= current_site.articles.friendly.find(params[:article_id])
   end
 
   def comment_params

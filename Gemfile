@@ -16,7 +16,7 @@ gem 'virtus'
 gem 'decent_exposure'
 gem 'spectator-validates_email', require: 'validates_email'
 gem 'fullcalendar-rails'
-gem 'recaptcha'
+gem "recaptcha", require: "recaptcha/rails"
 gem 'figaro'
 
 
@@ -25,6 +25,7 @@ gem 'devise',              github: 'plataformatec/devise'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'ransack',             github: 'activerecord-hackery/ransack'
 gem 'draper',              '> 3.x'
+gem 'sass'
 gem 'sass-rails'
 gem 'activeadmin', github: 'activeadmin'
 
@@ -65,14 +66,11 @@ end
 gem 'jquery-rails'
 gem 'slim-rails'
 gem 'font-awesome-rails'
-
-group :assets do
-  gem 'coffee-rails'
-  gem 'compass-rails'
-  gem 'uglifier'
-  gem 'bourbon'
-  gem 'neat'
-end
+gem 'coffee-rails'
+gem 'compass-rails'
+gem 'uglifier'
+gem 'bourbon'
+gem 'neat'
 
 # Production
 group :production do

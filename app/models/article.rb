@@ -18,11 +18,12 @@ class Article < ActiveRecord::Base
   validates :author, :title, :subtitle, :content, :summary, :publication_date,
   :description, :site, presence: true
 
-  validates :short_url, if: :short_url_present?, 
+  validates :short_url, if: :short_url_present?,
     uniqueness: true,
-    format: { 
-      with: /\A[a-zA-Z0-9\-]+\z/, 
-      message: 'Only letters, numbers and dashes allowed.'
+    format: {
+      with: /\A[a-zA-Z0-9\-]+\z/,
+      message: 'Only letters, numbers and dashes allowed.',
+      multiline: true
     }
 
   friendly_id :title, use: [:slugged, :history]

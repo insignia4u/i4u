@@ -12,7 +12,7 @@ class Blog::CategoryController < Blog::BaseController
 private
   def current_category
     @category ||= begin
-      current_site.categories.find(params[:category])
+      current_site.categories.friendly.find(params[:category])
     rescue ActiveRecord::RecordNotFound
       nil
     end

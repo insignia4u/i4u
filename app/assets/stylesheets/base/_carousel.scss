@@ -298,11 +298,11 @@
   }
 
   .carousel-inner{
-    background:url(asset_path("macbook-mobile.png", image)) no-repeat center 10px;
+    background:url(asset_path("macbook-mobile.png")) no-repeat center 10px;
     height: auto;
 
     @media(min-width:600px){
-      background:url(asset_path("macbook.png", image)) no-repeat center 10px;
+      background:url(asset_path("macbook.png")) no-repeat center 10px;
     }
 
     @include breakpoint(desktop){
@@ -368,7 +368,7 @@
 
     @include breakpoint(desktop){
       background:#E8E8E8;
-      background: url(asset-path("background-pattern.gif", image));
+      background: url(asset-path("background-pattern.gif"));
       left:384px;
       width:405px;
       padding:0;
@@ -450,11 +450,11 @@
   }
 
   .carousel-inner{
-    background:url(asset_path("macbook-mobile.png", image)) no-repeat center 10px;
+    background:url(asset_path("macbook-mobile.png")) no-repeat center 10px;
     height: auto;
 
     @media(min-width:600px){
-      background:url(asset_path("macbook.png", image)) no-repeat center 10px;
+      background:url(asset_path("macbook.png")) no-repeat center 10px;
     }
   }
 

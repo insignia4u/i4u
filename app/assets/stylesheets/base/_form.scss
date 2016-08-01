@@ -59,7 +59,7 @@ form{
 
   .f-text input, textarea{
     @include border-radius(5px);
-    @include box-shadow(1px 2px 1px -1px rgba(38, 35, 31, 0.3));
+    box-shadow: 1px 2px 1px -1px rgba(38, 35, 31, 0.3);
     display: block;
     border: #999 solid 1px;
     padding: 12px 10px 12px 65px;

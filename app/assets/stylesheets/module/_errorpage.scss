@@ -39,7 +39,7 @@
   .oops,
   .broken{
     position: absolute;
-    background: url(asset-path("error404.png",image));
+    background: url(asset-path("error404.png"));
     left: 50%;
   }
 
@@ -147,7 +147,7 @@
       position: relative;
 
       .text-decoration{
-        background: url(asset-path("error404.png",image));
+        background: url(asset-path("error404.png"));
         width: 122px;
         height: 22px;
         display: inline-block;

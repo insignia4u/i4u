@@ -5,7 +5,8 @@
 	overflow: hidden;
 
 	@include breakpoint(tablet){
-		@extend %box-transparent-rounded;
+		@include border-radius(10px);
+		background: rgba(0, 0, 0, 0.03);
 		padding: 30px 10px;
 	}
 

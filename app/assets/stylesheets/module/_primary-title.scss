@@ -14,7 +14,7 @@
     padding: 0px;
     position: relative;
     background: #E8E8E8;
-    background: url(asset-path("background-pattern.gif", image));
+    background: url(asset-path("background-pattern.gif"));
 
     @include breakpoint(tablet){
     padding: 0 25px;

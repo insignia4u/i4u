@@ -76,7 +76,7 @@
         padding: 10px;
         font-weight: 400;
         @include border-radius(5px);
-        @include box-shadow( 2px 2px 16px -5px black );
+        box-shadow: 2px 2px 16px -5px black;
         line-height: normal;
         margin: 0 10px;
       }
@@ -124,7 +124,7 @@
           }
       }
       .btn{
-        @include box-shadow(1px 4px 7px -3px rgba(38, 35, 31, 0.9));
+        box-shadow: 1px 4px 7px -3px rgba(38, 35, 31, 0.9);
         background: #E50892;
         border: 2px solid #A60563;
         border-radius: 5px 5px 5px 5px;

@@ -1,4 +1,4 @@
-I4u::Application.routes.draw do
+Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   # get '/blog/articles/capacitacion-ruby-on-rails-studio', to: redirect('/blog/articles/capacitacion-git-y-github-edicion-abril', status: 302)
@@ -31,16 +31,16 @@ I4u::Application.routes.draw do
   get  '/jobs' => 'jobs#new'
   post '/jobs' => 'jobs#create'
 
-  match 'blog' => 'blog/articles#index', as: 'blog_path'
+  match 'blog' => 'blog/articles#index', as: 'blog_path', via: [:get, :post]
 
   get '/training/:id' => 'trainings#show', as: 'training'
-  match '/:slug' => 'trainings#slug', name: /[a-zA-Z0-9\-]+/
+  match '/:slug' => 'trainings#slug', name: /[a-zA-Z0-9\-]+/, via: [:get, :post]
 
   get  '/reservation' => 'reservation#new'
   post '/reservation' => 'reservation#create'
 
-  match '/:folder/:slug' => 'landing_pages#index', as: 'landing'
-  match '/:slug' => 'blog/articles#slug', slug: /[a-zA-Z0-9\-]+/
+  match '/:folder/:slug' => 'landing_pages#index', as: 'landing', via: [:get, :post]
+  match '/:slug' => 'blog/articles#slug', slug: /[a-zA-Z0-9\-]+/, via: [:get, :post]
 
   root to: 'home#show'
 end

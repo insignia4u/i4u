@@ -76,7 +76,7 @@
       width: 130px;
       text-align: center;
       @include border-radius(5px);
-      @include box-shadow(2px 2px 16px -5px #000);
+      box-shadow: 2px 2px 16px -5px #000;
       background: #E50892;
       border: 2px solid #A60563;
       color: #fff;

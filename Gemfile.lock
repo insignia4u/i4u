@@ -564,6 +564,7 @@ DEPENDENCIES
   rollbar
   rspec
   rspec-rails
+  sass
   sass-rails
   shoulda-matchers
   simplecov

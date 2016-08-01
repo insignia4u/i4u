@@ -5,7 +5,7 @@ class TrainingsController < ApplicationController
 
   expose(:reservation) { Reservation.new }
 
-  expose(:training)  { Training.find(params[:id]) }
+  expose(:training)  { Training.friendly.find(params[:id]) }
 
   def rails; end
 

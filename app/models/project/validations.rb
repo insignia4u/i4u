@@ -7,7 +7,7 @@ class Project
       validates :summary,              presence: true, length: {maximum: 120}
       validates :description,          presence: true
       validates :name,                 presence: true, uniqueness: { scope: :site_id }
-      validates :url,                  presence: true, format: { with: ValidFormats::URL }
+      validates :url,                  presence: true, format: { with: ValidFormats::URL, multiline: true }
 
       validate  :validate_started_at_date_before_today
       validate  :validate_ended_at_date_after_started_at

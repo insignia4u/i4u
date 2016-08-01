@@ -13,7 +13,7 @@ class Reservation
   attribute :training,  String
 
   validates :name, :email, :phone, presence: true
-  validates :email, format: { with: ValidFormats::EMAIL }, allow_blank: true
+  validates :email, format: { with: ValidFormats::EMAIL, multiline: true }, allow_blank: true
 
   def send!
     return false unless valid?

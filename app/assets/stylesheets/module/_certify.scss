@@ -13,7 +13,7 @@
 }
 
 .ribbon{
-  @include box-shadow( 0 4px 10px #777 );
+  box-shadow:  0 4px 10px #777;
   font-size: em(18);
   line-height: em(26,18);
   width: 100%;
@@ -47,7 +47,7 @@
     display: none;
 
     @include breakpoint(tablet){
-      background:url(asset-path("ribbon-left.png", image)) no-repeat 0 0;
+      background:url(asset-path("ribbon-left.png")) no-repeat 0 0;
       width:104px;
       height:53px;
       position:absolute;
@@ -70,7 +70,7 @@
     }
 
     .ribbon-right{
-      background:url(asset-path("ribbon-right.png", image)) no-repeat 0 0;
+      background:url(asset-path("ribbon-right.png")) no-repeat 0 0;
       right:-48px;
     }
   }

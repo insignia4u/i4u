@@ -1,5 +1,5 @@
 .btn{
-  @include box-shadow(1px 4px 7px -3px rgba(38, 35, 31, 0.9));
+  box-shadow: 1px 4px 7px -3px rgba(38, 35, 31, 0.9);
   background: #E50892;
   border: 2px solid #A60563;
   border-radius: 5px 5px 5px 5px;

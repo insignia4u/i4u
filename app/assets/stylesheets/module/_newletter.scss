@@ -51,7 +51,7 @@
 
   input {
     @include border-radius(5px);
-    @include box-shadow( 2px 2px 16px -5px black );
+    box-shadow: 2px 2px 16px -5px black;
     line-height: normal;
     margin: 0 10px;
     @include breakpoint(desktop){

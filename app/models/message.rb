@@ -18,7 +18,7 @@ class Message
   attribute :from_page,  String
 
   validates :body, :name, :email, presence: true
-  validates :email, format: { with: ValidFormats::EMAIL }, allow_blank: true
+  validates :email, format: { with: ValidFormats::EMAIL, multiline: true }, allow_blank: true
 
   validates :file, presence: true, if: :is_to_job
 

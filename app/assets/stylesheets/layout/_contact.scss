@@ -71,7 +71,7 @@
 .contact-info{
   .blue {
     &:before {
-      color: #316baf;      
+      color: #316baf;
     }
     &:after {
       color: #316baf;
@@ -89,7 +89,7 @@
       margin: 0 12px;
       text-align: center;
       width: auto;
-      background: url(asset-path("contact.png", image)) no-repeat 0 0;
+      background: url(asset-path("contact.png")) no-repeat 0 0;
       vertical-align: top;
       color: #373435;
       height: 191px;

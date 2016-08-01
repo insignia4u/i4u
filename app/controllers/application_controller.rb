@@ -2,10 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   has_mobile_fu false
 
-  decent_configuration do
-    strategy DecentExposure::StrongParametersStrategy
-  end
-
   expose(:subscriber)  { NewsletterSubscriber.new }
 
 protected

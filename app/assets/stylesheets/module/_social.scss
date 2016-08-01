@@ -37,26 +37,26 @@
   }
 
   .icon-slideshare{
-    @include box-shadow(0 0 1px #00A7A9);
+    box-shadow: 0 0 1px #00A7A9;
     background:#00a7a9;
   }
 
   .icon-github{
-    @include box-shadow(0 0 1px #387EBE);
+    box-shadow: 0 0 1px #387EBE;
     background:#387ebe;
   }
 
   .icon-twitter{
-    @include box-shadow(0 0 1px #2DAAE1);
+    box-shadow: 0 0 1px #2DAAE1;
     background:#2daae1;
   }
 
   .icon-facebook{
-    @include box-shadow(0 0 1px #3B5998);
+    box-shadow: 0 0 1px #3B5998;
     background:#3b5998;
   }
   .icon-googleplus{
-    @include box-shadow(0 0 1px #2b5998);
+    box-shadow: 0 0 1px #2b5998;
     background:#2b5998;
   }
 }

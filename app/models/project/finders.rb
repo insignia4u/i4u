@@ -3,9 +3,9 @@ class Project
     extend ActiveSupport::Concern
 
     included do
-      scope :featured,        where(highlighted: true)
-      scope :published,       where(published: true)
-      scope :by_created_date, order("created_at DESC")
+      scope :featured, -> { where(highlighted: true) }
+      scope :published,-> { where(published: true) }
+      scope :by_created_date, -> { order("created_at DESC") }
     end
 
     module ClassMethods
