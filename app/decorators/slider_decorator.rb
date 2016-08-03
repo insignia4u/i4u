@@ -1,4 +1,4 @@
-class SliderDecorator < Draper::Base
+class SliderDecorator < Draper::Decorator
   def initialize(item)
     @item  = item
     @image = @item.image

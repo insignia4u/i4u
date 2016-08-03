@@ -1,4 +1,4 @@
-class ErrorsDecorator < Draper::Base
+class ErrorsDecorator < Draper::Decorator
   def initialize(resource)
     @html     = ""
     @resource = resource
