@@ -13,6 +13,6 @@ protected
   end
 
   def gibbon_subscriber
-    Gibbon::Request.new.lists(MAIL_CHIMP[:list_id]).members.create(body: {email_address: email})
+    Gibbon::Request.new.lists(MAIL_CHIMP[:list_id]).members.create(body: {email_address: email, status: "subscribed"})
   end
 end
