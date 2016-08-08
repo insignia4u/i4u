@@ -2,6 +2,9 @@ ActiveAdmin.register LandingPage do
   menu parent: "Marketing", priority: 1
   filter :title
 
+  permit_params :folder, :slug, :title, :heading, :description, 
+                landing_page_items_attributes: [:id, :"_destroy", :landing_page_content_id, :position]
+
   index do
     column :path do |landing_page|
       link_to landing_page.path, landing_page.path
@@ -50,16 +53,6 @@ ActiveAdmin.register LandingPage do
       end
     end
     actions
-  end
-
-  controller do
-    def resource_params
-      return [] if request.get?
-      [
-        params.require(:landing_page)
-        .permit(:folder, :slug, :title, :heading, :description, landing_page_items_attributes: [:id, :"_destroy", :landing_page_content_id, :position])
-      ]
-    end
   end
 
 end

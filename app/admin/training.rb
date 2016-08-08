@@ -2,6 +2,11 @@ ActiveAdmin.register Training do
     menu parent: "Marketing", label: "Training Pages"
     filter :title
 
+    permit_params :title, :subtitle, :summary, :price,
+                  :discount, :initial_date, :days_time,
+                  :topics, :addressed_to, :trainer_id, :calendar, :payment, :disable_payment,
+                  :addressed_to_title, :requirements_title, :requirements, :short_url
+
     index do
         column ("Title"), sortable: :author do |training|
             training.title
@@ -78,18 +83,4 @@ ActiveAdmin.register Training do
         actions
     end
 
-    controller do
-        def resource_params
-          return [] if request.get?
-          [
-            params.require(:training)
-            .permit(
-              :title, :subtitle, :summary, :price,
-              :discount, :initial_date, :days_time,
-              :topics, :addressed_to, :trainer_id, :calendar, :payment, :disable_payment,
-              :addressed_to_title, :requirements_title, :requirements, :short_url
-            )
-          ]
-        end
-    end
 end

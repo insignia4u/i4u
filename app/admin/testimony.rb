@@ -1,5 +1,7 @@
 ActiveAdmin.register Testimony do
 
+  permit_params :body, :video_id, :published
+
   index do
     column :body
     column :video_id
@@ -26,11 +28,4 @@ ActiveAdmin.register Testimony do
     actions
   end
 
-  controller do
-    def resource_params
-      return [] if request.get?
-      [ params.require(:testimony)
-       .permit(:body, :video_id, :published) ]
-    end
-  end
 end

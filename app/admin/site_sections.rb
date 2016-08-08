@@ -5,6 +5,8 @@ ActiveAdmin.register SiteSection do
 
   filter :name
 
+  permit_params :name, :url
+
   index do
     column :name
     column :url
@@ -26,11 +28,4 @@ ActiveAdmin.register SiteSection do
     actions
   end
 
-  controller do
-    def resource_params
-      return [] if request.get?
-      [ params.require(:site_section)
-        .permit(:name, :url) ]
-    end
-  end
 end

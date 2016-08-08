@@ -2,6 +2,8 @@ ActiveAdmin.register Trainer do
     menu parent: "Marketing"
     filter :name
 
+    permit_params :name,:title, :profile, :image, :profile_url
+
     index do
         column ("Name"), sortable: :name do |trainer|
           trainer.name
@@ -48,15 +50,4 @@ ActiveAdmin.register Trainer do
         actions
     end
 
-    controller do
-        def resource_params
-          return [] if request.get?
-          [
-            params.require(:trainer)
-            .permit(
-              :name,:title, :profile, :image, :profile_url
-            )
-          ]
-        end
-    end
 end

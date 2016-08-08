@@ -2,6 +2,9 @@ ActiveAdmin.register Tip do
 
   filter :site
 
+  permit_params :site_id, :title, :link, :content, :image,
+                :description, :tip_type, :published_at
+
   index do
     column ("Site") { |article| article.site.name }
     column ("Title"), sortable: :title do |article|
@@ -69,15 +72,6 @@ ActiveAdmin.register Tip do
     end
 
     actions
-  end
-
-  controller do
-    def resource_params
-      return [] if request.get?
-      [ params.require(:tip)
-        .permit(:site_id, :title, :link, :content, :image,
-                :description, :tip_type, :published_at) ]
-    end
   end
 
 end

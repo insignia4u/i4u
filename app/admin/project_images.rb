@@ -3,6 +3,8 @@ ActiveAdmin.register ProjectImage do
 
   filter :description
 
+  permit_params :image, :description
+
   index do
     column :description
     column :created_at
@@ -40,11 +42,4 @@ ActiveAdmin.register ProjectImage do
     actions
   end
 
-  controller do
-    def resource_params
-      return [] if request.get?
-      [ params.require(:project_image)
-        .permit(:image, :description) ]
-    end
-  end
 end

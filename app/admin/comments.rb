@@ -3,6 +3,8 @@ ActiveAdmin.register Comment, as: "Blog Comment" do
   config.comments = false
   actions :all, :except => [:new]
 
+  permit_params :name, :email, :website, :text
+
   index do
     column ("Author"), sortable: :name do |comment|
       comment.name
@@ -32,16 +34,6 @@ ActiveAdmin.register Comment, as: "Blog Comment" do
     end
 
     actions
-  end
-
-  controller do
-    def resource_params
-      return [] if request.get?
-      [
-        params.require(:blog_comment)
-        .permit(:name, :email, :website, :text)
-      ]
-    end
   end
 
 end

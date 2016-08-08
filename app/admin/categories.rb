@@ -2,6 +2,8 @@ ActiveAdmin.register Category do
   menu parent: "Blog"
   filter :site
 
+  permit_params :site_id,:name
+
   index do
     column ("Site") { |category| category.site.name }
     column ("Name"), sortable: :name do |category|
@@ -27,14 +29,6 @@ ActiveAdmin.register Category do
     end
 
     actions
-  end
-
-  controller do
-    def resource_params
-      return [] if request.get?
-      [ params.require(:category)
-        .permit(:site_id,:name) ]
-    end
   end
 
 end

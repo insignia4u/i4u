@@ -2,6 +2,8 @@ ActiveAdmin.register AdminUser do
   menu label: 'Admins'
   filter :email
 
+  permit_params :email, :password, :password_confirmation, :remember_me
+
   index do
     column :email
     column :current_sign_in_at
@@ -31,12 +33,4 @@ ActiveAdmin.register AdminUser do
     actions
   end
 
-  controller do
-
-    def resource_params
-      return [] if request.get?
-      [ params.require(:admin_user)
-        .permit(:email, :password, :password_confirmation, :remember_me) ]
-    end
-  end
 end

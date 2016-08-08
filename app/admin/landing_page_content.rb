@@ -2,6 +2,8 @@ ActiveAdmin.register LandingPageContent do
   menu parent: "Marketing", priority: 5
   filter :name
 
+  permit_params :name, :title, :description
+
   index do
     column :name
     column :title
@@ -29,15 +31,6 @@ ActiveAdmin.register LandingPageContent do
         hint: "HTML title for the page"
     end
     actions
-  end
-
-  controller do
-    def resource_params
-      return [] if request.get?
-      [
-        params.require(:landing_page_content).permit(:name, :title, :description)
-      ]
-    end
   end
 
 end
