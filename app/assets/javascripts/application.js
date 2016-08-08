@@ -15,10 +15,9 @@
 //= require vendor/jquery.limit-1.2.source
 //= require i4u
 //= require blog
+//= require moment
 //= require fullcalendar
 //= require calendar
 //= require create_comment
-//= require fullcalendar
-//= require calendar
 //= require landing_pages
 //= require training
