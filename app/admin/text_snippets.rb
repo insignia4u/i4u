@@ -6,6 +6,8 @@ ActiveAdmin.register TextSnippet do
   filter :title
   filter :body
 
+  permit_params :body, :name, :title, :site_id, :image
+
   index do
     column(:site) {|text_snippet| text_snippet.site.abbreviation}
     column :name, sortable: :name
@@ -42,14 +44,6 @@ ActiveAdmin.register TextSnippet do
       f.input :image, :as => :file
     end
     actions
-  end
-
-  controller do
-    def resource_params
-      return [] if request.get?
-      [ params.require(:text_snippet)
-        .permit(:body, :name, :title, :site_id, :image) ]
-    end
   end
 
 end

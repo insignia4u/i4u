@@ -3,6 +3,8 @@ ActiveAdmin.register Service do
 
   filter :title
 
+  permit_params :site_id, :summary, :title, :image
+
   index do
     column :title
     column ("Summary") { |service| truncate(service.summary.gsub(/<.*?>/,''), :length => 84) }
@@ -31,11 +33,4 @@ ActiveAdmin.register Service do
     actions
   end
 
-  controller do
-    def resource_params
-      return [] if request.get?
-      [ params.require(:service)
-        .permit(:site_id, :summary, :title, :image) ]
-    end
-  end
 end

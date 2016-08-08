@@ -6,6 +6,8 @@ ActiveAdmin.register Technology do
   filter :title
   filter :description
 
+  permit_params :title, :description, :position
+
   index do
     column :title
     column :description
@@ -40,11 +42,4 @@ ActiveAdmin.register Technology do
     head 200
   end
 
-  controller do
-    def resource_params
-      return [] if request.get?
-      [ params.require(:technology)
-        .permit(:title, :description, :position) ]
-    end
-  end
 end

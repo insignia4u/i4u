@@ -2,6 +2,11 @@ ActiveAdmin.register Article do
   menu parent: "Blog"
   filter :site
 
+  permit_params :site_id,:author, :title, :content,:subtitle,
+                :summary, :publication_date, :publication_state,
+                :image,:description, :image_caption, :is_event, :snippet, :short_url, 
+                category_ids: []
+
   index do
     column ("Site") { |article| article.site.name }
     column ("Author"), sortable: :author do |article|
@@ -102,21 +107,6 @@ ActiveAdmin.register Article do
     end
 
     actions
-  end
-
-  controller do
-    def resource_params
-      return [] if request.get?
-      [
-        params.require(:article)
-        .permit(
-          :site_id,:author, :title, :content,:subtitle,
-          :summary, :publication_date, :publication_state,
-          :image,:description, :image_caption, :is_event, :snippet, :short_url, 
-          category_ids: []
-        )
-      ]
-    end
   end
 
 end

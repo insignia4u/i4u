@@ -4,6 +4,10 @@ ActiveAdmin.register Project do
   filter :site
   filter :name
 
+  permit_params :site_id, :description, :ended_at, :extended_description,
+                :name, :started_at, :summary, :url, :image, :featured_image,
+                :site, :technologies, :tools, :highlighted, :tool_ids => [] , :technology_ids => []
+
   member_action :highlight, method: :put do
     project = Project.find(params[:id])
     message = project.highlight!? {notice: "This project is highlight!"} :
@@ -170,9 +174,7 @@ ActiveAdmin.register Project do
     def resource_params
       return [] if request.get?
       [ params.require(:project)
-        .permit(:site_id, :description, :ended_at, :extended_description,
-        :name, :started_at, :summary, :url, :image, :featured_image,
-        :site, :technologies, :tools, :highlighted, :tool_ids => [] , :technology_ids => []  ) ]
+        .permit(  ) ]
     end
   end
 
