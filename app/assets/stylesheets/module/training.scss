@@ -589,18 +589,21 @@
             display: none;
           }
 
-          .fc-header{
+          .fc-toolbar{
             margin-bottom: 3px;
             background: #E50892;
-            .fc-header-center{
+            .fc-center{
               padding-top: 10px;
               h2{
-                font-size: 1.125em;
+                font-size: 1.4em;
                 text-shadow: none;
                 color: #fff;
-                margin-bottom: 0;
+                margin-bottom: 10px;
               }
             }
+          }
+          .fc-scroller{
+            height: initial !important;
           }
           .fc-day-header {
             background-color: #247BA0;
