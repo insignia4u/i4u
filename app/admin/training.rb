@@ -5,7 +5,8 @@ ActiveAdmin.register Training do
     permit_params :title, :subtitle, :summary, :price,
                   :discount, :initial_date, :days_time,
                   :topics, :addressed_to, :trainer_id, :calendar, :payment, :disable_payment,
-                  :addressed_to_title, :requirements_title, :requirements, :short_url
+                  :addressed_to_title, :requirements_title, :requirements, :short_url,
+                  :presale, :presale_title, :presale_price, :presale_payment, :presale_calendar
 
     index do
         column ("Title"), sortable: :author do |training|
@@ -79,6 +80,7 @@ ActiveAdmin.register Training do
             f.input :calendar, label: "Calendar", hint: "Example: {{calendar 2015-12-12 2015-12-13}}"
             f.input :payment, label: "Payment link", hint:"Add payment link"
             f.input :disable_payment
+
         end
         actions
     end
