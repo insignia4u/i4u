@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160713181652) do
+ActiveRecord::Schema.define(version: 20160810130552) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "resource_id",   null: false
@@ -366,6 +366,12 @@ ActiveRecord::Schema.define(version: 20160713181652) do
     t.string   "requirements_title"
     t.text     "requirements"
     t.string   "short_url"
+    t.boolean  "presale"
+    t.string   "presale_title"
+    t.integer  "presale_price"
+    t.integer  "presale_discount"
+    t.string   "presale_payment"
+    t.date     "presale_expiration"
     t.index ["short_url"], name: "index_trainings_on_short_url"
     t.index ["slug"], name: "index_trainings_on_slug", unique: true
     t.index ["trainer_id"], name: "index_trainings_on_trainer_id"
