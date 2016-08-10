@@ -5,7 +5,8 @@ ActiveAdmin.register Training do
     permit_params :title, :subtitle, :summary, :price,
                   :discount, :initial_date, :days_time,
                   :topics, :addressed_to, :trainer_id, :calendar, :payment, :disable_payment,
-                  :addressed_to_title, :requirements_title, :requirements, :short_url
+                  :addressed_to_title, :requirements_title, :requirements, :short_url,
+                  :presale, :presale_title, :presale_price, :presale_discount, :presale_payment, :presale_calendar, :presale_expiration
 
     index do
         column ("Title"), sortable: :author do |training|
@@ -57,6 +58,12 @@ ActiveAdmin.register Training do
             row "Link" do |training|
                 link_to "#{training_url(training)}", training_path(training), target: "_blank"
             end
+            row :presale
+            row :presale_title
+            row :presale_price
+            row :presale_discount
+            row :presale_payment
+            row :presale_expiration
         end
     end
 
@@ -68,7 +75,7 @@ ActiveAdmin.register Training do
             f.input :summary, label: "Summary"
             f.input :trainer_id, label: "Trainer", :as => :select, :collection => Hash[Trainer.all.map{|s| [s.name, s.id]}]
             f.input :price, label: "Price"
-            f.input :discount, label: "Discount"
+            f.input :discount, label: "Discount percentage"
             f.input :initial_date, label: "Start Day"
             f.input :days_time, label: "Days", hint: "Example: Lunes y Viernes, 18hs a 20hs"
             f.input :topics, label: "Topics"
@@ -79,6 +86,12 @@ ActiveAdmin.register Training do
             f.input :calendar, label: "Calendar", hint: "Example: {{calendar 2015-12-12 2015-12-13}}"
             f.input :payment, label: "Payment link", hint:"Add payment link"
             f.input :disable_payment
+            f.input :presale, label: "Presale", input_html: {id: 'js_toggle_presale'}
+            f.input :presale_title, label: "Presale title", input_html: {class: 'js_toggle_presale_title', disabled: 'true'}
+            f.input :presale_price, label: "Presale price*", input_html: {class: 'js_toggle_presale_price', disabled: 'true'}
+            f.input :presale_discount, label: "Presale discount percentage", input_html: {class: 'js_toggle_presale_discount', disabled: 'true'}
+            f.input :presale_payment, label: "Presale payment link", input_html: {class: 'js_toggle_presale_payment', disabled: 'true'}
+            f.input :presale_expiration, label: "Presale expiration date", input_html: {class: 'js_toggle_presale_expiration', disabled: 'true'}
         end
         actions
     end

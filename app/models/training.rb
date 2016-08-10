@@ -13,11 +13,18 @@ class Training < ActiveRecord::Base
       multiline: true
     }
 
+  validates :presale_title, :presale_price, :presale_payment, :presale_expiration, presence: true, if: :presale?
+
   friendly_id :title, use: [:slugged, :history]
+
 protected
 
   def short_url_present?
     short_url.present?
+  end
+
+  def presale?
+    presale == true
   end
 
 end
