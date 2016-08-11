@@ -1,6 +1,8 @@
 ActiveAdmin.register Value do
   filter :site
 
+  permit_params :site_id, :title, :subtitle, :description, :image
+
   index do
     column ("Site") { |value| value.site_name }
     column ("Title"), sortable: :title do |value|
@@ -33,11 +35,4 @@ ActiveAdmin.register Value do
     actions
   end
 
-  controller do
-    def resource_params
-      return [] if request.get?
-      [ params.require(:value)
-        .permit(:site_id, :title, :subtitle, :description, :image) ]
-    end
-  end
 end

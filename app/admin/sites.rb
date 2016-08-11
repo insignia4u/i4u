@@ -7,6 +7,8 @@ ActiveAdmin.register Site do
   scope :live
   scope :hidden
 
+  permit_params :name, :abbreviation
+
   member_action :live, method: :put do
     site = Site.find(params[:id])
     site.live!
@@ -53,11 +55,4 @@ ActiveAdmin.register Site do
     actions
   end
 
-  controller do
-    def resource_params
-      return [] if request.get?
-      [ params.require(:site)
-        .permit(:name, :abbreviation) ]
-    end
-  end
 end

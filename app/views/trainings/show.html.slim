@@ -7,6 +7,8 @@
 
     .container
 
+      / -if training.presale_expiration > Date.today
+
       -if training.disable_payment
         .sold-out
           = fa_icon "exclamation-circle"
@@ -15,29 +17,39 @@
 
       .inner-box
         .detailed-info
-          h2= training.title
+          -if training.presale and training.presale_expiration > Date.today
+            h2= training.presale_title
+          -else
+            h2= training.title
 
           h3= training.subtitle
 
           p= training.summary
 
           .checkout
-
             .pricing
-
               .price
                 h3
-                  |$ 
-                  =training.price
+                  |$
+                  -if training.presale and training.presale_expiration > Date.today
+                    =training.presale_price
+                  -else
+                    =training.price
                   span &nbsp; Inscripción
 
                 p
-                  span 
-                    =training.discount 
-                    |% Off Pago en Efectivo
+                  -if training.presale and training.presale_expiration > Date.today
+                    -if training.presale_discount?
+                      span
+                        =training.presale_discount
+                        |% Off Pago en Efectivo
+                  -else
+                    -if training.discount?
+                      span
+                        =training.discount
+                        |% Off Pago en Efectivo
 
             .schedule
-
               p
                 span.start data-start="#{training.initial_date}"
                   |Inicio 
@@ -138,11 +150,18 @@
         -if !training.disable_payment
           h2 Pagá ahora y reservá tu lugar!
 
-          a.pay-now-button href="#{training.payment}" target="_blank" 
-            span
-              |$
-              =training.price
-            |&nbsp; &nbsp; Pagar Ahora!
+          -if training.presale and training.presale_expiration > Date.today
+            a.pay-now-button href="#{training.presale_payment}" target="_blank" 
+              span
+                |$
+                =training.presale_price
+              |&nbsp; &nbsp; Pagar Ahora!
+          -else 
+            a.pay-now-button href="#{training.payment}" target="_blank" 
+              span
+                |$
+                =training.price
+              |&nbsp; &nbsp; Pagar Ahora!
 
           p
           a.mp href="https://www.mercadopago.com.ar/ayuda/medios-de-pago-cuotas-promociones_264" target="_blank"

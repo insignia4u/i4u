@@ -2,6 +2,8 @@ ActiveAdmin.register FeaturedContent do
   filter :site
   filter :name
 
+  permit_params :name, :body, :image, :site, :site_id
+
 
   index do
     column ("Image") { |featured_content| image_tag(featured_content.image.url(:cms_thumb)) }
@@ -46,14 +48,6 @@ ActiveAdmin.register FeaturedContent do
     end
 
     actions
-  end
-
-  controller do
-    def resource_params
-      return [] if request.get?
-      [ params.require(:featured_content)
-        .permit(:name, :body, :image, :site, :site_id) ]
-    end
   end
 
 end
