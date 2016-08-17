@@ -217,4 +217,14 @@ module ApplicationHelper
     text
   end
 
+  def end_training_date_text(presale_expiration)
+    if Date.today+1.day == presale_expiration
+      end_date = 24 - Time.zone.now.hour
+      "Finaliza en #{pluralize(end_date, 'hora')}"
+    else
+      end_date = (presale_expiration - Date.today).to_i
+      "Finaliza en #{pluralize(end_date, 'día')}"
+    end
+  end
+
 end
