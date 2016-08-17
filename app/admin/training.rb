@@ -88,7 +88,7 @@ ActiveAdmin.register Training do
             f.input :disable_payment
             f.input :presale, label: "Presale", input_html: {id: 'js_toggle_presale'}
             f.input :presale_title, label: "Presale title", input_html: {class: 'js_toggle_presale_title', disabled: 'true'}
-            f.input :presale_price, label: "Presale price*", input_html: {class: 'js_toggle_presale_price', disabled: 'true'}
+            f.input :presale_price, label: "Presale price", input_html: {class: 'js_toggle_presale_price', disabled: 'true'}
             f.input :presale_discount, label: "Presale discount percentage", input_html: {class: 'js_toggle_presale_discount', disabled: 'true'}
             f.input :presale_payment, label: "Presale payment link", input_html: {class: 'js_toggle_presale_payment', disabled: 'true'}
             f.input :presale_expiration, label: "Presale expiration date", input_html: {class: 'js_toggle_presale_expiration', disabled: 'true'}

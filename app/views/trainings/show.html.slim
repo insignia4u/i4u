@@ -79,9 +79,10 @@
                   = training.days_time
 
               p
-                span
+                span.saving-advise-message
                   | La preventa finaliza el 
-                  = training.presale_expiration.strftime("%d de %B")
+                  / = training.presale_expiration.strftime("%d de %B")
+                  ="#{l training.presale_expiration, locale: :es, format: :start}"
                   |, ¡no dejes pasar la oportunidad!
 
         .extra-info
