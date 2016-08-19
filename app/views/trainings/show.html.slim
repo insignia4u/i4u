@@ -15,9 +15,15 @@
 
           span CUPOS AGOTADOS.
 
+      -if training.presale && training.presale_expiration > Date.today
+        .presale-notification
+          span PREVENTA
+          p
+            = end_training_date_text(training.presale_expiration)
+
       .inner-box
         .detailed-info
-          -if training.presale and training.presale_expiration > Date.today
+          -if training.presale && training.presale_expiration > Date.today
             h2= training.presale_title
           -else
             h2= training.title
@@ -31,14 +37,14 @@
               .price
                 h3
                   |$
-                  -if training.presale and training.presale_expiration > Date.today
+                  -if training.presale && training.presale_expiration > Date.today
                     =training.presale_price
                   -else
                     =training.price
                   span &nbsp; Inscripción
 
                 p
-                  -if training.presale and training.presale_expiration > Date.today
+                  -if training.presale && training.presale_expiration > Date.today
                     -if training.presale_discount?
                       span
                         =training.presale_discount
@@ -49,15 +55,35 @@
                         =training.discount
                         |% Off Pago en Efectivo
 
+                -if training.presale && training.presale_expiration > Date.today
+                  .no-presale-price-description
+                    | Precio normal: 
+                    .no-presale-price
+                      |$
+                      =training.price
+
+                -if training.presale && training.presale_expiration > Date.today
+                  p.saving-advise
+                    |¡Ahorrás $
+                    =(training.price - training.presale_price)
+                    |!
+
             .schedule
               p
                 span.start data-start="#{training.initial_date}"
                   |Inicio 
                   =" - #{l training.initial_date, locale: :es, format: :start}"
-                span.days-left.comming-soon 
+                span.days-left.comming-soon
               p
                 span 
                   = training.days_time
+
+              p
+                span.saving-advise-message
+                  | La preventa finaliza el 
+                  / = training.presale_expiration.strftime("%d de %B")
+                  ="#{l training.presale_expiration, locale: :es, format: :start}"
+                  |, ¡no dejes pasar la oportunidad!
 
         .extra-info
 
@@ -81,6 +107,8 @@
               = f.submit 'Reservá tu lugar', class: 'btn'
 
               p Esta reserva es sin compromiso de compra.
+              a.js-buynow.buy-now href="#"
+                | ¡Quiero inscribirme ahora mismo!
 
       -if !training.disable_payment
         .where-to-pay
@@ -150,8 +178,8 @@
         -if !training.disable_payment
           h2 Pagá ahora y reservá tu lugar!
 
-          -if training.presale and training.presale_expiration > Date.today
-            a.pay-now-button href="#{training.presale_payment}" target="_blank" 
+          -if training.presale && training.presale_expiration > Date.today
+            a.pay-now-button.js-pay-now-button href="#{training.presale_payment}" target="_blank" 
               span
                 |$
                 =training.presale_price

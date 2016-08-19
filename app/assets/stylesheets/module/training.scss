@@ -60,6 +60,43 @@
       }
     } // .sold-out
 
+    .presale-notification {
+      background: #E50892;
+      // background: #4f7bcf;
+      color: #fff;
+      padding: 15px 30px;
+      text-align: center;
+
+      i.fa {
+        margin-right: 10px;
+        font-size: 22px;
+
+        @include breakpoint(tablet){
+          font-size: 32px;
+        }
+
+        @include breakpoint(desktop){
+          font-size: 32px;
+        }
+      }
+
+      span {
+        font-size: 22px;
+
+        @include breakpoint(tablet){
+          font-size: 32px;
+        }
+
+        @include breakpoint(desktop){
+          font-size: 32px;
+        }
+      }
+
+      p {
+        margin-bottom: 0px;
+      }
+    } // .presale-notification
+
     .inner-box {
       @include clearfix();
 
@@ -134,6 +171,19 @@
             }
 
             .price {
+              .no-presale-price-description {
+                display: block;
+                color: #DDD;
+                font-weight: 400;
+                margin-top: 15px;
+
+                .no-presale-price {
+                  display: inline;
+                  text-decoration: line-through;
+                  font-weight: 600;
+                }
+              }
+
               h3 {
                 font-weight: 700;
                 font-size: 24px;
@@ -165,12 +215,17 @@
                   }
                 }
               }
+
+              .saving-advise {
+                display: inline-block;
+                color: #46c2f6;
+                margin: 0px 0px 15px;
+              }
             }
 
           } // .pricing
 
           .schedule {
-
             float: none;
             width: 100%;
             margin-top: 30px;
@@ -186,6 +241,17 @@
             }
 
             span {
+            }
+
+            .start {
+              font-weight: 600;
+            }
+
+            .saving-advise-message {
+              color: #46c2f6;
+              font-weight: 600;
+              display: block;
+              line-height: 20px;
             }
 
             .comming-soon {
@@ -214,12 +280,12 @@
       } // .detailed-info
 
       .extra-info {
-
         float: none;
         width: 100%;
         margin-top: 30px;
         padding: 10px 20px;
         background: #247BA0;
+        border-radius: 10px;
 
         @include breakpoint(desktop){
           float: right;
@@ -287,6 +353,12 @@
             }
           }
 
+        }
+
+        .buy-now {
+          display: inline-block;
+          color: #f7f7f7;
+          margin-bottom: 5px;
         }
 
       } // .extra-info
@@ -626,7 +698,7 @@
 
     background: #183455;
     border-top: 2px solid #247BA0;
-    padding: 30px 0;
+    padding: 80px 0;
     text-align: center;
     color: #fff;
 

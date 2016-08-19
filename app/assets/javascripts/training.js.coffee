@@ -24,3 +24,8 @@ $(document).ready ->
 
     if $('#noty_top_layout_container')
         $('#noty_top_layout_container').delay(4000).fadeOut('slow');
+
+    $('.js-buynow').on 'click', (e) ->
+        e.preventDefault()
+        payment_top = $('.payment-info').offset().top
+        $('body, html').animate {scrollTop: payment_top}, 500
