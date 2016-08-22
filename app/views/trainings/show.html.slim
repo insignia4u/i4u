@@ -1,5 +1,20 @@
-.training-page
+= content_for :head
+  -if training.presale && training.presale_expiration > Date.today && !training.disable_payment
+    meta property="og:title"     content="#{training.presale_title}"
+  -else
+    meta property="og:title"     content="#{training.title}"
 
+  meta property="og:description" content="#{training.subtitle}"
+  meta property="og:url"         content="#{request.original_url}"
+
+
+= content_for :title
+  -if training.presale && training.presale_expiration > Date.today && !training.disable_payment
+    |#{training.presale_title} | Insignia | Trainings
+  -else
+    |#{training.title} | Insignia | Trainings
+
+.training-page
   .call-to-action
     .header
       a.logo href="/"
@@ -7,68 +22,114 @@
 
     .container
 
+      / -if training.presale_expiration > Date.today
+
       -if training.disable_payment
         .sold-out
           = fa_icon "exclamation-circle"
 
           span CUPOS AGOTADOS.
 
+      -if training.presale && training.presale_expiration > Date.today && !training.disable_payment
+        .presale-notification
+          span PREVENTA
+          p
+            = end_training_date_text(training.presale_expiration)
+
       .inner-box
-        .detailed-info
-          h2= training.title
+        .detailed-info class=('wrapper-extended' if training.disable_payment?)
+          -if training.presale && training.presale_expiration > Date.today
+            h2= training.presale_title
+          -else
+            h2= training.title
 
           h3= training.subtitle
 
           p= training.summary
 
           .checkout
-
             .pricing
-
               .price
                 h3
-                  |$ 
-                  =training.price
+                  |$
+                  -if training.presale && training.presale_expiration > Date.today && !training.disable_payment
+                    =training.presale_price
+                  -else
+                    =training.price
                   span &nbsp; Inscripción
 
                 p
-                  span 
-                    =training.discount 
-                    |% Off Pago en Efectivo
+                  -if training.presale && training.presale_expiration > Date.today && !training.disable_payment
+                    -if training.presale_discount?
+                      span
+                        =training.presale_discount
+                        |% Off Pago en Efectivo
+                  -else
+                    -if training.discount?
+                      span
+                        =training.discount
+                        |% Off Pago en Efectivo
+
+                -if training.presale && training.presale_expiration > Date.today && !training.disable_payment
+                  .no-presale-price-description
+                    | Precio original: 
+                    .no-presale-price
+                      |$
+                      =training.price
+
+                  p.saving-advise
+                    |¡Ahorrás $
+                    =(training.price - training.presale_price)
+                    |!
 
             .schedule
-
               p
                 span.start data-start="#{training.initial_date}"
                   |Inicio 
                   =" - #{l training.initial_date, locale: :es, format: :start}"
-                span.days-left.comming-soon 
+                span.days-left.comming-soon
               p
                 span 
                   = training.days_time
+              -if training.presale && training.presale_expiration > Date.today && !training.disable_payment
+                p
+                  span.saving-advise-message
+                    | La preventa finaliza el 
+                    / = training.presale_expiration.strftime("%d de %B")
+                    ="#{l training.presale_expiration, locale: :es, format: :start}"
+                    |, ¡no dejes pasar la oportunidad!
+          
+          -if !training.disable_payment
+            -if training.presale && training.presale_expiration > Date.today
+              a.big-pay-now-button.js-pay-now-button.js-buynow href="#{training.presale_payment}" target="_blank"
+                |Inscribirme ahora mismo
+            -else 
+              a.big-pay-now-button.js-buynow href="#{training.payment}" target="_blank"
+                |Inscribirme ahora mismo
+        
+        -if !training.disable_payment
+          .extra-info
 
-        .extra-info
+            = form_for reservation, url: reservation_path(to: training_path(id: training.slug)), html: { multipart: true } do |f|
 
-          = form_for reservation, url: reservation_path(to: training_path(id: training.slug)), html: { multipart: true } do |f|
+              = f.hidden_field :training, value: "#{training.title}"
 
-            = f.hidden_field :training, value: "#{training.title}"
+              .field
+                label Nombre
+                = f.text_field :name, required: true
 
-            .field
-              label Nombre
-              = f.text_field :name, required: true
+              .field
+                label Email
+                = f.email_field :email, required: true
 
-            .field
-              label Email
-              = f.email_field :email, required: true
+              .field
+                label Teléfono
+                = f.telephone_field :phone, required: true
 
-            .field
-              label Teléfono
-              = f.telephone_field :phone, required: true
+              .action
+                = f.submit 'Reservá tu lugar', class: 'btn'
 
-            .action
-              = f.submit 'Reservá tu lugar', class: 'btn'
-
-              p Esta reserva es sin compromiso de compra.
+                p Esta reserva es sin compromiso de compra.
 
       -if !training.disable_payment
         .where-to-pay
@@ -138,11 +199,18 @@
         -if !training.disable_payment
           h2 Pagá ahora y reservá tu lugar!
 
-          a.pay-now-button href="#{training.payment}" target="_blank" 
-            span
-              |$
-              =training.price
-            |&nbsp; &nbsp; Pagar Ahora!
+          -if training.presale && training.presale_expiration > Date.today
+            a.pay-now-button.js-pay-now-button href="#{training.presale_payment}" target="_blank" 
+              span
+                |$
+                =training.presale_price
+              |&nbsp; &nbsp; Pagar Ahora!
+          -else 
+            a.pay-now-button href="#{training.payment}" target="_blank" 
+              span
+                |$
+                =training.price
+              |&nbsp; &nbsp; Pagar Ahora!
 
           p
           a.mp href="https://www.mercadopago.com.ar/ayuda/medios-de-pago-cuotas-promociones_264" target="_blank"

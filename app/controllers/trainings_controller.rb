@@ -9,8 +9,7 @@ class TrainingsController < ApplicationController
 
   def rails; end
 
-  def show;
-  end
+  def show; end
 
   def slug
     if training = Training.where(short_url: params[:slug]).first
