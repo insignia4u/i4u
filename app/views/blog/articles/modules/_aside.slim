@@ -10,36 +10,38 @@ aside
     | Subscribe to our RSS
     i.icon-rss
 
-  .box-opacity.tip-day
-    h2
-      span.circle
-        i.icon-diamond
+  - if @rails_tip
+    .box-opacity.tip-day
+      h2
+        span.circle
+          i.icon-diamond
 
-      | Rails Tip
+        | Rails Tip
 
-    p
-      = link_to @rails_tip.title, @rails_tip.link, target: "_blank"
-      |&nbsp;
-      = @rails_tip.description
+      p
+        = link_to @rails_tip.title, @rails_tip.link, target: "_blank"
+        |&nbsp;
+        = @rails_tip.description
 
-    = link_to blog_tips_path('rails_tips'), class: 'bottom-link' do
-      | See previous
-      span +
+      = link_to blog_tips_path('rails_tips'), class: 'bottom-link' do
+        | See previous
+        span +
+  
+  - if @rails_tip
+    .box-opacity.rails-tip
+      h2
+        span.circle
+          i.icon-smiley
 
-  .box-opacity.rails-tip
-    h2
-      span.circle
-        i.icon-smiley
+        | WebDev Tip
+      p
+        = link_to @today_tip.title, @today_tip.link, target: "_blank"
+        |&nbsp;
+        = @today_tip.description
 
-      | WebDev Tip
-    p
-      = link_to @today_tip.title, @today_tip.link, target: "_blank"
-      |&nbsp;
-      = @today_tip.description
-
-    = link_to blog_tips_path(type: 'today_tips'), class: 'bottom-link' do
-      | See previous
-      span +
+      = link_to blog_tips_path(type: 'today_tips'), class: 'bottom-link' do
+        | See previous
+        span +
 
   - if @categories.any?
     .box-opacity.categories
