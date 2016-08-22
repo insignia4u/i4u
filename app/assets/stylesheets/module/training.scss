@@ -102,17 +102,26 @@
 
       background-color: #183455;
       color: #fff;
-
+      position: relative;
       padding: 30px;
 
-      .detailed-info {
 
+      .detailed-info {
         float: none;
         width: 100%;
+        position: relative;
+        padding-bottom: 70px;
 
         @include breakpoint(desktop){
           float: left;
           width: 71%;
+          min-height: 324px;
+        }
+
+        &.wrapper-extended {
+          width: 100%;
+          padding-bottom: 0px;
+          min-height: 0px;
         }
 
         h2 {
@@ -236,6 +245,10 @@
               margin-top: 0px;
             }
 
+            @include breakpoint(tablet){
+              margin-top: 0px;
+            }
+
             p {
               margin: 5px 0 !important;
             }
@@ -276,6 +289,46 @@
           } // .schedule
 
         } // .checkout
+
+        .big-pay-now-button {
+          display: block;
+          width: auto;
+          padding: 10px 30px 10px 45px;
+          background: #43A047;
+          color: #FFF;
+          text-decoration: none;
+          margin-top: 20px;
+          font-weight: 300;
+          text-align: center;
+          position: absolute;
+          left: -45px;
+          bottom: 0px;
+          border-radius: 0 3px 3px 0;
+          box-shadow: 6px 6px 6px rgba(0,0,0,0.2);
+
+          @include breakpoint(mobile) {
+            font-size: 1.2em;
+          }
+
+          @include breakpoint(tablet) {
+            font-size: 1.6em;
+          }
+
+          &:hover {
+            background: #6fbd72;
+          }
+
+          &:before {
+            width: 0px;
+            height: 0px;
+            border-top: 15px solid #206823;
+            border-left: 15px solid transparent;
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0px;
+          }
+        }
 
       } // .detailed-info
 
