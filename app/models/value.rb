@@ -7,6 +7,7 @@ class Value < ActiveRecord::Base
 
   validates :description, :title, :site, presence:true
   validates :title, uniqueness:true
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   delegate :name, to: :site, prefix: :site
 end
