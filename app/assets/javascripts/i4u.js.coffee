@@ -258,11 +258,11 @@ $(document).ready ->
     ,
       # transition: true
 
-  $("#l-testimonials").click (e) ->
-    e.preventDefault()
-    $("html, body").animate
-      scrollTop: $(".cover3").offset().top
-    , 1200
+  # $("#l-testimonials").click (e) ->
+  #   e.preventDefault()
+  #   $("html, body").animate
+  #     scrollTop: $(".cover3").offset().top
+  #   , 1200
 
   $("#l-contacts").click (e) ->
     e.preventDefault()
