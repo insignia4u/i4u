@@ -26,14 +26,14 @@
 
     i#menu-btn.icon-list
     span x
-
-  .blog-newsletter
-    .container
-      h2
-        |Artículos técnicos sobre front-end y Ruby on Rails. Conocé también todas nuestras capacitaciones y búsquedas laborales.
-    .newsl
+  - if !defined?(no_newsletter)
+    .blog-newsletter
       .container
-        h3
-          |Unite a más de 500 suscriptores que reciben nuestras novedades.
-        .newsletter-box
-          =render "subscriptions/form"
+        h2
+          |Artículos técnicos sobre front-end y Ruby on Rails. Conocé también todas nuestras capacitaciones y búsquedas laborales.
+      .newsl
+        .container
+          h3
+            |Unite a más de 500 suscriptores que reciben nuestras novedades.
+          .newsletter-box
+            =render "subscriptions/form"
