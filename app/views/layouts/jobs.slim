@@ -20,7 +20,9 @@ html
     = yield :stylesheets
 
   body onload="window.scrollTo(0,1);"
-    = render "shared/header-min"
+    = render "shared/blog-nav-mobile"
+    = render "shared/blog_header", no_newsletter: true
+
     = yield
     = render "shared/footer-min"
 
