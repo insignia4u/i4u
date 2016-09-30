@@ -708,7 +708,7 @@
           @include breakpoint(tablet){
             width: 48%;
             &:first-child{
-              float: left;
+              float: left !important;
             }
             &:last-child{
               float: right;
