@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20160810130552) do
     t.string   "image_caption",      limit: 255
     t.boolean  "is_event",                       default: false
     t.text     "snippet"
+    t.string   "calendar",           limit: 255
     t.string   "short_url",          limit: 255
     t.index ["short_url"], name: "index_articles_on_short_url"
     t.index ["slug"], name: "index_articles_on_slug", unique: true
@@ -145,17 +146,16 @@ ActiveRecord::Schema.define(version: 20160810130552) do
     t.datetime "updated_at",              null: false
     t.integer  "landing_page_content_id"
     t.index ["landing_page_id", "landing_page_content_id"], name: "landing_page_items_main_idx"
-    t.index ["landing_page_id"], name: "index_landing_page_items_on_landing_page_id"
   end
 
   create_table "landing_pages", force: :cascade do |t|
     t.string   "folder",      limit: 255
     t.string   "slug",        limit: 255
-    t.string   "title",       limit: 255
     t.string   "heading",     limit: 255
-    t.text     "description"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.string   "title",       limit: 255
+    t.text     "description"
     t.index ["folder", "slug"], name: "index_landing_pages_on_folder_and_slug"
   end
 
@@ -331,39 +331,39 @@ ActiveRecord::Schema.define(version: 20160810130552) do
   end
 
   create_table "trainers", force: :cascade do |t|
-    t.string   "name",               limit: 255
-    t.string   "title",              limit: 255
+    t.string   "name"
+    t.string   "title"
     t.text     "profile"
-    t.string   "image_file_name",    limit: 255
-    t.string   "image_content_type", limit: 255
+    t.string   "image_file_name"
+    t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "profile_url",        limit: 255
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.string   "profile_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "trainings", force: :cascade do |t|
-    t.string   "title",              limit: 255,                 null: false
-    t.string   "subtitle",           limit: 255
+    t.string   "title",                              null: false
+    t.string   "subtitle"
     t.text     "summary"
     t.integer  "price"
     t.integer  "discount"
     t.date     "initial_date"
     t.text     "topics"
     t.text     "addressed_to"
-    t.string   "slug",               limit: 255
+    t.string   "slug"
     t.integer  "trainer_id"
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
-    t.string   "days_time",          limit: 255
-    t.string   "calendar",           limit: 255
-    t.string   "payment",            limit: 255
-    t.boolean  "disable_payment",                default: false
-    t.string   "addressed_to_title", limit: 255
-    t.string   "requirements_title", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "days_time"
+    t.string   "calendar"
+    t.string   "payment"
+    t.boolean  "disable_payment",    default: false
+    t.string   "addressed_to_title"
+    t.string   "requirements_title"
     t.text     "requirements"
-    t.string   "short_url",          limit: 255
+    t.string   "short_url"
     t.boolean  "presale"
     t.string   "presale_title"
     t.integer  "presale_price"
