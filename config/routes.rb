@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get "sitemap.xml.gz" => "sitemaps#sitemap", format: :xml, as: :sitemap
+
   resources :people, path: :team,    only: :index
   resources :services,                only: :index
 

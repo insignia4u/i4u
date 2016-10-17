@@ -38,6 +38,8 @@ gem 'newrelic_rpm'
 gem 'gibbon'
 gem 'memcachier'
 
+#SiteMap
+gem 'sitemap_generator'
 
 # Development Tools
 group :development do
