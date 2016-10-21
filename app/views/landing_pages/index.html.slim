@@ -24,7 +24,7 @@
             = f.hidden_field :body, value: "Message from landing page #{@landing_page.path}"
 
             .col
-              = f.email_field :email, placeholder: 'Email'
+              = f.email_field :email, placeholder: 'Email', required: true
 
             .col
               = f.submit 'I want to know your rates', class: 'btn'
