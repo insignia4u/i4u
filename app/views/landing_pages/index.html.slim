@@ -19,7 +19,15 @@
           = @landing_page.description
 
         .trigger
-          = link_to "Contact us!", "#", class: "btn"
+          = form_for message, url: contact_path(to: landing_path(folder: @landing_page.folder, slug: @landing_page.slug)), html: { multipart: true } do |f|
+
+            = f.hidden_field :body, value: "Message from landing page #{@landing_page.path}"
+
+            .col
+              = f.email_field :email, placeholder: 'Email'
+
+            .col
+              = f.submit 'I want to know your rates', class: 'btn'
 
   .details
     - @landing_page.landing_page_items.by_position.each do |lpi|
