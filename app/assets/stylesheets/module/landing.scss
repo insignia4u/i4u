@@ -91,18 +91,73 @@ $lato: 'Lato', sans-serif;
       float: none;
       padding: 40px 0px 10px 0px;
       text-align: center;
+      form {
+        @include clearfix;
+        margin: 0;
+        @include breakpoint(desktop){
+          margin: 0 9%;
+        }
 
+        .col {
+          float: none;
+          margin-right: 0px;
+          padding: 5px 0;
+
+          @include breakpoint(tablet){
+            float: left;
+            width: 48%;
+            margin-right: 2%;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+          @include breakpoint(desktop){
+            float: left;
+            width: 48%;
+            margin-right: 2%;
+            padding: 0;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+
+          input[type=text], input[type=email]{
+            font-family: $lato;
+            width: 100%;
+            margin-top: 2px;
+            border: 2px solid #a60563;
+            height: 44px;
+            background-color: #FFF;
+            outline: none;
+
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+
+            -webkit-box-shadow: 1px 2px 1px -1px rgba(38, 35, 31, 0.3);
+            box-shadow: 1px 2px 1px -1px rgba(38, 35, 31, 0.3);
+
+            &:input {
+              border: #000 solid 1px;
+            }
+          }
+        }
+      }
       .btn {
         font-family: $lato;
-        font-size: 40px;
+        font-size: 20px;
+        width: 100%;
+        font-weight: bold;
 
         @include breakpoint(tablet){
-          font-size: 36px;
+          font-size: 25px;
         }
 
         @include breakpoint(desktop){
           font-size: 26px;
           padding: 10px 20px;
+          line-height: 0.9em;
         }
       }
     }
