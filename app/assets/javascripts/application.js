@@ -19,4 +19,5 @@
 //= require fullcalendar
 //= require calendar
 //= require create_comment
+//= require landing_pages
 //= require training
