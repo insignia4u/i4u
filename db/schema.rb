@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024182040) do
+ActiveRecord::Schema.define(version: 20161025184908) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "resource_id",   null: false
@@ -158,6 +158,7 @@ ActiveRecord::Schema.define(version: 20161024182040) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "summary"
     t.index ["folder", "slug"], name: "index_landing_pages_on_folder_and_slug"
   end
 
@@ -205,6 +206,15 @@ ActiveRecord::Schema.define(version: 20161024182040) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["project_id"], name: "index_project_images_on_project_id"
+  end
+
+  create_table "project_items", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "project_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["project_id"], name: "index_project_items_on_project_id"
   end
 
   create_table "project_technologies", force: :cascade do |t|

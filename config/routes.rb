@@ -42,7 +42,6 @@ Rails.application.routes.draw do
   post '/reservation' => 'reservation#create'
 
   match '/:folder/:slug' => 'landing_pages#index', as: 'landing', via: [:get, :post]
-  match '/landing/:folder/:slug' => 'landing_pages#show', as: 'landing_v2', via: [:get, :post] 
   match '/:slug' => 'blog/articles#slug', slug: /[a-zA-Z0-9\-]+/, via: [:get, :post]
 
   root to: 'home#show'
