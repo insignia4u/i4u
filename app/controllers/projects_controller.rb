@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  layout "landing"
   expose(:project)      { current_site.projects.friendly.find(params[:id]) }
   expose(:picks)        { current_site.featured_projects }
   expose(:projects)     { current_site.projects.recent_jobs }

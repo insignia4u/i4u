@@ -1,17 +1,67 @@
-- content_for :title, project.name
-section.project-page
-  .primary-title
-    h2 = project.name
+.projects-v2
+  .call-to-action
+    .header
+      a.logo href="/"
+        = image_tag "insigniav2.svg"
 
-  = render 'projects/modules/carousel'
+    .container
 
-  .carousel-caption
-    = textilize(project.extended_description)
+      .inner-box
+        .detailed-info
+          h2= project.name
 
-  = link_to 'Visit Site', project.url, class: 'more'
+          p= project.summary
 
-section.more-info
-  .primary-title
-    h2.blue = title_for('more-info')
+  .complementary-box
+    .container
+      .clearfix
+        .topics
+          = textilize(project.description)
 
-  = render 'projects/modules/boxes'
+.landing-page
+
+  .footer
+    .container
+      .contact-box
+        a.logo href="/"
+          = image_tag "insigniav2.svg"
+
+        .contact-info
+          i class="fa fa-building-o" aria-hidden="true"
+
+          .data
+            span Lamadrid 318, 5th Floor Apart B
+            br
+            span San Miguel de Tucumán, 4000
+            br
+            span Tucumán, Argentina
+
+
+        .contact-info
+          i class="fa fa-envelope-o" aria-hidden="true"
+
+          .data
+            span info@insignia4u.com
+
+        .contact-info
+          i class="fa fa-phone" aria-hidden="true"
+
+          .data
+            span +54 (0381) 4202730
+
+      .social-box
+        span.title Follow us
+
+        a href="http://facebook.com/insignia4u" target="_blank"
+          = fa_stacked_icon "facebook inverse",    base: "circle"
+        a href="http://twitter.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "twitter inverse",     base: "circle"
+        a href="https://plus.google.com/116935483924237252050"  target="_blank"
+          = fa_stacked_icon "google-plus inverse", base: "circle"
+        a href="http://github.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "github inverse",      base: "circle"
+        a href="http://slideshare.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "slideshare inverse",  base: "circle"
+
+- if flash[:notice]
+  #notice_div
