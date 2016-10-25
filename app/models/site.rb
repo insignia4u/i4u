@@ -56,4 +56,10 @@ class Site < ActiveRecord::Base
   def publication_state
     available? ? "Live" : "Hidden"
   end
+
+  def landing_projects(landing_page)
+    projects.joins(:project_technologies)
+            .where(project_technologies:{technology_id:landing_page.technologies.ids})
+  end
+
 end

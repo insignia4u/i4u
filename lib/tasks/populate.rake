@@ -1,7 +1,6 @@
 namespace(:db) do
   namespace(:populator) do
     task :setup => :environment do
-      require "populator"
       require 'faker'
       require "populator/sites"
       require "populator/technologies"

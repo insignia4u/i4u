@@ -2,8 +2,9 @@ ActiveAdmin.register LandingPage do
   menu parent: "Marketing", priority: 1
   filter :title
 
-  permit_params :folder, :slug, :title, :heading, :description, 
-                landing_page_items_attributes: [:id, :"_destroy", :landing_page_content_id, :position]
+  permit_params :folder, :slug, :title, :heading, :description, :summary,
+                landing_page_items_attributes: [:id, :"_destroy", :landing_page_content_id, :position],
+                :technology_ids => []
 
   index do
     column :path do |landing_page|
@@ -22,6 +23,7 @@ ActiveAdmin.register LandingPage do
       row :title
       row :heading
       row :description
+      row :summary
     end
     panel 'Items' do
       table_for landing_page.landing_page_items.by_position do
@@ -31,6 +33,10 @@ ActiveAdmin.register LandingPage do
           textilize(lpi.landing_page_content.description)
         end
       end
+    end
+
+    panel "Technologies" do
+      landing_page.technologies.map(&:title).join(",")
     end
 
   end
@@ -46,11 +52,15 @@ ActiveAdmin.register LandingPage do
     f.inputs "Hero section" do
       f.input :heading, required: true
       f.input :description, required: true, input_html: {rows: 4}
+      f.input :summary, input_html: {rows: 4}
     end
     f.inputs "Content Items" do
       f.has_many :landing_page_items, heading: 'Items', allow_destroy: true, sortable: :position do |t|
         t.input :landing_page_content_id, as: :select, collection: LandingPageContent.by_name
       end
+    end
+    f.inputs "Technologies" do
+      f.input :technologies, :as => :check_boxes
     end
     actions
   end
