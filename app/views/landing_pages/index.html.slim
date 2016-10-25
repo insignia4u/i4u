@@ -49,7 +49,7 @@
 
                 p= textilize lpi.landing_page_content.description
 
-        -if @landing_page.summary
+        -if @landing_page.summary != ''
           .who-should-take-it
             = textilize(@landing_page.summary)
 

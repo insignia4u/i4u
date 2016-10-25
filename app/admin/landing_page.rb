@@ -52,7 +52,7 @@ ActiveAdmin.register LandingPage do
     f.inputs "Hero section" do
       f.input :heading, required: true
       f.input :description, required: true, input_html: {rows: 4}
-      f.input :summary, required: true, input_html: {rows: 4}
+      f.input :summary, input_html: {rows: 4}
     end
     f.inputs "Content Items" do
       f.has_many :landing_page_items, heading: 'Items', allow_destroy: true, sortable: :position do |t|
