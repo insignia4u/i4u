@@ -3,7 +3,8 @@ ActiveAdmin.register LandingPage do
   filter :title
 
   permit_params :folder, :slug, :title, :heading, :description, 
-                landing_page_items_attributes: [:id, :"_destroy", :landing_page_content_id, :position]
+                landing_page_items_attributes: [:id, :"_destroy", :landing_page_content_id, :position],
+                :technology_ids => []
 
   index do
     column :path do |landing_page|
@@ -33,6 +34,10 @@ ActiveAdmin.register LandingPage do
       end
     end
 
+    panel "Technologies" do
+      landing_page.technologies.map(&:title).join(",")
+    end
+
   end
 
   form do |f|
@@ -51,6 +56,9 @@ ActiveAdmin.register LandingPage do
       f.has_many :landing_page_items, heading: 'Items', allow_destroy: true, sortable: :position do |t|
         t.input :landing_page_content_id, as: :select, collection: LandingPageContent.by_name
       end
+    end
+    f.inputs "Technologies" do
+      f.input :technologies, :as => :check_boxes
     end
     actions
   end

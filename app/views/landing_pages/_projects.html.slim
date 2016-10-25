@@ -1,0 +1,21 @@
+#cases1.carousel.slide
+  .carousel-inner
+    - projects.each do |project|
+      .item class=active_if_first(projects, project)
+        = link_to project.url, target: 'blank'
+          figure title="" data-media600=project.image.url(:normal) data-media440=project.image.url(:medium) data-media=project.image.url(:small)
+
+            = image_tag project.image.url(:small)
+
+            noscript
+              = image_tag project.image.url(:normal)
+
+          .carousel-caption
+            h4 = project.name
+            p = project.summary
+
+  /! Carousel nav
+  a.carousel-control.left data-slide="prev" href="#cases1"
+    i.arrow.glyphicon.glyphicon-chevron-left
+  a.carousel-control.right data-slide="next" href="#cases1"
+    i.arrow.glyphicon.glyphicon-chevron-right

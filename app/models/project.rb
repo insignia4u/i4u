@@ -9,7 +9,7 @@ class Project < ActiveRecord::Base
 
   belongs_to :site
 
-  has_many :project_technologies
+  has_many :project_technologies, dependent: :destroy
   has_many :technologies, :through => :project_technologies
 
   has_many :project_tools

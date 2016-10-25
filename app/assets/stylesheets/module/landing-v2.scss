@@ -1,0 +1,104 @@
+$lato: 'Lato', sans-serif;
+.landing-page-v2{
+  @extend .training-page;
+  .call-to-action {
+    .inner-box {
+      .detailed-info{
+        h2{
+          font-size: 40px;
+        }
+      }
+      .extra-info {
+        padding-bottom: 20px;
+        form{
+          .action {
+            margin-top: 10px;
+            .btn {
+              font-size: 14px;
+              background: #E50892;
+              border: 2px solid #A60563 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  .complementary-box{
+    .container{
+      .clearfix{
+        .topics{
+          .item{
+            .fa-stack {
+              float: left;
+              margin-top: 17px;
+              margin-left: 0px;
+
+              @include breakpoint(tablet){
+                margin-top: 15px;
+                margin-left: 0px;
+              }
+              @include breakpoint(desktop){
+                margin-top: 15px;
+                margin-left: 0px;
+              }
+
+              .fa-circle {
+                color: #E50892;
+              }
+            }
+            .text {
+              float: right;
+              width: 85%;
+              padding-right: 20px;
+              @include breakpoint(tablet){
+                width: 92%;
+                padding-right: 0px;
+              }
+              @include breakpoint(desktop){
+                width: 93%;
+                padding-right: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .payment-info{
+    padding: 20px 0 0;
+    h1{
+      padding: 0 0 20px 0;
+      margin: 0;
+      font-size: 40px;
+    }
+  }
+  #cases1.carousel{
+    margin-bottom: 0;
+    .carousel-inner{
+      width: 83%;
+      padding-bottom: 0;
+      .item{
+        a{
+          text-decoration: none;
+        }
+      }
+      .carousel-caption{
+        background-color: rgba(0,0,0,0.5);
+        position: relative;
+        top: -77px;    
+        h4, p{
+          font-family: $lato;
+          color: white;
+        }
+      }
+    }
+    .carousel-control{
+      background: none;
+      color: #43A047;
+      top: 40%;
+      i{
+        font-size: 30px;
+      }
+    }
+  }
+}

@@ -44,6 +44,7 @@ gem 'sitemap_generator'
 # Development Tools
 group :development do
   gem 'spring'
+  gem 'pry-rails'
 end
 
 # Test Suite

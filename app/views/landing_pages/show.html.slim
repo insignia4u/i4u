@@ -1,0 +1,127 @@
+- title @landing_page.title
+
+- if flash[:notice]
+  #notice_div
+
+.landing-page-v2
+  .call-to-action
+    .header
+      a.logo href="/"
+        = image_tag "insigniav2.svg"
+
+    .container
+      .inner-box
+        .detailed-info
+          h2 = @landing_page.heading
+          p = @landing_page.description
+
+          .trigger
+            a.big-pay-now-button.js-pay-now-button.js-buynow href="#"
+                |Know our Projects
+
+        .extra-info
+
+          = form_for message, url: contact_path(to: landing_v2_path(folder: @landing_page.folder, slug: @landing_page.slug)), html: { multipart: true } do |f|
+
+            = f.hidden_field :body, value: "Message from landing page #{@landing_page.path} - I want to know your rates"
+
+            .field
+              label Name
+              = f.text_field :name, required: true
+
+            .field
+              label Email
+              = f.email_field :email, required: true
+
+            .action
+              = f.submit 'I want to know your rates', class: 'btn'
+
+  .complementary-box
+    .container
+      .clearfix
+        .topics
+          - @landing_page.landing_page_items.by_position.each do |lpi|
+            .item.container
+              = fa_stacked_icon "check inverse", base: "circle"
+
+              .text
+                h3= lpi.landing_page_content.title
+
+                p= textilize lpi.landing_page_content.description
+
+        .who-should-take-it
+          = textilize(@landing_page.description)
+
+  .payment-info
+    .container
+      h1 = 'Projects'
+
+      = render 'landing_pages/projects'
+
+.landing-page
+
+  .contact-us
+    .container
+      h2 Do you have any questions?
+
+      p Complete the form and we'll answer as quickly as possible.
+
+      = form_for message, url: contact_path(to: landing_v2_path(folder: @landing_page.folder, slug: @landing_page.slug)), html: { multipart: true } do |f|
+
+        =f.hidden_field :from_page, value: "Message from training page #{@landing_page.path}"
+
+        .col
+          = f.text_field :name, placeholder: "Name", required: true
+          = f.email_field :email, placeholder: 'Email', required: true
+        .coment
+          = f.text_area :body, placeholder: 'Message', required: true
+
+        .submit
+          = f.submit 'Contact Us', class: 'btn'
+
+  .footer
+    .container
+      .contact-box
+        a.logo href="/"
+          = image_tag "insigniav2.svg"
+
+        .contact-info
+          i class="fa fa-building-o" aria-hidden="true"
+
+          .data
+            span Lamadrid 318, 5th Floor Apart B
+            br
+            span San Miguel de Tucumán, 4000
+            br
+            span Tucumán, Argentina
+
+
+        .contact-info
+          i class="fa fa-envelope-o" aria-hidden="true"
+
+          .data
+            span info@insignia4u.com
+
+        .contact-info
+          i class="fa fa-phone" aria-hidden="true"
+
+          .data
+            span +54 (0381) 4202730
+
+      .social-box
+        span.title Follow us
+
+        a href="http://facebook.com/insignia4u" target="_blank"
+          = fa_stacked_icon "facebook inverse",    base: "circle"
+        a href="http://twitter.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "twitter inverse",     base: "circle"
+        a href="https://plus.google.com/116935483924237252050"  target="_blank"
+          = fa_stacked_icon "google-plus inverse", base: "circle"
+        a href="http://github.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "github inverse",      base: "circle"
+        a href="http://slideshare.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "slideshare inverse",  base: "circle"
+
+- if flash[:notice]
+  #notice_div
+
