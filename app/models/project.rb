@@ -17,5 +17,7 @@ class Project < ActiveRecord::Base
 
   has_many :project_images
 
+  has_many :project_items
+
   friendly_id :name, use: [:slugged, :history]
 end
