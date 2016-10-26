@@ -22,12 +22,12 @@ gem 'figaro'
 
 # Engines
 gem 'devise',              github: 'plataformatec/devise'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'ransack',             github: 'activerecord-hackery/ransack'
 gem 'draper',              '> 3.x'
 gem 'sass'
 gem 'sass-rails'
 gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 # 3rd Party services
 gem 'aws-sdk'
@@ -44,6 +44,7 @@ gem 'sitemap_generator'
 # Development Tools
 group :development do
   gem 'spring'
+  gem 'pry-rails'
 end
 
 # Test Suite

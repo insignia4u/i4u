@@ -16,6 +16,8 @@ class FeaturedContent < ActiveRecord::Base
 
   validates_attachment_presence :image
 
+  validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+
   scope :ordered, -> { order("name ASC").limit(4) }
 
   friendly_id :name, use: [:slugged, :history]

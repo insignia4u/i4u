@@ -9,7 +9,7 @@ class Project < ActiveRecord::Base
 
   belongs_to :site
 
-  has_many :project_technologies
+  has_many :project_technologies, dependent: :destroy
   has_many :technologies, :through => :project_technologies
 
   has_many :project_tools
@@ -17,5 +17,10 @@ class Project < ActiveRecord::Base
 
   has_many :project_images
 
+  has_many :project_items
+
+  accepts_nested_attributes_for :project_items, allow_destroy: true
+
   friendly_id :name, use: [:slugged, :history]
+
 end

@@ -3,71 +3,82 @@
 - if flash[:notice]
   #notice_div
 
-.landing-page
-    
+.landing-page-v2
   .call-to-action
+    .header
+      a.logo href="/"
+        = image_tag "insigniav2.svg"
+
     .container
-      .header
-        a.logo href="/"
-          = image_tag "insigniav2.svg"
-
       .inner-box
-        h2
-          = @landing_page.heading
+        .detailed-info
+          h2 = @landing_page.heading
+          p = @landing_page.description
 
-        h3
-          = @landing_page.description
+          .trigger
+            a.big-pay-now-button.js-pay-now-button.js-buynow href="#"
+                |Take a look at our work
 
-        .trigger
+        .extra-info
+
           = form_for message, url: contact_path(to: landing_path(folder: @landing_page.folder, slug: @landing_page.slug)), html: { multipart: true } do |f|
 
-            = f.hidden_field :body, value: "Message from landing page #{@landing_page.path}"
+            = f.hidden_field :body, value: "Message from landing page #{@landing_page.path} - I want to know your rates"
 
-            .col
-              = f.email_field :email, placeholder: 'Email', required: true
+            .field
+              label Name
+              = f.text_field :name, required: true
 
-            .col
+            .field
+              label Email
+              = f.email_field :email, required: true
+
+            .action
               = f.submit 'I want to know your rates', class: 'btn'
 
-  .details
-    - @landing_page.landing_page_items.by_position.each do |lpi|
-      .item.container
-        = fa_stacked_icon "check inverse", base: "circle"
+  .complementary-box
+    .container
+      .clearfix
+        .topics
+          - @landing_page.landing_page_items.by_position.each do |lpi|
+            .item.container
+              = fa_stacked_icon "check inverse", base: "circle"
 
-        .text
-          h3= lpi.landing_page_content.title
+              .text
+                h3= lpi.landing_page_content.title
 
-          p= textilize lpi.landing_page_content.description
+                p= textilize lpi.landing_page_content.description
+
+        -if @landing_page.summary != ''
+          .who-should-take-it
+            = textilize(@landing_page.summary)
+
+  .payment-info.trigger-end
+    .container
+      h1 = 'Projects'
+
+      = render 'landing_pages/projects'
+
+.landing-page
 
   .contact-us
     .container
-      h2 Let's get in touch!
+      h2 Do you have any questions?
 
-      p Just fill up the form with your name and email and we'll be contacting you shortly
+      p Complete the form and we'll answer as quickly as possible.
 
       = form_for message, url: contact_path(to: landing_path(folder: @landing_page.folder, slug: @landing_page.slug)), html: { multipart: true } do |f|
 
-        = f.hidden_field :body, value: "Message from landing page #{@landing_page.path}"
+        =f.hidden_field :from_page, value: "Message from training page #{@landing_page.path}"
 
         .col
-          = f.text_field :name, placeholder: "What's your name?", required: true
+          = f.text_field :name, placeholder: "Name", required: true
+          = f.email_field :email, placeholder: 'Email', required: true
+        .coment
+          = f.text_area :body, placeholder: 'Message', required: true
 
-        .col
-          = f.email_field :email, placeholder: 'Email'
-
-        .col
+        .submit
           = f.submit 'Contact Us', class: 'btn'
-
-  - if false
-    .learn-more
-      .container
-        h2 And there's more!
-
-        p Learn more about the rest of our services
-
-        .services
-          a.link href="#" Front End Development
-          a.link href="#" Application Deployment
 
   .footer
     .container
@@ -111,3 +122,7 @@
           = fa_stacked_icon "github inverse",      base: "circle"
         a href="http://slideshare.com/insignia4u"  target="_blank"
           = fa_stacked_icon "slideshare inverse",  base: "circle"
+
+- if flash[:notice]
+  #notice_div
+

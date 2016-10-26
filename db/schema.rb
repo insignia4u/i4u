@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160810130552) do
+ActiveRecord::Schema.define(version: 20161025184908) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "resource_id",   limit: 255, null: false
@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(version: 20160810130552) do
     t.string   "image_caption",      limit: 255
     t.boolean  "is_event",                       default: false
     t.text     "snippet"
-    t.string   "calendar",           limit: 255
     t.string   "short_url",          limit: 255
     t.index ["short_url"], name: "index_articles_on_short_url"
     t.index ["slug"], name: "index_articles_on_slug", unique: true
@@ -146,17 +145,28 @@ ActiveRecord::Schema.define(version: 20160810130552) do
     t.datetime "updated_at",              null: false
     t.integer  "landing_page_content_id"
     t.index ["landing_page_id", "landing_page_content_id"], name: "landing_page_items_main_idx"
+    t.index ["landing_page_id"], name: "index_landing_page_items_on_landing_page_id"
   end
 
   create_table "landing_pages", force: :cascade do |t|
     t.string   "folder",      limit: 255
     t.string   "slug",        limit: 255
+    t.string   "title",       limit: 255
     t.string   "heading",     limit: 255
+    t.text     "description"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-    t.string   "title",       limit: 255
-    t.text     "description"
+    t.text     "summary"
     t.index ["folder", "slug"], name: "index_landing_pages_on_folder_and_slug"
+  end
+
+  create_table "landing_technologies", force: :cascade do |t|
+    t.integer  "landing_page_id"
+    t.integer  "technology_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["landing_page_id"], name: "index_landing_technologies_on_landing_page_id"
+    t.index ["technology_id"], name: "index_landing_technologies_on_technology_id"
   end
 
   create_table "newsletter_subscribers", force: :cascade do |t|
@@ -194,6 +204,15 @@ ActiveRecord::Schema.define(version: 20160810130552) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.index ["project_id"], name: "index_project_images_on_project_id"
+  end
+
+  create_table "project_items", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "project_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["project_id"], name: "index_project_items_on_project_id"
   end
 
   create_table "project_technologies", force: :cascade do |t|
@@ -331,39 +350,39 @@ ActiveRecord::Schema.define(version: 20160810130552) do
   end
 
   create_table "trainers", force: :cascade do |t|
-    t.string   "name"
-    t.string   "title"
+    t.string   "name",               limit: 255
+    t.string   "title",              limit: 255
     t.text     "profile"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "profile_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "profile_url",        limit: 255
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "trainings", force: :cascade do |t|
-    t.string   "title",                              null: false
-    t.string   "subtitle"
+    t.string   "title",              limit: 255,                 null: false
+    t.string   "subtitle",           limit: 255
     t.text     "summary"
     t.integer  "price"
     t.integer  "discount"
     t.date     "initial_date"
     t.text     "topics"
     t.text     "addressed_to"
-    t.string   "slug"
+    t.string   "slug",               limit: 255
     t.integer  "trainer_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "days_time"
-    t.string   "calendar"
-    t.string   "payment"
-    t.boolean  "disable_payment",    default: false
-    t.string   "addressed_to_title"
-    t.string   "requirements_title"
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.string   "days_time",          limit: 255
+    t.string   "calendar",           limit: 255
+    t.string   "payment",            limit: 255
+    t.boolean  "disable_payment",                default: false
+    t.string   "addressed_to_title", limit: 255
+    t.string   "requirements_title", limit: 255
     t.text     "requirements"
-    t.string   "short_url"
+    t.string   "short_url",          limit: 255
     t.boolean  "presale"
     t.string   "presale_title"
     t.integer  "presale_price"
