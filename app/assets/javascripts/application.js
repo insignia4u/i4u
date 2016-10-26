@@ -21,3 +21,4 @@
 //= require create_comment
 //= require landing_pages
 //= require training
+//= require slide_down_menu
