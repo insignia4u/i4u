@@ -1,3 +1,71 @@
 .projects-v2{
 	@extend .training-page;
+  .call-to-action{
+    .inner-box{
+      .detailed-info{
+        width: 100%;
+        @include breakpoint(desktop){
+          width: 55%;
+        }
+      }
+      .extra-info{
+        width: 100%;
+        padding: 0;
+        background: none;
+        @include breakpoint(desktop){
+          width: 44%;
+        }
+      }
+    }
+  }
+  .complementary-box{
+    .description{
+      p {
+        font-weight: 400;
+      }
+    }
+    .who-should-take-it{
+      h3{
+        margin: 18px 0 10px;
+      }
+    }
+  }
+}
+#project-page.carousel{
+  .carousel-inner{
+    background: none;
+    .item{
+      .macbook{
+        margin: 0;
+        padding: 10px 15px 10px 10px;
+        width: 100%;
+        height: 100%;
+        @include breakpoint(desktop){
+          padding: 0;
+        }
+        img{
+          width: 100%;
+          height: 240px;
+          max-width: 100%;
+          @include breakpoint(mobile-horizontal){
+            height: 250px;
+          }
+          @include breakpoint(tablet){
+            height: 360px;
+          }
+          @include breakpoint(desktop){
+            height: 250px;
+          }
+        }
+      }
+    }
+  }
+  .carousel-control{
+    background: none;
+    bottom: 50%;
+    .arrow{
+      color: #E50892;
+      font-size: 30px;
+    }
+  }
 }

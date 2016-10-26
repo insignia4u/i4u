@@ -10,15 +10,15 @@
 
     - project.project_images.each do |project_image|
      .item
-      .macbook
-        figure title="" data-media600=project_image.image.url(:normal) data-media440=project_image.image.url(:small) data-media=project_image.image.url(:normal)
-          img alt="" src=project_image.image.url(:normal)
+        .macbook
+          figure title="" data-media600=project_image.image.url(:normal) data-media440=project_image.image.url(:small) data-media=project_image.image.url(:normal)
+            img alt="" src=project_image.image.url(:normal)
 
-          noscript
-            img src=project_image.image.url(:normal)
+            noscript
+              img src=project_image.image.url(:normal)
 
   /! Carousel nav
   a.carousel-control.left data-slide="prev" href="#project-page"
-    i.icon-titleleft
+    i.arrow.glyphicon.glyphicon-chevron-left
   a.carousel-control.right data-slide="next" href="#project-page"
-    i.icon-titleright
+    i.arrow.glyphicon.glyphicon-chevron-right

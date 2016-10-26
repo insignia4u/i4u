@@ -3,6 +3,10 @@ ActiveAdmin.register ProjectImage do
 
   filter :description
 
+  before_filter :only => [:index, :new, :create, :show, :edit, :update, :destroy] do
+    @project = Project.friendly.find(params[:project_id])
+  end
+
   permit_params :image, :description
 
   index do

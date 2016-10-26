@@ -19,5 +19,8 @@ class Project < ActiveRecord::Base
 
   has_many :project_items
 
+  accepts_nested_attributes_for :project_items, allow_destroy: true
+
   friendly_id :name, use: [:slugged, :history]
+
 end
