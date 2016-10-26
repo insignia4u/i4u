@@ -27,11 +27,12 @@
             = textilize(project.description)
 
           = textilize(project.extended_description)
+
+        .who-should-take-it
           -project.project_items.each do |item|
             h3 = item.title
             =textilize(item.description)
-
-        .who-should-take-it
+            
           h3 Technologies involved
           ul
             -project.technologies.each do |t|
