@@ -24,7 +24,15 @@
         font-weight: 400;
       }
     }
+    .topics{
+      @include breakpoint(tablet){
+        width: 60%;
+      }
+    }
     .who-should-take-it{
+      @include breakpoint(tablet){
+        width: 38%;
+      }
       h3{
         margin: 18px 0 10px;
       }
