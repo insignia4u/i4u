@@ -236,7 +236,7 @@
 
       = form_for message, url: contact_path(to: training_path(id: training.slug)), html: { multipart: true } do |f|
 
-        =f.hidden_field :from_page, value: "Message from training page /training/#{training.slug}"
+        =f.hidden_field :from_page, value: "Insignia Training <training@insignia4u.com>"
 
         .col
           = f.text_field :name, placeholder: "¿Cuál es tu nombre?", required: true
