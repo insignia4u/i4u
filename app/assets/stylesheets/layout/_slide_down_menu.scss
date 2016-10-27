@@ -3,5 +3,41 @@
   z-index: 99;
   width: 100%;
   position: absolute;
-  display: none;
+
+  .blog-header{
+    padding-bottom: 10px;
+    display: none;
+    background: #333;
+    @include breakpoint(tablet){
+      display: block !important;
+    }
+    .navbar{
+      display: block;
+    }
+  }
+  .header {
+
+    position: relative;
+    top: 0px;
+
+    width: 170px;
+    margin: 0 auto;
+    padding: 10px 35px;
+
+    background: #333;
+
+    -webkit-border-radius: 0px 0px 99px 99px;
+       -moz-border-radius: 0px 0px 99px 99px;
+            border-radius: 0px 0px 99px 99px;
+
+    -webkit-box-shadow: 0 8px 6px -6px black;
+       -moz-box-shadow: 0 8px 6px -6px black;
+            box-shadow: 0 8px 6px -6px black;
+
+    cursor: pointer;
+
+    @include breakpoint(tablet){
+      display: none;
+    }
+  } // .header
 }

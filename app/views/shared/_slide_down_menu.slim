@@ -1,6 +1,9 @@
 .slide-down-menu-container
-  header.tooglenav.blog-header
+  header.blog-header
     .navbar
+      h1
+        a href="/"
+          = image_tag "insigniav2.svg"
       nav
         ul
           li
@@ -17,3 +20,6 @@
             a class=active_if_equals(controller_name,'contacts') href="/contact" Contact
           li
             a class=active_if_equals(controller_name,'articles') href="/blog" Blog
+  
+  .header#slide
+    = image_tag "insigniav2.svg"
