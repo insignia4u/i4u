@@ -1,17 +1,99 @@
-- content_for :title, project.name
-section.project-page
-  .primary-title
-    h2 = project.name
+= render "shared/slide_down_menu"
+.projects-v2
+  .call-to-action
 
-  = render 'projects/modules/carousel'
+    .container
 
-  .carousel-caption
-    = textilize(project.extended_description)
+      .inner-box
+        .detailed-info
+          h2= project.name
 
-  = link_to 'Visit Site', project.url, class: 'more'
+          p= project.summary
 
-section.more-info
-  .primary-title
-    h2.blue = title_for('more-info')
+          .trigger
+            a.big-pay-now-button.js-pay-now-button.js-buynow href="#"
+                |Contact Us
 
-  = render 'projects/modules/boxes'
+        .extra-info
+          =render 'projects/modules/carousel'
+
+  .complementary-box
+    .container
+      .clearfix
+        .topics
+          .description
+            = textilize(project.description)
+
+          = textilize(project.extended_description)
+
+        .who-should-take-it
+          -project.project_items.each do |item|
+            h3 = item.title
+            =textilize(item.description)
+
+.landing-page
+
+  .contact-us.trigger-end
+    .container
+      h2 Do you have any questions?
+
+      p Complete the form and we'll answer as quickly as possible.
+
+      = form_for message, url: contact_path(to: project_path(project)), html: { multipart: true } do |f|
+
+        =f.hidden_field :from_page, value: "Message from project page #{project.name}"
+
+        .col
+          = f.text_field :name, placeholder: "Name", required: true
+          = f.email_field :email, placeholder: 'Email', required: true
+        .coment
+          = f.text_area :body, placeholder: 'Message', required: true
+
+        .submit
+          = f.submit 'Contact Us', class: 'btn'
+
+  .footer
+    .container
+      .contact-box
+        a.logo href="/"
+          = image_tag "insigniav2.svg"
+
+        .contact-info
+          i class="fa fa-building-o" aria-hidden="true"
+
+          .data
+            span Lamadrid 318, 5th Floor Apart B
+            br
+            span San Miguel de Tucumán, 4000
+            br
+            span Tucumán, Argentina
+
+
+        .contact-info
+          i class="fa fa-envelope-o" aria-hidden="true"
+
+          .data
+            span info@insignia4u.com
+
+        .contact-info
+          i class="fa fa-phone" aria-hidden="true"
+
+          .data
+            span +54 (0381) 4202730
+
+      .social-box
+        span.title Follow us
+
+        a href="http://facebook.com/insignia4u" target="_blank"
+          = fa_stacked_icon "facebook inverse",    base: "circle"
+        a href="http://twitter.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "twitter inverse",     base: "circle"
+        a href="https://plus.google.com/116935483924237252050"  target="_blank"
+          = fa_stacked_icon "google-plus inverse", base: "circle"
+        a href="http://github.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "github inverse",      base: "circle"
+        a href="http://slideshare.com/insignia4u"  target="_blank"
+          = fa_stacked_icon "slideshare inverse",  base: "circle"
+
+- if flash[:notice]
+  #notice_div

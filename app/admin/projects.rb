@@ -6,7 +6,8 @@ ActiveAdmin.register Project do
 
   permit_params :site_id, :description, :ended_at, :extended_description,
                 :name, :started_at, :summary, :url, :image, :featured_image,
-                :site, :technologies, :tools, :highlighted, :tool_ids => [] , :technology_ids => []
+                :site, :technologies, :tools, :highlighted, :tool_ids => [] , :technology_ids => [],
+                project_items_attributes: [:id, :"_destroy", :title, :description]
 
   member_action :highlight, method: :put do
     project = Project.find(params[:id])
@@ -22,7 +23,7 @@ ActiveAdmin.register Project do
   end
 
   member_action :publish, method: :put do
-    project = Project.find(params[:id])
+    project = Project.friendly.find(params[:id])
     message = project.publish!? {notice: "This project has been published!"} :
       {alert: project.errors.full_messages}
     redirect_to admin_project_path(project), message
@@ -79,6 +80,13 @@ ActiveAdmin.register Project do
       }
     end
 
+    f.inputs "Project Items" do
+      f.has_many :project_items, heading: 'Items', allow_destroy: true do |t|
+        t.input :title
+        t.input :description
+      end
+    end
+
     f.inputs "Tags" do
       f.input :technologies, :as => :check_boxes
       f.input :tools, :as => :check_boxes
@@ -127,6 +135,14 @@ ActiveAdmin.register Project do
         project.published ? 'Yes' : 'No'
       end
     end
+    panel 'Project Items' do
+      table_for project.project_items do
+        column(:title) {|lpi| lpi.title }
+        column :description do |lpi|
+          textilize(lpi.description)
+        end
+      end
+    end
   end
 
   index do
@@ -168,14 +184,6 @@ ActiveAdmin.register Project do
     end
 
     actions
-  end
-
-  controller do
-    def resource_params
-      return [] if request.get?
-      [ params.require(:project)
-        .permit(  ) ]
-    end
   end
 
 end
