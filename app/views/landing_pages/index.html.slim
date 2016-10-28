@@ -23,7 +23,9 @@
 
           = form_for message, url: contact_path(to: landing_path(folder: @landing_page.folder, slug: @landing_page.slug)), html: { multipart: true } do |f|
 
-            = f.hidden_field :body, value: "Message from landing page #{@landing_page.path} - I want to know your rates"
+            = f.hidden_field :body, value: "I want to know your rates - #{@landing_page.heading} - #{landing_url(folder: @landing_page.folder, slug: @landing_page.slug)}"
+
+            = f.hidden_field :subject, value: "I want to know your rates"
 
             .field
               label Name

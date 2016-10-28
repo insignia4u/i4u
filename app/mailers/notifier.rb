@@ -60,12 +60,11 @@ class Notifier < ActionMailer::Base
 protected
   def subject_for(message)
     name = message.name
-    from = message.from_page
     if message.is_to_job  
       "Job Applications: #{name}"
     else 
-      if from
-        "#{from}"
+      if message.subject
+        "#{message.subject}"
       else
         "Message: #{name}"
       end
@@ -75,7 +74,7 @@ protected
   def from(message)
     from = message.from_page
     if from
-      "Insignia Training <training@insignia4u.com>"
+      "#{from}"
     else
       message.email
     end
