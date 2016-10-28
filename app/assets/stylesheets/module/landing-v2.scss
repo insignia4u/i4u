@@ -81,6 +81,15 @@ $lato: 'Lato', sans-serif;
         a{
           text-decoration: none;
         }
+        img{
+          width: 100%;
+          @include breakpoint(tablet){
+            height: 370px;
+          }
+          @include breakpoint(desktop){
+            height: 400px;
+          }
+        }
       }
       .carousel-caption{
         background-color: rgba(0,0,0,0.5);
