@@ -8,7 +8,7 @@
         .detailed-info
           h2= project.name
 
-          p= project.summary
+          p= project.description
 
           .trigger
             a.big-pay-now-button.js-pay-now-button.js-buynow href="#"
@@ -21,9 +21,6 @@
     .container
       .clearfix
         .topics
-          .description
-            = textilize(project.description)
-
           = textilize(project.extended_description)
 
         .who-should-take-it
